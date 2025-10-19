@@ -1,0 +1,13 @@
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.AssemblyInfoInputs.cache
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.AssemblyInfo.cs
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.csproj.CoreCompileInputs.cache
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.sourcelink.json
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\bin\Release\net9.0\bundles.json
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.dll
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\refint\TTC.Mod.dll
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\TTC.Mod.pdb
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\bin\Release\net9.0\TTC.Mod.deps.json
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\bin\Release\net9.0\TTC.Mod.dll
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\bin\Release\net9.0\TTC.Mod.pdb
+C:\Dev\GitHub\TarkovTradingCards\csharp\TTC.Mod\obj\Release\net9.0\ref\TTC.Mod.dll

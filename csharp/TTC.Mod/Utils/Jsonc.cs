@@ -5,8 +5,8 @@ namespace TTC.Mod.Utils;
 
 public static partial class Jsonc
 {
-    private static readonly Regex MultiLineComment = new("/\*.*?\*/", RegexOptions.Singleline | RegexOptions.Compiled);
-    private static readonly Regex SingleLineComment = new("//.*?$", RegexOptions.Multiline | RegexOptions.Compiled);
+    private static readonly Regex MultiLineComment = new(@"/\*.*?\*/", RegexOptions.Singleline | RegexOptions.Compiled);
+    private static readonly Regex SingleLineComment = new(@"//.*?$", RegexOptions.Multiline | RegexOptions.Compiled);
     private static readonly Regex TrailingCommas = new(@",(\s*[}\]])", RegexOptions.Compiled);
 
     public static string Strip(string jsonc)
