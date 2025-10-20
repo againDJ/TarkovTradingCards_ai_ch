@@ -60,4 +60,9 @@
     <Compile Remove="Load\PreSpt.cs" />
     <Compile Remove="Load\PostDb.cs" />
   </ItemGroup>
+
+  <!-- When WIRE_SPT property is true, also define the WIRE_SPT preprocessor symbol -->
+  <PropertyGroup Condition="'$(WIRE_SPT)' == 'true'">
+    <DefineConstants>$(DefineConstants);WIRE_SPT</DefineConstants>
+  </PropertyGroup>
 </Project>
