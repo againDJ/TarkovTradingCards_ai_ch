@@ -353,41 +353,12 @@ public sealed class PostDb : IOnLoad
 				var container = GetByKey(itemsObj, caseTpl) ?? FindById(itemsObj, caseTpl);
 				if (container == null)
 				{
-					// brute-force fallback: iterate possible sequences (values or dictionary entries)
-					try
-					{
-						if (itemsObj is System.Collections.IDictionary idict)
-						{
-							foreach (System.Collections.DictionaryEntry de in idict)
-							{
-								var val = de.Value;
-								var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
-								if (vid == caseTpl) { container = val; break; }
-							}
-						}
-						if (container == null)
-						{
-							var valuesPi = itemsObj.GetType().GetProperty("Values");
-							var values = valuesPi?.GetValue(itemsObj) as System.Collections.IEnumerable;
-							if (values != null)
-							{
-								foreach (var val in values)
-								{
-									var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
-									if (vid == caseTpl) { container = val; break; }
-								}
-							}
-						}
-					}
-					catch { }
-				}
-				if (container == null)
-				{
 					_logger.Info($"[TTC] Pouch compat: container {caseTpl} not found in templates");
 					continue;
 				}
 
-				var props = GetPropIgnoreCase(container, new[] { "Props", "_props" });
+				// Access properties (TemplateItem.Properties)
+				var props = GetPropIgnoreCase(container, new[] { "Properties", "Props", "_props", "properties" });
 				if (props == null) continue;
 				var grids = GetPropIgnoreCase(props, new[] { "Grids", "grids" }) as System.Collections.IEnumerable;
 				if (grids == null) continue;
@@ -396,7 +367,7 @@ public sealed class PostDb : IOnLoad
 				foreach (var grid in grids)
 				{
 					if (grid == null) continue;
-					var gprops = GetPropIgnoreCase(grid, new[] { "Properties", "_props", "_properties" });
+					var gprops = GetPropIgnoreCase(grid, new[] { "Properties", "_props", "_properties", "properties" });
 					if (gprops == null) continue;
 					var filters = GetPropIgnoreCase(gprops, new[] { "Filters", "filters" }) as System.Collections.IEnumerable;
 					if (filters == null) continue;
@@ -404,9 +375,12 @@ public sealed class PostDb : IOnLoad
 					foreach (var f in filters)
 					{
 						if (f == null) continue;
-						var filterSet = GetPropIgnoreCase(f, new[] { "Filter", "filter" });
+						var filterPropInfo = f.GetType().GetProperty("Filter", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+						var filterSet = filterPropInfo?.GetValue(f);
 						if (filterSet == null) continue;
+
 						var added = TryAddManyGeneric(filterSet, ttcTpls);
+
 						// If collection is an array (no Add), replace with a new array that includes union
 						if (added == 0 && filterSet.GetType().IsArray)
 						{
@@ -432,18 +406,101 @@ public sealed class PostDb : IOnLoad
 
 								if (toAppend.Count > 0)
 								{
-									var newLen = arr.Length + toAppend.Count;
-									var newArr = Array.CreateInstance(elemType, newLen);
+									var newArr = Array.CreateInstance(elemType, arr.Length + toAppend.Count);
 									Array.Copy(arr, newArr, arr.Length);
 									for (int i = 0; i < toAppend.Count; i++) newArr.SetValue(toAppend[i], arr.Length + i);
 
-									var prop = f.GetType().GetProperty("Filter", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
-									prop?.SetValue(f, newArr);
+									filterPropInfo?.SetValue(f, newArr);
 									added = toAppend.Count;
 								}
 							}
 							catch { }
 						}
+
+						// If still nothing added, try replacing the collection via property setter (read-only IEnumerable case)
+						if (added == 0)
+						{
+							try
+							{
+								if (filterPropInfo != null && filterPropInfo.CanWrite)
+								{
+									var propType = filterPropInfo.PropertyType;
+									// Determine element type
+									var elemType = typeof(string);
+									if (propType.IsArray)
+									{
+										elemType = propType.GetElementType() ?? typeof(string);
+									}
+									else if (propType.IsGenericType)
+									{
+										elemType = propType.GetGenericArguments().FirstOrDefault() ?? typeof(string);
+									}
+
+									// Build set of existing values as strings
+									var existingStr = new HashSet<string>(StringComparer.Ordinal);
+									if (filterSet is System.Collections.IEnumerable existingEnum)
+									{
+										foreach (var el in existingEnum)
+										{
+											if (el == null) continue;
+											var s = el as string ?? el.ToString();
+											if (!string.IsNullOrWhiteSpace(s)) existingStr.Add(s);
+										}
+									}
+
+									// Choose a concrete collection type to instantiate
+									object? newCollection = null;
+									try { newCollection = Activator.CreateInstance(propType); } catch { }
+									if (newCollection == null)
+									{
+										// fallback to List<T> if assignable
+										var listType = typeof(List<>).MakeGenericType(elemType);
+										if (propType.IsAssignableFrom(listType))
+										{
+											newCollection = Activator.CreateInstance(listType);
+										}
+									}
+									if (newCollection != null)
+									{
+										// Copy existing elements
+										if (filterSet is System.Collections.IEnumerable existingEnum2)
+										{
+											var addExisting = newCollection.GetType().GetMethod("Add");
+											if (addExisting != null)
+											{
+												foreach (var el in existingEnum2)
+												{
+													try { addExisting.Invoke(newCollection, new[] { el }); } catch { }
+												}
+											}
+
+										}
+										// Append missing TTC ids
+										int appended = 0;
+										var addMethod = newCollection.GetType().GetMethod("Add");
+										if (addMethod != null)
+										{
+											foreach (var tpl in ttcTpls)
+											{
+												if (existingStr.Contains(tpl)) continue;
+												var conv = ConvertStringTo(elemType, tpl);
+												if (conv == null) continue;
+												try { addMethod.Invoke(newCollection, new[] { conv }); appended++; }
+												catch { }
+											}
+										}
+
+										if (appended > 0)
+										{
+											filterPropInfo.SetValue(f, newCollection);
+											added = appended;
+										}
+									}
+								}
+							}
+							catch { }
+						}
+
 						if (added > 0) { localFiltersTouched++; localAdded += added; }
 					}
 				}
@@ -766,23 +823,6 @@ public sealed class PostDb : IOnLoad
 		}
 	}
 
-	private static int TryAddManyStrings(object? arrLike, string[] values)
-	{
-		try
-		{
-			if (arrLike is System.Collections.IList ilist)
-			{
-				int added = 0;
-				var set = new HashSet<string>(ilist.Cast<object>().OfType<string>());
-				foreach (var v in values)
-				{
-					if (set.Add(v)) { ilist.Add(v); added++; }
-				}
-				return added;
-			}
-		}
-		catch { }
-		return 0;
-	}
+	//
 }
 
