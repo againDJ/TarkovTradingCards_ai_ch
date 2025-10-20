@@ -155,6 +155,9 @@ public sealed class PostDb : IOnLoad
 		// Create themed binders (basic pass)
 		CreateBinders();
 
+		// Make TTC cards compatible with S I C C and Documents case containers
+		TryAddCardsToPouches();
+
 		return Task.CompletedTask;
 	}
 
@@ -269,6 +272,123 @@ public sealed class PostDb : IOnLoad
 		}
 		catch { }
 		return 1000; // safe fallback to avoid missing handbook price (prevents Infinity flea tax)
+	}
+
+	private void TryAddCardsToPouches()
+	{
+		try
+		{
+			var tables = _db.GetTables();
+			var templatesObj = GetPropIgnoreCase(tables, new[] { "Templates", "templates" });
+			if (templatesObj == null) { _logger.Info("[TTC] Templates not available; skipping pouch compatibility"); return; }
+			var itemsObj = GetPropIgnoreCase(templatesObj, new[] { "Items", "items" });
+			if (itemsObj == null) { _logger.Info("[TTC] Template items not available; skipping pouch compatibility"); return; }
+
+			// Get dictionary Values enumerable
+			System.Collections.IEnumerable? values = null;
+			try { values = itemsObj as System.Collections.IEnumerable; }
+			catch { }
+			if (values == null)
+			{
+				var valsPi = itemsObj.GetType().GetProperty("Values");
+				values = valsPi?.GetValue(itemsObj) as System.Collections.IEnumerable;
+			}
+			if (values == null) { _logger.Info("[TTC] Could not iterate template items; skipping pouch compatibility"); return; }
+
+			var ttcTpls = _state.Cards.Select(c => c.id).ToArray();
+			int containersMatched = 0, filtersTouched = 0, totalAdded = 0;
+
+			bool IsSiccOrDoc(object tpl)
+			{
+				var name = GetStringPropIgnoreCase(tpl, new[] { "Name", "_name" })?.ToLowerInvariant() ?? string.Empty;
+				var id = GetStringPropIgnoreCase(tpl, new[] { "Id", "_id" })?.ToLowerInvariant() ?? string.Empty;
+				// Heuristics: look for common identifiers in internal name or id
+				return name.Contains("sicc") || name.Contains("documents") || name.Contains("doccase") || id.Contains("sicc") || id.Contains("doc");
+			}
+
+			foreach (var tpl in values)
+			{
+				if (tpl == null) continue;
+				if (!IsSiccOrDoc(tpl)) continue;
+
+				var props = GetPropIgnoreCase(tpl, new[] { "Props", "_props" });
+				if (props == null) continue;
+				var grids = GetPropIgnoreCase(props, new[] { "Grids", "grids" }) as System.Collections.IEnumerable;
+				if (grids == null) continue;
+
+				int localFiltersTouched = 0, localAdded = 0;
+				foreach (var grid in grids)
+				{
+					if (grid == null) continue;
+					var gprops = GetPropIgnoreCase(grid, new[] { "Properties", "_props", "_properties" });
+					if (gprops == null) continue;
+					var filters = GetPropIgnoreCase(gprops, new[] { "Filters", "filters" }) as System.Collections.IEnumerable;
+					if (filters == null) continue;
+
+					foreach (var f in filters)
+					{
+						if (f == null) continue;
+						var filterSet = GetPropIgnoreCase(f, new[] { "Filter", "filter" });
+						if (filterSet == null) continue;
+						var added = TryAddManyGeneric(filterSet, ttcTpls);
+						if (added > 0) { localFiltersTouched++; localAdded += added; }
+					}
+				}
+
+				if (localAdded > 0)
+				{
+					containersMatched++;
+					filtersTouched += localFiltersTouched;
+					totalAdded += localAdded;
+					var name = GetStringPropIgnoreCase(tpl, new[] { "Name", "_name" });
+					var id = GetStringPropIgnoreCase(tpl, new[] { "Id", "_id" });
+					_logger.Info($"[TTC] Pouch compat: updated '{name}' ({id}) - filters+={localFiltersTouched}, items+={localAdded}");
+				}
+			}
+
+			if (totalAdded > 0)
+				_logger.Info($"[TTC] Pouch compat complete: containers={containersMatched}, filtersTouched={filtersTouched}, itemsAdded={totalAdded}");
+			else
+				_logger.Info("[TTC] Pouch compat: no matching containers or filters to update");
+		}
+		catch (Exception ex)
+		{
+			_logger.Info($"[TTC] Pouch compat error: {ex.Message}");
+		}
+	}
+
+	private static int TryAddManyGeneric(object? collectionObj, IEnumerable<string> values)
+	{
+		if (collectionObj == null) return 0;
+		try
+		{
+			var t = collectionObj.GetType();
+			var add = t.GetMethod("Add");
+			if (add == null) return 0;
+			var elemType = t.IsGenericType ? t.GetGenericArguments().FirstOrDefault() : typeof(string);
+			int added = 0;
+			foreach (var v in values)
+			{
+				var conv = ConvertStringTo(elemType!, v);
+				if (conv == null) continue;
+				try
+				{
+					var res = add.Invoke(collectionObj, new[] { conv });
+					if (res is bool b)
+					{
+						if (b) added++;
+					}
+					else
+					{
+						// non-boolean Add (e.g., List<T>.Add): assume added
+						added++;
+					}
+				}
+				catch { }
+			}
+			return added;
+		}
+		catch { return 0; }
 	}
 
 	private void TryConfigureRagfairForCards()
