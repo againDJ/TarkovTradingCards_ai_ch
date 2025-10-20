@@ -284,34 +284,41 @@ public sealed class PostDb : IOnLoad
 			var itemsObj = GetPropIgnoreCase(templatesObj, new[] { "Items", "items" });
 			if (itemsObj == null) { _logger.Info("[TTC] Template items not available; skipping pouch compatibility"); return; }
 
-			// Get dictionary Values enumerable
-			System.Collections.IEnumerable? values = null;
-			try { values = itemsObj as System.Collections.IEnumerable; }
-			catch { }
-			if (values == null)
-			{
-				var valsPi = itemsObj.GetType().GetProperty("Values");
-				values = valsPi?.GetValue(itemsObj) as System.Collections.IEnumerable;
-			}
-			if (values == null) { _logger.Info("[TTC] Could not iterate template items; skipping pouch compatibility"); return; }
-
 			var ttcTpls = _state.Cards.Select(c => c.id).ToArray();
 			int containersMatched = 0, filtersTouched = 0, totalAdded = 0;
 
-			bool IsSiccOrDoc(object tpl)
+			// Target specific template IDs (from original TS mod)
+			var targetCases = new[]
 			{
-				var name = GetStringPropIgnoreCase(tpl, new[] { "Name", "_name" })?.ToLowerInvariant() ?? string.Empty;
-				var id = GetStringPropIgnoreCase(tpl, new[] { "Id", "_id" })?.ToLowerInvariant() ?? string.Empty;
-				// Heuristics: look for common identifiers in internal name or id
-				return name.Contains("sicc") || name.Contains("documents") || name.Contains("doccase") || id.Contains("sicc") || id.Contains("doc");
+				"5d235bb686f77443f4331278", // S I C C
+				"590c60fc86f77412b13fddcf"  // Documents case
+			};
+
+			// Access dictionary by key in a version-agnostic way
+			object? GetByKey(object dictLike, string key)
+			{
+				try
+				{
+					if (dictLike is System.Collections.IDictionary idict)
+					{
+						return idict.Contains(key) ? idict[key] : null;
+					}
+					var indexer = dictLike.GetType().GetProperty("Item");
+					return indexer?.GetValue(dictLike, new object[] { key });
+				}
+				catch { return null; }
 			}
 
-			foreach (var tpl in values)
+			foreach (var caseTpl in targetCases)
 			{
-				if (tpl == null) continue;
-				if (!IsSiccOrDoc(tpl)) continue;
+				var container = GetByKey(itemsObj, caseTpl);
+				if (container == null)
+				{
+					_logger.Info($"[TTC] Pouch compat: container {caseTpl} not found in templates");
+					continue;
+				}
 
-				var props = GetPropIgnoreCase(tpl, new[] { "Props", "_props" });
+				var props = GetPropIgnoreCase(container, new[] { "Props", "_props" });
 				if (props == null) continue;
 				var grids = GetPropIgnoreCase(props, new[] { "Grids", "grids" }) as System.Collections.IEnumerable;
 				if (grids == null) continue;
@@ -340,9 +347,7 @@ public sealed class PostDb : IOnLoad
 					containersMatched++;
 					filtersTouched += localFiltersTouched;
 					totalAdded += localAdded;
-					var name = GetStringPropIgnoreCase(tpl, new[] { "Name", "_name" });
-					var id = GetStringPropIgnoreCase(tpl, new[] { "Id", "_id" });
-					_logger.Info($"[TTC] Pouch compat: updated '{name}' ({id}) - filters+={localFiltersTouched}, items+={localAdded}");
+					_logger.Info($"[TTC] Pouch compat: updated {caseTpl} - filters+={localFiltersTouched}, items+={localAdded}");
 				}
 			}
 
