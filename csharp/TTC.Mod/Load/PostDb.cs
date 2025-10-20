@@ -151,7 +151,99 @@ public sealed class PostDb : IOnLoad
 		{
 			ApplyFenceBlacklistAndPurge();
 		}
+
+		// Create themed binders (basic pass)
+		CreateBinders();
+
 		return Task.CompletedTask;
+	}
+
+	private void CreateBinders()
+	{
+		var binders = _state.Binders;
+		if (binders == null || binders.Count == 0) return;
+		_logger.Info($"[TTC] Creating {binders.Count} themed binders (basic pass)...");
+		var gameLocale = _localeService.GetDesiredGameLocale();
+		const string english = "en";
+
+		var created = 0; var failed = 0;
+		foreach (var b in binders)
+		{
+			try
+			{
+				var locales = new Dictionary<string, LocaleDetails>
+				{
+					[gameLocale] = new LocaleDetails { Name = b.item_name, ShortName = b.item_short_name, Description = b.item_description },
+					[english] = new LocaleDetails { Name = b.item_name, ShortName = b.item_short_name, Description = b.item_description }
+				};
+
+				var details = new NewItemFromCloneDetails
+				{
+					NewId = b.id,
+					ItemTplToClone = _state.ContainerBase.clone_item,
+					ParentId = _state.ContainerBase.item_parent,
+					Locales = locales,
+					HandbookParentId = _state.ContainerBase.category_id,
+					HandbookPriceRoubles = b.price > 0 ? b.price : null,
+					FleaPriceRoubles = null
+				};
+
+				var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+				{
+					Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = b.item_prefab_path },
+					BackgroundColor = b.color,
+					Weight = (float)_state.ContainerBase.weight,
+					ItemSound = _state.ContainerBase.item_sound,
+					ExaminedByDefault = _state.Config.cards_examined_by_default,
+					Width = _state.ContainerBase.ExternalSize.width,
+					Height = _state.ContainerBase.ExternalSize.height
+				};
+
+				// Build mount slots filtered to themed cards
+				var themedCards = _state.Cards.Where(c => string.Equals(c.theme, b.theme, StringComparison.OrdinalIgnoreCase)).ToList();
+				if (themedCards.Count == 0)
+				{
+					_logger.Info($"[TTC] Binder '{b.item_short_name}' has no themed cards; creating container without slots");
+				}
+				else
+				{
+					var slots = new List<SPTarkov.Server.Core.Models.Eft.Common.Tables.Slot>();
+					foreach (var card in themedCards.OrderBy(c => c.item_name))
+					{
+						var slot = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Slot
+						{
+							Name = $"mod_mount_{card.id}",
+							MaxCount = 1,
+							Required = false,
+							Properties = new SPTarkov.Server.Core.Models.Eft.Common.Tables.SlotProperties
+							{
+								Filters = new [] {
+									new SPTarkov.Server.Core.Models.Eft.Common.Tables.SlotFilter
+									{
+										Filter = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(new [] { new SPTarkov.Server.Core.Models.Common.MongoId(card.id) }),
+										MaxStackCount = 1
+									}
+								}
+							}
+						};
+						slots.Add(slot);
+					}
+					props.Slots = slots;
+				}
+
+				details.OverrideProperties = props;
+
+				var result = _customItemService.CreateItemFromClone(details);
+				if (result.Success == true) created++; else failed++;
+			}
+			catch (Exception ex)
+			{
+				failed++;
+				_logger.Info($"[TTC] ERROR creating binder {b.id}: {ex.Message}");
+			}
+		}
+
+		_logger.Info($"[TTC] Binders creation pass complete. created={created}, failed={failed}");
 	}
 
 	private int ResolvePriceForCard(TTC.Mod.Models.CardConfig card)

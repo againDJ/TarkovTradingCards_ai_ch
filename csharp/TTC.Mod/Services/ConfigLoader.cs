@@ -36,4 +36,38 @@ public sealed class ConfigLoader
         var json = Jsonc.Strip(raw);
         return JsonSerializer.Deserialize<CardBase>(json, _opts) ?? new CardBase();
     }
+    
+        public ContainerBase LoadContainerBase(string path)
+        {
+            var txt = File.ReadAllText(path);
+            return JsonSerializer.Deserialize<ContainerBase>(txt, _opts) ?? new ContainerBase();
+        }
+    
+        public List<BinderOverride> LoadBinderOverrides(string containersDir)
+        {
+            var list = new List<BinderOverride>();
+            if (!Directory.Exists(containersDir)) return list;
+            foreach (var file in Directory.EnumerateFiles(containersDir, "ttc_binder_*.json", SearchOption.TopDirectoryOnly))
+            {
+                try
+                {
+                    var txt = File.ReadAllText(file);
+                    var obj = JsonSerializer.Deserialize<BinderOverride>(txt, _opts);
+                    if (obj != null && !string.IsNullOrWhiteSpace(obj.id))
+                    {
+                        // infer theme from file name suffix (ttc_binder_<theme>.json)
+                        try
+                        {
+                            var name = Path.GetFileNameWithoutExtension(file);
+                            var theme = name.Replace("ttc_binder_", "");
+                            obj = obj with { theme = theme };
+                        }
+                        catch { }
+                        list.Add(obj);
+                    }
+                }
+                catch { }
+            }
+            return list;
+        }
 }
