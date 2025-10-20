@@ -353,6 +353,36 @@ public sealed class PostDb : IOnLoad
 				var container = GetByKey(itemsObj, caseTpl) ?? FindById(itemsObj, caseTpl);
 				if (container == null)
 				{
+					// brute-force fallback: iterate possible sequences (values or dictionary entries)
+					try
+					{
+						if (itemsObj is System.Collections.IDictionary idict)
+						{
+							foreach (System.Collections.DictionaryEntry de in idict)
+							{
+								var val = de.Value;
+								var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
+								if (vid == caseTpl) { container = val; break; }
+							}
+						}
+						if (container == null)
+						{
+							var valuesPi = itemsObj.GetType().GetProperty("Values");
+							var values = valuesPi?.GetValue(itemsObj) as System.Collections.IEnumerable;
+							if (values != null)
+							{
+								foreach (var val in values)
+								{
+									var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
+									if (vid == caseTpl) { container = val; break; }
+								}
+							}
+						}
+					}
+					catch { }
+				}
+				if (container == null)
+				{
 					_logger.Info($"[TTC] Pouch compat: container {caseTpl} not found in templates");
 					continue;
 				}
@@ -665,6 +695,16 @@ public sealed class PostDb : IOnLoad
 		{
 			var val = GetPropIgnoreCase(obj, new[] { n });
 			if (val is string s) return s;
+			if (val != null)
+			{
+				try
+				{
+					var str = val.ToString();
+					if (!string.IsNullOrWhiteSpace(str) && !string.Equals(str, val.GetType().FullName, StringComparison.Ordinal))
+						return str;
+				}
+				catch { }
+			}
 		}
 		return null;
 	}
