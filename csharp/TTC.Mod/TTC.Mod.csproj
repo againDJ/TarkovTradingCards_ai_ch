@@ -15,6 +15,15 @@
     </None>
   </ItemGroup>
 
+  <!-- Copy config folder into Release output so the mod package includes configuration files -->
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <None Include="..\..\config\**\*.*">
+      <Link>config\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>config\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </None>
+  </ItemGroup>
+
   <!-- SPT 4.0 server references via MSBuild property SPT_DIR; set at build time:
        dotnet build -p:SPT_DIR="D:\SPT\4.0\SPT" -->
   <ItemGroup Condition="'$(SPT_DIR)' != ''">
