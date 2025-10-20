@@ -15,7 +15,9 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
     string[] targets =
     {
         Path.Combine(sptDir, "SPTarkov.DI.dll"),
-        Path.Combine(sptDir, "SPTarkov.Server.Core.dll")
+        Path.Combine(sptDir, "SPTarkov.Server.Core.dll"),
+        Path.Combine(sptDir, "SPTarkov.Common.dll"),
+        Path.Combine(sptDir, "SPT.Server.dll")
     };
 
     foreach (var asmPath in targets)
@@ -29,15 +31,37 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
         {
             var asm = Assembly.LoadFrom(asmPath);
             var types = asm.GetTypes()
-                .Where(t => t.Name.Contains("OnLoad", StringComparison.OrdinalIgnoreCase)
-                         || t.Name.Contains("Injectable", StringComparison.OrdinalIgnoreCase)
-                         || t.Name.Contains("OnLoadOrder", StringComparison.OrdinalIgnoreCase))
+                .Where(t => t.IsPublic && (
+                        t.Name.Contains("OnLoad", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Injectable", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("OnLoadOrder", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Database", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Locale", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Handbook", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Trader", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Ragfair", StringComparison.OrdinalIgnoreCase)
+                     || t.Name.Contains("Item", StringComparison.OrdinalIgnoreCase)
+                ))
                 .OrderBy(t => t.FullName)
                 .ToList();
             Console.WriteLine($"== {Path.GetFileName(asmPath)} ==");
             foreach (var t in types)
             {
                 Console.WriteLine($"{t.FullName}");
+                try
+                {
+                    var props = t.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
+                                  .Where(p => p.CanRead)
+                                  .Take(6)
+                                  .Select(p => $"  prop: {p.PropertyType.Name} {p.Name}");
+                    var methods = t.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
+                                   .Where(m => !m.IsSpecialName)
+                                   .Take(6)
+                                   .Select(m => $"  method: {m.ReturnType.Name} {m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.Name))})");
+                    foreach (var p in props) Console.WriteLine(p);
+                    foreach (var m in methods) Console.WriteLine(m);
+                }
+                catch { }
             }
         }
         catch (Exception ex)

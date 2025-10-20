@@ -16,25 +16,27 @@ public sealed class PreSpt : IOnLoad
 		public PreSpt(ISptLogger<PreSpt> logger, ConfigLoader loader, State state)
 	{
 		_logger = logger;
-				_loader = loader;
-				_state = state;
+        _loader = loader;
+        _state = state;
 	}
 
 	public Task OnLoad()
 	{
 		_logger.Info("[TTC] PreSpt starting - loading configs...");
-				var (_, modConfigPath, cardsPath) = PathResolver.GetConfigPaths();
-				try
-				{
-						var cfg = _loader.LoadModConfig(modConfigPath);
-						var cards = _loader.LoadCards(cardsPath);
-						_state.Set(cfg, cards);
-						_logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}");
-				}
-				catch (Exception ex)
-				{
-						_logger.Info($"[TTC] ERROR loading configs: {ex.Message}");
-				}
-				return Task.CompletedTask;
+                var (configDir, modConfigPath, cardsPath) = PathResolver.GetConfigPaths();
+        try
+        {
+                var cfg = _loader.LoadModConfig(modConfigPath);
+                var cards = _loader.LoadCards(cardsPath);
+                        var cardBasePath = Path.Combine(configDir, "card_base.json");
+                        var cardBase = _loader.LoadCardBase(cardBasePath);
+                        _state.Set(cfg, cards, cardBase);
+                        _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}");
+        }
+        catch (Exception ex)
+        {
+                _logger.Info($"[TTC] ERROR loading configs: {ex.Message}");
+        }
+        return Task.CompletedTask;
 	}
 }

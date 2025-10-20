@@ -29,4 +29,11 @@ public sealed class ConfigLoader
         var json = Jsonc.Strip(raw);
         return JsonSerializer.Deserialize<List<CardConfig>>(json, _opts) ?? new();
     }
+
+    public CardBase LoadCardBase(string path)
+    {
+        var raw = File.ReadAllText(path);
+        var json = Jsonc.Strip(raw);
+        return JsonSerializer.Deserialize<CardBase>(json, _opts) ?? new CardBase();
+    }
 }
