@@ -77,7 +77,8 @@ public sealed class PostDb : IOnLoad
 				{
 					var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
 					{
-						Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = card.item_prefab_path }
+						Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = card.item_prefab_path },
+						BackgroundColor = card.color
 					};
 					details.OverrideProperties = props;
 				}
