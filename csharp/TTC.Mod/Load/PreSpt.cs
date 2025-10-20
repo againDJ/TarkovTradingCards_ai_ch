@@ -28,10 +28,17 @@ public sealed class PreSpt : IOnLoad
         {
                 var cfg = _loader.LoadModConfig(modConfigPath);
                 var cards = _loader.LoadCards(cardsPath);
-                        var cardBasePath = Path.Combine(configDir, "card_base.json");
-                        var cardBase = _loader.LoadCardBase(cardBasePath);
-                        _state.Set(cfg, cards, cardBase);
-                        _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}");
+                var cardBasePath = Path.Combine(configDir, "card_base.json");
+                var cardBase = _loader.LoadCardBase(cardBasePath);
+                var containerBasePath = Path.Combine(configDir, "container_base.json");
+                var containerBase = _loader.LoadContainerBase(containerBasePath);
+                var binderBasePath = Path.Combine(configDir, "binder_base.json");
+                var binderBase = _loader.LoadContainerBase(binderBasePath);
+                var bindersDir = Path.Combine(configDir, "containers");
+                var binders = _loader.LoadBinderOverrides(bindersDir);
+
+                _state.Set(cfg, cards, cardBase, containerBase, binderBase, binders);
+                _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}; containerFrom={containerBase.clone_item}; binderFrom={binderBase.clone_item}; binders={binders.Count}");
         }
         catch (Exception ex)
         {

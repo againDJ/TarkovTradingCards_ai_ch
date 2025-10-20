@@ -162,7 +162,7 @@ public sealed class PostDb : IOnLoad
 	{
 		var binders = _state.Binders;
 		if (binders == null || binders.Count == 0) return;
-		_logger.Info($"[TTC] Creating {binders.Count} themed binders (basic pass)...");
+	_logger.Info($"[TTC] Creating {binders.Count} themed binders (mount-based pass)...");
 		var gameLocale = _localeService.GetDesiredGameLocale();
 		const string english = "en";
 
@@ -180,10 +180,10 @@ public sealed class PostDb : IOnLoad
 				var details = new NewItemFromCloneDetails
 				{
 					NewId = b.id,
-					ItemTplToClone = _state.ContainerBase.clone_item,
-					ParentId = _state.ContainerBase.item_parent,
+					ItemTplToClone = _state.BinderBase.clone_item,
+					ParentId = _state.BinderBase.item_parent,
 					Locales = locales,
-					HandbookParentId = _state.ContainerBase.category_id,
+					HandbookParentId = _state.BinderBase.category_id,
 					HandbookPriceRoubles = b.price > 0 ? b.price : null,
 					FleaPriceRoubles = null
 				};
@@ -192,14 +192,14 @@ public sealed class PostDb : IOnLoad
 				{
 					Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = b.item_prefab_path },
 					BackgroundColor = b.color,
-					Weight = (float)_state.ContainerBase.weight,
-					ItemSound = _state.ContainerBase.item_sound,
+					Weight = (float)_state.BinderBase.weight,
+					ItemSound = _state.BinderBase.item_sound,
 					ExaminedByDefault = _state.Config.cards_examined_by_default,
-					Width = _state.ContainerBase.ExternalSize.width,
-					Height = _state.ContainerBase.ExternalSize.height
+					Width = _state.BinderBase.ExternalSize.width,
+					Height = _state.BinderBase.ExternalSize.height
 				};
 
-				// Build mount slots filtered to themed cards
+				// Build mount slots filtered to themed cards; ensure we don't set any grids so double-click opens slot view
 				var themedCards = _state.Cards.Where(c => string.Equals(c.theme, b.theme, StringComparison.OrdinalIgnoreCase)).ToList();
 				if (themedCards.Count == 0)
 				{
@@ -229,6 +229,7 @@ public sealed class PostDb : IOnLoad
 						slots.Add(slot);
 					}
 					props.Slots = slots;
+					props.Grids = null; // be explicit
 				}
 
 				details.OverrideProperties = props;

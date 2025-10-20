@@ -42,6 +42,8 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
                      || t.Name.Contains("Ragfair", StringComparison.OrdinalIgnoreCase)
                  || t.Name.Contains("Item", StringComparison.OrdinalIgnoreCase)
                  || t.Name.Contains("Config", StringComparison.OrdinalIgnoreCase)
+                 || t.Name.Contains("Slot", StringComparison.OrdinalIgnoreCase)
+                 || t.Name.Contains("Grid", StringComparison.OrdinalIgnoreCase)
                  || t.Name.Equals("MongoId", StringComparison.OrdinalIgnoreCase)
                 ))
                 .OrderBy(t => t.FullName)
@@ -52,14 +54,16 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
                 Console.WriteLine($"{t.FullName}");
                 try
                 {
+                    var takeLimit = (t.FullName?.Contains("TemplateItem") == true || t.FullName?.Contains("TemplateItemProperties") == true) ? int.MaxValue : 50;
                     var props = t.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
                                   .Where(p => p.CanRead)
-                                  .Take(50)
-                                  .Select(p => $"  prop: {p.PropertyType.Name} {p.Name}");
+                                  .Take(takeLimit)
+                                  .Select(p => $"  prop: {p.PropertyType.FullName} {p.Name}");
+                    var mLimit = (t.FullName?.Contains("TemplateItem") == true || t.FullName?.Contains("TraderAssort") == true) ? int.MaxValue : 20;
                     var methods = t.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
                                    .Where(m => !m.IsSpecialName)
-                                   .Take(20)
-                                   .Select(m => $"  method: {m.ReturnType.Name} {m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.Name))})");
+                                   .Take(mLimit)
+                                   .Select(m => $"  method: {m.ReturnType.FullName} {m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.FullName))})");
                     foreach (var p in props) Console.WriteLine(p);
                     foreach (var m in methods) Console.WriteLine(m);
                 }

@@ -19,3 +19,5 @@ package-lock.json
 # Logs and temp
 *.log
 *.tmp
+.vscode/tasks.json
+.tmp_reflect.txt
