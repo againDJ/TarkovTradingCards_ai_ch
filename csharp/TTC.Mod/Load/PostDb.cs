@@ -407,6 +407,43 @@ public sealed class PostDb : IOnLoad
 						var filterSet = GetPropIgnoreCase(f, new[] { "Filter", "filter" });
 						if (filterSet == null) continue;
 						var added = TryAddManyGeneric(filterSet, ttcTpls);
+						// If collection is an array (no Add), replace with a new array that includes union
+						if (added == 0 && filterSet.GetType().IsArray)
+						{
+							try
+							{
+								var arr = (Array)filterSet;
+								var elemType = arr.GetType().GetElementType() ?? typeof(string);
+								var existingStr = new HashSet<string>(StringComparer.Ordinal);
+								foreach (var el in arr)
+								{
+									if (el == null) continue;
+									var s = el as string ?? el.ToString();
+									if (!string.IsNullOrWhiteSpace(s)) existingStr.Add(s);
+								}
+
+								var toAppend = new List<object>();
+								foreach (var tpl in ttcTpls)
+								{
+									if (existingStr.Contains(tpl)) continue;
+									var conv = ConvertStringTo(elemType, tpl);
+									if (conv != null) { toAppend.Add(conv); existingStr.Add(tpl); }
+								}
+
+								if (toAppend.Count > 0)
+								{
+									var newLen = arr.Length + toAppend.Count;
+									var newArr = Array.CreateInstance(elemType, newLen);
+									Array.Copy(arr, newArr, arr.Length);
+									for (int i = 0; i < toAppend.Count; i++) newArr.SetValue(toAppend[i], arr.Length + i);
+
+									var prop = f.GetType().GetProperty("Filter", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+									prop?.SetValue(f, newArr);
+									added = toAppend.Count;
+								}
+							}
+							catch { }
+						}
 						if (added > 0) { localFiltersTouched++; localAdded += added; }
 					}
 				}
