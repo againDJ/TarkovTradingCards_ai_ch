@@ -59,6 +59,9 @@ public sealed class PostDb : IOnLoad
 		{
 			try
 			{
+				// Resolve a sane price for handbook/flea: use per-card price when > 0, else fall back to rarity-based price from config
+				int resolvedPrice = ResolvePriceForCard(card);
+
 				var locales = new Dictionary<string, LocaleDetails>
 				{
 					[gameLocale] = new LocaleDetails { Name = card.item_name, ShortName = card.item_short_name, Description = card.item_description },
@@ -72,8 +75,8 @@ public sealed class PostDb : IOnLoad
 					ParentId = _state.CardBase.item_parent,
 					Locales = locales,
 					HandbookParentId = _state.CardBase.category_id,
-					HandbookPriceRoubles = card.price > 0 ? card.price : null,
-					FleaPriceRoubles = _state.Config.cards_tradeable_on_flea && card.price > 0 ? card.price : null,
+					HandbookPriceRoubles = resolvedPrice,
+					FleaPriceRoubles = _state.Config.cards_tradeable_on_flea ? resolvedPrice : null,
 				};
 
 				// Override key visual/behavior props
@@ -149,6 +152,20 @@ public sealed class PostDb : IOnLoad
 			ApplyFenceBlacklistAndPurge();
 		}
 		return Task.CompletedTask;
+	}
+
+	private int ResolvePriceForCard(TTC.Mod.Models.CardConfig card)
+	{
+		try
+		{
+			if (card.price > 0) return card.price;
+			if (_state.Config.trader_sell_prices != null && _state.Config.trader_sell_prices.TryGetValue(card.rarity, out var p))
+			{
+				return p;
+			}
+		}
+		catch { }
+		return 1000; // safe fallback to avoid missing handbook price (prevents Infinity flea tax)
 	}
 
 	private void TryConfigureRagfairForCards()
@@ -295,50 +312,73 @@ public sealed class PostDb : IOnLoad
 				_logger.Info("[TTC] Fence trader or assort unavailable; skipping purge step");
 			}
 
-			// Update trader config fence blacklist arrays
-			object? traderCfg = null;
+			// Update trader config fence blacklist set (typed)
+			SPTarkov.Server.Core.Models.Spt.Config.TraderConfig? traderCfg = null;
 			try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("trader"); } catch { }
 			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("spt-trader"); } catch { } }
 			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("traders"); } catch { } }
 			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("traderConfig"); } catch { } }
 
-			if (traderCfg != null)
+			if (traderCfg?.Fence != null)
 			{
-				var fenceCfg = GetPropIgnoreCase(traderCfg, new[] { "Fence", "fence" });
-				if (fenceCfg != null)
+				var fenceCfg = traderCfg.Fence;
+				var blProp = fenceCfg.GetType().GetProperty("Blacklist");
+				var blObj = blProp?.GetValue(fenceCfg);
+				if (blObj != null)
 				{
-					var keys = new[] { "itemsBlacklist", "itemBlacklist", "templateBlacklist", "blacklistTpls", "blacklist" };
-					var ttcTplsArr = _state.Cards.Select(c => c.id).ToArray();
 					int added = 0;
-					foreach (var key in keys)
+					var setType = blObj.GetType();
+					var addMethod = setType.GetMethod("Add");
+					var elemType = setType.IsGenericType ? setType.GetGenericArguments()[0] : typeof(string);
+					foreach (var tpl in _state.Cards.Select(c => c.id))
 					{
-						var arr = GetPropIgnoreCase(fenceCfg, new[] { key });
-						added += TryAddManyStrings(arr, ttcTplsArr);
+						var conv = ConvertStringTo(elemType, tpl);
+						if (conv == null) continue;
+						try
+						{
+							var res = addMethod?.Invoke(blObj, new[] { conv });
+							// HashSet<T>.Add returns bool; count additions
+							if (res is bool b && b) added++;
+						}
+						catch { }
 					}
-					// nested arrays like fence.blacklist.items / fence.blacklist.templates
-					var nested = GetPropIgnoreCase(fenceCfg, new[] { "blacklist", "Blacklist" });
-					if (nested != null)
-					{
-						added += TryAddManyStrings(GetPropIgnoreCase(nested, new[] { "items", "Items" }), ttcTplsArr);
-						added += TryAddManyStrings(GetPropIgnoreCase(nested, new[] { "templates", "Templates" }), ttcTplsArr);
-					}
-					if (added > 0) _logger.Info($"[TTC] Added {added} TTC tpl(s) to trader fence blacklist arrays");
-					else _logger.Info("[TTC] No compatible fence blacklist arrays found or already up to date");
+					_logger.Info(added > 0
+						? $"[TTC] Added {added} TTC tpl(s) to TraderConfig.Fence.Blacklist"
+						: "[TTC] TraderConfig.Fence.Blacklist already up to date");
 				}
 				else
 				{
-					_logger.Info("[TTC] Trader config present but 'fence' section missing");
+					_logger.Info("[TTC] TraderConfig.Fence.Blacklist not available");
 				}
 			}
 			else
 			{
-				_logger.Info("[TTC] Unable to access trader config via ConfigServer; skipping blacklist update");
+				_logger.Info("[TTC] Unable to access TraderConfig via ConfigServer; skipping blacklist update");
 			}
 		}
 		catch (Exception ex)
 		{
 			_logger.Info($"[TTC] Fence purge/blacklist error: {ex.Message}");
 		}
+	}
+
+	private static object? ConvertStringTo(Type targetType, string value)
+	{
+		try
+		{
+			if (targetType == typeof(string)) return value;
+			// ctor(string)
+			var ctor = targetType.GetConstructor(new[] { typeof(string) });
+			if (ctor != null) return ctor.Invoke(new object[] { value });
+			// static Parse(string)
+			var parse = targetType.GetMethod("Parse", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static, new[] { typeof(string) });
+			if (parse != null) return parse.Invoke(null, new object[] { value });
+			// common implicit conversion operators
+			var opImpl = targetType.GetMethod("op_Implicit", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static, new[] { typeof(string) });
+			if (opImpl != null) return opImpl.Invoke(null, new object[] { value });
+		}
+		catch { }
+		return null;
 	}
 
 	private static object? GetPropIgnoreCase(object obj, string[] names)

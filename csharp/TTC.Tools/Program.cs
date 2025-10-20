@@ -42,6 +42,7 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
                      || t.Name.Contains("Ragfair", StringComparison.OrdinalIgnoreCase)
                  || t.Name.Contains("Item", StringComparison.OrdinalIgnoreCase)
                  || t.Name.Contains("Config", StringComparison.OrdinalIgnoreCase)
+                 || t.Name.Equals("MongoId", StringComparison.OrdinalIgnoreCase)
                 ))
                 .OrderBy(t => t.FullName)
                 .ToList();
