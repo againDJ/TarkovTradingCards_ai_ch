@@ -44,4 +44,11 @@
   <ItemGroup Condition="'$(SPT_DIR)' == ''">
     <Compile Remove="Mod\TTCModMetadata.cs" />
   </ItemGroup>
+
+  <!-- Exclude load-stage classes by default until wired to correct SPT namespaces.
+       Enable by setting -p:WIRE_SPT=true when building. -->
+  <ItemGroup Condition="'$(WIRE_SPT)' != 'true'">
+    <Compile Remove="Load\PreSpt.cs" />
+    <Compile Remove="Load\PostDb.cs" />
+  </ItemGroup>
 </Project>
