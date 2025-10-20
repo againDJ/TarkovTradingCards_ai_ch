@@ -52,11 +52,11 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
                 {
                     var props = t.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
                                   .Where(p => p.CanRead)
-                                  .Take(6)
+                                  .Take(50)
                                   .Select(p => $"  prop: {p.PropertyType.Name} {p.Name}");
                     var methods = t.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
                                    .Where(m => !m.IsSpecialName)
-                                   .Take(6)
+                                   .Take(20)
                                    .Select(m => $"  method: {m.ReturnType.Name} {m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.Name))})");
                     foreach (var p in props) Console.WriteLine(p);
                     foreach (var m in methods) Console.WriteLine(m);

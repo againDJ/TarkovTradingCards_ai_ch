@@ -68,6 +68,20 @@ public sealed class PostDb : IOnLoad
 				HandbookParentId = _state.CardBase.category_id
 			};
 
+			// Try to override prefab so it uses our bundle
+			try
+			{
+				var overrideProps = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+				{
+					Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab
+					{
+						Path = first.item_prefab_path
+					}
+				};
+				details.OverrideProperties = overrideProps;
+			}
+			catch { /* If type shape differs, leave default and rely on prefab from clone */ }
+
 			var result = _customItemService.CreateItemFromClone(details);
 			if (result.Success != true)
 			{
