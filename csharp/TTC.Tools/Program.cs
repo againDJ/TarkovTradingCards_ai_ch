@@ -31,7 +31,7 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
         {
             var asm = Assembly.LoadFrom(asmPath);
             var types = asm.GetTypes()
-                .Where(t => t.IsPublic && (
+             .Where(t => t.IsPublic && (
                         t.Name.Contains("OnLoad", StringComparison.OrdinalIgnoreCase)
                      || t.Name.Contains("Injectable", StringComparison.OrdinalIgnoreCase)
                      || t.Name.Contains("OnLoadOrder", StringComparison.OrdinalIgnoreCase)
@@ -40,7 +40,8 @@ if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.Ordina
                      || t.Name.Contains("Handbook", StringComparison.OrdinalIgnoreCase)
                      || t.Name.Contains("Trader", StringComparison.OrdinalIgnoreCase)
                      || t.Name.Contains("Ragfair", StringComparison.OrdinalIgnoreCase)
-                     || t.Name.Contains("Item", StringComparison.OrdinalIgnoreCase)
+                 || t.Name.Contains("Item", StringComparison.OrdinalIgnoreCase)
+                 || t.Name.Contains("Config", StringComparison.OrdinalIgnoreCase)
                 ))
                 .OrderBy(t => t.FullName)
                 .ToList();
