@@ -294,17 +294,24 @@ public sealed class PostDb : IOnLoad
 				"590c60fc86f77412b13fddcf"  // Documents case
 			};
 
-			// Access dictionary by key in a version-agnostic way
+			// Access dictionary by key in a version-agnostic way (supports MongoId keys)
 			object? GetByKey(object dictLike, string key)
 			{
 				try
 				{
+					// Non-generic IDictionary path (string keys)
 					if (dictLike is System.Collections.IDictionary idict)
 					{
 						return idict.Contains(key) ? idict[key] : null;
 					}
+					// Generic dictionary indexer path
 					var indexer = dictLike.GetType().GetProperty("Item");
-					return indexer?.GetValue(dictLike, new object[] { key });
+					if (indexer == null) return null;
+					var idxParams = indexer.GetIndexParameters();
+					if (idxParams == null || idxParams.Length != 1) return null;
+					var paramType = idxParams[0].ParameterType;
+					var convertedKey = ConvertStringTo(paramType, key) ?? key;
+					return indexer.GetValue(dictLike, new object[] { convertedKey });
 				}
 				catch { return null; }
 			}
