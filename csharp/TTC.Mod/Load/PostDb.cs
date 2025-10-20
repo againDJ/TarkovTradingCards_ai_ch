@@ -316,9 +316,41 @@ public sealed class PostDb : IOnLoad
 				catch { return null; }
 			}
 
+			// Fallback: search item by Id/_id across dictionary values
+			object? FindById(object dictLike, string key)
+			{
+				try
+				{
+					if (dictLike is System.Collections.IDictionary idict)
+					{
+						foreach (System.Collections.DictionaryEntry de in idict)
+						{
+							var val = de.Value;
+							if (val == null) continue;
+							var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
+							if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
+						}
+						return null;
+					}
+					var valuesPi = dictLike.GetType().GetProperty("Values");
+					var values = valuesPi?.GetValue(dictLike) as System.Collections.IEnumerable;
+					if (values != null)
+					{
+						foreach (var val in values)
+						{
+							if (val == null) continue;
+							var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
+							if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
+						}
+					}
+				}
+				catch { }
+				return null;
+			}
+
 			foreach (var caseTpl in targetCases)
 			{
-				var container = GetByKey(itemsObj, caseTpl);
+				var container = GetByKey(itemsObj, caseTpl) ?? FindById(itemsObj, caseTpl);
 				if (container == null)
 				{
 					_logger.Info($"[TTC] Pouch compat: container {caseTpl} not found in templates");
