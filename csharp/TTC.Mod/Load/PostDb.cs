@@ -208,7 +208,17 @@ public sealed class PostDb : IOnLoad
 				else
 				{
 					var slots = new List<SPTarkov.Server.Core.Models.Eft.Common.Tables.Slot>();
-					foreach (var card in themedCards.OrderBy(c => c.item_name))
+					// Sort by rarity weight (desc), then by name
+					double WeightFor(string rarity)
+					{
+						if (string.IsNullOrWhiteSpace(rarity)) return 0d;
+						if (_state.Config.rarity_weights != null && _state.Config.rarity_weights.TryGetValue(rarity, out var w)) return w;
+						return 0d;
+					}
+					var ordered = themedCards
+						.OrderByDescending(c => WeightFor(c.rarity))
+						.ThenBy(c => c.item_name, StringComparer.OrdinalIgnoreCase);
+					foreach (var card in ordered)
 					{
 						var slot = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Slot
 						{
