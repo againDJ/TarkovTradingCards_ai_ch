@@ -1,5 +1,7 @@
 using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.DI;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SPTarkov.Server.Core.Models.Utils;
 using TTC.Mod.Services;
@@ -38,64 +40,67 @@ public sealed class PostDb : IOnLoad
 			_logger.Info("[TTC] No cards loaded; skipping.");
 			return Task.CompletedTask;
 		}
+
+		// Log first card for visibility
 		var first = _state.Cards[0];
 		_logger.Info($"[TTC] First card: id={first.id}, name={first.item_name}, rarity={first.rarity}, price={first.price}");
 
-		try
+		_logger.Info($"[TTC] Creating {count} cards...");
+		var gameLocale = _localeService.GetDesiredGameLocale();
+		const string english = "en";
+
+		var success = 0;
+		var failed = 0;
+		foreach (var card in _state.Cards)
 		{
-			// Build locales map for the new item
-			var locales = new Dictionary<string, LocaleDetails>();
-			var gameLocale = _localeService.GetDesiredGameLocale();
-			var english = "en";
-			var targetLocales = new HashSet<string> { gameLocale, english };
-			foreach (var loc in targetLocales)
-			{
-				locales[loc] = new LocaleDetails
-				{
-					Name = first.item_name,
-					ShortName = first.item_short_name,
-					Description = first.item_description
-				};
-			}
-
-			// Create new item from clone
-			var details = new NewItemFromCloneDetails
-			{
-				NewId = first.id,
-				ItemTplToClone = _state.CardBase.clone_item,
-				ParentId = _state.CardBase.item_parent,
-				Locales = locales,
-				HandbookParentId = _state.CardBase.category_id
-			};
-
-			// Try to override prefab so it uses our bundle
 			try
 			{
-				var overrideProps = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+				var locales = new Dictionary<string, LocaleDetails>
 				{
-					Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab
-					{
-						Path = first.item_prefab_path
-					}
+					[gameLocale] = new LocaleDetails { Name = card.item_name, ShortName = card.item_short_name, Description = card.item_description },
+					[english] = new LocaleDetails { Name = card.item_name, ShortName = card.item_short_name, Description = card.item_description }
 				};
-				details.OverrideProperties = overrideProps;
-			}
-			catch { /* If type shape differs, leave default and rely on prefab from clone */ }
 
-			var result = _customItemService.CreateItemFromClone(details);
-			if (result.Success != true)
-			{
-				_logger.Info($"[TTC] Failed to create item {first.id}: {string.Join(",", result.Errors ?? new())}");
+				var details = new NewItemFromCloneDetails
+				{
+					NewId = card.id,
+					ItemTplToClone = _state.CardBase.clone_item,
+					ParentId = _state.CardBase.item_parent,
+					Locales = locales,
+					HandbookParentId = _state.CardBase.category_id,
+					HandbookPriceRoubles = card.price > 0 ? card.price : null,
+					FleaPriceRoubles = _state.Config.cards_tradeable_on_flea && card.price > 0 ? card.price : null,
+				};
+
+				// Override key visual/behavior props
+				try
+				{
+					var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+					{
+						Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = card.item_prefab_path }
+					};
+					details.OverrideProperties = props;
+				}
+				catch { }
+
+				var result = _customItemService.CreateItemFromClone(details);
+				if (result.Success != true)
+				{
+					failed++;
+					var errs = result.Errors != null && result.Errors.Count > 0 ? string.Join("; ", result.Errors) : "unknown error";
+					_logger.Info($"[TTC] Failed to create item {card.id}: {errs}");
+				}
+				else { success++; }
 			}
-			else
+			catch (Exception ex)
 			{
-				_logger.Info($"[TTC] Created item {first.id} from clone {_state.CardBase.clone_item}");
+				failed++;
+				_logger.Info($"[TTC] ERROR creating card {card.id}: {ex.Message}");
 			}
 		}
-		catch (Exception ex)
-		{
-			_logger.Info($"[TTC] ERROR creating first card: {ex.Message}");
-		}
+
+		_logger.Info($"[TTC] Cards creation pass complete. success={success}, failed={failed}");
 		return Task.CompletedTask;
 	}
 }
+

@@ -12,4 +12,12 @@ public record CardBase
     public int trader_loyalty_level { get; init; } = 1;
     public string currency { get; init; } = "roubles";
     public double weight { get; init; } = 0.001;
+    public string item_sound { get; init; } = string.Empty;
+    public ExternalSize ExternalSize { get; init; } = new();
+}
+
+public record ExternalSize
+{
+    public int width { get; init; } = 1;
+    public int height { get; init; } = 1;
 }
