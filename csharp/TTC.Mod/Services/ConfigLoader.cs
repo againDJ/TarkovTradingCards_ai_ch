@@ -70,4 +70,16 @@ public sealed class ConfigLoader
             }
             return list;
         }
+
+        public ContainerOverride? LoadEmptyBoosterOverride(string containersDir)
+        {
+            try
+            {
+                var file = Path.Combine(containersDir, "ttc_empty_booster_pack.json");
+                if (!File.Exists(file)) return null;
+                var txt = File.ReadAllText(file);
+                return JsonSerializer.Deserialize<ContainerOverride>(txt, _opts);
+            }
+            catch { return null; }
+        }
 }

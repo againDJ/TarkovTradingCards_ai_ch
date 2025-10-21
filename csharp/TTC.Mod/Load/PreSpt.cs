@@ -36,9 +36,10 @@ public sealed class PreSpt : IOnLoad
                 var binderBase = _loader.LoadContainerBase(binderBasePath);
                 var bindersDir = Path.Combine(configDir, "containers");
                 var binders = _loader.LoadBinderOverrides(bindersDir);
+                var emptyBooster = _loader.LoadEmptyBoosterOverride(bindersDir);
 
-                _state.Set(cfg, cards, cardBase, containerBase, binderBase, binders);
-                _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}; containerFrom={containerBase.clone_item}; binderFrom={binderBase.clone_item}; binders={binders.Count}");
+                _state.Set(cfg, cards, cardBase, containerBase, binderBase, binders, emptyBooster);
+                _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}; containerFrom={containerBase.clone_item}; binderFrom={binderBase.clone_item}; binders={binders.Count}; emptyBooster={(emptyBooster?.id ?? "none")}");
         }
         catch (Exception ex)
         {

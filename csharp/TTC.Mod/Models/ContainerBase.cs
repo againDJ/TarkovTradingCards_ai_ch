@@ -32,3 +32,16 @@ public record BinderOverride
     public string theme { get; init; } = string.Empty;
 }
 
+public record ContainerOverride
+{
+    public string id { get; init; } = string.Empty;
+    public string item_name { get; init; } = string.Empty;
+    public string item_short_name { get; init; } = string.Empty;
+    public string item_description { get; init; } = string.Empty;
+    public string item_prefab_path { get; init; } = string.Empty;
+    public string color { get; init; } = "#FFFFFF";
+    public int price { get; init; }
+    public string currency { get; init; } = "roubles";
+    public string trader { get; init; } = string.Empty;
+}
+

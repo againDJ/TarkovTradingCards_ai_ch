@@ -13,8 +13,9 @@ public sealed class State
     public ContainerBase ContainerBase { get; private set; } = new();
     public ContainerBase BinderBase { get; private set; } = new();
     public IReadOnlyList<BinderOverride> Binders { get; private set; } = Array.Empty<BinderOverride>();
+    public ContainerOverride? EmptyBooster { get; private set; }
 
-    public void Set(ModConfig cfg, IReadOnlyList<CardConfig> cards, CardBase cardBase, ContainerBase containerBase, ContainerBase binderBase, IReadOnlyList<BinderOverride> binders)
+    public void Set(ModConfig cfg, IReadOnlyList<CardConfig> cards, CardBase cardBase, ContainerBase containerBase, ContainerBase binderBase, IReadOnlyList<BinderOverride> binders, ContainerOverride? emptyBooster = null)
     {
         Config = cfg;
         Cards = cards;
@@ -22,5 +23,6 @@ public sealed class State
         ContainerBase = containerBase;
         BinderBase = binderBase;
         Binders = binders;
+        EmptyBooster = emptyBooster;
     }
 }

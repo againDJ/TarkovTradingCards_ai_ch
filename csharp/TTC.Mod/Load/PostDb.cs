@@ -567,44 +567,49 @@ public sealed class PostDb : IOnLoad
 		catch { return 0; }
 	}
 
-	// Create an "Empty Booster" container with a 4x4 grid accepting TTC cards
+	// Create an "Empty Booster" container with a 4x4 grid accepting TTC cards, using config files
 	private string CreateEmptyBooster()
 	{
 		try
 		{
-			// Config from TS mod/config: id and prefab path
-			const string emptyBoosterId = "68836790691c107f4fedc511";
-			var b = _state.ContainerBase; // use container base as template
+			var containerBase = _state.ContainerBase;
+			var overrideCfg = _state.EmptyBooster;
+			if (overrideCfg == null)
+			{
+				_logger.Info("[TTC] Empty Booster override not found; skipping creation");
+				return string.Empty;
+			}
+			var emptyBoosterId = overrideCfg.id;
 			var gameLocale = _localeService.GetDesiredGameLocale();
 			const string english = "en";
 
 			var locales = new Dictionary<string, LocaleDetails>
 			{
-				[gameLocale] = new LocaleDetails { Name = "Empty Booster Pack", ShortName = "Empty Booster Pack", Description = "An empty booster wrapper, perfect for storing cards." },
-				[english] = new LocaleDetails { Name = "Empty Booster Pack", ShortName = "Empty Booster Pack", Description = "An empty booster wrapper, perfect for storing cards." }
+				[gameLocale] = new LocaleDetails { Name = overrideCfg.item_name, ShortName = overrideCfg.item_short_name, Description = overrideCfg.item_description },
+				[english] = new LocaleDetails { Name = overrideCfg.item_name, ShortName = overrideCfg.item_short_name, Description = overrideCfg.item_description }
 			};
 
 			var details = new NewItemFromCloneDetails
 			{
 				NewId = emptyBoosterId,
-				ItemTplToClone = b.clone_item,
-				ParentId = b.item_parent,
+				ItemTplToClone = containerBase.clone_item,
+				ParentId = containerBase.item_parent,
 				Locales = locales,
-				HandbookParentId = b.category_id,
-				HandbookPriceRoubles = 1000,
+				HandbookParentId = containerBase.category_id,
+				HandbookPriceRoubles = overrideCfg.price > 0 ? overrideCfg.price : null,
 				FleaPriceRoubles = null
 			};
 
 			// Build 4x4 grid filtered to TTC cards
 			var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
 			{
-				Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = "containers/ttc_booster_pack.bundle" },
-				BackgroundColor = "#8A8A8A",
-				Weight = (float)b.weight,
-				ItemSound = b.item_sound,
+				Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = overrideCfg.item_prefab_path },
+				BackgroundColor = overrideCfg.color,
+				Weight = (float)containerBase.weight,
+				ItemSound = containerBase.item_sound,
 				ExaminedByDefault = _state.Config.cards_examined_by_default,
-				Width = 1,
-				Height = 1
+				Width = containerBase.ExternalSize.width,
+				Height = containerBase.ExternalSize.height
 			};
 
 			// Build a single grid named "emptyBooster" with 4x4 cells and filters to TTC card tpl ids
