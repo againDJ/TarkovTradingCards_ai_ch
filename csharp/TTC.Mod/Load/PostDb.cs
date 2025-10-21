@@ -619,8 +619,9 @@ public sealed class PostDb : IOnLoad
 							&& assort.BarterScheme is Dictionary<SPTarkov.Server.Core.Models.Common.MongoId, List<List<SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme>>> typedBs
 							&& assort.LoyalLevelItems is Dictionary<SPTarkov.Server.Core.Models.Common.MongoId, int> typedLli)
 						{
-							var newId = Guid.NewGuid().ToString("N").Substring(0, 24);
-							var mongoId = new SPTarkov.Server.Core.Models.Common.MongoId(newId);
+							// Use a distinct name to avoid shadowing later variables in this method
+							var offerId = Guid.NewGuid().ToString("N").Substring(0, 24);
+							var mongoId = new SPTarkov.Server.Core.Models.Common.MongoId(offerId);
 							var mongoTpl = new SPTarkov.Server.Core.Models.Common.MongoId(tpl);
 							var newItem = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Item
 							{
@@ -637,16 +638,36 @@ public sealed class PostDb : IOnLoad
 							typedItems.Add(newItem);
 
 							var curTpl = CurrencyToTpl(currency);
-							var pay = new SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme
+							var pay = new SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme();
+							// Set properties defensively to handle variations across versions
+							void TrySetProp(object target, string name, object value)
 							{
-								Tpl = new SPTarkov.Server.Core.Models.Common.MongoId(curTpl),
-								Count = price
-							};
+								try
+								{
+									var pi = target.GetType().GetProperty(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+									if (pi == null) return;
+									var t = pi.PropertyType;
+									var u = Nullable.GetUnderlyingType(t) ?? t;
+									object? v = value;
+									if (v != null && !u.IsInstanceOfType(v))
+									{
+										try { v = Convert.ChangeType(v, u, System.Globalization.CultureInfo.InvariantCulture); } catch { }
+									}
+									pi.SetValue(target, v);
+								}
+								catch { }
+							}
+							var currencyMongo = new SPTarkov.Server.Core.Models.Common.MongoId(curTpl);
+							TrySetProp(pay, "Tpl", currencyMongo);
+							TrySetProp(pay, "_tpl", currencyMongo);
+							TrySetProp(pay, "Template", currencyMongo);
+							TrySetProp(pay, "Count", price);
+							TrySetProp(pay, "count", price);
 							typedBs[mongoId] = new() { new() { pay } };
 							typedLli[mongoId] = loyalty;
 
-							_logger.Info($"[TTC] Trader {traderId}: added Items entry id='{newId}' tpl='{tpl}'");
-							_logger.Info($"[TTC] Trader {traderId}: barterScheme set for id='{newId}'");
+							_logger.Info($"[TTC] Trader {traderId}: added Items entry id='{offerId}' tpl='{tpl}'");
+							_logger.Info($"[TTC] Trader {traderId}: barterScheme set for id='{offerId}'");
 							_logger.Info($"[TTC] Trader {traderId}: added offer tpl={tpl} price={price} {currency} LL={loyalty} unlimited={unlimited} stock={stock}");
 							return true;
 						}
