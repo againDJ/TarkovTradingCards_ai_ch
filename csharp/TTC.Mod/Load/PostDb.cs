@@ -660,8 +660,9 @@ public sealed class PostDb : IOnLoad
 		try
 		{
 			var tables = _db.GetTables();
-			var items = tables.Templates?.Items;
-			if (items == null) return;
+			var templatesObj = GetPropIgnoreCase(tables, new[] { "Templates", "templates" });
+			var itemsObj = templatesObj != null ? GetPropIgnoreCase(templatesObj, new[] { "Items", "items" }) : null;
+			if (itemsObj == null) return;
 
 			var secureContainerIds = new []
 			{
@@ -678,12 +679,7 @@ public sealed class PostDb : IOnLoad
 
 			foreach (var id in secureContainerIds)
 			{
-				var container = items.TryGetValue(id, out var tmp) ? tmp : null;
-				if (container == null)
-				{
-					// fallback: scan values by _id
-					container = FindById(items, id);
-				}
+				var container = GetByKey(itemsObj, id) ?? FindById(itemsObj, id);
 				if (container == null) continue;
 
 				var props = GetPropIgnoreCase(container, new[] { "Properties", "Props", "_props", "properties" });
@@ -953,6 +949,58 @@ public sealed class PostDb : IOnLoad
 			}
 		}
 		return null;
+	}
+
+	// Helper: search a dictionary-like object (IDictionary or Dictionary<,>) for a value where Id/_id equals key
+	private static object? FindById(object dictLike, string key)
+	{
+		try
+		{
+			if (dictLike is System.Collections.IDictionary idict)
+			{
+				foreach (System.Collections.DictionaryEntry de in idict)
+				{
+					var val = de.Value;
+					if (val == null) continue;
+					var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
+					if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
+				}
+				return null;
+			}
+			var valuesPi = dictLike.GetType().GetProperty("Values");
+			var values = valuesPi?.GetValue(dictLike) as System.Collections.IEnumerable;
+			if (values != null)
+			{
+				foreach (var val in values)
+				{
+					if (val == null) continue;
+					var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
+					if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
+				}
+			}
+		}
+		catch { }
+		return null;
+	}
+
+	// Helper: get dictionary-like value by string key, converting to expected key type when needed
+	private static object? GetByKey(object dictLike, string key)
+	{
+		try
+		{
+			if (dictLike is System.Collections.IDictionary idict)
+			{
+				return idict.Contains(key) ? idict[key] : null;
+			}
+			var indexer = dictLike.GetType().GetProperty("Item");
+			if (indexer == null) return null;
+			var idxParams = indexer.GetIndexParameters();
+			if (idxParams == null || idxParams.Length != 1) return null;
+			var paramType = idxParams[0].ParameterType;
+			var convertedKey = ConvertStringTo(paramType, key) ?? key;
+			return indexer.GetValue(dictLike, new object[] { convertedKey });
+		}
+		catch { return null; }
 	}
 
 	private static void SetEnumerableBack(object listObj, List<object> toKeep)
