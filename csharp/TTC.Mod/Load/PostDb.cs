@@ -155,6 +155,14 @@ public sealed class PostDb : IOnLoad
 		// Create themed binders (basic pass)
 		CreateBinders();
 
+		// Create the Empty Booster container (4x4 grid accepting TTC cards)
+		var emptyBoosterId = CreateEmptyBooster();
+		if (!string.IsNullOrWhiteSpace(emptyBoosterId))
+		{
+			// Add Empty Booster to secure container filters
+			AddEmptyBoosterToSecureContainers(emptyBoosterId);
+		}
+
 		// Make TTC cards compatible with S I C C and Documents case containers
 		TryAddCardsToPouches();
 
@@ -557,6 +565,145 @@ public sealed class PostDb : IOnLoad
 			return added;
 		}
 		catch { return 0; }
+	}
+
+	// Create an "Empty Booster" container with a 4x4 grid accepting TTC cards
+	private string CreateEmptyBooster()
+	{
+		try
+		{
+			// Config from TS mod/config: id and prefab path
+			const string emptyBoosterId = "68836790691c107f4fedc511";
+			var b = _state.ContainerBase; // use container base as template
+			var gameLocale = _localeService.GetDesiredGameLocale();
+			const string english = "en";
+
+			var locales = new Dictionary<string, LocaleDetails>
+			{
+				[gameLocale] = new LocaleDetails { Name = "Empty Booster Pack", ShortName = "Empty Booster Pack", Description = "An empty booster wrapper, perfect for storing cards." },
+				[english] = new LocaleDetails { Name = "Empty Booster Pack", ShortName = "Empty Booster Pack", Description = "An empty booster wrapper, perfect for storing cards." }
+			};
+
+			var details = new NewItemFromCloneDetails
+			{
+				NewId = emptyBoosterId,
+				ItemTplToClone = b.clone_item,
+				ParentId = b.item_parent,
+				Locales = locales,
+				HandbookParentId = b.category_id,
+				HandbookPriceRoubles = 1000,
+				FleaPriceRoubles = null
+			};
+
+			// Build 4x4 grid filtered to TTC cards
+			var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+			{
+				Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = "containers/ttc_booster_pack.bundle" },
+				BackgroundColor = "#8A8A8A",
+				Weight = (float)b.weight,
+				ItemSound = b.item_sound,
+				ExaminedByDefault = _state.Config.cards_examined_by_default,
+				Width = 1,
+				Height = 1
+			};
+
+			// Build a single grid named "emptyBooster" with 4x4 cells and filters to TTC card tpl ids
+			var grid = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Grid
+			{
+				Name = "emptyBooster",
+				Parent = new SPTarkov.Server.Core.Models.Common.MongoId(emptyBoosterId),
+				Properties = new SPTarkov.Server.Core.Models.Eft.Common.Tables.GridProperties
+				{
+					CellsH = 4,
+					CellsV = 4,
+					MinCount = 0,
+					Filters = new []
+					{
+						new SPTarkov.Server.Core.Models.Eft.Common.Tables.GridFilter
+						{
+							Filter = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(_state.Cards.Select(c => new SPTarkov.Server.Core.Models.Common.MongoId(c.id)))
+						}
+					}
+				}
+			};
+			props.Grids = new [] { grid };
+			props.Slots = null;
+
+			details.OverrideProperties = props;
+			var result = _customItemService.CreateItemFromClone(details);
+			if (result.Success == true)
+			{
+				_logger.Info("[TTC] Empty Booster created");
+				return emptyBoosterId;
+			}
+			else
+			{
+				var errs = result.Errors != null && result.Errors.Count > 0 ? string.Join("; ", result.Errors) : "unknown error";
+				_logger.Info($"[TTC] Failed to create Empty Booster: {errs}");
+			}
+		}
+		catch (Exception ex)
+		{
+			_logger.Info($"[TTC] Empty Booster creation error: {ex.Message}");
+		}
+		return string.Empty;
+	}
+
+	// Add Empty Booster tpl to secure container filter lists
+	private void AddEmptyBoosterToSecureContainers(string emptyBoosterId)
+	{
+		try
+		{
+			var tables = _db.GetTables();
+			var items = tables.Templates?.Items;
+			if (items == null) return;
+
+			var secureContainerIds = new []
+			{
+				"544a11ac4bdc2d470e8b456a", // Alpha
+				"5857a8b324597729ab0a0e7d", // Beta
+				"59db794186f77448bc595262", // Epsilon
+				"5857a8bc2459772bad15db29", // Gamma
+				"665ee77ccf2d642e98220bca", // Gamma (bis)
+				"5c093ca986f7740a1867ab12", // Kappa
+				"676008db84e242067d0dc4c9", // Kappa (Desecrated)
+				"664a55d84a90fc2c8a6305c9", // Theta
+				"5732ee6a24597719ae0c0281"  // Waist pouch
+			};
+
+			foreach (var id in secureContainerIds)
+			{
+				var container = items.TryGetValue(id, out var tmp) ? tmp : null;
+				if (container == null)
+				{
+					// fallback: scan values by _id
+					container = FindById(items, id);
+				}
+				if (container == null) continue;
+
+				var props = GetPropIgnoreCase(container, new[] { "Properties", "Props", "_props", "properties" });
+				var grids = GetPropIgnoreCase(props!, new[] { "Grids", "grids" }) as System.Collections.IEnumerable;
+				if (grids == null) continue;
+				foreach (var grid in grids)
+				{
+					if (grid == null) continue;
+					var gprops = GetPropIgnoreCase(grid, new[] { "Properties", "_props", "_properties", "properties" });
+					if (gprops == null) continue;
+					var filters = GetPropIgnoreCase(gprops, new[] { "Filters", "filters" }) as System.Collections.IEnumerable;
+					if (filters == null) continue;
+
+					foreach (var f in filters)
+					{
+						if (f == null) continue;
+						var filterProp = f.GetType().GetProperty("Filter", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+						var set = filterProp?.GetValue(f);
+						if (set == null) continue;
+						TryAddManyGeneric(set, new [] { emptyBoosterId });
+					}
+				}
+			}
+		}
+		catch { }
 	}
 
 	private void TryConfigureRagfairForCards()
