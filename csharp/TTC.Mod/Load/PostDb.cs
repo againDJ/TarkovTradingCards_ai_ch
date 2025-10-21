@@ -163,6 +163,9 @@ public sealed class PostDb : IOnLoad
 			AddEmptyBoosterToSecureContainers(emptyBoosterId);
 		}
 
+		// List binders and Empty Booster for sale at traders
+		TryAddTraderOffers(emptyBoosterId);
+
 		// Make TTC cards compatible with S I C C and Documents case containers
 		TryAddCardsToPouches();
 
@@ -565,6 +568,536 @@ public sealed class PostDb : IOnLoad
 			return added;
 		}
 		catch { return 0; }
+	}
+
+	private void TryAddTraderOffers(string emptyBoosterId)
+	{
+		try
+		{
+			var tables = _db.GetTables();
+			var traders = tables.Traders;
+			if (traders == null)
+			{
+				_logger.Info("[TTC] Trader offers: tables.Traders is null; skipping offer injection");
+				return;
+			}
+
+			int offersAttempted = 0, offersAdded = 0;
+			_logger.Info($"[TTC] Trader offers: traders={(traders?.Count ?? 0)}, binderCandidates={_state.Binders?.Count ?? 0}, emptyBooster={(string.IsNullOrWhiteSpace(emptyBoosterId) ? "no" : "yes")}");
+
+			// Pre-flight visibility
+			var binderCandidates = _state.Binders?.Where(b => b != null && b.price > 0 && !string.IsNullOrWhiteSpace(b.trader)).ToList() ?? new List<TTC.Mod.Models.BinderOverride>();
+			var emptyCandidate = !string.IsNullOrWhiteSpace(emptyBoosterId) && _state.EmptyBooster != null && _state.EmptyBooster.price > 0 && !string.IsNullOrWhiteSpace(_state.EmptyBooster.trader);
+			_logger.Info($"[TTC] Trader offers: traders={traders.Count}, binderCandidates={binderCandidates.Count}, emptyBooster={(emptyCandidate ? "yes" : "no")}");
+
+			// Helper to map currency name to tpl
+			string CurrencyToTpl(string c)
+			{
+				return (c ?? "roubles").ToLowerInvariant() switch
+				{
+					"roubles" or "rub" or "₽" => "5449016a4bdc2d6f028b456f",
+					"dollars" or "usd" or "$" => "5696686a4bdc2da3298b456a",
+					"euros" or "eur" or "€" => "569668774bdc2da2298b4568",
+					_ => "5449016a4bdc2d6f028b456f"
+				};
+			}
+
+			bool AddOffer(string traderId, string tpl, int price, string currency, int loyalty, bool unlimited, int stock)
+			{
+				try
+				{
+					if (!traders.TryGetValue(traderId, out var trader) || trader?.Assort == null)
+					{
+						_logger.Info($"[TTC] Trader not found or no assort: {traderId}");
+						return false;
+					}
+					var assort = trader.Assort;
+					// Preferred: strongly-typed path
+					try
+					{
+						if (assort.Items is List<SPTarkov.Server.Core.Models.Eft.Common.Tables.Item> typedItems
+							&& assort.BarterScheme is Dictionary<SPTarkov.Server.Core.Models.Common.MongoId, List<List<SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme>>> typedBs
+							&& assort.LoyalLevelItems is Dictionary<SPTarkov.Server.Core.Models.Common.MongoId, int> typedLli)
+						{
+							var newId = Guid.NewGuid().ToString("N").Substring(0, 24);
+							var mongoId = new SPTarkov.Server.Core.Models.Common.MongoId(newId);
+							var mongoTpl = new SPTarkov.Server.Core.Models.Common.MongoId(tpl);
+							var newItem = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Item
+							{
+								Id = mongoId,
+								Template = mongoTpl,
+								ParentId = "hideout",
+								SlotId = "hideout",
+								Upd = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Upd
+								{
+									UnlimitedCount = unlimited,
+									StackObjectsCount = unlimited ? int.MaxValue : Math.Max(1, stock)
+								}
+							};
+							typedItems.Add(newItem);
+
+							var curTpl = CurrencyToTpl(currency);
+							var pay = new SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme
+							{
+								Tpl = new SPTarkov.Server.Core.Models.Common.MongoId(curTpl),
+								Count = price
+							};
+							typedBs[mongoId] = new() { new() { pay } };
+							typedLli[mongoId] = loyalty;
+
+							_logger.Info($"[TTC] Trader {traderId}: added Items entry id='{newId}' tpl='{tpl}'");
+							_logger.Info($"[TTC] Trader {traderId}: barterScheme set for id='{newId}'");
+							_logger.Info($"[TTC] Trader {traderId}: added offer tpl={tpl} price={price} {currency} LL={loyalty} unlimited={unlimited} stock={stock}");
+							return true;
+						}
+					}
+					catch { }
+
+					// Fallback: reflection path
+					var itemsList = assort.Items as System.Collections.IList;
+					if (itemsList == null)
+					{
+						_logger.Info($"[TTC] Trader {traderId}: assort.Items is not IList (type={assort.Items?.GetType().FullName ?? "null"})");
+						return false;
+					}
+
+					// Create a root item entry
+					string newId = Guid.NewGuid().ToString("N").Substring(0, 24);
+					var itemType = itemsList.GetType().GetGenericArguments().FirstOrDefault() ?? itemsList.GetType();
+					object? itemObj = null;
+					try { itemObj = Activator.CreateInstance(itemType); }
+					catch (Exception ex)
+					{
+						_logger.Info($"[TTC] Trader {traderId}: failed to instantiate assort item type {itemType.FullName}: {ex.Message}");
+						return false;
+					}
+					void SetProp(object o, string name, object? val)
+					{
+						var pi = o.GetType().GetProperty(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+						if (pi == null) return;
+						try
+						{
+							var targetType = pi.PropertyType;
+							var underlying = Nullable.GetUnderlyingType(targetType) ?? targetType;
+							object? assign = val;
+							if (assign != null && !underlying.IsInstanceOfType(assign))
+							{
+								// Prefer our ConvertStringTo for MongoId-like types
+								if (assign is string s)
+								{
+									var conv = ConvertStringTo(underlying, s);
+									if (conv != null) assign = conv;
+									else { try { assign = Convert.ChangeType(assign, underlying, System.Globalization.CultureInfo.InvariantCulture); } catch { } }
+								}
+								else
+								{
+									try { assign = Convert.ChangeType(assign, underlying, System.Globalization.CultureInfo.InvariantCulture); } catch { }
+								}
+							}
+							pi.SetValue(o, assign);
+						}
+						catch { }
+					}
+					SetProp(itemObj!, "Id", newId);
+					SetProp(itemObj!, "Tpl", tpl);
+
+					// Robust: set by JSON name (e.g., "_id", "_tpl") using attribute mapping
+					static void SetByJsonName(object target, string jsonName, string value)
+					{
+						var t = target.GetType();
+						var props = t.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+						foreach (var p in props)
+						{
+							try
+							{
+								bool match = false;
+								// Newtonsoft.Json.JsonProperty(PropertyName)
+								foreach (var attr in p.GetCustomAttributes(true))
+								{
+									var at = attr.GetType();
+									var an = at.FullName ?? at.Name;
+									if (an.Contains("JsonProperty") && an.Contains("Newtonsoft"))
+									{
+										var pn = at.GetProperty("PropertyName");
+										var val = pn?.GetValue(attr) as string;
+										if (!string.IsNullOrEmpty(val) && string.Equals(val, jsonName, StringComparison.Ordinal)) { match = true; break; }
+									}
+									if (an.Contains("JsonPropertyName") && an.Contains("System.Text.Json"))
+									{
+										var pn = at.GetProperty("Name");
+										var val = pn?.GetValue(attr) as string;
+										if (!string.IsNullOrEmpty(val) && string.Equals(val, jsonName, StringComparison.Ordinal)) { match = true; break; }
+									}
+								}
+								// Fallback: map _tpl -> Tpl, _id -> Id
+								if (!match)
+								{
+									var fallback = jsonName.TrimStart('_');
+									if (string.Equals(p.Name, fallback, StringComparison.OrdinalIgnoreCase)) match = true;
+								}
+								if (!match) continue;
+
+								var targetType = Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType;
+								var conv = ConvertStringTo(targetType, value) ?? value;
+								p.SetValue(target, conv);
+							}
+							catch { }
+						}
+						// Also try fields: match exact json name (e.g., "_tpl") and fallback trimmed name
+						var fields = t.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+						foreach (var f in fields)
+						{
+							try
+							{
+								var fallback = jsonName.TrimStart('_');
+								if (!string.Equals(f.Name, jsonName, StringComparison.OrdinalIgnoreCase) && !string.Equals(f.Name, fallback, StringComparison.OrdinalIgnoreCase)) continue;
+								var ft = Nullable.GetUnderlyingType(f.FieldType) ?? f.FieldType;
+								var conv = ConvertStringTo(ft, value) ?? value;
+								f.SetValue(target, conv);
+							}
+							catch { }
+						}
+					}
+
+					SetByJsonName(itemObj!, "_id", newId);
+					SetByJsonName(itemObj!, "_tpl", tpl);
+
+					// Strong set: assign Id and Template properties as MongoId via ctor(string) or backing fields
+					void SetMongoIdProperty(object target, string propName, string value)
+					{
+						try
+						{
+							var t = target.GetType();
+							var p = t.GetProperty(propName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+							if (p != null)
+							{
+								var pt = Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType;
+								object? inst = null;
+								try
+								{
+									var ctor = pt.GetConstructor(new[] { typeof(string) });
+									if (ctor != null) inst = ctor.Invoke(new object[] { value });
+								}
+								catch { }
+								if (inst == null)
+								{
+									inst = ConvertStringTo(pt, value) ?? value;
+								}
+								try { p.SetValue(target, inst); }
+								catch
+								{
+									// backing field fallback
+									var backing = t.GetField($"<{p.Name}>k__BackingField", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+									if (backing != null)
+									{
+										var bt = Nullable.GetUnderlyingType(backing.FieldType) ?? backing.FieldType;
+										if (inst == null || !bt.IsInstanceOfType(inst))
+										{
+											object? inst2 = null;
+											try { var ctor2 = bt.GetConstructor(new[] { typeof(string) }); if (ctor2 != null) inst2 = ctor2.Invoke(new object[] { value }); } catch { }
+											inst = inst2 ?? ConvertStringTo(bt, value) ?? value;
+										}
+										try { backing.SetValue(target, inst); } catch { }
+									}
+								}
+								return;
+							}
+							// Field-only fallback
+							var f = t.GetField(propName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+							if (f != null)
+							{
+								var ft = Nullable.GetUnderlyingType(f.FieldType) ?? f.FieldType;
+								object? inst = null;
+								try { var ctor = ft.GetConstructor(new[] { typeof(string) }); if (ctor != null) inst = ctor.Invoke(new object[] { value }); } catch { }
+								inst ??= ConvertStringTo(ft, value) ?? value;
+								try { f.SetValue(target, inst); } catch { }
+							}
+						}
+						catch { }
+					}
+					SetMongoIdProperty(itemObj!, "Id", newId);
+					SetMongoIdProperty(itemObj!, "Template", tpl);
+
+					// Heuristic setters: set any property/field that looks like id/tpl too
+					void SetByNameContains(object target, string needle, string value)
+					{
+						var t = target.GetType();
+						var props2 = t.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+						foreach (var p in props2)
+						{
+							try
+							{
+								if (!p.Name.Contains(needle, StringComparison.OrdinalIgnoreCase)) continue;
+								var pt = Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType;
+								var conv = ConvertStringTo(pt, value) ?? value;
+								p.SetValue(target, conv);
+							}
+							catch { }
+						}
+						var fields2 = t.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+						foreach (var f in fields2)
+						{
+							try
+							{
+								if (!f.Name.Contains(needle, StringComparison.OrdinalIgnoreCase)) continue;
+								var ft = Nullable.GetUnderlyingType(f.FieldType) ?? f.FieldType;
+								var conv = ConvertStringTo(ft, value) ?? value;
+								f.SetValue(target, conv);
+							}
+							catch { }
+						}
+					}
+					SetByNameContains(itemObj!, "tpl", tpl);
+					SetByNameContains(itemObj!, "template", tpl);
+					SetByNameContains(itemObj!, "id", newId);
+
+					// Last-resort: set compiler backing fields for likely properties
+					void SetBackingForProp(object target, string propName, string value)
+					{
+						try
+						{
+							var t = target.GetType();
+							var p = t.GetProperty(propName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+							if (p != null && (p.SetMethod == null || (p.SetMethod != null && !p.SetMethod.IsPublic)))
+							{
+								var backing = t.GetField($"<{p.Name}>k__BackingField", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+								if (backing != null)
+								{
+									var bt = Nullable.GetUnderlyingType(backing.FieldType) ?? backing.FieldType;
+									var conv = ConvertStringTo(bt, value) ?? value;
+									backing.SetValue(target, conv);
+								}
+							}
+						}
+						catch { }
+					}
+					SetBackingForProp(itemObj!, "Template", tpl);
+					SetBackingForProp(itemObj!, "Id", newId);
+
+					// If still empty, brute-force any field containing the pattern
+					string? tmpTpl = GetStringPropIgnoreCase(itemObj!, new[] { "Tpl", "_tpl" });
+					if (string.IsNullOrEmpty(tmpTpl))
+					{
+						try
+						{
+							var fields3 = itemObj!.GetType().GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+							foreach (var f in fields3)
+							{
+								if (!f.Name.Contains("tpl", StringComparison.OrdinalIgnoreCase)) continue;
+								var ft = Nullable.GetUnderlyingType(f.FieldType) ?? f.FieldType;
+								var conv = ConvertStringTo(ft, tpl) ?? tpl;
+								f.SetValue(itemObj!, conv);
+							}
+						}
+						catch { }
+					}
+
+					// One-time schema introspection to discover exact names
+					{
+						// static state without static keyword: use a hidden field via logger type name
+						// fallback: guard via environment flag to avoid spam
+						const string schemaOnceKey = "TTC_SCHEMA_LOGGED";
+						try
+						{
+							var env = Environment.GetEnvironmentVariable(schemaOnceKey);
+							if (string.IsNullOrEmpty(env))
+							{
+								Environment.SetEnvironmentVariable(schemaOnceKey, "1");
+								var it = itemObj!.GetType();
+								_logger.Info($"[TTC] Assort item type: {it.FullName}");
+								var propsDbg = it.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+								foreach (var p in propsDbg)
+								{
+									string? jsonName = null;
+									foreach (var attr in p.GetCustomAttributes(true))
+									{
+										try
+										{
+											var at = attr.GetType();
+											var an = at.FullName ?? at.Name;
+											if (an.Contains("JsonProperty") && an.Contains("Newtonsoft"))
+											{
+												jsonName = at.GetProperty("PropertyName")?.GetValue(attr) as string;
+											}
+											if (an.Contains("JsonPropertyName") && an.Contains("System.Text.Json"))
+											{
+												jsonName = at.GetProperty("Name")?.GetValue(attr) as string;
+											}
+										}
+										catch { }
+									}
+									_logger.Info($"[TTC]  prop: {p.Name} type={p.PropertyType.Name} jsonName={(jsonName ?? "")}");
+								}
+								var fieldsDbg = it.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+								foreach (var f in fieldsDbg)
+								{
+									_logger.Info($"[TTC]  field: {f.Name} type={f.FieldType.Name}");
+								}
+							}
+						}
+						catch { }
+					}
+					SetProp(itemObj!, "ParentId", "hideout");
+					SetProp(itemObj!, "SlotId", "hideout");
+					// upd subobject for stock/unlimited
+					var updPi = itemObj!.GetType().GetProperty("Upd", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+					var updObj = updPi?.GetValue(itemObj!);
+					if (updObj == null && updPi != null)
+					{
+						updObj = Activator.CreateInstance(updPi.PropertyType);
+						updPi.SetValue(itemObj!, updObj);
+					}
+					if (updObj != null)
+					{
+						SetProp(updObj, "UnlimitedCount", unlimited);
+						SetProp(updObj, "StackObjectsCount", unlimited ? int.MaxValue : Math.Max(1, stock));
+					}
+
+					itemsList.Add(itemObj!);
+					// Log what identifiers the object ended up with (properties or fields)
+					string? chkId = GetStringPropIgnoreCase(itemObj!, new[] { "Id", "_id" });
+					if (string.IsNullOrEmpty(chkId))
+					{
+						try
+						{
+							var f = itemObj!.GetType().GetField("_id", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+							if (f?.GetValue(itemObj!) is object v) chkId = v as string ?? v.ToString();
+						}
+						catch { }
+					}
+					string? chkTpl = GetStringPropIgnoreCase(itemObj!, new[] { "Template", "Tpl", "_tpl" });
+					if (string.IsNullOrEmpty(chkTpl))
+					{
+						try
+						{
+							var f = itemObj!.GetType().GetField("_tpl", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+							if (f?.GetValue(itemObj!) is object v) chkTpl = v as string ?? v.ToString();
+						}
+						catch { }
+					}
+					_logger.Info($"[TTC] Trader {traderId}: added Items entry id='{chkId}' tpl='{chkTpl}'");
+
+					// BarterScheme: create [[ { _tpl: currencyTpl, count: price } ]]
+					// Ensure BarterScheme dictionary exists (use reflection to avoid type mismatch)
+					System.Collections.IDictionary? bsDict = null;
+					try
+					{
+						var bsPi = assort.GetType().GetProperty("BarterScheme", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
+						var currentVal = bsPi?.GetValue(assort);
+						if (currentVal == null && bsPi != null)
+						{
+							var bsType = bsPi.PropertyType;
+							object? newVal = null;
+							try { newVal = Activator.CreateInstance(bsType); } catch { }
+							if (newVal == null) newVal = new System.Collections.Hashtable();
+							try { bsPi.SetValue(assort, newVal); currentVal = newVal; } catch { currentVal = newVal; }
+						}
+						bsDict = currentVal as System.Collections.IDictionary;
+					}
+					catch { }
+					if (bsDict != null)
+					{
+						// Build value with correct generic types even if dict is empty
+						var bsDictType = bsDict.GetType();
+						var bsKeyType = bsDictType.IsGenericType ? bsDictType.GetGenericArguments()[0] : typeof(string);
+						var bsValType = bsDictType.IsGenericType ? bsDictType.GetGenericArguments()[1] : null;
+						object? outer = null; object? inner = null; object? elem = null;
+						Type? innerListType = null; Type? elemType = null;
+						if (bsValType != null)
+						{
+							outer = Activator.CreateInstance(bsValType);
+							if (bsValType.IsGenericType)
+							{
+								innerListType = bsValType.GetGenericArguments().FirstOrDefault();
+								if (innerListType != null)
+								{
+									inner = Activator.CreateInstance(innerListType);
+									if (innerListType.IsGenericType)
+									{
+										elemType = innerListType.GetGenericArguments().FirstOrDefault();
+										if (elemType != null) elem = Activator.CreateInstance(elemType);
+									}
+								}
+							}
+						}
+
+						// Fallbacks
+						outer ??= new System.Collections.ArrayList();
+						inner ??= new System.Collections.ArrayList();
+						elem ??= new object();
+
+						// set elem props
+						var curTpl = CurrencyToTpl(currency);
+						SetProp(elem, "Tpl", curTpl); SetProp(elem, "_tpl", curTpl);
+						SetProp(elem, "Count", price); SetProp(elem, "count", price);
+
+						// add elem to inner, inner to outer using IList Add
+						void IListAdd(object list, object value)
+						{
+							if (list is System.Collections.IList al) { al.Add(value); return; }
+							var addMi = list.GetType().GetMethod("Add"); addMi?.Invoke(list, new[] { value });
+						}
+						IListAdd(inner!, elem!);
+						IListAdd(outer!, inner!);
+
+						// key conversion
+						var keyObj = ConvertStringTo(bsKeyType, newId) ?? newId;
+						bsDict[keyObj] = outer!;
+						_logger.Info($"[TTC] Trader {traderId}: barterScheme set for id='{keyObj}'");
+					}
+
+					// LoyalLevelItems
+					var lliDict = assort.LoyalLevelItems as System.Collections.IDictionary;
+					if (lliDict != null)
+					{
+						var lliType = lliDict.GetType();
+						var lliKeyType = lliType.IsGenericType ? lliType.GetGenericArguments()[0] : typeof(string);
+						var lliValType = lliType.IsGenericType ? lliType.GetGenericArguments()[1] : typeof(int);
+						var keyObj = ConvertStringTo(lliKeyType, newId) ?? newId;
+						object? valObj = loyalty;
+						if (lliValType != typeof(int)) valObj = ConvertStringTo(lliValType, loyalty.ToString()) ?? loyalty;
+						lliDict[keyObj] = valObj!;
+					}
+
+					_logger.Info($"[TTC] Trader {traderId}: added offer tpl={tpl} price={price} {currency} LL={loyalty} unlimited={unlimited} stock={stock}");
+					return true;
+				}
+				catch (Exception ex)
+				{
+					_logger.Info($"[TTC] Trader offer add error: {ex.Message}");
+					return false;
+				}
+			}
+
+			// Add binders
+			if (_state.Binders != null)
+			{
+				foreach (var b in _state.Binders)
+				{
+					if (b.price <= 0 || string.IsNullOrWhiteSpace(b.trader)) continue;
+					offersAttempted++;
+					var ok = AddOffer(b.trader, b.id, b.price, b.currency ?? "roubles", Math.Max(1, _state.BinderBase.trader_loyalty_level), true, _state.BinderBase.stock_amount);
+					if (ok) { offersAdded++; _logger.Info($"[TTC] Trader {b.trader}: added binder {b.id} price={b.price} {b.currency} LL={Math.Max(1, _state.BinderBase.trader_loyalty_level)}"); }
+					else { _logger.Info($"[TTC] Trader {b.trader}: failed to add binder {b.id}"); }
+				}
+			}
+
+			// Add empty booster if present
+			var emptyCfg = _state.EmptyBooster;
+			if (!string.IsNullOrWhiteSpace(emptyBoosterId) && emptyCfg != null && emptyCfg.price > 0 && !string.IsNullOrWhiteSpace(emptyCfg.trader))
+			{
+				offersAttempted++;
+				var ok = AddOffer(emptyCfg.trader, emptyBoosterId, emptyCfg.price, emptyCfg.currency ?? "roubles", Math.Max(1, _state.ContainerBase.trader_loyalty_level), _state.ContainerBase.unlimited_stock, _state.ContainerBase.stock_amount);
+				if (ok) { offersAdded++; _logger.Info($"[TTC] Trader {emptyCfg.trader}: added EmptyBooster {emptyBoosterId} price={emptyCfg.price} {emptyCfg.currency} LL={Math.Max(1, _state.ContainerBase.trader_loyalty_level)}"); }
+				else { _logger.Info($"[TTC] Trader {emptyCfg.trader}: failed to add EmptyBooster {emptyBoosterId}"); }
+			}
+
+			_logger.Info($"[TTC] Trader offers done: attempted={offersAttempted}, added={offersAdded}");
+		}
+		catch (Exception ex)
+		{
+			_logger.Info($"[TTC] Trader offers error: {ex.Message}");
+		}
 	}
 
 	// Create an "Empty Booster" container with a 4x4 grid accepting TTC cards, using config files
