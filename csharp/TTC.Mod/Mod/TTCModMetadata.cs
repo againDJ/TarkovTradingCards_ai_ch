@@ -1,3 +1,5 @@
+// Only include metadata when building for SPT wiring to avoid compile-time dependency on SPT assemblies
+#if WIRE_SPT
 using SPTarkov.Server.Core.Models.Spt.Mod;
 using SemanticVersioning;
 using SemVerVersion = SemanticVersioning.Version;
@@ -19,3 +21,4 @@ public sealed record TTCModMetadata : AbstractModMetadata
     public override bool? IsBundleMod { get; init; } = true;
     public override string? License { get; init; } = "MIT";
 }
+#endif
