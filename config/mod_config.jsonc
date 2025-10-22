@@ -15,6 +15,11 @@
   /* Extra console output. Leave false unless debugging. */
   "debug": false,
 
+   // Overall multiplier for static container loot
+   "staticLootMultiplier": 1.0,
+   // Base chance per-card per-container roll before multipliers (capped to 0.25 internally)
+   "default_card_spawn_probability": 0.01,
+
   // ─────────────────────────────────────────────
   // SPAWN PROBABILITY DATA
   // ─────────────────────────────────────────────

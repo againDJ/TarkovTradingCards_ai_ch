@@ -13,6 +13,8 @@ public record CardBase
     public string currency { get; init; } = "roubles";
     public double weight { get; init; } = 0.001;
     public string item_sound { get; init; } = string.Empty;
+    // Map -> list of container template ids that can roll TTC cards
+    public Dictionary<string, List<string>> loot_locations { get; init; } = new();
     public ExternalSize ExternalSize { get; init; } = new();
 }
 

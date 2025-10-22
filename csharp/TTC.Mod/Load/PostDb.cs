@@ -169,6 +169,30 @@ public sealed class PostDb : IOnLoad
 		// Make TTC cards compatible with S I C C and Documents case containers
 		TryAddCardsToPouches();
 
+		// Inject TTC cards into static containers using the typed service
+		try
+		{
+			if (_state.CardBase.lootable && _state.Config.enable_container_spawns)
+			{
+				var lootSvc = new LootService(_db, s => _logger.Info(s), s => _logger.Warning(s));
+				if (_state.Config.debug)
+				{
+					// In debug, force 100% TTC-only contents everywhere to make testing instant
+					lootSvc.ForceCardsEverywhereForDebug(_state.Cards);
+					// Dump static loot for sandbox and sandbox_high to verify distributions
+					lootSvc.DebugDumpStaticLoot(new [] { "sandbox", "sandbox_high" }, _state.CardBase.loot_locations, 8);
+				}
+				else
+				{
+					// Normal weighted injection based on config loot_locations
+					lootSvc.AddCardsToStaticLoot(_state.CardBase.loot_locations, _state.Cards, _state.Config);
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			_logger.Info($"[TTC] Loot service error: {ex.Message}");
+		}
 		return Task.CompletedTask;
 	}
 
