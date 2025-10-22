@@ -11,9 +11,6 @@
   /* Extra console output. Leave false unless debugging. */
   "debug": false,
 
-   // Overall multiplier for static container loot
-   "staticLootMultiplier": 1.0,
-
    // ─────────────────────────────────────────────
    // FINDING CARDS IN CONTAINERS
    // ─────────────────────────────────────────────

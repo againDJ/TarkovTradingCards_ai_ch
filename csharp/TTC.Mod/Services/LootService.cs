@@ -237,7 +237,7 @@ public sealed class LootService
                         if (!rarityWeightNorm.TryGetValue(rarity, out var s_r) || s_r <= 0) continue;
 
                         double pBasePerCard = pGroup * s_r * (1.0 / listByRarity.Count);
-                        double pEffPerCard = pBasePerCard * cfg.staticLootMultiplier * cMult;
+                        double pEffPerCard = pBasePerCard * cMult;
                         if (pEffPerCard >= 0.25)
                         {
                             _warn($"[TTC] Loot: clamping grouped pEff to 0.25 for {mapName}:{containerTpl}:{rarity}");
