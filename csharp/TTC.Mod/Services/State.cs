@@ -1,8 +1,10 @@
 using TTC.Mod.Models;
 
+using SPTarkov.DI.Annotations;
+
 namespace TTC.Mod.Services;
 
-[SPTarkov.DI.Annotations.Injectable]
+[Injectable]
 public sealed class State
 {
     public ModConfig Config { get; private set; } = new();

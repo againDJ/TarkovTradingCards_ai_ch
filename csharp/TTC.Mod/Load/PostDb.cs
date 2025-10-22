@@ -1,16 +1,16 @@
 using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.DI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SPTarkov.Server.Core.Models.Utils;
 using TTC.Mod.Services;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Services.Mod;
-using SPTarkov.Server.Core.Models.Spt.Server;
 using SPTarkov.Server.Core.Models.Spt.Mod;
 using SPTarkov.Server.Core.Servers;
+using SPTarkov.Server.Core.Models.Common;
+using SPTarkov.Server.Core.Models.Eft.Common.Tables;
+using SPTarkov.Server.Core.Models.Spt.Config;
+using TTC.Mod.Models;
+using System.Collections;
 
 namespace TTC.Mod.Load;
 
@@ -80,9 +80,9 @@ public sealed class PostDb : IOnLoad
 				// Override key visual/behavior props
 				try
 				{
-					var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+					var props = new TemplateItemProperties
 					{
-						Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = card.item_prefab_path },
+						Prefab = new Prefab { Path = card.item_prefab_path },
 						BackgroundColor = card.color,
 						StackMaxSize = _state.CardBase.stack_max_size,
 						Weight = (float)_state.CardBase.weight,
@@ -220,9 +220,9 @@ public sealed class PostDb : IOnLoad
 					FleaPriceRoubles = null
 				};
 
-				var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+				var props = new TemplateItemProperties
 				{
-					Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = b.item_prefab_path },
+					Prefab = new Prefab { Path = b.item_prefab_path },
 					BackgroundColor = b.color,
 					Weight = (float)_state.BinderBase.weight,
 					ItemSound = _state.BinderBase.item_sound,
@@ -239,7 +239,7 @@ public sealed class PostDb : IOnLoad
 				}
 				else
 				{
-					var slots = new List<SPTarkov.Server.Core.Models.Eft.Common.Tables.Slot>();
+					var slots = new List<Slot>();
 					// Sort by rarity weight (desc), then by name
 					double WeightFor(string rarity)
 					{
@@ -252,17 +252,17 @@ public sealed class PostDb : IOnLoad
 						.ThenBy(c => c.item_name, StringComparer.OrdinalIgnoreCase);
 					foreach (var card in ordered)
 					{
-						var slot = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Slot
+						var slot = new Slot
 						{
 							Name = $"mod_mount_{card.id}",
 							MaxCount = 1,
 							Required = false,
-							Properties = new SPTarkov.Server.Core.Models.Eft.Common.Tables.SlotProperties
+							Properties = new SlotProperties
 							{
 								Filters = new[] {
-									new SPTarkov.Server.Core.Models.Eft.Common.Tables.SlotFilter
+									new SlotFilter
 									{
-										Filter = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(new [] { new SPTarkov.Server.Core.Models.Common.MongoId(card.id) }),
+										Filter = new HashSet<MongoId>(new [] { new MongoId(card.id) }),
 										MaxStackCount = 1
 									}
 								}
@@ -292,7 +292,7 @@ public sealed class PostDb : IOnLoad
 			_logger.Info($"[TTC][Binders] Created {created}");
 	}
 
-	private int ResolvePriceForCard(TTC.Mod.Models.CardConfig card)
+	private int ResolvePriceForCard(CardConfig card)
 	{
 		try
 		{
@@ -314,17 +314,17 @@ public sealed class PostDb : IOnLoad
 			var templates = tables.Templates;
 			if (templates == null || templates.Items == null) { if (verbose) _logger.Info("[TTC] Templates not available; skipping pouch compatibility"); return; }
 
-			var items = templates.Items as System.Collections.Generic.IDictionary<SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItem>;
+			var items = templates.Items as IDictionary<MongoId, TemplateItem>;
 			if (items == null) { if (verbose) _logger.Info("[TTC] Template items not available; skipping pouch compatibility"); return; }
 
-			var ttcIds = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(_state.Cards.Select(c => new SPTarkov.Server.Core.Models.Common.MongoId(c.id)));
+			var ttcIds = new HashSet<MongoId>(_state.Cards.Select(c => new MongoId(c.id)));
 			int containersMatched = 0, filtersTouched = 0, totalAdded = 0;
 
 			var targetCases = new[] { "5d235bb686f77443f4331278", "590c60fc86f77412b13fddcf" };
 
 			foreach (var tpl in targetCases)
 			{
-				var key = new SPTarkov.Server.Core.Models.Common.MongoId(tpl);
+				var key = new MongoId(tpl);
 				if (!items.TryGetValue(key, out var template) || template?.Properties?.Grids == null)
 				{
 					if (verbose) _logger.Warning($"[TTC][Pouch] Container {tpl} not found in templates");
@@ -403,19 +403,19 @@ public sealed class PostDb : IOnLoad
 					if (!traders.TryGetValue(traderId, out var trader) || trader?.Assort == null) return false;
 					var assort = trader.Assort;
 
-					if (assort.Items is List<SPTarkov.Server.Core.Models.Eft.Common.Tables.Item> items
-						&& assort.BarterScheme is Dictionary<SPTarkov.Server.Core.Models.Common.MongoId, List<List<SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme>>> bs
-						&& assort.LoyalLevelItems is Dictionary<SPTarkov.Server.Core.Models.Common.MongoId, int> lli)
+					if (assort.Items is List<Item> items
+						&& assort.BarterScheme is Dictionary<MongoId, List<List<BarterScheme>>> bs
+						&& assort.LoyalLevelItems is Dictionary<MongoId, int> lli)
 					{
 						var newIdStr = Guid.NewGuid().ToString("N").Substring(0, 24);
-						var newId = new SPTarkov.Server.Core.Models.Common.MongoId(newIdStr);
-						var newItem = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Item
+						var newId = new MongoId(newIdStr);
+						var newItem = new Item
 						{
 							Id = newId,
-							Template = new SPTarkov.Server.Core.Models.Common.MongoId(tpl),
+							Template = new MongoId(tpl),
 							ParentId = "hideout",
 							SlotId = "hideout",
-							Upd = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Upd
+							Upd = new Upd
 							{
 								UnlimitedCount = unlimited,
 								StackObjectsCount = unlimited ? int.MaxValue : Math.Max(1, stock)
@@ -424,9 +424,9 @@ public sealed class PostDb : IOnLoad
 						items.Add(newItem);
 
 						var curTpl = CurrencyToTpl(currency);
-						var pay = new SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme
+						var pay = new BarterScheme
 						{
-							Template = new SPTarkov.Server.Core.Models.Common.MongoId(curTpl),
+							Template = new MongoId(curTpl),
 							Count = price
 						};
 
@@ -505,9 +505,9 @@ public sealed class PostDb : IOnLoad
 			};
 
 			// Build 4x4 grid filtered to TTC cards
-			var props = new SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItemProperties
+			var props = new TemplateItemProperties
 			{
-				Prefab = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Prefab { Path = overrideCfg.item_prefab_path },
+				Prefab = new Prefab { Path = overrideCfg.item_prefab_path },
 				BackgroundColor = overrideCfg.color,
 				Weight = (float)containerBase.weight,
 				ItemSound = containerBase.item_sound,
@@ -517,20 +517,20 @@ public sealed class PostDb : IOnLoad
 			};
 
 			// Build a single grid named "emptyBooster" with 4x4 cells and filters to TTC card tpl ids
-			var grid = new SPTarkov.Server.Core.Models.Eft.Common.Tables.Grid
+			var grid = new Grid
 			{
 				Name = "emptyBooster",
-				Parent = new SPTarkov.Server.Core.Models.Common.MongoId(emptyBoosterId),
-				Properties = new SPTarkov.Server.Core.Models.Eft.Common.Tables.GridProperties
+				Parent = new MongoId(emptyBoosterId),
+				Properties = new GridProperties
 				{
 					CellsH = 4,
 					CellsV = 4,
 					MinCount = 0,
 					Filters = new[]
 					{
-						new SPTarkov.Server.Core.Models.Eft.Common.Tables.GridFilter
+						new GridFilter
 						{
-							Filter = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(_state.Cards.Select(c => new SPTarkov.Server.Core.Models.Common.MongoId(c.id)))
+							Filter = new HashSet<MongoId>(_state.Cards.Select(c => new MongoId(c.id)))
 						}
 					}
 				}
@@ -567,7 +567,7 @@ public sealed class PostDb : IOnLoad
 			var tables = _db.GetTables();
 			var templates = tables.Templates;
 			if (templates == null || templates.Items == null) return;
-			var items = templates.Items as System.Collections.Generic.IDictionary<SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItem>;
+			var items = templates.Items as IDictionary<MongoId, TemplateItem>;
 			if (items == null) return;
 
 			var secureContainerIds = new[]
@@ -583,10 +583,10 @@ public sealed class PostDb : IOnLoad
 				"5732ee6a24597719ae0c0281"  // Waist pouch
 			};
 
-			var boosterId = new SPTarkov.Server.Core.Models.Common.MongoId(emptyBoosterId);
+			var boosterId = new MongoId(emptyBoosterId);
 			foreach (var id in secureContainerIds)
 			{
-				var key = new SPTarkov.Server.Core.Models.Common.MongoId(id);
+				var key = new MongoId(id);
 				if (!items.TryGetValue(key, out var template) || template?.Properties?.Grids == null) continue;
 				foreach (var grid in template.Properties.Grids)
 				{
@@ -606,11 +606,11 @@ public sealed class PostDb : IOnLoad
 		try
 		{
 			object? ragfairCfgObj = null;
-			try { ragfairCfgObj = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.RagfairConfig>("spt-ragfair"); }
+			try { ragfairCfgObj = _configServer.GetConfigByString<RagfairConfig>("spt-ragfair"); }
 			catch { }
 			if (ragfairCfgObj == null)
 			{
-				try { ragfairCfgObj = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.RagfairConfig>("ragfair"); } catch { }
+				try { ragfairCfgObj = _configServer.GetConfigByString<RagfairConfig>("ragfair"); } catch { }
 			}
 
 			if (ragfairCfgObj == null)
@@ -622,7 +622,7 @@ public sealed class PostDb : IOnLoad
 			var ttcTpls = new HashSet<string>(_state.Cards.Select(c => c.id));
 			int removed = 0;
 
-			var typed = ragfairCfgObj as SPTarkov.Server.Core.Models.Spt.Config.RagfairConfig;
+			var typed = ragfairCfgObj as RagfairConfig;
 			if (typed != null)
 			{
 				// Remove TTC from dynamic blacklist; other fields may vary per SPT build
@@ -654,16 +654,16 @@ public sealed class PostDb : IOnLoad
 			int removed = 0;
 			switch (setLike)
 			{
-				case ISet<SPTarkov.Server.Core.Models.Common.MongoId> hsMi:
-					foreach (var s in ids) removed += hsMi.Remove(new SPTarkov.Server.Core.Models.Common.MongoId(s)) ? 1 : 0;
+				case ISet<MongoId> hsMi:
+					foreach (var s in ids) removed += hsMi.Remove(new MongoId(s)) ? 1 : 0;
 					return removed;
 				case ISet<string> hsStr:
 					foreach (var s in ids) removed += hsStr.Remove(s) ? 1 : 0;
 					return removed;
-				case ICollection<SPTarkov.Server.Core.Models.Common.MongoId> colMi:
+				case ICollection<MongoId> colMi:
 					foreach (var s in ids)
 					{
-						var mi = new SPTarkov.Server.Core.Models.Common.MongoId(s);
+						var mi = new MongoId(s);
 						if (colMi.Contains(mi)) { colMi.Remove(mi); removed++; }
 					}
 					return removed;
@@ -673,14 +673,14 @@ public sealed class PostDb : IOnLoad
 						if (colStr.Contains(s)) { colStr.Remove(s); removed++; }
 					}
 					return removed;
-				case System.Collections.IList list:
+				case IList list:
 					{
 						var toRemove = new List<int>();
 						for (int i = 0; i < list.Count; i++)
 						{
 							var el = list[i];
 							if (el is string s && ids.Contains(s)) toRemove.Add(i);
-							else if (el is SPTarkov.Server.Core.Models.Common.MongoId mi && ids.Contains(mi.ToString())) toRemove.Add(i);
+							else if (el is MongoId mi && ids.Contains(mi.ToString())) toRemove.Add(i);
 						}
 						// remove from tail
 						for (int i = toRemove.Count - 1; i >= 0; i--) { list.RemoveAt(toRemove[i]); removed++; }
@@ -702,9 +702,9 @@ public sealed class PostDb : IOnLoad
 			var fenceId = "579dc571d53a0658a154fbec";
 			if (traders != null && traders.TryGetValue(fenceId, out var fence) && fence?.Assort != null)
 			{
-				var ttcTpls = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(_state.Cards.Select(c => new SPTarkov.Server.Core.Models.Common.MongoId(c.id)));
+				var ttcTpls = new HashSet<MongoId>(_state.Cards.Select(c => new MongoId(c.id)));
 				var before = fence.Assort.Items?.Count ?? 0;
-				var removedAssortIds = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>();
+				var removedAssortIds = new HashSet<MongoId>();
 
 				if (fence.Assort.Items != null)
 				{
@@ -737,11 +737,11 @@ public sealed class PostDb : IOnLoad
 			}
 
 			// Update trader config fence blacklist set (typed)
-			SPTarkov.Server.Core.Models.Spt.Config.TraderConfig? traderCfg = null;
-			try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("trader"); } catch { }
-			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("spt-trader"); } catch { } }
-			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("traders"); } catch { } }
-			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<SPTarkov.Server.Core.Models.Spt.Config.TraderConfig>("traderConfig"); } catch { } }
+			TraderConfig? traderCfg = null;
+			try { traderCfg = _configServer.GetConfigByString<TraderConfig>("trader"); } catch { }
+			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<TraderConfig>("spt-trader"); } catch { } }
+			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<TraderConfig>("traders"); } catch { } }
+			if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<TraderConfig>("traderConfig"); } catch { } }
 
 			if (traderCfg?.Fence != null)
 			{
@@ -750,9 +750,9 @@ public sealed class PostDb : IOnLoad
 				try
 				{
 					// Prefer typed sets
-					if (fenceCfg.Blacklist is ISet<SPTarkov.Server.Core.Models.Common.MongoId> setMi)
+					if (fenceCfg.Blacklist is ISet<MongoId> setMi)
 					{
-						foreach (var tpl in _state.Cards.Select(c => c.id)) if (setMi.Add(new SPTarkov.Server.Core.Models.Common.MongoId(tpl))) added++;
+						foreach (var tpl in _state.Cards.Select(c => c.id)) if (setMi.Add(new MongoId(tpl))) added++;
 					}
 					else if (fenceCfg.Blacklist is ISet<string> setStr)
 					{

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using SPTarkov.Server.Core.Services;
 using TTC.Mod.Models;
+using SPTarkov.Server.Core.Models.Common;
+using SPTarkov.Server.Core.Models.Eft.Common;
 
 namespace TTC.Mod.Services;
 
@@ -56,12 +58,12 @@ public sealed class LootService
                     if (details == null) continue;
 
                     // Build TTC-only distribution with large weights
-                    var flood = new List<SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution>(cards.Count);
+                    var flood = new List<ItemDistribution>(cards.Count);
                     foreach (var card in cards)
                     {
-                        flood.Add(new SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution
+                        flood.Add(new ItemDistribution
                         {
-                            Tpl = new SPTarkov.Server.Core.Models.Common.MongoId(card.id),
+                            Tpl = new MongoId(card.id),
                             RelativeProbability = 100000
                         });
                     }
@@ -69,9 +71,9 @@ public sealed class LootService
                     // Replace ItemDistribution; also try to ensure at least one item by setting count dist to 1@100%
                     try
                     {
-                        var one = new List<SPTarkov.Server.Core.Models.Eft.Common.ItemCountDistribution>
+                        var one = new List<ItemCountDistribution>
                         {
-                            new SPTarkov.Server.Core.Models.Eft.Common.ItemCountDistribution { Count = 1, RelativeProbability = 1 }
+                            new ItemCountDistribution { Count = 1, RelativeProbability = 1 }
                         };
                         staticLoot[key] = details with { ItemDistribution = flood, ItemCountDistribution = one };
                     }
@@ -166,7 +168,7 @@ public sealed class LootService
         var mapDict = locations.GetDictionary();
 
         // Accumulate changes by map: propertyMapName -> list of (containerId, Item, PBase, PEff)
-        var lootChangesByMap = new Dictionary<string, List<(SPTarkov.Server.Core.Models.Common.MongoId ContainerId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution Item, double PBase, double PEff)>>();
+        var lootChangesByMap = new Dictionary<string, List<(MongoId ContainerId, ItemDistribution Item, double PBase, double PEff)>>();
         int scheduledItems = 0;
 
         // Precompute rarity groups and normalized weights (grouped mode is always enabled)
@@ -261,16 +263,16 @@ public sealed class LootService
                                 relativeProbability = -1; // compute in transformer
                             }
 
-                            var newLoot = new SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution
+                            var newLoot = new ItemDistribution
                             {
-                                Tpl = new SPTarkov.Server.Core.Models.Common.MongoId(card.id),
+                                Tpl = new MongoId(card.id),
                                 RelativeProbability = Math.Max(1, relativeProbability)
                             };
 
                             if (!lootChangesByMap.ContainsKey(propertyMapName))
-                                lootChangesByMap[propertyMapName] = new List<(SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution, double, double)>();
+                                lootChangesByMap[propertyMapName] = new List<(MongoId, ItemDistribution, double, double)>();
 
-                            lootChangesByMap[propertyMapName].Add((new SPTarkov.Server.Core.Models.Common.MongoId(containerTpl), newLoot, pBasePerCard, pEffPerCard));
+                            lootChangesByMap[propertyMapName].Add((new MongoId(containerTpl), newLoot, pBasePerCard, pEffPerCard));
                             scheduledItems++;
                         }
                     }
@@ -319,7 +321,7 @@ public sealed class LootService
                         newLoot = newLoot with { RelativeProbability = Math.Max(1, (int)Math.Round(relRaw)) };
                     }
 
-                    var list = lootContainer.ItemDistribution?.ToList() ?? new List<SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution>();
+                    var list = lootContainer.ItemDistribution?.ToList() ?? new List<ItemDistribution>();
                     list.Add(newLoot); // Append without deduplication
                     lazyLoadedStaticLoot[containerId] = lootContainer with { ItemDistribution = list };
                     containersTouched++;

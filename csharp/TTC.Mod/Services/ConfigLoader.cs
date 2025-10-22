@@ -2,9 +2,11 @@ using System.Text.Json;
 using TTC.Mod.Models;
 using TTC.Mod.Utils;
 
+using SPTarkov.DI.Annotations;
+
 namespace TTC.Mod.Services;
 
-[SPTarkov.DI.Annotations.Injectable]
+[Injectable]
 public sealed class ConfigLoader
 {
     private readonly JsonSerializerOptions _opts = new()
