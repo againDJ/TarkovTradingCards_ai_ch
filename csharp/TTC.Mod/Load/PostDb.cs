@@ -94,29 +94,9 @@ public sealed class PostDb : IOnLoad
 						Height = _state.CardBase.ExternalSize.height
 					};
 
-					// Try to set flea-related flags and safety flags if present in this SPT build
-					void SetNullableBool(object target, string name, bool value)
-					{
-						var pi = target.GetType().GetProperty(name);
-						if (pi == null) return;
-						var t = Nullable.GetUnderlyingType(pi.PropertyType) ?? pi.PropertyType;
-						if (t == typeof(bool))
-						{
-							object boxed = value;
-							if (Nullable.GetUnderlyingType(pi.PropertyType) != null)
-							{
-								boxed = (bool?)value;
-							}
-							pi.SetValue(target, boxed);
-						}
-					}
-
-					var canTradeOnFlea = _state.Config.cards_tradeable_on_flea;
-					SetNullableBool(props, "CanSellOnRagfair", canTradeOnFlea);
-					SetNullableBool(props, "CanRequireOnRagfair", canTradeOnFlea);
-					// Mirror TS defaults
-					SetNullableBool(props, "QuestItem", false);
-					SetNullableBool(props, "InsuranceDisabled", true);
+					// Enforce flea tradeability via typed properties
+					try { props.CanSellOnRagfair = _state.Config.cards_tradeable_on_flea; } catch { }
+					try { props.CanRequireOnRagfair = _state.Config.cards_tradeable_on_flea; } catch { }
 
 					details.OverrideProperties = props;
 				}
@@ -690,9 +670,6 @@ public sealed class PostDb : IOnLoad
 		catch { }
 		return 0;
 	}
-
-	// removed reflection-based ragfair helpers
-
 	private void ApplyFenceBlacklistAndPurge()
 	{
 		try
@@ -778,8 +755,5 @@ public sealed class PostDb : IOnLoad
 		}
 	}
 
-	// removed reflection utilities (unused)
-
-	//
 }
 

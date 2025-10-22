@@ -4,9 +4,7 @@ using TTC.Mod.Utils;
 
 namespace TTC.Mod.Services;
 
-#if WIRE_SPT
 [SPTarkov.DI.Annotations.Injectable]
-#endif
 public sealed class ConfigLoader
 {
     private readonly JsonSerializerOptions _opts = new()

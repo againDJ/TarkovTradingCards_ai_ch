@@ -54,20 +54,8 @@
     </Reference>
   </ItemGroup>
 
-  <!-- Allow building tools without SPT refs by excluding SPT-only metadata when SPT_DIR is not provided -->
-  <ItemGroup Condition="'$(SPT_DIR)' == ''">
-    <Compile Remove="Mod\TTCModMetadata.cs" />
-  </ItemGroup>
-
-  <!-- Exclude load-stage classes by default until wired to correct SPT namespaces.
-       Enable by setting -p:WIRE_SPT=true when building. -->
-  <ItemGroup Condition="'$(WIRE_SPT)' != 'true'">
-    <Compile Remove="Load\PreSpt.cs" />
-    <Compile Remove="Load\PostDb.cs" />
-  </ItemGroup>
-
-  <!-- When WIRE_SPT property is true, also define the WIRE_SPT preprocessor symbol -->
-  <PropertyGroup Condition="'$(WIRE_SPT)' == 'true'">
-    <DefineConstants>$(DefineConstants);WIRE_SPT</DefineConstants>
-  </PropertyGroup>
+  <!-- Require SPT_DIR to be set; we always build against SPT -->
+  <Target Name="EnsureSptDirProvided" BeforeTargets="Build">
+    <Error Condition="'$(SPT_DIR)' == ''" Text="SPT_DIR must be set (path to SPT server DLLs) to build this project." />
+  </Target>
 </Project>
