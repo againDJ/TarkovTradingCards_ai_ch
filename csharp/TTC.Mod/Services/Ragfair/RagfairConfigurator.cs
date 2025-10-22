@@ -8,6 +8,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Ragfair;
 
 [Injectable]
+/// <summary>
+/// Adjusts Ragfair configuration to ensure TTC cards behave as intended (e.g., not blacklisted dynamically).
+/// </summary>
 public sealed class RagfairConfigurator
 {
     private readonly ConfigServer _configServer;
@@ -19,6 +22,10 @@ public sealed class RagfairConfigurator
         _state = state;
     }
 
+    /// <summary>
+    /// Remove TTC card ids from dynamic blacklist sets in the Ragfair configuration.
+    /// </summary>
+    /// <returns>The number of removed entries across processed sets.</returns>
     public int ConfigureForCards()
     {
         try
@@ -50,8 +57,11 @@ public sealed class RagfairConfigurator
         catch { return 0; }
     }
 
-    // Remove all ids (strings) from a blacklist set/list in typed fashion.
-    // Supports common shapes: ISet<MongoId>, ISet<string>, ICollection<MongoId>, ICollection<string>, List<...>
+    /// <summary>
+    /// Remove all ids (strings) from a blacklist-like collection in a typed, defensive manner.
+    /// Supports common shapes: ISet&lt;MongoId&gt;, ISet&lt;string&gt;, ICollection&lt;MongoId&gt;,
+    /// ICollection&lt;string&gt;, and non-generic IList variants.
+    /// </summary>
     private static int RemoveFromSet(object? setLike, HashSet<string> ids)
     {
         if (setLike == null) return 0;

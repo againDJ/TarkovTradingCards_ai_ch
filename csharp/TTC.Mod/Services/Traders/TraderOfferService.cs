@@ -8,6 +8,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Traders;
 
 [Injectable]
+/// <summary>
+/// Publishes TTC binders and the optional Empty Booster to trader assortments.
+/// </summary>
 public sealed class TraderOfferService
 {
     private readonly DatabaseService _db;
@@ -19,6 +22,10 @@ public sealed class TraderOfferService
         _state = state;
     }
 
+    /// <summary>
+    /// Add trader offers for binders and (optionally) the Empty Booster.
+    /// </summary>
+    /// <param name="emptyBoosterId">Template id of the Empty Booster, or empty if not configured.</param>
     public void AddOffers(string emptyBoosterId)
     {
         try

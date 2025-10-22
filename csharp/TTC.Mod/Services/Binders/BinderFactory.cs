@@ -9,6 +9,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Binders;
 
 [Injectable]
+/// <summary>
+/// Creates themed binder containers that accept only TTC cards of a given theme.
+/// </summary>
 public sealed class BinderFactory
 {
     private readonly State _state;
@@ -22,6 +25,10 @@ public sealed class BinderFactory
         _customItemService = customItemService;
     }
 
+    /// <summary>
+    /// Create all configured binders and their filtered mount slots.
+    /// </summary>
+    /// <returns>Tuple with number of successfully created and failed binders.</returns>
     public (int created, int failed) CreateAll()
     {
         var binders = _state.Binders;
@@ -65,11 +72,7 @@ public sealed class BinderFactory
 
                 // Build mount slots filtered to themed cards; ensure we don't set any grids so double-click opens slot view
                 var themedCards = _state.Cards.Where(c => string.Equals(c.theme, b.theme, StringComparison.OrdinalIgnoreCase)).ToList();
-                if (themedCards.Count == 0)
-                {
-                    // keep quiet; caller may log in verbose if needed
-                }
-                else
+                if (themedCards.Count > 0)
                 {
                     var slots = new List<Slot>();
                     double WeightFor(string rarity)

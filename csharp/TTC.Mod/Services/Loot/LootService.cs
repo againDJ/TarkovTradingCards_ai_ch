@@ -27,9 +27,11 @@ public sealed class LootService
     }
 
     /// <summary>
-    /// DEBUG: Dump a summary of static loot per map after our injections.
-    /// If filterTpls is provided, only those container tpl ids are printed.
+    /// Dump a summary of static loot per map after our injections for debugging.
     /// </summary>
+    /// <param name="mapNames">Maps to inspect (e.g., sandbox, bigmap).</param>
+    /// <param name="filterTpls">Optional: mapName -> container tpl ids to include; when null or empty, all containers are listed.</param>
+    /// <param name="showPerContainer">Limit of item tpl ids to show per container.</param>
     public void DebugDumpStaticLoot(IEnumerable<string> mapNames, Dictionary<string, List<string>>? filterTpls = null, int showPerContainer = 5)
     {
         var locations = _db.GetTables().Locations;
@@ -77,9 +79,12 @@ public sealed class LootService
     }
 
     /// <summary>
-    /// Inject TTC cards into static containers. For each map in lootLocations, for each container template id,
-    /// convert spawn probability into relativeProbability using the existing container item mass as base.
+    /// Inject TTC cards into static containers. For each map and container template id,
+    /// converts desired spawn probability into <c>RelativeProbability</c> using the container's item mass.
     /// </summary>
+    /// <param name="lootLocations">Map name -> list of container tpl ids.</param>
+    /// <param name="cards">Cards to inject.</param>
+    /// <param name="cfg">Mod configuration used to compute group weights and multipliers.</param>
     public void AddCardsToStaticLoot(
         Dictionary<string, List<string>> lootLocations,
         IReadOnlyList<CardConfig> cards,

@@ -8,6 +8,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Traders;
 
 [Injectable]
+/// <summary>
+/// Cleans Fence assort of TTC items and ensures TTC card ids are blacklisted in the Fence trader config.
+/// </summary>
 public sealed class FenceService
 {
     private readonly DatabaseService _db;
@@ -21,6 +24,9 @@ public sealed class FenceService
         _configServer = configServer;
     }
 
+    /// <summary>
+    /// Remove TTC items from Fence's current assort and add TTC ids to the Fence blacklist configuration.
+    /// </summary>
     public void PurgeTtcAndUpdateBlacklist()
     {
         try
@@ -56,8 +62,6 @@ public sealed class FenceService
                 }
 
                 var after = fence.Assort.Items?.Count ?? 0;
-                var diff = before - after;
-                _ = diff; // optional stat
             }
 
             // Update trader config fence blacklist set (typed)

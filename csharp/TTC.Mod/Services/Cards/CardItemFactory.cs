@@ -8,6 +8,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Cards;
 
 [Injectable]
+/// <summary>
+/// Creates all TTC card items by cloning a base template and applying per-card overrides.
+/// </summary>
 public sealed class CardItemFactory
 {
     private readonly State _state;
@@ -23,6 +26,10 @@ public sealed class CardItemFactory
         _priceResolver = priceResolver;
     }
 
+    /// <summary>
+    /// Create all configured cards.
+    /// </summary>
+    /// <returns>Tuple with number of successfully created and failed cards.</returns>
     public (int created, int failed) CreateAll()
     {
         var count = _state.Cards.Count;
@@ -82,7 +89,7 @@ public sealed class CardItemFactory
             }
             catch (Exception ex)
             {
-                _ = ex;
+                _ = ex; // count failure without extra log noise
                 failed++;
             }
         }

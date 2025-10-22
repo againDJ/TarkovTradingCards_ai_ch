@@ -2,6 +2,10 @@ using System.Collections.Generic;
 
 namespace TTC.Mod.Services.Loot
 {
+    /// <summary>
+    /// Static lookup tables used by the loot injector to estimate container item mass per map.
+    /// Helps convert spawn probabilities into relative probabilities without scanning runtime data.
+    /// </summary>
     internal static class ConstantsContainer
     {
         // Container name -> template id
@@ -57,8 +61,10 @@ namespace TTC.Mod.Services.Loot
             { "air_drop_event_new_year", "67614e3a6a90e4f10b0b140d" }
         };
 
-        // Map -> container name -> total probability mass
-        public static readonly Dictionary<string, Dictionary<string, double>> containerTotalProbability = new()
+    /// <summary>
+    /// Total item mass per container type and map: MapName -> (ContainerName -> Mass).
+    /// </summary>
+    public static readonly Dictionary<string, Dictionary<string, double>> containerTotalProbability = new()
         {
             ["bigmap"] = new Dictionary<string, double>
             {
@@ -369,7 +375,9 @@ namespace TTC.Mod.Services.Loot
             },
         };
 
-        // Helper: Reverse lookup id -> name
+        /// <summary>
+        /// Reverse lookup: container template id -> human-readable container name.
+        /// </summary>
         public static readonly Dictionary<string, string> containerIdToName =
             new(containerLookup.Count);
 

@@ -9,6 +9,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Containers;
 
 [Injectable]
+/// <summary>
+/// Creates the optional "Empty Booster" container (4x4) filtered to accept TTC cards.
+/// </summary>
 public sealed class EmptyBoosterFactory
 {
     private readonly State _state;
@@ -22,7 +25,10 @@ public sealed class EmptyBoosterFactory
         _customItemService = customItemService;
     }
 
-    // Create an "Empty Booster" container with a 4x4 grid accepting TTC cards, using config files
+    /// <summary>
+    /// Creates the configured Empty Booster item and returns its template id.
+    /// </summary>
+    /// <returns>Template id when created successfully; otherwise empty string.</returns>
     public string Create()
     {
         try

@@ -7,6 +7,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Services.Containers;
 
 [Injectable]
+/// <summary>
+/// Adds TTC card compatibility to specific containers (e.g., S I C C and Documents case).
+/// </summary>
 public sealed class PouchCompatibilityUpdater
 {
     private readonly DatabaseService _db;
@@ -18,7 +21,9 @@ public sealed class PouchCompatibilityUpdater
         _state = state;
     }
 
-    // Make TTC cards compatible with S I C C and Documents case containers
+    /// <summary>
+    /// Updates target containers to accept TTC cards in their grid filters.
+    /// </summary>
     public void Update()
     {
         try

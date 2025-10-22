@@ -15,6 +15,9 @@ using TTC.Mod.Services.Common;
 namespace TTC.Mod.Load;
 
 [Injectable(TypePriority = OnLoadOrder.Database + 50)]
+/// <summary>
+/// Main orchestrator that wires TTC items, trader offers, ragfair behavior, and loot injection after DB load.
+/// </summary>
 public sealed class PostDb : IOnLoad
 {
 	private readonly ISptLogger<PostDb> _logger;
@@ -57,6 +60,9 @@ public sealed class PostDb : IOnLoad
 		_lootInjector = lootInjector;
 	}
 
+	/// <summary>
+	/// Entry point invoked by SPT after database load; creates items and applies runtime configuration.
+	/// </summary>
 	public Task OnLoad()
 	{
 		_logger.Info("[TTC][Init] Wiring items, traders and loot...");
