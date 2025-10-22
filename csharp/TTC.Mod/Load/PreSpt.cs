@@ -23,9 +23,10 @@ public sealed class PreSpt : IOnLoad
 	public Task OnLoad()
 	{
 		_logger.Info("[TTC] PreSpt starting - loading configs...");
-                var (configDir, modConfigPath, cardsPath) = PathResolver.GetConfigPaths();
-        try
+                try
         {
+                                var (configDir, modConfigPath, cardsPath) = PathResolver.GetConfigPaths();
+                                _logger.Info($"[TTC] Resolved config dir: {configDir}");
                 var cfg = _loader.LoadModConfig(modConfigPath);
                 var cards = _loader.LoadCards(cardsPath);
                 var cardBasePath = Path.Combine(configDir, "card_base.json");
@@ -41,7 +42,7 @@ public sealed class PreSpt : IOnLoad
                 _state.Set(cfg, cards, cardBase, containerBase, binderBase, binders, emptyBooster);
                 _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}; containerFrom={containerBase.clone_item}; binderFrom={binderBase.clone_item}; binders={binders.Count}; emptyBooster={(emptyBooster?.id ?? "none")}");
         }
-        catch (Exception ex)
+                catch (Exception ex)
         {
                 _logger.Info($"[TTC] ERROR loading configs: {ex.Message}");
         }
