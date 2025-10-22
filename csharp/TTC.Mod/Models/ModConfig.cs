@@ -3,10 +3,8 @@ namespace TTC.Mod.Models;
 public record ModConfig
 {
     public bool enable_container_spawns { get; init; }
-    public string fallback_trader { get; init; } = "prapor";
     public bool debug { get; init; }
-
-    public bool auto_update_probabilities { get; init; }
+    
     // Scales the base grouped spawn probability (0.05) between 0x and 10x
     public double card_weight_multiplier { get; init; } = 1.0;
     public Dictionary<string, double> container_multipliers { get; init; } = new();

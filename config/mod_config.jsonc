@@ -8,42 +8,30 @@
      through other means (trader, quests, etc.). */
   "enable_container_spawns": true,
 
-  /* If the Collector trader fails to load for any reason,
-     cards will be sold by this fallback trader ID. */
-  "fallback_trader": "prapor",
-
   /* Extra console output. Leave false unless debugging. */
   "debug": false,
 
    // Overall multiplier for static container loot
    "staticLootMultiplier": 1.0,
 
-  // ─────────────────────────────────────────────
-  // GROUPED RARITY INJECTION
-  // ─────────────────────────────────────────────
-  /* The mod treats all cards as a single group per container roll.
-     The overall chance to spawn the group is computed as:
-       effective_group_chance = 0.05 (base) × card_weight_multiplier (clamped 0..10)
-     If the group is selected, a rarity is chosen according to rarity_weights,
-     then a card is chosen uniformly within that rarity. Internally, this is
-     converted to per-card relative probabilities using the container mass. */
+   // ─────────────────────────────────────────────
+   // FINDING CARDS IN CONTAINERS
+   // ─────────────────────────────────────────────
+   /* How often you'll find TTC cards in eligible containers.
+       - card_weight_multiplier controls the overall frequency
+          (0 = never, 1 = normal, 2 = more often, up to 10 = very often).
+       - Which containers are “eligible” is defined per map in card_base.json → loot_locations.
+       - Rarity weights split the total “card budget” between rarities.
+       - Per-container multipliers let you tone down or boost specific container types.
+       Tip: Start with 1 (balanced). If you want more cards, try 2; if you want fewer, try 0.5. */
 
-  // ─────────────────────────────────────────────
-  // SPAWN PROBABILITY DATA
-  // ─────────────────────────────────────────────
-
-  /* When true, the mod rebuilds /config/probabilities.json
-     at every game launch so it matches the current
-     SPT-AKI loot tables (recommended). */
-  "auto_update_probabilities": true,
-
-  /* Global weight multiplier for ALL cards, applied to the base group chance (0.05).
-     0   → 0% group chance (no spawns)
-     0.5 → 2.5% group chance
-     1   → 5% group chance (baseline)
-     2   → 10% group chance
-     ... up to 10 → 50% group chance
-   Note: each individual card is still capped at 25% per roll. */
+  /* Global “how often” multiplier for card spawns.
+     - 0   → never
+     - 0.5 → less often
+     - 1   → normal
+     - 2   → more often
+     - 10  → very often
+     Note: individual cards are still capped so one card can’t dominate every roll. */
   "card_weight_multiplier": 1,
 
     /* Per-container loot multipliers (global, applies to all maps).
@@ -165,10 +153,10 @@
      organized by rarity level. Higher rarity = higher price. */
   "trader_sell_prices": {
     "Common":     5000,
-    "Uncommon":   10000,
-    "Rare":       22500,
-    "Epic":       50000,
-    "Legendary":  150000,
-    "Secret":     400000
+    "Uncommon":   12500,
+    "Rare":       30000,
+    "Epic":       80000,
+    "Legendary":  200000,
+    "Secret":     500000
   }
 }
