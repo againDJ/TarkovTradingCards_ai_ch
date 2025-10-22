@@ -11,6 +11,9 @@
   /* Extra console output. Leave false unless debugging. */
   "debug": false,
 
+   /* Verbose logs (more details). When false, logs are short and concise. */
+   "verbose_logs": false,
+
    // ─────────────────────────────────────────────
    // FINDING CARDS IN CONTAINERS
    // ─────────────────────────────────────────────

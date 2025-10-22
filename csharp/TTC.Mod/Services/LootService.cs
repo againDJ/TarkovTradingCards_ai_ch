@@ -15,14 +15,16 @@ public sealed class LootService
     private readonly Action<string> _info;
     private readonly Action<string> _warn;
     private readonly DatabaseService _db;
+    private readonly bool _verbose;
     // Base group chance (per-container roll) used by grouped rarity injection; scaled by card_weight_multiplier (0..10)
     private const double BASE_GROUPED_PROBABILITY = 0.05;
 
-    public LootService(DatabaseService db, Action<string> info, Action<string> warn)
+    public LootService(DatabaseService db, Action<string> info, Action<string> warn, bool verbose)
     {
         _db = db;
         _info = info;
         _warn = warn;
+        _verbose = verbose;
     }
 
     /// <summary>
@@ -86,7 +88,7 @@ public sealed class LootService
             });
         }
 
-    _info($"[TTC][Debug] Flood 100%: maps={maps}, containers={containers}, cardsPerContainer={itemsPerContainer}");
+        _info($"[TTC][Debug] Flood 100%: maps={maps}, containers={containers}, cardsPerContainer={itemsPerContainer}");
     }
 
     /// <summary>
@@ -150,20 +152,20 @@ public sealed class LootService
     {
         if (lootLocations == null || lootLocations.Count == 0)
         {
-            _info("[TTC][Loot] No loot_locations provided; skipping static loot injection");
+            if (_verbose) _info("[TTC][Loot] No loot_locations provided; skipping static loot injection");
             return;
         }
 
         if (!cfg.enable_container_spawns)
         {
-            _info("[TTC][Loot] enable_container_spawns=false; skipping");
+            if (_verbose) _info("[TTC][Loot] enable_container_spawns=false; skipping");
             return;
         }
 
         var locations = _db.GetTables().Locations;
         var mapDict = locations.GetDictionary();
 
-    // Accumulate changes by map: propertyMapName -> list of (containerId, Item, PBase, PEff)
+        // Accumulate changes by map: propertyMapName -> list of (containerId, Item, PBase, PEff)
         var lootChangesByMap = new Dictionary<string, List<(SPTarkov.Server.Core.Models.Common.MongoId ContainerId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution Item, double PBase, double PEff)>>();
         int scheduledItems = 0;
 
@@ -225,7 +227,8 @@ public sealed class LootService
                     if (cfg.container_multipliers != null && cfg.container_multipliers.TryGetValue(containerTpl, out var cmv)) cMult = cmv;
                     if (cMult <= 0)
                     {
-                        _info($"[TTC][Loot] multiplier <= 0 for container {containerTpl} on {mapName}; skipping injection");
+                        if (_verbose)
+                            _info($"[TTC][Loot] multiplier <= 0 for container {containerTpl} on {mapName}; skipping injection");
                         continue;
                     }
 
@@ -240,7 +243,8 @@ public sealed class LootService
                         double pEffPerCard = pBasePerCard * cMult;
                         if (pEffPerCard >= 0.25)
                         {
-                            _warn($"[TTC][Loot] clamping grouped pEff to 0.25 for {mapName}:{containerTpl}:{rarity}");
+                            if (_verbose)
+                                _warn($"[TTC][Loot] clamping grouped pEff to 0.25 for {mapName}:{containerTpl}:{rarity}");
                             pEffPerCard = 0.25;
                         }
 
@@ -283,7 +287,7 @@ public sealed class LootService
             var staticLootLL = location.StaticLoot;
             if (staticLootLL == null)
             {
-                _warn($"[TTC][Loot] StaticLoot is null for {propertyMapName}");
+                if (_verbose) _warn($"[TTC][Loot] StaticLoot is null for {propertyMapName}");
                 continue;
             }
 
@@ -300,7 +304,7 @@ public sealed class LootService
 
                     if (!lazyLoadedStaticLoot.TryGetValue(containerId, out var lootContainer) || lootContainer == null)
                     {
-                        _warn($"[TTC][Loot] container {containerId} not found in map {propertyMapName}");
+                        if (_verbose) _warn($"[TTC][Loot] container {containerId} not found in map {propertyMapName}");
                         continue;
                     }
 
@@ -327,19 +331,22 @@ public sealed class LootService
             });
         }
 
-        if (itemsAdded > 0)
+        if (_verbose)
         {
-            _info($"[TTC][Loot] Added {itemsAdded} entries into {containersTouched} containers across {mapsTouched} map(s)");
-        }
-        else if (scheduledItems > 0)
-        {
-            var mapsQueued = lootChangesByMap.Count;
-            var containersQueued = lootChangesByMap.Values.Select(v => v.Select(t => t.ContainerId).Distinct().Count()).Sum();
-            _info($"[TTC][Loot] Queued {scheduledItems} entries for ~{containersQueued} containers across {mapsQueued} map(s) (applies on map load)");
-        }
-        else
-        {
-            _info("[TTC][Loot] No entries queued (check loot_locations / container ids)");
+            if (itemsAdded > 0)
+            {
+                _info($"[TTC][Loot] Added {itemsAdded} entries into {containersTouched} containers across {mapsTouched} map(s)");
+            }
+            else if (scheduledItems > 0)
+            {
+                var mapsQueued = lootChangesByMap.Count;
+                var containersQueued = lootChangesByMap.Values.Select(v => v.Select(t => t.ContainerId).Distinct().Count()).Sum();
+                _info($"[TTC][Loot] Queued {scheduledItems} entries for ~{containersQueued} containers across {mapsQueued} map(s) (applies on map load)");
+            }
+            else
+            {
+                _info("[TTC][Loot] No entries queued (check loot_locations / container ids)");
+            }
         }
     }
 }

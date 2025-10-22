@@ -8,6 +8,10 @@
     <RootNamespace>TTC.Mod</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <SPT_DIR>D:\SPT\4.0\SPT</SPT_DIR>
+  </PropertyGroup>
+
   <!-- Copy bundles.json to output for packaging convenience -->
   <ItemGroup>
     <None Include="..\..\bundles.json">
