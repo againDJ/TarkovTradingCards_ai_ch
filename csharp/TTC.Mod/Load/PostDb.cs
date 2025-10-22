@@ -368,39 +368,7 @@ public sealed class PostDb : IOnLoad
 		}
 	}
 
-	private static int TryAddManyGeneric(object? collectionObj, IEnumerable<string> values)
-	{
-		if (collectionObj == null) return 0;
-		try
-		{
-			var t = collectionObj.GetType();
-			var add = t.GetMethod("Add");
-			if (add == null) return 0;
-			var elemType = t.IsGenericType ? t.GetGenericArguments().FirstOrDefault() : typeof(string);
-			int added = 0;
-			foreach (var v in values)
-			{
-				var conv = ConvertStringTo(elemType!, v);
-				if (conv == null) continue;
-				try
-				{
-					var res = add.Invoke(collectionObj, new[] { conv });
-					if (res is bool b)
-					{
-						if (b) added++;
-					}
-					else
-					{
-						// non-boolean Add (e.g., List<T>.Add): assume added
-						added++;
-					}
-				}
-				catch { }
-			}
-			return added;
-		}
-		catch { return 0; }
-	}
+	// removed reflection helpers (unused)
 
 	private void TryAddTraderOffers(string emptyBoosterId)
 	{
@@ -458,33 +426,11 @@ public sealed class PostDb : IOnLoad
 						items.Add(newItem);
 
 						var curTpl = CurrencyToTpl(currency);
-						var pay = new SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme();
-						// Set properties defensively to handle minor API variations
-						void TrySetProp(object target, string name, object value)
+						var pay = new SPTarkov.Server.Core.Models.Eft.Common.Tables.BarterScheme
 						{
-							try
-							{
-								var pi = target.GetType().GetProperty(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
-								if (pi == null) return;
-								var t = Nullable.GetUnderlyingType(pi.PropertyType) ?? pi.PropertyType;
-								object v = value;
-								if (v != null && !t.IsInstanceOfType(v))
-								{
-									try { v = Convert.ChangeType(v, t, System.Globalization.CultureInfo.InvariantCulture); } catch { }
-								}
-								pi.SetValue(target, v);
-							}
-							catch { }
-						}
-						// Prefer string template id, also try MongoId for compatibility
-						TrySetProp(pay, "Tpl", curTpl);
-						TrySetProp(pay, "_tpl", curTpl);
-						TrySetProp(pay, "Template", curTpl);
-						TrySetProp(pay, "Tpl", new SPTarkov.Server.Core.Models.Common.MongoId(curTpl));
-						TrySetProp(pay, "_tpl", new SPTarkov.Server.Core.Models.Common.MongoId(curTpl));
-						TrySetProp(pay, "Template", new SPTarkov.Server.Core.Models.Common.MongoId(curTpl));
-						TrySetProp(pay, "Count", price);
-						TrySetProp(pay, "count", price);
+							Template = new SPTarkov.Server.Core.Models.Common.MongoId(curTpl),
+							Count = price
+						};
 
 						bs[newId] = new() { new() { pay } };
 						lli[newId] = loyalty;
@@ -676,12 +622,16 @@ public sealed class PostDb : IOnLoad
 			var ttcTpls = new HashSet<string>(_state.Cards.Select(c => c.id));
 			int removed = 0;
 
-			// Remove from dynamic/static blacklists if present
-			removed += RemoveFromNestedBlacklist(ragfairCfgObj, new[] { "Dynamic", "dynamic" }, new[] { "Blacklist", "blacklist" }, ttcTpls, "ragfair.dynamic.blacklist");
-			removed += RemoveFromNestedBlacklist(ragfairCfgObj, new[] { "Static", "static" }, new[] { "Blacklist", "blacklist" }, ttcTpls, "ragfair.static.blacklist");
-
-			// Enable parent category condition if exists
-			TryEnableParentCondition(ragfairCfgObj, _state.CardBase.item_parent);
+			var typed = ragfairCfgObj as SPTarkov.Server.Core.Models.Spt.Config.RagfairConfig;
+			if (typed != null)
+			{
+				// Remove TTC from dynamic blacklist; other fields may vary per SPT build
+				removed += TryRemoveFromSet(typed.Dynamic?.Blacklist, ttcTpls);
+			}
+			else
+			{
+				_logger.Info("[TTC] Ragfair config not in expected typed shape; skipping adjustments");
+			}
 
 			_logger.Info(removed > 0
 				? $"[TTC] Ragfair: removed {removed} TTC entries from blacklists and enabled parent condition (if present)"
@@ -693,52 +643,55 @@ public sealed class PostDb : IOnLoad
 		}
 	}
 
-	private int RemoveFromNestedBlacklist(object root, string[] level1Names, string[] listNames, HashSet<string> tpls, string dbg)
+	// Try to remove all ids (strings) from a blacklist set/list in typed fashion.
+	// Supports common shapes: ISet<MongoId>, ISet<string>, ICollection<MongoId>, ICollection<string>, List<...>
+	private static int TryRemoveFromSet(object? setLike, HashSet<string> ids)
 	{
+		if (setLike == null) return 0;
 		try
 		{
-			var l1 = GetPropIgnoreCase(root, level1Names);
-			if (l1 == null) return 0;
-			var listObj = GetPropIgnoreCase(l1, listNames);
-			if (listObj is System.Collections.IEnumerable seq)
+			int removed = 0;
+			switch (setLike)
 			{
-				var toKeep = new List<object>();
-				int removed = 0;
-				foreach (var el in seq)
-				{
-					// element may be simple string tpl or object with tpl property
-					string? tpl = null;
-					if (el == null) continue;
-					if (el is string s) tpl = s;
-					else tpl = GetStringPropIgnoreCase(el, new[] { "Tpl", "tpl", "Id", "id", "_tpl" });
-					if (tpl != null && tpls.Contains(tpl)) { removed++; }
-					else toKeep.Add(el);
-				}
-
-				// Try to set back filtered list
-				SetEnumerableBack(listObj, toKeep);
-				if (removed > 0) _logger.Info($"[TTC] Removed {removed} from {dbg}");
-				return removed;
+				case ISet<SPTarkov.Server.Core.Models.Common.MongoId> hsMi:
+					foreach (var s in ids) removed += hsMi.Remove(new SPTarkov.Server.Core.Models.Common.MongoId(s)) ? 1 : 0;
+					return removed;
+				case ISet<string> hsStr:
+					foreach (var s in ids) removed += hsStr.Remove(s) ? 1 : 0;
+					return removed;
+				case ICollection<SPTarkov.Server.Core.Models.Common.MongoId> colMi:
+					foreach (var s in ids)
+					{
+						var mi = new SPTarkov.Server.Core.Models.Common.MongoId(s);
+						if (colMi.Contains(mi)) { colMi.Remove(mi); removed++; }
+					}
+					return removed;
+				case ICollection<string> colStr:
+					foreach (var s in ids)
+					{
+						if (colStr.Contains(s)) { colStr.Remove(s); removed++; }
+					}
+					return removed;
+				case System.Collections.IList list:
+					{
+						var toRemove = new List<int>();
+						for (int i = 0; i < list.Count; i++)
+						{
+							var el = list[i];
+							if (el is string s && ids.Contains(s)) toRemove.Add(i);
+							else if (el is SPTarkov.Server.Core.Models.Common.MongoId mi && ids.Contains(mi.ToString())) toRemove.Add(i);
+						}
+						// remove from tail
+						for (int i = toRemove.Count - 1; i >= 0; i--) { list.RemoveAt(toRemove[i]); removed++; }
+						return removed;
+					}
 			}
 		}
 		catch { }
 		return 0;
 	}
 
-	private void TryEnableParentCondition(object ragfairCfgObj, string parentId)
-	{
-		try
-		{
-			var dynamicObj = GetPropIgnoreCase(ragfairCfgObj, new[] { "Dynamic", "dynamic" });
-			if (dynamicObj == null) return;
-			var condObj = GetPropIgnoreCase(dynamicObj, new[] { "Condition", "condition", "Conditions", "conditions" });
-			if (condObj is System.Collections.IDictionary dict)
-			{
-				if (dict.Contains(parentId)) dict[parentId] = true;
-			}
-		}
-		catch { }
-	}
+	// removed reflection-based ragfair helpers
 
 	private void ApplyFenceBlacklistAndPurge()
 	{
@@ -749,45 +702,31 @@ public sealed class PostDb : IOnLoad
 			var tables = _db.GetTables();
 			var traders = tables.Traders;
 			var fenceId = "579dc571d53a0658a154fbec";
-			if (traders != null && traders.TryGetValue(fenceId, out var fence) && fence?.Assort?.Items != null)
+			if (traders != null && traders.TryGetValue(fenceId, out var fence) && fence?.Assort != null)
 			{
-				var ttcTpls = new HashSet<string>(_state.Cards.Select(c => c.id));
-				var before = fence.Assort.Items.Count;
-				var removedAssortIds = new HashSet<string>();
-				fence.Assort.Items = fence.Assort.Items.Where(i =>
+				var ttcTpls = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(_state.Cards.Select(c => new SPTarkov.Server.Core.Models.Common.MongoId(c.id)));
+				var before = fence.Assort.Items?.Count ?? 0;
+				var removedAssortIds = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>();
+
+				if (fence.Assort.Items != null)
 				{
-					try
+					fence.Assort.Items = fence.Assort.Items.Where(i =>
 					{
-						var tpl = GetStringPropIgnoreCase(i, new[] { "Tpl", "tpl", "_tpl" });
-						var id = GetStringPropIgnoreCase(i, new[] { "Id", "id", "_id" });
-						var keep = tpl == null || !ttcTpls.Contains(tpl);
-						if (!keep && id != null) removedAssortIds.Add(id);
+						if (i == null) return true;
+						var keep = i.Template == null || !ttcTpls.Contains(i.Template);
+						if (!keep && i.Id != null) removedAssortIds.Add(i.Id);
 						return keep;
-					}
-					catch { return true; }
-				}).ToList();
+					}).ToList();
+				}
 
 				// Clean barter/loyalty maps
 				if (removedAssortIds.Count > 0)
 				{
-					try
+					foreach (var rid in removedAssortIds)
 					{
-						var bs = fence.Assort.BarterScheme as System.Collections.IDictionary;
-						if (bs != null)
-						{
-							foreach (var rid in removedAssortIds) if (bs.Contains(rid)) bs.Remove(rid);
-						}
+						fence.Assort.BarterScheme?.Remove(rid);
+						fence.Assort.LoyalLevelItems?.Remove(rid);
 					}
-					catch { }
-					try
-					{
-						var lli = fence.Assort.LoyalLevelItems as System.Collections.IDictionary;
-						if (lli != null)
-						{
-							foreach (var rid in removedAssortIds) if (lli.Contains(rid)) lli.Remove(rid);
-						}
-					}
-					catch { }
 				}
 
 				var after = fence.Assort.Items.Count;
@@ -809,34 +748,24 @@ public sealed class PostDb : IOnLoad
 			if (traderCfg?.Fence != null)
 			{
 				var fenceCfg = traderCfg.Fence;
-				var blProp = fenceCfg.GetType().GetProperty("Blacklist");
-				var blObj = blProp?.GetValue(fenceCfg);
-				if (blObj != null)
+				int added = 0;
+				try
 				{
-					int added = 0;
-					var setType = blObj.GetType();
-					var addMethod = setType.GetMethod("Add");
-					var elemType = setType.IsGenericType ? setType.GetGenericArguments()[0] : typeof(string);
-					foreach (var tpl in _state.Cards.Select(c => c.id))
+					// Prefer typed sets
+					if (fenceCfg.Blacklist is ISet<SPTarkov.Server.Core.Models.Common.MongoId> setMi)
 					{
-						var conv = ConvertStringTo(elemType, tpl);
-						if (conv == null) continue;
-						try
-						{
-							var res = addMethod?.Invoke(blObj, new[] { conv });
-							// HashSet<T>.Add returns bool; count additions
-							if (res is bool b && b) added++;
-						}
-						catch { }
+						foreach (var tpl in _state.Cards.Select(c => c.id)) if (setMi.Add(new SPTarkov.Server.Core.Models.Common.MongoId(tpl))) added++;
 					}
-					_logger.Info(added > 0
-						? $"[TTC] Added {added} TTC tpl(s) to TraderConfig.Fence.Blacklist"
-						: "[TTC] TraderConfig.Fence.Blacklist already up to date");
+					else if (fenceCfg.Blacklist is ISet<string> setStr)
+					{
+						foreach (var tpl in _state.Cards.Select(c => c.id)) if (setStr.Add(tpl)) added++;
+					}
 				}
-				else
-				{
-					_logger.Info("[TTC] TraderConfig.Fence.Blacklist not available");
-				}
+				catch { }
+
+				_logger.Info(added > 0
+					? $"[TTC] Added {added} TTC tpl(s) to TraderConfig.Fence.Blacklist"
+					: "[TTC] TraderConfig.Fence.Blacklist already up to date");
 			}
 			else
 			{
@@ -849,127 +778,7 @@ public sealed class PostDb : IOnLoad
 		}
 	}
 
-	private static object? ConvertStringTo(Type targetType, string value)
-	{
-		try
-		{
-			if (targetType == typeof(string)) return value;
-			// ctor(string)
-			var ctor = targetType.GetConstructor(new[] { typeof(string) });
-			if (ctor != null) return ctor.Invoke(new object[] { value });
-			// static Parse(string)
-			var parse = targetType.GetMethod("Parse", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static, new[] { typeof(string) });
-			if (parse != null) return parse.Invoke(null, new object[] { value });
-			// common implicit conversion operators
-			var opImpl = targetType.GetMethod("op_Implicit", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static, new[] { typeof(string) });
-			if (opImpl != null) return opImpl.Invoke(null, new object[] { value });
-		}
-		catch { }
-		return null;
-	}
-
-	private static object? GetPropIgnoreCase(object obj, string[] names)
-	{
-		var t = obj.GetType();
-		foreach (var n in names)
-		{
-			var pi = t.GetProperty(n, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
-			if (pi != null) return pi.GetValue(obj);
-		}
-		return null;
-	}
-
-	private static string? GetStringPropIgnoreCase(object obj, string[] names)
-	{
-		foreach (var n in names)
-		{
-			var val = GetPropIgnoreCase(obj, new[] { n });
-			if (val is string s) return s;
-			if (val != null)
-			{
-				try
-				{
-					var str = val.ToString();
-					if (!string.IsNullOrWhiteSpace(str) && !string.Equals(str, val.GetType().FullName, StringComparison.Ordinal))
-						return str;
-				}
-				catch { }
-			}
-		}
-		return null;
-	}
-
-	// Helper: search a dictionary-like object (IDictionary or Dictionary<,>) for a value where Id/_id equals key
-	private static object? FindById(object dictLike, string key)
-	{
-		try
-		{
-			if (dictLike is System.Collections.IDictionary idict)
-			{
-				foreach (System.Collections.DictionaryEntry de in idict)
-				{
-					var val = de.Value;
-					if (val == null) continue;
-					var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
-					if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
-				}
-				return null;
-			}
-			var valuesPi = dictLike.GetType().GetProperty("Values");
-			var values = valuesPi?.GetValue(dictLike) as System.Collections.IEnumerable;
-			if (values != null)
-			{
-				foreach (var val in values)
-				{
-					if (val == null) continue;
-					var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
-					if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
-				}
-			}
-		}
-		catch { }
-		return null;
-	}
-
-	// Helper: get dictionary-like value by string key, converting to expected key type when needed
-	private static object? GetByKey(object dictLike, string key)
-	{
-		try
-		{
-			if (dictLike is System.Collections.IDictionary idict)
-			{
-				return idict.Contains(key) ? idict[key] : null;
-			}
-			var indexer = dictLike.GetType().GetProperty("Item");
-			if (indexer == null) return null;
-			var idxParams = indexer.GetIndexParameters();
-			if (idxParams == null || idxParams.Length != 1) return null;
-			var paramType = idxParams[0].ParameterType;
-			var convertedKey = ConvertStringTo(paramType, key) ?? key;
-			return indexer.GetValue(dictLike, new object[] { convertedKey });
-		}
-		catch { return null; }
-	}
-
-	private static void SetEnumerableBack(object listObj, List<object> toKeep)
-	{
-		// Try common collection types
-		if (listObj is System.Collections.IList ilist)
-		{
-			ilist.Clear();
-			foreach (var o in toKeep) ilist.Add(o);
-			return;
-		}
-		var t = listObj.GetType();
-		var pi = t.GetProperty("Count"); // try to detect and replace via Clear/Add
-		var clear = t.GetMethod("Clear");
-		var add = t.GetMethod("Add");
-		if (clear != null && add != null)
-		{
-			clear.Invoke(listObj, null);
-			foreach (var o in toKeep) add.Invoke(listObj, new[] { o });
-		}
-	}
+	// removed reflection utilities (unused)
 
 	//
 }
