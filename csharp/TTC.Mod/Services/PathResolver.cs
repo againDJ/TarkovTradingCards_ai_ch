@@ -30,6 +30,30 @@ public static class PathResolver
             return null;
         }
 
+        // Try to detect the current mod root from the assembly path: .../user/mods/<ThisMod>/...
+        string? DetectCurrentModRoot(string startDir)
+        {
+            try
+            {
+                var dir = new DirectoryInfo(startDir);
+                for (int i = 0; i < 16 && dir != null; i++, dir = dir.Parent)
+                {
+                    var parent = dir.Parent;
+                    var grand = parent?.Parent;
+                    if (parent != null && grand != null
+                        && parent.Name.Equals("mods", StringComparison.OrdinalIgnoreCase)
+                        && grand.Name.Equals("user", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return dir.FullName; // this is the <ThisMod> folder under user/mods
+                    }
+                }
+            }
+            catch { }
+            return null;
+        }
+
+        var preferredModRoot = DetectCurrentModRoot(asmDir);
+
         // Upward search
         var up = new DirectoryInfo(asmDir);
         for (int i = 0; i < 12 && up != null; i++, up = up.Parent)
@@ -81,9 +105,15 @@ public static class PathResolver
                                        .ToList();
                 if (matches.Count > 0)
                 {
-                    // Prefer a path under user/mods/** if present
-                    var preferred = matches.FirstOrDefault(p => p.Contains(Path.Combine("user", "mods"), StringComparison.OrdinalIgnoreCase))
-                                   ?? matches[0];
+                    // If we detected our own mod root, prefer matches under it specifically
+                    string? preferred = null;
+                    if (!string.IsNullOrEmpty(preferredModRoot))
+                    {
+                        preferred = matches.FirstOrDefault(p => p.StartsWith(preferredModRoot!, StringComparison.OrdinalIgnoreCase));
+                    }
+                    // Else prefer any path under user/mods/** if present
+                    preferred ??= matches.FirstOrDefault(p => p.Contains(Path.Combine("user", "mods"), StringComparison.OrdinalIgnoreCase))
+                               ?? matches[0];
                     var parent = Path.GetDirectoryName(preferred)!;
                     var cfgDir = FindValidConfigDir(parent)!;
                     return (cfgDir, Path.Combine(cfgDir, "mod_config.jsonc"), Path.Combine(cfgDir, "cards.json"));
