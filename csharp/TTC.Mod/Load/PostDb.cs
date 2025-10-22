@@ -166,17 +166,12 @@ public sealed class PostDb : IOnLoad
 			if (_state.CardBase.lootable && _state.Config.enable_container_spawns)
 			{
 				var lootSvc = new LootService(_db, s => _logger.Info(s), s => _logger.Warning(s), verbose);
+				// Always perform normal weighted injection based on config loot_locations
+				lootSvc.AddCardsToStaticLoot(_state.CardBase.loot_locations, _state.Cards, _state.Config);
+				// In debug, optionally dump static loot for quick inspection
 				if (_state.Config.debug)
 				{
-					// In debug, force 100% TTC-only contents everywhere to make testing instant
-					lootSvc.ForceCardsEverywhereForDebug(_state.Cards);
-					// Dump static loot for sandbox and sandbox_high to verify distributions
 					lootSvc.DebugDumpStaticLoot(new[] { "sandbox", "sandbox_high" }, _state.CardBase.loot_locations, 8);
-				}
-				else
-				{
-					// Normal weighted injection based on config loot_locations
-					lootSvc.AddCardsToStaticLoot(_state.CardBase.loot_locations, _state.Cards, _state.Config);
 				}
 				if (!verbose) _logger.Info("[TTC][Loot] generated");
 			}
@@ -711,8 +706,8 @@ public sealed class PostDb : IOnLoad
 					fence.Assort.Items = fence.Assort.Items.Where(i =>
 					{
 						if (i == null) return true;
-						var keep = i.Template == null || !ttcTpls.Contains(i.Template);
-						if (!keep && i.Id != null) removedAssortIds.Add(i.Id);
+						var keep = !ttcTpls.Contains(i.Template);
+						if (!keep) removedAssortIds.Add(i.Id);
 						return keep;
 					}).ToList();
 				}
@@ -727,7 +722,7 @@ public sealed class PostDb : IOnLoad
 					}
 				}
 
-				var after = fence.Assort.Items.Count;
+				var after = fence.Assort.Items?.Count ?? 0;
 				var diff = before - after;
 				if (diff > 0 && verbose) _logger.Info($"[TTC][Fence] Purged {diff} TTC item(s) from assort");
 			}
