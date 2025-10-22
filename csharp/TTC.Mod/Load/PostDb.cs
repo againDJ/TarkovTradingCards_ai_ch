@@ -125,7 +125,7 @@ public sealed class PostDb : IOnLoad
 		if (_state.Config.cards_tradeable_on_flea)
 		{
 			if (!verbose) _logger.Info("[TTC][Ragfair] active");
-			TryConfigureRagfairForCards(verbose);
+			ConfigureRagfairForCards(verbose);
 		}
 		else
 		{
@@ -155,10 +155,10 @@ public sealed class PostDb : IOnLoad
 		}
 
 		// List binders and Empty Booster for sale at traders
-		TryAddTraderOffers(emptyBoosterId, verbose);
+		AddTraderOffers(emptyBoosterId, verbose);
 
 		// Make TTC cards compatible with S I C C and Documents case containers
-		TryAddCardsToPouches(verbose);
+		AddCardsToPouches(verbose);
 
 		// Inject TTC cards into static containers using the typed service
 		try
@@ -301,7 +301,7 @@ public sealed class PostDb : IOnLoad
 		return 1000; // safe fallback to avoid missing handbook price (prevents Infinity flea tax)
 	}
 
-	private void TryAddCardsToPouches(bool verbose)
+	private void AddCardsToPouches(bool verbose)
 	{
 		try
 		{
@@ -363,7 +363,7 @@ public sealed class PostDb : IOnLoad
 	}
 	// removed reflection helpers (unused)
 
-	private void TryAddTraderOffers(string emptyBoosterId, bool verbose)
+	private void AddTraderOffers(string emptyBoosterId, bool verbose)
 	{
 		try
 		{
@@ -596,7 +596,7 @@ public sealed class PostDb : IOnLoad
 		catch { }
 	}
 
-	private void TryConfigureRagfairForCards(bool verbose)
+	private void ConfigureRagfairForCards(bool verbose)
 	{
 		try
 		{
@@ -621,7 +621,7 @@ public sealed class PostDb : IOnLoad
 			if (typed != null)
 			{
 				// Remove TTC from dynamic blacklist; other fields may vary per SPT build
-				removed += TryRemoveFromSet(typed.Dynamic?.Blacklist, ttcTpls);
+				removed += RemoveFromSet(typed.Dynamic?.Blacklist, ttcTpls);
 			}
 			else
 			{
@@ -641,7 +641,7 @@ public sealed class PostDb : IOnLoad
 
 	// Try to remove all ids (strings) from a blacklist set/list in typed fashion.
 	// Supports common shapes: ISet<MongoId>, ISet<string>, ICollection<MongoId>, ICollection<string>, List<...>
-	private static int TryRemoveFromSet(object? setLike, HashSet<string> ids)
+	private static int RemoveFromSet(object? setLike, HashSet<string> ids)
 	{
 		if (setLike == null) return 0;
 		try
