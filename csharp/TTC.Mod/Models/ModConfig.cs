@@ -12,8 +12,10 @@ public record ModConfig
 
     // Static loot tuning knobs
     public double staticLootMultiplier { get; init; } = 1.0;
-    // Base spawn probability per card per container roll (before multipliers), capped at 0.25
-    public double default_card_spawn_probability { get; init; } = 0.01;
+    // Grouped rarity injection (always enabled):
+    // Treat cards as a group with an overall spawn chance, then split that chance by rarity and by card count per rarity.
+    // Overall group chance per container roll (e.g., 0.10 for 10%).
+    public double grouped_spawn_probability { get; init; } = 0.10;
 
     public bool cards_examined_by_default { get; init; }
     public bool cards_tradeable_on_flea { get; init; }

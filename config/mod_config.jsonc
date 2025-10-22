@@ -17,8 +17,16 @@
 
    // Overall multiplier for static container loot
    "staticLootMultiplier": 1.0,
-   // Base chance per-card per-container roll before multipliers (capped to 0.25 internally)
-   "default_card_spawn_probability": 0.01,
+
+  // ─────────────────────────────────────────────
+  // GROUPED RARITY INJECTION
+  // ─────────────────────────────────────────────
+  /* The mod treats all cards as a single group per container roll,
+     with an overall chance to spawn (grouped_spawn_probability). If the group
+     is selected, a rarity is chosen according to rarity_weights, then a card
+     is chosen uniformly within that rarity. Internally, this is converted to
+     per-card relative probabilities using the container mass. */
+  "grouped_spawn_probability": 0.10,
 
   // ─────────────────────────────────────────────
   // SPAWN PROBABILITY DATA

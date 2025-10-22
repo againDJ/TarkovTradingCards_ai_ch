@@ -161,8 +161,30 @@ public sealed class LootService
         var locations = _db.GetTables().Locations;
         var mapDict = locations.GetDictionary();
 
-    // Accumulate changes by map: propertyMapName -> list of (containerId, ItemDistribution)
-        var lootChangesByMap = new Dictionary<string, List<(SPTarkov.Server.Core.Models.Common.MongoId ContainerId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution Item)>>();
+    // Accumulate changes by map: propertyMapName -> list of (containerId, Item, PBase, PEff)
+        var lootChangesByMap = new Dictionary<string, List<(SPTarkov.Server.Core.Models.Common.MongoId ContainerId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution Item, double PBase, double PEff)>>();
+        int scheduledItems = 0;
+
+        // Precompute rarity groups and normalized weights (grouped mode is always enabled)
+        var cardsByRarity = cards.GroupBy(c => c.rarity ?? "")
+                                 .ToDictionary(g => g.Key, g => g.ToList());
+        var sumW = (cfg.rarity_weights?.Values.Sum() ?? 0d);
+        Dictionary<string, double> rarityWeightNorm;
+        if (sumW > 0)
+        {
+            rarityWeightNorm = (cfg.rarity_weights ?? new Dictionary<string, double>())
+                .ToDictionary(kv => kv.Key, kv => kv.Value / sumW);
+        }
+        else
+        {
+            rarityWeightNorm = new Dictionary<string, double>();
+            if (cardsByRarity.Count > 0)
+            {
+                double eq = 1.0 / cardsByRarity.Count;
+                foreach (var r in cardsByRarity.Keys)
+                    rarityWeightNorm[r] = eq;
+            }
+        }
 
         foreach (var kv in lootLocations)
         {
@@ -191,45 +213,58 @@ public sealed class LootService
                     totalProbability = -1; // mark as unknown
                 }
 
-                var spawnProbability = cfg.default_card_spawn_probability;
-                if (cfg.container_multipliers != null && cfg.container_multipliers.TryGetValue(containerTpl, out var cm))
                 {
-                    spawnProbability *= cm;
-                }
-
-                var calculatedSpawnProbability = spawnProbability * cfg.staticLootMultiplier;
-                if (calculatedSpawnProbability >= 0.25)
-                {
-                    _warn($"[TTC] Loot: clamping spawnProbability to 0.25 for {mapName}:{containerTpl}");
-                    calculatedSpawnProbability = 0.25;
-                }
-
-                foreach (var card in cards)
-                {
-                    int relativeProbability;
-                    if (totalProbability > 0)
+                    double pGroup = cfg.grouped_spawn_probability;
+                    if (pGroup < 0) pGroup = 0; if (pGroup > 0.98) pGroup = 0.98;
+                    double cMult = 1.0;
+                    if (cfg.container_multipliers != null && cfg.container_multipliers.TryGetValue(containerTpl, out var cmv)) cMult = cmv;
+                    if (cMult <= 0)
                     {
-                        // Denominator uses original spawnProbability (pre-multiplier), numerator uses calculated (post-multiplier)
-                        double relRaw = (calculatedSpawnProbability * totalProbability) / Math.Max(1e-9, (1 - spawnProbability));
-                        relativeProbability = (int)Math.Round(relRaw);
-                    }
-                    else
-                    {
-                        // Fallback: if constants not found, will compute mass inside transformer by reading current container distribution
-                        // Use a placeholder; will be recalculated in transformer
-                        relativeProbability = -1;
+                        _info($"[TTC] Loot: multiplier <= 0 for container {containerTpl} on {mapName}; skipping injection");
+                        continue;
                     }
 
-                    var newLoot = new SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution
+                    foreach (var kvR in cardsByRarity)
                     {
-                        Tpl = new SPTarkov.Server.Core.Models.Common.MongoId(card.id),
-                        RelativeProbability = Math.Max(1, relativeProbability)
-                    };
+                        var rarity = kvR.Key;
+                        var listByRarity = kvR.Value;
+                        if (listByRarity == null || listByRarity.Count == 0) continue;
+                        if (!rarityWeightNorm.TryGetValue(rarity, out var s_r) || s_r <= 0) continue;
 
-                    if (!lootChangesByMap.ContainsKey(propertyMapName))
-                        lootChangesByMap[propertyMapName] = new List<(SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution)>();
+                        double pBasePerCard = pGroup * s_r * (1.0 / listByRarity.Count);
+                        double pEffPerCard = pBasePerCard * cfg.staticLootMultiplier * cMult;
+                        if (pEffPerCard >= 0.25)
+                        {
+                            _warn($"[TTC] Loot: clamping grouped pEff to 0.25 for {mapName}:{containerTpl}:{rarity}");
+                            pEffPerCard = 0.25;
+                        }
 
-                    lootChangesByMap[propertyMapName].Add((new SPTarkov.Server.Core.Models.Common.MongoId(containerTpl), newLoot));
+                        foreach (var card in listByRarity)
+                        {
+                            int relativeProbability;
+                            if (totalProbability > 0)
+                            {
+                                double relRaw = (pEffPerCard * totalProbability) / Math.Max(1e-9, (1 - pBasePerCard));
+                                relativeProbability = (int)Math.Round(relRaw);
+                            }
+                            else
+                            {
+                                relativeProbability = -1; // compute in transformer
+                            }
+
+                            var newLoot = new SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution
+                            {
+                                Tpl = new SPTarkov.Server.Core.Models.Common.MongoId(card.id),
+                                RelativeProbability = Math.Max(1, relativeProbability)
+                            };
+
+                            if (!lootChangesByMap.ContainsKey(propertyMapName))
+                                lootChangesByMap[propertyMapName] = new List<(SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.ItemDistribution, double, double)>();
+
+                            lootChangesByMap[propertyMapName].Add((new SPTarkov.Server.Core.Models.Common.MongoId(containerTpl), newLoot, pBasePerCard, pEffPerCard));
+                            scheduledItems++;
+                        }
+                    }
                 }
             }
         }
@@ -255,6 +290,8 @@ public sealed class LootService
                 {
                     var containerId = change.ContainerId;
                     var newLoot = change.Item;
+                    var pBase = change.PBase;
+                    var pEff = change.PEff;
 
                     if (!lazyLoadedStaticLoot.TryGetValue(containerId, out var lootContainer) || lootContainer == null)
                     {
@@ -268,14 +305,8 @@ public sealed class LootService
                         var mass = lootContainer.ItemDistribution?.Sum(x => Convert.ToDouble(x?.RelativeProbability ?? 0)) ?? 0d;
                         if (mass <= 0) mass = 1;
 
-                        var containerIdStr = containerId.ToString();
-                        var baseSpawn = cfg.default_card_spawn_probability;
-                        if (cfg.container_multipliers != null && cfg.container_multipliers.TryGetValue(containerIdStr, out var cmm))
-                        {
-                            baseSpawn *= cmm;
-                        }
-                        var calcSpawn = Math.Min(0.25, baseSpawn * cfg.staticLootMultiplier);
-                        double relRaw = (calcSpawn * mass) / Math.Max(1e-9, (1 - baseSpawn));
+                        var calcSpawn = Math.Min(0.25, pEff);
+                        double relRaw = (calcSpawn * mass) / Math.Max(1e-9, (1 - pBase));
                         newLoot = newLoot with { RelativeProbability = Math.Max(1, (int)Math.Round(relRaw)) };
                     }
 
@@ -291,8 +322,19 @@ public sealed class LootService
             });
         }
 
-        _info(itemsAdded > 0
-            ? $"[TTC] Loot: added {itemsAdded} entries into {containersTouched} containers across {mapsTouched} map(s)"
-            : "[TTC] Loot: no entries injected (check loot_locations / container ids)");
+        if (itemsAdded > 0)
+        {
+            _info($"[TTC] Loot: added {itemsAdded} entries into {containersTouched} containers across {mapsTouched} map(s)");
+        }
+        else if (scheduledItems > 0)
+        {
+            var mapsQueued = lootChangesByMap.Count;
+            var containersQueued = lootChangesByMap.Values.Select(v => v.Select(t => t.ContainerId).Distinct().Count()).Sum();
+            _info($"[TTC] Loot: queued {scheduledItems} entries for injection into ~{containersQueued} containers across {mapsQueued} map(s) (will apply on map load)");
+        }
+        else
+        {
+            _info("[TTC] Loot: no entries queued (check loot_locations / container ids)");
+        }
     }
 }
