@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+    <AssemblyName>TTC.Mod</AssemblyName>
+    <RootNamespace>TTC.Mod</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <SPT_DIR>D:\SPT\4.0\SPT</SPT_DIR>
+  </PropertyGroup>
+
+  <!-- Copy bundles.json to output for packaging convenience -->
+  <ItemGroup>
+    <None Include="..\..\bundles.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Copy config folder into Release output so the mod package includes configuration files -->
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <None Include="..\..\config\**\*.*">
+      <Link>config\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>config\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </None>
+    <None Include="..\..\bundles\**\*.*">
+      <Link>bundles\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bundles\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </None>
+  </ItemGroup>
+
+  <!-- SPT 4.0 server references via MSBuild property SPT_DIR; set at build time:
+       dotnet build -p:SPT_DIR="D:\SPT\4.0\SPT" -->
+  <ItemGroup Condition="'$(SPT_DIR)' != ''">
+    <Reference Include="SPTarkov.Server.Core">
+      <HintPath>$(SPT_DIR)\SPTarkov.Server.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SPTarkov.DI">
+      <HintPath>$(SPT_DIR)\SPTarkov.DI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SPTarkov.Common">
+      <HintPath>$(SPT_DIR)\SPTarkov.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SPT.Server">
+      <HintPath>$(SPT_DIR)\SPT.Server.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SemanticVersioning">
+      <HintPath>$(SPT_DIR)\SemanticVersioning.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Require SPT_DIR to be set; we always build against SPT -->
+  <Target Name="EnsureSptDirProvided" BeforeTargets="Build">
+    <Error Condition="'$(SPT_DIR)' == ''" Text="SPT_DIR must be set (path to SPT server DLLs) to build this project." />
+  </Target>
+</Project>

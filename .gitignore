@@ -1,2 +1,23 @@
-﻿node_modules
+﻿# Node.js
+node_modules
 package-lock.json
+
+# .NET / C# build artifacts
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+
+# JetBrains Rider / IntelliJ
+.idea/
+
+# Logs and temp
+*.log
+*.tmp
+.vscode/tasks.json
+.tmp_reflect.txt
