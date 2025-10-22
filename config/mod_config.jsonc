@@ -21,12 +21,12 @@
   // ─────────────────────────────────────────────
   // GROUPED RARITY INJECTION
   // ─────────────────────────────────────────────
-  /* The mod treats all cards as a single group per container roll,
-     with an overall chance to spawn (grouped_spawn_probability). If the group
-     is selected, a rarity is chosen according to rarity_weights, then a card
-     is chosen uniformly within that rarity. Internally, this is converted to
-     per-card relative probabilities using the container mass. */
-  "grouped_spawn_probability": 0.10,
+  /* The mod treats all cards as a single group per container roll.
+     The overall chance to spawn the group is computed as:
+       effective_group_chance = 0.05 (base) × card_weight_multiplier (clamped 0..10)
+     If the group is selected, a rarity is chosen according to rarity_weights,
+     then a card is chosen uniformly within that rarity. Internally, this is
+     converted to per-card relative probabilities using the container mass. */
 
   // ─────────────────────────────────────────────
   // SPAWN PROBABILITY DATA
@@ -37,12 +37,13 @@
      SPT-AKI loot tables (recommended). */
   "auto_update_probabilities": true,
 
-  /* Global weight multiplier for ALL cards.
-       0  → no cards spawn at all
-       0.5 → low
-       1 → normal
-       2  → medium
-       3 → high */
+  /* Global weight multiplier for ALL cards, applied to the base group chance (0.05).
+     0   → 0% group chance (no spawns)
+     0.5 → 2.5% group chance
+     1   → 5% group chance (baseline)
+     2   → 10% group chance
+     ... up to 10 → 50% group chance
+   Note: each individual card is still capped at 25% per roll. */
   "card_weight_multiplier": 1,
 
     /* Per-container loot multipliers (global, applies to all maps).

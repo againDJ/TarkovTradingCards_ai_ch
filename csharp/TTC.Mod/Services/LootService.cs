@@ -15,6 +15,8 @@ public sealed class LootService
     private readonly Action<string> _info;
     private readonly Action<string> _warn;
     private readonly DatabaseService _db;
+    // Base group chance (per-container roll) used by grouped rarity injection; scaled by card_weight_multiplier (0..10)
+    private const double BASE_GROUPED_PROBABILITY = 0.05;
 
     public LootService(DatabaseService db, Action<string> info, Action<string> warn)
     {
@@ -214,7 +216,10 @@ public sealed class LootService
                 }
 
                 {
-                    double pGroup = cfg.grouped_spawn_probability;
+                    // Compute group chance from base and multiplier (0..10)
+                    double mult = cfg.card_weight_multiplier;
+                    if (mult < 0) mult = 0; if (mult > 10) mult = 10;
+                    double pGroup = BASE_GROUPED_PROBABILITY * mult;
                     if (pGroup < 0) pGroup = 0; if (pGroup > 0.98) pGroup = 0.98;
                     double cMult = 1.0;
                     if (cfg.container_multipliers != null && cfg.container_multipliers.TryGetValue(containerTpl, out var cmv)) cMult = cmv;

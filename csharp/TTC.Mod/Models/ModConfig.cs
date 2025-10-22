@@ -7,6 +7,7 @@ public record ModConfig
     public bool debug { get; init; }
 
     public bool auto_update_probabilities { get; init; }
+    // Scales the base grouped spawn probability (0.05) between 0x and 10x
     public double card_weight_multiplier { get; init; } = 1.0;
     public Dictionary<string, double> container_multipliers { get; init; } = new();
 
@@ -14,8 +15,6 @@ public record ModConfig
     public double staticLootMultiplier { get; init; } = 1.0;
     // Grouped rarity injection (always enabled):
     // Treat cards as a group with an overall spawn chance, then split that chance by rarity and by card count per rarity.
-    // Overall group chance per container roll (e.g., 0.10 for 10%).
-    public double grouped_spawn_probability { get; init; } = 0.10;
 
     public bool cards_examined_by_default { get; init; }
     public bool cards_tradeable_on_flea { get; init; }
