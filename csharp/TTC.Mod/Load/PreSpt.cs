@@ -22,11 +22,20 @@ public sealed class PreSpt : IOnLoad
 
 	public Task OnLoad()
 	{
-		_logger.Info("[TTC] PreSpt starting - loading configs...");
+		_logger.Info("[TTC][Init] Loading configuration...");
                 try
         {
                                 var (configDir, modConfigPath, cardsPath) = PathResolver.GetConfigPaths();
-                                _logger.Info($"[TTC] Resolved config dir: {configDir}");
+								_logger.Info($"[TTC][Config] Using config directory: {configDir}");
+                                                                try
+                                                                {
+                                                                                var norm = configDir.Replace('\\', '/');
+                                                                                if (!norm.Contains("/user/mods/", StringComparison.OrdinalIgnoreCase))
+                                                                                {
+                                                                                                _logger.Warning("[TTC][Config] Config not under user/mods. Ensure the mod is installed in SPT/user/mods/<TTC>/config");
+                                                                                }
+                                                                }
+                                                                catch { }
                 var cfg = _loader.LoadModConfig(modConfigPath);
                 var cards = _loader.LoadCards(cardsPath);
                 var cardBasePath = Path.Combine(configDir, "card_base.json");
@@ -40,11 +49,11 @@ public sealed class PreSpt : IOnLoad
                 var emptyBooster = _loader.LoadEmptyBoosterOverride(bindersDir);
 
                 _state.Set(cfg, cards, cardBase, containerBase, binderBase, binders, emptyBooster);
-                _logger.Info($"[TTC] Loaded config + {cards.Count} cards. Rarity sum={cfg.rarity_weights.Values.Sum():F3}; cloneFrom={cardBase.clone_item}; containerFrom={containerBase.clone_item}; binderFrom={binderBase.clone_item}; binders={binders.Count}; emptyBooster={(emptyBooster?.id ?? "none")}");
+				_logger.Info($"[TTC][Config] Loaded {cards.Count} cards, binders={binders.Count}, emptyBooster={(emptyBooster?.id ?? "none")}");
         }
                 catch (Exception ex)
         {
-                _logger.Info($"[TTC] ERROR loading configs: {ex.Message}");
+				_logger.Warning($"[TTC][Config] Failed to load configuration: {ex.Message}");
         }
         return Task.CompletedTask;
 	}

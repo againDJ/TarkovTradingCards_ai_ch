@@ -37,19 +37,19 @@ public sealed class PostDb : IOnLoad
 
 	public Task OnLoad()
 	{
-		_logger.Info("[TTC] PostDB starting - preparing vertical slice...");
+		_logger.Info("[TTC][Init] Wiring items, traders and loot...");
 		var count = _state.Cards.Count;
 		if (count == 0)
 		{
-			_logger.Info("[TTC] No cards loaded; skipping.");
+			_logger.Info("[TTC][Init] No cards configured — skipping runtime wiring.");
 			return Task.CompletedTask;
 		}
 
 		// Log first card for visibility
 		var first = _state.Cards[0];
-		_logger.Info($"[TTC] First card: id={first.id}, name={first.item_name}, rarity={first.rarity}, price={first.price}");
+		_logger.Info($"[TTC][Cards] Example: id={first.id}, name={first.item_name}, rarity={first.rarity}, price={first.price}");
 
-		_logger.Info($"[TTC] Creating {count} cards...");
+		_logger.Info($"[TTC][Cards] Creating {count} item templates...");
 		var gameLocale = _localeService.GetDesiredGameLocale();
 		const string english = "en";
 
@@ -107,18 +107,21 @@ public sealed class PostDb : IOnLoad
 				{
 					failed++;
 					var errs = result.Errors != null && result.Errors.Count > 0 ? string.Join("; ", result.Errors) : "unknown error";
-					_logger.Info($"[TTC] Failed to create item {card.id}: {errs}");
+					_logger.Warning($"[TTC][Cards] Failed to create {card.id}: {errs}");
 				}
 				else { success++; }
 			}
 			catch (Exception ex)
 			{
 				failed++;
-				_logger.Info($"[TTC] ERROR creating card {card.id}: {ex.Message}");
+				_logger.Warning($"[TTC][Cards] Error creating {card.id}: {ex.Message}");
 			}
 		}
 
-		_logger.Info($"[TTC] Cards creation pass complete. success={success}, failed={failed}");
+		if (failed > 0)
+			_logger.Warning($"[TTC][Cards] Created {success}, failed {failed}. Some cards may be missing in-game.");
+		else
+			_logger.Info($"[TTC][Cards] Created {success} cards.");
 
 		// Configure ragfair blacklists/conditions to allow TTC cards on flea, if enabled
 		if (_state.Config.cards_tradeable_on_flea)
@@ -171,7 +174,7 @@ public sealed class PostDb : IOnLoad
 		}
 		catch (Exception ex)
 		{
-			_logger.Info($"[TTC] Loot service error: {ex.Message}");
+			_logger.Warning($"[TTC][Loot] Error: {ex.Message}");
 		}
 		return Task.CompletedTask;
 	}
@@ -180,7 +183,7 @@ public sealed class PostDb : IOnLoad
 	{
 		var binders = _state.Binders;
 		if (binders == null || binders.Count == 0) return;
-	_logger.Info($"[TTC] Creating {binders.Count} themed binders (mount-based pass)...");
+	_logger.Info($"[TTC][Binders] Creating {binders.Count} themed binders...");
 		var gameLocale = _localeService.GetDesiredGameLocale();
 		const string english = "en";
 
@@ -221,7 +224,7 @@ public sealed class PostDb : IOnLoad
 				var themedCards = _state.Cards.Where(c => string.Equals(c.theme, b.theme, StringComparison.OrdinalIgnoreCase)).ToList();
 				if (themedCards.Count == 0)
 				{
-					_logger.Info($"[TTC] Binder '{b.item_short_name}' has no themed cards; creating container without slots");
+					_logger.Info($"[TTC][Binders] '{b.item_short_name}': no themed cards found — creating container without slots");
 				}
 				else
 				{
@@ -272,7 +275,10 @@ public sealed class PostDb : IOnLoad
 			}
 		}
 
-		_logger.Info($"[TTC] Binders creation pass complete. created={created}, failed={failed}");
+		if (failed > 0)
+			_logger.Warning($"[TTC][Binders] Created {created}, failed {failed}");
+		else
+			_logger.Info($"[TTC][Binders] Created {created}");
 	}
 
 	private int ResolvePriceForCard(TTC.Mod.Models.CardConfig card)
@@ -310,7 +316,7 @@ public sealed class PostDb : IOnLoad
 				var key = new SPTarkov.Server.Core.Models.Common.MongoId(tpl);
 				if (!items.TryGetValue(key, out var template) || template?.Properties?.Grids == null)
 				{
-					_logger.Info($"[TTC] Pouch compat: container {tpl} not found in templates");
+					_logger.Warning($"[TTC][Pouch] Container {tpl} not found in templates");
 					continue;
 				}
 
@@ -333,14 +339,14 @@ public sealed class PostDb : IOnLoad
 					containersMatched++;
 					filtersTouched += localFiltersTouched;
 					totalAdded += localAdded;
-					_logger.Info($"[TTC] Pouch compat: updated {tpl} - filters+={localFiltersTouched}, items+={localAdded}");
+					_logger.Info($"[TTC][Pouch] Updated {tpl}: filters+={localFiltersTouched}, items+={localAdded}");
 				}
 			}
 
 			if (totalAdded > 0)
-				_logger.Info($"[TTC] Pouch compat complete: containers={containersMatched}, filtersTouched={filtersTouched}, itemsAdded={totalAdded}");
+				_logger.Info($"[TTC][Pouch] Done: containers={containersMatched}, filtersTouched={filtersTouched}, itemsAdded={totalAdded}");
 			else
-				_logger.Info("[TTC] Pouch compat: no matching containers or filters to update");
+				_logger.Info("[TTC][Pouch] No compatible containers or filters to update");
 		}
 		catch (Exception ex)
 		{
@@ -358,7 +364,7 @@ public sealed class PostDb : IOnLoad
 			var traders = tables.Traders;
 			if (traders == null)
 			{
-				_logger.Info("[TTC] Trader offers: tables.Traders is null; skipping offer injection");
+				_logger.Warning("[TTC][Offers] Trader tables unavailable; skipping offer injection");
 				return;
 			}
 
@@ -444,11 +450,11 @@ public sealed class PostDb : IOnLoad
 				if (ok) { offersAdded++; }
 			}
 
-			_logger.Info($"[TTC] Trader offers: added {offersAdded} of {offersAttempted}");
+			_logger.Info($"[TTC][Offers] Added {offersAdded}/{offersAttempted} trader offers");
 		}
 		catch (Exception ex)
 		{
-			_logger.Info($"[TTC] Trader offers error: {ex.Message}");
+			_logger.Warning($"[TTC][Offers] Error while adding offers: {ex.Message}");
 		}
 	}
 
@@ -461,7 +467,7 @@ public sealed class PostDb : IOnLoad
 			var overrideCfg = _state.EmptyBooster;
 			if (overrideCfg == null)
 			{
-				_logger.Info("[TTC] Empty Booster override not found; skipping creation");
+				_logger.Info("[TTC][Booster] No override found; skipping creation");
 				return string.Empty;
 			}
 			var emptyBoosterId = overrideCfg.id;
@@ -523,18 +529,18 @@ public sealed class PostDb : IOnLoad
 			var result = _customItemService.CreateItemFromClone(details);
 			if (result.Success == true)
 			{
-				_logger.Info("[TTC] Empty Booster created");
+				_logger.Info("[TTC][Booster] Created");
 				return emptyBoosterId;
 			}
 			else
 			{
 				var errs = result.Errors != null && result.Errors.Count > 0 ? string.Join("; ", result.Errors) : "unknown error";
-				_logger.Info($"[TTC] Failed to create Empty Booster: {errs}");
+				_logger.Warning($"[TTC][Booster] Failed to create: {errs}");
 			}
 		}
 		catch (Exception ex)
 		{
-			_logger.Info($"[TTC] Empty Booster creation error: {ex.Message}");
+			_logger.Warning($"[TTC][Booster] Error during creation: {ex.Message}");
 		}
 		return string.Empty;
 	}
@@ -595,7 +601,7 @@ public sealed class PostDb : IOnLoad
 
 			if (ragfairCfgObj == null)
 			{
-				_logger.Info("[TTC] Could not access ragfair config; skipping ragfair adjustments");
+				_logger.Warning("[TTC][Ragfair] Could not access ragfair config; skipping adjustments");
 				return;
 			}
 
@@ -614,12 +620,12 @@ public sealed class PostDb : IOnLoad
 			}
 
 			_logger.Info(removed > 0
-				? $"[TTC] Ragfair: removed {removed} TTC entries from blacklists and enabled parent condition (if present)"
-				: "[TTC] Ragfair: no TTC entries found in blacklists; parent condition enabled if present");
+				? $"[TTC][Ragfair] Removed {removed} TTC entry(ies) from dynamic blacklists"
+				: "[TTC][Ragfair] No TTC entries found in dynamic blacklists");
 		}
 		catch (Exception ex)
 		{
-			_logger.Info($"[TTC] Ragfair config adjust error: {ex.Message}");
+			_logger.Warning($"[TTC][Ragfair] Error while adjusting config: {ex.Message}");
 		}
 	}
 
@@ -674,7 +680,7 @@ public sealed class PostDb : IOnLoad
 	{
 		try
 		{
-			_logger.Info("[TTC] Fence selling disabled; purging TTC from Fence + updating blacklist");
+			_logger.Info("[TTC][Fence] Selling disabled; purging items and updating blacklist");
 			// Purge current assort
 			var tables = _db.GetTables();
 			var traders = tables.Traders;
@@ -708,7 +714,7 @@ public sealed class PostDb : IOnLoad
 
 				var after = fence.Assort.Items.Count;
 				var diff = before - after;
-				if (diff > 0) _logger.Info($"[TTC] Fence assort purge removed {diff} item(s)");
+				if (diff > 0) _logger.Info($"[TTC][Fence] Purged {diff} TTC item(s) from assort");
 			}
 			else
 			{
@@ -742,16 +748,16 @@ public sealed class PostDb : IOnLoad
 
 				_logger.Info(added > 0
 					? $"[TTC] Added {added} TTC tpl(s) to TraderConfig.Fence.Blacklist"
-					: "[TTC] TraderConfig.Fence.Blacklist already up to date");
+					: "[TTC][Fence] Blacklist already up to date");
 			}
 			else
 			{
-				_logger.Info("[TTC] Unable to access TraderConfig via ConfigServer; skipping blacklist update");
+				_logger.Warning("[TTC][Fence] Could not access TraderConfig; skipping blacklist update");
 			}
 		}
 		catch (Exception ex)
 		{
-			_logger.Info($"[TTC] Fence purge/blacklist error: {ex.Message}");
+			_logger.Warning($"[TTC][Fence] Error while purging/blacklisting: {ex.Message}");
 		}
 	}
 

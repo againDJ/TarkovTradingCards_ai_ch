@@ -86,7 +86,7 @@ public sealed class LootService
             });
         }
 
-        _info($"[TTC][debug] Flood 100%: maps={maps}, containers={containers}, cardsPerContainer={itemsPerContainer}");
+    _info($"[TTC][Debug] Flood 100%: maps={maps}, containers={containers}, cardsPerContainer={itemsPerContainer}");
     }
 
     /// <summary>
@@ -103,25 +103,25 @@ public sealed class LootService
             var propertyMapName = locations.GetMappedKey(mapName) ?? mapName;
             if (!mapDict.TryGetValue(propertyMapName, out var location))
             {
-                _warn($"[TTC][debug] Dump: map not found {mapName} -> {propertyMapName}");
+                _warn($"[TTC][Debug] Dump: map not found {mapName} -> {propertyMapName}");
                 continue;
             }
 
             var staticLootLL = location.StaticLoot;
             if (staticLootLL == null)
             {
-                _warn($"[TTC][debug] Dump: StaticLoot null for {propertyMapName}");
+                _warn($"[TTC][Debug] Dump: StaticLoot null for {propertyMapName}");
                 continue;
             }
 
             var staticLoot = staticLootLL.Value;
             if (staticLoot == null || staticLoot.Count == 0)
             {
-                _warn($"[TTC][debug] Dump: StaticLoot empty for {propertyMapName}");
+                _warn($"[TTC][Debug] Dump: StaticLoot empty for {propertyMapName}");
                 continue;
             }
 
-            _info($"[TTC][debug] Dump: Map={propertyMapName}, Containers={staticLoot.Count}");
+            _info($"[TTC][Debug] Dump: Map={propertyMapName}, Containers={staticLoot.Count}");
 
             foreach (var kvp in staticLoot)
             {
@@ -134,7 +134,7 @@ public sealed class LootService
                 var details = kvp.Value;
                 var countDist = details.ItemCountDistribution != null ? string.Join(",", details.ItemCountDistribution.Select(c => $"{c.Count}@{c.RelativeProbability}")) : "-";
                 var items = details.ItemDistribution?.Take(showPerContainer).Select(d => d.Tpl.ToString()).ToList() ?? new List<string>();
-                _info($"[TTC][debug] Dump:  cid={cid}, itemCountDist=[{countDist}], items={items.Count}, first=[{string.Join(";", items)}]");
+                _info($"[TTC][Debug] Dump:  cid={cid}, itemCountDist=[{countDist}], items={items.Count}, first=[{string.Join(";", items)}]");
             }
         }
     }
@@ -150,13 +150,13 @@ public sealed class LootService
     {
         if (lootLocations == null || lootLocations.Count == 0)
         {
-            _info("[TTC] Loot: no loot_locations provided; skipping static loot injection");
+            _info("[TTC][Loot] No loot_locations provided; skipping static loot injection");
             return;
         }
 
         if (!cfg.enable_container_spawns)
         {
-            _info("[TTC] Loot: enable_container_spawns=false; skipping");
+            _info("[TTC][Loot] enable_container_spawns=false; skipping");
             return;
         }
 
@@ -225,7 +225,7 @@ public sealed class LootService
                     if (cfg.container_multipliers != null && cfg.container_multipliers.TryGetValue(containerTpl, out var cmv)) cMult = cmv;
                     if (cMult <= 0)
                     {
-                        _info($"[TTC] Loot: multiplier <= 0 for container {containerTpl} on {mapName}; skipping injection");
+                        _info($"[TTC][Loot] multiplier <= 0 for container {containerTpl} on {mapName}; skipping injection");
                         continue;
                     }
 
@@ -240,7 +240,7 @@ public sealed class LootService
                         double pEffPerCard = pBasePerCard * cMult;
                         if (pEffPerCard >= 0.25)
                         {
-                            _warn($"[TTC] Loot: clamping grouped pEff to 0.25 for {mapName}:{containerTpl}:{rarity}");
+                            _warn($"[TTC][Loot] clamping grouped pEff to 0.25 for {mapName}:{containerTpl}:{rarity}");
                             pEffPerCard = 0.25;
                         }
 
@@ -283,7 +283,7 @@ public sealed class LootService
             var staticLootLL = location.StaticLoot;
             if (staticLootLL == null)
             {
-                _warn($"[TTC] Loot: StaticLoot is null for {propertyMapName}");
+                _warn($"[TTC][Loot] StaticLoot is null for {propertyMapName}");
                 continue;
             }
 
@@ -300,7 +300,7 @@ public sealed class LootService
 
                     if (!lazyLoadedStaticLoot.TryGetValue(containerId, out var lootContainer) || lootContainer == null)
                     {
-                        _warn($"[TTC] Loot: Container ID {containerId} not found in map {propertyMapName}");
+                        _warn($"[TTC][Loot] container {containerId} not found in map {propertyMapName}");
                         continue;
                     }
 
@@ -329,17 +329,17 @@ public sealed class LootService
 
         if (itemsAdded > 0)
         {
-            _info($"[TTC] Loot: added {itemsAdded} entries into {containersTouched} containers across {mapsTouched} map(s)");
+            _info($"[TTC][Loot] Added {itemsAdded} entries into {containersTouched} containers across {mapsTouched} map(s)");
         }
         else if (scheduledItems > 0)
         {
             var mapsQueued = lootChangesByMap.Count;
             var containersQueued = lootChangesByMap.Values.Select(v => v.Select(t => t.ContainerId).Distinct().Count()).Sum();
-            _info($"[TTC] Loot: queued {scheduledItems} entries for injection into ~{containersQueued} containers across {mapsQueued} map(s) (will apply on map load)");
+            _info($"[TTC][Loot] Queued {scheduledItems} entries for ~{containersQueued} containers across {mapsQueued} map(s) (applies on map load)");
         }
         else
         {
-            _info("[TTC] Loot: no entries queued (check loot_locations / container ids)");
+            _info("[TTC][Loot] No entries queued (check loot_locations / container ids)");
         }
     }
 }
