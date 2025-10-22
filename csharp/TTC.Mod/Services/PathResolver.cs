@@ -4,34 +4,46 @@ namespace TTC.Mod.Services;
 
 public static class PathResolver
 {
-    // Resolve repo root based on typical mod folder structure when running inside SPT server
-    public static string GetRepoRoot()
+    // Locate the mod's config folder robustly from the executing assembly location.
+    // Strategy:
+    // 1) Walk upwards up to 12 levels, return the first directory that contains "config/mod_config.jsonc".
+    // 2) If not found, search downward from asm dir up to 4 levels for any "mod_config.jsonc" and use its parent folder.
+    // 3) If still not found, throw a descriptive error so the user can fix packaging.
+    public static (string configDir, string modConfigPath, string cardsPath) GetConfigPaths()
     {
-        // When loaded by the server, assembly location will be in BepInEx/plugins/<mod>/ or user copy
         var asmDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? AppContext.BaseDirectory;
-        // Try to find config folder relative to repo layout
-        // Search upwards for "config" folder containing mod_config.jsonc
+
+        // Upward search
         var dir = new DirectoryInfo(asmDir);
-        for (int i = 0; i < 6 && dir != null; i++, dir = dir.Parent)
+        for (int i = 0; i < 12 && dir != null; i++, dir = dir.Parent)
         {
-            var configDir = Path.Combine(dir.FullName, "config");
-            if (Directory.Exists(configDir) && File.Exists(Path.Combine(configDir, "mod_config.jsonc")))
+            var configDirUp = Path.Combine(dir.FullName, "config");
+            var modConfigUp = Path.Combine(configDirUp, "mod_config.jsonc");
+            if (Directory.Exists(configDirUp) && File.Exists(modConfigUp))
             {
-                return dir.FullName;
+                var cardsUp = Path.Combine(configDirUp, "cards.json");
+                return (configDirUp, modConfigUp, cardsUp);
             }
         }
 
-        // Fallback: assume typical development layout .../csharp/TTC.Mod/bin/... -> repo root 5 levels up
-        var fallback = Path.GetFullPath(Path.Combine(asmDir, "..", "..", "..", "..", ".."));
-        return fallback;
-    }
+        // Downward bounded search for mod_config.jsonc near the assembly (up to 4 depth levels)
+        try
+        {
+            var matches = Directory.EnumerateFiles(asmDir, "mod_config.jsonc", new EnumerationOptions { RecurseSubdirectories = true, MaxRecursionDepth = 4 })
+                                   .Take(1)
+                                   .ToList();
+            if (matches.Count > 0)
+            {
+                var modConfig = matches[0];
+                var configDirDown = Path.GetDirectoryName(modConfig) ?? asmDir;
+                var cardsDown = Path.Combine(configDirDown, "cards.json");
+                return (configDirDown, modConfig, cardsDown);
+            }
+        }
+        catch { }
 
-    public static (string configDir, string modConfigPath, string cardsPath) GetConfigPaths()
-    {
-        var root = GetRepoRoot();
-        var configDir = Path.Combine(root, "config");
-        var modConfigPath = Path.Combine(configDir, "mod_config.jsonc");
-        var cardsPath = Path.Combine(configDir, "cards.json");
-        return (configDir, modConfigPath, cardsPath);
+        // Not found: produce a helpful path in error
+        var attempted = Path.Combine(asmDir, "config", "mod_config.jsonc");
+        throw new FileNotFoundException($"TTC.Mod could not locate mod_config.jsonc. Expected it under a 'config' folder near the mod. Last attempted: {attempted}");
     }
 }

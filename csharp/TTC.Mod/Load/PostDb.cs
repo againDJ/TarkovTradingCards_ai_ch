@@ -314,229 +314,37 @@ public sealed class PostDb : IOnLoad
 		try
 		{
 			var tables = _db.GetTables();
-			var templatesObj = GetPropIgnoreCase(tables, new[] { "Templates", "templates" });
-			if (templatesObj == null) { _logger.Info("[TTC] Templates not available; skipping pouch compatibility"); return; }
-			var itemsObj = GetPropIgnoreCase(templatesObj, new[] { "Items", "items" });
-			if (itemsObj == null) { _logger.Info("[TTC] Template items not available; skipping pouch compatibility"); return; }
+			var templates = tables.Templates;
+			if (templates == null || templates.Items == null) { _logger.Info("[TTC] Templates not available; skipping pouch compatibility"); return; }
 
-			var ttcTpls = _state.Cards.Select(c => c.id).ToArray();
+			var items = templates.Items as System.Collections.Generic.IDictionary<SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItem>;
+			if (items == null) { _logger.Info("[TTC] Template items not available; skipping pouch compatibility"); return; }
+
+			var ttcIds = new HashSet<SPTarkov.Server.Core.Models.Common.MongoId>(_state.Cards.Select(c => new SPTarkov.Server.Core.Models.Common.MongoId(c.id)));
 			int containersMatched = 0, filtersTouched = 0, totalAdded = 0;
 
-			// Target specific template IDs (from original TS mod)
-			var targetCases = new[]
-			{
-				"5d235bb686f77443f4331278", // S I C C
-				"590c60fc86f77412b13fddcf"  // Documents case
-			};
+			var targetCases = new[] { "5d235bb686f77443f4331278", "590c60fc86f77412b13fddcf" };
 
-			// Access dictionary by key in a version-agnostic way (supports MongoId keys)
-			object? GetByKey(object dictLike, string key)
+			foreach (var tpl in targetCases)
 			{
-				try
+				var key = new SPTarkov.Server.Core.Models.Common.MongoId(tpl);
+				if (!items.TryGetValue(key, out var template) || template?.Properties?.Grids == null)
 				{
-					// Non-generic IDictionary path (string keys)
-					if (dictLike is System.Collections.IDictionary idict)
-					{
-						return idict.Contains(key) ? idict[key] : null;
-					}
-					// Generic dictionary indexer path
-					var indexer = dictLike.GetType().GetProperty("Item");
-					if (indexer == null) return null;
-					var idxParams = indexer.GetIndexParameters();
-					if (idxParams == null || idxParams.Length != 1) return null;
-					var paramType = idxParams[0].ParameterType;
-					var convertedKey = ConvertStringTo(paramType, key) ?? key;
-					return indexer.GetValue(dictLike, new object[] { convertedKey });
-				}
-				catch { return null; }
-			}
-
-			// Fallback: search item by Id/_id across dictionary values
-			object? FindById(object dictLike, string key)
-			{
-				try
-				{
-					if (dictLike is System.Collections.IDictionary idict)
-					{
-						foreach (System.Collections.DictionaryEntry de in idict)
-						{
-							var val = de.Value;
-							if (val == null) continue;
-							var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
-							if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
-						}
-						return null;
-					}
-					var valuesPi = dictLike.GetType().GetProperty("Values");
-					var values = valuesPi?.GetValue(dictLike) as System.Collections.IEnumerable;
-					if (values != null)
-					{
-						foreach (var val in values)
-						{
-							if (val == null) continue;
-							var vid = GetStringPropIgnoreCase(val, new[] { "Id", "_id" });
-							if (!string.IsNullOrEmpty(vid) && string.Equals(vid, key, StringComparison.Ordinal)) return val;
-						}
-					}
-				}
-				catch { }
-				return null;
-			}
-
-			foreach (var caseTpl in targetCases)
-			{
-				var container = GetByKey(itemsObj, caseTpl) ?? FindById(itemsObj, caseTpl);
-				if (container == null)
-				{
-					_logger.Info($"[TTC] Pouch compat: container {caseTpl} not found in templates");
+					_logger.Info($"[TTC] Pouch compat: container {tpl} not found in templates");
 					continue;
 				}
 
-				// Access properties (TemplateItem.Properties)
-				var props = GetPropIgnoreCase(container, new[] { "Properties", "Props", "_props", "properties" });
-				if (props == null) continue;
-				var grids = GetPropIgnoreCase(props, new[] { "Grids", "grids" }) as System.Collections.IEnumerable;
-				if (grids == null) continue;
-
 				int localFiltersTouched = 0, localAdded = 0;
-				foreach (var grid in grids)
+				foreach (var grid in template.Properties.Grids)
 				{
-					if (grid == null) continue;
-					var gprops = GetPropIgnoreCase(grid, new[] { "Properties", "_props", "_properties", "properties" });
-					if (gprops == null) continue;
-					var filters = GetPropIgnoreCase(gprops, new[] { "Filters", "filters" }) as System.Collections.IEnumerable;
-					if (filters == null) continue;
-
-					foreach (var f in filters)
+					var gprops = grid?.Properties; if (gprops?.Filters == null) continue;
+					foreach (var filter in gprops.Filters)
 					{
-						if (f == null) continue;
-						var filterPropInfo = f.GetType().GetProperty("Filter", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
-						var filterSet = filterPropInfo?.GetValue(f);
-						if (filterSet == null) continue;
-
-						var added = TryAddManyGeneric(filterSet, ttcTpls);
-
-						// If collection is an array (no Add), replace with a new array that includes union
-						if (added == 0 && filterSet.GetType().IsArray)
-						{
-							try
-							{
-								var arr = (Array)filterSet;
-								var elemType = arr.GetType().GetElementType() ?? typeof(string);
-								var existingStr = new HashSet<string>(StringComparer.Ordinal);
-								foreach (var el in arr)
-								{
-									if (el == null) continue;
-									var s = el as string ?? el.ToString();
-									if (!string.IsNullOrWhiteSpace(s)) existingStr.Add(s);
-								}
-
-								var toAppend = new List<object>();
-								foreach (var tpl in ttcTpls)
-								{
-									if (existingStr.Contains(tpl)) continue;
-									var conv = ConvertStringTo(elemType, tpl);
-									if (conv != null) { toAppend.Add(conv); existingStr.Add(tpl); }
-								}
-
-								if (toAppend.Count > 0)
-								{
-									var newArr = Array.CreateInstance(elemType, arr.Length + toAppend.Count);
-									Array.Copy(arr, newArr, arr.Length);
-									for (int i = 0; i < toAppend.Count; i++) newArr.SetValue(toAppend[i], arr.Length + i);
-
-									filterPropInfo?.SetValue(f, newArr);
-									added = toAppend.Count;
-								}
-							}
-							catch { }
-						}
-
-						// If still nothing added, try replacing the collection via property setter (read-only IEnumerable case)
-						if (added == 0)
-						{
-							try
-							{
-								if (filterPropInfo != null && filterPropInfo.CanWrite)
-								{
-									var propType = filterPropInfo.PropertyType;
-									// Determine element type
-									var elemType = typeof(string);
-									if (propType.IsArray)
-									{
-										elemType = propType.GetElementType() ?? typeof(string);
-									}
-									else if (propType.IsGenericType)
-									{
-										elemType = propType.GetGenericArguments().FirstOrDefault() ?? typeof(string);
-									}
-
-									// Build set of existing values as strings
-									var existingStr = new HashSet<string>(StringComparer.Ordinal);
-									if (filterSet is System.Collections.IEnumerable existingEnum)
-									{
-										foreach (var el in existingEnum)
-										{
-											if (el == null) continue;
-											var s = el as string ?? el.ToString();
-											if (!string.IsNullOrWhiteSpace(s)) existingStr.Add(s);
-										}
-									}
-
-									// Choose a concrete collection type to instantiate
-									object? newCollection = null;
-									try { newCollection = Activator.CreateInstance(propType); } catch { }
-									if (newCollection == null)
-									{
-										// fallback to List<T> if assignable
-										var listType = typeof(List<>).MakeGenericType(elemType);
-										if (propType.IsAssignableFrom(listType))
-										{
-											newCollection = Activator.CreateInstance(listType);
-										}
-									}
-									if (newCollection != null)
-									{
-										// Copy existing elements
-										if (filterSet is System.Collections.IEnumerable existingEnum2)
-										{
-											var addExisting = newCollection.GetType().GetMethod("Add");
-											if (addExisting != null)
-											{
-												foreach (var el in existingEnum2)
-												{
-													try { addExisting.Invoke(newCollection, new[] { el }); } catch { }
-												}
-											}
-
-										}
-										// Append missing TTC ids
-										int appended = 0;
-										var addMethod = newCollection.GetType().GetMethod("Add");
-										if (addMethod != null)
-										{
-											foreach (var tpl in ttcTpls)
-											{
-												if (existingStr.Contains(tpl)) continue;
-												var conv = ConvertStringTo(elemType, tpl);
-												if (conv == null) continue;
-												try { addMethod.Invoke(newCollection, new[] { conv }); appended++; }
-												catch { }
-											}
-										}
-
-										if (appended > 0)
-										{
-											filterPropInfo.SetValue(f, newCollection);
-											added = appended;
-										}
-									}
-								}
-							}
-							catch { }
-						}
-
-						if (added > 0) { localFiltersTouched++; localAdded += added; }
+						var set = filter?.Filter; if (set == null) continue;
+						int before = set.Count;
+						set.UnionWith(ttcIds);
+						int delta = set.Count - before;
+						if (delta > 0) { localFiltersTouched++; localAdded += delta; }
 					}
 				}
 
@@ -545,7 +353,7 @@ public sealed class PostDb : IOnLoad
 					containersMatched++;
 					filtersTouched += localFiltersTouched;
 					totalAdded += localAdded;
-					_logger.Info($"[TTC] Pouch compat: updated {caseTpl} - filters+={localFiltersTouched}, items+={localAdded}");
+					_logger.Info($"[TTC] Pouch compat: updated {tpl} - filters+={localFiltersTouched}, items+={localAdded}");
 				}
 			}
 
@@ -811,9 +619,10 @@ public sealed class PostDb : IOnLoad
 		try
 		{
 			var tables = _db.GetTables();
-			var templatesObj = GetPropIgnoreCase(tables, new[] { "Templates", "templates" });
-			var itemsObj = templatesObj != null ? GetPropIgnoreCase(templatesObj, new[] { "Items", "items" }) : null;
-			if (itemsObj == null) return;
+			var templates = tables.Templates;
+			if (templates == null || templates.Items == null) return;
+			var items = templates.Items as System.Collections.Generic.IDictionary<SPTarkov.Server.Core.Models.Common.MongoId, SPTarkov.Server.Core.Models.Eft.Common.Tables.TemplateItem>;
+			if (items == null) return;
 
 			var secureContainerIds = new []
 			{
@@ -828,29 +637,17 @@ public sealed class PostDb : IOnLoad
 				"5732ee6a24597719ae0c0281"  // Waist pouch
 			};
 
+			var boosterId = new SPTarkov.Server.Core.Models.Common.MongoId(emptyBoosterId);
 			foreach (var id in secureContainerIds)
 			{
-				var container = GetByKey(itemsObj, id) ?? FindById(itemsObj, id);
-				if (container == null) continue;
-
-				var props = GetPropIgnoreCase(container, new[] { "Properties", "Props", "_props", "properties" });
-				var grids = GetPropIgnoreCase(props!, new[] { "Grids", "grids" }) as System.Collections.IEnumerable;
-				if (grids == null) continue;
-				foreach (var grid in grids)
+				var key = new SPTarkov.Server.Core.Models.Common.MongoId(id);
+				if (!items.TryGetValue(key, out var template) || template?.Properties?.Grids == null) continue;
+				foreach (var grid in template.Properties.Grids)
 				{
-					if (grid == null) continue;
-					var gprops = GetPropIgnoreCase(grid, new[] { "Properties", "_props", "_properties", "properties" });
-					if (gprops == null) continue;
-					var filters = GetPropIgnoreCase(gprops, new[] { "Filters", "filters" }) as System.Collections.IEnumerable;
-					if (filters == null) continue;
-
-					foreach (var f in filters)
+					var gprops = grid?.Properties; if (gprops?.Filters == null) continue;
+					foreach (var filter in gprops.Filters)
 					{
-						if (f == null) continue;
-						var filterProp = f.GetType().GetProperty("Filter", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.IgnoreCase);
-						var set = filterProp?.GetValue(f);
-						if (set == null) continue;
-						TryAddManyGeneric(set, new [] { emptyBoosterId });
+						filter?.Filter?.Add(boosterId);
 					}
 				}
 			}
