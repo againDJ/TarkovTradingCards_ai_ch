@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using SPTarkov.Server.Core.Services;
 using TTC.Mod.Models;
 using SPTarkov.Server.Core.Models.Common;
 using SPTarkov.Server.Core.Models.Eft.Common;
 
-namespace TTC.Mod.Services;
+namespace TTC.Mod.Services.Loot;
 
 /// <summary>
 /// Typed, reflection-free loot injector for static containers.

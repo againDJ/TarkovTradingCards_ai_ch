@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TTC.Mod.Services
+namespace TTC.Mod.Services.Loot
 {
     internal static class ConstantsContainer
     {

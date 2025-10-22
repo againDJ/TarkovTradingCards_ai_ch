@@ -1,8 +1,7 @@
 using TTC.Mod.Models;
-
 using SPTarkov.DI.Annotations;
 
-namespace TTC.Mod.Services;
+namespace TTC.Mod.Services.Common;
 
 [Injectable]
 public sealed class State

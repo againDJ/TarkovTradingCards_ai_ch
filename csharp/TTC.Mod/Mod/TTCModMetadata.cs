@@ -15,7 +15,7 @@ public sealed record TTCModMetadata : AbstractModMetadata
     public override SemVerRange SptVersion { get; init; } = new("~4.0.0");
     public override List<string>? Incompatibilities { get; init; } = null;
     public override Dictionary<string, SemVerRange>? ModDependencies { get; init; } = null;
-    public override string? Url { get; init; } = "https://github.com/Chazut/TarkovTradingCards";
+    public override string Url { get; init; } = "https://github.com/Chazut/TarkovTradingCards";
     public override bool? IsBundleMod { get; init; } = true;
     public override string? License { get; init; } = "MIT";
 }

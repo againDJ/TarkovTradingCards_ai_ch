@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace TTC.Mod.Services;
+namespace TTC.Mod.Services.Common;
 
 public static class PathResolver
 {

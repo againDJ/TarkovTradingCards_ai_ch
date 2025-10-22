@@ -4,7 +4,7 @@ using TTC.Mod.Utils;
 
 using SPTarkov.DI.Annotations;
 
-namespace TTC.Mod.Services;
+namespace TTC.Mod.Services.Common;
 
 [Injectable]
 public sealed class ConfigLoader

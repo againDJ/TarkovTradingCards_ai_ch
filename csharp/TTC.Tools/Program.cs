@@ -1,5 +1,5 @@
 using System.Reflection;
-using TTC.Mod.Services;
+using TTC.Mod.Services.Common;
 using TTC.Mod.Models;
 
 if (args.Length > 0 && string.Equals(args[0], "reflect", StringComparison.OrdinalIgnoreCase))
@@ -94,7 +94,7 @@ Console.WriteLine($"- enable_container_spawns: {cfg.enable_container_spawns}");
 Console.WriteLine($"- rarity_weights sum: {cfg.rarity_weights.Values.Sum():F3}");
 Console.WriteLine($"- cards count: {cards.Count}");
 
-var requiredRarities = new [] {"Common","Uncommon","Rare","Epic","Legendary","Secret"};
+var requiredRarities = new[] { "Common", "Uncommon", "Rare", "Epic", "Legendary", "Secret" };
 foreach (var r in requiredRarities)
 {
     if (!cfg.rarity_weights.ContainsKey(r))
