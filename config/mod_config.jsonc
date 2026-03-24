@@ -158,5 +158,14 @@
     "Epic":       80000,
     "Legendary":  200000,
     "Secret":     500000
-  }
+  },
+
+  // ─────────────────────────────────────────────
+  // QUESTS & KOLYA TRADER
+  // ─────────────────────────────────────────────
+  /* When true, the custom trader "Kolya" is registered with collection quests.
+     Binders and Empty Booster are only purchasable after completing the
+     relevant quests. When false, Kolya and quests are disabled entirely
+     and binders/booster are sold at their configured trader. */
+  "enable_quests": true
 }

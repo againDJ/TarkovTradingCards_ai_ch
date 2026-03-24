@@ -1,0 +1,118 @@
+{
+  "153a44e1bc3e5de0f17a84c6": {
+    "QuestId": "153a44e1bc3e5de0f17a84c6",
+    "QuestName": "The Hunter's Dossier",
+    "Conditions": [
+      { "ConditionId": "9c0b212c9db111462b1e503f", "ConditionType": "KillsWhileADS" }
+    ]
+  },
+  "4223877642ae5ddee25f9738": {
+    "QuestId": "4223877642ae5ddee25f9738",
+    "QuestName": "Ghost of the Pines",
+    "Conditions": [
+      { "ConditionId": "d3a3f285d4f1ae14f14df701", "ConditionType": "KillsWhileCrouched" }
+    ]
+  },
+  "94fdcaf2049dd07cd76f7070": {
+    "QuestId": "94fdcaf2049dd07cd76f7070",
+    "QuestName": "The Sawmill's Glint",
+    "Conditions": [
+      { "ConditionId": "cd14c1da84d069afdf8d85cd", "ConditionType": "DamageWithDMR" }
+    ]
+  },
+  "787439682f318cee537557f8": {
+    "QuestId": "787439682f318cee537557f8",
+    "QuestName": "Blink and You're Dead",
+    "Conditions": [
+      { "ConditionId": "4162885d3d9475893864dfa9", "ConditionType": "TotalShotDistanceWithSnipers" }
+    ]
+  },
+  "87e5785dc500619c5b4b1ecb": {
+    "QuestId": "87e5785dc500619c5b4b1ecb",
+    "QuestName": "Six Guards, Zero Mercy",
+    "Conditions": [
+      { "ConditionId": "57417c082291e9db57a876cc", "ConditionType": "DamageWithAR" }
+    ]
+  },
+  "1ce886d5fec176e64650800d": {
+    "QuestId": "1ce886d5fec176e64650800d",
+    "QuestName": "The PMC Butcher's Bill",
+    "Conditions": [
+      { "ConditionId": "7f955476df667765e58d746f", "ConditionType": "DamageToArmour" }
+    ]
+  },
+  "fef77af4bfefe4b2e1044818": {
+    "QuestId": "fef77af4bfefe4b2e1044818",
+    "QuestName": "Bad Medicine",
+    "Conditions": [
+      { "ConditionId": "29724a810ad0256542fa8eff", "ConditionType": "HealthGain" }
+    ]
+  },
+  "b224b944f785db2f49c25af1": {
+    "QuestId": "b224b944f785db2f49c25af1",
+    "QuestName": "Frag Out",
+    "Conditions": [
+      { "ConditionId": "2d6fe1f1e49a0fd7b75d2a27", "ConditionType": "DamageWithShotguns" }
+    ]
+  },
+  "e47a558c1d0bf5347ae66c01": {
+    "QuestId": "e47a558c1d0bf5347ae66c01",
+    "QuestName": "Tarkov's Traffic Cop",
+    "Conditions": [
+      { "ConditionId": "28722cc6837bb7fdb7b769a2", "ConditionType": "OverEncumberedTimeInSeconds" }
+    ]
+  },
+  "d831becdbacc4b5cdbf3c752": {
+    "QuestId": "d831becdbacc4b5cdbf3c752",
+    "QuestName": "Golden TT",
+    "Conditions": [
+      { "ConditionId": "de3034c8f8ef577bbfdf4ff6", "ConditionType": "DamageWithPistols" }
+    ]
+  },
+  "a85d3e0d843df52ee2a4954b": {
+    "QuestId": "a85d3e0d843df52ee2a4954b",
+    "QuestName": "The Sledgehammer Waltz",
+    "Conditions": [
+      { "ConditionId": "b818ae92d96024fcf1292d1b", "ConditionType": "MoveDistance" }
+    ]
+  },
+  "61267ae4823d4e1a212afb7c": {
+    "QuestId": "61267ae4823d4e1a212afb7c",
+    "QuestName": "Mall Sweep",
+    "Conditions": [
+      { "ConditionId": "1886db7a3882903e5c2e10b4", "ConditionType": "KillsWhileADS" },
+      { "ConditionId": "e587496c7c7b82fc9d1cb312", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "ad5198a4fcae5ecc3a8c0519": {
+    "QuestId": "ad5198a4fcae5ecc3a8c0519",
+    "QuestName": "Commander's Orders",
+    "Conditions": [
+      { "ConditionId": "34f68aebfb6d5579fff35428", "ConditionType": "DamageWithLMG" }
+    ]
+  },
+  "9a6438ecc910d1cb58830013": {
+    "QuestId": "9a6438ecc910d1cb58830013",
+    "QuestName": "Lighthouse Judgement",
+    "Conditions": [
+      { "ConditionId": "b01145ba09949304f10ef8f0", "ConditionType": "TotalShotDistanceWithSnipers" },
+      { "ConditionId": "528a9d0b7a2fb6532f5ed87b", "ConditionType": "KillsWhileProne" }
+    ]
+  },
+  "456216cd352a90595a4bd8d6": {
+    "QuestId": "456216cd352a90595a4bd8d6",
+    "QuestName": "The Midnight Ritual",
+    "Conditions": [
+      { "ConditionId": "1656517df63472bcadc83e71", "ConditionType": "MoveDistanceWhileSilent" },
+      { "ConditionId": "a0ee822ce489149eb109028b", "ConditionType": "FixAnyBleed" }
+    ]
+  },
+  "06694eb6a7a94ec6e95b43db": {
+    "QuestId": "06694eb6a7a94ec6e95b43db",
+    "QuestName": "Echo in the Dark",
+    "Conditions": [
+      { "ConditionId": "3d89c1e7bb9c2be7cd45ddb9", "ConditionType": "KillsWithoutADS" },
+      { "ConditionId": "6791e4b9013eb6f0ba09195c", "ConditionType": "MoveDistance" }
+    ]
+  }
+}

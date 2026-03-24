@@ -52,6 +52,11 @@ public sealed class PreSpt : IOnLoad
 			var emptyBooster = _loader.LoadEmptyBoosterOverride(bindersDir);
 
 			_state.Set(cfg, cards, cardBase, containerBase, binderBase, binders, emptyBooster);
+
+			// Set trader base path for Kolya registration
+			var traderBasePath = Path.Combine(configDir, "trader", "kolya_base.json");
+			_state.SetTraderBasePath(traderBasePath);
+
 			if (verbose) _logger.Info($"[TTC][Config] Loaded {cards.Count} cards, binders={binders.Count}, emptyBooster={(emptyBooster?.id ?? "none")}");
 		}
 		catch (Exception ex)
