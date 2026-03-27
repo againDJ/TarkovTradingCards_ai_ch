@@ -110,6 +110,27 @@ public record BarterRewardItem
 
     /// <summary>Stack count.</summary>
     public int Count { get; init; } = 1;
+
+    /// <summary>Optional display name override for reward crate tooltip (e.g. "Custom SVDS").</summary>
+    public string? DisplayName { get; init; }
+
+    /// <summary>Child parts (weapon mods, armor inserts, etc.) that attach to this item.</summary>
+    public List<PresetPart>? Parts { get; init; }
+}
+
+/// <summary>
+/// A child part that attaches to a parent item in a specific slot.
+/// </summary>
+public record PresetPart
+{
+    /// <summary>SPT template ID of the part.</summary>
+    public required string TemplateId { get; init; }
+
+    /// <summary>Slot ID on the parent item (e.g. "mod_barrel", "Soft_armor_front").</summary>
+    public required string SlotId { get; init; }
+
+    /// <summary>Nested child parts.</summary>
+    public List<PresetPart>? Parts { get; init; }
 }
 
 /// <summary>

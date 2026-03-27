@@ -16,6 +16,17 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - Completing a card quest unlocks a **barter at Kolya**: trade that card for a useful item
 - The player chooses: keep the card for collection, or trade it for loot
 - Completing all card quests in a theme unlocks a **collection barter**: trade all 15 cards for a major reward
+- Weapon and armor rewards include all parts (built-in armor, plates, mods) for immediate usability
+
+### XP Scaling by Rarity
+| Rarity | XP |
+|--------|----|
+| Common | 500 |
+| Uncommon | 1,000 |
+| Rare | 3,000 |
+| Epic | 6,000 |
+| Legendary | 12,000 |
+| Secret | 20,000 |
 
 ### Loyalty Levels
 - Single level, max by default — all progression is quest-gated
@@ -65,173 +76,173 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ### Card Quests (ordered by rarity: Uncommon → Secret)
 
-#### 1. QUEST: Ghost of the Pines
-- **Card**: Partisan "Ghost of the Pines" [Uncommon]
+#### 1. QUEST: Ghost of the Pines [Uncommon]
+- **Card**: Partisan "Ghost of the Pines"
 - **ID Seed**: `ttc_quest_card_bosses_partisan`
 - **Prerequisites**: The Hunter's Dossier (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: KillsWhileCrouched] Get 2 kills while crouched *(Partisan fights from the shadows — prove you can do the same)*
-- **Description**: *"The Partisan... now there's a ghost story. He moves through the pines of Woods like he's part of the forest itself. Some say he's ex-military, others say he's just a man with nothing left to lose. Either way, if you spot him, you're probably already flanked. Show me you understand guerrilla tactics — take down two targets while staying low and quiet."*
+  - [QE: KillsWhileCrouched] Get 10 kills while crouched *(Partisan fights from the shadows — prove you can do the same)*
+- **XP**: 1,000
 - **Barter Unlocked**: Trade Partisan card → 2× IFAK medical kit
 - **Unlocks**: Next card quest (Shturman)
 
-#### 2. QUEST: The Sawmill's Glint
-- **Card**: Shturman "Woods Predator" [Uncommon]
+#### 2. QUEST: The Sawmill's Glint [Uncommon]
+- **Card**: Shturman "Woods Predator"
 - **ID Seed**: `ttc_quest_card_bosses_shturman`
 - **Prerequisites**: Ghost of the Pines (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: DamageWithDMR] Deal 500 damage with marksman rifles *(Shturman is a sharpshooter — time to think like one)*
-- **Description**: *"Shturman doesn't miss. He sits up in that sawmill like a spider in its web, SVD ready. By the time you see the glint off his scope, you're already calculating if your armor can take the hit. Spoiler: it usually can't. I need you to put in some range time with a marksman rifle — show me you understand the art of the long shot."*
+  - [QE: DamageWithDMR] Deal 1,000 damage with marksman rifles *(Shturman is a sharpshooter — time to think like one)*
+- **XP**: 1,000
 - **Barter Unlocked**: Trade Shturman card → 1× Weapon maintenance kit
 - **Unlocks**: Next card quest (Birdeye)
 
-#### 3. QUEST: Blink and You're Dead
-- **Card**: Birdeye "Silent Overwatch" [Rare]
+#### 3. QUEST: Blink and You're Dead [Rare]
+- **Card**: Birdeye "Silent Overwatch"
 - **ID Seed**: `ttc_quest_card_bosses_birdeye`
 - **Prerequisites**: The Sawmill's Glint (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: TotalShotDistanceWithSnipers] Accumulate 500m total shot distance with sniper rifles *(Birdeye strikes from extreme range — prove you can reach out and touch someone)*
-- **Description**: *"Birdeye is The Goons' eyes. Perched somewhere you'd never think to look, watching through thermals while you loot that body thinking you're safe. The man is a phantom — and his shots come from distances that make you question reality. I want you to channel that energy. Get some long-range trigger time in with a proper sniper rifle. Make those shots count."*
+  - [QE: TotalShotDistanceWithSnipers] Accumulate 1,000m total shot distance with sniper rifles *(Birdeye strikes from extreme range — prove you can reach out and touch someone)*
+- **XP**: 3,000
 - **Barter Unlocked**: Trade Birdeye card → 1× Valday PS-320 scope
 - **Unlocks**: Next card quest (Glukhar)
 
-#### 4. QUEST: Six Guards, Zero Mercy
-- **Card**: Glukhar "Trainyard Warlord" [Rare]
+#### 4. QUEST: Six Guards, Zero Mercy [Rare]
+- **Card**: Glukhar "Trainyard Warlord"
 - **ID Seed**: `ttc_quest_card_bosses_glukhar`
 - **Prerequisites**: Blink and You're Dead (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: DamageWithAR] Deal 2,000 damage with assault rifles *(Glukhar's guards spray full-auto — fight fire with fire)*
-- **Description**: *"Glukhar runs Reserve like it's his personal kingdom. Six heavily armed guards surround him at all times — and they don't hesitate. The man himself carries enough firepower to level a building. Dealing with him means dealing with an army. I need you to put in serious work with an assault rifle. Lay down the kind of damage that would make even Glukhar's boys think twice."*
+  - [QE: DamageWithAR] Deal 5,000 damage with assault rifles *(Glukhar's guards spray full-auto — fight fire with fire)*
+- **XP**: 3,000
 - **Barter Unlocked**: Trade Glukhar card → 1× 60-round AK magazine (6L31)
 - **Unlocks**: Next card quest (Kollontay)
 
-#### 5. QUEST: The PMC Butcher's Bill
-- **Card**: Kollontay "PMC Butcher" [Rare]
+#### 5. QUEST: The PMC Butcher's Bill [Rare]
+- **Card**: Kollontay "PMC Butcher"
 - **ID Seed**: `ttc_quest_card_bosses_kollontay`
 - **Prerequisites**: Six Guards, Zero Mercy (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: DamageToArmour] Deal 1,500 damage to armor *(Kollontay is a walking tank — you need to learn to crack armor)*
-- **Description**: *"Kollontay earned his nickname the hard way. PMCs avoid his patrol routes like the plague — and the ones who don't... well, let's just say he doesn't take prisoners. The man is armored head to toe and his entourage is no different. You want this card? Show me you know how to shred through protection. I need to see serious armor damage numbers."*
-- **Barter Unlocked**: Trade Kollontay card → 1× AACPC plate carrier
+  - [QE: DamageToArmour] Deal 2,500 damage to armor *(Kollontay is a walking tank — you need to learn to crack armor)*
+- **XP**: 3,000
+- **Barter Unlocked**: Trade Kollontay card → 1× Crye Precision AVS plate carrier (with soft armor + plates)
 - **Unlocks**: Next card quest (Sanitar)
 
-#### 6. QUEST: Bad Medicine
-- **Card**: Sanitar "Mad Surgeon" [Rare]
+#### 6. QUEST: Bad Medicine [Rare]
+- **Card**: Sanitar "Mad Surgeon"
 - **ID Seed**: `ttc_quest_card_bosses_sanitar`
 - **Prerequisites**: The PMC Butcher's Bill (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: HealthGain] Restore 500 HP total *(Sanitar heals himself constantly — show him you can too)*
-- **Description**: *"Sanitar is... complicated. Half doctor, half lunatic, all dangerous. He patches himself up mid-firefight like it's a minor inconvenience. His syringes are legendary — nobody knows exactly what's in them, but they work. Fast. If you want to earn this card, you need to understand the value of staying alive. Patch yourself up — a lot. Show me you can take hits and keep fighting, just like the Mad Surgeon himself."*
+  - [QE: HealthGain] Restore 1,000 HP total *(Sanitar heals himself constantly — show him you can too)*
+- **XP**: 3,000
 - **Barter Unlocked**: Trade Sanitar card → 3× Propital
 - **Unlocks**: Next card quest (Big Pipe)
 
-#### 7. QUEST: Frag Out
-- **Card**: Big Pipe "Grenadier King" [Epic]
+#### 7. QUEST: Frag Out [Epic]
+- **Card**: Big Pipe "Grenadier King"
 - **ID Seed**: `ttc_quest_card_bosses_bigpipe`
 - **Prerequisites**: Bad Medicine (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: DamageWithShotguns] Deal 1,000 damage with shotguns *(Big Pipe is loud and brutal — grab a shotgun and get close)*
-- **Description**: *"Big Pipe doesn't do subtlety. The man carries a grenade launcher like other people carry a sidearm, and when he's not raining explosives, he's in your face with raw firepower. Every corner he defends is pre-fragged, every hallway a kill zone. You want to understand Big Pipe? Grab something loud, get close, and make it hurt. Shotgun damage — lots of it."*
+  - [QE: DamageWithShotguns] Deal 5,000 damage with shotguns *(Big Pipe is loud and brutal — grab a shotgun and get close)*
+- **XP**: 6,000
 - **Barter Unlocked**: Trade Big Pipe card → 8× M67 + 8× RGD-5 + 8× F-1
 - **Unlocks**: Next card quest (Kaban)
 
-#### 8. QUEST: Tarkov's Traffic Cop
-- **Card**: Kaban "Street Enforcer" [Epic]
+#### 8. QUEST: Tarkov's Traffic Cop [Epic]
+- **Card**: Kaban "Street Enforcer"
 - **ID Seed**: `ttc_quest_card_bosses_kaban`
 - **Prerequisites**: Frag Out (completed)
 - **Type**: Completion
 - **Objectives**:
   - [QE: EncumberedTimeInSeconds] Spend 3,600 seconds encumbered *(Kaban is massive armored bulk — feel the weight yourself)*
-- **Description**: *"Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place — and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. One hour encumbered should give you a real taste."*
-- **Barter Unlocked**: Trade Kaban card → 1× Zabralo-Sh 6A armor
+- **XP**: 6,000
+- **Barter Unlocked**: Trade Kaban card → 1× Zabralo-Sh 6A armor (with soft armor + plates)
 - **Unlocks**: Next card quest (Reshala)
 
-#### 9. QUEST: Golden TT
-- **Card**: Reshala "Golden Tzar" [Epic]
+#### 9. QUEST: Golden TT [Epic]
+- **Card**: Reshala "Golden Tzar"
 - **ID Seed**: `ttc_quest_card_bosses_reshala`
 - **Prerequisites**: Tarkov's Traffic Cop (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: DamageWithPistols] Deal 500 damage with pistols *(Reshala's golden TT is iconic — time to work with a sidearm)*
-- **Description**: *"Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs like his personal fiefdom since day one. The golden TT is his signature — flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and do some real damage with it. Make Reshala proud."*
-- **Barter Unlocked**: Trade Reshala card → 1× Gold TT pistol (TT-33 7.62x25)
+  - [QE: DamageWithPistols] Deal 5,000 damage with pistols *(Reshala's golden TT is iconic — time to work with a sidearm)*
+- **XP**: 6,000
+- **Barter Unlocked**: Trade Reshala card → 1× Gold TT pistol (fully assembled)
 - **Unlocks**: Next card quest (Tagilla)
 
-#### 10. QUEST: The Sledgehammer Waltz
-- **Card**: Tagilla "Factory Executioner" [Epic]
+#### 10. QUEST: The Sledgehammer Waltz [Epic]
+- **Card**: Tagilla "Factory Executioner"
 - **ID Seed**: `ttc_quest_card_bosses_tagilla`
 - **Prerequisites**: Golden TT (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: MoveDistance] Cover 15,000 meters on foot *(Tagilla charges relentlessly — he never stops moving, and neither should you)*
-- **Description**: *"You hear the sledgehammer before you see him. Tagilla doesn't walk — he charges. The man is a relentless force of nature in Factory, sprinting through corridors with that welding mask and his hammer, turning every encounter into a chase scene from a horror movie. He's pure aggression in motion. Cover fifteen kilometers on foot — run, sprint, push forward. That's what Tagilla would do."*
-- **Barter Unlocked**: Trade Tagilla card → 1× Tagilla's welding helmet
+  - [QE: MoveDistanceWhileRunning] Cover 10,000 meters while running *(Tagilla charges relentlessly — he never stops running, and neither should you)*
+- **XP**: 6,000
+- **Barter Unlocked**: Trade Tagilla card → 1× Tagilla's welding helmet "ZABEY"
 - **Unlocks**: Next card quest (Killa)
 
-#### 11. QUEST: Mall Sweep
-- **Card**: Killa "Mall Marauder" [Legendary]
+#### 11. QUEST: Mall Sweep [Legendary]
+- **Card**: Killa "Mall Marauder"
 - **ID Seed**: `ttc_quest_card_bosses_killa`
 - **Prerequisites**: The Sledgehammer Waltz (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: KillsWhileADS] Get 40 kills while aiming down sights *(Killa hunts with precision — track your targets like he does)*
-  - [QE: SearchContainer] Search 60 containers *(Killa patrols every corner of Interchange — sweep the area like he does)*
-- **Description**: *"Killa. The legend of Interchange. That Maska helmet, the RPK, the way he tracks you by sound alone and then sprints at you like a freight train. He's cleared entire squads solo. The man doesn't camp — he hunts. He knows every store, every corridor, every hiding spot. I need you to channel both sides: the precision killer and the relentless patroller. Forty aimed kills, sixty containers searched. Own the space like Killa owns Interchange."*
-- **Barter Unlocked**: Trade Killa card → 1× Maska-1Sch helmet + 1× RPK-16 magazine
+  - [QE: KillsWhileADS] Get 60 kills while aiming down sights *(Killa hunts with precision — track your targets like he does)*
+  - [QE: SearchContainer] Search 100 containers *(Killa patrols every corner of Interchange — sweep the area like he does)*
+- **XP**: 12,000
+- **Barter Unlocked**: Trade Killa card → 1× Maska-1Sch Killa helmet (with visor + built-in armor) + 3× RPK-16 drum mag
 - **Unlocks**: Next card quest (Knight)
 
-#### 12. QUEST: Commander's Orders
-- **Card**: Knight "Rogue Commander" [Legendary]
+#### 12. QUEST: Commander's Orders [Legendary]
+- **Card**: Knight "Rogue Commander"
 - **ID Seed**: `ttc_quest_card_bosses_knight`
 - **Prerequisites**: Mall Sweep (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: DamageWithLMG] Deal 3,000 damage with LMGs *(Knight commands with heavy fire — bring the big guns)*
-- **Description**: *"Knight is the brains behind The Goons. Where Birdeye watches and Big Pipe blasts, Knight coordinates. He calls the shots, literally — and his weapon of choice is always something heavy. Autocannon bursts, suppressive fire, controlled chaos. The Rogues answer to him, and they answer with overwhelming firepower. You want this card? Grab a machine gun and put in the work. Three thousand damage worth of lead downrange."*
-- **Barter Unlocked**: Trade Knight card → 1× PKM machine gun
+  - [QE: DamageWithLMG] Deal 20,000 damage with LMGs *(Knight commands with heavy fire — bring the big guns)*
+- **XP**: 12,000
+- **Barter Unlocked**: Trade Knight card → 1× PKM machine gun (fully assembled)
 - **Unlocks**: Next card quest (Zryachiy)
 
-#### 13. QUEST: Lighthouse Judgement
-- **Card**: Zryachiy "Cliff Sentinel" [Legendary]
+#### 13. QUEST: Lighthouse Judgement [Legendary]
+- **Card**: Zryachiy "Cliff Sentinel"
 - **ID Seed**: `ttc_quest_card_bosses_zryachiy`
 - **Prerequisites**: Commander's Orders (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: TotalShotDistanceWithSnipers] Accumulate 5,000m total shot distance with sniper rifles *(Zryachiy judges from the cliffs — prove you can match his range)*
-  - [QE: KillsWhileProne] Get 15 kills while prone *(A true sentinel holds position — go to ground and deliver)*
-- **Description**: *"Zryachiy watches from the lighthouse cliffs like a god of judgment. His rifle reaches across the entire island — if you're in his line of sight, you're in his killzone. No one knows exactly why he guards that place so fiercely, but the bodies speak for themselves. He doesn't chase. He doesn't move. He waits, prone, patient, and then the shot rings out across the water. Five kilometers of cumulative sniper distance, and fifteen kills from prone. Become the sentinel."*
-- **Barter Unlocked**: Trade Zryachiy card → 1× SVDS sniper rifle + 1× Vudu scope
+  - [QE: TotalShotDistanceWithSnipers] Accumulate 10,000m total shot distance with sniper rifles *(Zryachiy judges from the cliffs — prove you can match his range)*
+  - [QE: KillsWhileProne] Get 20 kills while prone *(A true sentinel holds position — go to ground and deliver)*
+- **XP**: 12,000
+- **Barter Unlocked**: Trade Zryachiy card → 1× SVDS (Priscilu Vudu build, fully modded) + 3× SVD magazines + 120× 7N1 ammo
 - **Unlocks**: Next card quest (Cultist Priest)
 
-#### 14. QUEST: The Midnight Ritual
-- **Card**: Cultist Priest "Forsaken Prophet" [Secret]
+#### 14. QUEST: The Midnight Ritual [Secret]
+- **Card**: Cultist Priest "Forsaken Prophet"
 - **ID Seed**: `ttc_quest_card_bosses_cultist_priest`
 - **Prerequisites**: Lighthouse Judgement (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: MoveDistanceWhileSilent] Move 2,000m silently *(The Cultists are silent predators — move like they do)*
-  - [QE: FixAnyBleed] Fix 20 bleedings *(Their poisoned blades cause suffering — learn to endure it)*
-- **Description**: *"Nobody talks about the Cultist Priest without lowering their voice. He moves in darkness, surrounded by his followers, blades dripping with some foul toxin that makes your veins burn. They don't shoot — they stab. And by the time you feel the prick, the poison is already working. Meeting them at night is a death sentence for most. I need you to understand their ways: move in silence, and learn to survive the bleeding they inflict. Twenty wounds patched, two kilometers unheard."*
-- **Barter Unlocked**: Trade Cultist Priest card → 3× xTG-12 Antidote + 1× PVS-14 NVG
+  - [QE: MoveDistanceWhileSilent] Move 5,000m silently *(The Cultists are silent predators — move like they do)*
+  - [QE: FixAnyBleed] Fix 50 bleedings *(Their poisoned blades cause suffering — learn to endure it)*
+- **XP**: 20,000
+- **Barter Unlocked**: Trade Cultist Priest card → 5× xTG-12 Antidote + 2× PVS-14 NVG + 3× Obdolbos
 - **Unlocks**: Next card quest (Shadow of Tagilla)
 
-#### 15. QUEST: Echo in the Dark
-- **Card**: Shadow of Tagilla "Phantom Sledge" [Secret]
+#### 15. QUEST: Echo in the Dark [Secret]
+- **Card**: Shadow of Tagilla "Phantom Sledge"
 - **ID Seed**: `ttc_quest_card_bosses_shadow_tagilla`
 - **Prerequisites**: The Midnight Ritual (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: KillsWithoutADS] Get 25 kills without aiming down sights *(The Shadow strikes from the hip — raw, brutal, instinctive)*
-  - [QE: MoveDistance] Cover 25,000 meters on foot *(The Phantom never rests — he roams endlessly)*
-- **Description**: *"You think Tagilla is scary? His shadow is worse. When Tagilla falls, something remains — an echo, a phantom that swings that sledgehammer in the dark long after the man himself is gone. No one can explain it. Some say it's a hallucination from the fumes in Factory. Others say Tarkov itself won't let him die. The Phantom Sledge doesn't aim — he swings. He doesn't stop — he roams. Twenty-five hipfire kills, twenty-five kilometers on foot. Become the ghost."*
-- **Barter Unlocked**: Trade Shadow of Tagilla card → 1× Tagilla's sledgehammer + 1× Rivals armband
+  - [QE: KillsWithoutADS] Get 100 kills without aiming down sights *(The Shadow strikes from the hip — raw, brutal, instinctive)*
+  - [QE: MoveDistance] Cover 100,000 meters on foot *(The Phantom never rests — he roams endlessly)*
+- **XP**: 20,000
+- **Barter Unlocked**: Trade Shadow of Tagilla card → 1× Sledgehammer + 1× Rivals armband + 1× Labris axe + 1× Tagilla's welding mask "ZABEY"
 - **Unlocks**: Collection Quest
 
 ---
@@ -241,13 +252,14 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Prerequisites**: Echo in the Dark (completed)
 - **Type**: Completion
 - **Objectives**:
-  - HandoverItem: Turn in all 15 boss cards (1 of each)
+  - HandoverItem: Turn in all 15 boss cards (1 of each, distinct)
 - **Description**: *"You've done it. Every boss, every mini-boss, every legend documented and verified. This is the complete Bosses & Mini-Bosses collection — the most dangerous individuals in Tarkov, all in one binder. I've been working on this compendium for months, and you've just handed me the final pieces. This deserves something special. Hand them all over and I'll make sure you're rewarded like the legend you've become."*
 - **Rewards**:
   - 50,000 XP
   - 500,000 Roubles
   - 1× Thicc Items Case
   - +0.15 standing with Kolya
+- **Barter Unlocked**: Trade all 15 boss cards → 1× Thicc Items Case (repeatable)
 
 ---
 
@@ -259,17 +271,18 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 2 | Shturman "Woods Predator" | Uncommon | 1× Weapon maintenance kit |
 | 3 | Birdeye "Silent Overwatch" | Rare | 1× Valday PS-320 scope |
 | 4 | Glukhar "Trainyard Warlord" | Rare | 1× 6L31 60-rnd AK mag |
-| 5 | Kollontay "PMC Butcher" | Rare | 1× AACPC plate carrier |
+| 5 | Kollontay "PMC Butcher" | Rare | 1× Crye AVS plate carrier (with armor) |
 | 6 | Sanitar "Mad Surgeon" | Rare | 3× Propital |
 | 7 | Big Pipe "Grenadier King" | Epic | 8× M67 + 8× RGD-5 + 8× F-1 |
-| 8 | Kaban "Street Enforcer" | Epic | 1× Zabralo-Sh 6A armor |
-| 9 | Reshala "Golden Tzar" | Epic | 1× Gold TT pistol |
-| 10 | Tagilla "Factory Executioner" | Epic | 1× Tagilla's welding helmet |
-| 11 | Killa "Mall Marauder" | Legendary | 1× Maska helmet + 1× RPK-16 mag |
-| 12 | Knight "Rogue Commander" | Legendary | 1× PKM |
-| 13 | Zryachiy "Cliff Sentinel" | Legendary | 1× SVDS + 1× Vudu scope |
-| 14 | Cultist Priest "Forsaken Prophet" | Secret | 3× xTG-12 + 1× PVS-14 NVG |
-| 15 | Shadow of Tagilla "Phantom Sledge" | Secret | 1× Tagilla's sledgehammer + 1× Rivals armband |
+| 8 | Kaban "Street Enforcer" | Epic | 1× Zabralo-Sh 6A (with armor) |
+| 9 | Reshala "Golden Tzar" | Epic | 1× Gold TT pistol (assembled) |
+| 10 | Tagilla "Factory Executioner" | Epic | 1× Tagilla's welding helmet "ZABEY" |
+| 11 | Killa "Mall Marauder" | Legendary | 1× Maska Killa (full) + 3× RPK-16 drum mag |
+| 12 | Knight "Rogue Commander" | Legendary | 1× PKM (assembled) |
+| 13 | Zryachiy "Cliff Sentinel" | Legendary | 1× SVDS Vudu build + 3× mags + 120× 7N1 |
+| 14 | Cultist Priest "Forsaken Prophet" | Secret | 5× xTG-12 + 2× PVS-14 + 3× Obdolbos |
+| 15 | Shadow of Tagilla "Phantom Sledge" | Secret | Sledgehammer + Rivals armband + Labris axe + ZABEY mask |
+| **Collection** | All 15 boss cards | — | 1× Thicc Items Case |
 
 ---
 

@@ -88,7 +88,7 @@ public sealed class QuestAssortService
 				// Single-item barter: direct card→item trade
 				var item = barter.Items[0];
 				var assortItemId = AddBarterAssortItem(
-					trader.Assort, item.TemplateId, item.Count, barter.CardTemplateId, 1);
+					trader.Assort, item.TemplateId, item.Count, barter.CardTemplateId, 1, item.Parts);
 
 				if (assortItemId is MongoId id)
 				{
@@ -216,8 +216,9 @@ public sealed class QuestAssortService
 
 	/// <summary>
 	/// Add an assort item that the player receives, with BarterScheme requiring a card as payment.
+	/// Optionally includes child parts (weapon mods, armor inserts) in the assort.
 	/// </summary>
-	private MongoId? AddBarterAssortItem(TraderAssort assort, string rewardTemplateId, int rewardCount, string cardTemplateId, int loyaltyLevel)
+	private MongoId? AddBarterAssortItem(TraderAssort assort, string rewardTemplateId, int rewardCount, string cardTemplateId, int loyaltyLevel, List<PresetPart>? parts = null)
 	{
 		if (assort.Items is not List<Item> items
 			|| assort.BarterScheme is not Dictionary<MongoId, List<List<BarterScheme>>> bs
@@ -241,6 +242,10 @@ public sealed class QuestAssortService
 			}
 		});
 
+		// Add child parts (weapon mods, armor inserts, etc.)
+		if (parts != null)
+			AddAssortPartsRecursive(items, newId, parts);
+
 		// The COST: 1x card
 		bs[newId] = new()
 		{
@@ -257,6 +262,27 @@ public sealed class QuestAssortService
 		lli[newId] = loyaltyLevel;
 
 		return newId;
+	}
+
+	/// <summary>
+	/// Recursively adds child items to the assort for weapon/armor presets.
+	/// </summary>
+	private static void AddAssortPartsRecursive(List<Item> items, MongoId parentId, List<PresetPart> parts)
+	{
+		foreach (var part in parts)
+		{
+			var partId = new MongoId(Guid.NewGuid().ToString("N")[..24]);
+			items.Add(new Item
+			{
+				Id = partId,
+				Template = new MongoId(part.TemplateId),
+				ParentId = parentId,
+				SlotId = part.SlotId
+			});
+
+			if (part.Parts != null)
+				AddAssortPartsRecursive(items, partId, part.Parts);
+		}
 	}
 
 	/// <summary>

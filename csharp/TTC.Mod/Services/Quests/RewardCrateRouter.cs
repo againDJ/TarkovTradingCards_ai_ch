@@ -8,6 +8,7 @@ using SPTarkov.Server.Core.Models.Eft.Common.Tables;
 using SPTarkov.Server.Core.Models.Eft.ItemEvent;
 using SPTarkov.Server.Core.Models.Enums;
 using SPTarkov.Server.Core.Models.Utils;
+using SPTarkov.Server.Core.Models.Spt.Server;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Utils;
 using TTC.Mod.Models;
@@ -27,12 +28,13 @@ public sealed class RewardCrateRouter(
 	ProfileHelper profileHelper,
 	InventoryHelper inventoryHelper,
 	MailSendService mailSend,
+	DatabaseService databaseService,
 	ISptLogger<RewardCrateRouter> logger
 ) : StaticRouter(jsonUtil, [
 	new RouteAction<ItemEventRouterRequest>(
 		"/client/game/profile/items/moving",
 		(url, requestData, sessionId, output) =>
-			ProcessOutput(sessionId, output, registry, profileHelper, inventoryHelper, mailSend, logger)
+			ProcessOutput(sessionId, output, registry, profileHelper, inventoryHelper, mailSend, databaseService, logger)
 	)
 ])
 {
@@ -42,6 +44,7 @@ public sealed class RewardCrateRouter(
 		ProfileHelper profileHelper,
 		InventoryHelper inventoryHelper,
 		MailSendService mailSend,
+		DatabaseService databaseService,
 		ISptLogger<RewardCrateRouter> logger)
 	{
 		if (string.IsNullOrEmpty(output))
@@ -157,7 +160,7 @@ public sealed class RewardCrateRouter(
 				if (rewards == null || rewards.Count == 0) continue;
 
 				// Build mail items
-				var mailItems = BuildMailItems(rewards);
+				var mailItems = BuildMailItems(rewards, databaseService);
 
 				// Send from Kolya
 				mailSend.SendDirectNpcMessageToPlayer(
@@ -180,22 +183,75 @@ public sealed class RewardCrateRouter(
 		}
 	}
 
-	private static List<Item> BuildMailItems(List<BarterRewardItem> rewards)
+	private static List<Item> BuildMailItems(List<BarterRewardItem> rewards, DatabaseService databaseService)
 	{
 		var items = new List<Item>();
+		var tables = databaseService.GetTables();
+
 		foreach (var reward in rewards)
 		{
 			var count = Math.Max(1, reward.Count);
-			for (int i = 0; i < count; i++)
+			var maxStack = GetMaxStackSize(tables, reward.TemplateId);
+
+			if (maxStack > 1 && count > 1)
 			{
-				items.Add(new Item
+				// Stackable item: create stacks up to maxStack
+				var remaining = count;
+				while (remaining > 0)
 				{
-					Id = new MongoId(Guid.NewGuid().ToString("N")[..24]),
-					Template = new MongoId(reward.TemplateId),
-					Upd = new Upd { StackObjectsCount = 1 }
-				});
+					var stackSize = Math.Min(remaining, maxStack);
+					items.Add(new Item
+					{
+						Id = new MongoId(Guid.NewGuid().ToString("N")[..24]),
+						Template = new MongoId(reward.TemplateId),
+						Upd = new Upd { StackObjectsCount = stackSize }
+					});
+					remaining -= stackSize;
+				}
+			}
+			else
+			{
+				// Non-stackable or single item: create individual items
+				for (int i = 0; i < count; i++)
+				{
+					var parentId = new MongoId(Guid.NewGuid().ToString("N")[..24]);
+					items.Add(new Item
+					{
+						Id = parentId,
+						Template = new MongoId(reward.TemplateId),
+						Upd = new Upd { StackObjectsCount = 1 }
+					});
+
+					if (reward.Parts != null)
+						AddPartsRecursive(items, parentId, reward.Parts);
+				}
 			}
 		}
 		return items;
+	}
+
+	private static int GetMaxStackSize(DatabaseTables? tables, string templateId)
+	{
+		if (tables?.Templates?.Items?.TryGetValue(templateId, out var template) == true)
+			return template.Properties?.StackMaxSize ?? 1;
+		return 1;
+	}
+
+	private static void AddPartsRecursive(List<Item> items, MongoId parentId, List<PresetPart> parts)
+	{
+		foreach (var part in parts)
+		{
+			var partId = new MongoId(Guid.NewGuid().ToString("N")[..24]);
+			items.Add(new Item
+			{
+				Id = partId,
+				Template = new MongoId(part.TemplateId),
+				ParentId = parentId,
+				SlotId = part.SlotId
+			});
+
+			if (part.Parts != null)
+				AddPartsRecursive(items, partId, part.Parts);
+		}
 	}
 }

@@ -96,6 +96,14 @@ public sealed class RewardCrateFactory
 
 			details.OverrideProperties = props;
 			var result = _customItemService.CreateItemFromClone(details);
+
+			// If item already existed, update its prefab (in case reward order changed)
+			if (tables.Templates?.Items?.TryGetValue(crateTemplateId, out var existing) == true
+				&& existing.Properties != null)
+			{
+				existing.Properties.Prefab = new Prefab { Path = prefabPath };
+			}
+
 			return result.Success == true;
 		}
 		catch
@@ -117,7 +125,7 @@ public sealed class RewardCrateFactory
 		foreach (var item in contents)
 		{
 			var count = Math.Max(1, item.Count);
-			var itemName = LookupItemName(tables, item.TemplateId);
+			var itemName = item.DisplayName ?? LookupItemName(tables, item.TemplateId);
 			parts.Add(count > 1 ? $"{count}x {itemName}" : itemName);
 		}
 
@@ -138,7 +146,7 @@ public sealed class RewardCrateFactory
 		foreach (var item in contents)
 		{
 			var count = Math.Max(1, item.Count);
-			var itemName = LookupItemName(tables, item.TemplateId);
+			var itemName = item.DisplayName ?? LookupItemName(tables, item.TemplateId);
 			lines.Add($"- {count}x {itemName}");
 		}
 
