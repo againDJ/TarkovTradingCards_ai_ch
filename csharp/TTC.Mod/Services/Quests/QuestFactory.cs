@@ -167,40 +167,91 @@ public sealed class QuestFactory
 			}
 		}
 
-		// QE objectives (CounterCreator conditions)
-		// The server-side condition must be impossible to complete (kill from 5555m).
-		// QuestsExtended intercepts via ConditionId and tracks the real objective client-side.
+		// Objectives (CounterCreator conditions)
 		foreach (var obj in def.Objectives)
 		{
 			var condId = QuestIds.ConditionId(def.Seed, condIdx++);
-			quest.Conditions.AvailableForFinish.Add(new QuestCondition
+
+			if (obj.IsVanilla)
 			{
-				Id = new MongoId(condId),
-				ConditionType = "CounterCreator",
-				Type = MapQeToEQuestType(obj.ConditionType),
-				Value = obj.Value,
-				IsNecessary = true,
-				DynamicLocale = false,
-				Target = new ListOrT<string>(new List<string>(), ""),
-				Counter = new QuestConditionCounter
+				// Vanilla condition: real SPT kill condition tracked natively by the game
+				var counterConditions = new List<QuestConditionCounterCondition>();
+
+				// Kills condition with target, distance, bodyPart filters
+				var killCondition = new QuestConditionCounterCondition
 				{
-					Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
-					Conditions = new List<QuestConditionCounterCondition>
+					Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
+					ConditionType = "Kills",
+					Target = new ListOrT<string>(new List<string> { obj.KillTarget! }, obj.KillTarget!),
+					Distance = new CounterConditionDistance
 					{
-						new QuestConditionCounterCondition
+						CompareMethod = obj.KillDistanceCompare ?? ">=",
+						Value = obj.KillDistanceValue ?? 0
+					}
+				};
+				if (obj.KillBodyParts is { Count: > 0 })
+					killCondition.BodyPart = obj.KillBodyParts;
+				counterConditions.Add(killCondition);
+
+				// Location condition (separate counter condition)
+				if (obj.KillLocations is { Count: > 0 })
+				{
+					counterConditions.Add(new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 150)),
+						ConditionType = "Location",
+						Target = new ListOrT<string>(obj.KillLocations, null!)
+					});
+				}
+
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "CounterCreator",
+					Type = "Elimination",
+					Value = obj.Value,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					Counter = new QuestConditionCounter
+					{
+						Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
+						Conditions = counterConditions
+					}
+				});
+			}
+			else
+			{
+				// QE condition: impossible server-side condition, QuestsExtended tracks the real objective
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "CounterCreator",
+					Type = MapQeToEQuestType(obj.ConditionType),
+					Value = obj.Value,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					Counter = new QuestConditionCounter
+					{
+						Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
+						Conditions = new List<QuestConditionCounterCondition>
 						{
-							Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
-							ConditionType = "Kills",
-							Target = new ListOrT<string>(new List<string> { "Savage" }, "Savage"),
-							Distance = new CounterConditionDistance
+							new QuestConditionCounterCondition
 							{
-								CompareMethod = ">=",
-								Value = 5555
+								Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
+								ConditionType = "Kills",
+								Target = new ListOrT<string>(new List<string> { "Savage" }, "Savage"),
+								Distance = new CounterConditionDistance
+								{
+									CompareMethod = ">=",
+									Value = 5555
+								}
 							}
 						}
 					}
-				}
-			});
+				});
+			}
 			locales[condId] = obj.Description;
 		}
 

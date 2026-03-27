@@ -125,7 +125,7 @@ public static class BossesThemeDefinitions
 	};
 
 	/// <summary>Full SVD config from Priscilu (Vudu scope build).</summary>
-	private static List<PresetPart> SvdPrisciluParts() => new()
+	internal static List<PresetPart> SvdPrisciluParts() => new()
 	{
 		P("5649ae4a4bdc2d1b2b8b4588", "mod_pistol_grip"),
 		P("5c88f24b2e22160bc12c69a6", "mod_magazine"),

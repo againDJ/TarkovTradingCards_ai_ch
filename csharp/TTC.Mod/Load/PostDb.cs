@@ -152,7 +152,9 @@ public sealed class PostDb : IOnLoad
 					_logger.Info($"[TTC][Quests] Created {questsCreated} quests");
 
 				// Set up quest-gated assort entries (registers reward crates in the process)
-				var allDefs = BossesThemeDefinitions.GetAll();
+				var allDefs = new List<Models.QuestDefinition>();
+				allDefs.AddRange(BossesThemeDefinitions.GetAll());
+				allDefs.AddRange(IconicWeaponsThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 

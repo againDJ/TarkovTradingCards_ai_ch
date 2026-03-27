@@ -114,5 +114,100 @@
       { "ConditionId": "3d89c1e7bb9c2be7cd45ddb9", "ConditionType": "KillsWithoutADS" },
       { "ConditionId": "6791e4b9013eb6f0ba09195c", "ConditionType": "MoveDistance" }
     ]
+  },
+  "34d2952e95387bd7d2e3bc8b": {
+    "QuestId": "34d2952e95387bd7d2e3bc8b",
+    "QuestName": "The Armorer's Catalog",
+    "Conditions": [
+      { "ConditionId": "f05744b0f938d88ce44b692c", "ConditionType": "CraftAnyItem" }
+    ]
+  },
+  "ef78177bb5b7e5b9de7a6653": {
+    "QuestId": "ef78177bb5b7e5b9de7a6653",
+    "QuestName": "Pocket Cannon",
+    "Conditions": [
+      { "ConditionId": "f774a9c047b29a955ad0488f", "ConditionType": "KillsWithoutADS" }
+    ]
+  },
+  "80dba63368811a41c6c1133e": {
+    "QuestId": "80dba63368811a41c6c1133e",
+    "QuestName": "Farming Season",
+    "Conditions": [
+      { "ConditionId": "c2999eacbda61322734e998d", "ConditionType": "SearchContainer" },
+      { "ConditionId": "ce570adce05ad78b75558d21", "ConditionType": "DamageWithShotguns" }
+    ]
+  },
+  "e06d6d3bdafe03aaa31311d5": {
+    "QuestId": "e06d6d3bdafe03aaa31311d5",
+    "QuestName": "Suppressive Authority",
+    "Conditions": [
+      { "ConditionId": "cba278065edd7ae0f01ef7df", "ConditionType": "DamageWithLMG" }
+    ]
+  },
+  "ae4b82cf7e21f091227636e6": {
+    "QuestId": "ae4b82cf7e21f091227636e6",
+    "QuestName": "Shadow Protocol",
+    "Conditions": [
+      { "ConditionId": "91d22c7b340448caef2ab3a8", "ConditionType": "KillsWhileSilent" }
+    ]
+  },
+  "67fa42f0f85a200600c22368": {
+    "QuestId": "67fa42f0f85a200600c22368",
+    "QuestName": "Precision Buzzsaw",
+    "Conditions": [
+      { "ConditionId": "86a22d4f9f94b018ac5c406b", "ConditionType": "DamageWithSMG" }
+    ]
+  },
+  "b42b118b6008df4c922c1364": {
+    "QuestId": "b42b118b6008df4c922c1364",
+    "QuestName": "Leg Day",
+    "Conditions": [
+      { "ConditionId": "8fb9e859a539b5fa6eff4450", "ConditionType": "DestroyLegsWithSMG" }
+    ]
+  },
+  "5aacb229cf3f458371a4c987": {
+    "QuestId": "5aacb229cf3f458371a4c987",
+    "QuestName": "The Meta Chase",
+    "Conditions": [
+      { "ConditionId": "8e7b0f312397c6329e7727d5", "ConditionType": "DamageToArmour" }
+    ]
+  },
+  "2379059d933b86c3a3a0f398": {
+    "QuestId": "2379059d933b86c3a3a0f398",
+    "QuestName": "Hand Cannon",
+    "Conditions": [
+      { "ConditionId": "abdaec548058a1e75fbb5e04", "ConditionType": "DamageWithRevolvers" }
+    ]
+  },
+  "8dda836b3cf40b89420dd794": {
+    "QuestId": "8dda836b3cf40b89420dd794",
+    "QuestName": "The Patient Shot",
+    "Conditions": [
+      { "ConditionId": "794a5549afa9a2d185b9a8db", "ConditionType": "KillsWhileProne" }
+    ]
+  },
+  "889c0de750b3e29fe15506e8": {
+    "QuestId": "889c0de750b3e29fe15506e8",
+    "QuestName": "Night Operations",
+    "Conditions": [
+      { "ConditionId": "c634c35722c431bcb7d0beb0", "ConditionType": "KillsWhileSilent" },
+      { "ConditionId": "791b4492d195ce329ef1cf68", "ConditionType": "MoveDistanceWhileSilent" }
+    ]
+  },
+  "8cd666efd834972ecfadbaa2": {
+    "QuestId": "8cd666efd834972ecfadbaa2",
+    "QuestName": "One Shot, One Kill",
+    "Conditions": [
+      { "ConditionId": "952745077333cafed7dd18a2", "ConditionType": "DamageWithDMR" }
+    ]
+  },
+  "47b4efdd1706e9a95a7abffb": {
+    "QuestId": "47b4efdd1706e9a95a7abffb",
+    "QuestName": "Full Auto Everything",
+    "Conditions": [
+      { "ConditionId": "57b35610109b441dcb11e2cc", "ConditionType": "DamageWithPistols" },
+      { "ConditionId": "e8a46f2905570c0f84fe620f", "ConditionType": "KillsWithoutADS" },
+      { "ConditionId": "50a479445bb281368f3f8ce3", "ConditionType": "SearchContainer" }
+    ]
   }
 }

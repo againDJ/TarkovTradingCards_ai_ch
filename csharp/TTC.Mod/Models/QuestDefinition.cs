@@ -38,18 +38,40 @@ public record QuestDefinition
 }
 
 /// <summary>
-/// A QuestsExtended objective (becomes a CounterCreator condition).
+/// A quest objective — either QuestsExtended (tracked by QE plugin) or vanilla (tracked by SPT natively).
+/// When KillTarget is set, creates a real vanilla CounterCreator condition.
+/// Otherwise, creates a QE-style impossible condition intercepted by the QE plugin.
 /// </summary>
 public record QeObjective
 {
-    /// <summary>QE condition type (e.g. "KillsWhileADS", "DamageWithAR").</summary>
+    /// <summary>QE condition type (e.g. "KillsWhileADS", "DamageWithAR") or "Kills" for vanilla.</summary>
     public required string ConditionType { get; init; }
 
-    /// <summary>Target value.</summary>
+    /// <summary>Target value (kill count, damage amount, etc.).</summary>
     public required int Value { get; init; }
 
     /// <summary>Locale description shown in quest UI.</summary>
     public required string Description { get; init; }
+
+    // ── Vanilla kill condition fields (when KillTarget is set, creates a real SPT condition) ──
+
+    /// <summary>Enemy target type: "Savage" (scavs), "AnyPmc", "Any". When set, creates vanilla condition.</summary>
+    public string? KillTarget { get; init; }
+
+    /// <summary>Map filter: "bigmap" (Customs), "factory4_day", "interchange", "laboratory", etc.</summary>
+    public List<string>? KillLocations { get; init; }
+
+    /// <summary>Body part filter: ["Head"] for headshots.</summary>
+    public List<string>? KillBodyParts { get; init; }
+
+    /// <summary>Distance compare method: ">=" for long range, "&lt;=" for close range.</summary>
+    public string? KillDistanceCompare { get; init; }
+
+    /// <summary>Distance value in meters.</summary>
+    public double? KillDistanceValue { get; init; }
+
+    /// <summary>Whether this is a vanilla condition (true) or QE condition (false). Auto-detected from KillTarget.</summary>
+    public bool IsVanilla => KillTarget != null;
 }
 
 /// <summary>
