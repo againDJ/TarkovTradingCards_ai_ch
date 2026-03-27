@@ -195,7 +195,7 @@ public static class BossesThemeDefinitions
 					Note = "Kill 10 enemies while crouched.",
 					SuccessMessage = "Silent and deadly. The Partisan would approve."
 				},
-				XpReward = 1000,
+				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardPartisan } },
 				BarterUnlock = new() { CardTemplateId = CardPartisan, Items = new() { new() { TemplateId = Ifak, Count = 2 } } }
 			},
@@ -216,7 +216,7 @@ public static class BossesThemeDefinitions
 					Note = "Deal 1,000 damage with DMRs.",
 					SuccessMessage = "Good shooting. Shturman would tip his hat."
 				},
-				XpReward = 1000,
+				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardShturman } },
 				BarterUnlock = new() { CardTemplateId = CardShturman, Items = new() { new() { TemplateId = WeaponRepairKit } } }
 			},
@@ -237,7 +237,7 @@ public static class BossesThemeDefinitions
 					Note = "Accumulate 1,000m total sniper shot distance.",
 					SuccessMessage = "That's some serious range work. Birdeye-level."
 				},
-				XpReward = 3000,
+				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBirdeye } },
 				BarterUnlock = new() { CardTemplateId = CardBirdeye, Items = new() { new() { TemplateId = ValdayPs320 } } }
 			},
@@ -258,7 +258,7 @@ public static class BossesThemeDefinitions
 					Note = "Deal 5,000 damage with assault rifles.",
 					SuccessMessage = "That's some firepower. Glukhar's guards would be nervous."
 				},
-				XpReward = 3000,
+				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardGlukhar } },
 				BarterUnlock = new() { CardTemplateId = CardGlukhar, Items = new() { new() { TemplateId = Ak6L31Mag } } }
 			},
@@ -279,7 +279,7 @@ public static class BossesThemeDefinitions
 					Note = "Deal 2,500 damage to armor.",
 					SuccessMessage = "You know how to crack armor. Impressive."
 				},
-				XpReward = 3000,
+				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardKollontay } },
 				BarterUnlock = new()
 				{
@@ -304,7 +304,7 @@ public static class BossesThemeDefinitions
 					Note = "Restore 1,000 HP total.",
 					SuccessMessage = "The Mad Surgeon would be proud of your resilience."
 				},
-				XpReward = 3000,
+				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSanitar } },
 				BarterUnlock = new() { CardTemplateId = CardSanitar, Items = new() { new() { TemplateId = Propital, Count = 3 } } }
 			},
@@ -325,7 +325,7 @@ public static class BossesThemeDefinitions
 					Note = "Deal 5,000 damage with shotguns.",
 					SuccessMessage = "Loud and brutal. Big Pipe approves."
 				},
-				XpReward = 6000,
+				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardBigPipe } },
 				BarterUnlock = new() { CardTemplateId = CardBigPipe, Items = new() { new() { TemplateId = M67Grenade, Count = 8 }, new() { TemplateId = Rgd5Grenade, Count = 8 }, new() { TemplateId = F1Grenade, Count = 8 } } }
 			},
@@ -346,7 +346,7 @@ public static class BossesThemeDefinitions
 					Note = "Spend 60 minutes encumbered.",
 					SuccessMessage = "Now you know what it's like to be Kaban."
 				},
-				XpReward = 6000,
+				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardKaban } },
 				BarterUnlock = new()
 				{
@@ -371,7 +371,7 @@ public static class BossesThemeDefinitions
 					Note = "Deal 5,000 damage with pistols.",
 					SuccessMessage = "Flashy and effective. Reshala would be impressed."
 				},
-				XpReward = 6000,
+				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardReshala } },
 				BarterUnlock = new()
 				{
@@ -396,7 +396,7 @@ public static class BossesThemeDefinitions
 					Note = "Cover 10km while running.",
 					SuccessMessage = "Ten kilometers at full sprint. Tagilla-level endurance."
 				},
-				XpReward = 6000,
+				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardTagilla } },
 				BarterUnlock = new() { CardTemplateId = CardTagilla, Items = new() { new() { TemplateId = TagillaWeldingMaskUbey } } }
 			},
@@ -418,7 +418,7 @@ public static class BossesThemeDefinitions
 					Note = "Get 60 ADS kills and search 100 containers.",
 					SuccessMessage = "You've owned the space. The Mall Marauder recognizes a peer."
 				},
-				XpReward = 12000,
+				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardKilla } },
 				BarterUnlock = new()
 				{
@@ -447,7 +447,7 @@ public static class BossesThemeDefinitions
 					Note = "Deal 20,000 damage with LMGs.",
 					SuccessMessage = "That's some heavy firepower. Knight would nod in approval."
 				},
-				XpReward = 12000,
+				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardKnight } },
 				BarterUnlock = new()
 				{
@@ -473,7 +473,7 @@ public static class BossesThemeDefinitions
 					Note = "Accumulate 10km sniper distance and get 20 prone kills.",
 					SuccessMessage = "The Cliff Sentinel would recognize a fellow marksman."
 				},
-				XpReward = 12000,
+				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardZryachiy } },
 				BarterUnlock = new()
 				{
@@ -504,7 +504,7 @@ public static class BossesThemeDefinitions
 					Note = "Move 5km silently and fix 50 bleedings.",
 					SuccessMessage = "Silent and scarred. The Forsaken Prophet would be intrigued."
 				},
-				XpReward = 20000,
+				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardCultistPriest } },
 				BarterUnlock = new()
 				{
@@ -535,7 +535,7 @@ public static class BossesThemeDefinitions
 					Note = "Get 100 hipfire kills and cover 100km on foot.",
 					SuccessMessage = "You've become the phantom. The echo lives on."
 				},
-				XpReward = 20000,
+				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardShadowTagilla } },
 				BarterUnlock = new()
 				{

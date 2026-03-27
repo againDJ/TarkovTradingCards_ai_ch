@@ -21,12 +21,12 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 ### XP Scaling by Rarity
 | Rarity | XP |
 |--------|----|
-| Common | 500 |
-| Uncommon | 1,000 |
-| Rare | 3,000 |
-| Epic | 6,000 |
-| Legendary | 12,000 |
-| Secret | 20,000 |
+| Common | 1,000 |
+| Uncommon | 3,000 |
+| Rare | 10,000 |
+| Epic | 20,000 |
+| Legendary | 35,000 |
+| Secret | 60,000 |
 
 ### Loyalty Levels
 - Single level, max by default — all progression is quest-gated
@@ -83,7 +83,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: KillsWhileCrouched] Get 10 kills while crouched *(Partisan fights from the shadows — prove you can do the same)*
-- **XP**: 1,000
+- **XP**: 3,000
 - **Barter Unlocked**: Trade Partisan card → 2× IFAK medical kit
 - **Unlocks**: Next card quest (Shturman)
 
@@ -94,7 +94,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageWithDMR] Deal 1,000 damage with marksman rifles *(Shturman is a sharpshooter — time to think like one)*
-- **XP**: 1,000
+- **XP**: 3,000
 - **Barter Unlocked**: Trade Shturman card → 1× Weapon maintenance kit
 - **Unlocks**: Next card quest (Birdeye)
 
@@ -105,7 +105,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: TotalShotDistanceWithSnipers] Accumulate 1,000m total shot distance with sniper rifles *(Birdeye strikes from extreme range — prove you can reach out and touch someone)*
-- **XP**: 3,000
+- **XP**: 10,000
 - **Barter Unlocked**: Trade Birdeye card → 1× Valday PS-320 scope
 - **Unlocks**: Next card quest (Glukhar)
 
@@ -116,7 +116,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageWithAR] Deal 5,000 damage with assault rifles *(Glukhar's guards spray full-auto — fight fire with fire)*
-- **XP**: 3,000
+- **XP**: 10,000
 - **Barter Unlocked**: Trade Glukhar card → 1× 60-round AK magazine (6L31)
 - **Unlocks**: Next card quest (Kollontay)
 
@@ -127,7 +127,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageToArmour] Deal 2,500 damage to armor *(Kollontay is a walking tank — you need to learn to crack armor)*
-- **XP**: 3,000
+- **XP**: 10,000
 - **Barter Unlocked**: Trade Kollontay card → 1× Crye Precision AVS plate carrier (with soft armor + plates)
 - **Unlocks**: Next card quest (Sanitar)
 
@@ -138,7 +138,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: HealthGain] Restore 1,000 HP total *(Sanitar heals himself constantly — show him you can too)*
-- **XP**: 3,000
+- **XP**: 10,000
 - **Barter Unlocked**: Trade Sanitar card → 3× Propital
 - **Unlocks**: Next card quest (Big Pipe)
 
@@ -149,7 +149,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageWithShotguns] Deal 5,000 damage with shotguns *(Big Pipe is loud and brutal — grab a shotgun and get close)*
-- **XP**: 6,000
+- **XP**: 20,000
 - **Barter Unlocked**: Trade Big Pipe card → 8× M67 + 8× RGD-5 + 8× F-1
 - **Unlocks**: Next card quest (Kaban)
 
@@ -160,7 +160,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: EncumberedTimeInSeconds] Spend 3,600 seconds encumbered *(Kaban is massive armored bulk — feel the weight yourself)*
-- **XP**: 6,000
+- **XP**: 20,000
 - **Barter Unlocked**: Trade Kaban card → 1× Zabralo-Sh 6A armor (with soft armor + plates)
 - **Unlocks**: Next card quest (Reshala)
 
@@ -171,7 +171,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageWithPistols] Deal 5,000 damage with pistols *(Reshala's golden TT is iconic — time to work with a sidearm)*
-- **XP**: 6,000
+- **XP**: 20,000
 - **Barter Unlocked**: Trade Reshala card → 1× Gold TT pistol (fully assembled)
 - **Unlocks**: Next card quest (Tagilla)
 
@@ -182,7 +182,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: MoveDistanceWhileRunning] Cover 10,000 meters while running *(Tagilla charges relentlessly — he never stops running, and neither should you)*
-- **XP**: 6,000
+- **XP**: 20,000
 - **Barter Unlocked**: Trade Tagilla card → 1× Tagilla's welding helmet "ZABEY"
 - **Unlocks**: Next card quest (Killa)
 
@@ -194,7 +194,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Objectives**:
   - [QE: KillsWhileADS] Get 60 kills while aiming down sights *(Killa hunts with precision — track your targets like he does)*
   - [QE: SearchContainer] Search 100 containers *(Killa patrols every corner of Interchange — sweep the area like he does)*
-- **XP**: 12,000
+- **XP**: 35,000
 - **Barter Unlocked**: Trade Killa card → 1× Maska-1Sch Killa helmet (with visor + built-in armor) + 3× RPK-16 drum mag
 - **Unlocks**: Next card quest (Knight)
 
@@ -205,7 +205,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageWithLMG] Deal 20,000 damage with LMGs *(Knight commands with heavy fire — bring the big guns)*
-- **XP**: 12,000
+- **XP**: 35,000
 - **Barter Unlocked**: Trade Knight card → 1× PKM machine gun (fully assembled)
 - **Unlocks**: Next card quest (Zryachiy)
 
@@ -217,7 +217,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Objectives**:
   - [QE: TotalShotDistanceWithSnipers] Accumulate 10,000m total shot distance with sniper rifles *(Zryachiy judges from the cliffs — prove you can match his range)*
   - [QE: KillsWhileProne] Get 20 kills while prone *(A true sentinel holds position — go to ground and deliver)*
-- **XP**: 12,000
+- **XP**: 35,000
 - **Barter Unlocked**: Trade Zryachiy card → 1× SVDS (Priscilu Vudu build, fully modded) + 3× SVD magazines + 120× 7N1 ammo
 - **Unlocks**: Next card quest (Cultist Priest)
 
@@ -229,7 +229,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Objectives**:
   - [QE: MoveDistanceWhileSilent] Move 5,000m silently *(The Cultists are silent predators — move like they do)*
   - [QE: FixAnyBleed] Fix 50 bleedings *(Their poisoned blades cause suffering — learn to endure it)*
-- **XP**: 20,000
+- **XP**: 60,000
 - **Barter Unlocked**: Trade Cultist Priest card → 5× xTG-12 Antidote + 2× PVS-14 NVG + 3× Obdolbos
 - **Unlocks**: Next card quest (Shadow of Tagilla)
 
@@ -241,7 +241,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Objectives**:
   - [QE: KillsWithoutADS] Get 100 kills without aiming down sights *(The Shadow strikes from the hip — raw, brutal, instinctive)*
   - [QE: MoveDistance] Cover 100,000 meters on foot *(The Phantom never rests — he roams endlessly)*
-- **XP**: 20,000
+- **XP**: 60,000
 - **Barter Unlocked**: Trade Shadow of Tagilla card → 1× Sledgehammer + 1× Rivals armband + 1× Labris axe + 1× Tagilla's welding mask "ZABEY"
 - **Unlocks**: Collection Quest
 
