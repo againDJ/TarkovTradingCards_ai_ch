@@ -64,10 +64,13 @@ public record HandoverObjective
     public required int Count { get; init; }
 
     /// <summary>Whether cards must be found in raid.</summary>
-    public bool FoundInRaid { get; init; } = true;
+    public bool FoundInRaid { get; init; } = false;
 
     /// <summary>Locale description.</summary>
     public required string Description { get; init; }
+
+    /// <summary>Optional per-card display names (template ID → name). Used for individual condition locale text.</summary>
+    public Dictionary<string, string>? CardNames { get; init; }
 }
 
 /// <summary>

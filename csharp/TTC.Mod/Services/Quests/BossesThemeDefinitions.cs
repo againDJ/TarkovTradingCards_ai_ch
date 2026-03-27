@@ -243,13 +243,13 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_bigpipe",
 				Objectives = new()
 				{
-					new() { ConditionType = "OverEncumberedTimeInSeconds", Value = 600, Description = "Spend 600 seconds over-encumbered" }
+					new() { ConditionType = "EncumberedTimeInSeconds", Value = 3600, Description = "Spend 3,600 seconds encumbered" }
 				},
 				Locale = new()
 				{
 					Name = "Tarkov's Traffic Cop",
-					Description = "Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place \u2014 and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. Ten minutes over-encumbered should give you a real taste.",
-					Note = "Spend 10 minutes over-encumbered.",
+					Description = "Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place \u2014 and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. One hour encumbered should give you a real taste.",
+					Note = "Spend 60 minutes encumbered.",
 					SuccessMessage = "Now you know what it's like to be Kaban."
 				},
 				XpReward = 1200,
@@ -269,7 +269,7 @@ public static class BossesThemeDefinitions
 				Locale = new()
 				{
 					Name = "Golden TT",
-					Description = "Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs and Shoreline like his personal fiefdom since day one. The golden TT is his signature \u2014 flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and do some real damage with it. Make Reshala proud.",
+					Description = "Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs like his personal fiefdom since day one. The golden TT is his signature \u2014 flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and do some real damage with it. Make Reshala proud.",
 					Note = "Deal 500 damage with pistols.",
 					SuccessMessage = "Flashy and effective. Reshala would be impressed."
 				},
@@ -285,14 +285,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_reshala",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistance", Value = 15000, Description = "Cover 15,000 meters on foot" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "Cover 10,000 meters while running" }
 				},
 				Locale = new()
 				{
 					Name = "The Sledgehammer Waltz",
-					Description = "You hear the sledgehammer before you see him. Tagilla doesn't walk \u2014 he charges. The man is a relentless force of nature in Factory, sprinting through corridors with that welding mask and his hammer, turning every encounter into a chase scene from a horror movie. He's pure aggression in motion. Cover fifteen kilometers on foot \u2014 run, sprint, push forward. That's what Tagilla would do.",
-					Note = "Cover 15km on foot.",
-					SuccessMessage = "Fifteen kilometers of pure movement. Tagilla-level endurance."
+					Description = "You hear the sledgehammer before you see him. Tagilla doesn't walk \u2014 he charges. The man is a relentless force of nature in Factory, sprinting through corridors with that welding mask and his hammer, turning every encounter into a chase scene from a horror movie. He's pure aggression in motion. Cover ten kilometers running \u2014 sprint, push forward, never stop. That's what Tagilla would do.",
+					Note = "Cover 10km while running.",
+					SuccessMessage = "Ten kilometers at full sprint. Tagilla-level endurance."
 				},
 				XpReward = 1200,
 				ItemRewards = new() { new() { TemplateId = CardTagilla } },
@@ -423,7 +423,25 @@ public static class BossesThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 boss cards (one of each)"
+					Description = "Hand over all 15 boss cards (one of each)",
+					CardNames = new()
+					{
+						[CardPartisan] = "Partisan",
+						[CardShturman] = "Shturman",
+						[CardBirdeye] = "Birdeye",
+						[CardGlukhar] = "Glukhar",
+						[CardKollontay] = "Kollontay",
+						[CardSanitar] = "Sanitar",
+						[CardBigPipe] = "Big Pipe",
+						[CardKaban] = "Kaban",
+						[CardReshala] = "Reshala",
+						[CardTagilla] = "Tagilla",
+						[CardKilla] = "Killa",
+						[CardKnight] = "Knight",
+						[CardZryachiy] = "Zryachiy",
+						[CardCultistPriest] = "Cultist Priest",
+						[CardShadowTagilla] = "Shadow of Tagilla"
+					}
 				},
 				Locale = new()
 				{

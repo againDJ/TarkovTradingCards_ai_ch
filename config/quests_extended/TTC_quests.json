@@ -59,7 +59,7 @@
     "QuestId": "e47a558c1d0bf5347ae66c01",
     "QuestName": "Tarkov's Traffic Cop",
     "Conditions": [
-      { "ConditionId": "28722cc6837bb7fdb7b769a2", "ConditionType": "OverEncumberedTimeInSeconds" }
+      { "ConditionId": "28722cc6837bb7fdb7b769a2", "ConditionType": "EncumberedTimeInSeconds" }
     ]
   },
   "d831becdbacc4b5cdbf3c752": {
@@ -73,7 +73,7 @@
     "QuestId": "a85d3e0d843df52ee2a4954b",
     "QuestName": "The Sledgehammer Waltz",
     "Conditions": [
-      { "ConditionId": "b818ae92d96024fcf1292d1b", "ConditionType": "MoveDistance" }
+      { "ConditionId": "b818ae92d96024fcf1292d1b", "ConditionType": "MoveDistanceWhileRunning" }
     ]
   },
   "61267ae4823d4e1a212afb7c": {

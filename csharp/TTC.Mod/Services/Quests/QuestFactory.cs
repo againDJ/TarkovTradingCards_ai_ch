@@ -144,22 +144,27 @@ public sealed class QuestFactory
 		int condIdx = 0;
 		var locales = new Dictionary<string, string>();
 
-		// HandoverItem condition
+		// HandoverItem conditions
 		if (def.Handover != null)
 		{
-			var condId = QuestIds.ConditionId(def.Seed, condIdx++);
-			quest.Conditions.AvailableForFinish.Add(new QuestCondition
+			// Create one condition per card to enforce distinct items
+			foreach (var cardId in def.Handover.CardIds)
 			{
-				Id = new MongoId(condId),
-				ConditionType = "HandoverItem",
-				Type = "HandoverItem",
-				Target = new ListOrT<string>(def.Handover.CardIds, null!),
-				Value = def.Handover.Count,
-				OnlyFoundInRaid = def.Handover.FoundInRaid,
-				IsNecessary = true,
-				DynamicLocale = false
-			});
-			locales[condId] = def.Handover.Description;
+				var condId = QuestIds.ConditionId(def.Seed, condIdx++);
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "HandoverItem",
+					Type = "HandoverItem",
+					Target = new ListOrT<string>(new List<string> { cardId }, null!),
+					Value = 1,
+					OnlyFoundInRaid = def.Handover.FoundInRaid,
+					IsNecessary = true,
+					DynamicLocale = false
+				});
+				var cardName = def.Handover.CardNames?.GetValueOrDefault(cardId);
+				locales[condId] = cardName != null ? $"Hand over: {cardName}" : def.Handover.Description;
+			}
 		}
 
 		// QE objectives (CounterCreator conditions)

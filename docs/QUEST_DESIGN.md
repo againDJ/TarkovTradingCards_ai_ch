@@ -148,8 +148,8 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Prerequisites**: Frag Out (completed)
 - **Type**: Completion
 - **Objectives**:
-  - [QE: OverEncumberedTimeInSeconds] Spend 600 seconds over-encumbered *(Kaban is massive armored bulk — feel the weight yourself)*
-- **Description**: *"Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place — and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. Ten minutes over-encumbered should give you a real taste."*
+  - [QE: EncumberedTimeInSeconds] Spend 3,600 seconds encumbered *(Kaban is massive armored bulk — feel the weight yourself)*
+- **Description**: *"Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place — and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. One hour encumbered should give you a real taste."*
 - **Barter Unlocked**: Trade Kaban card → 1× Zabralo-Sh 6A armor
 - **Unlocks**: Next card quest (Reshala)
 
@@ -160,7 +160,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Type**: Completion
 - **Objectives**:
   - [QE: DamageWithPistols] Deal 500 damage with pistols *(Reshala's golden TT is iconic — time to work with a sidearm)*
-- **Description**: *"Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs and Shoreline like his personal fiefdom since day one. The golden TT is his signature — flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and do some real damage with it. Make Reshala proud."*
+- **Description**: *"Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs like his personal fiefdom since day one. The golden TT is his signature — flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and do some real damage with it. Make Reshala proud."*
 - **Barter Unlocked**: Trade Reshala card → 1× Gold TT pistol (TT-33 7.62x25)
 - **Unlocks**: Next card quest (Tagilla)
 

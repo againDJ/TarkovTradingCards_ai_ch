@@ -122,6 +122,46 @@ public sealed class QuestAssortService
 			}
 		}
 
+		// Collection barters: trade all cards for the quest reward item, gated by collection quest completion
+		foreach (var def in allDefinitions)
+		{
+			if (def.Handover == null) continue;
+			if (def.ItemRewards.Count == 0) continue;
+
+			var questId = QuestIds.QuestId(def.Seed);
+			var rewardItem = def.ItemRewards[0];
+			var isMultiReward = def.ItemRewards.Count > 1 || rewardItem.Count > 1;
+
+			if (isMultiReward)
+			{
+				var crateTemplateId = QuestIds.CrateTemplateId(def.Seed);
+				var rewardItems = def.ItemRewards.Select(r => new BarterRewardItem { TemplateId = r.TemplateId, Count = r.Count }).ToList();
+				_crateRegistry.Register(crateTemplateId, rewardItems);
+
+				var assortItemId = AddCollectionBarterAssortItem(
+					trader.Assort, crateTemplateId, 1, def.Handover.CardIds, 1);
+
+				if (assortItemId is MongoId id)
+				{
+					questAssortSuccess[id] = new MongoId(questId);
+					AddAssortmentUnlockReward(tables, questId, def.Seed, crateTemplateId, 1, 0);
+					count++;
+				}
+			}
+			else
+			{
+				var assortItemId = AddCollectionBarterAssortItem(
+					trader.Assort, rewardItem.TemplateId, rewardItem.Count, def.Handover.CardIds, 1);
+
+				if (assortItemId is MongoId id)
+				{
+					questAssortSuccess[id] = new MongoId(questId);
+					AddAssortmentUnlockReward(tables, questId, def.Seed, rewardItem.TemplateId, rewardItem.Count, 0);
+					count++;
+				}
+			}
+		}
+
 		// Empty Booster purchase (roubles) gated by introduction quest
 		if (!string.IsNullOrWhiteSpace(emptyBoosterId))
 		{
@@ -214,6 +254,45 @@ public sealed class QuestAssortService
 			}
 		};
 
+		lli[newId] = loyaltyLevel;
+
+		return newId;
+	}
+
+	/// <summary>
+	/// Add an assort item that the player receives, with BarterScheme requiring multiple cards as payment (collection barter).
+	/// </summary>
+	private MongoId? AddCollectionBarterAssortItem(TraderAssort assort, string rewardTemplateId, int rewardCount, List<string> cardTemplateIds, int loyaltyLevel)
+	{
+		if (assort.Items is not List<Item> items
+			|| assort.BarterScheme is not Dictionary<MongoId, List<List<BarterScheme>>> bs
+			|| assort.LoyalLevelItems is not Dictionary<MongoId, int> lli)
+			return null;
+
+		var newIdStr = Guid.NewGuid().ToString("N")[..24];
+		var newId = new MongoId(newIdStr);
+
+		items.Add(new Item
+		{
+			Id = newId,
+			Template = new MongoId(rewardTemplateId),
+			ParentId = "hideout",
+			SlotId = "hideout",
+			Upd = new Upd
+			{
+				UnlimitedCount = true,
+				StackObjectsCount = rewardCount > 1 ? rewardCount : int.MaxValue
+			}
+		});
+
+		// Cost: one of each card
+		var barterCost = cardTemplateIds.Select(cardTpl => new BarterScheme
+		{
+			Template = new MongoId(cardTpl),
+			Count = 1
+		}).ToList();
+
+		bs[newId] = new() { barterCost };
 		lli[newId] = loyaltyLevel;
 
 		return newId;
