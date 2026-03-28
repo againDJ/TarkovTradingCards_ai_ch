@@ -123,7 +123,7 @@ public sealed class QuestFactory
 	{
 		var questId = QuestIds.QuestId(def.Seed);
 		var traderId = new MongoId(QuestIds.KolyaTraderId);
-		var quest = BuildShell(questId, def.Seed, traderId);
+		var quest = BuildShell(questId, def.Seed, traderId, def.Location ?? "any");
 
 		// --- AvailableForStart: prerequisite quest ---
 		if (def.PrerequisiteSeed != null)
@@ -172,17 +172,126 @@ public sealed class QuestFactory
 		{
 			var condId = QuestIds.ConditionId(def.Seed, condIdx++);
 
-			if (obj.IsVanilla)
+			if (obj.VisitZoneId != null)
 			{
-				// Vanilla condition: real SPT kill condition tracked natively by the game
+				// Vanilla VisitPlace condition
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "CounterCreator",
+					Type = "Exploration",
+					Value = obj.Value,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					Counter = new QuestConditionCounter
+					{
+						Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
+						Conditions = new List<QuestConditionCounterCondition>
+						{
+							new QuestConditionCounterCondition
+							{
+								Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
+								ConditionType = "VisitPlace",
+								Target = new ListOrT<string>(new List<string> { obj.VisitZoneId }, obj.VisitZoneId),
+							}
+						}
+					}
+				});
+			}
+			else if (obj.SurviveLocations != null)
+			{
+				// Vanilla Survive & Extract (ExitStatus + Location)
+				var counterConditions = new List<QuestConditionCounterCondition>
+				{
+					new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
+						ConditionType = "ExitStatus",
+						Target = new ListOrT<string>(new List<string>(), ""),
+						Status = new List<string> { "Survived", "Runner", "Transit" }
+					},
+					new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 150)),
+						ConditionType = "Location",
+						Target = new ListOrT<string>(obj.SurviveLocations, null!)
+					}
+				};
+
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "CounterCreator",
+					Type = "Completion",
+					Value = obj.Value,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					Counter = new QuestConditionCounter
+					{
+						Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
+						Conditions = counterConditions
+					}
+				});
+			}
+			else if (obj.ExitNameId != null)
+			{
+				// Vanilla ExitName (extract through specific exit)
+				var counterConditions = new List<QuestConditionCounterCondition>
+				{
+					new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
+						ConditionType = "ExitName",
+						Target = new ListOrT<string>(new List<string>(), ""),
+						ExitName = obj.ExitNameId
+					},
+					new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 110)),
+						ConditionType = "ExitStatus",
+						Target = new ListOrT<string>(new List<string>(), ""),
+						Status = new List<string> { "Survived", "Runner", "Transit" }
+					}
+				};
+
+				if (obj.ExitLocations is { Count: > 0 })
+				{
+					counterConditions.Add(new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 150)),
+						ConditionType = "Location",
+						Target = new ListOrT<string>(obj.ExitLocations, null!)
+					});
+				}
+
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "CounterCreator",
+					Type = "Completion",
+					Value = obj.Value,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					Counter = new QuestConditionCounter
+					{
+						Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
+						Conditions = counterConditions
+					}
+				});
+			}
+			else if (obj.KillTarget != null)
+			{
+				// Vanilla Kills condition
 				var counterConditions = new List<QuestConditionCounterCondition>();
 
-				// Kills condition with target, distance, bodyPart filters
 				var killCondition = new QuestConditionCounterCondition
 				{
 					Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
 					ConditionType = "Kills",
-					Target = new ListOrT<string>(new List<string> { obj.KillTarget! }, obj.KillTarget!),
+					Target = new ListOrT<string>(new List<string> { obj.KillTarget }, obj.KillTarget),
 					Distance = new CounterConditionDistance
 					{
 						CompareMethod = obj.KillDistanceCompare ?? ">=",
@@ -191,9 +300,10 @@ public sealed class QuestFactory
 				};
 				if (obj.KillBodyParts is { Count: > 0 })
 					killCondition.BodyPart = obj.KillBodyParts;
+				if (obj.KillSavageRole is { Count: > 0 })
+					killCondition.SavageRole = obj.KillSavageRole;
 				counterConditions.Add(killCondition);
 
-				// Location condition (separate counter condition)
 				if (obj.KillLocations is { Count: > 0 })
 				{
 					counterConditions.Add(new QuestConditionCounterCondition
@@ -374,7 +484,7 @@ public sealed class QuestFactory
 	/// <summary>
 	/// Creates a bare quest shell with empty conditions and rewards.
 	/// </summary>
-	private static Quest BuildShell(string questId, string questSeed, MongoId traderId)
+	private static Quest BuildShell(string questId, string questSeed, MongoId traderId, string location = "any")
 	{
 		return new Quest
 		{
@@ -382,7 +492,7 @@ public sealed class QuestFactory
 			QuestName = $"{questId} name",
 			Image = $"/files/quest/icon/{questSeed}.png",
 			TraderId = traderId,
-			Location = "any",
+			Location = location,
 			Type = QuestTypeEnum.Completion,
 			Restartable = false,
 			InstantComplete = false,

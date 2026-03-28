@@ -3,13 +3,15 @@ using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.Models.Common;
 using SPTarkov.Server.Core.Models.Spt.Config;
 using SPTarkov.Server.Core.Servers;
+using TTC.Mod.Models;
 using TTC.Mod.Services.Common;
 
 namespace TTC.Mod.Services.Ragfair;
 
 [Injectable]
 /// <summary>
-/// Adjusts Ragfair configuration to ensure TTC cards behave as intended (e.g., not blacklisted dynamically).
+/// Adjusts Ragfair configuration to ensure TTC cards behave as intended (e.g., not blacklisted dynamically)
+/// and Kolya's offers appear on the flea market.
 /// </summary>
 public sealed class RagfairConfigurator
 {
@@ -22,39 +24,45 @@ public sealed class RagfairConfigurator
         _state = state;
     }
 
+    private RagfairConfig? GetRagfairConfig()
+    {
+        RagfairConfig? cfg = null;
+        try { cfg = _configServer.GetConfig<RagfairConfig>(); } catch { }
+        if (cfg == null) try { cfg = _configServer.GetConfigByString<RagfairConfig>("spt-ragfair") as RagfairConfig; } catch { }
+        if (cfg == null) try { cfg = _configServer.GetConfigByString<RagfairConfig>("ragfair") as RagfairConfig; } catch { }
+        return cfg;
+    }
+
     /// <summary>
     /// Remove TTC card ids from dynamic blacklist sets in the Ragfair configuration.
     /// </summary>
-    /// <returns>The number of removed entries across processed sets.</returns>
     public int ConfigureForCards()
     {
         try
         {
-            object? ragfairCfgObj = null;
-            try { ragfairCfgObj = _configServer.GetConfigByString<RagfairConfig>("spt-ragfair"); }
-            catch { }
-            if (ragfairCfgObj == null)
-            {
-                try { ragfairCfgObj = _configServer.GetConfigByString<RagfairConfig>("ragfair"); } catch { }
-            }
-
-            if (ragfairCfgObj == null)
-            {
-                return 0;
-            }
+            var typed = GetRagfairConfig();
+            if (typed == null) return 0;
 
             var ttcTpls = new HashSet<string>(_state.Cards.Select(c => c.id));
-            int removed = 0;
-
-            var typed = ragfairCfgObj as RagfairConfig;
-            if (typed != null)
-            {
-                removed += RemoveFromSet(typed.Dynamic?.Blacklist, ttcTpls);
-            }
-
-            return removed;
+            return RemoveFromSet(typed.Dynamic?.Blacklist, ttcTpls);
         }
         catch { return 0; }
+    }
+
+    /// <summary>
+    /// Add Kolya to the ragfair traders whitelist so his offers appear on the flea market.
+    /// Must be called independently of cards_tradeable_on_flea since barter offers need to show up.
+    /// </summary>
+    public bool AddKolyaToRagfairTraders()
+    {
+        try
+        {
+            var typed = GetRagfairConfig();
+            if (typed?.Traders == null) return false;
+            typed.Traders[QuestIds.KolyaTraderId] = true;
+            return true;
+        }
+        catch { return false; }
     }
 
     /// <summary>

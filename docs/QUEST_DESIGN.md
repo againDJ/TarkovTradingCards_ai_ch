@@ -553,4 +553,311 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 18 themes to be designed...*
+## Theme: Iconic Locations
+
+**15 cards** (2 Common, 3 Uncommon, 5 Rare, 3 Epic, 1 Legendary, 1 Secret)
+
+**Theme focus**: Exploration, survival, map knowledge. Minimal kills — mostly VisitPlace, survive & extract, movement, looting.
+
+### QUEST: The Cartographer's Notes (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_iconic_locations`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: MoveDistance] Cover 5,000m on foot *(Kolya needs a man who knows the terrain — show me you've covered ground)*
+- **XP**: 1,000
+- **Description**: *"Every location in Tarkov has a story written in blood and bullet holes. I've been mapping the conflict zone since the beginning — every hotspot, every ambush point, every death trap that's claimed a hundred lives. Before I hand over my cartographer's notes, I need to know you've actually been out there. Cover five kilometers on foot. Any direction, any map. Just move."*
+- **Rewards**:
+  - 1× Iconic Locations Binder
+  - 1,000 XP
+- **Unlocks**: First card quest (Sawmill Overwatch)
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: The Woodsman [Common]
+- **Card**: Sawmill Overwatch
+- **ID Seed**: `ttc_quest_card_locations_sawmill`
+- **Prerequisites**: The Cartographer's Notes (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate Jaeger's camp on Woods *(zone: `huntsman_001`)*
+  - [Vanilla: VisitPlace] Locate the USEC camp on Woods *(zone: `pr_scout_base`)*
+  - [Vanilla: Survive] Survive and extract from Woods 2 times
+- **XP**: 1,000
+- **Description**: *"The Sawmill on Woods. It's the center of gravity for the entire map — every gunfight, every ambush, every desperate sprint for the extract passes through those log stacks. But before you document it, I need you to learn the forest. Find Jaeger's camp, locate the old USEC position, and make it out alive — twice. Prove you know these woods."*
+- **Barter Unlocked**: Trade card → 1× Compass + 1× Woods map
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: Into the Deep [Common]
+- **Card**: ZB-1011 Bunker Extract
+- **ID Seed**: `ttc_quest_card_locations_bunker`
+- **Prerequisites**: The Woodsman (completed)
+- **Location**: Customs
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: ExitName] Extract 3 times through ZB-1011 on Customs *(exit: `ZB-1011`)*
+  - [Vanilla: Kills] Eliminate 5 scavs on Customs
+- **XP**: 1,000
+- **Description**: *"ZB-1011. Every PMC who's ever walked Customs knows that bunker extract by the train tracks. Down the stairs, through the door, you're out. It's the first extract most people learn, and the one they keep coming back to. I need you to use it three times and clear out five scavs along the way. Earn your right to call this your exit."*
+- **Barter Unlocked**: Trade card → 2× Rechargeable battery + 2× Light bulb
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: Hallway Horror [Uncommon]
+- **Card**: Dorms 204 Sightline
+- **ID Seed**: `ttc_quest_card_locations_dorms`
+- **Prerequisites**: Into the Deep (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate dorm room 214 on Customs *(zone: `room214`)*
+  - [Vanilla: VisitPlace] Locate the secret exfil on Customs *(zone: `exit777`)*
+  - [Vanilla: Survive] Survive and extract from Customs 3 times
+- **XP**: 3,000
+- **Description**: *"Dorms on Customs. Three floors of pure chaos. The hallways are so narrow that every engagement is a coin flip. Room 204's sightline down the corridor is legendary. I need you to find room 214, locate the secret extraction point, and survive Customs three times. Knowledge is power in those hallways."*
+- **Barter Unlocked**: Trade card → 1× Crye AVS plate carrier (with armor)
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: Last Man Standing [Uncommon]
+- **Card**: Factory Gate 3
+- **ID Seed**: `ttc_quest_card_locations_gate3`
+- **Prerequisites**: Hallway Horror (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: ExitName] Extract 5 times through Gate 3 on Factory *(exit: `Gate 3`, map: `factory4_day`/`factory4_night`)*
+- **XP**: 3,000
+- **Description**: *"Factory Gate 3. The light at the end of the tunnel — literally. Every raid on Factory ends with a desperate sprint toward that green smoke, praying nobody's watching the angle. The bodies pile up at the extract like nowhere else. Extract through Gate 3 five times — day or night. Earn your ticket out."*
+- **Barter Unlocked**: Trade card → 1× Factory exit key + 5× F-1 grenade
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: Consumer Paradise [Uncommon]
+- **Card**: Ultra Mall Atrium
+- **ID Seed**: `ttc_quest_card_locations_ultra`
+- **Prerequisites**: Last Man Standing (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate the AVOKADO store on Interchange *(zone: `place_SALE_03_AVOKADO`)*
+  - [Vanilla: VisitPlace] Locate the KOSTIN store on Interchange *(zone: `place_SALE_03_KOSTIN`)*
+  - [QE: SearchContainer] Search 50 containers *(Loot the mall dry)*
+  - [QE: LootItem] Loot 30 items
+- **XP**: 3,000
+- **Description**: *"The Ultra Mall Atrium on Interchange. That massive open space where Killa patrols and every shop is a potential goldmine — or a death trap. AVOKADO, KOSTIN, Techlight... I need you to scout the stores, search fifty containers, and loot thirty items. Shop till you drop, friend."*
+- **Barter Unlocked**: Trade card → 1× Armor repair kit
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: Rooftop Sovereign [Rare]
+- **Card**: Customs Stronghold Roof
+- **ID Seed**: `ttc_quest_card_locations_stronghold`
+- **Prerequisites**: Consumer Paradise (completed)
+- **Location**: Customs
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 targets on Customs
+  - [Vanilla: Survive] Survive and extract from Customs 5 times
+  - [QE: MoveDistanceWhileCrouched] Move 2,000m while crouched *(Stay low on those rooftops)*
+- **XP**: 10,000
+- **Description**: *"The Stronghold Roof on Customs. Whoever holds the high ground controls the entire mid-section of the map. The fortress in the center draws every fight to it — hold it and you control the flow of the entire raid. Eliminate fifteen targets on Customs, survive five raids, and move two kilometers crouched. Stay low and own the rooftops."*
+- **Barter Unlocked**: Trade card → 1× Docs case
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: The Techlight Sprint [Rare]
+- **Card**: Interchange Techlight Rush
+- **ID Seed**: `ttc_quest_card_locations_techlight`
+- **Prerequisites**: Rooftop Sovereign (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 10,000m while running *(Techlight rush is all about speed)*
+  - [QE: SearchContainer] Search 60 containers
+  - [QE: LootItem] Loot 50 items
+- **XP**: 10,000
+- **Description**: *"The Techlight Rush. That mad sprint from spawn to the second floor of Interchange, praying you get there before the other PMCs. GPUs, LEDX, Tetriz — the loot is insane if you're first. Ten kilometers of running, sixty containers searched, fifty items grabbed. Speed is survival."*
+- **Barter Unlocked**: Trade card → 1× Graphics card
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: Cliffside Overwatch [Rare]
+- **Card**: Lighthouse Treatment Overwatch
+- **ID Seed**: `ttc_quest_card_locations_treatment`
+- **Prerequisites**: The Techlight Sprint (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Recon the first treatment plant roof *(zone: `qlight_extension_prapor1_exploration1`)*
+  - [Vanilla: VisitPlace] Recon the second treatment plant roof *(zone: `qlight_extension_prapor1_exploration2`)*
+  - [Vanilla: VisitPlace] Recon the third treatment plant roof *(zone: `qlight_extension_prapor1_exploration3`)*
+  - [Vanilla: Survive] Survive and extract from Lighthouse 3 times
+- **XP**: 10,000
+- **Description**: *"The Water Treatment Plant Overwatch on Lighthouse. Rogues patrol the rooftops with .50 cals and grenade launchers. I need you to recon all three treatment plant rooftops — yes, that means getting past the Rogues. Then survive Lighthouse three times. Prove you can handle the approach."*
+- **Barter Unlocked**: Trade card → 1× Custom SV-98 + 40× 7N1
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: The Pipe Dream [Rare]
+- **Card**: Water Treatment Plant
+- **ID Seed**: `ttc_quest_card_locations_waterplant`
+- **Prerequisites**: Cliffside Overwatch (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate the crashed helicopter *(zone: `qlight_find_crushed_heli`)*
+  - [Vanilla: VisitPlace] Find the lost group in the chalets *(zone: `qlight_find_scav_group1`)*
+  - [QE: HealthGain] Restore 1,500 HP total *(Lighthouse will hurt you — a lot)*
+  - [Vanilla: Survive] Survive and extract from Lighthouse 3 times
+- **XP**: 10,000
+- **Description**: *"The Water Treatment Plant. Getting inside means fighting through waves of Rogues in full kit. But I don't need you to fight — I need you to explore. Find the crashed helicopter, locate the lost scav group in the chalets, heal up fifteen hundred HP worth of wounds, and survive three more Lighthouse raids. This is endurance, not firepower."*
+- **Barter Unlocked**: Trade card → 3× IFAK + 3× Propital
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: The Scariest Hallway [Rare]
+- **Card**: West Wing Room 310
+- **ID Seed**: `ttc_quest_card_locations_westwing`
+- **Prerequisites**: The Pipe Dream (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate the generators in the east wing of the Resort *(zone: `place_peacemaker_008_4_N1`)*
+  - [Vanilla: VisitPlace] Locate the generators in the west wing of the Resort *(zone: `place_peacemaker_008_4_N2`)*
+  - [Vanilla: VisitPlace] Locate Sanitar's office in the Resort *(zone: `place_meh_sanitar_room`)*
+  - [Vanilla: Survive] Survive and extract from Shoreline 4 times
+- **XP**: 10,000
+- **Description**: *"West Wing Room 310 on Shoreline. The Health Resort is the single most contested building in Tarkov. Every hallway is a death sentence. I need you to scout the generators in both wings, find Sanitar's office, and survive four Shoreline raids. Explore every corner of that resort — it'll save your life one day."*
+- **Barter Unlocked**: Trade card → 1× LEDX Skin Transilluminator
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: Street Warfare [Epic]
+- **Card**: King Building Rooftop
+- **ID Seed**: `ttc_quest_card_locations_kingbuilding`
+- **Prerequisites**: The Scariest Hallway (completed)
+- **Location**: Any
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 2 sniper scavs on Streets *(savageRole: `marksman`)*
+  - [Vanilla: Kills] Eliminate 2 sniper scavs on Customs *(savageRole: `marksman`)*
+  - [Vanilla: Kills] Eliminate 2 sniper scavs on Shoreline *(savageRole: `marksman`)*
+- **XP**: 20,000
+- **Description**: *"Somewhere in Tarkov, there's a rooftop the locals call the King Building. The name stuck because whoever holds the high ground rules the fight below. Snipers know this better than anyone — they perch on rooftops across every map, picking off PMCs who never think to look up. To earn this card, you need to dethrone them. Hunt down sniper scavs on Streets, Customs, and Shoreline. Two on each map. Rule from above."*
+- **Barter Unlocked**: Trade card → 1× Custom SVDS + 3× SVD Mag + 60× 7N1
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: Welcome to the Hotel [Epic]
+- **Card**: Pinewood Hotel Lobby
+- **ID Seed**: `ttc_quest_card_locations_pinewood`
+- **Prerequisites**: Street Warfare (completed)
+- **Location**: Streets
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Scout the Sparja store in Pinewood hotel *(zone: `quest_produkt3`)*
+  - [Vanilla: VisitPlace] Locate the cultist ritual spot on Chekannaya st. *(zone: `quest_zone_c27_sect`)*
+  - [Vanilla: VisitPlace] Locate the ritual spot on Chekannaya 15 *(zone: `quest_zone_find_2st_mech`)*
+  - [Vanilla: Survive] Survive and extract from Streets 5 times
+- **XP**: 20,000
+- **Description**: *"The Pinewood Hotel Lobby on Streets. Marble floors, chandelier fragments, and enough blood to fill the swimming pool out back. Scout the Sparja store, find both ritual spots on Chekannaya street, and survive five more Streets raids. This hotel checks you in, but doesn't check you out."*
+- **Barter Unlocked**: Trade card → 1× MP7A1 SEALS (suppressed, Aimpoint T-1, AN/PEQ-15) + 3× MP7 40-rnd Mag + 120× AP SX
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: Underground Empire [Epic]
+- **Card**: Reserve Queen Bunker
+- **ID Seed**: `ttc_quest_card_locations_queenbunker`
+- **Prerequisites**: Welcome to the Hotel (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 targets on Reserve *(Clear the underground corridors)*
+  - [Vanilla: ExitName] Extract 3 times through D-2 *(exit: `EXFIL_Bunker_D2`, map: `RezervBase`)*
+  - [QE: SearchContainer] Search 80 containers
+- **XP**: 20,000
+- **Description**: *"The Queen Bunker on Reserve. The underground network beneath the military base is a labyrinth of corridors, server rooms, and dead PMCs. Whoever controls the bunker controls the best loot on Reserve. I need you to fight your way through, extract via D-2 three times, and loot eighty containers. Fifteen kills to prove you own the place. Rule the underground."*
+- **Barter Unlocked**: Trade card → 1× Ammunition case
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: The Forbidden Floor [Legendary]
+- **Card**: Lab Server Nexus
+- **ID Seed**: `ttc_quest_card_locations_labnexus`
+- **Prerequisites**: Underground Empire (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Scout the control room in The Lab *(zone: `Control_room`)*
+  - [Vanilla: VisitPlace] Scout the server room in The Lab *(zone: `Server_room`)*
+  - [Vanilla: VisitPlace] Scout the hazard dome in The Lab *(zone: `Dome`)*
+  - [Vanilla: Survive] Survive and extract from The Lab 5 times
+  - [QE: SearchContainer] Search 100 containers
+- **XP**: 35,000
+- **Description**: *"The Lab Server Nexus. The most dangerous location in all of Tarkov. Access costs a keycard, death costs everything. I need you to scout the control room, the server room, and the hazard dome — then survive five Lab raids and search a hundred containers. Raiders patrol with endgame gear, and every PMC you meet is a geared veteran. Welcome to the endgame."*
+- **Barter Unlocked**: Trade card → 1× Keycard holder
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: The Final Lighthouse [Secret]
+- **Card**: Lightkeeper's Island Jetty
+- **ID Seed**: `ttc_quest_card_locations_lightkeeper`
+- **Prerequisites**: The Forbidden Floor (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: VisitPlace] Visit the Lighthouse building *(zone: `meh_50_visit_area_check_1`)*
+  - [Vanilla: VisitPlace] Locate the radar station commandant's office *(zone: `qlight_extension_bariga1_exploration1`)*
+  - [Vanilla: VisitPlace] Locate the hidden recording studio *(zone: `qlight_extension_mechanik1_exploration1`)*
+  - [Vanilla: VisitPlace] Locate the hidden drug lab *(zone: `qlight_extension_medic1_exploration1`)*
+  - [Vanilla: Survive] Survive and extract from Lighthouse 8 times
+  - [QE: MoveDistance] Cover 50,000m on foot *(Walk every inch of the conflict zone)*
+- **XP**: 60,000
+- **Description**: *"The Lightkeeper's Island Jetty. The most mysterious location in Tarkov. Who is the Lightkeeper? What does he want? I need you to visit the Lighthouse itself, find the commandant's office at the radar station, locate the hidden recording studio and the drug lab. Survive Lighthouse eight times and cover fifty kilometers on foot. Only then will you understand why they call it the final lighthouse."*
+- **Barter Unlocked**: Trade card → 1× SICC case + 2× FLIR thermal scope
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: Kolya's Atlas of Tarkov (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_iconic_locations`
+- **Prerequisites**: The Final Lighthouse (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 location cards (1 of each, distinct)
+- **Description**: *"You've walked every street, cleared every building, mapped every bunker. From the sawmill on Woods to the Lightkeeper's island, you've documented every iconic location in Tarkov. This atlas is the most complete guide to the conflict zone ever assembled. Hand over the cards and the Atlas of Tarkov is yours to keep."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 1× T H I C C Items Case
+  - +0.15 standing with Kolya
+- **Barter Unlocked**: Trade all 15 location cards → 1× T H I C C Items Case (repeatable)
+
+---
+
+## Barter Summary — Iconic Locations
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Sawmill Overwatch | Common | 1× Compass + 1× Woods map |
+| 2 | ZB-1011 Bunker Extract | Common | 2× Rechargeable battery + 2× Light bulb |
+| 3 | Dorms 204 Sightline | Uncommon | 1× Crye AVS plate carrier (with armor) |
+| 4 | Factory Gate 3 | Uncommon | 1× Factory exit key + 5× F-1 grenade |
+| 5 | Ultra Mall Atrium | Uncommon | 1× Armor repair kit |
+| 6 | Customs Stronghold Roof | Rare | 1× Docs case |
+| 7 | Interchange Techlight Rush | Rare | 1× Graphics card |
+| 8 | Lighthouse Treatment Overwatch | Rare | 1× Custom SV-98 + 40× 7N1 |
+| 9 | Water Treatment Plant | Rare | 3× IFAK + 3× Propital |
+| 10 | West Wing Room 310 | Rare | 1× LEDX Skin Transilluminator |
+| 11 | King Building Rooftop | Epic | 1× Custom SVDS + 3× SVD Mag + 60× 7N1 |
+| 12 | Pinewood Hotel Lobby | Epic | 1× MP7A1 SEALS (suppressed) + 3× MP7 40-rnd Mag + 120× AP SX |
+| 13 | Reserve Queen Bunker | Epic | 1× Ammunition case |
+| 14 | Lab Server Nexus | Legendary | 1× Keycard holder |
+| 15 | Lightkeeper's Island Jetty | Secret | 1× SICC case + 2× FLIR thermal scope |
+| **Collection** | All 15 location cards | — | 1× T H I C C Items Case |
+
+### New Condition Types Introduced
+- **Vanilla: VisitPlace** — zone visits across multiple maps (zone IDs from existing vanilla quests)
+- **Vanilla: Survive (ExitStatus)** — survive & extract X times from specific maps
+- **Vanilla: ExitName** — extract through specific exits (ZB-1011, Gate 3, D-2)
+- **Vanilla: Kills (savageRole)** — kill specific enemy types (marksman/sniper scavs)
+- **QE: MoveDistanceWhileCrouched** — crouched movement
+- **QE: LootItem** — loot items
+- **QE: HealthGain** — restore HP
+- **QE: ActivatePowerSwitch** — activate power switches
+- **QE: MoveDistanceWhileSilent** — silent movement
+
+### Objective Variety — Iconic Locations
+| Aspect | Detail |
+|--------|--------|
+| Focus | Exploration, survival, map knowledge — with targeted kills |
+| VisitPlace zones | Visits across Woods, Customs, Factory, Interchange, Shoreline, Streets, Lighthouse, Labs |
+| Survive & extract | Survive X times on multiple maps |
+| ExitName | Extract through specific exits (ZB-1011, Gate 3, D-2) |
+| Kills | Scavs, snipers (marksman), and general targets on specific maps |
+| QE movement | MoveDistance, WhileRunning, WhileCrouched, WhileSilent |
+| QE interaction | SearchContainer, LootItem, HealthGain, ActivatePowerSwitch |
+
+---
+
+*Remaining 17 themes to be designed...*

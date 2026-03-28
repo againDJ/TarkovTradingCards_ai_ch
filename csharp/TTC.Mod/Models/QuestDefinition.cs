@@ -35,6 +35,9 @@ public record QuestDefinition
 
     /// <summary>Barter unlocked at Kolya on quest completion: trade a card for useful items.</summary>
     public BarterUnlock? BarterUnlock { get; init; }
+
+    /// <summary>Map location ID (e.g. "5704e3c2d2720bac5b8b4567" for Woods). Null = "any".</summary>
+    public string? Location { get; init; }
 }
 
 /// <summary>
@@ -70,8 +73,29 @@ public record QeObjective
     /// <summary>Distance value in meters.</summary>
     public double? KillDistanceValue { get; init; }
 
-    /// <summary>Whether this is a vanilla condition (true) or QE condition (false). Auto-detected from KillTarget.</summary>
-    public bool IsVanilla => KillTarget != null;
+    /// <summary>Savage role filter: ["marksman"] for snipers, ["bossBully"] for Reshala, etc.</summary>
+    public List<string>? KillSavageRole { get; init; }
+
+    // ── Vanilla VisitPlace condition (when set, creates a VisitPlace counter condition) ──
+
+    /// <summary>Zone ID for VisitPlace (e.g. "huntsman_001", "room214").</summary>
+    public string? VisitZoneId { get; init; }
+
+    // ── Vanilla Survive & Extract condition (ExitStatus + Location) ──
+
+    /// <summary>Maps to survive & extract from (e.g. ["Woods"]). Creates ExitStatus + Location conditions.</summary>
+    public List<string>? SurviveLocations { get; init; }
+
+    // ── Vanilla ExitName condition (extract through specific exit) ──
+
+    /// <summary>Specific exit name (e.g. "Gate 3", "EXFIL_Bunker_D2").</summary>
+    public string? ExitNameId { get; init; }
+
+    /// <summary>Map(s) for the ExitName condition.</summary>
+    public List<string>? ExitLocations { get; init; }
+
+    /// <summary>Whether this is a vanilla condition (true) or QE condition (false).</summary>
+    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null;
 }
 
 /// <summary>

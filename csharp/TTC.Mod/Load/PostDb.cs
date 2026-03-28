@@ -12,6 +12,8 @@ using TTC.Mod.Services.Quests;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Services.Mod;
 using SPTarkov.Server.Core.Servers;
+using TTC.Mod.Models;
+using SPTarkov.Server.Core.Generators;
 using TTC.Mod.Services.Common;
 
 namespace TTC.Mod.Load;
@@ -43,6 +45,7 @@ public sealed class PostDb : IOnLoad
 	private readonly QuestAssortService _questAssort;
 	private readonly RewardCrateFactory _rewardCrateFactory;
 	private readonly RewardCrateRegistry _rewardCrateRegistry;
+	private readonly RagfairOfferGenerator _ragfairOfferGenerator;
 
 	public PostDb(ISptLogger<PostDb> logger, State state,
 				  DatabaseService db, LocaleService localeService, CustomItemService customItemService, ConfigServer configServer,
@@ -54,7 +57,8 @@ public sealed class PostDb : IOnLoad
 				  QuestRegistrationService questRegistration,
 				  QuestAssortService questAssort,
 				  RewardCrateFactory rewardCrateFactory,
-				  RewardCrateRegistry rewardCrateRegistry)
+				  RewardCrateRegistry rewardCrateRegistry,
+				  RagfairOfferGenerator ragfairOfferGenerator)
 	{
 		_logger = logger;
 		_state = state;
@@ -77,6 +81,7 @@ public sealed class PostDb : IOnLoad
 		_questAssort = questAssort;
 		_rewardCrateFactory = rewardCrateFactory;
 		_rewardCrateRegistry = rewardCrateRegistry;
+		_ragfairOfferGenerator = ragfairOfferGenerator;
 	}
 
 	/// <summary>
@@ -155,6 +160,7 @@ public sealed class PostDb : IOnLoad
 				var allDefs = new List<Models.QuestDefinition>();
 				allDefs.AddRange(BossesThemeDefinitions.GetAll());
 				allDefs.AddRange(IconicWeaponsThemeDefinitions.GetAll());
+				allDefs.AddRange(IconicLocationsThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 
@@ -164,6 +170,18 @@ public sealed class PostDb : IOnLoad
 					_logger.Warning($"[TTC][RewardCrates] Created {cratesCreated}, failed {cratesFailed}");
 				else if (cratesCreated > 0 && verbose)
 					_logger.Info($"[TTC][RewardCrates] Created {cratesCreated} reward crate templates");
+
+				// Add Kolya to ragfair traders whitelist and generate his flea offers
+				_ragfairConfigurator.AddKolyaToRagfairTraders();
+				try
+				{
+					_ragfairOfferGenerator.GenerateFleaOffersForTrader(QuestIds.KolyaTraderId);
+					_logger.Info("[TTC][Ragfair] Generated flea offers for Kolya");
+				}
+				catch (Exception ex)
+				{
+					_logger.Warning($"[TTC][Ragfair] Failed to generate flea offers for Kolya: {ex.Message}");
+				}
 			}
 			else
 			{

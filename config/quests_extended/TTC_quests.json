@@ -209,5 +209,64 @@
       { "ConditionId": "e8a46f2905570c0f84fe620f", "ConditionType": "KillsWithoutADS" },
       { "ConditionId": "50a479445bb281368f3f8ce3", "ConditionType": "SearchContainer" }
     ]
+  },
+  "2112c2d8b380caf8535c0998": {
+    "QuestId": "2112c2d8b380caf8535c0998",
+    "QuestName": "The Cartographer's Notes",
+    "Conditions": [
+      { "ConditionId": "06277b22bce41560a781cb2b", "ConditionType": "MoveDistance" }
+    ]
+  },
+  "00d9752970908c07825809d4": {
+    "QuestId": "00d9752970908c07825809d4",
+    "QuestName": "Consumer Paradise",
+    "Conditions": [
+      { "ConditionId": "8bd48ea19155b79799833196", "ConditionType": "SearchContainer" },
+      { "ConditionId": "0817a9ffd65be5d004b3d54d", "ConditionType": "LootItem" }
+    ]
+  },
+  "19ab91312bcbaac722f0be76": {
+    "QuestId": "19ab91312bcbaac722f0be76",
+    "QuestName": "Rooftop Sovereign",
+    "Conditions": [
+      { "ConditionId": "6268716b7dbe49f9592916c8", "ConditionType": "MoveDistanceWhileCrouched" }
+    ]
+  },
+  "4261f4d700710c02f35febc8": {
+    "QuestId": "4261f4d700710c02f35febc8",
+    "QuestName": "The Techlight Sprint",
+    "Conditions": [
+      { "ConditionId": "ae2545a95704d6988d942d2e", "ConditionType": "MoveDistanceWhileRunning" },
+      { "ConditionId": "bbe693e24d9cc4f5e925260e", "ConditionType": "SearchContainer" },
+      { "ConditionId": "f4bf96bf7c6d8967373754b7", "ConditionType": "LootItem" }
+    ]
+  },
+  "7a9c6b537bbbf0e75ea1e93c": {
+    "QuestId": "7a9c6b537bbbf0e75ea1e93c",
+    "QuestName": "The Pipe Dream",
+    "Conditions": [
+      { "ConditionId": "36b8c0d4255fd34ec1112225", "ConditionType": "HealthGain" }
+    ]
+  },
+  "b918baa73ae139c89b402d88": {
+    "QuestId": "b918baa73ae139c89b402d88",
+    "QuestName": "Underground Empire",
+    "Conditions": [
+      { "ConditionId": "f66f27644c8f69843b1ae687", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "7661c79faccb2654499e8822": {
+    "QuestId": "7661c79faccb2654499e8822",
+    "QuestName": "The Forbidden Floor",
+    "Conditions": [
+      { "ConditionId": "c0dc5c0f3a69df46e96d0835", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "32d9e32e022ff006bfc6a76e": {
+    "QuestId": "32d9e32e022ff006bfc6a76e",
+    "QuestName": "The Final Lighthouse",
+    "Conditions": [
+      { "ConditionId": "3f16408aada8eebc058d0fb9", "ConditionType": "MoveDistance" }
+    ]
   }
 }

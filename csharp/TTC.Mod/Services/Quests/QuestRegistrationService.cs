@@ -41,6 +41,7 @@ public sealed class QuestRegistrationService
 		// Theme quests
 		RegisterThemeQuests(BossesThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(IconicWeaponsThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(IconicLocationsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

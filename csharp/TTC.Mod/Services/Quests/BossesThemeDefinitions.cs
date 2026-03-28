@@ -80,7 +80,7 @@ public static class BossesThemeDefinitions
 		P("571a29dc2459771fb2755a6a", "mod_magazine"),    // TT magazine
 	};
 
-	private static List<PresetPart> CryeAvsParts() => new()
+	internal static List<PresetPart> CryeAvsParts() => new()
 	{
 		P("6570e83223c1f638ef0b0ede", "Soft_armor_front"),
 		P("6570e87c23c1f638ef0b0ee2", "Soft_armor_back"),

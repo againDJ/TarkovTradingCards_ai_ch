@@ -85,7 +85,7 @@ public static class IconicWeaponsThemeDefinitions
 		P("651178336cad06c37c049eb4", "mod_handguard"),
 	};
 
-	private static List<PresetPart> Mp7Parts() => new()
+	internal static List<PresetPart> Mp7Parts() => new()
 	{
 		P("5ba264f6d4351e0034777d52", "mod_magazine"),
 		P("5ba26acdd4351e003562908e", "mod_muzzle"),
@@ -131,7 +131,7 @@ public static class IconicWeaponsThemeDefinitions
 			P("5a32aa8bc4a2826c6e06d737", "mod_scope")),
 	};
 
-	private static List<PresetPart> Sv98Parts() => new()
+	internal static List<PresetPart> Sv98Parts() => new()
 	{
 		P("559ba5b34bdc2d1f1a8b4582", "mod_magazine"),
 		P("62811f461d5df4475f46a332", "mod_scope",
@@ -206,6 +206,7 @@ public static class IconicWeaponsThemeDefinitions
 			{
 				Seed = "ttc_quest_card_weapons_ak74n",
 				PrerequisiteSeed = "ttc_quest_binder_iconic_weapons",
+				Location = "56f40101d2720b2a4d8b45d6", // Customs
 				Objectives = new()
 				{
 					new()
@@ -232,6 +233,7 @@ public static class IconicWeaponsThemeDefinitions
 			{
 				Seed = "ttc_quest_card_weapons_saiga12",
 				PrerequisiteSeed = "ttc_quest_card_weapons_ak74n",
+				Location = "55f2d3fd4bdc2d5f408b4567", // Factory
 				Objectives = new()
 				{
 					new()
@@ -307,6 +309,7 @@ public static class IconicWeaponsThemeDefinitions
 			{
 				Seed = "ttc_quest_card_weapons_rpk16",
 				PrerequisiteSeed = "ttc_quest_card_weapons_mp153",
+				Location = "5714dbc024597771384a510d", // Interchange
 				Objectives = new()
 				{
 					new()
