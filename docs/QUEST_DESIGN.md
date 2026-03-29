@@ -860,4 +860,288 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 17 themes to be designed...*
+## Theme: Hideout
+
+**15 cards** (2 Common, 4 Uncommon, 4 Rare, 2 Epic, 2 Legendary, 1 Secret)
+
+**Theme focus**: Crafting, collecting, economy, weapon maintenance. Heavy use of CraftAnyItem, FixMalfunction, LootItem, SearchContainer, EarnMoney — the builder's path.
+
+### QUEST: The Builder's Blueprint (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_hideout`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Security level 1 *(areaType: 1, value: 1)*
+- **XP**: 1,000
+- **Description**: *"You want to document the hideout? Good — most people only think about what happens outside. But the real survivors are the ones who build. First things first though — you need a hideout worth documenting. Get your Security station to level one. Can't build anything if someone breaks in and steals it all."*
+- **Rewards**:
+  - 1× Hideout Binder
+  - 1,000 XP
+- **Unlocks**: First card quest (Illumination)
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: Let There Be Light [Common]
+- **Card**: Illumination
+- **ID Seed**: `ttc_quest_card_hideout_illumination`
+- **Prerequisites**: The Builder's Blueprint (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Illumination level 1 *(areaType: 15, value: 1)*
+  - [QE: LootItem] Loot 20 items
+  - [QE: SearchContainer] Search 20 containers
+- **XP**: 1,000
+- **Description**: *"First thing you need in any hideout is light. Can't build what you can't see, can't organize what's in the dark. Get your Illumination to level one, then show me you know how to scavenge. Twenty items looted, twenty containers searched. Bring back the goods."*
+- **Barter Unlocked**: Trade card → 3× Light bulb + 3× Bundle of wires
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: Target Practice [Common]
+- **Card**: Shooting Range Dummies
+- **ID Seed**: `ttc_quest_card_hideout_shootingrange`
+- **Prerequisites**: Let There Be Light (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Shooting Range level 1 *(areaType: 12, value: 1)*
+  - [Vanilla: Kills] Eliminate 15 targets with headshots *(Practice makes perfect)*
+    - KillTarget: "Any", KillBodyParts: ["Head"]
+- **XP**: 1,000
+- **Description**: *"Every good hideout has a shooting range. It's where you zero your sights, practice your recoil control, and test new ammo. Get your Shooting Range to level one, then prove the practice pays off with fifteen headshots in the field."*
+- **Barter Unlocked**: Trade card → 2× IFAK
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: Flush with Resources [Uncommon]
+- **Card**: Lavatory
+- **ID Seed**: `ttc_quest_card_hideout_lavatory`
+- **Prerequisites**: Target Practice (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Lavatory level 1 *(areaType: 2, value: 1)*
+  - [QE: CraftAnyItem] Craft 10 items
+  - [QE: LootItem] Loot 40 items
+- **XP**: 3,000
+- **Description**: *"The Lavatory. Most people laugh, but this station turns junk into something useful. Old magazines become packaging material, empty fuel cans become containers. Get it to level one, craft ten items and loot forty more — the Lavatory needs feeding."*
+- **Barter Unlocked**: Trade card → 3× Gun lubricant
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: The Tinkerer [Uncommon]
+- **Card**: Workbench
+- **ID Seed**: `ttc_quest_card_hideout_workbench`
+- **Prerequisites**: Flush with Resources (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Workbench level 1 *(areaType: 10, value: 1)*
+  - [QE: FixAnyMalfunction] Fix 1 weapon malfunction
+  - [QE: CraftAnyItem] Craft 10 items
+- **XP**: 3,000
+- **Description**: *"The Workbench. This is where broken becomes functional and functional becomes deadly. Every gunsmith worth his salt has one — and knows how to fix a jam mid-firefight. Get your Workbench to level one, fix fifteen weapon malfunctions and craft ten items."*
+- **Barter Unlocked**: Trade card → 1× Weapon repair kit
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: Stay Warm [Uncommon]
+- **Card**: Heating Unit
+- **ID Seed**: `ttc_quest_card_hideout_heating`
+- **Prerequisites**: The Tinkerer (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Heating level 2 *(areaType: 5, value: 2)*
+  - [QE: HealthGain] Restore 2,000 HP total *(Warmth heals)*
+  - [QE: FixAnyBleed] Fix 15 bleedings
+- **XP**: 3,000
+- **Description**: *"Tarkov winters will kill you faster than any bullet. The heating unit is the difference between waking up ready to fight and waking up hypothermic. Get your Heating to level two, restore two thousand HP and patch fifteen bleedings."*
+- **Barter Unlocked**: Trade card → 3× IFAK
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: Water is Life [Uncommon]
+- **Card**: Water Collector Mk.III
+- **ID Seed**: `ttc_quest_card_hideout_water`
+- **Prerequisites**: Stay Warm (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Water Collector level 1 *(areaType: 6, value: 1)*
+  - [QE: SearchContainer] Search 60 containers
+  - [Vanilla: Survive] Survive and extract 5 times
+- **XP**: 3,000
+- **Description**: *"Clean water. The most valuable resource in Tarkov and nobody thinks about it until they don't have it. Get your Water Collector to level two, search sixty containers and survive five raids. Keep the water flowing."*
+- **Barter Unlocked**: Trade card → 3× Aquamari
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: Filtered Air [Rare]
+- **Card**: Air Filtering Unit
+- **ID Seed**: `ttc_quest_card_hideout_airfilter`
+- **Prerequisites**: Water is Life (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 15,000m while running *(Endurance training)*
+  - [QE: FixFracture] Fix 10 fractures
+- **XP**: 10,000
+- **Description**: *"The Air Filtering Unit. Filters out the contaminated Tarkov air and boosts your physical skills. Better air means better endurance, faster recovery, sharper reflexes. Run fifteen kilometers and fix ten fractures. Train your body like the filter trains your lungs."*
+- **Barter Unlocked**: Trade card → 1× FP-100 air filter
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: Moonshine Run [Rare]
+- **Card**: Booze Generator
+- **ID Seed**: `ttc_quest_card_hideout_booze`
+- **Prerequisites**: Filtered Air (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 500,000₽ from transactions *(The booze business is profitable)*
+  - [QE: CraftAnyItem] Craft 15 items
+- **XP**: 10,000
+- **Description**: *"The Booze Generator. Turns sugar, water and filter into the finest moonshine in the exclusion zone. Every scav boss wants a bottle, every trader will pay top rouble for it. Earn half a million roubles and craft fifteen items. Show me you understand the hustle."*
+- **Barter Unlocked**: Trade card → 1× Moonshine
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: Power Grid [Rare]
+- **Card**: Generator
+- **ID Seed**: `ttc_quest_card_hideout_generator`
+- **Prerequisites**: Moonshine Run (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Generator level 2 *(areaType: 4, value: 2)*
+  - [QE: LootItem] Loot 80 items *(Scavenge for fuel and parts)*
+  - [QE: SearchContainer] Search 80 containers
+- **XP**: 10,000
+- **Description**: *"The Generator. Heart of the hideout — without power, nothing works. No light, no workbench, no water collector, nothing. Get yours to level two, then scavenge eighty items and eighty containers to keep it fed. Power is everything."*
+- **Barter Unlocked**: Trade card → 2× Metal fuel tank (full)
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: Field Medic [Rare]
+- **Card**: Medstation
+- **ID Seed**: `ttc_quest_card_hideout_medstation`
+- **Prerequisites**: Power Grid (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Medstation level 2 *(areaType: 7, value: 2)*
+  - [QE: HealthGain] Restore 1,000 HP total
+  - [QE: FixFracture] Fix 5 fractures
+  - [QE: FixAnyBleed] Fix 10 bleedings
+- **XP**: 10,000
+- **Description**: *"The Medstation. Your field hospital, your pharmacy, your last line of defense against bleeding out in a ditch. Get it to level two, then prove you can patch yourself up — a thousand HP restored, five fractures fixed, ten bleedings patched. Become the medic."*
+- **Barter Unlocked**: Trade card → 1× Grizzly medical kit
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: The Analyst [Epic]
+- **Card**: Intelligence Center
+- **ID Seed**: `ttc_quest_card_hideout_intel`
+- **Prerequisites**: Field Medic (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Intelligence Center level 2 *(areaType: 11, value: 2)*
+  - [Vanilla: Kills] Eliminate 10 PMCs *(Intelligence gathering requires eliminating threats)*
+    - KillTarget: "AnyPmc"
+  - [QE: EarnMoneyOnTransaction] Earn 1,000,000₽ from transactions
+- **XP**: 20,000
+- **Description**: *"The Intelligence Center. Information is the most valuable commodity in Tarkov — more than bitcoin, more than moonshine. Get your Intel Center to level two, eliminate ten PMCs and earn a million roubles. Show me you play the information game."*
+- **Barter Unlocked**: Trade card → 1× Intelligence folder
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: Jackpot Machine [Epic]
+- **Card**: Scav Case
+- **ID Seed**: `ttc_quest_card_hideout_scavcase`
+- **Prerequisites**: The Analyst (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Scav Case level 1 *(areaType: 14, value: 1)*
+  - [QE: CollectScavCase] Collect 10 Scav Case results
+- **XP**: 20,000
+- **Description**: *"The Scav Case. You put money in, your scav network brings back... something. Could be junk, could be a LEDX. It's gambling, but with scavengers. Get your Scav Case built, collect ten results and spend a million roubles. Sometimes you've got to spend money to make money."*
+- **Barter Unlocked**: Trade card → 1× Lucky Scav Junk Box
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: Digital Gold [Legendary]
+- **Card**: Bitcoin Farm
+- **ID Seed**: `ttc_quest_card_hideout_bitcoin`
+- **Prerequisites**: Jackpot Machine (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Bitcoin Farm level 2 *(areaType: 20, value: 2)*
+  - [QE: CraftCyclicItem] Craft 20 cyclic items *(Keep the farm producing)*
+  - [QE: EarnMoneyOnTransaction] Earn 3,000,000₽ from transactions
+  - [QE: LootItem] Loot 100 items
+- **XP**: 35,000
+- **Description**: *"The Bitcoin Farm. Graphics cards humming, hash rates climbing, and physical bitcoins dropping into your stash every few hours. Get your farm to level two, complete twenty cyclic crafts, earn three million roubles, and loot a hundred items. Build the empire."*
+- **Barter Unlocked**: Trade card → 1× Physical bitcoin + 1× Graphics card
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: Unlimited Power [Legendary]
+- **Card**: Solar Power Array
+- **ID Seed**: `ttc_quest_card_hideout_solar`
+- **Prerequisites**: Digital Gold (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Solar Power level 1 *(areaType: 18, value: 1)*
+  - [QE: CraftAnyItem] Craft 50 items *(The sun powers your production line)*
+  - [QE: SearchContainer] Search 150 containers
+- **XP**: 35,000
+- **Description**: *"The Solar Power Array. No more fuel runs, no more generator maintenance, no more worrying about the lights going out. Get it installed, craft fifty items and search a hundred fifty containers. Harness the power of the sun and never look back."*
+- **Barter Unlocked**: Trade card → 3× Metal fuel tank (full) + 2× Expeditionary fuel tank (full)
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: The Dark Ritual [Secret]
+- **Card**: Cultist Circle
+- **ID Seed**: `ttc_quest_card_hideout_cultistcircle`
+- **Prerequisites**: Unlimited Power (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Cultist Circle level 1 *(areaType: 26, value: 1)*
+  - [QE: CraftCyclicItem] Craft 30 cyclic items *(The circle demands constant offerings)*
+  - [QE: FixAnyBleed] Fix 50 bleedings *(Blood is part of the ritual)*
+  - [QE: CollectCultistOffering] Collect 5 Cultist Offerings *(The circle demands tributes)*
+- **XP**: 60,000
+- **Description**: *"The Cultist Circle. Nobody talks about it. The symbol scratched into the floor, the candles that never go out, the offerings that disappear overnight. Whatever you believe about the cultists, their circle works — items go in, something else comes out. Get it built, then prove your devotion. Thirty cyclic crafts, fifty bleedings patched, five offerings collected. The ritual demands sacrifice."*
+- **Barter Unlocked**: Trade card → 5× Obdolbos + 5× xTG-12 Antidote + 1× SICC case
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: Kolya's Hideout Compendium (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_hideout`
+- **Prerequisites**: The Dark Ritual (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 hideout cards (1 of each, distinct)
+- **Description**: *"Every station documented, every upgrade catalogued, from the first light bulb to the cultist circle. You've built the ultimate hideout guide. Hand over the cards and the compendium is complete."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 1× T H I C C Items Case
+  - +0.15 standing with Kolya
+- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+
+---
+
+## Barter Summary — Hideout
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Illumination | Common | 3× Light bulb + 3× Bundle of wires |
+| 2 | Shooting Range Dummies | Common | 2× IFAK |
+| 3 | Lavatory | Uncommon | 1× Gun lubricant |
+| 4 | Workbench | Uncommon | 1× Weapon repair kit |
+| 5 | Heating Unit | Uncommon | 3× IFAK |
+| 6 | Water Collector Mk.III | Uncommon | 1× Aquamari |
+| 7 | Air Filtering Unit | Rare | 1× FP-100 air filter |
+| 8 | Booze Generator | Rare | 1× Moonshine |
+| 9 | Generator | Rare | 1× Metal fuel tank (full) |
+| 10 | Medstation | Rare | 1× Grizzly medical kit |
+| 11 | Intelligence Center | Epic | 2× Intelligence folder |
+| 12 | Scav Case | Epic | 1× Lucky Scav Junk Box |
+| 13 | Bitcoin Farm | Legendary | 1× Physical bitcoin |
+| 14 | Solar Power Array | Legendary | 3× Metal fuel tank + 2× Expeditionary fuel tank |
+| 15 | Cultist Circle | Secret | 5× Obdolbos + 5× xTG-12 + 1× SICC case |
+| **Collection** | All 15 hideout cards | — | 1× T H I C C Items Case |
+
+### New Condition Types Introduced
+- **Vanilla: HideoutArea** — require specific hideout station level
+- **QE: CraftCyclicItem** — craft cyclic/recurring items
+- **QE: FixAnyMalfunction** — fix weapon malfunctions in raid
+- **QE: FixFracture** — fix bone fractures
+- **QE: EarnMoneyOnTransaction** — earn roubles from sales
+- **QE: SpendMoneyOnTransaction** — spend roubles on purchases
+- **QE: CollectScavCase** — collect scav case results
+
+---
+
+*Remaining 16 themes to be designed...*

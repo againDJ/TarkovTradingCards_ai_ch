@@ -172,7 +172,23 @@ public sealed class QuestFactory
 		{
 			var condId = QuestIds.ConditionId(def.Seed, condIdx++);
 
-			if (obj.VisitZoneId != null)
+			if (obj.HideoutAreaType != null)
+			{
+				// Vanilla HideoutArea condition (top-level, not CounterCreator)
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "HideoutArea",
+					Type = "HideoutArea",
+					Value = obj.HideoutAreaLevel ?? 1,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					AreaType = (SPTarkov.Server.Core.Models.Enums.Hideout.HideoutAreas)obj.HideoutAreaType.Value,
+					CompareMethod = ">="
+				});
+			}
+			else if (obj.VisitZoneId != null)
 			{
 				// Vanilla VisitPlace condition
 				quest.Conditions.AvailableForFinish.Add(new QuestCondition

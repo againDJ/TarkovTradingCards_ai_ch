@@ -94,8 +94,16 @@ public record QeObjective
     /// <summary>Map(s) for the ExitName condition.</summary>
     public List<string>? ExitLocations { get; init; }
 
+    // ── Vanilla HideoutArea condition (require hideout station at level X) ──
+
+    /// <summary>Hideout area type (e.g. 1=Security, 4=Generator, 10=Workbench, 20=Bitcoin Farm).</summary>
+    public int? HideoutAreaType { get; init; }
+
+    /// <summary>Required hideout area level.</summary>
+    public int? HideoutAreaLevel { get; init; }
+
     /// <summary>Whether this is a vanilla condition (true) or QE condition (false).</summary>
-    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null;
+    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null || HideoutAreaType != null;
 }
 
 /// <summary>

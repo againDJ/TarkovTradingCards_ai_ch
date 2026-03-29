@@ -268,5 +268,117 @@
     "Conditions": [
       { "ConditionId": "3f16408aada8eebc058d0fb9", "ConditionType": "MoveDistance" }
     ]
+  },
+  "722338018c6e676ca4287453": {
+    "QuestId": "722338018c6e676ca4287453",
+    "QuestName": "Let There Be Light",
+    "Conditions": [
+      { "ConditionId": "19e179b6fc2118e258f91996", "ConditionType": "LootItem" },
+      { "ConditionId": "83bf3edaedf575c5f99eccaf", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "2ad7280ad7f818efa74dc90f": {
+    "QuestId": "2ad7280ad7f818efa74dc90f",
+    "QuestName": "Flush with Resources",
+    "Conditions": [
+      { "ConditionId": "218ea0ca955e9f0e16afcd93", "ConditionType": "CraftAnyItem" },
+      { "ConditionId": "ab13ba2f613809c948c9d71d", "ConditionType": "LootItem" }
+    ]
+  },
+  "486536425ab7e80dd0e926d8": {
+    "QuestId": "486536425ab7e80dd0e926d8",
+    "QuestName": "The Tinkerer",
+    "Conditions": [
+      { "ConditionId": "1060f0199835ff687bc45ac4", "ConditionType": "FixAnyMalfunction" },
+      { "ConditionId": "9e85328827f3e5a1198bb36d", "ConditionType": "CraftAnyItem" }
+    ]
+  },
+  "7580dfca5f9ccdce8498b0bf": {
+    "QuestId": "7580dfca5f9ccdce8498b0bf",
+    "QuestName": "Stay Warm",
+    "Conditions": [
+      { "ConditionId": "3b210a9624358abd723f3417", "ConditionType": "HealthGain" },
+      { "ConditionId": "8b72d412516d46b2872087d1", "ConditionType": "FixAnyBleed" }
+    ]
+  },
+  "ac4bb31cf9583b7cc45d7e1a": {
+    "QuestId": "ac4bb31cf9583b7cc45d7e1a",
+    "QuestName": "Water is Life",
+    "Conditions": [
+      { "ConditionId": "15dd6807f5088602f9251184", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "fc627951189d899803b9adc4": {
+    "QuestId": "fc627951189d899803b9adc4",
+    "QuestName": "Filtered Air",
+    "Conditions": [
+      { "ConditionId": "3e559ba71664b73565ad070c", "ConditionType": "MoveDistanceWhileRunning" },
+      { "ConditionId": "45158024408eb70c83bb9309", "ConditionType": "FixFracture" }
+    ]
+  },
+  "dbe2588748ab82068c5ebe71": {
+    "QuestId": "dbe2588748ab82068c5ebe71",
+    "QuestName": "Moonshine Run",
+    "Conditions": [
+      { "ConditionId": "c48335d8da6cfe81916245b0", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "dbb6c82da24c229852f0b603", "ConditionType": "CraftAnyItem" }
+    ]
+  },
+  "7afe0b9571c75fb0b3e7e4dd": {
+    "QuestId": "7afe0b9571c75fb0b3e7e4dd",
+    "QuestName": "Power Grid",
+    "Conditions": [
+      { "ConditionId": "90804196a37fd1c3b429cb39", "ConditionType": "LootItem" },
+      { "ConditionId": "b9f32209c1b31abbe7ca3096", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "e9c6d9386fd5d272124180cd": {
+    "QuestId": "e9c6d9386fd5d272124180cd",
+    "QuestName": "Field Medic",
+    "Conditions": [
+      { "ConditionId": "bf0b7dd0dd1e6033cadb336f", "ConditionType": "HealthGain" },
+      { "ConditionId": "38ff9fe5011687bd0ea940e7", "ConditionType": "FixFracture" },
+      { "ConditionId": "9a9ea90ca178fd51986a7192", "ConditionType": "FixAnyBleed" }
+    ]
+  },
+  "e5ffc3164a65dcc1113026ef": {
+    "QuestId": "e5ffc3164a65dcc1113026ef",
+    "QuestName": "The Analyst",
+    "Conditions": [
+      { "ConditionId": "8f78a3284622d2b90f3fc28f", "ConditionType": "EarnMoneyOnTransaction" }
+    ]
+  },
+  "423f34303f2a1968ef27795a": {
+    "QuestId": "423f34303f2a1968ef27795a",
+    "QuestName": "Jackpot Machine",
+    "Conditions": [
+      { "ConditionId": "53fc3a9edc5411872e52f376", "ConditionType": "CollectScavCase" }
+    ]
+  },
+  "f61efc44b4033a408aabacb5": {
+    "QuestId": "f61efc44b4033a408aabacb5",
+    "QuestName": "Digital Gold",
+    "Conditions": [
+      { "ConditionId": "76f87fd2adaf80c9eed6b548", "ConditionType": "CraftCyclicItem" },
+      { "ConditionId": "7cf312c74d30014acfad13d7", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "4ac2be08da84e0995a247b03", "ConditionType": "LootItem" }
+    ]
+  },
+  "824ef80530268ab3a109afa7": {
+    "QuestId": "824ef80530268ab3a109afa7",
+    "QuestName": "Unlimited Power",
+    "Conditions": [
+      { "ConditionId": "408a1eb5b29b7dbcadf49b04", "ConditionType": "CraftAnyItem" },
+      { "ConditionId": "f07973801b09f503e8610430", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "4627a77f625c64ecb77f06a3": {
+    "QuestId": "4627a77f625c64ecb77f06a3",
+    "QuestName": "The Dark Ritual",
+    "Conditions": [
+      { "ConditionId": "dca0b720a8df35d506d239df", "ConditionType": "CraftCyclicItem" },
+      { "ConditionId": "fcd24a6837f7bd3c6c0b0fa7", "ConditionType": "FixAnyBleed" },
+      { "ConditionId": "717a64eb101456be56ae0aa3", "ConditionType": "CollectCultistOffering" }
+    ]
   }
 }

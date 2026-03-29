@@ -161,6 +161,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(BossesThemeDefinitions.GetAll());
 				allDefs.AddRange(IconicWeaponsThemeDefinitions.GetAll());
 				allDefs.AddRange(IconicLocationsThemeDefinitions.GetAll());
+				allDefs.AddRange(HideoutThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 
