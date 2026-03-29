@@ -371,7 +371,12 @@ public static class HideoutThemeDefinitions
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardScavCase } },
-				BarterUnlock = new() { CardTemplateId = CardScavCase, Items = new() { new() { TemplateId = JunkBox } } }
+				BarterUnlock = new()
+				{
+					CardTemplateId = CardScavCase,
+					Items = new() { new() { TemplateId = JunkBox, DisplayName = "Scav Case Jackpot" } },
+					RandomReward = RandomRewardType.ScavCaseIntel
+				}
 			},
 
 			// 13. Bitcoin Farm [Legendary]
@@ -442,7 +447,12 @@ public static class HideoutThemeDefinitions
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardCultistCircle } },
-				BarterUnlock = new() { CardTemplateId = CardCultistCircle, Items = new() { new() { TemplateId = SiccCase }, new() { TemplateId = Obdolbos, Count = 5 }, new() { TemplateId = Xtg12, Count = 5 } } }
+				BarterUnlock = new()
+				{
+					CardTemplateId = CardCultistCircle,
+					Items = new() { new() { TemplateId = SiccCase, DisplayName = "Cultist Offering" } },
+					RandomReward = RandomRewardType.CultistCircle
+				}
 			},
 
 			// ── Collection Quest ──

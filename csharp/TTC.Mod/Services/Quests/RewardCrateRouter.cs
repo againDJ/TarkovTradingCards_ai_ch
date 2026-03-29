@@ -29,12 +29,13 @@ public sealed class RewardCrateRouter(
 	InventoryHelper inventoryHelper,
 	MailSendService mailSend,
 	DatabaseService databaseService,
+	RandomRewardService randomRewardService,
 	ISptLogger<RewardCrateRouter> logger
 ) : StaticRouter(jsonUtil, [
 	new RouteAction<ItemEventRouterRequest>(
 		"/client/game/profile/items/moving",
 		(url, requestData, sessionId, output) =>
-			ProcessOutput(sessionId, output, registry, profileHelper, inventoryHelper, mailSend, databaseService, logger)
+			ProcessOutput(sessionId, output, registry, profileHelper, inventoryHelper, mailSend, databaseService, randomRewardService, logger)
 	)
 ])
 {
@@ -45,6 +46,7 @@ public sealed class RewardCrateRouter(
 		InventoryHelper inventoryHelper,
 		MailSendService mailSend,
 		DatabaseService databaseService,
+		RandomRewardService randomRewardService,
 		ISptLogger<RewardCrateRouter> logger)
 	{
 		if (string.IsNullOrEmpty(output))
@@ -155,14 +157,41 @@ public sealed class RewardCrateRouter(
 				if (pmcData != null)
 					inventoryHelper.RemoveItem(pmcData, new MongoId(id), sessionId, null);
 
-				// Look up what items this crate should give
+				// Check if this is a random reward crate
+				var randomType = registry.GetRandomType(tpl);
+				if (randomType != null)
+				{
+					var randomItems = randomType.Value switch
+					{
+						RandomRewardType.ScavCase2500 or RandomRewardType.ScavCase15000 or
+						RandomRewardType.ScavCase95000 or RandomRewardType.ScavCaseMoonshine or
+						RandomRewardType.ScavCaseIntel => randomRewardService.GenerateScavCaseReward(randomType.Value),
+						RandomRewardType.CultistCircle => randomRewardService.GenerateCultistCircleReward(sessionId),
+						_ => new List<Item>()
+					};
+
+					if (randomItems.Count > 0)
+					{
+						mailSend.SendDirectNpcMessageToPlayer(
+							sessionId,
+							QuestIds.KolyaTraderId,
+							MessageType.MessageWithItems,
+							randomType.Value == RandomRewardType.ScavCaseIntel
+								? "My scav network came through. Here's what they found."
+								: "The circle has spoken. Accept its offerings.",
+							randomItems
+						);
+						logger.Info($"[TTC][RewardCrate] Sent {randomItems.Count} random items ({randomType.Value}) via mail for crate {tpl[..8]}...");
+					}
+					continue;
+				}
+
+				// Fixed reward crate
 				var rewards = registry.GetContents(tpl);
 				if (rewards == null || rewards.Count == 0) continue;
 
-				// Build mail items
 				var mailItems = BuildMailItems(rewards, databaseService);
 
-				// Send from Kolya
 				mailSend.SendDirectNpcMessageToPlayer(
 					sessionId,
 					QuestIds.KolyaTraderId,

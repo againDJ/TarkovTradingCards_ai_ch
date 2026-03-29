@@ -46,23 +46,46 @@ public sealed class RewardCrateFactory
 		foreach (var crateTemplateId in registry.AllCrateTemplateIds)
 		{
 			var contents = registry.GetContents(crateTemplateId);
-			var ok = CreateCrate(crateTemplateId, contents, containerBase, gameLocale);
+			var randomType = registry.GetRandomType(crateTemplateId);
+			var ok = CreateCrate(crateTemplateId, contents, randomType, containerBase, gameLocale);
 			if (ok) created++; else failed++;
 		}
 
 		return (created, failed);
 	}
 
-	private bool CreateCrate(string crateTemplateId, List<BarterRewardItem>? contents, Models.ContainerBase containerBase, string gameLocale)
+	private bool CreateCrate(string crateTemplateId, List<BarterRewardItem>? contents, RandomRewardType? randomType, Models.ContainerBase containerBase, string gameLocale)
 	{
 		try
 		{
 			const string english = "en";
 			var tables = _db.GetTables();
-			var contentDesc = BuildContentDescription(contents, tables);
-			var shortName = BuildShortName(contents, tables);
-			var name = shortName;
-			var description = $"A package from Kolya containing your barter rewards. The items inside will be delivered to you via message.\n\nContents:\n{contentDesc}";
+
+			string shortName, name, description;
+			if (randomType != null)
+			{
+				shortName = randomType.Value switch
+				{
+					RandomRewardType.ScavCaseIntel => "Scav Case Jackpot",
+					RandomRewardType.ScavCaseMoonshine => "Moonshine Jackpot",
+					RandomRewardType.ScavCase95000 => "95K Scav Case",
+					RandomRewardType.ScavCase15000 => "15K Scav Case",
+					RandomRewardType.ScavCase2500 => "2.5K Scav Case",
+					RandomRewardType.CultistCircle => "Cultist Offering",
+					_ => "Mystery Crate"
+				};
+				name = shortName;
+				description = randomType.Value == RandomRewardType.CultistCircle
+					? "A mysterious package from Kolya. The cultist circle has spoken — the contents are unknown until opened."
+					: "A package from Kolya's scav network. The contents are random — could be junk, could be gold.";
+			}
+			else
+			{
+				var contentDesc = BuildContentDescription(contents, tables);
+				shortName = BuildShortName(contents, tables);
+				name = shortName;
+				description = $"A package from Kolya containing your barter rewards. The items inside will be delivered to you via message.\n\nContents:\n{contentDesc}";
+			}
 
 			var locales = new Dictionary<string, LocaleDetails>
 			{
@@ -81,16 +104,19 @@ public sealed class RewardCrateFactory
 				FleaPriceRoubles = null
 			};
 
-			var prefabPath = LookupPrefabPath(tables, contents);
+			var prefabPath = randomType != null
+				? LookupPrefabPath(tables, "5b7c710788a4506dec015957") // Lucky Scav Junk Box icon for all random crates
+				: LookupPrefabPath(tables, contents);
+			var isRandom = randomType != null;
 			var props = new TemplateItemProperties
 			{
 				Prefab = new Prefab { Path = prefabPath },
-				BackgroundColor = "yellow",
+				BackgroundColor = isRandom ? "orange" : "yellow",
 				Weight = 0.5f,
 				ItemSound = containerBase.item_sound,
 				ExaminedByDefault = true,
-				Width = 1,
-				Height = 1,
+				Width = isRandom ? 2 : 1,
+				Height = isRandom ? 2 : 1,
 				CanSellOnRagfair = false
 			};
 
@@ -186,11 +212,13 @@ public sealed class RewardCrateFactory
 	{
 		if (contents == null || contents.Count == 0)
 			return "";
+		return LookupPrefabPath(tables, contents[0].TemplateId);
+	}
 
-		var firstTemplateId = contents[0].TemplateId;
-		if (tables.Templates?.Items?.TryGetValue(firstTemplateId, out var itemTemplate) == true)
+	private static string LookupPrefabPath(DatabaseTables tables, string templateId)
+	{
+		if (tables.Templates?.Items?.TryGetValue(templateId, out var itemTemplate) == true)
 			return itemTemplate.Properties?.Prefab?.Path ?? "";
-
 		return "";
 	}
 }

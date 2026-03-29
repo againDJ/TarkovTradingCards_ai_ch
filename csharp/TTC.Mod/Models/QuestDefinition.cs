@@ -150,8 +150,11 @@ public record BarterUnlock
     /// <summary>Card template ID the player gives.</summary>
     public required string CardTemplateId { get; init; }
 
-    /// <summary>Items the player receives.</summary>
+    /// <summary>Items the player receives (fixed rewards). Can be empty if RandomReward is set.</summary>
     public required List<BarterRewardItem> Items { get; init; }
+
+    /// <summary>When set, the barter generates random rewards instead of fixed items.</summary>
+    public Services.Quests.RandomRewardType? RandomReward { get; init; }
 }
 
 /// <summary>

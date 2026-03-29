@@ -64,9 +64,27 @@ public sealed class QuestAssortService
 
 			var questId = QuestIds.QuestId(def.Seed);
 			var barter = def.BarterUnlock;
-			var isMultiItem = NeedsRewardCrate(barter);
 
-			if (isMultiItem)
+			if (barter.RandomReward != null)
+			{
+				// Random reward barter: sell a crate that generates random items on purchase
+				var crateTemplateId = QuestIds.CrateTemplateId(def.Seed);
+				_crateRegistry.RegisterRandom(crateTemplateId, barter.RandomReward.Value);
+				// Also register Items for display (icon, name) in the crate factory
+				if (barter.Items.Count > 0)
+					_crateRegistry.Register(crateTemplateId, barter.Items);
+
+				var assortItemId = AddBarterAssortItem(
+					trader.Assort, crateTemplateId, 1, barter.CardTemplateId, 1);
+
+				if (assortItemId is MongoId id)
+				{
+					questAssortSuccess[id] = new MongoId(questId);
+					AddAssortmentUnlockReward(tables, questId, def.Seed, crateTemplateId, 1, 0);
+					count++;
+				}
+			}
+			else if (NeedsRewardCrate(barter))
 			{
 				// Multi-item barter: sell a reward crate (intercepted by RewardCrateRouter)
 				var crateTemplateId = QuestIds.CrateTemplateId(def.Seed);
@@ -78,7 +96,6 @@ public sealed class QuestAssortService
 				if (assortItemId is MongoId id)
 				{
 					questAssortSuccess[id] = new MongoId(questId);
-					// Show the reward crate in the AssortmentUnlock UI
 					AddAssortmentUnlockReward(tables, questId, def.Seed, crateTemplateId, 1, 0);
 					count++;
 				}
