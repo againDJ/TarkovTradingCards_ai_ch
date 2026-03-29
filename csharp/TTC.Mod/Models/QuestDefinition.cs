@@ -76,6 +76,9 @@ public record QeObjective
     /// <summary>Savage role filter: ["marksman"] for snipers, ["bossBully"] for Reshala, etc.</summary>
     public List<string>? KillSavageRole { get; init; }
 
+    /// <summary>Weapon template ID filter: only kills with these specific weapons count.</summary>
+    public List<string>? KillWeapons { get; init; }
+
     // ── Vanilla VisitPlace condition (when set, creates a VisitPlace counter condition) ──
 
     /// <summary>Zone ID for VisitPlace (e.g. "huntsman_001", "room214").</summary>

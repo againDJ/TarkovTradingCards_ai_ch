@@ -380,5 +380,27 @@
       { "ConditionId": "fcd24a6837f7bd3c6c0b0fa7", "ConditionType": "FixAnyBleed" },
       { "ConditionId": "717a64eb101456be56ae0aa3", "ConditionType": "CollectCultistOffering" }
     ]
+  },
+  "73507adfa3a4a9cdde51f808": {
+    "QuestId": "73507adfa3a4a9cdde51f808",
+    "QuestName": "Rat Run",
+    "Conditions": [
+      { "ConditionId": "bd2c42868e1d9f256557f698", "ConditionType": "SearchContainer" },
+      { "ConditionId": "fba610c9a3fef39818d9a6cc", "ConditionType": "LootItem" }
+    ]
+  },
+  "51cb861394b249b36f91f7f4": {
+    "QuestId": "51cb861394b249b36f91f7f4",
+    "QuestName": "Covert Sabotage",
+    "Conditions": [
+      { "ConditionId": "167fa003bb99c8cdd5142ec2", "ConditionType": "KillsWhileSilent" }
+    ]
+  },
+  "7c76c2c7a91ae2d3d22c961a": {
+    "QuestId": "7c76c2c7a91ae2d3d22c961a",
+    "QuestName": "Midnight Blade",
+    "Conditions": [
+      { "ConditionId": "a87d14342a99ef38fb6a5a08", "ConditionType": "KillsWhileSilent" }
+    ]
   }
 }

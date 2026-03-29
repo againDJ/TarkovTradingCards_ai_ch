@@ -113,7 +113,7 @@ public static class BossesThemeDefinitions
 		P("657112fa818110db4600aa6b", "Helmet_ears"),
 	};
 
-	private static List<PresetPart> PkmParts() => new()
+	internal static List<PresetPart> PkmParts() => new()
 	{
 		P("646371779f5f0ea59a04c204", "mod_pistolgrip"),
 		P("646371faf2404ab67905c8e9", "mod_barrel",

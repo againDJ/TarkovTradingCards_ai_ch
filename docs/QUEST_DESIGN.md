@@ -1034,7 +1034,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: EarnMoneyOnTransaction] Earn 1,000,000₽ from transactions
 - **XP**: 20,000
 - **Description**: *"The Intelligence Center. Information is the most valuable commodity in Tarkov — more than bitcoin, more than moonshine. Get your Intel Center to level two, eliminate ten PMCs and earn a million roubles. Show me you play the information game."*
-- **Barter Unlocked**: Trade card → 1× Intelligence folder
+- **Barter Unlocked**: Trade card → 2× Intelligence folder
 - **Unlocks**: Next card quest
 
 #### 12. QUEST: Jackpot Machine [Epic]
@@ -1144,4 +1144,271 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 16 themes to be designed...*
+## Theme: Factions & PMC
+
+**15 cards** (3 Common, 4 Uncommon, 5 Rare, 1 Epic, 1 Legendary, 1 Secret)
+
+**Theme focus**: PvP, faction warfare, enemy-type kills. Uses Bear/Usec/Savage/AnyPmc kill targets, savageRole filters (rogues, raiders, cultists), map-specific PMC hunts.
+
+### QUEST: War Correspondent (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_factions_and_pmc`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 scavs *(KillTarget: "Savage")*
+  - [Vanilla: Kills] Eliminate 3 PMCs *(KillTarget: "AnyPmc")*
+- **XP**: 1,000
+- **Description**: *"Every faction in Tarkov has its own story, its own methods, its own reasons for being here. Scavs, PMCs, rogues, cultists — they all think they're the good guys. Before I give you my field notes on the factions, show me you've interacted with at least two of them. The hard way."*
+- **Rewards**:
+  - 1× Factions & PMC Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: Track and Eliminate [Common]
+- **Card**: Bloodhound Merc "Tracker"
+- **ID Seed**: `ttc_quest_card_factions_bloodhound`
+- **Prerequisites**: War Correspondent (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs on Customs *(KillTarget: "Savage", KillLocations: ["bigmap"])*
+- **Location**: Customs
+- **XP**: 1,000
+- **Description**: *"The Bloodhound Mercs. Trackers, hunters, hired guns who follow the scent of loot and leave bodies in their wake. They work the back alleys of Customs like they own the place. Ten scavs on Customs — track them down like a true bloodhound."*
+- **Barter Unlocked**: Trade card → 2× IFAK
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: Turf War [Common]
+- **Card**: Scav Syndicate Signal
+- **ID Seed**: `ttc_quest_card_factions_scavsyndicate`
+- **Prerequisites**: Track and Eliminate (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs on Interchange *(KillTarget: "Savage", KillLocations: ["Interchange"])*
+- **Location**: Interchange
+- **XP**: 1,000
+- **Description**: *"The Scav Syndicate runs Interchange like a flea market with guns. They've carved out territories in every store, every hallway, every parking garage. If you want to understand how organized scavs operate, go break up their operation. Ten scavs on Interchange."*
+- **Barter Unlocked**: Trade card → 1× Pilgrim backpack
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: Rat Run [Common]
+- **Card**: Scavenger "Back-Alley Loot Rat"
+- **ID Seed**: `ttc_quest_card_factions_lootrat`
+- **Prerequisites**: Turf War (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: SearchContainer] Search 40 containers
+  - [QE: LootItem] Loot 40 items
+- **XP**: 1,000
+- **Description**: *"The Back-Alley Loot Rat. Every scav starts here — sprint in, grab what you can, sprint out. No fighting, no heroics, just survival and profit. Forty containers and forty items. Show me the rat lifestyle."*
+- **Barter Unlocked**: Trade card → 1× Berkut backpack
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: Vympel Heritage [Uncommon]
+- **Card**: BEAR Operator "Vympel Vet"
+- **ID Seed**: `ttc_quest_card_factions_bear`
+- **Prerequisites**: Rat Run (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 USEC PMCs with AK-series weapons *(KillTarget: "Usec", KillWeapons: all AK variants — 20 weapon IDs)*
+- **XP**: 3,000
+- **Description**: *"BEAR. Battle Encounter Assault Regiment. Ex-FSB, ex-Vympel, the kind of operators that make special forces look like boy scouts. They came to Tarkov with a mission and they're not leaving until it's done. Eliminate five USEC operatives with an AK — any model. That's the BEAR way."*
+- **Barter Unlocked**: Trade card → 1× Salewa
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: Covert Sabotage [Uncommon]
+- **Card**: BEAR Saboteur Emblem
+- **ID Seed**: `ttc_quest_card_factions_bearsaboteur`
+- **Prerequisites**: Vympel Heritage (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 10 kills while silent *(Saboteurs work in the shadows)*
+- **XP**: 3,000
+- **Description**: *"BEAR Saboteurs. The ones you never see coming. They move in silence, plant their charges, and vanish before anyone knows what happened. Ten silent kills. Become the shadow."*
+- **Barter Unlocked**: Trade card → 1× F-1 grenade + 1× RGD-5 grenade
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: Deep Behind Lines [Uncommon]
+- **Card**: USEC Deep Recon Patch
+- **ID Seed**: `ttc_quest_card_factions_usecrecon`
+- **Prerequisites**: Covert Sabotage (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 targets from over 100m *(KillTarget: "Any", KillDistanceCompare: ">=", KillDistanceValue: 100)*
+  - [Vanilla: Survive] Survive and extract from Shoreline 3 times
+- **Location**: Shoreline
+- **XP**: 3,000
+- **Description**: *"USEC Deep Recon. These operators go where nobody else dares — deep behind enemy lines, alone, with nothing but a rifle and a radio. Five kills from over a hundred meters and three Shoreline extractions. Go deep, stay alive."*
+- **Barter Unlocked**: Trade card → 1× Valday PS-320 scope
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: The Contractor [Uncommon]
+- **Card**: USEC Operator "Contractor Blue"
+- **ID Seed**: `ttc_quest_card_factions_usec`
+- **Prerequisites**: Deep Behind Lines (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 BEAR PMCs with Western SMGs *(KillTarget: "Bear", KillWeapons: MP5, MP7, MP9, P90, UMP, Vector, MPX — 15 weapon IDs)*
+- **XP**: 3,000
+- **Description**: *"USEC. United Security. Private military contractors with deep pockets and deeper secrets. They came for TerraGroup's dirty work and got stuck in the same hell as everyone else. Eliminate five BEAR operatives using a Western SMG. That's how contractors do it."*
+- **Barter Unlocked**: Trade card → 1× Salewa
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: Midnight Blade [Rare]
+- **Card**: Cultist Acolyte "Midnight Blade"
+- **ID Seed**: `ttc_quest_card_factions_cultistacolyte`
+- **Prerequisites**: The Contractor (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Get 1 melee kill *(KillTarget: "Any", KillWeapons: all melee weapon IDs)*
+  - [QE: KillsWhileSilent] Get 5 kills while silent
+- **XP**: 10,000
+- **Description**: *"The Cultist Acolyte. Lowest rank in the hierarchy, but don't let that fool you — they move like ghosts and their blades are coated in something foul. One melee kill and five silent kills. Prove you can work with a blade."*
+- **Barter Unlocked**: Trade card → 1× Cultist knife
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: Initiation [Rare]
+- **Card**: Cultist Initiate
+- **ID Seed**: `ttc_quest_card_factions_cultistinitiate`
+- **Prerequisites**: Midnight Blade (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets at night on Factory *(KillTarget: "Any", KillLocations: ["factory4_night"])*
+- **Location**: Factory (Night)
+- **XP**: 10,000
+- **Description**: *"Initiation into the cult happens at night. Always at night. Factory after dark is where they gather — no lights, no mercy, only the sound of blades and chanting. Ten kills on night Factory. Prove you belong in the dark."*
+- **Barter Unlocked**: Trade card → 1× PNV-10T night vision goggles
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: Guns for Hire [Rare]
+- **Card**: Rogue Alliance
+- **ID Seed**: `ttc_quest_card_factions_roguealliance`
+- **Prerequisites**: Initiation (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets on Lighthouse *(KillTarget: "Any", KillLocations: ["Lighthouse"])*
+  - [Vanilla: Survive] Survive and extract from Lighthouse 3 times
+- **Location**: Lighthouse
+- **XP**: 10,000
+- **Description**: *"The Rogue Alliance. Ex-USEC operators who went independent — no loyalty, no flag, just the highest bidder. They've fortified the water treatment plant on Lighthouse and they shoot anyone who gets close. Ten kills and three extractions on Lighthouse. Break through their perimeter."*
+- **Barter Unlocked**: Trade card → 1× Armor repair kit
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: Gas Station Hold [Rare]
+- **Card**: Rogue Ex-USEC "Gas-Station Gunner"
+- **ID Seed**: `ttc_quest_card_factions_roguegunner`
+- **Prerequisites**: Guns for Hire (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets with LMGs *(KillTarget: "Any", KillWeapons: all LMG IDs)*
+  - [Vanilla: Kills] Eliminate 3 targets with stationary weapons *(KillTarget: "Any", KillWeapons: NSV Utyos + AGS-30)*
+- **XP**: 10,000
+- **Description**: *"The Gas-Station Gunner. This rogue strapped himself behind a mounted gun and dared anyone to come close. Ten kills with a machine gun and three kills with a stationary weapon. Hold the line like a true gunner."*
+- **Barter Unlocked**: Trade card → 1× PKM (assembled with parts)
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: Shadow Cell [Rare]
+- **Card**: UNISG Saboteur "Shadow Cell"
+- **ID Seed**: `ttc_quest_card_factions_unisg`
+- **Prerequisites**: Gas Station Hold (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 PMCs *(KillTarget: "AnyPmc")*
+  - [Vanilla: Kills] Eliminate 10 targets with headshots *(KillTarget: "Any", KillBodyParts: ["Head"])*
+- **XP**: 10,000
+- **Description**: *"UNISG. United Nations Internal Security Group. Officially, they don't exist. Unofficially, they're running operations in Tarkov that nobody talks about. Precision is their calling card. Ten PMC kills and ten headshots. Clean, efficient, deniable."*
+- **Barter Unlocked**: Trade card → 2× Intelligence folder
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: Labs Crusher [Epic]
+- **Card**: Raider "Labs Crusher"
+- **ID Seed**: `ttc_quest_card_factions_raider`
+- **Prerequisites**: Shadow Cell (completed)
+- **Type**: Elimination
+- **Location**: The Lab
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 targets on Labs *(KillTarget: "Any", KillLocations: ["laboratory"])*
+  - [Vanilla: Survive] Survive and extract from Labs 3 times
+- **XP**: 20,000
+- **Description**: *"The Labs Crusher. Raiders patrol The Lab like they own the place — tier 5 armor, meta weapons, and zero hesitation. They'll push you, flank you, and grenade you before you can say 'extract.' Twenty kills on Labs and three successful extractions. Crush the crushers."*
+- **Barter Unlocked**: Trade card → 3× TerraGroup Labs access keycard
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: Blacksite Protocol [Legendary]
+- **Card**: TerraGroup Security "Blacksite Guard"
+- **ID Seed**: `ttc_quest_card_factions_terragroup`
+- **Prerequisites**: Labs Crusher (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 25 PMCs with Western ARs *(KillTarget: "AnyPmc", KillWeapons: M4A1, HK416, SCAR, MDR, MCX, AUG, G36 — 15 weapon IDs)*
+  - [Vanilla: Kills] Eliminate 15 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
+- **XP**: 35,000
+- **Description**: *"TerraGroup Security. The blacksite guards. Whatever TerraGroup was hiding in those labs, these operators were paid enough to kill for it and never ask questions. Twenty-five PMCs downed with Western assault rifles, fifteen of them headshots. Enforce the blacksite protocol."*
+- **Barter Unlocked**: Trade card → 1× Keycard holder
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: The Fragile Truce [Secret]
+- **Card**: PMC Coalition "Fragile Truce"
+- **ID Seed**: `ttc_quest_card_factions_coalition`
+- **Prerequisites**: Blacksite Protocol (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 BEAR PMCs *(KillTarget: "Bear")*
+  - [Vanilla: Kills] Eliminate 50 USEC PMCs *(KillTarget: "Usec")*
+  - [Vanilla: Kills] Eliminate 100 scavs *(KillTarget: "Savage")*
+- **XP**: 60,000
+- **Description**: *"The PMC Coalition. A fragile truce between BEAR and USEC — born out of necessity, held together by desperation. Both sides agreed to stop killing each other long enough to deal with the real threats. But truces don't last in Tarkov. Fifty BEAR, fifty USEC, a hundred scavs. Break the truce yourself."*
+- **Barter Unlocked**: Trade card → 1× SICC case + 1× Dogtag case
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: Kolya's Faction Dossier (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_factions_and_pmc`
+- **Prerequisites**: The Fragile Truce (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 faction cards (1 of each, distinct)
+- **Description**: *"Every faction documented, every allegiance mapped. BEAR, USEC, rogues, cultists, raiders, TerraGroup — you've crossed paths with all of them and lived to tell the tale. Hand over the cards and the dossier is complete."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 1× T H I C C Weapon case
+  - +0.15 standing with Kolya
+- **Collection Barter**: Trade all 15 cards → 1× T H I C C Weapon case
+
+---
+
+## Barter Summary — Factions & PMC
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Bloodhound Merc "Tracker" | Common | 2× IFAK |
+| 2 | Scav Syndicate Signal | Common | 1× Pilgrim backpack |
+| 3 | Scavenger "Loot Rat" | Common | 1× Berkut backpack |
+| 4 | BEAR Operator "Vympel Vet" | Uncommon | 1× Salewa |
+| 5 | BEAR Saboteur Emblem | Uncommon | 1× F-1 + 1× RGD-5 |
+| 6 | USEC Deep Recon Patch | Uncommon | 1× Valday PS-320 |
+| 7 | USEC Operator "Contractor Blue" | Uncommon | 1× Salewa |
+| 8 | Cultist Acolyte "Midnight Blade" | Rare | 1× Cultist knife |
+| 9 | Cultist Initiate | Rare | 1× PNV-10T NVG |
+| 10 | Rogue Alliance | Rare | 1× Armor repair kit |
+| 11 | Rogue Ex-USEC "Gas-Station Gunner" | Rare | 1× PKM (assembled) |
+| 12 | UNISG Saboteur "Shadow Cell" | Rare | 2× Intelligence folder |
+| 13 | Raider "Labs Crusher" | Epic | 3× Labs keycard |
+| 14 | TerraGroup Security "Blacksite Guard" | Legendary | 1× Keycard holder |
+| 15 | PMC Coalition "Fragile Truce" | Secret | 1× SICC case + 1× Dogtag case |
+| **Collection** | All 15 faction cards | — | 1× T H I C C Weapon case |
+
+### New Condition Types Introduced
+- **Vanilla: KillTarget "Bear"** — kill BEAR PMCs specifically
+- **Vanilla: KillTarget "Usec"** — kill USEC PMCs specifically
+- **Vanilla: Kills on Factory Night** — night raids only
+- **QE: KillsWhileMounted** — kills from mounted weapons
+
+---
+
+*Remaining 15 themes to be designed...*

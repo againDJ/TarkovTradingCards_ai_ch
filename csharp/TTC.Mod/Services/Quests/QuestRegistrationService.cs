@@ -43,6 +43,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(IconicWeaponsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(IconicLocationsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(HideoutThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(FactionsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

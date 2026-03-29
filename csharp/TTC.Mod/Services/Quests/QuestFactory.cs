@@ -318,6 +318,8 @@ public sealed class QuestFactory
 					killCondition.BodyPart = obj.KillBodyParts;
 				if (obj.KillSavageRole is { Count: > 0 })
 					killCondition.SavageRole = obj.KillSavageRole;
+				if (obj.KillWeapons is { Count: > 0 })
+					killCondition.Weapon = obj.KillWeapons.ToHashSet();
 				counterConditions.Add(killCondition);
 
 				if (obj.KillLocations is { Count: > 0 })
