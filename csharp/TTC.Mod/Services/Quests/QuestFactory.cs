@@ -21,6 +21,7 @@ public sealed class QuestFactory
 	private static readonly string RoubleTpl = "5449016a4bdc2d6f028b456f";
 	private readonly DatabaseService _db;
 	private readonly Dictionary<string, List<string>> _parentClassCache = new();
+	private HashSet<string>? _ttcItemIds;
 
 	public QuestFactory(DatabaseService db)
 	{
@@ -28,8 +29,17 @@ public sealed class QuestFactory
 	}
 
 	/// <summary>
+	/// Set TTC custom item IDs to exclude from HandoverItem category resolution.
+	/// </summary>
+	public void SetTtcItemIds(IEnumerable<string> ids)
+	{
+		_ttcItemIds = new HashSet<string>(ids);
+	}
+
+	/// <summary>
 	/// Resolve HandoverItem targets: if a target is a parent class ID (not a real item),
 	/// expand it to all child template IDs of that class. Results are cached.
+	/// Excludes TTC custom items (cards, binders, crates) from resolved lists.
 	/// </summary>
 	private List<string> ResolveHandoverTargets(List<string> targets)
 	{
@@ -53,11 +63,13 @@ public sealed class QuestFactory
 			}
 			else
 			{
-				// It's a parent class ID — find all children and cache
-				var children = items.Values
-					.Where(i => i.Parent.ToString() == target && i.Type == "Item")
-					.Select(i => i.Id.ToString())
+				// It's a parent class ID — find all children, excluding TTC custom items
+				var children = items
+					.Where(kvp => kvp.Value.Parent.ToString() == target && kvp.Value.Type == "Item")
+					.Select(kvp => kvp.Key.ToString())
+					.Where(id => _ttcItemIds == null || !_ttcItemIds.Contains(id))
 					.ToList();
+
 				if (children.Count > 0)
 				{
 					_parentClassCache[target] = children;

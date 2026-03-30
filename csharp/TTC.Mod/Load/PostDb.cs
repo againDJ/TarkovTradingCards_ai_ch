@@ -46,6 +46,7 @@ public sealed class PostDb : IOnLoad
 	private readonly RewardCrateFactory _rewardCrateFactory;
 	private readonly RewardCrateRegistry _rewardCrateRegistry;
 	private readonly RagfairOfferGenerator _ragfairOfferGenerator;
+	private readonly QuestFactory _questFactory;
 
 	public PostDb(ISptLogger<PostDb> logger, State state,
 				  DatabaseService db, LocaleService localeService, CustomItemService customItemService, ConfigServer configServer,
@@ -58,7 +59,8 @@ public sealed class PostDb : IOnLoad
 				  QuestAssortService questAssort,
 				  RewardCrateFactory rewardCrateFactory,
 				  RewardCrateRegistry rewardCrateRegistry,
-				  RagfairOfferGenerator ragfairOfferGenerator)
+				  RagfairOfferGenerator ragfairOfferGenerator,
+				  QuestFactory questFactory)
 	{
 		_logger = logger;
 		_state = state;
@@ -82,6 +84,7 @@ public sealed class PostDb : IOnLoad
 		_rewardCrateFactory = rewardCrateFactory;
 		_rewardCrateRegistry = rewardCrateRegistry;
 		_ragfairOfferGenerator = ragfairOfferGenerator;
+		_questFactory = questFactory;
 	}
 
 	/// <summary>
@@ -149,6 +152,11 @@ public sealed class PostDb : IOnLoad
 			if (kolyaOk)
 			{
 				_logger.Info("[TTC][Kolya] Trader registered");
+
+				// Exclude TTC card/binder/container IDs from HandoverItem category resolution
+				var ttcIds = _state.Cards.Select(c => c.id)
+					.Concat(_state.Binders?.Select(b => b.id) ?? Enumerable.Empty<string>());
+				_questFactory.SetTtcItemIds(ttcIds);
 
 				var (questsCreated, questsFailed) = _questRegistration.RegisterAll(emptyBoosterId);
 				if (questsFailed > 0)
