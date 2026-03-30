@@ -6,6 +6,7 @@ using SPTarkov.Server.Core.Models.Enums;
 using SPTarkov.Server.Core.Models.Spt.Mod;
 using SPTarkov.Server.Core.Models.Utils;
 using SPTarkov.Server.Core.Utils;
+using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Utils.Json;
 using TTC.Mod.Models;
 
@@ -18,8 +19,59 @@ namespace TTC.Mod.Services.Quests;
 public sealed class QuestFactory
 {
 	private static readonly string RoubleTpl = "5449016a4bdc2d6f028b456f";
+	private readonly DatabaseService _db;
+	private readonly Dictionary<string, List<string>> _parentClassCache = new();
 
-	public QuestFactory() { }
+	public QuestFactory(DatabaseService db)
+	{
+		_db = db;
+	}
+
+	/// <summary>
+	/// Resolve HandoverItem targets: if a target is a parent class ID (not a real item),
+	/// expand it to all child template IDs of that class. Results are cached.
+	/// </summary>
+	private List<string> ResolveHandoverTargets(List<string> targets)
+	{
+		var resolved = new List<string>();
+
+		foreach (var target in targets)
+		{
+			// Check cache first
+			if (_parentClassCache.TryGetValue(target, out var cached))
+			{
+				resolved.AddRange(cached);
+				continue;
+			}
+
+			var items = _db.GetItems();
+
+			// Check if this target is itself an item template
+			if (items.ContainsKey(target) && items[target].Type == "Item")
+			{
+				resolved.Add(target);
+			}
+			else
+			{
+				// It's a parent class ID — find all children and cache
+				var children = items.Values
+					.Where(i => i.Parent.ToString() == target && i.Type == "Item")
+					.Select(i => i.Id.ToString())
+					.ToList();
+				if (children.Count > 0)
+				{
+					_parentClassCache[target] = children;
+					resolved.AddRange(children);
+				}
+				else
+				{
+					resolved.Add(target);
+				}
+			}
+		}
+
+		return resolved;
+	}
 
 	/// <summary>
 	/// Build the introduction quest — no objectives, instant complete, rewards Empty Booster.
@@ -236,6 +288,38 @@ public sealed class QuestFactory
 					CompareMethod = ">="
 				});
 			}
+			else if (obj.HandoverTargets != null)
+			{
+				// Generic HandoverItem condition (hand over items by template or category)
+				// Resolve parent class IDs to actual template IDs
+				var resolvedTargets = ResolveHandoverTargets(obj.HandoverTargets);
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "HandoverItem",
+					Type = "HandoverItem",
+					Target = new ListOrT<string>(resolvedTargets, null!),
+					Value = obj.Value,
+					OnlyFoundInRaid = false,
+					IsNecessary = true,
+					DynamicLocale = false
+				});
+			}
+			else if (obj.TraderLoyaltyId != null)
+			{
+				// Vanilla TraderLoyalty condition (top-level, not CounterCreator)
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "TraderLoyalty",
+					Type = "TraderLoyalty",
+					Value = obj.TraderLoyaltyLevel ?? 1,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string> { obj.TraderLoyaltyId }, obj.TraderLoyaltyId),
+					CompareMethod = ">="
+				});
+			}
 			else if (obj.VisitZoneId != null)
 			{
 				// Vanilla VisitPlace condition
@@ -388,6 +472,22 @@ public sealed class QuestFactory
 						ConditionType = "Location",
 						Target = new ListOrT<string>(obj.KillLocations, null!)
 					});
+				}
+
+				if (obj.KillEquipmentGroups is { Count: > 0 })
+				{
+					int equipIdx = 0;
+					foreach (var equipGroup in obj.KillEquipmentGroups)
+					{
+						counterConditions.Add(new QuestConditionCounterCondition
+						{
+							Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 160 + equipIdx)),
+							ConditionType = "Equipment",
+							Target = new ListOrT<string>(new List<string>(), ""),
+							EquipmentInclusive = equipGroup.Select(l => l.ToList()).ToList()
+						});
+						equipIdx++;
+					}
 				}
 
 				quest.Conditions.AvailableForFinish.Add(new QuestCondition

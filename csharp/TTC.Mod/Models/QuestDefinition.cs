@@ -138,8 +138,26 @@ public record QeObjective
     /// <summary>Maps for the health effect condition (excludes Factory by default like Zhivchik).</summary>
     public List<string>? HealthEffectLocations { get; init; }
 
+    // ── Vanilla TraderLoyalty condition (require trader at loyalty level X) ──
+
+    /// <summary>Trader ID for TraderLoyalty (e.g. Prapor = "54cb50c76803fa8b248b4571").</summary>
+    public string? TraderLoyaltyId { get; init; }
+
+    /// <summary>Required trader loyalty level.</summary>
+    public int? TraderLoyaltyLevel { get; init; }
+
+    // ── Vanilla Equipment condition on Kills (wear specific gear) ──
+
+    /// <summary>Equipment groups the player must wear for kills to count. Each entry is a separate Equipment condition (AND). Each sub-list within an entry is OR (any of those items).</summary>
+    public List<List<List<string>>>? KillEquipmentGroups { get; init; }
+
+    // ── Generic HandoverItem condition (hand over items by template or category) ──
+
+    /// <summary>Template IDs (or parent class IDs) of items to accept for handover.</summary>
+    public List<string>? HandoverTargets { get; init; }
+
     /// <summary>Whether this is a vanilla condition (true) or QE condition (false).</summary>
-    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null || HideoutAreaType != null || HealthEffectType != null;
+    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null || HideoutAreaType != null || HealthEffectType != null || TraderLoyaltyId != null || HandoverTargets != null;
 }
 
 /// <summary>

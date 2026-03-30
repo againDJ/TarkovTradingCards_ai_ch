@@ -1937,4 +1937,292 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 13 themes to be designed...*
+## Theme: Traders & Quests
+
+**15 cards** (1 Common, 5 Uncommon, 4 Rare, 2 Epic, 2 Legendary, 1 Secret)
+
+**Theme focus**: Each card references a vanilla trader or iconic quest. Objectives mirror the style of that trader — Prapor = combat, Therapist = healing, Jaeger = survival challenges, Mechanic = crafting, etc.
+
+### QUEST: [TRAD-0] The Middleman (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_traders_and_quests`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 100,000₽ from transactions *(Every trader relationship starts with money)*
+  - [QE: SearchContainer] Search 15 containers
+- **XP**: 1,000
+- **Description**: *"Traders are the backbone of Tarkov. Without them, you've got no ammo, no meds, no way out. Before I give you my notes on who's who, show me you know how to do business. Earn a hundred thousand roubles and search fifteen containers."*
+- **Rewards**:
+  - 1× Traders & Quests Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: [TRAD-1] First Contract [Common]
+- **Card**: Prapor "Debut Contract"
+- **ID Seed**: `ttc_quest_card_traders_prapor_debut`
+- **Prerequisites**: The Middleman (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs on Customs *(KillTarget: "Savage", KillLocations: ["bigmap"]) — Prapor's first quest is always Customs*
+- **Location**: Customs
+- **XP**: 1,000
+- **Description**: *"Prapor's Debut Contract. Every PMC's first job in Tarkov starts with Prapor and ends on Customs. Kill scavs, bring back loot, earn his trust. Ten scavs on Customs — the same way everyone starts."*
+- **Barter Unlocked**: Trade card → 2× IFAK
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: [TRAD-2] The Huntsman's Way [Uncommon]
+- **Card**: Jaeger "The Huntsman Path"
+- **ID Seed**: `ttc_quest_card_traders_jaeger_huntsman`
+- **Prerequisites**: First Contract (completed)
+- **Type**: Completion
+- **Location**: Woods
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Jaeger unlocked (LL1) *(TraderLoyaltyId: Jaeger, TraderLoyaltyLevel: 1)*
+  - [Vanilla: Survive] Survive and extract from Woods 3 times
+- **XP**: 3,000
+- **Description**: *"Jaeger's Huntsman Path. The old man lives in the woods — you need to find him first. Unlock Jaeger as a trader and survive three Woods raids. Walk the Huntsman's path."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: [TRAD-3] Frugal Hunter [Uncommon]
+- **Card**: Jaeger "Huntsman Frugality"
+- **ID Seed**: `ttc_quest_card_traders_jaeger_frugal`
+- **Prerequisites**: The Huntsman's Way (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: HealthLoss] Lose 1,000 HP total *(Jaeger wants you to suffer)*
+  - [QE: DestroyBodyPart] Have 3 body parts destroyed *(The Huntsman's path is painful)*
+- **XP**: 3,000
+- **Description**: *"Jaeger's Frugality. The Huntsman believes suffering builds character. Lose a thousand HP and have three body parts destroyed. Pain is temporary, the card is forever."*
+- **Barter Unlocked**: Trade card → 1× Salewa
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: [TRAD-4] No Rest [Uncommon]
+- **Card**: Prapor "No Rest for the Wicked"
+- **ID Seed**: `ttc_quest_card_traders_prapor_norest`
+- **Prerequisites**: Frugal Hunter (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 scavs *(KillTarget: "Savage")*
+  - [Vanilla: Kills] Eliminate 5 PMCs *(KillTarget: "AnyPmc")*
+- **XP**: 3,000
+- **Description**: *"Prapor never lets you rest. The moment you finish one job, he's got three more waiting. Scavs, PMCs, it doesn't matter — Prapor wants them all dead. Fifteen scavs and five PMCs. No rest for the wicked."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: [TRAD-5] Aquarius Protocol [Uncommon]
+- **Card**: Therapist "Operation Aquarius"
+- **ID Seed**: `ttc_quest_card_traders_therapist_aquarius`
+- **Prerequisites**: No Rest (completed)
+- **Type**: Completion
+- **Location**: Customs
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate the water stockpile in the dorms *(zone: "room206_water")*
+  - [Vanilla: Survive] Survive and extract from Customs *(oneSessionOnly — must be in same raid)*
+  - [Vanilla: HandoverItem] Hand over 3× Water bottle *(not FIR)*
+- **XP**: 3,000
+- **Description**: *"Therapist's Operation Aquarius. Find the water stockpile in the Customs dorms, extract alive in one raid, and bring back three water bottles. Just like the original quest, except this time Kolya's asking."*
+- **Barter Unlocked**: Trade card → 1× Aquamari
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: [TRAD-6] Medical Supplies [Uncommon]
+- **Card**: Therapist "Supply Plans"
+- **ID Seed**: `ttc_quest_card_traders_therapist_supply`
+- **Prerequisites**: Aquarius Protocol (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: HealthGain] Restore 2,000 HP total *(Therapist is all about healing)*
+  - [QE: RestoreBodyPart] Restore 5 body parts *(Bring the broken back to life)*
+- **XP**: 3,000
+- **Description**: *"Therapist's Supply Plans. She needs to know you can keep people alive, including yourself. Two thousand HP restored and five body parts brought back from zero. Show her the field medic way."*
+- **Barter Unlocked**: Trade card → 1× Grizzly medical kit
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: [TRAD-7] Gunsmith's Challenge [Rare]
+- **Card**: Mechanic "Gunsmith Part VII"
+- **ID Seed**: `ttc_quest_card_traders_mechanic_gunsmith`
+- **Prerequisites**: Medical Supplies (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 pistol grips *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 3 foregrips *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 3 scopes/sights *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 2 suppressors *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 2 muzzle devices *(any type, not FIR)*
+- **XP**: 10,000
+- **Description**: *"Mechanic's Gunsmith Challenge. The man sees every weapon as a puzzle — take it apart, put it back together better. Bring him five pistol grips, three foregrips, three scopes, two suppressors, and two muzzle devices. The gunsmith needs parts."*
+- **Barter Unlocked**: Trade card → 1× Weapon repair kit
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: [TRAD-8] Wet Work [Rare]
+- **Card**: Peacekeeper "Wet Job"
+- **ID Seed**: `ttc_quest_card_traders_peacekeeper_wetjob`
+- **Prerequisites**: Gunsmith's Challenge (completed)
+- **Type**: Elimination
+- **Location**: Shoreline
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Peacekeeper LL2 *(TraderLoyaltyId: Peacekeeper, TraderLoyaltyLevel: 2)*
+  - [Vanilla: Kills] Eliminate 10 PMCs on Shoreline *(KillTarget: "AnyPmc", KillLocations: ["Shoreline"])*
+  - [Vanilla: Survive] Survive and extract from Shoreline 5 times
+- **XP**: 10,000
+- **Description**: *"Peacekeeper's Wet Job. The man doesn't trust anyone below loyalty level two. Get his trust, then eliminate ten PMCs on Shoreline and survive five extractions. Wet work, clean payment."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: [TRAD-9] Chemical Warfare [Rare]
+- **Card**: Skier "Chemical Part 4"
+- **ID Seed**: `ttc_quest_card_traders_skier_chemical`
+- **Prerequisites**: Wet Work (completed)
+- **Type**: Completion
+- **Location**: Customs
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Skier LL2 *(TraderLoyaltyId: Skier, TraderLoyaltyLevel: 2)*
+  - [Vanilla: VisitPlace] Locate the transport with chemicals on Customs *(zone: "gazel")*
+  - [Vanilla: Survive] Survive and extract from Customs
+  - [QE: SearchContainer] Search 50 containers
+- **XP**: 10,000
+- **Description**: *"Skier's Chemical Part 4. The shadiest quest from the shadiest trader. Get his trust to level two, find the chemical transport on Customs, search fifty containers, and extract alive. Don't ask what the chemicals are for."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: [TRAD-10] Golden Exchange [Rare]
+- **Card**: Skier "Golden Swag Exchange"
+- **ID Seed**: `ttc_quest_card_traders_skier_golden`
+- **Prerequisites**: Chemical Warfare (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 1,000,000₽ from transactions *(Skier loves money)*
+  - [QE: LootItem] Loot 80 items
+- **XP**: 10,000
+- **Description**: *"Skier's Golden Swag Exchange. Everything has a price, and Skier knows them all. Earn a million roubles in transactions and loot eighty items. The golden exchange is always open."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: [TRAD-11] Gunsmith Mastery [Epic]
+- **Card**: Mechanic "Gunsmith Mastery"
+- **ID Seed**: `ttc_quest_card_traders_mechanic_mastery`
+- **Prerequisites**: Golden Exchange (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Mechanic LL3 *(TraderLoyaltyId: Mechanic, TraderLoyaltyLevel: 3)*
+  - [Vanilla: HandoverItem] Hand over 10 pistol grips *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 8 foregrips *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 5 scopes/sights *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 5 suppressors *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 5 muzzle devices *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 5 stocks *(any type, not FIR)*
+  - [Vanilla: HandoverItem] Hand over 5 handguards *(any type, not FIR)*
+- **XP**: 20,000
+- **Description**: *"Mechanic's Gunsmith Mastery. The master gunsmith wants a full arsenal of parts. Reach loyalty level three and bring him ten pistol grips, eight foregrips, five scopes, five suppressors, five muzzle devices, five stocks, and five handguards. Build the ultimate armory."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: [TRAD-12] The Fashion Show [Epic]
+- **Card**: Ragman "The Stylish One"
+- **ID Seed**: `ttc_quest_card_traders_ragman_stylish`
+- **Prerequisites**: Gunsmith Mastery (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Ragman LL3 *(TraderLoyaltyId: Ragman, TraderLoyaltyLevel: 3)*
+  - [Vanilla: Kills] Eliminate 10 PMCs while wearing a balaclava and scav vest *(KillTarget: "AnyPmc", KillEquipmentInclusive: balaclava IDs + scav vest IDs — same as Punisher Part 4)*
+- **XP**: 20,000
+- **Description**: *"Ragman's Stylish One. Fashion in Tarkov isn't about looking good — it's about looking dangerous while dressed like a scav. Reach Ragman LL3 and eliminate ten PMCs while wearing a balaclava and a scav vest. The deadliest fashion statement."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: [TRAD-13] Make Amends [Legendary]
+- **Card**: Lightkeeper "Make Amends"
+- **ID Seed**: `ttc_quest_card_traders_lightkeeper`
+- **Prerequisites**: The Fashion Show (completed)
+- **Type**: Completion
+- **Location**: Lighthouse
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 targets on Lighthouse *(KillTarget: "Any", KillLocations: ["Lighthouse"])*
+  - [Vanilla: HandoverItem] Hand over 1,000,000₽ in roubles *(The Lightkeeper demands payment)*
+- **XP**: 35,000
+- **Description**: *"Lightkeeper's Make Amends. The most mysterious trader in Tarkov. He doesn't take apologies — he takes cash. Eliminate twenty targets on Lighthouse and hand over a million roubles. Amends are expensive."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Intel) reward
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: [TRAD-14] The Punisher's Finale [Legendary]
+- **Card**: Prapor "Punisher Part 6"
+- **ID Seed**: `ttc_quest_card_traders_prapor_punisher`
+- **Prerequisites**: Make Amends (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Prapor LL3 *(TraderLoyaltyId: Prapor, TraderLoyaltyLevel: 3)*
+  - [Vanilla: Kills] Eliminate 30 PMCs *(KillTarget: "AnyPmc")*
+  - [Vanilla: Kills] Eliminate 20 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
+- **XP**: 35,000
+- **Description**: *"Prapor's Punisher Part 6. The final chapter of the most infamous quest chain in Tarkov. Thirty PMC kills, twenty of them headshots. This is where legends are forged and keyboards are broken."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Intel) reward
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: [TRAD-15] The Collector's Grind [Secret]
+- **Card**: Fence "The Collector"
+- **ID Seed**: `ttc_quest_card_traders_fence_collector`
+- **Prerequisites**: The Punisher's Finale (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 scavs *(KillTarget: "Savage")*
+  - [Vanilla: Kills] Eliminate 50 PMCs *(KillTarget: "AnyPmc")*
+  - [QE: SearchContainer] Search 200 containers *(Fence wants everything)*
+  - [Vanilla: HandoverItem] Hand over 50 jewelry items *(parent class: Jewelry — any ring, watch, figurine, etc.)*
+- **XP**: 60,000
+- **Description**: *"Fence's Collector. The ultimate grind. Fence wants everything — every kill, every container, and your shiniest loot. Fifty scavs, fifty PMCs, two hundred containers searched, and fifty pieces of jewelry handed over. This is the endgame of the endgame."*
+- **Barter Unlocked**: Trade card → 1× Item case
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: [TRAD-C] Kolya's Trader Handbook (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_traders_and_quests`
+- **Prerequisites**: The Collector's Grind (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 trader cards (1 of each, distinct)
+- **Description**: *"Every trader documented, every iconic quest referenced. From Prapor's debut to Fence's collector grind, you've walked in every trader's shoes. Hand over the cards and the Trader Handbook is complete."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 1× T H I C C Items Case
+  - +0.15 standing with Kolya
+- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+
+---
+
+## Barter Summary — Traders & Quests
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Prapor "Debut Contract" | Common | 2× IFAK |
+| 2 | Jaeger "Huntsman Path" | Uncommon | Random Scav Case (15K) |
+| 3 | Jaeger "Frugality" | Uncommon | 1× Salewa |
+| 4 | Prapor "No Rest" | Uncommon | Random Scav Case (15K) |
+| 5 | Therapist "Aquarius" | Uncommon | 1× Aquamari |
+| 6 | Therapist "Supply Plans" | Uncommon | 1× Grizzly |
+| 7 | Mechanic "Gunsmith VII" | Rare | 1× Weapon repair kit (HandoverItem quest) |
+| 8 | Peacekeeper "Wet Job" | Rare | Random Scav Case (95K) |
+| 9 | Skier "Chemical 4" | Rare | Random Scav Case (95K) |
+| 10 | Skier "Golden Swag" | Rare | Random Scav Case (95K) |
+| 11 | Mechanic "Gunsmith Mastery" | Epic | Random Scav Case (Moonshine) (HandoverItem quest) |
+| 12 | Ragman "Stylish One" | Epic | Random Scav Case (Moonshine) |
+| 13 | Lightkeeper "Make Amends" | Legendary | Random Scav Case (Intel) |
+| 14 | Prapor "Punisher 6" | Legendary | Random Scav Case (Intel) |
+| 15 | Fence "The Collector" | Secret | 1× Item case |
+| **Collection** | All 15 trader cards | — | 1× T H I C C Items Case |
+
+### New Condition Types Introduced
+- **Vanilla: TraderLoyalty** — require trader at specific loyalty level
+- **Vanilla: Equipment** — kill counter sub-condition requiring player to wear specific gear
+- **Vanilla: HandoverItem (weapon parts)** — hand over weapon accessories by category
+- **QE: RestoreBodyPart** — restore destroyed body parts
+- **QE: DestroyBodyPart** — (already used in Many Ways to Die)
+
+---
+
+*Remaining 12 themes to be designed...*

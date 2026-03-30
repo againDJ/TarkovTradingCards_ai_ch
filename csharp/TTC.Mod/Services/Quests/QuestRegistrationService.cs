@@ -46,6 +46,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(FactionsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(ManyWaysToDieThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(PlayerArchetypesThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(TradersThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

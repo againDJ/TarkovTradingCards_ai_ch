@@ -165,6 +165,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(FactionsThemeDefinitions.GetAll());
 				allDefs.AddRange(ManyWaysToDieThemeDefinitions.GetAll());
 				allDefs.AddRange(PlayerArchetypesThemeDefinitions.GetAll());
+				allDefs.AddRange(TradersThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 

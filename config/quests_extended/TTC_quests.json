@@ -604,5 +604,44 @@
     "Conditions": [
       { "ConditionId": "6f7a69de224787c856c2b2af", "ConditionType": "KillsWithoutADS" }
     ]
+  },
+  "47ede8c0a54a6989e6d56a4a": {
+    "QuestId": "47ede8c0a54a6989e6d56a4a",
+    "QuestName": "The Middleman",
+    "Conditions": [
+      { "ConditionId": "40228438e77cac9f8c1d6f27", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "1ce2dafa1a451133386d533b", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "fab83defaa12c5f90311bffc": {
+    "QuestId": "fab83defaa12c5f90311bffc",
+    "QuestName": "Frugal Hunter",
+    "Conditions": [
+      { "ConditionId": "b26df98ec41b682457326b13", "ConditionType": "HealthLoss" },
+      { "ConditionId": "74cb8276af686fa646453c7c", "ConditionType": "DestroyBodyPart" }
+    ]
+  },
+  "ddfda3b813a53f6b8ff48994": {
+    "QuestId": "ddfda3b813a53f6b8ff48994",
+    "QuestName": "Medical Supplies",
+    "Conditions": [
+      { "ConditionId": "4a23bd830b9be3e710d1ca50", "ConditionType": "HealthGain" },
+      { "ConditionId": "c7ad41ab144eb5c5fe32a0a4", "ConditionType": "RestoreBodyPart" }
+    ]
+  },
+  "bacd89df022ad582d471e120": {
+    "QuestId": "bacd89df022ad582d471e120",
+    "QuestName": "Chemical Warfare",
+    "Conditions": [
+      { "ConditionId": "596028939dad218ec3b92693", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "f881759e05a098c3f71ebb96": {
+    "QuestId": "f881759e05a098c3f71ebb96",
+    "QuestName": "Golden Exchange",
+    "Conditions": [
+      { "ConditionId": "2aa4f4167f211ddc533f4615", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "8e673420f1ecc46fc46d6627", "ConditionType": "LootItem" }
+    ]
   }
 }
