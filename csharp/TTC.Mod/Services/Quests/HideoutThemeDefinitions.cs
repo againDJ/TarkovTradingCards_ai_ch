@@ -497,7 +497,6 @@ public static class HideoutThemeDefinitions
 					SuccessMessage = "The Hideout Compendium is complete. Master builder."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = PhysicalBitcoin, Count = 5 }, new() { TemplateId = GraphicsCard, Count = 5 } }
 			}

@@ -98,6 +98,92 @@ public sealed class RandomRewardService
 		}
 	}
 
+	// Parent class IDs for random pool generation
+	private static readonly string[] MedBaseClasses = {
+		"5448f39d4bdc2d0a728b4568", // Medkit
+		"5448f3a14bdc2d27728b4569", // Drug
+		"5448f3a64bdc2d60728b456a"  // Stimulator
+	};
+	private static readonly string KeyMechanicalClass = "5c99f98d86f7745c314214b3";
+
+	private List<MongoId>? _medPool;
+	private List<MongoId>? _keyPool;
+
+	/// <summary>
+	/// Generate random med/key rewards by picking count items from the pool (with duplicates possible).
+	/// </summary>
+	public List<Item> GenerateRandomPoolReward(RandomRewardType type, int count)
+	{
+		try
+		{
+			var pool = type == RandomRewardType.RandomMeds ? GetMedPool() : GetKeyPool();
+			if (pool.Count == 0)
+			{
+				_logger.Warning($"[TTC][RandomReward] Empty pool for {type}");
+				return new List<Item>();
+			}
+
+			var items = new List<Item>();
+			for (int i = 0; i < count; i++)
+			{
+				var tpl = _randomUtil.GetArrayValue(pool);
+				items.Add(new Item
+				{
+					Id = new MongoId(),
+					Template = tpl,
+					Upd = new Upd { StackObjectsCount = 1, SpawnedInSession = true }
+				});
+			}
+
+			_logger.Info($"[TTC][RandomReward] Generated {count} random {type} items");
+			return items;
+		}
+		catch (Exception ex)
+		{
+			_logger.Error($"[TTC][RandomReward] Failed to generate {type} rewards: {ex.Message}");
+			return new List<Item>();
+		}
+	}
+
+	private List<MongoId> GetMedPool()
+	{
+		if (_medPool != null) return _medPool;
+		_medPool = BuildBaseClassPool(MedBaseClasses);
+		return _medPool;
+	}
+
+	private List<MongoId> GetKeyPool()
+	{
+		if (_keyPool != null) return _keyPool;
+		_keyPool = BuildBaseClassPool(new[] { KeyMechanicalClass });
+		return _keyPool;
+	}
+
+	private List<MongoId> BuildBaseClassPool(string[] baseClassIds)
+	{
+		var items = _databaseService.GetItems();
+		var pool = new List<MongoId>();
+
+		foreach (var kvp in items)
+		{
+			var template = kvp.Value;
+			if (template.Type != "Item") continue;
+			if (template.Properties?.QuestItem == true) continue;
+			if (template.Properties?.IsUnbuyable == true) continue;
+
+			foreach (var baseClass in baseClassIds)
+			{
+				if (_itemHelper.IsOfBaseclass(kvp.Key, baseClass))
+				{
+					pool.Add(kvp.Key);
+					break;
+				}
+			}
+		}
+
+		return pool;
+	}
+
 	/// <summary>
 	/// Generate random cultist circle rewards within a rouble budget.
 	/// Reproduces CircleOfCultistService logic including quest/hideout item rewards.

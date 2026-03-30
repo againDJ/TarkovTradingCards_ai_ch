@@ -518,7 +518,6 @@ public static class ManyWaysToDieThemeDefinitions
 					SuccessMessage = "The Book of the Dead is complete. Rest in peace... or not."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = RedRebel } }
 			}

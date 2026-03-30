@@ -73,15 +73,21 @@ public sealed class RewardCrateFactory
 					RandomRewardType.ScavCase15000 => "15K Scav Case",
 					RandomRewardType.ScavCase2500 => "2.5K Scav Case",
 					RandomRewardType.CultistCircle => "Cultist Offering",
+					RandomRewardType.RandomMeds => "Medical Supply",
+					RandomRewardType.RandomKeys => "Key Lottery",
 					_ => "Mystery Crate"
 				};
 				shortName = randomCount > 1 ? $"{randomCount}x {baseName}" : baseName;
 				name = shortName;
-				description = randomType.Value == RandomRewardType.CultistCircle
-					? "A mysterious package from Kolya. The cultist circle has spoken — the contents are unknown until opened."
-					: randomCount > 1
+				description = randomType.Value switch
+				{
+					RandomRewardType.CultistCircle => "A mysterious package from Kolya. The cultist circle has spoken — the contents are unknown until opened.",
+					RandomRewardType.RandomMeds => $"A medical supply crate from Kolya. Contains {randomCount} random medical items — medkits, drugs, or stimulators.",
+					RandomRewardType.RandomKeys => $"A key collection from Kolya's scav network. Contains {randomCount} random keys — could be worthless, could open a fortune.",
+					_ => randomCount > 1
 						? $"A package from Kolya's scav network. Contains {randomCount} independent random rolls — each delivered as a separate message."
-						: "A package from Kolya's scav network. The contents are random — could be junk, could be gold.";
+						: "A package from Kolya's scav network. The contents are random — could be junk, could be gold."
+				};
 			}
 			else
 			{
@@ -123,7 +129,9 @@ public sealed class RewardCrateFactory
 					RandomRewardType.ScavCaseMoonshine => "violet",
 					RandomRewardType.ScavCaseIntel => "orange",
 					RandomRewardType.CultistCircle => "red",
-					_ => "yellow"
+					RandomRewardType.RandomMeds => "blue",
+					RandomRewardType.RandomKeys => "yellow",
+					_ => "grey"
 				},
 				Weight = 0.5f,
 				ItemSound = containerBase.item_sound,

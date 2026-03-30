@@ -162,29 +162,46 @@ public sealed class RewardCrateRouter(
 				if (randomType != null)
 				{
 					var rollCount = registry.GetRandomCount(tpl);
-					for (int roll = 0; roll < rollCount; roll++)
-					{
-						var randomItems = randomType.Value switch
-						{
-							RandomRewardType.ScavCase2500 or RandomRewardType.ScavCase15000 or
-							RandomRewardType.ScavCase95000 or RandomRewardType.ScavCaseMoonshine or
-							RandomRewardType.ScavCaseIntel => randomRewardService.GenerateScavCaseReward(randomType.Value),
-							RandomRewardType.CultistCircle => randomRewardService.GenerateCultistCircleReward(sessionId),
-							_ => new List<Item>()
-						};
 
+					if (randomType.Value is RandomRewardType.RandomMeds or RandomRewardType.RandomKeys)
+					{
+						// Pool-based: pick rollCount items, send in one mail
+						var randomItems = randomRewardService.GenerateRandomPoolReward(randomType.Value, rollCount);
 						if (randomItems.Count > 0)
 						{
 							mailSend.SendDirectNpcMessageToPlayer(
-								sessionId,
-								QuestIds.KolyaTraderId,
-								MessageType.MessageWithItems,
-								randomType.Value == RandomRewardType.CultistCircle
-									? "The circle has spoken. Accept its offerings."
-									: "My scav network came through. Here's what they found.",
-								randomItems
-							);
-							logger.Info($"[TTC][RewardCrate] Sent {randomItems.Count} random items ({randomType.Value}, roll {roll + 1}/{rollCount}) via mail for crate {tpl[..8]}...");
+								sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+								randomType.Value == RandomRewardType.RandomKeys
+									? "Found some keys in a dead scav's pockets. Maybe one of them opens something good."
+									: "Raided a medical supply cache. Here's what was inside.",
+								randomItems);
+							logger.Info($"[TTC][RewardCrate] Sent {randomItems.Count} random {randomType.Value} items via mail for crate {tpl[..8]}...");
+						}
+					}
+					else
+					{
+						// ScavCase/CultistCircle: each roll is a separate generation + mail
+						for (int roll = 0; roll < rollCount; roll++)
+						{
+							var randomItems = randomType.Value switch
+							{
+								RandomRewardType.ScavCase2500 or RandomRewardType.ScavCase15000 or
+								RandomRewardType.ScavCase95000 or RandomRewardType.ScavCaseMoonshine or
+								RandomRewardType.ScavCaseIntel => randomRewardService.GenerateScavCaseReward(randomType.Value),
+								RandomRewardType.CultistCircle => randomRewardService.GenerateCultistCircleReward(sessionId),
+								_ => new List<Item>()
+							};
+
+							if (randomItems.Count > 0)
+							{
+								mailSend.SendDirectNpcMessageToPlayer(
+									sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+									randomType.Value == RandomRewardType.CultistCircle
+										? "The circle has spoken. Accept its offerings."
+										: "My scav network came through. Here's what they found.",
+									randomItems);
+								logger.Info($"[TTC][RewardCrate] Sent {randomItems.Count} random items ({randomType.Value}, roll {roll + 1}/{rollCount}) via mail for crate {tpl[..8]}...");
+							}
 						}
 					}
 					continue;

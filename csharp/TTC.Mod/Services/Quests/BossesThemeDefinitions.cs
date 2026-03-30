@@ -593,7 +593,6 @@ public static class BossesThemeDefinitions
 					SuccessMessage = "The complete Boss Compendium. You've earned this, legend."
 				},
 				XpReward = 50000,
-				RoubleReward = 500000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = ThiccItemCase } }
 			}

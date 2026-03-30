@@ -14,7 +14,9 @@ public enum RandomRewardType
 	ScavCase95000,      // 95,000₽ — rare + superrare
 	ScavCaseMoonshine,  // Moonshine — superrare heavy
 	ScavCaseIntel,      // Intelligence folder — best odds
-	CultistCircle       // 5M rouble budget, includes quest/hideout items
+	CultistCircle,      // 5M rouble budget, includes quest/hideout items
+	RandomMeds,         // Random pick from all medkits, drugs, and stimulators
+	RandomKeys          // Random pick from all mechanical keys (no keycards)
 }
 
 [Injectable]

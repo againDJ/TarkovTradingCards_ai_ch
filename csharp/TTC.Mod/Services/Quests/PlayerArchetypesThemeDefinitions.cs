@@ -629,7 +629,6 @@ public static class PlayerArchetypesThemeDefinitions
 					SuccessMessage = "The Field Guide is complete. Every archetype documented."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = T7Thermal } }
 			}

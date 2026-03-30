@@ -588,7 +588,6 @@ public static class IconicLocationsThemeDefinitions
 					SuccessMessage = "The Atlas of Tarkov is complete. Every location documented."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
 				StandingReward = 0.15,
 				ItemRewards = new()
 				{

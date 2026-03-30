@@ -48,6 +48,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(PlayerArchetypesThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(TradersThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(ScavLifeThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(MemorableQuestItemsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

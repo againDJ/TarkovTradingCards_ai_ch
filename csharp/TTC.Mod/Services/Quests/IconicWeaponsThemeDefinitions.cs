@@ -672,7 +672,6 @@ public static class IconicWeaponsThemeDefinitions
 					SuccessMessage = "The Arsenal Codex is complete. A masterwork of destruction."
 				},
 				XpReward = 50000,
-				RoubleReward = 500000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = ThiccWeaponsCase } }
 			}

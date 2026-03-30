@@ -566,7 +566,6 @@ public static class FactionsThemeDefinitions
 					SuccessMessage = "The Faction Dossier is complete. Every allegiance documented."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = ThiccWeaponCase } }
 			}

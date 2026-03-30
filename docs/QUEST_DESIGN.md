@@ -2489,4 +2489,224 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 11 themes to be designed...*
+## Theme: Memorable Quest Items
+
+**15 cards** (1 Common, 5 Uncommon, 5 Rare, 2 Epic, 1 Legendary, 1 Secret)
+
+Prefix: **[ITEM]** — Focuses on HandoverItem of iconic vanilla quest items, combined with crafting, hideout, medical, and economy conditions. Each quest mirrors the feel of the original Tarkov quest that made that item infamous. **All HandoverItem objectives are NOT FIR** — items can come from flea, barters, or crafting.
+
+**New reward crate types introduced:**
+- **Random Meds** — picks X random items from all medkits, drugs, and stimulators in the game
+- **Random Keys** — picks X random mechanical keys (no keycards)
+
+### [ITEM-0] QUEST: The Quest Board (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_memorable_quest_items`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 food items *(parent class: Food)*
+  - [QE: SearchContainer] Search 20 containers
+- **Description**: *"Every quest starts with supplies. Before Kolya shares his notes on the items that defined Tarkov's quest system, bring back some provisions and search a few containers. You'll be doing a lot of both if you want to complete this collection."*
+- **Rewards**:
+  - 1× Memorable Quest Items Binder
+  - 1,000 XP
+- **Unlocks**: First card quest (Pocket Watch)
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [ITEM-1] QUEST: The Pocket Watch [Common]
+- **Card**: Bronze Pocket Watch
+- **ID Seed**: `ttc_quest_card_item_pocketwatch`
+- **Location**: Customs
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Customs 2 times
+  - [QE: SearchContainer] Search 15 containers
+- **Description**: *"Every PMC's first real objective in Customs — head to the truck near the construction site, pop the lock, and pray nobody's waiting. Survive two Customs raids and search fifteen containers. Just like the old days."*
+- **Rewards**: 1,000 XP, Bronze Pocket Watch card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [ITEM-2] QUEST: The Huntsman's Note [Uncommon]
+- **Card**: Jaeger's Letter
+- **ID Seed**: `ttc_quest_card_item_jaegerletter`
+- **Location**: Woods
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Woods 3 times
+  - [Vanilla: HandoverItem] Hand over 5 food items *(parent class: Food/Drink)*
+- **Description**: *"Deep in the Woods near a wrecked plane, an old hunter left a message. Finding it means finding Jaeger himself. Survive three Woods raids and bring back provisions — the Huntsman appreciates a well-fed operative."*
+- **Rewards**: 3,000 XP, Jaeger's Letter card
+- **Barter**: Random Scav Case (15K)
+
+#### [ITEM-3] QUEST: Golden Flame [Uncommon]
+- **Card**: Golden Zibbo Lighter
+- **ID Seed**: `ttc_quest_card_item_zibbo`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 75,000₽ from transactions
+  - [Vanilla: HandoverItem] Hand over 1 Zibbo lighter
+- **Description**: *"A collector's item passed between traders like currency. Therapist wanted it, Mechanic admired it, and everyone searched for it. Earn seventy-five thousand roubles and bring back a Zibbo. The golden flame finds a new home."*
+- **Rewards**: 3,000 XP, Golden Zibbo Lighter card
+- **Barter**: 1× Roler Submariner gold watch
+
+#### [ITEM-4] QUEST: The Analyzer Grind [Uncommon]
+- **Card**: Gas Analyzer
+- **ID Seed**: `ttc_quest_card_item_gasanalyzer`
+- **Objectives**:
+  - [QE: SearchContainer] Search 40 containers
+  - [Vanilla: HandoverItem] Hand over 2 gas analyzers
+- **Description**: *"The item that broke a thousand keyboards. Every new PMC spends their first week searching every filing cabinet, every shelf, every tech crate for this cursed device. Search forty containers and hand over two gas analyzers. Welcome to the grind."*
+- **Rewards**: 3,000 XP, Gas Analyzer card
+- **Barter**: 1× Gas Analyzer
+
+#### [ITEM-5] QUEST: Chemical Recipes [Uncommon]
+- **Card**: Reagent Bottle #3
+- **ID Seed**: `ttc_quest_card_item_reagentbottle`
+- **Objectives**:
+  - [QE: CraftAnyItem] Craft 5 items in the hideout
+  - [Vanilla: HandoverItem] Hand over 3 drugs/stimulators *(parent class: Drugs + Stimulator)*
+- **Description**: *"Skier's chemistry quest line turned every PMC into an amateur pharmacist. Craft five items in your hideout and hand over three drugs or stimulants. The formula demands ingredients."*
+- **Rewards**: 3,000 XP, Reagent Bottle #3 card
+- **Barter**: Random Meds (3 items)
+
+#### [ITEM-6] QUEST: The Keymaster [Uncommon]
+- **Card**: Unknown Key with Note
+- **ID Seed**: `ttc_quest_card_item_unknownkey`
+- **Objectives**:
+  - [QE: SearchContainer] Search 30 containers
+  - [Vanilla: HandoverItem] Hand over 3 keys *(parent class: KeyMechanical, no keycards)*
+- **Description**: *"Found in a jacket pocket with a cryptic note attached. Every key in Tarkov hides a story and a room full of loot. Search thirty containers and hand over three keys — the keymaster's offering."*
+- **Rewards**: 3,000 XP, Unknown Key with Note card
+- **Barter**: Random Keys (3 items)
+
+#### [ITEM-7] QUEST: Data Recovery [Rare]
+- **Card**: Secure Flash Drive
+- **ID Seed**: `ttc_quest_card_item_flashdrive`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3 secure flash drives
+  - [QE: SearchContainer] Search 50 containers
+- **Description**: *"Every intelligence operative needs data. These drives show up in filing cabinets, computer towers, and the occasional dead scav's pocket. Hand over three flash drives and search fifty containers. Data recovery is a slow business."*
+- **Rewards**: 10,000 XP, Secure Flash Drive card
+- **Barter**: 3× Secure Flash Drive
+
+#### [ITEM-8] QUEST: Heavy Lifting [Rare]
+- **Card**: Car Battery
+- **ID Seed**: `ttc_quest_card_item_carbattery`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 2 car batteries
+  - [QE: CompleteWorkout] Complete 1 gym workout
+- **Description**: *"Twelve kilos of lead and acid that every PMC has lugged across a map at least once. The weight slows you down, the fear speeds you up. Hand over two car batteries and hit the gym. You'll need the strength."*
+- **Rewards**: 10,000 XP, Car Battery card
+- **Barter**: 2× Car Battery
+
+#### [ITEM-9] QUEST: Sample Collection [Rare]
+- **Card**: Chemical Sample Vials
+- **ID Seed**: `ttc_quest_card_item_samplevials`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3 saline solutions
+  - [QE: HealthGain] Restore 2,000 HP total
+- **Description**: *"Medical research in Tarkov requires steady hands and a strong stomach. Collect three saline solutions and restore two thousand health points. Science demands sacrifice."*
+- **Rewards**: 10,000 XP, Chemical Sample Vials card
+- **Barter**: Random Meds (5 items)
+
+#### [ITEM-10] QUEST: Power Grid [Rare]
+- **Card**: Military Power Filter
+- **ID Seed**: `ttc_quest_card_item_powerfilter`
+- **Objectives**:
+  - [Vanilla: HideoutArea] Upgrade Generator to level 2
+  - [Vanilla: HandoverItem] Hand over 20 electronic components *(parent class: Electronics — wires, light bulbs, PCBs, capacitors, etc.)*
+- **Description**: *"The backbone of every hideout's electrical system. Without it, the generator stays at level one and half your crafts don't work. Upgrade your generator to level two and bring back twenty electronic components."*
+- **Rewards**: 10,000 XP, Military Power Filter card
+- **Barter**: Random Scav Case (95K)
+
+#### [ITEM-11] QUEST: Field Medic Protocol [Rare]
+- **Card**: Blood Sample Kit
+- **ID Seed**: `ttc_quest_card_item_bloodsamplekit`
+- **Objectives**:
+  - [QE: HealthGain] Restore 3,000 HP total
+  - [QE: RestoreBodyPart] Restore 5 body parts
+- **Description**: *"Therapist's medical quests taught every PMC the value of field medicine. Restore three thousand health points and bring five body parts back from zero. The field medic protocol never ends."*
+- **Rewards**: 10,000 XP, Blood Sample Kit card
+- **Barter**: Random Meds (5 items)
+
+#### [ITEM-12] QUEST: The Holy Grail [Epic]
+- **Card**: LEDX Skin Transilluminator
+- **ID Seed**: `ttc_quest_card_item_ledx`
+- **Objectives**:
+  - [QE: SearchContainer] Search 100 containers
+  - [Vanilla: HandoverItem] Hand over 1 LEDX Skin Transilluminator
+  - [QE: LootItem] Loot 100 items
+- **Description**: *"The most sought-after medical device in Tarkov. Found in medical rooms behind locked doors, fought over by squads, worth more than most loadouts combined. Search a hundred containers, loot a hundred items, and hand over one LEDX. The holy grail of quest items."*
+- **Rewards**: 20,000 XP, LEDX Skin Transilluminator card
+- **Barter**: 1× LEDX Skin Transilluminator
+
+#### [ITEM-13] QUEST: Digital Gold [Epic]
+- **Card**: Tetriz Portable Game Console
+- **ID Seed**: `ttc_quest_card_item_tetriz`
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Bitcoin Farm level 2
+  - [QE: EarnMoneyOnTransaction] Earn 3,000,000₽ from transactions
+- **Description**: *"Not just a nostalgic toy — it's the key to Bitcoin farming. Every PMC who's maxed their Bitcoin farm knows the Tetriz-to-Bitcoin pipeline. Reach Bitcoin Farm level two and earn three million roubles. Digital gold."*
+- **Rewards**: 20,000 XP, Tetriz Portable Game Console card
+- **Barter**: 1× Bitcoin
+
+#### [ITEM-14] QUEST: The Behemoth [Legendary]
+- **Card**: Tank Battery
+- **ID Seed**: `ttc_quest_card_item_tankbattery`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 1 tank battery
+  - [QE: OverEncumberedTimeInSeconds] Spend 300 seconds (5 min) overencumbered
+  - [QE: CompleteWorkout] Complete 10 gym workouts
+- **Description**: *"Sixty-five kilograms of raw power. Finding one is hard enough — extracting with it is the real challenge. Your movement speed drops to nothing, and every PMC on the map can hear you shuffling. Hand over a tank battery, spend five minutes overweight in raids, and hit the gym ten times. Only the strongest carry the Behemoth."*
+- **Rewards**: 35,000 XP, Tank Battery card
+- **Barter**: 1× Tank Battery
+
+#### [ITEM-15] QUEST: The Intelligence Network [Secret]
+- **Card**: Folder with Intelligence
+- **ID Seed**: `ttc_quest_card_item_intelfolder`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3 intelligence folders
+  - [QE: EarnMoneyOnTransaction] Earn 5,000,000₽ from transactions
+  - [QE: SearchContainer] Search 200 containers
+- **Description**: *"The ultimate quest currency. Every high-tier quest and scav case demands intelligence folders. They contain classified documents, operational data, and the kind of information that makes or breaks operations. Hand over three folders, earn five million roubles, and search two hundred containers. Intelligence is everything."*
+- **Rewards**: 60,000 XP, Folder with Intelligence card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [ITEM-C] QUEST: Kolya's Quest Museum [Collection]
+- **ID Seed**: `ttc_quest_collection_memorable_quest_items`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 quest item cards (one of each, not FIR)
+- **Description**: *"Every item documented, every quest referenced. From the Bronze Pocket Watch to the Intelligence Folder, you've collected the artifacts that define Tarkov's quest system. Hand over the cards and complete the museum."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Mr. Holodilnick + Keytool + Medicine Case
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Bronze Pocket Watch | Common | Random Scav Case (2.5K) |
+| 2 | Jaeger's Letter | Uncommon | Random Scav Case (15K) |
+| 3 | Golden Zibbo Lighter | Uncommon | 1× Roler Submariner gold watch |
+| 4 | Gas Analyzer | Uncommon | 1× Gas Analyzer |
+| 5 | Reagent Bottle #3 | Uncommon | Random Meds (3 items) |
+| 6 | Unknown Key with Note | Uncommon | Random Keys (3 items) |
+| 7 | Secure Flash Drive | Rare | 3× Secure Flash Drive |
+| 8 | Car Battery | Rare | 2× Car Battery |
+| 9 | Chemical Sample Vials | Rare | Random Meds (5 items) |
+| 10 | Military Power Filter | Rare | Random Scav Case (95K) |
+| 11 | Blood Sample Kit | Rare | Random Meds (5 items) |
+| 12 | LEDX | Epic | 1× LEDX |
+| 13 | Tetriz | Epic | 1× Bitcoin |
+| 14 | Tank Battery | Legendary | 1× Tank Battery |
+| 15 | Intel Folder | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 quest item cards | — | Mr. Holodilnick + Keytool + Medicine Case |
+
+---
+
+*Remaining 10 themes to be designed...*

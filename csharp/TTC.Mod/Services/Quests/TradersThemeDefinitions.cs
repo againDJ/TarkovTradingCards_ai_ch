@@ -565,7 +565,6 @@ public static class TradersThemeDefinitions
 					SuccessMessage = "The Trader Handbook is complete. Every deal documented."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
 				StandingReward = 0.15,
 				ItemRewards = new() { new() { TemplateId = WeaponCase }, new() { TemplateId = ItemCase }, new() { TemplateId = InjectorCase } }
 			}

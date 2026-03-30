@@ -573,7 +573,7 @@ public static class ScavLifeThemeDefinitions
 					SuccessMessage = "The Scav Almanac is complete. Long live the scav life."
 				},
 				XpReward = 50000,
-				RoubleReward = 750000,
+
 				StandingReward = 0.15,
 				ItemRewards = new()
 				{
