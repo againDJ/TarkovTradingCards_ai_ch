@@ -79,6 +79,25 @@ public record QeObjective
     /// <summary>Weapon template ID filter: only kills with these specific weapons count.</summary>
     public List<string>? KillWeapons { get; init; }
 
+    /// <summary>Weapon mods that MUST be on the weapon (e.g., suppressor IDs). Each inner list is OR'd.</summary>
+    public List<List<string>>? KillWeaponModsInclusive { get; init; }
+
+    /// <summary>Weapon mods that must NOT be on the weapon (e.g., scope IDs for iron sights only).</summary>
+    public List<List<string>>? KillWeaponModsExclusive { get; init; }
+
+    /// <summary>Weapon caliber filter (e.g., ["5.56x45"], ["7.62x39"]).</summary>
+    public List<string>? KillWeaponCaliber { get; init; }
+
+    /// <summary>Time of day filter: {"from":22,"to":7} for night kills.</summary>
+    public int? KillDaytimeFrom { get; init; }
+    public int? KillDaytimeTo { get; init; }
+
+    /// <summary>If true, kill counter resets to 0 at end of raid (= must complete kills in a single raid).</summary>
+    public bool KillResetOnSessionEnd { get; init; }
+
+    /// <summary>If true on the parent CounterCreator, ALL sub-conditions must be met in a single raid.</summary>
+    public bool OneSessionOnly { get; init; }
+
     // ── Vanilla VisitPlace condition (when set, creates a VisitPlace counter condition) ──
 
     /// <summary>Zone ID for VisitPlace (e.g. "huntsman_001", "room214").</summary>

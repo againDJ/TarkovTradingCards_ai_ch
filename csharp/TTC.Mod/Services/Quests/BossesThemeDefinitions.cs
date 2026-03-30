@@ -168,7 +168,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Hunter's Dossier",
+					Name = "[BOSS-0] The Hunter's Dossier",
 					Description = "So you want to start documenting the bosses of Tarkov? That's not for the faint-hearted, friend. These aren't your average scavs \u2014 each one of them has carved a bloody legend into this city. Before I hand over my dossier binder, I need to know you can at least handle yourself in a firefight. Go out there, take down three hostiles with precision \u2014 aimed shots, no spray-and-pray. Come back alive and the binder is yours.",
 					Note = "Get 3 ADS kills to prove yourself, then receive the Bosses & Mini-Bosses binder.",
 					SuccessMessage = "Solid work. Here's your dossier binder \u2014 fill it up."
@@ -190,7 +190,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Ghost of the Pines",
+					Name = "[BOSS-1] Ghost of the Pines",
 					Description = "The Partisan... now there's a ghost story. He moves through the pines of Woods like he's part of the forest itself. Some say he's ex-military, others say he's just a man with nothing left to lose. Either way, if you spot him, you're probably already flanked. Show me you understand guerrilla tactics \u2014 take down ten targets while staying low and quiet.",
 					Note = "Kill 10 enemies while crouched.",
 					SuccessMessage = "Silent and deadly. The Partisan would approve."
@@ -211,7 +211,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Sawmill's Glint",
+					Name = "[BOSS-2] The Sawmill's Glint",
 					Description = "Shturman doesn't miss. He sits up in that sawmill like a spider in its web, SVD ready. By the time you see the glint off his scope, you're already calculating if your armor can take the hit. Spoiler: it usually can't. I need you to put in some serious range time with a marksman rifle \u2014 show me you understand the art of the long shot.",
 					Note = "Deal 1,000 damage with DMRs.",
 					SuccessMessage = "Good shooting. Shturman would tip his hat."
@@ -232,7 +232,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Blink and You're Dead",
+					Name = "[BOSS-3] Blink and You're Dead",
 					Description = "Birdeye is The Goons' eyes. Perched somewhere you'd never think to look, watching through thermals while you loot that body thinking you're safe. The man is a phantom \u2014 and his shots come from distances that make you question reality. I want you to channel that energy. Get some long-range trigger time in with a proper sniper rifle. One kilometer of cumulative shots. Make every round count.",
 					Note = "Accumulate 1,000m total sniper shot distance.",
 					SuccessMessage = "That's some serious range work. Birdeye-level."
@@ -253,7 +253,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Six Guards, Zero Mercy",
+					Name = "[BOSS-4] Six Guards, Zero Mercy",
 					Description = "Glukhar runs Reserve like it's his personal kingdom. Six heavily armed guards surround him at all times \u2014 and they don't hesitate. The man himself carries enough firepower to level a building. Dealing with him means dealing with an army. I need you to put in serious work with an assault rifle. Five thousand damage worth of lead \u2014 make even Glukhar's boys think twice.",
 					Note = "Deal 5,000 damage with assault rifles.",
 					SuccessMessage = "That's some firepower. Glukhar's guards would be nervous."
@@ -274,7 +274,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The PMC Butcher's Bill",
+					Name = "[BOSS-5] The PMC Butcher's Bill",
 					Description = "Kollontay earned his nickname the hard way. PMCs avoid his patrol routes like the plague \u2014 and the ones who don't... well, let's just say he doesn't take prisoners. The man is armored head to toe and his entourage is no different. You want this card? Show me you know how to shred through protection. Twenty-five hundred points of armor damage.",
 					Note = "Deal 2,500 damage to armor.",
 					SuccessMessage = "You know how to crack armor. Impressive."
@@ -299,7 +299,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Bad Medicine",
+					Name = "[BOSS-6] Bad Medicine",
 					Description = "Sanitar is... complicated. Half doctor, half lunatic, all dangerous. He patches himself up mid-firefight like it's a minor inconvenience. His syringes are legendary \u2014 nobody knows exactly what's in them, but they work. Fast. If you want to earn this card, you need to understand the value of staying alive. Patch yourself up \u2014 a lot. One thousand hit points restored. Just like the Mad Surgeon himself.",
 					Note = "Restore 1,000 HP total.",
 					SuccessMessage = "The Mad Surgeon would be proud of your resilience."
@@ -320,7 +320,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Frag Out",
+					Name = "[BOSS-7] Frag Out",
 					Description = "Big Pipe doesn't do subtlety. The man carries a grenade launcher like other people carry a sidearm, and when he's not raining explosives, he's in your face with raw firepower. Every corner he defends is pre-fragged, every hallway a kill zone. You want to understand Big Pipe? Grab something loud, get close, and make it hurt. Five thousand damage with shotguns.",
 					Note = "Deal 5,000 damage with shotguns.",
 					SuccessMessage = "Loud and brutal. Big Pipe approves."
@@ -341,7 +341,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Tarkov's Traffic Cop",
+					Name = "[BOSS-8] Tarkov's Traffic Cop",
 					Description = "Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place \u2014 and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. One hour encumbered should give you a real taste.",
 					Note = "Spend 60 minutes encumbered.",
 					SuccessMessage = "Now you know what it's like to be Kaban."
@@ -366,7 +366,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Golden TT",
+					Name = "[BOSS-9] Golden TT",
 					Description = "Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs like his personal fiefdom since day one. The golden TT is his signature \u2014 flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and put in the work. Five thousand damage \u2014 make Reshala proud.",
 					Note = "Deal 5,000 damage with pistols.",
 					SuccessMessage = "Flashy and effective. Reshala would be impressed."
@@ -391,7 +391,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Sledgehammer Waltz",
+					Name = "[BOSS-10] The Sledgehammer Waltz",
 					Description = "You hear the sledgehammer before you see him. Tagilla doesn't walk \u2014 he charges. The man is a relentless force of nature in Factory, sprinting through corridors with that welding mask and his hammer, turning every encounter into a chase scene from a horror movie. He's pure aggression in motion. Cover ten kilometers running \u2014 sprint, push forward, never stop. That's what Tagilla would do.",
 					Note = "Cover 10km while running.",
 					SuccessMessage = "Ten kilometers at full sprint. Tagilla-level endurance."
@@ -413,7 +413,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Mall Sweep",
+					Name = "[BOSS-11] Mall Sweep",
 					Description = "Killa. The legend of Interchange. That Maska helmet, the RPK, the way he tracks you by sound alone and then sprints at you like a freight train. He's cleared entire squads solo. The man doesn't camp \u2014 he hunts. He knows every store, every corridor, every hiding spot. I need you to channel both sides: the precision killer and the relentless patroller. Sixty aimed kills, a hundred containers searched. Own the space like Killa owns Interchange.",
 					Note = "Get 60 ADS kills and search 100 containers.",
 					SuccessMessage = "You've owned the space. The Mall Marauder recognizes a peer."
@@ -442,7 +442,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Commander's Orders",
+					Name = "[BOSS-12] Commander's Orders",
 					Description = "Knight is the brains behind The Goons. Where Birdeye watches and Big Pipe blasts, Knight coordinates. He calls the shots, literally \u2014 and his weapon of choice is always something heavy. Autocannon bursts, suppressive fire, controlled chaos. The Rogues answer to him, and they answer with overwhelming firepower. You want this card? Grab a machine gun and put in the work. Twenty thousand damage worth of lead downrange.",
 					Note = "Deal 20,000 damage with LMGs.",
 					SuccessMessage = "That's some heavy firepower. Knight would nod in approval."
@@ -468,7 +468,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Lighthouse Judgement",
+					Name = "[BOSS-13] Lighthouse Judgement",
 					Description = "Zryachiy watches from the lighthouse cliffs like a god of judgment. His rifle reaches across the entire island \u2014 if you're in his line of sight, you're in his killzone. No one knows exactly why he guards that place so fiercely, but the bodies speak for themselves. He doesn't chase. He doesn't move. He waits, prone, patient, and then the shot rings out across the water. Ten kilometers of cumulative sniper distance, and twenty kills from prone. Become the sentinel.",
 					Note = "Accumulate 10km sniper distance and get 20 prone kills.",
 					SuccessMessage = "The Cliff Sentinel would recognize a fellow marksman."
@@ -499,7 +499,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Midnight Ritual",
+					Name = "[BOSS-14] The Midnight Ritual",
 					Description = "Nobody talks about the Cultist Priest without lowering their voice. He moves in darkness, surrounded by his followers, blades dripping with some foul toxin that makes your veins burn. They don't shoot \u2014 they stab. And by the time you feel the prick, the poison is already working. Meeting them at night is a death sentence for most. I need you to understand their ways: move in silence, and learn to survive the bleeding they inflict. Fifty wounds patched, five kilometers unheard.",
 					Note = "Move 5km silently and fix 50 bleedings.",
 					SuccessMessage = "Silent and scarred. The Forsaken Prophet would be intrigued."
@@ -530,7 +530,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Echo in the Dark",
+					Name = "[BOSS-15] Echo in the Dark",
 					Description = "You think Tagilla is scary? His shadow is worse. When Tagilla falls, something remains \u2014 an echo, a phantom that swings that sledgehammer in the dark long after the man himself is gone. No one can explain it. Some say it's a hallucination from the fumes in Factory. Others say Tarkov itself won't let him die. The Phantom Sledge doesn't aim \u2014 he swings. He doesn't stop \u2014 he roams. A hundred hipfire kills, a hundred kilometers on foot. Become the ghost.",
 					Note = "Get 100 hipfire kills and cover 100km on foot.",
 					SuccessMessage = "You've become the phantom. The echo lives on."
@@ -587,7 +587,7 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Kolya's Boss Compendium",
+					Name = "[BOSS-C] Kolya's Boss Compendium",
 					Description = "You've done it. Every boss, every mini-boss, every legend documented and verified. This is the complete Bosses & Mini-Bosses collection \u2014 the most dangerous individuals in Tarkov, all in one binder. I've been working on this compendium for months, and you've just handed me the final pieces. This deserves something special. Hand them all over and I'll make sure you're rewarded like the legend you've become.",
 					Note = "Hand over one of each boss card to complete the collection.",
 					SuccessMessage = "The complete Boss Compendium. You've earned this, legend."

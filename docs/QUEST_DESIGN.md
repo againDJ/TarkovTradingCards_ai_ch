@@ -1671,4 +1671,270 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 14 themes to be designed...*
+## Theme: Player Archetypes & Playstyles
+
+**15 cards** (3 Common, 5 Uncommon, 3 Rare, 2 Epic, 1 Legendary, 1 Secret)
+
+**Theme focus**: Each quest embodies a specific Tarkov playstyle. Objectives match the archetype — rats loot, chads kill, hatchlings run naked, hermits craft.
+
+### QUEST: Know Thyself (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_player_archetypes`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 targets *(KillTarget: "Any")*
+  - [QE: SearchContainer] Search 10 containers
+- **XP**: 1,000
+- **Description**: *"Every PMC in Tarkov falls into an archetype. Rats, chads, hatchlings, hermits — we all have our style. Before I hand over my field guide on player types, show me you can do a bit of everything. Five kills and ten containers. Jack of all trades."*
+- **Rewards**:
+  - 1× Player Archetypes Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: Zero to Hero [Common]
+- **Card**: Hatchling Hero
+- **ID Seed**: `ttc_quest_card_archetype_hatchling`
+- **Prerequisites**: Know Thyself (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: LootItem] Loot 30 items *(Run naked, grab everything)*
+  - [QE: MoveDistanceWhileRunning] Cover 5,000m while running *(Sprint to loot, sprint to extract)*
+- **XP**: 1,000
+- **Description**: *"The Hatchling Hero. No armor, no gun, just a hatchet and a dream. Sprint to the high-value loot, shove it in your secure container, and pray nobody catches you. Thirty items looted and five kilometers of sprinting. Embrace the naked lifestyle."*
+- **Barter Unlocked**: Trade card → 1× Berkut backpack
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: Penny Pincher [Common]
+- **Card**: Budget Warrior
+- **ID Seed**: `ttc_quest_card_archetype_budget`
+- **Prerequisites**: Zero to Hero (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 200,000₽ from transactions
+  - [QE: SearchContainer] Search 30 containers
+- **XP**: 1,000
+- **Description**: *"The Budget Warrior. SKS, PACA, and a dream. Every rouble counts, every bullet is an investment, and you never throw away a mag. Earn two hundred thousand roubles and search thirty containers. Maximum efficiency, minimum expense."*
+- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: Sightseeing [Common]
+- **Card**: Offline Tourist
+- **ID Seed**: `ttc_quest_card_archetype_tourist`
+- **Prerequisites**: Penny Pincher (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: MoveDistance] Cover 10,000m on foot
+  - [Vanilla: Survive] Survive and extract 3 times
+- **XP**: 1,000
+- **Description**: *"The Offline Tourist. You load into a raid just to look around. No fighting, no looting, just... walking. Enjoying the scenery. Ten kilometers on foot and three extractions. Take the scenic route."*
+- **Barter Unlocked**: Trade card → 1× Compass
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: Check the List [Uncommon]
+- **Card**: Quest Slave
+- **ID Seed**: `ttc_quest_card_archetype_questslave`
+- **Prerequisites**: Sightseeing (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: LootItem] Loot 50 items *(Always hunting for quest items)*
+  - [QE: SearchContainer] Search 50 containers
+  - [Vanilla: Survive] Survive and extract 5 times
+- **XP**: 3,000
+- **Description**: *"The Quest Slave. Your entire raid is a checklist. Find this item, visit that location, hand over these dog tags. You don't play for fun — you play for progress. Fifty items looted, fifty containers searched, five extractions. Check the list."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: Count Every Round [Uncommon]
+- **Card**: Ammo Accountant
+- **ID Seed**: `ttc_quest_card_archetype_ammo`
+- **Prerequisites**: Check the List (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets with headshots using iron sights only *(KillTarget: "Any", KillBodyParts: ["Head"], KillWeaponModsExclusive: all scope IDs — no optics allowed)*
+- **XP**: 3,000
+- **Description**: *"The Ammo Accountant. You know the price of every round, the pen value of every caliber, and you never miss because missing costs money. Ten headshots with iron sights only — no scopes, no red dots, just raw aim. Make every bullet count."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: Hot Mic [Uncommon]
+- **Card**: Voice Comedian
+- **ID Seed**: `ttc_quest_card_archetype_voip`
+- **Prerequisites**: Count Every Round (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 PMCs from under 10m *(KillTarget: "AnyPmc", KillDistanceCompare: "<=", KillDistanceValue: 10) — get close enough to talk*
+  - [QE: KillsWithoutADS] Get 5 kills without ADS *(Hipfire while talking)*
+- **XP**: 3,000
+- **Description**: *"The Voice Comedian. VOIP on, bad jokes loaded, approaching every PMC with 'friendly friendly!' before pulling the trigger. Five kills from under ten meters and five hipfire kills. Get close, get personal."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: First Wipe Problems [Uncommon]
+- **Card**: Timmy
+- **ID Seed**: `ttc_quest_card_archetype_timmy`
+- **Prerequisites**: Hot Mic (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: FixAnyBleed] Fix 10 bleedings *(Timmy bleeds a lot)*
+  - [QE: FixFracture] Fix 5 fractures *(Timmy falls a lot)*
+  - [QE: HealthGain] Restore 1,000 HP total *(Timmy heals a lot)*
+- **XP**: 3,000
+- **Description**: *"Timmy. Fresh off the boat, no idea what he's doing. Gets lost on Customs, can't find the extract, gets killed by a scav with a Makarov. Ten bleedings patched, five fractures fixed, a thousand HP restored. We all started as Timmy."*
+- **Barter Unlocked**: Trade card → 1× Factory map + 1× Customs map + 1× Woods map + 1× Shoreline map + 1× Shoreline Resort map + 1× Interchange map
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: Spray and Pray [Uncommon]
+- **Card**: Mag-Dumper
+- **ID Seed**: `ttc_quest_card_archetype_magdumper`
+- **Prerequisites**: First Wipe Problems (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: DamageWithAR] Deal 5,000 damage with assault rifles *(Full auto everything)*
+  - [QE: KillsWithoutADS] Get 10 kills without ADS *(Who needs sights?)*
+- **XP**: 3,000
+- **Description**: *"The Mag-Dumper. Why fire one bullet when you can fire thirty? Recoil control is for cowards — just hold the trigger and let God sort it out. Five thousand AR damage and ten hipfire kills. Spray and pray, brother."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: Supreme Rat [Rare]
+- **Card**: Rat King
+- **ID Seed**: `ttc_quest_card_archetype_ratking`
+- **Prerequisites**: Spray and Pray (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: SearchContainer] Search 100 containers *(Rats loot everything)*
+  - [QE: LootItem] Loot 100 items
+  - [QE: MoveDistanceWhileCrouched] Move 3,000m while crouched *(Rats stay low)*
+- **XP**: 10,000
+- **Description**: *"The Rat King. Supreme ruler of the shadows. You never take a fair fight, you never push a position, and you always know where the best loot spawns. A hundred containers, a hundred items, three kilometers crouched. Long live the king."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: Gate Guardian [Rare]
+- **Card**: Extractor Camper
+- **ID Seed**: `ttc_quest_card_archetype_exitcamper`
+- **Prerequisites**: Supreme Rat (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [QE: KillsWhileProne] Get 10 kills while prone *(The camper's position)*
+  - [Vanilla: Kills] Eliminate 5 targets at night from over 100m *(KillTarget: "Any", KillDistanceCompare: ">=", KillDistanceValue: 100, KillDaytimeFrom: 22, KillDaytimeTo: 6)*
+- **XP**: 10,000
+- **Description**: *"The Gate Guardian. Prone at the extract, suppressed rifle, waiting in the dark. You don't even feel bad anymore. Ten prone kills and five night kills from over a hundred meters. Guard the gate."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: Bunker Dweller [Rare]
+- **Card**: Hideout Hermit
+- **ID Seed**: `ttc_quest_card_archetype_hermit`
+- **Prerequisites**: Gate Guardian (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: CraftAnyItem] Craft 30 items *(Hermits live in the hideout)*
+  - [QE: CraftCyclicItem] Craft 10 cyclic items
+  - [QE: EarnMoneyOnTransaction] Earn 500,000₽ from transactions
+- **XP**: 10,000
+- **Description**: *"The Hideout Hermit. Why risk your life in a raid when you can craft moonshine and bitcoin from the safety of your bunker? Thirty items crafted, ten cyclic crafts, half a million roubles earned. Never leave home."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: Patient Predator [Epic]
+- **Card**: Ambush Artist
+- **ID Seed**: `ttc_quest_card_archetype_ambush`
+- **Prerequisites**: Bunker Dweller (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 15 kills while silent *(The ambush requires patience)*
+  - [Vanilla: Kills] Eliminate 10 PMCs with a suppressed weapon *(KillTarget: "AnyPmc", KillWeaponModsInclusive: suppressor IDs)*
+- **XP**: 20,000
+- **Description**: *"The Ambush Artist. You never fire first — you wait, you listen, you let them walk into your trap. Fifteen silent kills and ten PMC kills with a suppressed weapon. The prey never hears you coming."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: One Bullet Wonder [Epic]
+- **Card**: Lucky Headshot
+- **ID Seed**: `ttc_quest_card_archetype_luckyshot`
+- **Prerequisites**: Patient Predator (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
+  - [Vanilla: Kills] Eliminate 10 targets from over 150m with iron sights only *(KillTarget: "Any", KillDistanceCompare: ">=", KillDistanceValue: 150, KillWeaponModsExclusive: all scope IDs)*
+- **XP**: 20,000
+- **Description**: *"The Lucky Headshot. One bullet, one kill, pure luck disguised as skill. Twenty PMC headshots and ten kills from over 150 meters with iron sights only. Sometimes the bullet finds its mark and you just nod like you meant to do that."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: Full Send [Legendary]
+- **Card**: Chad Rampage
+- **ID Seed**: `ttc_quest_card_archetype_chad`
+- **Prerequisites**: One Bullet Wonder (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 PMCs in a single raid *(KillTarget: "AnyPmc", KillResetOnSessionEnd: true)*
+  - [Vanilla: Kills] Eliminate 30 PMCs total *(KillTarget: "AnyPmc")*
+  - [Vanilla: Kills] Eliminate 50 targets from under 25m *(KillTarget: "Any", KillDistanceCompare: "<=", KillDistanceValue: 25)*
+  - [QE: MoveDistanceWhileRunning] Cover 30,000m while running *(Chads never walk)*
+- **XP**: 35,000
+- **Description**: *"The Chad Rampage. Full tier 6, meta weapon, Slick plate, Altyn helmet. You don't hide, you don't rat, you W-key into every fight and dare the server to stop you. Five PMCs in a single raid, thirty PMCs total, fifty close-range kills, and thirty kilometers of sprinting. Full send."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Intel) reward
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: Trust Issues [Secret]
+- **Card**: Friendly Betrayer
+- **ID Seed**: `ttc_quest_card_archetype_betrayer`
+- **Prerequisites**: Full Send (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 PMCs *(KillTarget: "AnyPmc")*
+  - [Vanilla: Kills] Eliminate 50 targets from under 10m *(KillTarget: "Any", KillDistanceCompare: "<=", KillDistanceValue: 10)*
+  - [QE: KillsWithoutADS] Get 50 kills without ADS
+- **XP**: 60,000
+- **Description**: *"The Friendly Betrayer. 'Friendly! Friendly! Don't shoot!' And then you shoot. Trust is the most valuable currency in Tarkov, and you spend it like monopoly money. Fifty PMC kills, fifty kills from under ten meters, fifty hipfire kills. The ultimate betrayal requires proximity."*
+- **Barter Unlocked**: Trade card → 1× SICC case
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: Kolya's Player Field Guide (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_player_archetypes`
+- **Prerequisites**: Trust Issues (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 archetype cards (1 of each, distinct)
+- **Description**: *"Every playstyle documented, from the noble hatchling to the treacherous betrayer. You've lived them all and earned every card. Hand them over and the Player Field Guide is complete."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 1× T H I C C Items Case
+  - +0.15 standing with Kolya
+- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+
+---
+
+## Barter Summary — Player Archetypes & Playstyles
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Hatchling Hero | Common | 1× Berkut backpack |
+| 2 | Budget Warrior | Common | Random Scav Case (2.5K) |
+| 3 | Offline Tourist | Common | 1× Compass |
+| 4 | Quest Slave | Uncommon | Random Scav Case (15K) |
+| 5 | Ammo Accountant | Uncommon | Random Scav Case (15K) |
+| 6 | Voice Comedian | Uncommon | Random Scav Case (15K) |
+| 7 | Timmy | Uncommon | 6× Map plans (all maps) |
+| 8 | Mag-Dumper | Uncommon | Random Scav Case (15K) |
+| 9 | Rat King | Rare | Random Scav Case (95K) |
+| 10 | Extractor Camper | Rare | Random Scav Case (95K) |
+| 11 | Hideout Hermit | Rare | Random Scav Case (95K) |
+| 12 | Ambush Artist | Epic | Random Scav Case (Moonshine) |
+| 13 | Lucky Headshot | Epic | Random Scav Case (Moonshine) |
+| 14 | Chad Rampage | Legendary | Random Scav Case (Intel) |
+| 15 | Friendly Betrayer | Secret | 1× SICC case |
+| **Collection** | All 15 archetype cards | — | 1× T H I C C Items Case |
+
+---
+
+*Remaining 13 themes to be designed...*

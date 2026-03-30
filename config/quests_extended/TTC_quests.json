@@ -496,5 +496,113 @@
     "Conditions": [
       { "ConditionId": "22415c98a0f9b963c57768dd", "ConditionType": "MoveDistance" }
     ]
+  },
+  "7e4bb1c3b6c30ae1376c3748": {
+    "QuestId": "7e4bb1c3b6c30ae1376c3748",
+    "QuestName": "Know Thyself",
+    "Conditions": [
+      { "ConditionId": "f58558fb4617a2cceec69893", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "6fd1cbf04df7ea48599ff1a8": {
+    "QuestId": "6fd1cbf04df7ea48599ff1a8",
+    "QuestName": "Zero to Hero",
+    "Conditions": [
+      { "ConditionId": "27b18023e258066227600885", "ConditionType": "LootItem" },
+      { "ConditionId": "7a6469d5b7dbf080ea42c225", "ConditionType": "MoveDistanceWhileRunning" }
+    ]
+  },
+  "8a7da1a15956e88b536c6b45": {
+    "QuestId": "8a7da1a15956e88b536c6b45",
+    "QuestName": "Penny Pincher",
+    "Conditions": [
+      { "ConditionId": "67bb6969d56f9e11d6b83bba", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "9a2d8d3ac213bbe07beae1f8", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "b9050b3af3d026452d5023a7": {
+    "QuestId": "b9050b3af3d026452d5023a7",
+    "QuestName": "Sightseeing",
+    "Conditions": [
+      { "ConditionId": "d11dcc9e1aee1eb63d9915c1", "ConditionType": "MoveDistance" }
+    ]
+  },
+  "b55c0f0a7711052c323b3a4b": {
+    "QuestId": "b55c0f0a7711052c323b3a4b",
+    "QuestName": "Check the List",
+    "Conditions": [
+      { "ConditionId": "f2af051fe888e5067af6dd93", "ConditionType": "LootItem" },
+      { "ConditionId": "d5b77ddeeae2e388d5dd360f", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "047bff8fdc27e2a10ecc5430": {
+    "QuestId": "047bff8fdc27e2a10ecc5430",
+    "QuestName": "Hot Mic",
+    "Conditions": [
+      { "ConditionId": "2b55569d57135445ac5ab1ea", "ConditionType": "KillsWithoutADS" }
+    ]
+  },
+  "3ce9066bcf4db8fa581e3ecf": {
+    "QuestId": "3ce9066bcf4db8fa581e3ecf",
+    "QuestName": "First Wipe Problems",
+    "Conditions": [
+      { "ConditionId": "63ecec9681798b1c73d172a4", "ConditionType": "FixAnyBleed" },
+      { "ConditionId": "3cdeb4ae88a9c1bed17c73ea", "ConditionType": "FixFracture" },
+      { "ConditionId": "7d10b86d3ae6bc126f0c6b4e", "ConditionType": "HealthGain" }
+    ]
+  },
+  "e2b494fd0313f32b6d358175": {
+    "QuestId": "e2b494fd0313f32b6d358175",
+    "QuestName": "Spray and Pray",
+    "Conditions": [
+      { "ConditionId": "5f03839367383c9e71f9e221", "ConditionType": "DamageWithAR" },
+      { "ConditionId": "40f477c13aef1ae5fb0e01de", "ConditionType": "KillsWithoutADS" }
+    ]
+  },
+  "3503c97bf1bc284a6d107de5": {
+    "QuestId": "3503c97bf1bc284a6d107de5",
+    "QuestName": "Supreme Rat",
+    "Conditions": [
+      { "ConditionId": "5ef5340706e8e23555e3171c", "ConditionType": "SearchContainer" },
+      { "ConditionId": "9c411314035e6cc224754b5b", "ConditionType": "LootItem" },
+      { "ConditionId": "46d5a9649df8cad21781d316", "ConditionType": "MoveDistanceWhileCrouched" }
+    ]
+  },
+  "4c1618df6bf0bc28f3ae119f": {
+    "QuestId": "4c1618df6bf0bc28f3ae119f",
+    "QuestName": "Gate Guardian",
+    "Conditions": [
+      { "ConditionId": "93f0a18530365723489291b8", "ConditionType": "KillsWhileProne" }
+    ]
+  },
+  "ecc2b97a13827a1cdbd418ba": {
+    "QuestId": "ecc2b97a13827a1cdbd418ba",
+    "QuestName": "Bunker Dweller",
+    "Conditions": [
+      { "ConditionId": "85200f4c5ada738cc6791017", "ConditionType": "CraftAnyItem" },
+      { "ConditionId": "5d78ce6519be332022d59481", "ConditionType": "CraftCyclicItem" },
+      { "ConditionId": "b1795cebe4a16a830a79f355", "ConditionType": "EarnMoneyOnTransaction" }
+    ]
+  },
+  "da28d5e6d16e7d82544d387c": {
+    "QuestId": "da28d5e6d16e7d82544d387c",
+    "QuestName": "Patient Predator",
+    "Conditions": [
+      { "ConditionId": "005f98d342484f248617db6a", "ConditionType": "KillsWhileSilent" }
+    ]
+  },
+  "150669383244487e9362dde4": {
+    "QuestId": "150669383244487e9362dde4",
+    "QuestName": "Full Send",
+    "Conditions": [
+      { "ConditionId": "92c4c3fae882b80fec869767", "ConditionType": "MoveDistanceWhileRunning" }
+    ]
+  },
+  "039e0954e13ab8247db31ad7": {
+    "QuestId": "039e0954e13ab8247db31ad7",
+    "QuestName": "Trust Issues",
+    "Conditions": [
+      { "ConditionId": "6f7a69de224787c856c2b2af", "ConditionType": "KillsWithoutADS" }
+    ]
   }
 }

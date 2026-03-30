@@ -160,7 +160,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "War Correspondent",
+					Name = "[FACT-0] War Correspondent",
 					Description = "Every faction in Tarkov has its own story, its own methods, its own reasons for being here. Scavs, PMCs, rogues, cultists \u2014 they all think they're the good guys. Before I give you my field notes on the factions, show me you've interacted with at least two of them. The hard way.",
 					Note = "Eliminate 5 scavs and 3 PMCs.",
 					SuccessMessage = "Two factions met, the hard way. Here are my notes."
@@ -183,7 +183,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Track and Eliminate",
+					Name = "[FACT-1] Track and Eliminate",
 					Description = "The Bloodhound Mercs. Trackers, hunters, hired guns who follow the scent of loot and leave bodies in their wake. They work the back alleys of Customs like they own the place. Ten scavs on Customs \u2014 track them down like a true bloodhound.",
 					Note = "Eliminate 10 scavs on Customs.",
 					SuccessMessage = "Tracked and eliminated. The Bloodhound approves."
@@ -205,7 +205,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Turf War",
+					Name = "[FACT-2] Turf War",
 					Description = "The Scav Syndicate runs Interchange like a flea market with guns. They've carved out territories in every store, every hallway, every parking garage. If you want to understand how organized scavs operate, go break up their operation. Ten scavs on Interchange.",
 					Note = "Eliminate 10 scavs on Interchange.",
 					SuccessMessage = "Turf reclaimed. The Syndicate won't forget."
@@ -227,7 +227,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Rat Run",
+					Name = "[FACT-3] Rat Run",
 					Description = "The Back-Alley Loot Rat. Every scav starts here \u2014 sprint in, grab what you can, sprint out. No fighting, no heroics, just survival and profit. Forty containers and forty items. Show me the rat lifestyle.",
 					Note = "Search 40 containers and loot 40 items.",
 					SuccessMessage = "Pure rat energy. Efficient and alive."
@@ -248,7 +248,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Vympel Heritage",
+					Name = "[FACT-4] Vympel Heritage",
 					Description = "BEAR. Battle Encounter Assault Regiment. Ex-FSB, ex-Vympel, the kind of operators that make special forces look like boy scouts. They came to Tarkov with a mission and they're not leaving until it's done. Eliminate five USEC operatives with an AK \u2014 any model. That's the BEAR way.",
 					Note = "Eliminate 5 USEC PMCs with AK-series weapons.",
 					SuccessMessage = "Five USEC down with an AK. Vympel would be proud."
@@ -269,7 +269,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Covert Sabotage",
+					Name = "[FACT-5] Covert Sabotage",
 					Description = "BEAR Saboteurs. The ones you never see coming. They move in silence, plant their charges, and vanish before anyone knows what happened. Ten silent kills. Become the shadow.",
 					Note = "Get 10 kills while silent.",
 					SuccessMessage = "Silent and deadly. The saboteur vanishes."
@@ -292,7 +292,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Deep Behind Lines",
+					Name = "[FACT-6] Deep Behind Lines",
 					Description = "USEC Deep Recon. These operators go where nobody else dares \u2014 deep behind enemy lines, alone, with nothing but a rifle and a radio. Five kills from over a hundred meters and three Shoreline extractions. Go deep, stay alive.",
 					Note = "5 kills from 100m+ and survive Shoreline 3 times.",
 					SuccessMessage = "Deep recon complete. You made it back alive."
@@ -313,7 +313,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Contractor",
+					Name = "[FACT-7] The Contractor",
 					Description = "USEC. United Security. Private military contractors with deep pockets and deeper secrets. They came for TerraGroup's dirty work and got stuck in the same hell as everyone else. Eliminate five BEAR operatives using a Western SMG. That's how contractors do it.",
 					Note = "Eliminate 5 BEAR PMCs with Western SMGs.",
 					SuccessMessage = "Contract fulfilled. Five BEAR down."
@@ -335,7 +335,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Midnight Blade",
+					Name = "[FACT-8] Midnight Blade",
 					Description = "The Cultist Acolyte. Lowest rank in the hierarchy, but don't let that fool you \u2014 they move like ghosts and their blades are coated in something foul. One melee kill and five silent kills. Prove you can work with a blade.",
 					Note = "Get 1 melee kill and 5 silent kills.",
 					SuccessMessage = "The blade has tasted blood. The acolyte rises."
@@ -357,7 +357,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Initiation",
+					Name = "[FACT-9] Initiation",
 					Description = "Initiation into the cult happens at night. Always at night. Factory after dark is where they gather \u2014 no lights, no mercy, only the sound of blades and chanting. Ten kills on night Factory. Prove you belong in the dark.",
 					Note = "Eliminate 10 targets on Factory at night.",
 					SuccessMessage = "Ten souls claimed in the dark. You are initiated."
@@ -391,7 +391,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Guns for Hire",
+					Name = "[FACT-10] Guns for Hire",
 					Description = "The Rogue Alliance. Ex-USEC operators who went independent \u2014 no loyalty, no flag, just the highest bidder. They've fortified the water treatment plant on Lighthouse and they shoot anyone who gets close. Ten kills and three extractions on Lighthouse. Break through their perimeter.",
 					Note = "10 kills on Lighthouse and survive 3 times.",
 					SuccessMessage = "Perimeter breached. The rogues know your name."
@@ -419,7 +419,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Gas Station Hold",
+					Name = "[FACT-11] Gas Station Hold",
 					Description = "The Gas-Station Gunner. This rogue strapped himself behind a mounted gun and dared anyone to come close. Ten kills with a machine gun and three mounted kills. Hold the line like a true gunner.",
 					Note = "10 kills with LMGs and 3 mounted kills.",
 					SuccessMessage = "Line held. The gunner's position is yours."
@@ -445,7 +445,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Shadow Cell",
+					Name = "[FACT-12] Shadow Cell",
 					Description = "UNISG. United Nations Internal Security Group. Officially, they don't exist. Unofficially, they're running operations in Tarkov that nobody talks about. Precision is their calling card. Ten PMC kills and ten headshots. Clean, efficient, deniable.",
 					Note = "10 PMC kills and 10 headshot kills.",
 					SuccessMessage = "Clean. Efficient. Deniable. Shadow Cell approved."
@@ -468,7 +468,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Labs Crusher",
+					Name = "[FACT-13] Labs Crusher",
 					Description = "The Labs Crusher. Raiders patrol The Lab like they own the place \u2014 tier 5 armor, meta weapons, and zero hesitation. They'll push you, flank you, and grenade you before you can say 'extract.' Twenty kills on Labs and three successful extractions. Crush the crushers.",
 					Note = "20 kills on Labs and survive 3 times.",
 					SuccessMessage = "The crushers have been crushed. Labs is yours."
@@ -490,7 +490,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Blacksite Protocol",
+					Name = "[FACT-14] Blacksite Protocol",
 					Description = "TerraGroup Security. The blacksite guards. Whatever TerraGroup was hiding in those labs, these operators were paid enough to kill for it and never ask questions. Twenty-five PMCs downed with Western assault rifles, fifteen of them headshots. Enforce the blacksite protocol.",
 					Note = "25 PMC kills with Western ARs and 15 PMC headshots.",
 					SuccessMessage = "Blacksite protocol enforced. TerraGroup would approve."
@@ -513,7 +513,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Fragile Truce",
+					Name = "[FACT-15] The Fragile Truce",
 					Description = "The PMC Coalition. A fragile truce between BEAR and USEC \u2014 born out of necessity, held together by desperation. Both sides agreed to stop killing each other long enough to deal with the real threats. But truces don't last in Tarkov. Fifty BEAR, fifty USEC, a hundred scavs. Break the truce yourself.",
 					Note = "50 BEAR, 50 USEC, 100 scavs.",
 					SuccessMessage = "The truce is broken. Two hundred bodies tell the tale."
@@ -560,7 +560,7 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Kolya's Faction Dossier",
+					Name = "[FACT-C] Kolya's Faction Dossier",
 					Description = "Every faction documented, every allegiance mapped. BEAR, USEC, rogues, cultists, raiders, TerraGroup \u2014 you've crossed paths with all of them and lived to tell the tale. Hand over the cards and the dossier is complete.",
 					Note = "Hand over one of each faction card to complete the collection.",
 					SuccessMessage = "The Faction Dossier is complete. Every allegiance documented."

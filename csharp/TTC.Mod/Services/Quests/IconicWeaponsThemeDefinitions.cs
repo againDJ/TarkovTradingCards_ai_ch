@@ -190,7 +190,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Armorer's Catalog",
+					Name = "[WEAP-0] The Armorer's Catalog",
 					Description = "You want to talk weapons? Now we're speaking my language. Before the conflict, I catalogued every prototype that came through TerraGroup's labs. Now I catalogue what keeps people alive out there. Every weapon tells a story \u2014 who carried it, what it survived, how many lives it took or saved. Before I hand over this catalog, show me you understand the craft. Hit the workbench, make something useful. An armorer appreciates a man who works with his hands.",
 					Note = "Craft 3 items at any workstation, then receive the Iconic Weapons binder.",
 					SuccessMessage = "A man who knows his way around a workbench. Here's your catalog."
@@ -218,7 +218,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Tarkov Standard",
+					Name = "[WEAP-1] The Tarkov Standard",
 					Description = "The AK-74N. Nothing fancy, nothing exotic, just pure Soviet reliability. This is the gun that taught half the PMCs in Tarkov how to shoot. Every rat who ever cowered behind a dumpster on Customs started with one of these. Dust cover rattling, iron sights slightly crooked, and still putting rounds exactly where you need them. Ten scavs on Customs \u2014 that's where the 74N earns its legend.",
 					Note = "Eliminate 10 scavs on Customs.",
 					SuccessMessage = "The AK-74N. Simple, reliable, deadly. A classic."
@@ -245,7 +245,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Breacher's Welcome",
+					Name = "[WEAP-2] Breacher's Welcome",
 					Description = "The Saiga-12. Semi-auto, box-fed, and absolutely merciless in close quarters. This is the gun that makes Factory a nightmare. One trigger pull and the entire doorway fills with lead. There's no finesse, no subtlety \u2014 just raw, devastating stopping power at arm's length. Eight scavs on Factory. Welcome to room clearing.",
 					Note = "Eliminate 8 scavs on Factory.",
 					SuccessMessage = "That's how you clear a room. The Saiga approves."
@@ -272,7 +272,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Pocket Cannon",
+					Name = "[WEAP-3] Pocket Cannon",
 					Description = "The Obrez. Someone took a perfectly good Mosin-Nagant and hacked it down to pocket size. No stock, no barrel length, no accuracy, no mercy. It's the ugliest thing in Tarkov and it hits like a freight train. Shooting one from the hip is an act of faith. Eight close-range kills and five from the hip \u2014 show me you've got the guts to use the most reckless weapon ever conceived.",
 					Note = "Get 8 kills under 15m and 5 hipfire kills.",
 					SuccessMessage = "Reckless. Brutal. Beautiful. The Obrez would be proud."
@@ -294,7 +294,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Farming Season",
+					Name = "[WEAP-4] Farming Season",
 					Description = "The MP-153. Reliable, cheap, and absolutely perfect for the Tarkov grind. This is the gun of the factory farmer \u2014 the player who runs in, blasts everything, loots everything, and extracts before anyone knows what happened. It's not glamorous, but it pays the bills. Forty containers searched and two thousand shotgun damage. Show me the hustle.",
 					Note = "Search 40 containers and deal 2,000 shotgun damage.",
 					SuccessMessage = "That's the hustle. The Factory Farmer lifestyle."
@@ -322,7 +322,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Suppressive Authority",
+					Name = "[WEAP-5] Suppressive Authority",
 					Description = "The RPK-16. When your squad needs covering fire, this is what you reach for. Drum magazine loaded, bipod deployed, and a wall of 5.45 going downrange. The long corridors of Interchange are where this gun truly shines \u2014 nowhere to run, nowhere to hide. Ten kills on Interchange and three thousand LMG damage. Hold that trigger.",
 					Note = "Eliminate 10 scavs on Interchange and deal 3,000 LMG damage.",
 					SuccessMessage = "Suppressive fire like a pro. The RPK-16 has spoken."
@@ -348,7 +348,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Budget Sniper",
+					Name = "[WEAP-6] The Budget Sniper",
 					Description = "The Vepr Hunter. Don't let the civilian name fool you \u2014 this semi-auto in 7.62x51 hits like a sledgehammer on a budget. It's the great equalizer. A naked player with a Hunter and M80 rounds can drop a fully geared Chad in two shots from a hundred meters. Eight kills from over a hundred meters \u2014 that's where the Hunter earns its name.",
 					Note = "Eliminate 8 targets from over 100m.",
 					SuccessMessage = "Budget sniper, premium results. The Hunter delivers."
@@ -375,7 +375,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Shadow Protocol",
+					Name = "[WEAP-7] Shadow Protocol",
 					Description = "The AS VAL. Integrated suppressor, subsonic 9x39, and a fire rate that melts armor before the enemy hears the first shot. This is the weapon of choice for operators who believe in one simple philosophy: if they heard you, you already failed. Fifteen silent kills and five PMCs down. Move like smoke, strike like lightning, and vanish like you were never there.",
 					Note = "Get 15 silent kills and eliminate 5 PMCs.",
 					SuccessMessage = "Silent. Deadly. Invisible. The VAL would be proud."
@@ -402,7 +402,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Precision Buzzsaw",
+					Name = "[WEAP-8] Precision Buzzsaw",
 					Description = "The MP7A1. Forty rounds of 4.6mm at 950 rounds per minute with virtually zero recoil. It's not a gun \u2014 it's a laser beam that happens to fire bullets. HK engineered the kick out of this thing so completely that you can mag-dump at fifty meters and every round hits the same hole. Fifteen headshots and five thousand SMG damage. Show me that precision.",
 					Note = "Get 15 headshot kills and deal 5,000 SMG damage.",
 					SuccessMessage = "Precision and volume. The MP7 way."
@@ -423,7 +423,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Leg Day",
+					Name = "[WEAP-9] Leg Day",
 					Description = "The PP-19-01 Vityaz. Sixty-four rounds in that gorgeous helical magazine and every single one of them aimed at the knees. When you can't penetrate class 5 armor, you don't need to \u2014 just destroy what's not protected. The Bizon taught a generation of Tarkov players the art of leg meta. Thirty legs destroyed with any SMG. Make them crawl.",
 					Note = "Destroy 30 legs with SMGs.",
 					SuccessMessage = "They're not walking that off. Leg meta mastered."
@@ -450,7 +450,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Meta Chase",
+					Name = "[WEAP-10] The Meta Chase",
 					Description = "The M4A1 Meta Build. Every attachment hand-picked for maximum ergo, minimum recoil, and absolute lethality. This is the gun that Labs runners dream about \u2014 the one where every stat is maxed, every mod is best-in-slot, and the only thing standing between you and a wipe is your own aim. Fifteen PMCs on Interchange or Labs and ten thousand armor damage. Prove you're worthy of the meta.",
 					Note = "Eliminate 15 PMCs on Interchange or Labs, deal 10,000 armor damage.",
 					SuccessMessage = "Meta achieved. The M4 has spoken."
@@ -481,7 +481,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Hand Cannon",
+					Name = "[WEAP-11] Hand Cannon",
 					Description = "The RSh-12. A revolver that fires 12.7x55mm \u2014 the same caliber as the ASh-12 assault rifle, crammed into a handgun. Every shot sounds like a cannon going off. The recoil is insane, the accuracy is questionable past spitting distance, and the damage is absolutely obscene. Five thousand revolver damage and ten close-range kills. May your wrists survive.",
 					Note = "Deal 5,000 revolver damage and get 10 kills under 25m.",
 					SuccessMessage = "Thunder delivered. The RSh-12 is satisfied."
@@ -508,7 +508,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Patient Shot",
+					Name = "[WEAP-12] The Patient Shot",
 					Description = "The SV-98. Bolt-action, smooth as butter, and accurate enough to thread a needle at three hundred meters. This is the thinking man's weapon \u2014 no spray, no pray, just one perfect shot. You lie prone, you wait, you breathe, and then you send it. Ten kills from over a hundred fifty meters, ten more from prone. Patience is a weapon.",
 					Note = "Get 10 kills from over 150m and 10 kills while prone.",
 					SuccessMessage = "Patient. Precise. Lethal. The Ghost Needle strikes."
@@ -534,7 +534,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Night Operations",
+					Name = "[WEAP-13] Night Operations",
 					Description = "The VSS Vintorez. Thread-cutter. Built from the ground up for special operations \u2014 integrated suppressor, subsonic 9x39, and a profile that disappears in the dark. Where the AS VAL is a raider's tool, the Vintorez is an assassin's instrument. Twenty silent kills and three kilometers of silent movement. Become the night.",
 					Note = "Get 20 silent kills and move 3km silently.",
 					SuccessMessage = "The night belongs to you. The Vintorez is pleased."
@@ -576,7 +576,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "One Shot, One Kill",
+					Name = "[WEAP-14] One Shot, One Kill",
 					Description = "The SVDS. Semi-automatic, 7.62x54R, and capable of ending any fight with a single well-placed round. This is the gun that makes geared players nervous \u2014 because no amount of armor feels safe when an SVDS is watching. The 'One-Tap Express' earned its name in the hallways of Resort, where a single 7N1 round through the thorax sent many a thicc boy back to the menu. Thirty headshots, ten PMC kills at range, twenty thousand DMR damage. Become the express.",
 					Note = "Get 30 headshot kills, 10 PMC kills from 100m+, deal 20,000 DMR damage.",
 					SuccessMessage = "Express delivery confirmed. The One-Tap lives on."
@@ -608,7 +608,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Full Auto Everything",
+					Name = "[WEAP-15] Full Auto Everything",
 					Description = "The Glock 18C. Select-fire. Full auto. From a pistol. With a fifty-round drum magazine. This is the weapon that makes no sense and somehow works anyway. Twenty rounds per second of nine-millimeter chaos, no recoil compensation possible, accuracy measured in 'general direction.' And yet, in the right hands, it's a room-clearing monster that rivals any SMG. Fifteen thousand pistol damage, fifty hipfire kills, and a hundred containers looted. Become the Spraymaster.",
 					Note = "Deal 15,000 pistol damage, get 50 hipfire kills, search 100 containers.",
 					SuccessMessage = "Spray. Loot. Repeat. The Spraymaster reigns supreme."
@@ -666,7 +666,7 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Kolya's Arsenal Codex",
+					Name = "[WEAP-C] Kolya's Arsenal Codex",
 					Description = "Every weapon in this binder has a story. The AK that never jammed, the Obrez that shouldn't exist, the Glock that broke the laws of physics. You've handled them all, friend. You've dealt damage with everything from a shotgun to a revolver, from the hip and from the prone. This is the complete Iconic Weapons collection \u2014 a testament to every firearm that made Tarkov the beautiful, violent chaos it is. Hand them over and the Arsenal Codex is complete.",
 					Note = "Hand over one of each weapon card to complete the collection.",
 					SuccessMessage = "The Arsenal Codex is complete. A masterwork of destruction."

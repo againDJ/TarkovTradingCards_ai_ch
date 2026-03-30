@@ -368,6 +368,16 @@ public sealed class QuestFactory
 					killCondition.SavageRole = obj.KillSavageRole;
 				if (obj.KillWeapons is { Count: > 0 })
 					killCondition.Weapon = obj.KillWeapons.ToHashSet();
+				if (obj.KillWeaponModsInclusive is { Count: > 0 })
+					killCondition.WeaponModsInclusive = obj.KillWeaponModsInclusive.Select(l => l.ToList()).ToList();
+				if (obj.KillWeaponModsExclusive is { Count: > 0 })
+					killCondition.WeaponModsExclusive = obj.KillWeaponModsExclusive.Select(l => l.ToList()).ToList();
+				if (obj.KillWeaponCaliber is { Count: > 0 })
+					killCondition.WeaponCaliber = obj.KillWeaponCaliber;
+				if (obj.KillDaytimeFrom != null || obj.KillDaytimeTo != null)
+					killCondition.Daytime = new DaytimeCounter { From = obj.KillDaytimeFrom ?? 0, To = obj.KillDaytimeTo ?? 0 };
+				if (obj.KillResetOnSessionEnd)
+					killCondition.ResetOnSessionEnd = true;
 				counterConditions.Add(killCondition);
 
 				if (obj.KillLocations is { Count: > 0 })
@@ -388,6 +398,7 @@ public sealed class QuestFactory
 					Value = obj.Value,
 					IsNecessary = true,
 					DynamicLocale = false,
+					OneSessionOnly = obj.OneSessionOnly ? true : null,
 					Target = new ListOrT<string>(new List<string>(), ""),
 					Counter = new QuestConditionCounter
 					{

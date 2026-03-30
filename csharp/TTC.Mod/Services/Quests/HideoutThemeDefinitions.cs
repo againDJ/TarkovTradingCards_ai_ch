@@ -80,7 +80,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Builder's Blueprint",
+					Name = "[HIDE-0] The Builder's Blueprint",
 					Description = "You want to document the hideout? Good \u2014 most people only think about what happens outside. But the real survivors are the ones who build. First things first though \u2014 you need a hideout worth documenting. Get your Security station to level one. Can't build anything if someone breaks in and steals it all.",
 					Note = "Have Security level 1, then receive the Hideout binder.",
 					SuccessMessage = "Security is up. Now let's build something real."
@@ -104,7 +104,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Let There Be Light",
+					Name = "[HIDE-1] Let There Be Light",
 					Description = "First thing you need in any hideout is light. Can't build what you can't see, can't organize what's in the dark. Get your Illumination to level one, then show me you know how to scavenge. Twenty items looted, twenty containers searched. Bring back the goods.",
 					Note = "Have Illumination level 1, loot 20 items, search 20 containers.",
 					SuccessMessage = "The lights are on. Now we can see what we're working with."
@@ -131,7 +131,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Target Practice",
+					Name = "[HIDE-2] Target Practice",
 					Description = "Every good hideout has a shooting range. It's where you zero your sights, practice your recoil control, and test new ammo. Get your Shooting Range to level one, then prove the practice pays off with fifteen headshots in the field.",
 					Note = "Have Shooting Range level 1, get 15 headshot kills.",
 					SuccessMessage = "Fifteen headshots. The shooting range paid for itself."
@@ -154,7 +154,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Flush with Resources",
+					Name = "[HIDE-3] Flush with Resources",
 					Description = "The Lavatory. Most people laugh, but this station turns junk into something useful. Old magazines become packaging material, empty fuel cans become containers. Get it to level one, craft ten items and loot forty more \u2014 the Lavatory needs feeding.",
 					Note = "Have Lavatory level 1, craft 10 items, loot 40 items.",
 					SuccessMessage = "Recycling at its finest. The Lavatory delivers."
@@ -177,7 +177,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Tinkerer",
+					Name = "[HIDE-4] The Tinkerer",
 					Description = "The Workbench. This is where broken becomes functional and functional becomes deadly. Every gunsmith worth his salt has one \u2014 and knows how to fix a jam mid-firefight. Get your Workbench to level one, fix a weapon malfunction and craft ten items.",
 					Note = "Have Workbench level 1, fix 1 malfunction, craft 10 items.",
 					SuccessMessage = "The Tinkerer knows his tools. Well done."
@@ -200,7 +200,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Stay Warm",
+					Name = "[HIDE-5] Stay Warm",
 					Description = "Tarkov winters will kill you faster than any bullet. The heating unit is the difference between waking up ready to fight and waking up hypothermic. Get your Heating to level two, restore two thousand HP and patch fifteen bleedings.",
 					Note = "Have Heating level 2, restore 2,000 HP, fix 15 bleedings.",
 					SuccessMessage = "Warm and patched up. The cold won't get you."
@@ -223,7 +223,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Water is Life",
+					Name = "[HIDE-6] Water is Life",
 					Description = "Clean water. The most valuable resource in Tarkov and nobody thinks about it until they don't have it. Get your Water Collector to level two, search sixty containers and survive five raids. Keep the water flowing.",
 					Note = "Have Water Collector level 2, search 60 containers, survive 5 raids.",
 					SuccessMessage = "Clean water flowing. Life goes on."
@@ -245,7 +245,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Filtered Air",
+					Name = "[HIDE-7] Filtered Air",
 					Description = "The Air Filtering Unit. Filters out the contaminated Tarkov air and boosts your physical skills. Better air means better endurance, faster recovery, sharper reflexes. Run fifteen kilometers and fix ten fractures. Train your body like the filter trains your lungs.",
 					Note = "Run 15km and fix 10 fractures.",
 					SuccessMessage = "Lungs clear, legs strong. The filter is working."
@@ -267,7 +267,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Moonshine Run",
+					Name = "[HIDE-8] Moonshine Run",
 					Description = "The Booze Generator. Turns sugar, water and filter into the finest moonshine in the exclusion zone. Every scav boss wants a bottle, every trader will pay top rouble for it. Earn half a million roubles and craft fifteen items. Show me you understand the hustle.",
 					Note = "Earn 500,000\u20bd from transactions, craft 15 items.",
 					SuccessMessage = "The moonshine flows. Business is booming."
@@ -290,7 +290,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Power Grid",
+					Name = "[HIDE-9] Power Grid",
 					Description = "The Generator. Heart of the hideout \u2014 without power, nothing works. No light, no workbench, no water collector, nothing. Get yours to level two, then scavenge eighty items and eighty containers to keep it fed. Power is everything.",
 					Note = "Have Generator level 2, loot 80 items, search 80 containers.",
 					SuccessMessage = "The generator hums. Power is on."
@@ -314,7 +314,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Field Medic",
+					Name = "[HIDE-10] Field Medic",
 					Description = "The Medstation. Your field hospital, your pharmacy, your last line of defense against bleeding out in a ditch. Get it to level two, then prove you can patch yourself up \u2014 a thousand HP restored, five fractures fixed, ten bleedings patched. Become the medic.",
 					Note = "Have Medstation level 2, restore 1,000 HP, fix 5 fractures, fix 10 bleedings.",
 					SuccessMessage = "Patched, healed, and ready. The medic lives."
@@ -342,7 +342,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Analyst",
+					Name = "[HIDE-11] The Analyst",
 					Description = "The Intelligence Center. Information is the most valuable commodity in Tarkov \u2014 more than bitcoin, more than moonshine. Get your Intel Center to level two, eliminate ten PMCs and earn a million roubles. Show me you play the information game.",
 					Note = "Have Intel Center level 2, kill 10 PMCs, earn 1,000,000\u20bd.",
 					SuccessMessage = "Intel gathered, threats eliminated. The analyst delivers."
@@ -364,7 +364,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Jackpot Machine",
+					Name = "[HIDE-12] Jackpot Machine",
 					Description = "The Scav Case. You put money in, your scav network brings back... something. Could be junk, could be a LEDX. It's gambling, but with scavengers. Get your Scav Case built, collect ten results and spend a million roubles. Sometimes you've got to spend money to make money.",
 					Note = "Have Scav Case level 1, collect 10 results, spend 1,000,000\u20bd.",
 					SuccessMessage = "Ten pulls on the jackpot machine. What did you get?"
@@ -393,7 +393,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Digital Gold",
+					Name = "[HIDE-13] Digital Gold",
 					Description = "The Bitcoin Farm. Graphics cards humming, hash rates climbing, and physical bitcoins dropping into your stash every few hours. Get your farm to level two, complete twenty cyclic crafts, earn three million roubles, and loot a hundred items. Build the empire.",
 					Note = "Have Bitcoin Farm level 2, craft 20 cyclic items, earn 3,000,000\u20bd, loot 100 items.",
 					SuccessMessage = "The bitcoin farm hums. Digital gold flows."
@@ -416,7 +416,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Unlimited Power",
+					Name = "[HIDE-14] Unlimited Power",
 					Description = "The Solar Power Array. No more fuel runs, no more generator maintenance, no more worrying about the lights going out. Get it installed, craft fifty items and search a hundred fifty containers. Harness the power of the sun and never look back.",
 					Note = "Have Solar Power level 1, craft 50 items, search 150 containers.",
 					SuccessMessage = "Solar power online. Unlimited energy."
@@ -440,7 +440,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Dark Ritual",
+					Name = "[HIDE-15] The Dark Ritual",
 					Description = "The Cultist Circle. Nobody talks about it. The symbol scratched into the floor, the candles that never go out, the offerings that disappear overnight. Whatever you believe about the cultists, their circle works \u2014 items go in, something else comes out. Get it built, then prove your devotion. Thirty cyclic crafts, fifty bleedings patched, five offerings collected. The ritual demands sacrifice.",
 					Note = "Have Cultist Circle level 1, craft 30 cyclic items, fix 50 bleedings, collect 5 offerings.",
 					SuccessMessage = "The ritual is complete. The circle accepts you."
@@ -492,7 +492,7 @@ public static class HideoutThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Kolya's Hideout Compendium",
+					Name = "[HIDE-C] Kolya's Hideout Compendium",
 					Description = "Every station documented, every upgrade catalogued, from the first light bulb to the cultist circle. You've built the ultimate hideout guide. Hand over the cards and the compendium is complete.",
 					Note = "Hand over one of each hideout card to complete the collection.",
 					SuccessMessage = "The Hideout Compendium is complete. Master builder."

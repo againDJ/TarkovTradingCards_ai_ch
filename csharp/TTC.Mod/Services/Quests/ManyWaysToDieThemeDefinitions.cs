@@ -92,7 +92,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Obituary Writer",
+					Name = "[DEAD-0] The Obituary Writer",
 					Description = "You want to document the many ways Tarkov kills people? That's morbid, friend. But I respect the honesty. Before I hand over my notes, show me you've survived at least one close call. Patch a light bleed and a heavy bleed. Then we'll talk.",
 					Note = "Fix 1 light bleeding and 1 heavy bleeding.",
 					SuccessMessage = "You've bled and survived. Here are my notes."
@@ -112,7 +112,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Leaf Camouflage",
+					Name = "[DEAD-1] Leaf Camouflage",
 					Description = "The Bush Sniper. Every Tarkov player has been killed by one \u2014 you're running through a field, feeling safe, and then BAM. Some guy crouched in a bush you didn't even see. Ten kills while crouched. Become the bush.",
 					Note = "Get 10 kills while crouched.",
 					SuccessMessage = "Ten kills from the bushes. Nobody saw you."
@@ -133,7 +133,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Gravity Check",
+					Name = "[DEAD-2] Gravity Check",
 					Description = "Falling Two Floors. The classic Tarkov mistake. You think you can make that jump, you can't, and now both your legs are broken in a ditch. Fix two fractures. Gravity doesn't care about your armor.",
 					Note = "Fix 2 fractures.",
 					SuccessMessage = "Two bones fixed. Gravity still undefeated."
@@ -154,7 +154,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Stabby Surprise",
+					Name = "[DEAD-3] Stabby Surprise",
 					Description = "The Bush Knife Surprise. You're looting a body, minding your business, and suddenly a naked man with a hatchet appears from a bush and ends your raid. One melee kill. Be the surprise.",
 					Note = "Get 1 melee kill.",
 					SuccessMessage = "The hatchet finds its mark. Surprise!"
@@ -176,7 +176,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Sound of Silence",
+					Name = "[DEAD-4] Sound of Silence",
 					Description = "The Silent Grenade. You hear nothing. No footsteps, no pin pull, nothing. Then you're dead. Five silent kills and three close-range kills. Make them wonder what happened.",
 					Note = "5 silent kills and 3 kills from under 15m.",
 					SuccessMessage = "Silent and deadly. They never heard you coming."
@@ -198,7 +198,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Patience Kills",
+					Name = "[DEAD-5] Patience Kills",
 					Description = "The Extract Camper. The most hated playstyle in Tarkov. Lying prone at the extract, scope trained on the approach, waiting for someone to sprint toward the green smoke. Five prone kills and ten ADS kills. Be the nightmare.",
 					Note = "5 prone kills and 10 ADS kills.",
 					SuccessMessage = "Patient and lethal. The extract belongs to you."
@@ -225,7 +225,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Out of Nowhere",
+					Name = "[DEAD-6] Out of Nowhere",
 					Description = "Grenade from Nowhere. You're behind cover, feeling safe, and a grenade bounces off the wall right into your lap. Five kills from under ten meters and three thousand shotgun damage. Bring the chaos up close.",
 					Note = "5 kills from under 10m and deal 3,000 shotgun damage.",
 					SuccessMessage = "Close range chaos delivered. Out of nowhere."
@@ -246,7 +246,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Oops, Wrong Target",
+					Name = "[DEAD-7] Oops, Wrong Target",
 					Description = "Friendly Fire Fiasco. Communication breakdown, wrong callout, and suddenly you're shooting your own teammate. It happens more than anyone admits. One kill while blind firing. You won't see what you hit either.",
 					Note = "Get 1 kill while blind firing.",
 					SuccessMessage = "Blind fire, confirmed kill. Sorry about that."
@@ -272,7 +272,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "One Step Too Far",
+					Name = "[DEAD-8] One Step Too Far",
 					Description = "Landmine Misstep. One wrong step on Woods or Shoreline and you're looking at two broken legs and a black screen. Have ten of your body parts destroyed \u2014 legs, arms, stomach, whatever Tarkov decides to break. Survive the damage.",
 					Note = "Have 10 body parts destroyed.",
 					SuccessMessage = "Ten parts destroyed and still standing. Somehow."
@@ -294,7 +294,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Impossible Shot",
+					Name = "[DEAD-9] The Impossible Shot",
 					Description = "Scav Mosin From Mars. You're in full tier 6 armor, running across an open field, and a scav with an iron-sight Mosin one-taps you from 200 meters away. Five kills from over 150 meters and five headshots. Channel the Mosin gods.",
 					Note = "5 kills from 150m+ and 5 headshots.",
 					SuccessMessage = "The Mosin gods have blessed you."
@@ -320,7 +320,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Peek Punishment",
+					Name = "[DEAD-10] Peek Punishment",
 					Description = "Door Peeker's Regret. You lean around the corner, just a quick peek, and there's a shotgun barrel six inches from your face. Five thousand HP worth of damage taken. Sometimes the best way to learn is to suffer.",
 					Note = "Lose 5,000 HP total.",
 					SuccessMessage = "Five thousand HP of suffering. Lesson learned."
@@ -347,7 +347,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The One-Tap",
+					Name = "[DEAD-11] The One-Tap",
 					Description = "Head, Eyes. The two words that haunt every Tarkov player's nightmares. Doesn't matter what armor you're wearing \u2014 one bullet to the face and it's back to the menu. Fifteen headshots and three thousand pistol damage. Deliver the classic.",
 					Note = "15 headshots and deal 3,000 pistol damage.",
 					SuccessMessage = "Head, Eyes. Fifteen times. The classic delivered."
@@ -380,7 +380,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Cheeki Breeki",
+					Name = "[DEAD-12] Cheeki Breeki",
 					Description = "Cheeki Breeki! The war cry of the Factory scav with a shotgun. No aim, no plan, just pure aggression and buckshot. Ten scavs on Factory with a shotgun and ten hipfire kills. CHEEKI BREEKI IV DAMKE!",
 					Note = "10 scav kills with shotgun on Factory and 10 hipfire kills.",
 					SuccessMessage = "CHEEKI BREEKI! The Factory trembles."
@@ -407,7 +407,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Army of Scavs",
+					Name = "[DEAD-13] Army of Scavs",
 					Description = "Scav Army Convergence. You kill one, three more appear. You kill those, five more come running. Before you know it, every scav on the map has converged on your position. Fifty scavs eliminated and ten successful extractions. Fight the horde.",
 					Note = "Eliminate 50 scavs and survive 10 raids.",
 					SuccessMessage = "Fifty scavs down. The horde has been repelled."
@@ -443,7 +443,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Dry Death",
+					Name = "[DEAD-14] The Dry Death",
 					Description = "Tarkov Hydration Fail. You forgot to bring water. Your hydration hits zero mid-raid, your health starts draining, and you're dying of thirst. Survive five minutes dehydrated, five minutes encumbered, extract alive, and take three thousand HP of damage. Never forget to hydrate.",
 					Note = "5 min dehydrated, 5 min encumbered, extract alive, lose 3,000 HP.",
 					SuccessMessage = "Hydrated at last. Never again."
@@ -465,7 +465,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Alt+F4",
+					Name = "[DEAD-15] Alt+F4",
 					Description = "Server Disconnect Doom. The ultimate Tarkov death \u2014 not to a bullet, not to a grenade, but to a loading screen. You were winning the fight, you had the angle, and then... connection lost. Fifty PMC headshots and a hundred kilometers on foot. Make the server remember you.",
 					Note = "50 PMC headshots and cover 100km on foot.",
 					SuccessMessage = "The server remembers you now."
@@ -512,7 +512,7 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Kolya's Book of the Dead",
+					Name = "[DEAD-C] Kolya's Book of the Dead",
 					Description = "Every death documented, every absurd way to die catalogued. From bush snipers to server disconnects, you've experienced them all and survived to tell the tale. Hand over the cards and the Book of the Dead is complete.",
 					Note = "Hand over one of each death card to complete the collection.",
 					SuccessMessage = "The Book of the Dead is complete. Rest in peace... or not."

@@ -151,6 +151,33 @@ Tracked per-kill with extensive filtering options.
 - Kill 5 PMC headshots from 100m+: `target="AnyPmc"` + `bodyPart=["Head"]` + `distance={">=":100}`
 - Kill 2 sniper scavs on Streets: `target="Savage"` + `savageRole=["marksman"]` + Location `TarkovStreets`
 - Kill at night: `daytime={"from":22,"to":7}` + any other filters
+- Kill with suppressed weapon: `weaponModsInclusive=[[suppressor IDs]]`
+- Kill with bolt-action iron sights: `weapon=[bolt-action IDs]` + `weaponModsExclusive=[[all scope IDs]]`
+- Kill enemies wearing big backpacks: `enemyEquipmentInclusive=[[backpack IDs]]`
+- Kill with specific caliber: `weaponCaliber=["5.56x45"]`
+
+**Advanced parent-level modifiers (on CounterCreator, not on Kills):**
+- `oneSessionOnly=true` — all sub-conditions must be completed in a single raid (e.g., "locate X and extract in one raid")
+- `completeInSeconds=300` — time limit, used with HealthEffect (e.g., "survive 5 min dehydrated")
+- `doNotResetIfCounterCompleted=false` — standard behavior
+
+**Advanced Kills-level modifiers:**
+- `resetOnSessionEnd=true` — counter resets to 0 if you die/leave raid (e.g., "kill X in a single raid")
+- `daytime={"from":22,"to":7}` — kills only count during nighttime hours
+- `weaponModsInclusive=[[mod IDs]]` — weapon MUST have one of these mods (e.g., suppressor)
+- `weaponModsExclusive=[[mod IDs]]` — weapon must NOT have these mods (e.g., no scopes = iron sights only)
+- `enemyEquipmentInclusive=[[item IDs]]` — enemy must be wearing specific gear (e.g., big backpacks, festive masks)
+- `enemyEquipmentExclusive=[[item IDs]]` — enemy must NOT be wearing specific gear
+- `weaponCaliber=["5.56x45"]` — kills only count with specific caliber weapons
+
+**Vanilla quest examples using these:**
+- "Kill in a single raid" → `resetOnSessionEnd=true` on Kills (Tough Guy quest)
+- "Kill at night" → `daytime={"from":22,"to":7}` (Insomnia, Eagle-Owl, Chumming)
+- "Kill with suppressed weapon" → `weaponModsInclusive` with suppressor IDs (Punisher 2, Silent Caliber)
+- "Kill with iron sights only" → `weaponModsExclusive` with all scope IDs (Tarkov Shooter 1)
+- "Kill with specific caliber" → `weaponCaliber` (Gun Connoisseur series)
+- "Kill enemies with big backpacks" → `enemyEquipmentInclusive` with backpack IDs (Invisible Hand)
+- "Visit + extract in one raid" → `oneSessionOnly=true` on CounterCreator (Operation Aquarius, Spa Tour)
 
 #### SavageRole Values (47 roles)
 
@@ -304,14 +331,19 @@ These are the condition types currently supported in `QuestFactory.cs`:
 - ✅ HandoverItem (collection quests)
 
 ### Vanilla (NOT yet implemented — could be added)
-- ❌ HealthEffect (dehydration, pain, tremor — **needed for quest 14 Many Ways to Die**)
 - ❌ FindItem (find specific items in raid)
 - ❌ LeaveItemAtLocation (place items)
 - ❌ Skill (reach skill level)
-- ❌ Equipment (wear specific gear while doing X)
+- ❌ Equipment counter sub-condition (wear specific gear while doing X)
 - ❌ Shots (fire X shots)
-- ❌ Daytime filter on Kills
-- ❌ WeaponCaliber filter on Kills
+- ❌ Daytime filter on Kills (`daytime={"from":22,"to":7}`)
+- ❌ WeaponCaliber filter on Kills (`weaponCaliber=["5.56x45"]`)
+- ❌ WeaponModsInclusive on Kills (require suppressor, etc.)
+- ❌ WeaponModsExclusive on Kills (iron sights only, etc.)
+- ❌ EnemyEquipmentInclusive on Kills (enemy wearing specific gear)
+- ❌ EnemyEquipmentExclusive on Kills (enemy NOT wearing specific gear)
+- ❌ resetOnSessionEnd on Kills (must complete kills in a single raid)
+- ❌ oneSessionOnly on CounterCreator (all objectives in one raid)
 
 ### QE (all supported via impossible-condition pattern)
 - ✅ All 54 QE condition types listed above

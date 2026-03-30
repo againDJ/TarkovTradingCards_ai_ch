@@ -105,7 +105,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Cartographer's Notes",
+					Name = "[LOCA-0] The Cartographer's Notes",
 					Description = "Every location in Tarkov has a story written in blood and bullet holes. I've been mapping the conflict zone since the beginning \u2014 every hotspot, every ambush point, every death trap that's claimed a hundred lives. Before I hand over my cartographer's notes, I need to know you've actually been out there. Cover five kilometers on foot. Any direction, any map. Just move.",
 					Note = "Cover 5km on foot, then receive the Iconic Locations binder.",
 					SuccessMessage = "Five kilometers of Tarkov under your boots. Here are my notes."
@@ -130,7 +130,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Woodsman",
+					Name = "[LOCA-1] The Woodsman",
 					Description = "The Sawmill on Woods. It's the center of gravity for the entire map \u2014 every gunfight, every ambush, every desperate sprint for the extract passes through those log stacks. But before you document it, I need you to learn the forest. Find Jaeger's camp, locate the old USEC position, and make it out alive \u2014 twice. Prove you know these woods.",
 					Note = "Visit Jaeger's camp, the USEC camp, and survive Woods 2 times.",
 					SuccessMessage = "You know the forest now. The Woodsman has spoken."
@@ -158,7 +158,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Into the Deep",
+					Name = "[LOCA-2] Into the Deep",
 					Description = "ZB-1011. Every PMC who's ever walked Customs knows that bunker extract by the train tracks. Down the stairs, through the door, you're out. It's the first extract most people learn, and the one they keep coming back to. I need you to use it three times and clear out five scavs along the way. Earn your right to call this your exit.",
 					Note = "Extract 3 times through ZB-1011 and eliminate 5 scavs on Customs.",
 					SuccessMessage = "You've been to the deep and came back. That takes guts."
@@ -182,7 +182,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Hallway Horror",
+					Name = "[LOCA-3] Hallway Horror",
 					Description = "Dorms on Customs. Three floors of pure chaos. The hallways are so narrow that every engagement is a coin flip. Room 204's sightline down the corridor is legendary. I need you to find room 214, locate the secret extraction point, and survive Customs three times. Knowledge is power in those hallways.",
 					Note = "Visit room 214, the secret exfil, survive Customs 3 times.",
 					SuccessMessage = "You know the Dorms now. That knowledge will save your life."
@@ -208,7 +208,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Last Man Standing",
+					Name = "[LOCA-4] Last Man Standing",
 					Description = "Factory Gate 3. The light at the end of the tunnel \u2014 literally. Every raid on Factory ends with a desperate sprint toward that green smoke, praying nobody's watching the angle. The bodies pile up at the extract like nowhere else. Extract through Gate 3 five times \u2014 day or night. Earn your ticket out.",
 					Note = "Extract 5 times through Gate 3 on Factory.",
 					SuccessMessage = "Five times through the gate. You know the way out."
@@ -233,7 +233,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Consumer Paradise",
+					Name = "[LOCA-5] Consumer Paradise",
 					Description = "The Ultra Mall Atrium on Interchange. That massive open space where Killa patrols and every shop is a potential goldmine \u2014 or a death trap. AVOKADO, KOSTIN, Techlight... I need you to scout the stores, search fifty containers, and loot thirty items. Shop till you drop, friend.",
 					Note = "Visit 2 stores, search 50 containers, loot 30 items.",
 					SuccessMessage = "The mall has been picked clean. Excellent shopping trip."
@@ -262,7 +262,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Rooftop Sovereign",
+					Name = "[LOCA-6] Rooftop Sovereign",
 					Description = "The Stronghold Roof on Customs. Whoever holds the high ground controls the entire mid-section of the map. The fortress in the center draws every fight to it \u2014 hold it and you control the flow of the entire raid. Eliminate fifteen targets on Customs, survive five raids, and move two kilometers crouched. Stay low and own the rooftops.",
 					Note = "15 kills on Customs, survive 5 times, crouch-walk 2km.",
 					SuccessMessage = "The Stronghold is yours. The rooftop sovereign."
@@ -285,7 +285,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Techlight Sprint",
+					Name = "[LOCA-7] The Techlight Sprint",
 					Description = "The Techlight Rush. That mad sprint from spawn to the second floor of Interchange, praying you get there before the other PMCs. GPUs, LEDX, Tetriz \u2014 the loot is insane if you're first. Ten kilometers of running, sixty containers searched, fifty items grabbed. Speed is survival.",
 					Note = "Run 10km, search 60 containers, loot 50 items.",
 					SuccessMessage = "First to Techlight, first to the loot. Speed kills."
@@ -310,7 +310,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Cliffside Overwatch",
+					Name = "[LOCA-8] Cliffside Overwatch",
 					Description = "The Water Treatment Plant Overwatch on Lighthouse. Rogues patrol the rooftops with .50 cals and grenade launchers. I need you to recon all three treatment plant rooftops \u2014 yes, that means getting past the Rogues. Then survive Lighthouse three times. Prove you can handle the approach.",
 					Note = "Recon 3 treatment plant roofs, survive Lighthouse 3 times.",
 					SuccessMessage = "Three rooftops scouted, three extractions. You own the cliffs."
@@ -343,7 +343,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Pipe Dream",
+					Name = "[LOCA-9] The Pipe Dream",
 					Description = "The Water Treatment Plant. Getting inside means fighting through waves of Rogues in full kit. But I don't need you to fight \u2014 I need you to explore. Find the crashed helicopter, locate the lost scav group in the chalets, heal up fifteen hundred HP worth of wounds, and survive three more Lighthouse raids. This is endurance, not firepower.",
 					Note = "Visit 2 locations, restore 1,500 HP, survive Lighthouse 3 times.",
 					SuccessMessage = "Battered but alive. The treatment plant holds no more secrets."
@@ -368,7 +368,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Scariest Hallway",
+					Name = "[LOCA-10] The Scariest Hallway",
 					Description = "West Wing Room 310 on Shoreline. The Health Resort is the single most contested building in Tarkov. Every hallway is a death sentence. I need you to scout the generators in both wings, find Sanitar's office, and survive four Shoreline raids. Explore every corner of that resort \u2014 it'll save your life one day.",
 					Note = "Visit 3 Resort locations, survive Shoreline 4 times.",
 					SuccessMessage = "The Resort has no secrets left. You've walked every hallway."
@@ -409,7 +409,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Street Warfare",
+					Name = "[LOCA-11] Street Warfare",
 					Description = "Somewhere in Tarkov, there's a rooftop the locals call the King Building. The name stuck because whoever holds the high ground rules the fight below. Snipers know this better than anyone \u2014 they perch on rooftops across every map, picking off PMCs who never think to look up. To earn this card, you need to dethrone them. Hunt down sniper scavs on Streets, Customs, and Shoreline. Two on each map. Rule from above.",
 					Note = "Kill 2 sniper scavs on each map: Streets, Customs, Shoreline.",
 					SuccessMessage = "The snipers are gone. The King Building is yours."
@@ -443,7 +443,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Welcome to the Hotel",
+					Name = "[LOCA-12] Welcome to the Hotel",
 					Description = "The Pinewood Hotel Lobby on Streets. Marble floors, chandelier fragments, and enough blood to fill the swimming pool out back. Scout the Sparja store, find both ritual spots on Chekannaya street, and survive five more Streets raids. This hotel checks you in, but doesn't check you out.",
 					Note = "Visit 3 zones, survive Streets 5 times.",
 					SuccessMessage = "Checked in, checked out. The Pinewood has no more surprises."
@@ -481,7 +481,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Underground Empire",
+					Name = "[LOCA-13] Underground Empire",
 					Description = "The Queen Bunker on Reserve. The underground network beneath the military base is a labyrinth of corridors, server rooms, and dead PMCs. Whoever controls the bunker controls the best loot on Reserve. I need you to fight your way through, extract via D-2 three times, and loot eighty containers. Fifteen kills to prove you own the place. Rule the underground.",
 					Note = "15 kills on Reserve, extract D-2 3 times, search 80 containers.",
 					SuccessMessage = "The underground empire is yours. D-2 knows your name."
@@ -507,7 +507,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Forbidden Floor",
+					Name = "[LOCA-14] The Forbidden Floor",
 					Description = "The Lab Server Nexus. The most dangerous location in all of Tarkov. Access costs a keycard, death costs everything. I need you to scout the control room, the server room, and the hazard dome \u2014 then survive five Lab raids and search a hundred containers. Raiders patrol with endgame gear, and every PMC you meet is a geared veteran. Welcome to the endgame.",
 					Note = "Visit 3 Lab zones, survive Labs 5 times, search 100 containers.",
 					SuccessMessage = "The Lab has been fully documented. You survived the forbidden floor."
@@ -534,7 +534,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "The Final Lighthouse",
+					Name = "[LOCA-15] The Final Lighthouse",
 					Description = "The Lightkeeper's Island Jetty. The most mysterious location in Tarkov. Who is the Lightkeeper? What does he want? I need you to visit the Lighthouse itself, find the commandant's office at the radar station, locate the hidden recording studio and the drug lab. Survive Lighthouse eight times and cover fifty kilometers on foot. Only then will you understand why they call it the final lighthouse.",
 					Note = "Visit 4 Lighthouse zones, survive 8 times, cover 50km on foot.",
 					SuccessMessage = "The final lighthouse has been documented. Its secrets are yours."
@@ -581,7 +581,7 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "Kolya's Atlas of Tarkov",
+					Name = "[LOCA-C] Kolya's Atlas of Tarkov",
 					Description = "You've walked every street, cleared every building, mapped every bunker. From the sawmill on Woods to the Lightkeeper's island, you've documented every iconic location in Tarkov. This atlas is the most complete guide to the conflict zone ever assembled. Hand over the cards and the Atlas of Tarkov is yours to keep.",
 					Note = "Hand over one of each location card to complete the collection.",
 					SuccessMessage = "The Atlas of Tarkov is complete. Every location documented."
