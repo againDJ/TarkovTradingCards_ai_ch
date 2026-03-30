@@ -1411,4 +1411,264 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 15 themes to be designed...*
+## Theme: Many Ways to Die
+
+**15 cards** (3 Common, 5 Uncommon, 4 Rare, 1 Epic, 1 Legendary, 1 Secret)
+
+**Theme focus**: Extreme survival situations, absurd death scenarios recreated as objectives. Heavy use of medical conditions, close-range combat, grenades, blind fire, and endurance.
+
+### QUEST: The Obituary Writer (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_many_ways_to_die`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: FixLightBleed] Fix 1 light bleeding
+  - [QE: FixHeavyBleed] Fix 1 heavy bleeding
+- **XP**: 1,000
+- **Description**: *"You want to document the many ways Tarkov kills people? That's morbid, friend. But I respect the honesty. Before I hand over my notes, show me you've survived at least one close call. Patch a light bleed and a heavy bleed. Then we'll talk."*
+- **Rewards**:
+  - 1× Many Ways to Die Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: Leaf Camouflage [Common]
+- **Card**: Bush Sniper
+- **ID Seed**: `ttc_quest_card_death_bushsniper`
+- **Prerequisites**: The Obituary Writer (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [QE: KillsWhileCrouched] Get 10 kills while crouched *(Hide in the bushes like a true bush sniper)*
+- **XP**: 1,000
+- **Description**: *"The Bush Sniper. Every Tarkov player has been killed by one — you're running through a field, feeling safe, and then BAM. Some guy crouched in a bush you didn't even see. Ten kills while crouched. Become the bush."*
+- **Barter Unlocked**: Trade card → 1× IFAK
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: Gravity Check [Common]
+- **Card**: Falling Two Floors
+- **ID Seed**: `ttc_quest_card_death_falling`
+- **Prerequisites**: Leaf Camouflage (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: FixFracture] Fix 2 fractures *(Gravity is unforgiving in Tarkov)*
+- **XP**: 1,000
+- **Description**: *"Falling Two Floors. The classic Tarkov mistake. You think you can make that jump, you can't, and now both your legs are broken in a ditch. Fix two fractures. Gravity doesn't care about your armor."*
+- **Barter Unlocked**: Trade card → 2× Splint
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: Stabby Surprise [Common]
+- **Card**: Bush Knife Surprise
+- **ID Seed**: `ttc_quest_card_death_bushknife`
+- **Prerequisites**: Gravity Check (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Get 1 melee kill *(KillTarget: "Any", KillWeapons: all melee weapon IDs)*
+- **XP**: 1,000
+- **Description**: *"The Bush Knife Surprise. You're looting a body, minding your business, and suddenly a naked man with a hatchet appears from a bush and ends your raid. One melee kill. Be the surprise."*
+- **Barter Unlocked**: Trade card → 1× Antique axe
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: Sound of Silence [Uncommon]
+- **Card**: Silent Grenade
+- **ID Seed**: `ttc_quest_card_death_silentgrenade`
+- **Prerequisites**: Stabby Surprise (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 5 kills while silent
+  - [Vanilla: Kills] Eliminate 3 targets from under 15m *(KillTarget: "Any", KillDistanceCompare: "<=", KillDistanceValue: 15)*
+- **XP**: 3,000
+- **Description**: *"The Silent Grenade. You hear nothing. No footsteps, no pin pull, nothing. Then you're dead. The grenade was already at your feet before your brain registered the danger. Five silent kills and three close-range kills. Make them wonder what happened."*
+- **Barter Unlocked**: Trade card → 2× RGD-5 grenade
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: Patience Kills [Uncommon]
+- **Card**: Extract Camper
+- **ID Seed**: `ttc_quest_card_death_extractcamper`
+- **Prerequisites**: Sound of Silence (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [QE: KillsWhileProne] Get 5 kills while prone *(The extract camper's natural position)*
+  - [QE: KillsWhileADS] Get 10 kills while ADS
+- **XP**: 3,000
+- **Description**: *"The Extract Camper. The most hated playstyle in Tarkov. Lying prone at the extract, scope trained on the approach, waiting for someone to sprint toward the green smoke. Five prone kills and ten ADS kills. Be the nightmare."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: Out of Nowhere [Uncommon]
+- **Card**: Grenade from Nowhere
+- **ID Seed**: `ttc_quest_card_death_grenadenowhere`
+- **Prerequisites**: Patience Kills (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: DamageWithShotguns] Deal 3,000 damage with shotguns *(Close range chaos)*
+  - [Vanilla: Kills] Eliminate 5 targets from under 10m *(KillTarget: "Any", KillDistanceCompare: "<=", KillDistanceValue: 10)*
+- **XP**: 3,000
+- **Description**: *"Grenade from Nowhere. You're behind cover, feeling safe, and a grenade bounces off the wall right into your lap. Nobody even saw where it came from. Five kills from under ten meters and three thousand shotgun damage. Bring the chaos up close."*
+- **Barter Unlocked**: Trade card → 2× F-1 grenade
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: Oops, Wrong Target [Uncommon]
+- **Card**: Friendly Fire Fiasco
+- **ID Seed**: `ttc_quest_card_death_friendlyfire`
+- **Prerequisites**: Out of Nowhere (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: KillsWhileBlindFiring] Get 1 kill while blind firing *(Spray and pray — who knows what you'll hit)*
+- **XP**: 3,000
+- **Description**: *"Friendly Fire Fiasco. Communication breakdown, wrong callout, and suddenly you're shooting your own teammate. It happens more than anyone admits. One kill while blind firing. You won't see what you hit either."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: One Step Too Far [Uncommon]
+- **Card**: Landmine Misstep
+- **ID Seed**: `ttc_quest_card_death_landmine`
+- **Prerequisites**: Oops, Wrong Target (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: DestroyBodyPart] Have 10 body parts destroyed *(Landmines don't care about your armor)*
+- **XP**: 3,000
+- **Description**: *"Landmine Misstep. One wrong step on Woods or Shoreline and you're looking at two broken legs and a black screen. Have ten of your body parts destroyed — legs, arms, stomach, whatever Tarkov decides to break. Survive the damage."*
+- **Barter Unlocked**: Trade card → 1× CMS surgical kit
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: The Impossible Shot [Rare]
+- **Card**: Scav Mosin From Mars
+- **ID Seed**: `ttc_quest_card_death_scavmosin`
+- **Prerequisites**: One Step Too Far (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 targets from over 150m *(KillTarget: "Any", KillDistanceCompare: ">=", KillDistanceValue: 150)*
+  - [Vanilla: Kills] Eliminate 5 targets with headshots *(KillTarget: "Any", KillBodyParts: ["Head"])*
+- **XP**: 10,000
+- **Description**: *"Scav Mosin From Mars. You're in full tier 6 armor, running across an open field, and a scav with an iron-sight Mosin one-taps you from 200 meters away. The impossible shot. Five kills from over 150 meters and five headshots. Channel the Mosin gods."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: Peek Punishment [Rare]
+- **Card**: Door Peeker's Regret
+- **ID Seed**: `ttc_quest_card_death_doorpeeker`
+- **Prerequisites**: The Impossible Shot (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: HealthLoss] Lose 5,000 HP total *(Take damage — lots of it)*
+- **XP**: 10,000
+- **Description**: *"Door Peeker's Regret. You lean around the corner, just a quick peek, and there's a shotgun barrel six inches from your face. Five thousand HP worth of damage taken. Sometimes the best way to learn is to suffer."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: The One-Tap [Rare]
+- **Card**: Head-Eyes Classic
+- **ID Seed**: `ttc_quest_card_death_headeyes`
+- **Prerequisites**: Peek Punishment (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 targets with headshots *(KillTarget: "Any", KillBodyParts: ["Head"])*
+  - [QE: DamageWithPistols] Deal 3,000 damage with pistols *(Head-eyes often comes from a pistol)*
+- **XP**: 10,000
+- **Description**: *"Head, Eyes. The two words that haunt every Tarkov player's nightmares. Doesn't matter what armor you're wearing, doesn't matter how geared you are — one bullet to the face and it's back to the menu. Fifteen headshots and three thousand pistol damage. Deliver the classic."*
+- **Barter Unlocked**: Trade card → 1× Maska-1SCh helmet (Olive Drab) with face shield
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: Cheeki Breeki [Rare]
+- **Card**: Cheeki Breeki Shotgun
+- **ID Seed**: `ttc_quest_card_death_cheekibreeki`
+- **Prerequisites**: The One-Tap (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs on Factory with shotguns *(KillTarget: "Savage", KillLocations: ["factory4_day", "factory4_night"], KillWeapons: all shotgun IDs)*
+  - [QE: KillsWithoutADS] Get 10 kills without ADS *(Hipfire like a true scav)*
+- **Location**: Factory
+- **XP**: 10,000
+- **Description**: *"Cheeki Breeki! The war cry of the Factory scav with a shotgun. No aim, no plan, just pure aggression and buckshot. Ten scavs on Factory with a shotgun and ten hipfire kills. CHEEKI BREEKI IV DAMKE!"*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: Army of Scavs [Epic]
+- **Card**: Scav Army Convergence
+- **ID Seed**: `ttc_quest_card_death_scavarmy`
+- **Prerequisites**: Cheeki Breeki (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 scavs *(KillTarget: "Savage")*
+  - [Vanilla: Survive] Survive and extract 10 times
+- **XP**: 20,000
+- **Description**: *"Scav Army Convergence. You kill one, three more appear. You kill those, five more come running. Before you know it, every scav on the map has converged on your position and you're out of ammo. Fifty scavs eliminated and ten successful extractions. Fight the horde."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: The Dry Death [Legendary]
+- **Card**: Tarkov Hydration Fail
+- **ID Seed**: `ttc_quest_card_death_hydration`
+- **Prerequisites**: Army of Scavs (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HealthEffect] Survive 5 minutes while fully dehydrated (excluding Factory) *(bodyPart: Stomach, effect: Dehydration, completeInSeconds: 300)*
+  - [QE: EncumberedTimeInSeconds] Spend 5 minutes encumbered
+  - [Vanilla: Survive] Survive and extract while dehydrated
+  - [QE: HealthLoss] Lose 3,000 HP total
+- **XP**: 35,000
+- **Description**: *"Tarkov Hydration Fail. You forgot to bring water. Your hydration hits zero mid-raid, your health starts draining, and you're dying of thirst. Survive five minutes dehydrated, five minutes encumbered, extract alive, and take three thousand HP of damage. Never forget to hydrate."*
+- **Barter Unlocked**: Trade card → 10× Emergency water ration
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: Alt+F4 [Secret]
+- **Card**: Server Disconnect Doom
+- **ID Seed**: `ttc_quest_card_death_disconnect`
+- **Prerequisites**: The Dry Death (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
+  - [QE: MoveDistance] Cover 100,000m on foot *(Run until the server gives up)*
+- **XP**: 60,000
+- **Description**: *"Server Disconnect Doom. The ultimate Tarkov death — not to a bullet, not to a grenade, but to a loading screen. You were winning the fight, you had the angle, and then... connection lost. Fifty PMC headshots and a hundred kilometers on foot. Make the server remember you."*
+- **Barter Unlocked**: Trade card → 1× SICC case
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: Kolya's Book of the Dead (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_many_ways_to_die`
+- **Prerequisites**: Alt+F4 (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 cards (1 of each, distinct)
+- **Description**: *"Every death documented, every absurd way to die catalogued. From bush snipers to server disconnects, you've experienced them all and survived to tell the tale. Hand over the cards and the Book of the Dead is complete."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 1× T H I C C Items Case
+  - +0.15 standing with Kolya
+- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+
+---
+
+## Barter Summary — Many Ways to Die
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Bush Sniper | Common | 1× IFAK |
+| 2 | Falling Two Floors | Common | 2× Splint |
+| 3 | Bush Knife Surprise | Common | 1× Antique axe |
+| 4 | Silent Grenade | Uncommon | 2× RGD-5 grenade |
+| 5 | Extract Camper | Uncommon | Random Scav Case (15K) |
+| 6 | Grenade from Nowhere | Uncommon | 2× F-1 grenade |
+| 7 | Friendly Fire Fiasco | Uncommon | Random Scav Case (15K) |
+| 8 | Landmine Misstep | Uncommon | 1× CMS surgical kit |
+| 9 | Scav Mosin From Mars | Rare | Random Scav Case (95K) |
+| 10 | Door Peeker's Regret | Rare | Random Scav Case (95K) |
+| 11 | Head-Eyes Classic | Rare | 1× Maska-1SCh + face shield |
+| 12 | Cheeki Breeki Shotgun | Rare | Random Scav Case (95K) |
+| 13 | Scav Army Convergence | Epic | Random Scav Case (Moonshine) |
+| 14 | Tarkov Hydration Fail | Legendary | 10× Emergency water ration |
+| 15 | Server Disconnect Doom | Secret | 1× SICC case |
+| **Collection** | All 15 cards | — | 1× T H I C C Items Case |
+
+### New Condition Types Introduced
+- **QE: KillsWhileBlindFiring** — kills while blind firing around corners
+
+---
+
+*Remaining 14 themes to be designed...*

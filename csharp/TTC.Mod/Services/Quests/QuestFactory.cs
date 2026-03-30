@@ -172,7 +172,55 @@ public sealed class QuestFactory
 		{
 			var condId = QuestIds.ConditionId(def.Seed, condIdx++);
 
-			if (obj.HideoutAreaType != null)
+			if (obj.HealthEffectType != null)
+			{
+				// Vanilla HealthEffect condition (dehydration, pain, tremor, etc.)
+				var healthCounterConditions = new List<QuestConditionCounterCondition>
+				{
+					new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 100)),
+						ConditionType = "HealthEffect",
+						Target = new ListOrT<string>(new List<string>(), ""),
+						BodyPartsWithEffects = new List<EnemyHealthEffect>
+						{
+							new EnemyHealthEffect
+							{
+								BodyParts = new List<string> { obj.HealthEffectBodyPart ?? "Stomach" },
+								Effects = new List<string> { obj.HealthEffectType }
+							}
+						}
+					}
+				};
+
+				if (obj.HealthEffectLocations is { Count: > 0 })
+				{
+					healthCounterConditions.Add(new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 150)),
+						ConditionType = "Location",
+						Target = new ListOrT<string>(obj.HealthEffectLocations, null!)
+					});
+				}
+
+				quest.Conditions.AvailableForFinish.Add(new QuestCondition
+				{
+					Id = new MongoId(condId),
+					ConditionType = "CounterCreator",
+					Type = "Completion",
+					Value = obj.Value,
+					CompleteInSeconds = obj.HealthEffectDuration ?? 0,
+					IsNecessary = true,
+					DynamicLocale = false,
+					Target = new ListOrT<string>(new List<string>(), ""),
+					Counter = new QuestConditionCounter
+					{
+						Id = QuestIds.ConditionId(def.Seed, condIdx + 200),
+						Conditions = healthCounterConditions
+					}
+				});
+			}
+			else if (obj.HideoutAreaType != null)
 			{
 				// Vanilla HideoutArea condition (top-level, not CounterCreator)
 				quest.Conditions.AvailableForFinish.Add(new QuestCondition

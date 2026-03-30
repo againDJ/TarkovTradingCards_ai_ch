@@ -176,9 +176,9 @@ public sealed class RewardCrateRouter(
 							sessionId,
 							QuestIds.KolyaTraderId,
 							MessageType.MessageWithItems,
-							randomType.Value == RandomRewardType.ScavCaseIntel
-								? "My scav network came through. Here's what they found."
-								: "The circle has spoken. Accept its offerings.",
+							randomType.Value == RandomRewardType.CultistCircle
+								? "The circle has spoken. Accept its offerings."
+								: "My scav network came through. Here's what they found.",
 							randomItems
 						);
 						logger.Info($"[TTC][RewardCrate] Sent {randomItems.Count} random items ({randomType.Value}) via mail for crate {tpl[..8]}...");

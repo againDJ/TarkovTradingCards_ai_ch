@@ -402,5 +402,99 @@
     "Conditions": [
       { "ConditionId": "a87d14342a99ef38fb6a5a08", "ConditionType": "KillsWhileSilent" }
     ]
+  },
+  "a3152a148ff13e228b0621b7": {
+    "QuestId": "a3152a148ff13e228b0621b7",
+    "QuestName": "The Obituary Writer",
+    "Conditions": [
+      { "ConditionId": "2681c5e2d927836039eead16", "ConditionType": "FixLightBleed" },
+      { "ConditionId": "8231acddbedf871e9d5ce964", "ConditionType": "FixHeavyBleed" }
+    ]
+  },
+  "58388e13a04f1110da9598f6": {
+    "QuestId": "58388e13a04f1110da9598f6",
+    "QuestName": "Leaf Camouflage",
+    "Conditions": [
+      { "ConditionId": "c54972d3f8b4dbb84492f00f", "ConditionType": "KillsWhileCrouched" }
+    ]
+  },
+  "48e812c6847d6b0ba027b43d": {
+    "QuestId": "48e812c6847d6b0ba027b43d",
+    "QuestName": "Gravity Check",
+    "Conditions": [
+      { "ConditionId": "5025c01fbeaf6b85c751af88", "ConditionType": "FixFracture" }
+    ]
+  },
+  "ba3462d1a704ecc48b73204f": {
+    "QuestId": "ba3462d1a704ecc48b73204f",
+    "QuestName": "Sound of Silence",
+    "Conditions": [
+      { "ConditionId": "7d2cd2e14b8c1fa1a8a839fc", "ConditionType": "KillsWhileSilent" }
+    ]
+  },
+  "7f5954843f588348b545c2cd": {
+    "QuestId": "7f5954843f588348b545c2cd",
+    "QuestName": "Patience Kills",
+    "Conditions": [
+      { "ConditionId": "be97c9693a574a74e053bea2", "ConditionType": "KillsWhileProne" },
+      { "ConditionId": "c072e5ee409139b5dcdd732e", "ConditionType": "KillsWhileADS" }
+    ]
+  },
+  "921f0baf797c170face819f8": {
+    "QuestId": "921f0baf797c170face819f8",
+    "QuestName": "Out of Nowhere",
+    "Conditions": [
+      { "ConditionId": "d931fd9b700c9b21dbf8afa9", "ConditionType": "DamageWithShotguns" }
+    ]
+  },
+  "83f5e0475cb672baa2e7c53f": {
+    "QuestId": "83f5e0475cb672baa2e7c53f",
+    "QuestName": "Oops, Wrong Target",
+    "Conditions": [
+      { "ConditionId": "35e2d1a93d0021e2b9037bb8", "ConditionType": "KillsWhileBlindFiring" }
+    ]
+  },
+  "1ebd75be9359565f1541a2c1": {
+    "QuestId": "1ebd75be9359565f1541a2c1",
+    "QuestName": "One Step Too Far",
+    "Conditions": [
+      { "ConditionId": "e21109eda0943c7eeb11c646", "ConditionType": "DestroyBodyPart" }
+    ]
+  },
+  "0fc01cd5b4ed2ba0a6ade435": {
+    "QuestId": "0fc01cd5b4ed2ba0a6ade435",
+    "QuestName": "Peek Punishment",
+    "Conditions": [
+      { "ConditionId": "45720f63ea96270aa5e2ad27", "ConditionType": "HealthLoss" }
+    ]
+  },
+  "ef2bf5355e0febf2a78060b4": {
+    "QuestId": "ef2bf5355e0febf2a78060b4",
+    "QuestName": "The One-Tap",
+    "Conditions": [
+      { "ConditionId": "44927d14aa7a4626233dcab7", "ConditionType": "DamageWithPistols" }
+    ]
+  },
+  "612a3b68f1533938a46489bd": {
+    "QuestId": "612a3b68f1533938a46489bd",
+    "QuestName": "Cheeki Breeki",
+    "Conditions": [
+      { "ConditionId": "2ae593c7c1d004f61ef7f78f", "ConditionType": "KillsWithoutADS" }
+    ]
+  },
+  "11168ce239b30274ed929621": {
+    "QuestId": "11168ce239b30274ed929621",
+    "QuestName": "The Dry Death",
+    "Conditions": [
+      { "ConditionId": "9bb868755d048beb0abd0ffb", "ConditionType": "EncumberedTimeInSeconds" },
+      { "ConditionId": "807f10ec7a9b67a4daad3722", "ConditionType": "HealthLoss" }
+    ]
+  },
+  "be8f5157a0b27bf07889f002": {
+    "QuestId": "be8f5157a0b27bf07889f002",
+    "QuestName": "Alt+F4",
+    "Conditions": [
+      { "ConditionId": "22415c98a0f9b963c57768dd", "ConditionType": "MoveDistance" }
+    ]
   }
 }

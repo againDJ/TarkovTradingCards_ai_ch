@@ -111,7 +111,16 @@ public sealed class RewardCrateFactory
 			var props = new TemplateItemProperties
 			{
 				Prefab = new Prefab { Path = prefabPath },
-				BackgroundColor = isRandom ? "orange" : "yellow",
+				BackgroundColor = randomType switch
+				{
+					RandomRewardType.ScavCase2500 => "grey",
+					RandomRewardType.ScavCase15000 => "green",
+					RandomRewardType.ScavCase95000 => "blue",
+					RandomRewardType.ScavCaseMoonshine => "violet",
+					RandomRewardType.ScavCaseIntel => "orange",
+					RandomRewardType.CultistCircle => "red",
+					_ => "yellow"
+				},
 				Weight = 0.5f,
 				ItemSound = containerBase.item_sound,
 				ExaminedByDefault = true,

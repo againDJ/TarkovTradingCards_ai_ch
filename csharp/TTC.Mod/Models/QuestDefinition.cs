@@ -105,8 +105,22 @@ public record QeObjective
     /// <summary>Required hideout area level.</summary>
     public int? HideoutAreaLevel { get; init; }
 
+    // ── Vanilla HealthEffect condition (dehydration, pain, tremor, etc.) ──
+
+    /// <summary>Health effect name (e.g. "Dehydration", "Pain", "Tremor"). Creates HealthEffect counter condition.</summary>
+    public string? HealthEffectType { get; init; }
+
+    /// <summary>Body part for the health effect (e.g. "Stomach" for dehydration).</summary>
+    public string? HealthEffectBodyPart { get; init; }
+
+    /// <summary>Duration in seconds the effect must be active (completeInSeconds on parent condition).</summary>
+    public int? HealthEffectDuration { get; init; }
+
+    /// <summary>Maps for the health effect condition (excludes Factory by default like Zhivchik).</summary>
+    public List<string>? HealthEffectLocations { get; init; }
+
     /// <summary>Whether this is a vanilla condition (true) or QE condition (false).</summary>
-    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null || HideoutAreaType != null;
+    public bool IsVanilla => KillTarget != null || VisitZoneId != null || SurviveLocations != null || ExitNameId != null || HideoutAreaType != null || HealthEffectType != null;
 }
 
 /// <summary>

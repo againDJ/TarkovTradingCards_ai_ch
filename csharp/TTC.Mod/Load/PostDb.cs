@@ -163,6 +163,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(IconicLocationsThemeDefinitions.GetAll());
 				allDefs.AddRange(HideoutThemeDefinitions.GetAll());
 				allDefs.AddRange(FactionsThemeDefinitions.GetAll());
+				allDefs.AddRange(ManyWaysToDieThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 
