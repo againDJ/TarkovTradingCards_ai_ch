@@ -69,7 +69,7 @@ public sealed class QuestAssortService
 			{
 				// Random reward barter: sell a crate that generates random items on purchase
 				var crateTemplateId = QuestIds.CrateTemplateId(def.Seed);
-				_crateRegistry.RegisterRandom(crateTemplateId, barter.RandomReward.Value);
+				_crateRegistry.RegisterRandom(crateTemplateId, barter.RandomReward.Value, barter.RandomRewardCount);
 				// Also register Items for display (icon, name) in the crate factory
 				if (barter.Items.Count > 0)
 					_crateRegistry.Register(crateTemplateId, barter.Items);

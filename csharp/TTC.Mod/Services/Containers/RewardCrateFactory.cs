@@ -47,14 +47,15 @@ public sealed class RewardCrateFactory
 		{
 			var contents = registry.GetContents(crateTemplateId);
 			var randomType = registry.GetRandomType(crateTemplateId);
-			var ok = CreateCrate(crateTemplateId, contents, randomType, containerBase, gameLocale);
+			var randomCount = registry.GetRandomCount(crateTemplateId);
+			var ok = CreateCrate(crateTemplateId, contents, randomType, randomCount, containerBase, gameLocale);
 			if (ok) created++; else failed++;
 		}
 
 		return (created, failed);
 	}
 
-	private bool CreateCrate(string crateTemplateId, List<BarterRewardItem>? contents, RandomRewardType? randomType, Models.ContainerBase containerBase, string gameLocale)
+	private bool CreateCrate(string crateTemplateId, List<BarterRewardItem>? contents, RandomRewardType? randomType, int randomCount, Models.ContainerBase containerBase, string gameLocale)
 	{
 		try
 		{
@@ -64,7 +65,7 @@ public sealed class RewardCrateFactory
 			string shortName, name, description;
 			if (randomType != null)
 			{
-				shortName = randomType.Value switch
+				var baseName = randomType.Value switch
 				{
 					RandomRewardType.ScavCaseIntel => "Scav Case Jackpot",
 					RandomRewardType.ScavCaseMoonshine => "Moonshine Jackpot",
@@ -74,10 +75,13 @@ public sealed class RewardCrateFactory
 					RandomRewardType.CultistCircle => "Cultist Offering",
 					_ => "Mystery Crate"
 				};
+				shortName = randomCount > 1 ? $"{randomCount}x {baseName}" : baseName;
 				name = shortName;
 				description = randomType.Value == RandomRewardType.CultistCircle
 					? "A mysterious package from Kolya. The cultist circle has spoken — the contents are unknown until opened."
-					: "A package from Kolya's scav network. The contents are random — could be junk, could be gold.";
+					: randomCount > 1
+						? $"A package from Kolya's scav network. Contains {randomCount} independent random rolls — each delivered as a separate message."
+						: "A package from Kolya's scav network. The contents are random — could be junk, could be gold.";
 			}
 			else
 			{

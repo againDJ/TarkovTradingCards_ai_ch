@@ -209,6 +209,9 @@ public record BarterUnlock
 
     /// <summary>When set, the barter generates random rewards instead of fixed items.</summary>
     public Services.Quests.RandomRewardType? RandomReward { get; init; }
+
+    /// <summary>Number of random reward rolls (each sent as a separate mail). Defaults to 1.</summary>
+    public int RandomRewardCount { get; init; } = 1;
 }
 
 /// <summary>

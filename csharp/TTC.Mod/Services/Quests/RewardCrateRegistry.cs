@@ -26,14 +26,18 @@ public sealed class RewardCrateRegistry
 {
 	private readonly Dictionary<string, List<BarterRewardItem>> _contents = new();
 	private readonly Dictionary<string, RandomRewardType> _randomRewards = new();
+	private readonly Dictionary<string, int> _randomCounts = new();
 
 	/// <summary>Register a crate template and its fixed reward items.</summary>
 	public void Register(string crateTemplateId, List<BarterRewardItem> items)
 		=> _contents[crateTemplateId] = items;
 
-	/// <summary>Register a crate template with a random reward generator.</summary>
-	public void RegisterRandom(string crateTemplateId, RandomRewardType rewardType)
-		=> _randomRewards[crateTemplateId] = rewardType;
+	/// <summary>Register a crate template with a random reward generator and optional roll count.</summary>
+	public void RegisterRandom(string crateTemplateId, RandomRewardType rewardType, int count = 1)
+	{
+		_randomRewards[crateTemplateId] = rewardType;
+		if (count > 1) _randomCounts[crateTemplateId] = count;
+	}
 
 	/// <summary>Get the fixed reward items for a crate template, or null if not a fixed crate.</summary>
 	public List<BarterRewardItem>? GetContents(string crateTemplateId)
@@ -42,6 +46,10 @@ public sealed class RewardCrateRegistry
 	/// <summary>Get the random reward type for a crate, or null if not a random crate.</summary>
 	public RandomRewardType? GetRandomType(string crateTemplateId)
 		=> _randomRewards.TryGetValue(crateTemplateId, out var type) ? type : null;
+
+	/// <summary>Get the number of random reward rolls for a crate (defaults to 1).</summary>
+	public int GetRandomCount(string crateTemplateId)
+		=> _randomCounts.GetValueOrDefault(crateTemplateId, 1);
 
 	/// <summary>Check if a template ID is a registered reward crate (fixed or random).</summary>
 	public bool IsCrate(string templateId) => _contents.ContainsKey(templateId) || _randomRewards.ContainsKey(templateId);

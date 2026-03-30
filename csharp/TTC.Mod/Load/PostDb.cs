@@ -174,6 +174,8 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(ManyWaysToDieThemeDefinitions.GetAll());
 				allDefs.AddRange(PlayerArchetypesThemeDefinitions.GetAll());
 				allDefs.AddRange(TradersThemeDefinitions.GetAll());
+				ScavLifeThemeDefinitions.InitSmallMagazines(_db);
+				allDefs.AddRange(ScavLifeThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 

@@ -643,5 +643,72 @@
       { "ConditionId": "2aa4f4167f211ddc533f4615", "ConditionType": "EarnMoneyOnTransaction" },
       { "ConditionId": "8e673420f1ecc46fc46d6627", "ConditionType": "LootItem" }
     ]
+  },
+  "1fe65e7029b843b13fc46d9e": {
+    "QuestId": "1fe65e7029b843b13fc46d9e",
+    "QuestName": "Tales from the Dumpster",
+    "Conditions": [
+      { "ConditionId": "68c076579aa63c7f58b9ab0a", "ConditionType": "SearchContainer" },
+      { "ConditionId": "6b94be30a00daf7c8636a85b", "ConditionType": "LootItem" }
+    ]
+  },
+  "b32f008171ebf1693c9bca35": {
+    "QuestId": "b32f008171ebf1693c9bca35",
+    "QuestName": "Drip Check",
+    "Conditions": [
+      { "ConditionId": "3459b0b2af235611529b52af", "ConditionType": "MoveDistanceWhileRunning" }
+    ]
+  },
+  "eb5b6e47ef049c41c2885530": {
+    "QuestId": "eb5b6e47ef049c41c2885530",
+    "QuestName": "Bag Man",
+    "Conditions": [
+      { "ConditionId": "8f51fe3d4cd8e094d774ee1f", "ConditionType": "SearchContainer" },
+      { "ConditionId": "6be793f119d1bce74522d7e2", "ConditionType": "LootItem" }
+    ]
+  },
+  "165d0e5c0ad0105a3c12fab7": {
+    "QuestId": "165d0e5c0ad0105a3c12fab7",
+    "QuestName": "Two Shots One Prayer",
+    "Conditions": [
+      { "ConditionId": "cf2078b71baa4fd55e063d48", "ConditionType": "DamageWithShotguns" }
+    ]
+  },
+  "9bede983b6b8fb240545fa9b": {
+    "QuestId": "9bede983b6b8fb240545fa9b",
+    "QuestName": "Dont Shoot Me Bro",
+    "Conditions": [
+      { "ConditionId": "2d00a4bd1ad7f8bca6121638", "ConditionType": "LootItem" }
+    ]
+  },
+  "4923664c4b1a0c146d8995b4": {
+    "QuestId": "4923664c4b1a0c146d8995b4",
+    "QuestName": "Market Manipulation",
+    "Conditions": [
+      { "ConditionId": "19e41162c311a42a94941bef", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "c561a9fcab491da545b29e78", "ConditionType": "LootItem" }
+    ]
+  },
+  "34de9f701fada6e2f52329c5": {
+    "QuestId": "34de9f701fada6e2f52329c5",
+    "QuestName": "Follow the Boom",
+    "Conditions": [
+      { "ConditionId": "d1db8a9d28cd55b39fe673e8", "ConditionType": "SearchContainer" }
+    ]
+  },
+  "cff6eb4da8f695e112f94dc0": {
+    "QuestId": "cff6eb4da8f695e112f94dc0",
+    "QuestName": "Family Business",
+    "Conditions": [
+      { "ConditionId": "d54833032da4a88f3e245398", "ConditionType": "EarnMoneyOnTransaction" }
+    ]
+  },
+  "40149882fc567e99e7b0ea98": {
+    "QuestId": "40149882fc567e99e7b0ea98",
+    "QuestName": "The Golden Key",
+    "Conditions": [
+      { "ConditionId": "abad5b3bbdb19d72641c820e", "ConditionType": "EarnMoneyOnTransaction" },
+      { "ConditionId": "b7037a40d5952c6621987b0c", "ConditionType": "CollectScavCase" }
+    ]
   }
 }
