@@ -34,7 +34,8 @@ public static class TradersThemeDefinitions
 	private const string Grizzly = "590c657e86f77412b013051d";
 	private const string WeaponRepairKit = "5910968f86f77425cf569c32";
 	private const string ItemCase = "59fb042886f7746c5005a7b2";
-	private const string ThiccItemCase = "5c0a840b86f7742ffa4f2482";
+	private const string WeaponCase = "59fb023c86f7746d0d4b423c";
+	private const string InjectorCase = "619cbf7d23893217ec30b689";
 	private const string WaterBottle = "5448fee04bdc2dbc018b4567";
 
 	// Trader IDs
@@ -566,7 +567,7 @@ public static class TradersThemeDefinitions
 				XpReward = 50000,
 				RoubleReward = 750000,
 				StandingReward = 0.15,
-				ItemRewards = new() { new() { TemplateId = ThiccItemCase } }
+				ItemRewards = new() { new() { TemplateId = WeaponCase }, new() { TemplateId = ItemCase }, new() { TemplateId = InjectorCase } }
 			}
 		};
 	}

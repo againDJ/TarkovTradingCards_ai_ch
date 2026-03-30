@@ -39,7 +39,7 @@ public static class ManyWaysToDieThemeDefinitions
 	private const string MaskaVisor = "5c0919b50db834001b7ce3b9";
 	private const string EmergencyWater = "60098b1705871270cd5352a1";
 	private const string SiccCase = "5d235bb686f77443f4331278";
-	private const string ThiccItemCase = "5c0a840b86f7742ffa4f2482";
+	private const string RedRebel = "5c0126f40db834002a125382";
 
 	// Maska built-in armor parts
 	private static readonly List<PresetPart> MaskaParts = new()
@@ -520,7 +520,7 @@ public static class ManyWaysToDieThemeDefinitions
 				XpReward = 50000,
 				RoubleReward = 750000,
 				StandingReward = 0.15,
-				ItemRewards = new() { new() { TemplateId = ThiccItemCase } }
+				ItemRewards = new() { new() { TemplateId = RedRebel } }
 			}
 		};
 	}

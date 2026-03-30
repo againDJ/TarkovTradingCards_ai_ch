@@ -362,3 +362,70 @@ Available for barter rewards via `RandomRewardType`:
 | `ScavCaseMoonshine` | Moonshine | Superrare heavy |
 | `ScavCaseIntel` | Intelligence folder | Best odds (rare + superrare) |
 | `CultistCircle` | 1M₽ budget | Random items + quest items + hideout items |
+
+---
+
+## Guiding Light Mod — QE Condition Usage Reference
+
+Guiding Light (by the same QE developer) uses 50 distinct QE condition types across 68 quests. Useful as a reference for what conditions are battle-tested.
+
+### QE Types Used in Guiding Light
+
+| Category | Condition Type | GL Quest Example |
+|----------|---------------|-----------------|
+| **Combat** | `DamageWithAR` | Commence the Assault |
+| | `DamageWithDMR` | Designating targets |
+| | `DamageWithLMG` | Suppressive fire |
+| | `DamageWithSMG` | Sub machine guns aren't sub-par |
+| | `DamageWithShotguns` | Pump it up |
+| | `DamageWithPistols` | Small guns are still lethal |
+| | `DamageWithRevolvers` | Big iron |
+| | `DamageWithAny` | Too much damage |
+| | `DamageToArmour` | Anti-material |
+| | `DamageToArmourWithShotguns` | The grinder |
+| | `TotalShotDistanceWithSnipers` | The distance between us |
+| | `DestroyLegsWithSMG` | I said sweep those legs! |
+| | `KillsWhileADS` | Iron vision |
+| | `KillsWithoutADS` | Doing the opposite |
+| | `KillsWhileCrouched` | All the ways to move (and kill) |
+| | `KillsWhileProne` | All the ways to move (and kill) |
+| | `KillsWhileSilent` | Silent night |
+| | `KillsWhileMounted` | Mounting a defense |
+| | `KillsWhileBlindFiring` | All the ways to move (and kill) |
+| | `MountedKillsWithLMG` | Tachanka style |
+| | `RevolverKillsWithoutADS` | Aiming? What for? |
+| **Malfunctions** | `FixAnyMalfunction` | Your gun has an issue |
+| | `FixARMalfunction` | Should've gotten the extended warranty |
+| | `FixDMRMalfunction` | (same quest, all weapon types) |
+| | `FixLMGMalfunction` | |
+| | `FixPistolMalfunction` | |
+| | `FixSMGMalfunction` | |
+| | `FixShotgunMalfunction` | |
+| | `FixSniperMalfunction` | |
+| **Health** | `HealthGain` | Preemptive measures |
+| | `FixAnyBleed` | Medical Master |
+| | `FixFracture` | Medical Master |
+| **Movement** | `MoveDistance` | Marathon (11 quests!) |
+| | `MoveDistanceWhileCrouched` | All the ways to move (and kill) |
+| | `MoveDistanceWhileProne` | All the ways to move (and kill) |
+| | `MoveDistanceWhileSilent` | All the ways to move (and kill) |
+| | `OverEncumberedTimeInSeconds` | Deadlift |
+| **Interaction** | `SearchContainer` | Seek |
+| | `LootItem` | Find |
+| | `CraftAnyItem` | Basic Medication |
+| | `CraftCyclicItem` | This Totally Isn't a Factorio Reference |
+| | `CollectScavCase` | Questionable Visitors |
+| | `CollectCultistOffering` | Questionable Visitors |
+| | `CompleteWorkout` | Workout |
+| **Economy** | `EarnMoneyOnTransaction` | Breaking the Bank |
+| | `SpendMoneyOnTransaction` | Purchasing equipment (11 quests!) |
+| **Quest Flow** | `EmptyWithQuestStarter` | 32 quests (quest chain starters) |
+| | `Empty` | 5 quests (placeholder conditions) |
+| | `CompleteOptionals` | 11 quests (optional objective chains) |
+
+### Notable GL Patterns
+- **"All the ways to move (and kill)"** combines 5 QE types in one quest: KillsWhileCrouched, KillsWhileProne, KillsWhileSilent, KillsWhileBlindFiring + movement distances
+- **"Should've gotten the extended warranty"** requires fixing malfunctions on 7 different weapon types
+- **"Tachanka style"** uses MountedKillsWithLMG (3 quests with increasing difficulty)
+- **SpendMoneyOnTransaction** is used in 11 quests — popular for progression gating
+- **MoveDistance** is used in 11 quests — the most common movement condition

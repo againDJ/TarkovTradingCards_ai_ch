@@ -809,9 +809,9 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Rewards**:
   - 50,000 XP
   - 750,000 Roubles
-  - 1× T H I C C Items Case
+  - 1× Item case + 1× Keycard holder + 3× Labrys access keycard + 3× Labs access keycard
   - +0.15 standing with Kolya
-- **Barter Unlocked**: Trade all 15 location cards → 1× T H I C C Items Case (repeatable)
+- **Barter Unlocked**: Trade all 15 location cards → 1× Item case + 1× Keycard holder + 3× Labrys keycard + 3× Labs keycard
 
 ---
 
@@ -834,7 +834,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 13 | Reserve Queen Bunker | Epic | 1× Ammunition case |
 | 14 | Lab Server Nexus | Legendary | 1× Keycard holder |
 | 15 | Lightkeeper's Island Jetty | Secret | 1× SICC case + 2× FLIR thermal scope |
-| **Collection** | All 15 location cards | — | 1× T H I C C Items Case |
+| **Collection** | All 15 location cards | — | 1× Item case + 1× Keycard holder + keycards |
 
 ### New Condition Types Introduced
 - **Vanilla: VisitPlace** — zone visits across multiple maps (zone IDs from existing vanilla quests)
@@ -1106,9 +1106,9 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Rewards**:
   - 50,000 XP
   - 750,000 Roubles
-  - 1× T H I C C Items Case
+  - 5× Physical Bitcoin + 5× Graphics card
   - +0.15 standing with Kolya
-- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+- **Collection Barter**: Trade all 15 cards → 5× Physical Bitcoin + 5× GPU
 
 ---
 
@@ -1131,7 +1131,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 13 | Bitcoin Farm | Legendary | 1× Physical bitcoin |
 | 14 | Solar Power Array | Legendary | 3× Metal fuel tank + 2× Expeditionary fuel tank |
 | 15 | Cultist Circle | Secret | 5× Obdolbos + 5× xTG-12 + 1× SICC case |
-| **Collection** | All 15 hideout cards | — | 1× T H I C C Items Case |
+| **Collection** | All 15 hideout cards | — | 5× Bitcoin + 5× GPU |
 
 ### New Condition Types Introduced
 - **Vanilla: HideoutArea** — require specific hideout station level
@@ -1639,9 +1639,9 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Rewards**:
   - 50,000 XP
   - 750,000 Roubles
-  - 1× T H I C C Items Case
+  - 1× Red Rebel ice pick
   - +0.15 standing with Kolya
-- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+- **Collection Barter**: Trade all 15 cards → 1× Red Rebel ice pick
 
 ---
 
@@ -1664,7 +1664,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 13 | Scav Army Convergence | Epic | Random Scav Case (Moonshine) |
 | 14 | Tarkov Hydration Fail | Legendary | 10× Emergency water ration |
 | 15 | Server Disconnect Doom | Secret | 1× SICC case |
-| **Collection** | All 15 cards | — | 1× T H I C C Items Case |
+| **Collection** | All 15 cards | — | 1× Red Rebel ice pick |
 
 ### New Condition Types Introduced
 - **QE: KillsWhileBlindFiring** — kills while blind firing around corners
@@ -1908,9 +1908,9 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Rewards**:
   - 50,000 XP
   - 750,000 Roubles
-  - 1× T H I C C Items Case
+  - 1× T-7 Thermal Goggles
   - +0.15 standing with Kolya
-- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+- **Collection Barter**: Trade all 15 cards → 1× T-7 Thermal Goggles
 
 ---
 
@@ -1933,7 +1933,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 13 | Lucky Headshot | Epic | Random Scav Case (Moonshine) |
 | 14 | Chad Rampage | Legendary | Random Scav Case (Intel) |
 | 15 | Friendly Betrayer | Secret | 1× SICC case |
-| **Collection** | All 15 archetype cards | — | 1× T H I C C Items Case |
+| **Collection** | All 15 archetype cards | — | 1× T-7 Thermal Goggles |
 
 ---
 
@@ -2189,9 +2189,9 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 - **Rewards**:
   - 50,000 XP
   - 750,000 Roubles
-  - 1× T H I C C Items Case
+  - 1× Weapon case + 1× Item case + 1× Injector case
   - +0.15 standing with Kolya
-- **Collection Barter**: Trade all 15 cards → 1× T H I C C Items Case
+- **Collection Barter**: Trade all 15 cards → 1× Weapon case + 1× Item case + 1× Injector case
 
 ---
 
@@ -2214,7 +2214,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 13 | Lightkeeper "Make Amends" | Legendary | Random Scav Case (Intel) |
 | 14 | Prapor "Punisher 6" | Legendary | Random Scav Case (Intel) |
 | 15 | Fence "The Collector" | Secret | 1× Item case |
-| **Collection** | All 15 trader cards | — | 1× T H I C C Items Case |
+| **Collection** | All 15 trader cards | — | 1× Weapon case + 1× Item case + 1× Injector case |
 
 ### New Condition Types Introduced
 - **Vanilla: TraderLoyalty** — require trader at specific loyalty level
@@ -2225,4 +2225,268 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 ---
 
-*Remaining 12 themes to be designed...*
+## Theme: Legends of Scav Life
+
+**15 cards** (4 Common, 5 Uncommon, 3 Rare, 1 Epic, 1 Legendary, 1 Secret)
+
+**Theme focus**: Scav lifestyle — looting, surviving on scraps, rat tactics, economy, low-gear gameplay. Heavy on SearchContainer, LootItem, EarnMoney, survive, and scav-themed kills.
+
+### QUEST: [SCAV-0] Tales from the Dumpster (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_legends_of_scav_life`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: SearchContainer] Search 20 containers
+  - [QE: LootItem] Loot 20 items
+- **XP**: 1,000
+- **Description**: *"Every scav has a story. Most of them start in a dumpster and end at the extract — if they're lucky. Before I hand over my collection of scav legends, show me you know the hustle. Twenty containers searched, twenty items grabbed."*
+- **Rewards**:
+  - 1× Legends of Scav Life Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### 1. QUEST: [SCAV-1] Hardware Store Raid [Common]
+- **Card**: Pockets Full of Screws
+- **ID Seed**: `ttc_quest_card_scav_screws`
+- **Prerequisites**: Tales from the Dumpster (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5× Pack of screws *(59e35ef086f7741777737012)*
+  - [Vanilla: HandoverItem] Hand over 5× Bolts *(57347c5b245977448d35f6e1)*
+  - [Vanilla: HandoverItem] Hand over 5× Screw nuts *(57347c77245977448d35f6e2)*
+- **XP**: 1,000
+- **Description**: *"Pockets Full of Screws. The true scav fills every pocket with hardware — screws, nuts, bolts. Bring me five of each. Kolya's building something."*
+- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Unlocks**: Next card quest
+
+#### 2. QUEST: [SCAV-2] Drip Check [Common]
+- **Card**: Tracksuit Pride
+- **ID Seed**: `ttc_quest_card_scav_tracksuit`
+- **Prerequisites**: Hardware Store Raid (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 5,000m while running *(Tracksuit = running)*
+  - [Vanilla: Survive] Survive and extract 3 times
+- **XP**: 1,000
+- **Description**: *"Tracksuit Pride. The Adidas tracksuit is the scav's formal wear. Sprint five kilometers and survive three raids — looking good while doing it."*
+- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Unlocks**: Next card quest
+
+#### 3. QUEST: [SCAV-3] Canned Goods [Common]
+- **Card**: Lucky Tushonka
+- **ID Seed**: `ttc_quest_card_scav_tushonka`
+- **Prerequisites**: Drip Check (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3× Can of beef stew (Small) *(57347d7224597744596b4e72)*
+  - [Vanilla: HandoverItem] Hand over 2× Can of beef stew (Large) *(57347da92459774491567cf5)*
+- **XP**: 1,000
+- **Description**: *"Lucky Tushonka. The holy grail of scav loot — canned beef stew. Bring me three small cans and two large ones. Kolya's hungry."*
+- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Unlocks**: Next card quest
+
+#### 4. QUEST: [SCAV-4] Bag Man [Common]
+- **Card**: Duffle Bag Dragon
+- **ID Seed**: `ttc_quest_card_scav_dufflebag`
+- **Prerequisites**: Canned Goods (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: SearchContainer] Search 50 containers *(Open every duffle bag you see)*
+  - [QE: LootItem] Loot 50 items *(Fill that duffle bag)*
+- **XP**: 1,000
+- **Description**: *"Duffle Bag Dragon. Every duffle bag in Tarkov has been touched by a scav at least once. Search fifty containers and loot fifty items. The duffle bag dragon hoards everything."*
+- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Unlocks**: Next card quest
+
+#### 5. QUEST: [SCAV-5] Two Shots, One Prayer [Uncommon]
+- **Card**: Double Barrel with 3 Shells
+- **ID Seed**: `ttc_quest_card_scav_doublebarrel`
+- **Prerequisites**: Bag Man (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [QE: DamageWithShotguns] Deal 2,000 damage with shotguns *(The scav's weapon of choice)*
+  - [Vanilla: Kills] Eliminate 5 targets from under 15m *(KillTarget: "Any", KillDistanceCompare: "<=", KillDistanceValue: 15)*
+- **XP**: 3,000
+- **Description**: *"Double Barrel with 3 Shells. Two in the chamber, one in the pocket, zero plan. Two thousand shotgun damage and five close-range kills. The classic scav loadout."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 6. QUEST: [SCAV-6] Iron Sight Legend [Uncommon]
+- **Card**: Mosin, No Scope, No Fear
+- **ID Seed**: `ttc_quest_card_scav_mosin`
+- **Prerequisites**: Two Shots, One Prayer (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 targets from over 50m with iron sights only *(KillTarget: "Any", KillDistanceCompare: ">=", KillDistanceValue: 50, KillWeaponModsExclusive: all scope IDs)*
+- **XP**: 3,000
+- **Description**: *"Mosin, No Scope, No Fear. Iron sights, one bullet, and the confidence of a man with nothing to lose. Five kills from over fifty meters with iron sights only. Channel the Mosin spirit."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 7. QUEST: [SCAV-7] Don't Shoot Me Bro [Uncommon]
+- **Card**: Scav-on-Scav Etiquette
+- **ID Seed**: `ttc_quest_card_scav_etiquette`
+- **Prerequisites**: Iron Sight Legend (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: Survive] Survive and extract 5 times *(Live and let live)*
+  - [QE: LootItem] Loot 40 items *(Loot, don't shoot)*
+- **XP**: 3,000
+- **Description**: *"Scav-on-Scav Etiquette. The unwritten rule — don't shoot another scav. Five extractions and forty items looted. Be the friendly scav — loot, don't shoot."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 8. QUEST: [SCAV-8] Market Manipulation [Uncommon]
+- **Card**: Flea Market Scholar
+- **ID Seed**: `ttc_quest_card_scav_fleamarket`
+- **Prerequisites**: Don't Shoot Me Bro (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 500,000₽ from transactions *(The flea market hustle)*
+  - [QE: LootItem] Loot 60 items
+- **XP**: 3,000
+- **Description**: *"Flea Market Scholar. Buy low, sell high, and never pay full price. Five hundred thousand roubles earned and sixty items looted. The market rewards those who study it."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 9. QUEST: [SCAV-9] Follow the Boom [Uncommon]
+- **Card**: Homing Sense to Gunshots
+- **ID Seed**: `ttc_quest_card_scav_gunshots`
+- **Prerequisites**: Market Manipulation (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs *(KillTarget: "Savage") — follow the gunshots, loot the bodies*
+  - [QE: SearchContainer] Search 50 containers
+- **XP**: 3,000
+- **Description**: *"Homing Sense to Gunshots. Every scav knows — gunshots mean loot. Run toward the sound, wait for the dust to settle, loot the bodies. Ten scav kills and fifty containers searched. Follow the boom."*
+- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Unlocks**: Next card quest
+
+#### 10. QUEST: [SCAV-10] Liquid Courage [Rare]
+- **Card**: Vodka Before Raid
+- **ID Seed**: `ttc_quest_card_scav_vodka`
+- **Prerequisites**: Follow the Boom (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills + HealthEffect] Eliminate 10 targets while under stimulant effect *(KillTarget: "Any", HealthEffect: bodyPart=Head, effect=Stimulator — same as Jaeger's "Junkie" quest)*
+- **XP**: 10,000
+- **Description**: *"Vodka Before Raid. A shot of something before every fight — for courage, obviously. Eliminate ten targets while under any stimulant effect. Liquid courage has its perks."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 11. QUEST: [SCAV-11] Taxi Service [Rare]
+- **Card**: Car Extract Entrepreneur
+- **ID Seed**: `ttc_quest_card_scav_carextract`
+- **Prerequisites**: Liquid Courage (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: ExitName] Extract via Dorms V-Ex on Customs *(exit: "Dorms V-Ex", map: bigmap)*
+  - [Vanilla: ExitName] Extract via V-Ex on Woods *(exit: "South V-Ex", map: Woods)*
+  - [Vanilla: ExitName] Extract via V-Ex on Shoreline *(exit: "Shorl_V-Ex", map: Shoreline)*
+  - [Vanilla: ExitName] Extract via V-Ex on Lighthouse *(exit: " V-Ex_light", map: Lighthouse)*
+  - [Vanilla: ExitName] Extract via V-Ex on Streets *(exit: "E7_car", map: TarkovStreets)*
+  - [Vanilla: ExitName] Extract via V-Ex on Interchange *(exit: "PP Exfil", map: Interchange)*
+  - [Vanilla: ExitName] Extract via V-Ex on Ground Zero *(exit: "Sandbox_VExit", map: Sandbox/Sandbox_high)*
+- **XP**: 10,000
+- **Description**: *"Car Extract Entrepreneur. Every paid extract on every map — the V-Ex taxi service tour of Tarkov. Customs, Woods, Shoreline, Lighthouse, Streets, Interchange, and Ground Zero. Complete the grand tour."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 12. QUEST: [SCAV-12] Trust No One [Rare]
+- **Card**: AI Friend, Human Enemy
+- **ID Seed**: `ttc_quest_card_scav_trustnoone`
+- **Prerequisites**: Taxi Service (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 PMCs *(KillTarget: "AnyPmc") — humans are the real enemy*
+- **XP**: 10,000
+- **Description**: *"AI Friend, Human Enemy. Scavs trust the AI — it's the humans you have to watch out for. Fifteen PMC kills. Trust no one with a backpack full of gear."*
+- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Unlocks**: Next card quest
+
+#### 13. QUEST: [SCAV-13] Family Business [Epic]
+- **Card**: Scav Boss Cousin
+- **ID Seed**: `ttc_quest_card_scav_bosscousin`
+- **Prerequisites**: Trust No One (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 scavs *(KillTarget: "Savage") — clean up the family*
+  - [Vanilla: Kills] Eliminate 10 PMCs *(KillTarget: "AnyPmc")*
+  - [QE: EarnMoneyOnTransaction] Earn 2,000,000₽ from transactions
+- **XP**: 20,000
+- **Description**: *"Scav Boss Cousin. Every scav claims to be related to Reshala. Cousin, nephew, former roommate — the connections are dubious at best. Twenty scav kills, ten PMC kills, and two million roubles. Run the family business."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Unlocks**: Next card quest
+
+#### 14. QUEST: [SCAV-14] One Round Wonder [Legendary]
+- **Card**: Last Bullet Hero
+- **ID Seed**: `ttc_quest_card_scav_lastbullet`
+- **Prerequisites**: Family Business (completed)
+- **Type**: Elimination
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 PMCs with headshots using weapons with ≤10 round magazines *(KillTarget: "AnyPmc", KillBodyParts: ["Head"], KillWeaponModsInclusive: all magazine IDs with maxCount ≤10)*
+  - [Vanilla: Kills] Eliminate 5 PMCs in a single raid using weapons with ≤10 round magazines *(KillTarget: "AnyPmc", KillResetOnSessionEnd: true, KillWeaponModsInclusive: same mag filter)*
+- **XP**: 35,000
+- **Description**: *"Last Bullet Hero. Low ammo, low capacity, high stakes. Twenty PMC headshots and five PMCs in a single raid — all with weapons holding ten rounds or less. Every bullet is your last bullet."*
+- **Barter Unlocked**: Trade card → Random Scav Case (Intel) reward
+- **Unlocks**: Next card quest
+
+#### 15. QUEST: [SCAV-15] The Golden Key [Secret]
+- **Card**: Jacket Lottery Winner
+- **ID Seed**: `ttc_quest_card_scav_jacketlottery`
+- **Prerequisites**: One Round Wonder (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 10,000,000₽ from transactions *(The ultimate scav grind)*
+  - [QE: CollectScavCase] Collect 20 Scav Case results *(Play the jackpot)*
+- **XP**: 60,000
+- **Description**: *"Jacket Lottery Winner. Every scav dreams of hitting the jackpot. Ten million roubles earned and twenty scav case results collected. Play the lottery long enough and you always win."*
+- **Barter Unlocked**: Trade card → 3× Random Scav Case (Intel) reward
+- **Unlocks**: Collection Quest
+
+---
+
+### QUEST: [SCAV-C] Kolya's Scav Almanac (Collection Quest)
+- **ID Seed**: `ttc_quest_collection_legends_of_scav_life`
+- **Prerequisites**: The Golden Key (completed)
+- **Type**: Completion
+- **Objectives**:
+  - HandoverItem: Turn in all 15 scav cards (1 of each, distinct)
+- **Description**: *"Every scav legend documented, from the dumpster diver to the jacket lottery winner. You've lived the scav life and earned every card. Hand them over and the Scav Almanac is complete."*
+- **Rewards**:
+  - 50,000 XP
+  - 750,000 Roubles
+  - 7× Marked room keys (all maps)
+  - +0.15 standing with Kolya
+- **Collection Barter**: Trade all 15 cards → 7× Marked room keys (all maps)
+
+---
+
+## Barter Summary — Legends of Scav Life
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Pockets Full of Screws | Common | Random Scav Case (2.5K) |
+| 2 | Tracksuit Pride | Common | Random Scav Case (2.5K) |
+| 3 | Lucky Tushonka | Common | Random Scav Case (2.5K) |
+| 4 | Duffle Bag Dragon | Common | Random Scav Case (2.5K) |
+| 5 | Double Barrel with 3 Shells | Uncommon | Random Scav Case (15K) |
+| 6 | Mosin, No Scope, No Fear | Uncommon | Random Scav Case (15K) |
+| 7 | Scav-on-Scav Etiquette | Uncommon | Random Scav Case (15K) |
+| 8 | Flea Market Scholar | Uncommon | Random Scav Case (15K) |
+| 9 | Homing Sense to Gunshots | Uncommon | Random Scav Case (15K) |
+| 10 | Vodka Before Raid | Rare | Random Scav Case (95K) |
+| 11 | Car Extract Entrepreneur | Rare | Random Scav Case (95K) |
+| 12 | AI Friend, Human Enemy | Rare | Random Scav Case (95K) |
+| 13 | Scav Boss Cousin | Epic | Random Scav Case (Moonshine) |
+| 14 | Last Bullet Hero | Legendary | Random Scav Case (Intel) |
+| 15 | Jacket Lottery Winner | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 scav cards | — | 7× Marked room keys |
+
+---
+
+*Remaining 11 themes to be designed...*

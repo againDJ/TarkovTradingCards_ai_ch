@@ -47,7 +47,6 @@ public static class HideoutThemeDefinitions
 	private const string Obdolbos = "5ed5166ad380ab312177c100";
 	private const string Xtg12 = "5fca138c2a7b221b2852a5c6";
 	private const string SiccCase = "5d235bb686f77443f4331278";
-	private const string ThiccItemCase = "5c0a840b86f7742ffa4f2482";
 
 	// Hideout area types
 	private const int AreaSecurity = 1;
@@ -500,7 +499,7 @@ public static class HideoutThemeDefinitions
 				XpReward = 50000,
 				RoubleReward = 750000,
 				StandingReward = 0.15,
-				ItemRewards = new() { new() { TemplateId = ThiccItemCase } }
+				ItemRewards = new() { new() { TemplateId = PhysicalBitcoin, Count = 5 }, new() { TemplateId = GraphicsCard, Count = 5 } }
 			}
 		};
 	}

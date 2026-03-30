@@ -44,7 +44,8 @@ public static class IconicLocationsThemeDefinitions
 	private const string KeycardHolder = "619cbf9e0a7c3a1a2731940a";
 	private const string SiccCase = "5d235bb686f77443f4331278";
 	private const string FlirScope = "5d1b5e94d7ad1a2b865a96b0";
-	private const string ThiccItemCase = "5c0a840b86f7742ffa4f2482";
+	private const string ItemCase = "59fb042886f7746c5005a7b2";
+	private const string LabrysKeycard = "679b9819a2f2dd4da9023512";
 	private const string Ifak = "590c678286f77426c9660122";
 	private const string Propital = "5c0e530286f7747fa1419862";
 	private const string WeaponRepairKit = "5910968f86f77425cf569c32";
@@ -589,7 +590,13 @@ public static class IconicLocationsThemeDefinitions
 				XpReward = 50000,
 				RoubleReward = 750000,
 				StandingReward = 0.15,
-				ItemRewards = new() { new() { TemplateId = ThiccItemCase } }
+				ItemRewards = new()
+				{
+					new() { TemplateId = ItemCase },
+					new() { TemplateId = KeycardHolder },
+					new() { TemplateId = LabrysKeycard, Count = 3 },
+					new() { TemplateId = LabsKeycard, Count = 3 }
+				}
 			}
 		};
 	}

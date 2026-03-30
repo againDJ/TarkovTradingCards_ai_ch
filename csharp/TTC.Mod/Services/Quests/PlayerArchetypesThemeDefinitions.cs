@@ -33,7 +33,7 @@ public static class PlayerArchetypesThemeDefinitions
 	private const string Ifak = "590c678286f77426c9660122";
 	private const string Salewa = "544fb45d4bdc2dee738b4568";
 	private const string SiccCase = "5d235bb686f77443f4331278";
-	private const string ThiccItemCase = "5c0a840b86f7742ffa4f2482";
+	private const string T7Thermal = "5c110624d174af029e69734c";
 
 	// Map plan items
 	private const string MapFactory = "574eb85c245977648157eec3";
@@ -631,7 +631,7 @@ public static class PlayerArchetypesThemeDefinitions
 				XpReward = 50000,
 				RoubleReward = 750000,
 				StandingReward = 0.15,
-				ItemRewards = new() { new() { TemplateId = ThiccItemCase } }
+				ItemRewards = new() { new() { TemplateId = T7Thermal } }
 			}
 		};
 	}
