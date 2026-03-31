@@ -50,6 +50,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(ScavLifeThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(MemorableQuestItemsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(TarkovFailsThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(CommunityMemesThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

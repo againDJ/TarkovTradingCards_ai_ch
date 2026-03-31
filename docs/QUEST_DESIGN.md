@@ -2925,4 +2925,220 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
 
 ---
 
-*Remaining 9 themes to be designed...*
+## Theme: Community Memes & Traditions
+
+**15 cards** (4 Common, 3 Uncommon, 3 Rare, 3 Epic, 1 Legendary, 1 Secret)
+
+Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each quest channels an iconic Tarkov meme or community tradition. **All HandoverItem objectives are NOT FIR.**
+
+### [MEME-0] QUEST: The Meme Board (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_community_memes`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: MoveDistanceWhileCrouched] Move 1,000m while crouched *(The crouch walk — universal sign of 'please don't shoot me')*
+- **Description**: *"Tarkov has its own culture. Wiggling, crouch-walking, hatchet running — traditions passed down from wipe to wipe. Crouch-walk a kilometer and Kolya will share his collection of community legends."*
+- **Rewards**:
+  - 1× Community Memes & Traditions Binder
+  - 1,000 XP
+- **Unlocks**: First card quest (Factory Hatchet Runner)
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [MEME-1] QUEST: Zero to Hero [Common]
+- **Card**: Factory Hatchet Runner
+- **ID Seed**: `ttc_quest_card_meme_hatchetrunner`
+- **Location**: Factory
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Factory 3 times
+  - [QE: LootItem] Loot 20 items
+- **Description**: *"Factory Hatchet Runner. No gun, no armor, just a hatchet and raw determination. Sprint in, grab what you can, sprint out. Survive Factory three times and loot twenty items. The hatchet runner lifestyle."*
+- **Rewards**: 1,000 XP, Factory Hatchet Runner card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [MEME-2] QUEST: Tech Support [Common]
+- **Card**: Just a G-Phone
+- **ID Seed**: `ttc_quest_card_meme_gphone`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 1 Broken GPhone smartphone
+- **Description**: *"Just a G-Phone. Broken, cracked screen, battery dead. Every PMC has looted one thinking it was worth something. Hand over a broken GPhone. Kolya knows a guy who fixes them."*
+- **Rewards**: 1,000 XP, Just a G-Phone card
+- **Barter**: 1× Golden 1GPhone smartphone
+
+#### [MEME-3] QUEST: Don't Shoot [Common]
+- **Card**: The Friendly Wiggle
+- **ID Seed**: `ttc_quest_card_meme_wiggle`
+- **Objectives**:
+  - [QE: KillsWhileCrouched] Get 5 kills while crouched *(Wiggle... then shoot)*
+  - [Vanilla: ExitStatus] Survive and extract 3 times
+- **Description**: *"The Friendly Wiggle. The universal Tarkov greeting — crouch, lean left, lean right, hope they don't shoot. Five kills while crouched and three extractions. Sometimes the wiggle is a lie."*
+- **Rewards**: 1,000 XP, The Friendly Wiggle card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [MEME-4] QUEST: Shotgun Night [Common]
+- **Card**: Factory Friday
+- **ID Seed**: `ttc_quest_card_meme_factoryfriday`
+- **Location**: Factory
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets on Factory with shotguns
+- **Description**: *"Factory Friday. The community tradition — every Friday, Factory, shotguns only. Ten kills on Factory with a shotgun. It's Friday somewhere."*
+- **Rewards**: 1,000 XP, Factory Friday card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [MEME-5] QUEST: Loot and Scoot [Uncommon]
+- **Card**: Press F to Pay RESERVE
+- **ID Seed**: `ttc_quest_card_meme_reserve`
+- **Location**: Reserve
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Reserve 5 times
+  - [QE: SearchContainer] Search 40 containers
+- **Description**: *"Press F to Pay RESERVE. The underground loot paradise — if you can extract alive. Survive Reserve five times and search forty containers. Press F to pay respects to your lost loadouts."*
+- **Rewards**: 3,000 XP, Press F to Pay RESERVE card
+- **Barter**: Random Scav Case (15K)
+
+#### [MEME-6] QUEST: Betrayal Protocol [Uncommon]
+- **Card**: VOIP 'Friendly!' Spam
+- **ID Seed**: `ttc_quest_card_meme_voip`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 PMCs from under 10m
+  - [QE: KillsWithoutADS] Get 5 kills without ADS
+- **Description**: *"VOIP 'Friendly!' Spam. 'Don't shoot! Friendly! FRIENDLY!' And then the shooting starts. Five PMC kills from under ten meters and five hipfire kills. Trust no one who says 'friendly' twice."*
+- **Rewards**: 3,000 XP, VOIP 'Friendly!' Spam card
+- **Barter**: Random Scav Case (15K)
+
+#### [MEME-7] QUEST: Camouflage Expert [Uncommon]
+- **Card**: Bush Wookie Tradition
+- **ID Seed**: `ttc_quest_card_meme_bushwookie`
+- **Objectives**:
+  - [QE: KillsWhileProne] Get 10 kills while prone
+- **Description**: *"Bush Wookie Tradition. Prone in a bush, ghillie on, scope trained on a chokepoint. You've been there for twenty minutes and you're not moving until someone walks by. Ten kills while prone. Become the bush."*
+- **Rewards**: 3,000 XP, Bush Wookie Tradition card
+- **Barter**: Random Scav Case (15K)
+
+#### [MEME-8] QUEST: RNG God [Rare]
+- **Card**: Bad RNG Blues
+- **ID Seed**: `ttc_quest_card_meme_badrng`
+- **Objectives**:
+  - [QE: SearchContainer] Search 100 containers
+  - [QE: LootItem] Loot 100 items
+- **Description**: *"Bad RNG Blues. A hundred containers searched and nothing but bolts and bandages. The RNG gods are cruel. Search a hundred containers and loot a hundred items. Surely SOMETHING good will drop. Surely."*
+- **Rewards**: 10,000 XP, Bad RNG Blues card
+- **Barter**: Random Scav Case (95K)
+
+#### [MEME-9] QUEST: Kolya's Shopping List [Rare]
+- **Card**: Quest Item? KEK!
+- **ID Seed**: `ttc_quest_card_meme_questitem`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 food items *(parent class: Food)*
+  - [Vanilla: HandoverItem] Hand over 5 drugs/stimulators *(parent class: Drug + Stimulator)*
+  - [Vanilla: HandoverItem] Hand over 5 electronic components *(parent class: Electronics)*
+- **Description**: *"Quest Item? KEK! Every Tarkov player knows the pain — you need five of something and the game gives you everything except that. Hand over food, drugs, and electronics. Kolya's shopping list from hell."*
+- **Rewards**: 10,000 XP, Quest Item? KEK! card
+- **Barter**: Random Scav Case (95K)
+
+#### [MEME-10] QUEST: Third Floor, Second Door [Rare]
+- **Card**: Guy on the Stairs
+- **ID Seed**: `ttc_quest_card_meme_stairs`
+- **Location**: Factory
+- **Objectives**:
+  - [QE: KillsWhileCrouched] Get 15 kills while crouched
+  - [Vanilla: Kills] Eliminate 10 targets on Factory
+- **Description**: *"Guy on the Stairs. There's always someone sitting on the stairs in Factory. Crouched behind the railing, waiting for footsteps. Fifteen kills while crouched and ten kills on Factory. Be the guy on the stairs."*
+- **Rewards**: 10,000 XP, Guy on the Stairs card
+- **Barter**: Random Scav Case (95K)
+
+#### [MEME-11] QUEST: The Eternal Debate [Epic]
+- **Card**: Chad vs Rat Showdown
+- **ID Seed**: `ttc_quest_card_meme_chadvsrat`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 PMCs
+  - [QE: MoveDistanceWhileRunning] Cover 20,000m while running *(The Chad side)*
+  - [QE: MoveDistanceWhileCrouched] Move 5,000m while crouched *(The Rat side)*
+- **Description**: *"Chad vs Rat Showdown. The eternal Tarkov debate. Are you a W-key warrior or a crouch-walking shadow? Prove you can be both — twenty PMC kills, twenty kilometers sprinting, and five kilometers crouched. Embrace the duality."*
+- **Rewards**: 20,000 XP, Chad vs Rat Showdown card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [MEME-12] QUEST: Money Pit [Epic]
+- **Card**: Ruble Sink Deluxe
+- **ID Seed**: `ttc_quest_card_meme_rublesink`
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Rest Space level 3 *(areaType: 9, level: 3)*
+  - [Vanilla: HandoverItem] Hand over 1,000,000₽ in roubles
+- **Description**: *"Ruble Sink Deluxe. Tarkov's economy is designed to drain your wallet. Max out your Rest Space — the ultimate luxury — and hand over a million roubles. Money comes, money goes, mostly goes."*
+- **Rewards**: 20,000 XP, Ruble Sink Deluxe card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [MEME-13] QUEST: Blood Ritual [Epic]
+- **Card**: Dorms Marked Room Ritual
+- **ID Seed**: `ttc_quest_card_meme_markedritual`
+- **Objectives**:
+  - [QE: CollectCultistOffering] Collect 10 Cultist Offerings
+- **Description**: *"Dorms Marked Room Ritual. The community legend — sacrifice items to the cultist circle and the marked room rewards you. Ten cultist offerings collected. Feed the circle. Appease the gods of loot."*
+- **Rewards**: 20,000 XP, Dorms Marked Room Ritual card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [MEME-14] QUEST: Content Creator [Legendary]
+- **Card**: Streamer's Labs Keycard
+- **ID Seed**: `ttc_quest_card_meme_streamerlabs`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Labs 10 times
+  - [Vanilla: Kills] Eliminate 30 targets on Labs
+  - [QE: EarnMoneyOnTransaction] Earn 10,000,000₽ from transactions
+- **Description**: *"Streamer's Labs Keycard. Every content creator's bread and butter — run Labs, wipe the lobby, extract with millions. Survive Labs ten times, eliminate thirty targets, and earn ten million roubles. Content created."*
+- **Rewards**: 35,000 XP, Streamer's Labs Keycard card
+- **Barter**: Random Scav Case (Intel)
+
+#### [MEME-15] QUEST: The Kappa Grind [Secret]
+- **Card**: Where's the Kappa?
+- **ID Seed**: `ttc_quest_card_meme_kappa`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 intelligence folders
+  - [Vanilla: HandoverItem] Hand over 5 graphics cards
+  - [QE: CompleteWorkout] Complete 15 gym workouts
+  - [QE: EarnMoneyOnTransaction] Earn 15,000,000₽ from transactions
+- **Description**: *"Where's the Kappa? The ultimate endgame grind. Every wipe, every player asks the same question. Five intel folders, five GPUs, fifteen gym sessions, and fifteen million roubles. The Kappa is a state of mind."*
+- **Rewards**: 60,000 XP, Where's the Kappa? card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [MEME-C] QUEST: Kolya's Meme Museum [Collection]
+- **ID Seed**: `ttc_quest_collection_community_memes`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 meme cards (one of each, not FIR)
+- **Description**: *"Every meme documented, every tradition honored. From the friendly wiggle to the Kappa grind, you've lived the entire Tarkov community experience. Hand over the cards and complete the meme museum."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Secure container Gamma (Loui Peeton)
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Factory Hatchet Runner | Common | Random Scav Case (2.5K) |
+| 2 | Just a G-Phone | Common | 1× Golden 1GPhone |
+| 3 | The Friendly Wiggle | Common | Random Scav Case (2.5K) |
+| 4 | Factory Friday | Common | Random Scav Case (2.5K) |
+| 5 | Press F to Pay RESERVE | Uncommon | Random Scav Case (15K) |
+| 6 | VOIP 'Friendly!' Spam | Uncommon | Random Scav Case (15K) |
+| 7 | Bush Wookie Tradition | Uncommon | Random Scav Case (15K) |
+| 8 | Bad RNG Blues | Rare | Random Scav Case (95K) |
+| 9 | Quest Item? KEK! | Rare | Random Scav Case (95K) |
+| 10 | Guy on the Stairs | Rare | Random Scav Case (95K) |
+| 11 | Chad vs Rat Showdown | Epic | Random Scav Case (Moonshine) |
+| 12 | Ruble Sink Deluxe | Epic | Random Scav Case (Moonshine) |
+| 13 | Dorms Marked Room Ritual | Epic | Random Scav Case (Moonshine) |
+| 14 | Streamer's Labs Keycard | Legendary | Random Scav Case (Intel) |
+| 15 | Where's the Kappa? | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 meme cards | — | Secure container Gamma (Loui Peeton) |
+
+---
+
+*Remaining 8 themes to be designed...*

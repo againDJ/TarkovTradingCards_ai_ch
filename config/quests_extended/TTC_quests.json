@@ -1444,5 +1444,137 @@
         "ConditionType": "CompleteWorkout"
       }
     ]
+  },
+  "eb5c9c8985b6ba7ce2adb506": {
+    "QuestId": "eb5c9c8985b6ba7ce2adb506",
+    "QuestName": "The Meme Board",
+    "Conditions": [
+      {
+        "ConditionId": "9ba7738f6868faa19b1ecb67",
+        "ConditionType": "MoveDistanceWhileCrouched"
+      }
+    ]
+  },
+  "f9785183152d6aa9123e9b2e": {
+    "QuestId": "f9785183152d6aa9123e9b2e",
+    "QuestName": "Zero to Hero",
+    "Conditions": [
+      {
+        "ConditionId": "90dfb808e15c4e926370ffbe",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "6b697ec964e2015aa1e65959": {
+    "QuestId": "6b697ec964e2015aa1e65959",
+    "QuestName": "Dont Shoot",
+    "Conditions": [
+      {
+        "ConditionId": "aff81f7903f34da24b6a0810",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "d1c1d42d0ae66b7cf65df022": {
+    "QuestId": "d1c1d42d0ae66b7cf65df022",
+    "QuestName": "Loot and Scoot",
+    "Conditions": [
+      {
+        "ConditionId": "e05c347871b7d0d161b11883",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "f257ebb0aefc24e41938c078": {
+    "QuestId": "f257ebb0aefc24e41938c078",
+    "QuestName": "Betrayal Protocol",
+    "Conditions": [
+      {
+        "ConditionId": "96f202f3d24ac12bf84a56f4",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "eef0d01a025e53c6e675e7f7": {
+    "QuestId": "eef0d01a025e53c6e675e7f7",
+    "QuestName": "Camouflage Expert",
+    "Conditions": [
+      {
+        "ConditionId": "9f90d9f45ed2a28070fa65d0",
+        "ConditionType": "KillsWhileProne"
+      }
+    ]
+  },
+  "f108a929663ed806b3753092": {
+    "QuestId": "f108a929663ed806b3753092",
+    "QuestName": "RNG God",
+    "Conditions": [
+      {
+        "ConditionId": "61a162fcb1f86e2852847f6b",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "e0cb8d58d744d9c443023ada",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "3139fae96dc724e3fa7388c5": {
+    "QuestId": "3139fae96dc724e3fa7388c5",
+    "QuestName": "Third Floor Second Door",
+    "Conditions": [
+      {
+        "ConditionId": "ea5fb214ec871d327694e7f9",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "d33b816aafe867ec2c1c3900": {
+    "QuestId": "d33b816aafe867ec2c1c3900",
+    "QuestName": "The Eternal Debate",
+    "Conditions": [
+      {
+        "ConditionId": "b0c90d8dc2f19fea6baaa94a",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "8f175d2cdfc3512ae4f3475e",
+        "ConditionType": "MoveDistanceWhileCrouched"
+      }
+    ]
+  },
+  "00cc90358ee5341470cf3ffc": {
+    "QuestId": "00cc90358ee5341470cf3ffc",
+    "QuestName": "Blood Ritual",
+    "Conditions": [
+      {
+        "ConditionId": "ca248cdf0c9d612817416c16",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "aa704f4d9b40a4dd739c5620": {
+    "QuestId": "aa704f4d9b40a4dd739c5620",
+    "QuestName": "Content Creator",
+    "Conditions": [
+      {
+        "ConditionId": "9650f1373792a289a5bbb248",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "c6ef19f8ffd7238c5717862b": {
+    "QuestId": "c6ef19f8ffd7238c5717862b",
+    "QuestName": "The Kappa Grind",
+    "Conditions": [
+      {
+        "ConditionId": "18d7ee9fb2b9a7c48e788abf",
+        "ConditionType": "CompleteWorkout"
+      },
+      {
+        "ConditionId": "cb6567436fcd9f1d073ca37f",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
   }
 }
