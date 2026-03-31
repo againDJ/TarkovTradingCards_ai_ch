@@ -49,6 +49,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(TradersThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(ScavLifeThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(MemorableQuestItemsThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(TarkovFailsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

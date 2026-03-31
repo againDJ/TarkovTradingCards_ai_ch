@@ -2709,4 +2709,220 @@ Prefix: **[ITEM]** — Focuses on HandoverItem of iconic vanilla quest items, co
 
 ---
 
-*Remaining 10 themes to be designed...*
+## Theme: Tarkov Fails
+
+**15 cards** (3 Common, 5 Uncommon, 3 Rare, 2 Epic, 1 Legendary, 1 Secret)
+
+Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, grenades, weapon malfunctions, and health loss. Every quest channels the pain and humiliation of classic Tarkov fails. **All HandoverItem objectives are NOT FIR.**
+
+### [FAIL-0] QUEST: The Wall of Shame (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_tarkov_fails`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: DestroyBodyPart] Have 2 body parts destroyed
+- **Description**: *"Everyone fails in Tarkov. The question is whether you learn from it or just add another clip to the highlight reel. Get two body parts destroyed — shouldn't take long — and Kolya will give you his binder of legendary failures."*
+- **Rewards**:
+  - 1× Tarkov Fails Binder
+  - 1,000 XP
+- **Unlocks**: First card quest (Empty Mags)
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [FAIL-1] QUEST: Click Click Click [Common]
+- **Card**: Mags Without Bullets
+- **ID Seed**: `ttc_quest_card_fail_emptymags`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 magazines *(parent class: Magazine)*
+  - [QE: LootItem] Loot 15 items
+- **Description**: *"Mags Without Bullets. You loaded the mag, but forgot to load the ammo. Hand over five magazines and loot fifteen items. At least the mags are good for something."*
+- **Rewards**: 1,000 XP, Mags Without Bullets card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [FAIL-2] QUEST: The Naked Run [Common]
+- **Card**: Backpack Left Behind
+- **ID Seed**: `ttc_quest_card_fail_leftbehind`
+- **Location**: Interchange
+- **Objectives**:
+  - [Vanilla: ExitName] Extract via Hole Exfill on Interchange 1 time *(requires no backpack)*
+- **Description**: *"Backpack Left Behind. Sometimes the only way out is through the hole in the fence — but only if you ditch the bag. Extract through the Hole Exfill on Interchange. Leave your backpack behind. It hurts every time."*
+- **Rewards**: 1,000 XP, Backpack Left Behind card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [FAIL-3] QUEST: Spray and Pray [Common]
+- **Card**: Scope Left at Base
+- **ID Seed**: `ttc_quest_card_fail_noscope`
+- **Objectives**:
+  - [QE: KillsWithoutADS] Get 3 kills without aiming down sights
+  - [QE: DamageWithSMG] Deal 300 damage with SMGs
+- **Description**: *"Scope Left at Base. You brought a gun to a gunfight but forgot the scope. Three hipfire kills and three hundred SMG damage — the spray-and-pray special."*
+- **Rewards**: 1,000 XP, Scope Left at Base card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [FAIL-4] QUEST: Every Door, Wrong Key [Uncommon]
+- **Card**: Wrong Key
+- **ID Seed**: `ttc_quest_card_fail_wrongkey`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 keys *(parent class: KeyMechanical)*
+  - [QE: SearchContainer] Search 25 containers
+- **Description**: *"Wrong Key. You brought seventeen keys and none of them fit. Every PMC has stood in front of a locked door, cycling through their keybar in desperation. Hand over five keys and search twenty-five containers. Maybe one of them was right."*
+- **Rewards**: 3,000 XP, Wrong Key card
+- **Barter**: Random Keys (3 items)
+
+#### [FAIL-5] QUEST: Wrong Caliber [Uncommon]
+- **Card**: Wrong Ammo Type
+- **ID Seed**: `ttc_quest_card_fail_wrongammo`
+- **Objectives**:
+  - [QE: DamageWithShotguns] Deal 500 damage with shotguns
+  - [Vanilla: Kills] Eliminate 10 scavs
+  - [QE: FixAnyMalfunction] Fix 1 weapon malfunction
+- **Description**: *"Wrong Ammo Type. You packed buckshot for a sniper duel. You loaded 9x18 into a 9x19 mag. And when the gun finally jammed, you had to fix it mid-firefight. Deal five hundred shotgun damage, kill ten scavs, and fix a weapon malfunction."*
+- **Rewards**: 3,000 XP, Wrong Ammo Type card
+- **Barter**: Random Scav Case (15K)
+
+#### [FAIL-6] QUEST: Should've Alt-Tabbed Faster [Uncommon]
+- **Card**: Tarkov Tab Out
+- **ID Seed**: `ttc_quest_card_fail_tabout`
+- **Objectives**:
+  - [QE: HealthLoss] Lose 1,500 HP total
+  - [QE: DestroyBodyPart] Have 3 body parts destroyed
+- **Description**: *"Tarkov Tab Out. You alt-tabbed to check Discord and came back to a black screen and a death recap. Lose fifteen hundred HP and have three body parts destroyed. It'll happen whether you try or not."*
+- **Rewards**: 3,000 XP, Tarkov Tab Out card
+- **Barter**: Random Scav Case (15K)
+
+#### [FAIL-7] QUEST: Wrong Way [Uncommon]
+- **Card**: Extract in Wrong Direction
+- **ID Seed**: `ttc_quest_card_fail_wrongextract`
+- **Objectives**:
+  - [Vanilla: ExitName] Extract via car extract on Customs *(Dorms V-Ex)*
+  - [Vanilla: ExitName] Extract via car extract on Interchange *(PP Exfil)*
+  - [Vanilla: ExitStatus] Survive and extract 2 times
+- **Description**: *"Extract in Wrong Direction. You ran the entire length of the map to an extract that wasn't yours. Take the car extract on Customs and Interchange — at least that one's always available if you have the roubles."*
+- **Rewards**: 3,000 XP, Extract in Wrong Direction card
+- **Barter**: Random Scav Case (15K)
+
+#### [FAIL-8] QUEST: Flashbang Boomerang [Uncommon]
+- **Card**: Flashbang Yourself
+- **ID Seed**: `ttc_quest_card_fail_flashbang`
+- **Objectives**:
+  - [QE: DamageWithGrenades] Deal 500 damage with grenades
+  - [QE: FixBleed] Fix 5 light bleeds
+- **Description**: *"Flashbang Yourself. You pulled the pin, threw the flashbang, and it bounced right back. Deal five hundred grenade damage and fix five light bleeds. The shrapnel always finds you."*
+- **Rewards**: 3,000 XP, Flashbang Yourself card
+- **Barter**: Random Scav Case (15K)
+
+#### [FAIL-9] QUEST: Two Seconds Too Late [Rare]
+- **Card**: Forgot Extract Timer
+- **ID Seed**: `ttc_quest_card_fail_extracttimer`
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 10 times
+  - [QE: EarnMoneyOnTransaction] Earn 500,000₽ from transactions
+- **Description**: *"Forgot Extract Timer. Seven seconds on the clock, full backpack, sprinting to extract, and... MIA. Survive ten raids and earn half a million roubles. This time, check the timer."*
+- **Rewards**: 10,000 XP, Forgot Extract Timer card
+- **Barter**: Random Scav Case (95K)
+
+#### [FAIL-10] QUEST: Healing Under Fire [Rare]
+- **Card**: Healing in the Open
+- **ID Seed**: `ttc_quest_card_fail_openheal`
+- **Objectives**:
+  - [QE: HealthGain] Restore 5,000 HP total
+  - [QE: RestoreBodyPart] Restore 10 body parts
+- **Description**: *"Healing in the Open. No cover, no concealment, just you and a Salewa in the middle of a firefight. Restore five thousand health points and ten body parts. Field medicine at its most desperate."*
+- **Rewards**: 10,000 XP, Healing in the Open card
+- **Barter**: Random Meds (5 items)
+
+#### [FAIL-11] QUEST: Cooking Grenades [Rare]
+- **Card**: Grenading Yourself
+- **ID Seed**: `ttc_quest_card_fail_selfnade`
+- **Objectives**:
+  - [QE: DamageWithGrenades] Deal 2,000 damage with grenades
+  - [QE: FixHeavyBleed] Fix 5 heavy bleeds
+- **Description**: *"Grenading Yourself. You cooked it too long. Or threw it into a doorframe. Or forgot about the bounce physics. Two thousand grenade damage and five heavy bleeds fixed. The shrapnel is yours."*
+- **Rewards**: 10,000 XP, Grenading Yourself card
+- **Barter**: Random Scav Case (95K)
+
+#### [FAIL-12] QUEST: Rage Quit Protocol [Epic]
+- **Card**: Alt+F4 Hero
+- **ID Seed**: `ttc_quest_card_fail_altf4`
+- **Objectives**:
+  - [QE: HealthLoss] Lose 5,000 HP total
+  - [QE: DestroyBodyPart] Have 10 body parts destroyed
+  - [Vanilla: ExitStatus] Survive and extract 15 times
+- **Description**: *"Alt+F4 Hero. The rage quit is an art form. Lose five thousand HP, have ten body parts destroyed, but survive fifteen raids anyway. The real Alt+F4 Hero is the one who keeps coming back."*
+- **Rewards**: 20,000 XP, Alt+F4 Hero card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [FAIL-13] QUEST: Lab Rat Disaster [Epic]
+- **Card**: Misfire in Labs
+- **ID Seed**: `ttc_quest_card_fail_misfirelabs`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 PMCs on Labs
+  - [Vanilla: Kills] Eliminate 10 raiders on Labs *(savageRole: pmcBot)*
+  - [Vanilla: ExitStatus] Survive and extract from Labs 5 times
+- **Description**: *"Misfire in Labs. The most expensive map in Tarkov — every entry costs a keycard whether you live or die. Your gun jams on the first raider. Eliminate fifteen PMCs and ten raiders on Labs, and survive five extractions."*
+- **Rewards**: 20,000 XP, Misfire in Labs card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [FAIL-14] QUEST: System Failure [Legendary]
+- **Card**: Tarkov Alt+Tab Crash
+- **ID Seed**: `ttc_quest_card_fail_alttabcrash`
+- **Objectives**:
+  - [QE: HealthLoss] Lose 20,000 HP total
+  - [QE: CompleteWorkout] Complete 5 gym workouts
+- **Description**: *"Tarkov Alt+Tab Crash. The game froze, the screen went black, and you woke up dead. Lose twenty thousand HP across your raids and hit the gym five times. Your PMC needs therapy — physical and mental."*
+- **Rewards**: 35,000 XP, Tarkov Alt+Tab Crash card
+- **Barter**: Random Scav Case (Intel)
+
+#### [FAIL-15] QUEST: The Discard Button [Secret]
+- **Card**: Accidental Discard
+- **ID Seed**: `ttc_quest_card_fail_discard`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3 intelligence folders
+  - [Vanilla: HandoverItem] Hand over 3 graphics cards
+  - [Vanilla: HandoverItem] Hand over 1 LEDX Skin Transilluminator
+- **Description**: *"Accidental Discard. You clicked 'Discard', YOU. Three intel folders, three graphics cards, and a LEDX — gone into the void. Hand them all over to Kolya. It hurts just as much the second time."*
+- **Rewards**: 60,000 XP, Accidental Discard card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [FAIL-C] QUEST: Kolya's Blooper Reel [Collection]
+- **ID Seed**: `ttc_quest_collection_tarkov_fails`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 fail cards (one of each, not FIR)
+- **Description**: *"Every fail documented, every embarrassment immortalized. From empty mags to accidental discards, you've lived through every nightmare Tarkov has to offer. Hand over the cards and complete the blooper reel."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Grenade Case + 2× Ammunition Case + 2× Magazine Case
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Mags Without Bullets | Common | Random Scav Case (2.5K) |
+| 2 | Backpack Left Behind | Common | Random Scav Case (2.5K) |
+| 3 | Scope Left at Base | Common | Random Scav Case (2.5K) |
+| 4 | Wrong Key | Uncommon | Random Keys (3 items) |
+| 5 | Wrong Ammo Type | Uncommon | Random Scav Case (15K) |
+| 6 | Tarkov Tab Out | Uncommon | Random Scav Case (15K) |
+| 7 | Extract in Wrong Direction | Uncommon | Random Scav Case (15K) |
+| 8 | Flashbang Yourself | Uncommon | Random Scav Case (15K) |
+| 9 | Forgot Extract Timer | Rare | Random Scav Case (95K) |
+| 10 | Healing in the Open | Rare | Random Meds (5 items) |
+| 11 | Grenading Yourself | Rare | Random Scav Case (95K) |
+| 12 | Alt+F4 Hero | Epic | Random Scav Case (Moonshine) |
+| 13 | Misfire in Labs | Epic | Random Scav Case (Moonshine) |
+| 14 | Tarkov Alt+Tab Crash | Legendary | Random Scav Case (Intel) |
+| 15 | Accidental Discard | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 fail cards | — | Grenade Case + 2× Ammo Case + 2× Mag Case |
+
+---
+
+*Remaining 9 themes to be designed...*

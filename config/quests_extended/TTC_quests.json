@@ -1292,5 +1292,157 @@
         "ConditionType": "SearchContainer"
       }
     ]
+  },
+  "a06d209e135858b809d2eba2": {
+    "QuestId": "a06d209e135858b809d2eba2",
+    "QuestName": "The Wall of Shame",
+    "Conditions": [
+      {
+        "ConditionId": "9b830b5f57c4be1466e327dd",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "b0b22ef3b4917fa31c768063": {
+    "QuestId": "b0b22ef3b4917fa31c768063",
+    "QuestName": "Click Click Click",
+    "Conditions": [
+      {
+        "ConditionId": "71532a8fcc72430e3ed19d11",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "0dc0381a185afa628430a682": {
+    "QuestId": "0dc0381a185afa628430a682",
+    "QuestName": "Spray and Pray",
+    "Conditions": [
+      {
+        "ConditionId": "0f63f1897b6a150a940013c7",
+        "ConditionType": "KillsWithoutADS"
+      },
+      {
+        "ConditionId": "42611169a3020819f6ed6fbb",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "b472af41050800adcc980692": {
+    "QuestId": "b472af41050800adcc980692",
+    "QuestName": "Every Door Wrong Key",
+    "Conditions": [
+      {
+        "ConditionId": "1c464e66e1e55cf8f81f8162",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "55fc4e2b799993bff5316d5b": {
+    "QuestId": "55fc4e2b799993bff5316d5b",
+    "QuestName": "Wrong Caliber",
+    "Conditions": [
+      {
+        "ConditionId": "f08b631d0b2459425c544798",
+        "ConditionType": "DamageWithShotguns"
+      },
+      {
+        "ConditionId": "c2894eb23f31b4ff9854a989",
+        "ConditionType": "FixAnyMalfunction"
+      }
+    ]
+  },
+  "121d654eb5485620c3fc01ca": {
+    "QuestId": "121d654eb5485620c3fc01ca",
+    "QuestName": "Should Have Alt-Tabbed Faster",
+    "Conditions": [
+      {
+        "ConditionId": "275b0e6be9de5cf87b0f1b37",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "c771c6e02e0619218d87001f",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "da4f497fd64615eb60b067ae": {
+    "QuestId": "da4f497fd64615eb60b067ae",
+    "QuestName": "Flashbang Boomerang",
+    "Conditions": [
+      {
+        "ConditionId": "7ec011a509070ee401ddfe75",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "76f4934c892c94b848a5d1bf",
+        "ConditionType": "FixLightBleed"
+      }
+    ]
+  },
+  "e68ed7849802d9cd6e0ea163": {
+    "QuestId": "e68ed7849802d9cd6e0ea163",
+    "QuestName": "Two Seconds Too Late",
+    "Conditions": [
+      {
+        "ConditionId": "879546ea03584aa94c4f01fd",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "c461f25f5525673a31cfb844": {
+    "QuestId": "c461f25f5525673a31cfb844",
+    "QuestName": "Healing Under Fire",
+    "Conditions": [
+      {
+        "ConditionId": "a80e2d05c5f8100db7554582",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "f01f9ae0bf4692bc7f66c5d6",
+        "ConditionType": "RestoreBodyPart"
+      }
+    ]
+  },
+  "51678462e30fad4dc506aa74": {
+    "QuestId": "51678462e30fad4dc506aa74",
+    "QuestName": "Cooking Grenades",
+    "Conditions": [
+      {
+        "ConditionId": "dc7cc4213a2497d01e96b0b6",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "04ff08192e0c39f61b1134a7",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
+  },
+  "a3541f515d6d2ea7d6985426": {
+    "QuestId": "a3541f515d6d2ea7d6985426",
+    "QuestName": "Rage Quit Protocol",
+    "Conditions": [
+      {
+        "ConditionId": "5a3a9ceb1136fa5a2634acb5",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "0a4a5d78a9b05cb6ede1d1e1",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "a347fb2b66d3815af4e2ecc8": {
+    "QuestId": "a347fb2b66d3815af4e2ecc8",
+    "QuestName": "System Failure",
+    "Conditions": [
+      {
+        "ConditionId": "d3e64f230ac0db5c723e899f",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "ea345345e3922647c0dd6251",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
   }
 }

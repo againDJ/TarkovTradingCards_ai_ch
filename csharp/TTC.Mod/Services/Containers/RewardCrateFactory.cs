@@ -138,7 +138,8 @@ public sealed class RewardCrateFactory
 				ExaminedByDefault = true,
 				Width = isRandom ? 2 : 1,
 				Height = isRandom ? 2 : 1,
-				CanSellOnRagfair = false
+				CanSellOnRagfair = false,
+				IsUnbuyable = true
 			};
 
 			details.OverrideProperties = props;

@@ -177,6 +177,7 @@ public sealed class PostDb : IOnLoad
 				ScavLifeThemeDefinitions.InitSmallMagazines(_db);
 				allDefs.AddRange(ScavLifeThemeDefinitions.GetAll());
 				allDefs.AddRange(MemorableQuestItemsThemeDefinitions.GetAll());
+				allDefs.AddRange(TarkovFailsThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 
