@@ -1708,5 +1708,157 @@
         "ConditionType": "MoveDistanceWhileRunning"
       }
     ]
+  },
+  "f2ffce1965974c039c5f4ded": {
+    "QuestId": "f2ffce1965974c039c5f4ded",
+    "QuestName": "Fresh Spawn",
+    "Conditions": [
+      {
+        "ConditionId": "dba3f6aa109db02676e536d1",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "caa1be0481e2e6b6da9e83ac": {
+    "QuestId": "caa1be0481e2e6b6da9e83ac",
+    "QuestName": "Sprint and Grab",
+    "Conditions": [
+      {
+        "ConditionId": "d909baa125b61fd0a868f0d1",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "85299e3a8994e16452d6714d",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "0756afd8dfdd9846de07d716": {
+    "QuestId": "0756afd8dfdd9846de07d716",
+    "QuestName": "Buckshot Budget",
+    "Conditions": [
+      {
+        "ConditionId": "989a846601d89a485d246800",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "dc278201253d4d31de6eccca": {
+    "QuestId": "dc278201253d4d31de6eccca",
+    "QuestName": "Hipfire Hustle",
+    "Conditions": [
+      {
+        "ConditionId": "e35392750b8863493bce0edb",
+        "ConditionType": "KillsWithoutADS"
+      },
+      {
+        "ConditionId": "1f48ea595f851f6df6ac60ce",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "e59ae5bc235325f5d539c144": {
+    "QuestId": "e59ae5bc235325f5d539c144",
+    "QuestName": "Flavor of the Week",
+    "Conditions": [
+      {
+        "ConditionId": "10125c2b6f7f47391b4116cc",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "52fd5198aed7cb07f845e5aa",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "1cc2c0652c9410ea215923c7": {
+    "QuestId": "1cc2c0652c9410ea215923c7",
+    "QuestName": "Geared Up",
+    "Conditions": [
+      {
+        "ConditionId": "3f814ba7b2592aeeedb58e06",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "551c6c2879d5bbfbc775a68f": {
+    "QuestId": "551c6c2879d5bbfbc775a68f",
+    "QuestName": "Market Hustle",
+    "Conditions": [
+      {
+        "ConditionId": "aee8dae32b56969783f360b0",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "4f8a75cfa60d1dcd90662c8d",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "15e18bf677120c84529118c9": {
+    "QuestId": "15e18bf677120c84529118c9",
+    "QuestName": "Sidearm Specialist",
+    "Conditions": [
+      {
+        "ConditionId": "079607869df519b80e74d3b9",
+        "ConditionType": "DamageWithPistols"
+      }
+    ]
+  },
+  "c8cc0e02408254a9134b77ec": {
+    "QuestId": "c8cc0e02408254a9134b77ec",
+    "QuestName": "Jackpot Hunter",
+    "Conditions": [
+      {
+        "ConditionId": "22faf4470e568d2c815884b0",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "dfdbbca871c653c70e81511b",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "ed581790525e08620c068a64",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "0fba6c3cef428a3466c3a703": {
+    "QuestId": "0fba6c3cef428a3466c3a703",
+    "QuestName": "Economic Dominance",
+    "Conditions": [
+      {
+        "ConditionId": "0c40c75bbfc432dff4be6f71",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "73263b9342c9ad0dd9f35df2",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "fe0fb589813d437f8f9ffc31": {
+    "QuestId": "fe0fb589813d437f8f9ffc31",
+    "QuestName": "Endgame Builder",
+    "Conditions": [
+      {
+        "ConditionId": "542eea30075b03c61086679e",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "db00b66e941dbf64e92ca77f": {
+    "QuestId": "db00b66e941dbf64e92ca77f",
+    "QuestName": "The Absolute Unit",
+    "Conditions": [
+      {
+        "ConditionId": "a3b160b1f2f35470ef67389c",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "abff59ecbcd77768528d9ec5",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
   }
 }

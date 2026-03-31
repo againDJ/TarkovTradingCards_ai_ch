@@ -180,6 +180,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(TarkovFailsThemeDefinitions.GetAll());
 				allDefs.AddRange(CommunityMemesThemeDefinitions.GetAll());
 				allDefs.AddRange(StreamerMomentsThemeDefinitions.GetAll());
+				allDefs.AddRange(LegendsOfTheWipeThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 

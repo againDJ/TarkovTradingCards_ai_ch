@@ -3369,4 +3369,234 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
 
 ---
 
-*Remaining 7 themes to be designed...*
+## Theme: Legends of the Wipe
+
+**15 cards** (3 Common, 4 Uncommon, 3 Rare, 2 Epic, 2 Legendary, 1 Secret)
+
+Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trader loyalty, hideout upgrades, economy, and PvP scaling.
+
+### [WIPE-0] QUEST: Fresh Spawn (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_legends_of_the_wipe`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 3 times
+  - [QE: LootItem] Loot 15 items
+- **Description**: *"Every wipe starts the same — naked, broke, and confused. Survive three raids and loot fifteen items. The wipe journey begins here."*
+- **Rewards**:
+  - 1× Legends of the Wipe Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [WIPE-1] QUEST: Sprint and Grab [Common]
+- **Card**: Day One Hatchet Rush
+- **ID Seed**: `ttc_quest_card_wipe_hatchetrush`
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 5,000m while running
+  - [QE: LootItem] Loot 20 items
+- **Description**: *"Day One Hatchet Rush. No gear, no plan, just sprint to the nearest loot spawn and shove it in the container. Five kilometers of running and twenty items looted. Day one energy."*
+- **Rewards**: 1,000 XP, Day One Hatchet Rush card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [WIPE-2] QUEST: Buckshot Budget [Common]
+- **Card**: Shotgun Wipe Starter
+- **ID Seed**: `ttc_quest_card_wipe_shotgunstarter`
+- **Objectives**:
+  - [QE: DamageWithShotguns] Deal 1,000 damage with shotguns
+  - [Vanilla: Kills] Eliminate 10 scavs
+- **Description**: *"Shotgun Wipe Starter. The MP-133 is free, buckshot is cheap, and scavs don't dodge. A thousand shotgun damage and ten scavs down. The early wipe classic."*
+- **Rewards**: 1,000 XP, Shotgun Wipe Starter card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [WIPE-3] QUEST: Hipfire Hustle [Common]
+- **Card**: Hatchling Wars
+- **ID Seed**: `ttc_quest_card_wipe_hatchlingwars`
+- **Objectives**:
+  - [QE: KillsWithoutADS] Get 5 kills without ADS
+  - [QE: LootItem] Loot 30 items
+- **Description**: *"Hatchling Wars. When everyone's broke, every fight is a hipfire scramble. Five hipfire kills and thirty items looted. The early wipe survival loop."*
+- **Rewards**: 1,000 XP, Hatchling Wars card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [WIPE-4] QUEST: Flavor of the Week [Uncommon]
+- **Card**: First Week Meta Shift
+- **ID Seed**: `ttc_quest_card_wipe_metashift`
+- **Objectives**:
+  - [QE: DamageWithAR] Deal 3,000 damage with assault rifles
+  - [QE: DamageWithSMG] Deal 2,000 damage with SMGs
+- **Description**: *"First Week Meta Shift. Every wipe the meta changes — ARs one day, SMGs the next. Three thousand AR damage and two thousand SMG damage. Adapt or die."*
+- **Rewards**: 3,000 XP, First Week Meta Shift card
+- **Barter**: Random Scav Case (15K)
+
+#### [WIPE-5] QUEST: Factory Sweep [Uncommon]
+- **Card**: Factory Nightmares
+- **ID Seed**: `ttc_quest_card_wipe_factorynightmares`
+- **Location**: Factory
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate scout point 1 on Factory *(zone: place_pacemaker_SCOUT_01, oneSessionOnly)*
+  - [Vanilla: VisitPlace] Locate scout point 2 on Factory *(zone: place_pacemaker_SCOUT_02, oneSessionOnly)*
+  - [Vanilla: VisitPlace] Locate scout point 3 on Factory *(zone: place_pacemaker_SCOUT_03, oneSessionOnly)*
+  - [Vanilla: Kills] Eliminate 5 targets on Factory in a single raid *(KillTarget: "Any", resetOnSessionEnd, location: factory4_day/night)*
+- **Description**: *"Factory Nightmares. Early wipe Factory is pure chaos. Visit three scout points and eliminate five targets — all in a single raid. Survive the nightmare."*
+- **Rewards**: 3,000 XP, Factory Nightmares card
+- **Barter**: Random Scav Case (15K)
+
+#### [WIPE-6] QUEST: Geared Up [Uncommon]
+- **Card**: Day Seven Chads
+- **ID Seed**: `ttc_quest_card_wipe_daysevenchard`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 PMCs
+  - [QE: KillsWhileADS] Get 10 kills while ADS
+- **Description**: *"Day Seven Chads. One week into wipe and the first chads appear — class 4 armor, modded AKs, and the confidence of someone with a Bitcoin Farm. Ten PMC kills and ten ADS kills. Join the chads."*
+- **Rewards**: 3,000 XP, Day Seven Chads card
+- **Barter**: Random Scav Case (15K)
+
+#### [WIPE-7] QUEST: Market Hustle [Uncommon]
+- **Card**: Early Wipe Flea Hustler
+- **ID Seed**: `ttc_quest_card_wipe_fleahustler`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 1,000,000₽ from transactions
+  - [QE: SearchContainer] Search 50 containers
+- **Description**: *"Early Wipe Flea Hustler. The flea market opens and suddenly everyone's a day trader. One million roubles earned and fifty containers searched. Buy low, sell high."*
+- **Rewards**: 3,000 XP, Early Wipe Flea Hustler card
+- **Barter**: Random Scav Case (15K)
+
+#### [WIPE-8] QUEST: Sidearm Specialist [Rare]
+- **Card**: Pistol Only Heroes
+- **ID Seed**: `ttc_quest_card_wipe_pistolheroes`
+- **Objectives**:
+  - [QE: DamageWithPistols] Deal 5,000 damage with pistols
+  - [Vanilla: Kills] Eliminate 10 targets with headshots using pistols *(KillTarget: "Any", KillBodyParts: ["Head"], KillWeapons: all pistol IDs)*
+- **Description**: *"Pistol Only Heroes. The players who run nothing but a sidearm and still walk out with a full backpack. Five thousand pistol damage and ten headshots with a pistol. The sidearm specialist."*
+- **Rewards**: 10,000 XP, Pistol Only Heroes card
+- **Barter**: 1× FN Five-seveN MK2 (Priscilu build, fully assembled)
+
+#### [WIPE-9] QUEST: Boss Hunter [Rare]
+- **Card**: Scav Boss First Kill
+- **ID Seed**: `ttc_quest_card_wipe_bossfirstkill`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 bosses *(KillTarget: "Savage", savageRole: all boss roles)*
+- **Description**: *"Scav Boss First Kill. That first time you see Reshala's golden TT or hear Killa's RPK — and you actually win. Five boss kills across any map. The boss hunter rises."*
+- **Rewards**: 10,000 XP, Scav Boss First Kill card
+- **Barter**: Random Scav Case (95K)
+
+#### [WIPE-10] QUEST: Keycard Required [Rare]
+- **Card**: First Labs Runs
+- **ID Seed**: `ttc_quest_card_wipe_firstlabs`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 targets on Labs
+  - [Vanilla: ExitStatus] Survive and extract from Labs 3 times
+- **Description**: *"First Labs Runs. The first time you swipe that keycard and the elevator door opens — raiders, loot, and certain death. Fifteen kills on Labs and three extractions. Welcome to endgame."*
+- **Rewards**: 10,000 XP, First Labs Runs card
+- **Barter**: Random Scav Case (95K)
+
+#### [WIPE-11] QUEST: Jackpot Hunter [Epic]
+- **Card**: Level 1 Red Keycard Pull
+- **ID Seed**: `ttc_quest_card_wipe_redkeycard`
+- **Objectives**:
+  - [QE: SearchContainer] Search 200 containers
+  - [QE: LootItem] Loot 200 items
+  - [QE: EarnMoneyOnTransaction] Earn 5,000,000₽ from transactions
+- **Description**: *"Level 1 Red Keycard Pull. The legendary loot pull — a red keycard from a random jacket at level one. Two hundred containers, two hundred items, five million roubles. Chase the jackpot."*
+- **Rewards**: 20,000 XP, Level 1 Red Keycard Pull card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [WIPE-12] QUEST: Economic Dominance [Epic]
+- **Card**: Economy Reset Millionaire
+- **ID Seed**: `ttc_quest_card_wipe_millionaire`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 10,000,000₽ from transactions
+  - [QE: CraftAnyItem] Craft 30 items
+  - [Vanilla: HandoverItem] Hand over 1,000,000₽ in roubles
+- **Description**: *"Economy Reset Millionaire. Ten million earned, thirty items crafted, and a million handed to Kolya as proof. The economy bends to your will."*
+- **Rewards**: 20,000 XP, Economy Reset Millionaire card
+- **Barter**: 1,000,000₽ in roubles
+
+#### [WIPE-13] QUEST: Trusted by All [Legendary]
+- **Card**: Kappa Completionist
+- **ID Seed**: `ttc_quest_card_wipe_kappacomplete`
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Prapor LL3
+  - [Vanilla: TraderLoyalty] Have Therapist LL3
+  - [Vanilla: TraderLoyalty] Have Skier LL3
+  - [Vanilla: TraderLoyalty] Have Peacekeeper LL3
+  - [Vanilla: TraderLoyalty] Have Mechanic LL3
+  - [Vanilla: TraderLoyalty] Have Ragman LL3
+  - [Vanilla: TraderLoyalty] Have Jaeger LL3
+  - [Vanilla: HandoverItem] Hand over 50 dogtags *(parent class: Dogtag)*
+- **Description**: *"Kappa Completionist. Every trader at loyalty level three and fifty dogtags collected. You've earned the trust of every trader in Tarkov. The Kappa path demands loyalty."*
+- **Rewards**: 35,000 XP, Kappa Completionist card
+- **Barter**: Random Scav Case (Intel)
+
+#### [WIPE-14] QUEST: Endgame Builder [Legendary]
+- **Card**: The Final Wipe Extract
+- **ID Seed**: `ttc_quest_card_wipe_finalextract`
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 30 times
+  - [QE: MoveDistance] Cover 100,000m on foot
+  - [Vanilla: HideoutArea] Have Bitcoin Farm level 3 *(areaType: 20, level: 3)*
+- **Description**: *"The Final Wipe Extract. Thirty extractions, a hundred kilometers walked, and Bitcoin Farm maxed. You've seen every corner of Tarkov and built the ultimate hideout. The endgame builder."*
+- **Rewards**: 35,000 XP, The Final Wipe Extract card
+- **Barter**: Random Scav Case (Intel)
+
+#### [WIPE-15] QUEST: The Absolute Unit [Secret]
+- **Card**: First Kappa Chaser
+- **ID Seed**: `ttc_quest_card_wipe_kappachaser`
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Prapor LL4
+  - [Vanilla: TraderLoyalty] Have Therapist LL4
+  - [Vanilla: TraderLoyalty] Have Skier LL4
+  - [Vanilla: TraderLoyalty] Have Peacekeeper LL4
+  - [Vanilla: TraderLoyalty] Have Mechanic LL4
+  - [Vanilla: TraderLoyalty] Have Ragman LL4
+  - [Vanilla: TraderLoyalty] Have Jaeger LL4
+  - [QE: EarnMoneyOnTransaction] Earn 20,000,000₽ from transactions
+  - [QE: CompleteWorkout] Complete 20 gym workouts
+- **Description**: *"First Kappa Chaser. Every trader maxed, twenty million roubles earned, and twenty gym sessions completed. The absolute unit of Tarkov. This is what endgame looks like."*
+- **Rewards**: 60,000 XP, First Kappa Chaser card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [WIPE-C] QUEST: Kolya's Wipe Chronicle [Collection]
+- **ID Seed**: `ttc_quest_collection_legends_of_the_wipe`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 wipe cards (one of each, not FIR)
+- **Description**: *"Every milestone documented, from the first hatchet rush to the Kappa chase. You've lived an entire wipe cycle. Hand over the cards and complete the chronicle."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: 1× of each keycard (Labs access, Blue, Yellow, Green, Red, Black, Violet, Object #11SR, Object #21WS, Blue marking, TerraGroup storage, Labs residential, Labrys access)
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Day One Hatchet Rush | Common | Random Scav Case (2.5K) |
+| 2 | Shotgun Wipe Starter | Common | Random Scav Case (2.5K) |
+| 3 | Hatchling Wars | Common | Random Scav Case (2.5K) |
+| 4 | First Week Meta Shift | Uncommon | Random Scav Case (15K) |
+| 5 | Factory Nightmares | Uncommon | Random Scav Case (15K) |
+| 6 | Day Seven Chads | Uncommon | Random Scav Case (15K) |
+| 7 | Early Wipe Flea Hustler | Uncommon | Random Scav Case (15K) |
+| 8 | Pistol Only Heroes | Rare | 1× FN Five-seveN (Priscilu build) |
+| 9 | Scav Boss First Kill | Rare | Random Scav Case (95K) |
+| 10 | First Labs Runs | Rare | Random Scav Case (95K) |
+| 11 | Red Keycard Pull | Epic | Random Scav Case (Moonshine) |
+| 12 | Economy Reset Millionaire | Epic | 1,000,000₽ roubles |
+| 13 | Kappa Completionist | Legendary | Random Scav Case (Intel) |
+| 14 | The Final Wipe Extract | Legendary | Random Scav Case (Intel) |
+| 15 | First Kappa Chaser | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 wipe cards | — | 1× of each keycard (13 keycards) |
+
+---
+
+*Remaining 6 themes to be designed...*
