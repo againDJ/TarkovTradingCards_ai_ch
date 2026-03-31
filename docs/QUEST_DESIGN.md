@@ -3141,4 +3141,232 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
 
 ---
 
-*Remaining 8 themes to be designed...*
+## Theme: Streamer Moments
+
+**15 cards** (1 Common, 4 Uncommon, 5 Rare, 3 Epic, 1 Legendary, 1 Secret)
+
+Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator challenges. Barter rewards are streamer items when available, Random Scav Case otherwise.
+
+### [STRM-0] QUEST: The Highlight Reel (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_streamer_moments`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: KillsWhileADS] Get 5 kills while aiming down sights
+  - [QE: DamageWithAR] Deal 500 damage with assault rifles
+- **Description**: *"Every streamer has a highlight reel. The clutch plays, the impossible shots, the moments that make chat go wild. Before Kolya shares his collection of legendary streamer moments, show him you've got content potential. Five ADS kills and five hundred AR damage. Camera's rolling."*
+- **Rewards**:
+  - 1× Streamer Moments Binder
+  - 1,000 XP
+- **Unlocks**: First card quest (Hatchling Diplomat)
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [STRM-1] QUEST: Naked and Famous [Common]
+- **Card**: Hatchling Diplomat
+- **ID Seed**: `ttc_quest_card_strm_hatchling`
+- **Location**: Factory
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Factory 3 times
+  - [QE: KillsWithoutADS] Get 3 kills without ADS
+- **Description**: *"Hatchling Diplomat. The streamer classic — load into Factory with nothing, wiggle at everyone, and somehow walk out alive with a full backpack. Survive Factory three times and get three hipfire kills. Content gold."*
+- **Rewards**: 1,000 XP, Hatchling Diplomat card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [STRM-2] QUEST: The Budget Build [Uncommon]
+- **Card**: JesseKazam Budget Warrior
+- **ID Seed**: `ttc_quest_card_strm_jessekazam`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 200,000₽ from transactions
+  - [Vanilla: Kills] Eliminate 10 scavs with iron sights only
+- **Description**: *"JesseKazam Budget Warrior. The king of budget builds — proving you don't need meta gear to dominate. Earn two hundred thousand roubles and eliminate ten scavs with iron sights only. Budget excellence."*
+- **Rewards**: 3,000 XP, JesseKazam Budget Warrior card
+- **Barter**: Random Scav Case (15K)
+
+#### [STRM-3] QUEST: Patch Day [Uncommon]
+- **Card**: Onepeg Patch Breakdown
+- **ID Seed**: `ttc_quest_card_strm_onepeg`
+- **Objectives**:
+  - [QE: SearchContainer] Search 30 containers
+  - [QE: LootItem] Loot 30 items
+- **Description**: *"Onepeg Patch Breakdown. Every patch, every change, every hidden nerf — Onepeg breaks it all down. Search thirty containers and loot thirty items. Patch notes are just the beginning."*
+- **Rewards**: 3,000 XP, Onepeg Patch Breakdown card
+- **Barter**: Random Scav Case (15K)
+
+#### [STRM-4] QUEST: Bug Report [Uncommon]
+- **Card**: NiceGuy Dev Tracker
+- **ID Seed**: `ttc_quest_card_strm_niceguy`
+- **Objectives**:
+  - [QE: CraftAnyItem] Craft 5 items
+  - [QE: EarnMoneyOnTransaction] Earn 100,000₽ from transactions
+- **Description**: *"NiceGuy Dev Tracker. The community's watchdog — tracking every dev response, every bug report, every promise. Craft five items and earn a hundred thousand roubles. Someone has to keep track."*
+- **Rewards**: 3,000 XP, NiceGuy Dev Tracker card
+- **Barter**: Random Scav Case (15K)
+
+#### [STRM-5] QUEST: Inventory Management [Uncommon]
+- **Card**: Stash Tetris World Record
+- **ID Seed**: `ttc_quest_card_strm_stashtetris`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 10 food items *(parent class: Food)*
+  - [Vanilla: HandoverItem] Hand over 10 electronic components *(parent class: Electronics)*
+- **Description**: *"Stash Tetris World Record. The art of fitting one more item into an already full stash. Hand over ten food items and ten electronic components. Kolya needs to reorganize."*
+- **Rewards**: 3,000 XP, Stash Tetris World Record card
+- **Barter**: Random Scav Case (15K)
+
+#### [STRM-6] QUEST: Sound Whoring [Rare]
+- **Card**: Veritas Audio Trap
+- **ID Seed**: `ttc_quest_card_strm_veritas`
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 10 kills while silent
+  - [Vanilla: Kills] Eliminate 5 PMCs with suppressed weapons
+- **Description**: *"Veritas Audio Trap. The man who taught Tarkov to listen. Every footstep, every reload, every bush rustle — Veritas hears it all. Ten silent kills and five PMC kills with a suppressor. Hear them before they hear you."*
+- **Rewards**: 10,000 XP, Veritas Audio Trap card
+- **Barter**: Random Scav Case (95K)
+
+#### [STRM-7] QUEST: Solo Hunt [Rare]
+- **Card**: DeadlySlob Solo Boss
+- **ID Seed**: `ttc_quest_card_strm_deadlyslob`
+- **Location**: Woods
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 3 bosses *(KillTarget: "Savage", savageRole: all boss roles)*
+- **Description**: *"DeadlySlob Solo Boss. The solo hunter — tracking down bosses across Tarkov with nothing but skill and patience. Kill three bosses on any map. The hunt is on."*
+- **Rewards**: 10,000 XP, DeadlySlob Solo Boss card
+- **Barter**: Random Scav Case (95K)
+
+#### [STRM-8] QUEST: The Dorms Classic [Rare]
+- **Card**: Ambush at Dorms 3-Story
+- **ID Seed**: `ttc_quest_card_strm_dormsambush`
+- **Location**: Customs
+- **Objectives**:
+  - [Vanilla: Kills + InZone] Eliminate 5 targets in the dorms area *(KillTarget: "Any", InZone: "huntsman_020", location: bigmap)*
+  - [QE: KillsWhileCrouched] Get 5 kills while crouched
+- **Description**: *"Ambush at Dorms 3-Story. The clip that every Tarkov streamer has — crouched in a dorm room, door closed, waiting for the footsteps. Five kills in the dorms and five crouched kills. The dorms classic."*
+- **Rewards**: 10,000 XP, Ambush at Dorms 3-Story card
+- **Barter**: Random Scav Case (95K)
+
+#### [STRM-9] QUEST: One Tap Montage [Rare]
+- **Card**: Don't Peek – Montage
+- **ID Seed**: `ttc_quest_card_strm_dontpeek`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets with headshots
+  - [QE: DamageWithDMR] Deal 5,000 damage with marksman rifles
+- **Description**: *"Don't Peek – Montage. The compilation clip of one-taps that makes chat spam 'HEAD EYES'. Ten headshots and five thousand DMR damage. Don't peek the angle."*
+- **Rewards**: 10,000 XP, Don't Peek – Montage card
+- **Barter**: Random Scav Case (95K)
+
+#### [STRM-10] QUEST: Kobe! [Rare]
+- **Card**: Grenade Kobe Clip
+- **ID Seed**: `ttc_quest_card_strm_kobe`
+- **Objectives**:
+  - [QE: DamageWithGrenades] Deal 3,000 damage with grenades
+  - [Vanilla: Kills] Eliminate 5 targets from under 15m
+- **Description**: *"Grenade Kobe Clip. The perfect arc, the perfect bounce, the perfect kill. Three thousand grenade damage and five close-range kills. KOBE!"*
+- **Rewards**: 10,000 XP, Grenade Kobe Clip card
+- **Barter**: Random Scav Case (95K)
+
+#### [STRM-11] QUEST: The Marathon [Epic]
+- **Card**: Pestily's Punisher Marathon
+- **ID Seed**: `ttc_quest_card_strm_pestily`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 30 PMCs
+  - [Vanilla: Kills] Eliminate 10 PMCs with headshots
+  - [Vanilla: ExitStatus] Survive and extract 15 times
+- **Description**: *"Pestily's Punisher Marathon. The man who speed-runs the entire Punisher quest line in a single stream. Thirty PMC kills, ten headshots, fifteen extractions. Marathon, not sprint. Actually, sprint."*
+- **Rewards**: 20,000 XP, Pestily's Punisher Marathon card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [STRM-12] QUEST: Lights Out [Epic]
+- **Card**: Klean Night Labs Run
+- **ID Seed**: `ttc_quest_card_strm_klean`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 targets on Labs
+  - [Vanilla: ExitStatus] Survive and extract from Labs 5 times
+- **Description**: *"Klean Night Labs Run. Labs — fluorescent lights flickering, every shadow could be a raider or a PMC. Twenty kills on Labs and five extractions. Lights out."*
+- **Rewards**: 20,000 XP, Klean Night Labs Run card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [STRM-13] QUEST: Cross-Map Headshot [Epic]
+- **Card**: Stream Sniper Outplayed
+- **ID Seed**: `ttc_quest_card_strm_outplayed`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 PMCs from over 150m
+  - [QE: TotalShotDistanceWithSnipers] Accumulate 5,000m total shot distance with sniper rifles
+- **Description**: *"Stream Sniper Outplayed. They came to ruin the stream, and they got outplayed from 200 meters. Five PMC kills from over 150 meters and five thousand meters of total sniper shot distance. Counter-snipe the snipers."*
+- **Rewards**: 20,000 XP, Stream Sniper Outplayed card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [STRM-14] QUEST: From Nothing to Everything [Legendary]
+- **Card**: Zero to Hero Run
+- **ID Seed**: `ttc_quest_card_strm_zerotohero`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 PMCs in a single raid *(resetOnSessionEnd)*
+  - [Vanilla: Kills] Eliminate 50 PMCs total
+  - [QE: EarnMoneyOnTransaction] Earn 10,000,000₽ from transactions
+- **Description**: *"Zero to Hero Run. Start with nothing, end with everything. The ultimate streamer challenge — five PMCs in a single raid, fifty total, and ten million roubles earned. From zero to legend."*
+- **Rewards**: 35,000 XP, Zero to Hero Run card
+- **Barter**: Random Scav Case (Intel)
+
+#### [STRM-15] QUEST: The Lobby Wipe [Secret]
+- **Card**: LVNDMARK's 10-Man Wipe
+- **ID Seed**: `ttc_quest_card_strm_lvndmark`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 targets in a single raid *(KillTarget: "Any", resetOnSessionEnd)*
+  - [Vanilla: Kills] Eliminate 100 PMCs total
+  - [QE: MoveDistanceWhileRunning] Cover 50,000m while running
+- **Description**: *"LVNDMARK's 10-Man Wipe. The clip that broke Twitch. Twenty kills in a single raid — wipe the entire lobby. A hundred PMC kills total and fifty kilometers of W-key sprinting. Become the lobby boss."*
+- **Rewards**: 60,000 XP, LVNDMARK's 10-Man Wipe card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [STRM-C] QUEST: Kolya's Hall of Fame [Collection]
+- **ID Seed**: `ttc_quest_collection_streamer_moments`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 streamer cards (one of each, not FIR)
+- **Description**: *"Every streamer moment documented, every legendary play immortalized. From the hatchling diplomat to the 10-man wipe, you've relived the greatest moments in Tarkov content history. Hand over the cards and complete the Hall of Fame."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Streamer item case + all 40 Collector items:
+  - 1× Old firesteel, 1× Antique axe, 1× Battered antique book, 1× #FireKlean gun lube
+  - 1× Golden rooster figurine, 1× Silver Badge, 1× Deadlyslob's beard oil, 1× Golden 1GPhone
+  - 1× Jar of DevilDog mayo, 1× Can of sprats, 1× Fake mustache, 1× Kotton beanie
+  - 1× Raven figurine, 1× Pestily plague mask, 1× Shroud half-mask, 1× Can of Dr. Lupo's coffee
+  - 1× 42 Signature Blend English Tea, 1× Veritas guitar pick, 1× Armband (Evasion), 1× Can of RatCola
+  - 1× Loot Lord plushie, 1× Smoke balaclava, 1× WZ Wallet, 1× LVNDMARK's rat poison
+  - 1× Missam forklift key, 1× Video cassette Cyborg Killer, 1× BakeEzy cook book
+  - 1× JohnB Liquid DNB glasses, 1× Baddie's red beard, 1× DRD body armor
+  - 1× Gingy keychain, 1× Golden egg, 1× Press pass (NoiceGuy), 1× Axel parrot figurine
+  - 1× BEAR Buddy plush toy, 1× Glorious E mask, 1× Inseq gas pipe wrench
+  - 1× Viibiin sneaker, 1× Tamatthi kunai knife replica
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Hatchling Diplomat | Common | Random Scav Case (2.5K) |
+| 2 | JesseKazam Budget Warrior | Uncommon | Random Scav Case (15K) |
+| 3 | Onepeg Patch Breakdown | Uncommon | Random Scav Case (15K) |
+| 4 | NiceGuy Dev Tracker | Uncommon | Random Scav Case (15K) |
+| 5 | Stash Tetris World Record | Uncommon | Random Scav Case (15K) |
+| 6 | Veritas Audio Trap | Rare | Random Scav Case (95K) |
+| 7 | DeadlySlob Solo Boss | Rare | Random Scav Case (95K) |
+| 8 | Ambush at Dorms 3-Story | Rare | Random Scav Case (95K) |
+| 9 | Don't Peek – Montage | Rare | Random Scav Case (95K) |
+| 10 | Grenade Kobe Clip | Rare | Random Scav Case (95K) |
+| 11 | Pestily's Punisher Marathon | Epic | Random Scav Case (Moonshine) |
+| 12 | Klean Night Labs Run | Epic | Random Scav Case (Moonshine) |
+| 13 | Stream Sniper Outplayed | Epic | Random Scav Case (Moonshine) |
+| 14 | Zero to Hero Run | Legendary | Random Scav Case (Intel) |
+| 15 | LVNDMARK's 10-Man Wipe | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 streamer cards | — | Streamer item case + 40 Collector items |
+
+---
+
+*Remaining 7 themes to be designed...*

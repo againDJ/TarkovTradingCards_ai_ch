@@ -76,6 +76,9 @@ public record QeObjective
     /// <summary>Savage role filter: ["marksman"] for snipers, ["bossBully"] for Reshala, etc.</summary>
     public List<string>? KillSavageRole { get; init; }
 
+    /// <summary>Zone IDs for InZone kill condition (e.g., ["huntsman_020"] for Customs dorms).</summary>
+    public List<string>? KillZoneIds { get; init; }
+
     /// <summary>Weapon template ID filter: only kills with these specific weapons count.</summary>
     public List<string>? KillWeapons { get; init; }
 

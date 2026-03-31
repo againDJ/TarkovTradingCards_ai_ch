@@ -1576,5 +1576,137 @@
         "ConditionType": "EarnMoneyOnTransaction"
       }
     ]
+  },
+  "2d6315c893813046a9704568": {
+    "QuestId": "2d6315c893813046a9704568",
+    "QuestName": "The Highlight Reel",
+    "Conditions": [
+      {
+        "ConditionId": "ab2f371c76bf314bf5b59142",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "ea9a2e431f798679b5d57883",
+        "ConditionType": "DamageWithAR"
+      }
+    ]
+  },
+  "8e31034a8edf3fc057cb7581": {
+    "QuestId": "8e31034a8edf3fc057cb7581",
+    "QuestName": "Naked and Famous",
+    "Conditions": [
+      {
+        "ConditionId": "e1742e01c2e8011f2da2a7ba",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "61a6e5aa51055d75ff40431a": {
+    "QuestId": "61a6e5aa51055d75ff40431a",
+    "QuestName": "The Budget Build",
+    "Conditions": [
+      {
+        "ConditionId": "23341ab4b5a07e34dcf7d535",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "42dd131227c8ba5c8bd7006d": {
+    "QuestId": "42dd131227c8ba5c8bd7006d",
+    "QuestName": "Patch Day",
+    "Conditions": [
+      {
+        "ConditionId": "f5f246e05854719b49f28733",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "a585a92b3dba87637b3d2bca",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "4e8ed4d4344da028b05fecca": {
+    "QuestId": "4e8ed4d4344da028b05fecca",
+    "QuestName": "Bug Report",
+    "Conditions": [
+      {
+        "ConditionId": "669f8e04f6f6f4378b8f52b1",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "5e378e21d7dffcb744aec7b8",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "e5362bebbf53d7de410b4156": {
+    "QuestId": "e5362bebbf53d7de410b4156",
+    "QuestName": "Sound Whoring",
+    "Conditions": [
+      {
+        "ConditionId": "dd16d5ccd85529e539ad2bc1",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "c768966d9249cf81dfcf8dba": {
+    "QuestId": "c768966d9249cf81dfcf8dba",
+    "QuestName": "The Dorms Classic",
+    "Conditions": [
+      {
+        "ConditionId": "5c3d744cd89108433d877502",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "324f7bc73ea2e7b170c047f7": {
+    "QuestId": "324f7bc73ea2e7b170c047f7",
+    "QuestName": "One Tap Montage",
+    "Conditions": [
+      {
+        "ConditionId": "93a5c7a9091874598e52acbd",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "66fb9135a061d836a629384f": {
+    "QuestId": "66fb9135a061d836a629384f",
+    "QuestName": "Kobe!",
+    "Conditions": [
+      {
+        "ConditionId": "51bf7d4997ad83d35d24f407",
+        "ConditionType": "DamageWithGrenades"
+      }
+    ]
+  },
+  "b93629cb8986ca5c225794d8": {
+    "QuestId": "b93629cb8986ca5c225794d8",
+    "QuestName": "Cross-Map Headshot",
+    "Conditions": [
+      {
+        "ConditionId": "2b1437ff0987f0b72cef6458",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "6607d4157f62b2a13527209a": {
+    "QuestId": "6607d4157f62b2a13527209a",
+    "QuestName": "From Nothing to Everything",
+    "Conditions": [
+      {
+        "ConditionId": "a0c3c91d5b36ed4ab6bfcf06",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "9946ea080512f913bcc78faf": {
+    "QuestId": "9946ea080512f913bcc78faf",
+    "QuestName": "The Lobby Wipe",
+    "Conditions": [
+      {
+        "ConditionId": "0e4682a3754afca2b2f3848b",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
   }
 }

@@ -51,6 +51,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(MemorableQuestItemsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(TarkovFailsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(CommunityMemesThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(StreamerMomentsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

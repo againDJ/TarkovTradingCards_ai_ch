@@ -486,6 +486,16 @@ public sealed class QuestFactory
 					});
 				}
 
+				if (obj.KillZoneIds is { Count: > 0 })
+				{
+					counterConditions.Add(new QuestConditionCounterCondition
+					{
+						Id = new MongoId(QuestIds.ConditionId(def.Seed, condIdx + 155)),
+						ConditionType = "InZone",
+						Zones = obj.KillZoneIds
+					});
+				}
+
 				if (obj.KillEquipmentGroups is { Count: > 0 })
 				{
 					int equipIdx = 0;

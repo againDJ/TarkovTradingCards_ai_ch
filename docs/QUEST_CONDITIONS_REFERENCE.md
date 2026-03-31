@@ -155,6 +155,11 @@ Tracked per-kill with extensive filtering options.
 - Kill with bolt-action iron sights: `weapon=[bolt-action IDs]` + `weaponModsExclusive=[[all scope IDs]]`
 - Kill enemies wearing big backpacks: `enemyEquipmentInclusive=[[backpack IDs]]`
 - Kill with specific caliber: `weaponCaliber=["5.56x45"]`
+- Kill PMCs in a specific zone: `target="AnyPmc"` + InZone condition with `Zones=["huntsman_020"]` + Location `bigmap` *(e.g., kills in Customs dorms — see Evil Watchman quest)*
+  - C# property: `QuestConditionCounterCondition.Zones` (serialized as `zoneIds` in JSON)
+
+**Known InZone IDs:**
+- `huntsman_020` — Customs dorms area (used in Huntsman Path - Evil Watchman)
 
 **Advanced parent-level modifiers (on CounterCreator, not on Kills):**
 - `oneSessionOnly=true` — all sub-conditions must be completed in a single raid (e.g., "locate X and extract in one raid")
