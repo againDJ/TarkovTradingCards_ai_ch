@@ -3599,4 +3599,215 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
 
 ---
 
-*Remaining 6 themes to be designed...*
+## Theme: Bugged Reality
+
+**15 cards** (2 Common, 5 Uncommon, 5 Rare, 1 Epic, 1 Legendary, 1 Secret)
+
+Prefix: **[BUGD]** — Glitch-themed objectives inspired by infamous Tarkov bugs. Health loss, fractures, grenades, encumbered movement, and survival despite everything being broken.
+
+### [BUGD-0] QUEST: Error 404 (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_bugged_reality`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: HealthLoss] Lose 500 HP total
+- **Description**: *"Tarkov is a perfectly functioning game with zero bugs. Prove it by losing five hundred HP. The bugs will find you."*
+- **Rewards**:
+  - 1× Bugged Reality Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [BUGD-1] QUEST: Stairs of Death [Common]
+- **Card**: Staircase Desync Death
+- **ID Seed**: `ttc_quest_card_bugd_stairdesync`
+- **Objectives**:
+  - [QE: FixFracture] Fix 2 fractures
+  - [Vanilla: ExitStatus] Survive and extract 3 times
+- **Description**: *"Staircase Desync Death. You walked down the stairs normally. The server disagreed. Two fractures fixed and three extractions. The stairs are not your friend."*
+- **Rewards**: 1,000 XP, Staircase Desync Death card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [BUGD-2] QUEST: Lag Spike Sprint [Common]
+- **Card**: Rubberband Sprint
+- **ID Seed**: `ttc_quest_card_bugd_rubberband`
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 3,000m while running
+  - [QE: LootItem] Loot 15 items
+- **Description**: *"Rubberband Sprint. You ran forward, then you were back where you started. Then forward again. Three kilometers of running and fifteen items looted. Assuming the server agrees you moved."*
+- **Rewards**: 1,000 XP, Rubberband Sprint card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [BUGD-3] QUEST: Aim at Nothing [Uncommon]
+- **Card**: Floating Scav
+- **ID Seed**: `ttc_quest_card_bugd_floatingscav`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs with headshots *(KillTarget: "Savage", KillBodyParts: ["Head"])*
+  - [QE: KillsWhileADS] Get 10 kills while ADS
+- **Description**: *"Floating Scav. He's three meters in the air, T-posing, and somehow still shooting at you. Ten scav headshots and ten ADS kills. Aim where the hitbox should be, not where the model is."*
+- **Rewards**: 3,000 XP, Floating Scav card
+- **Barter**: Random Scav Case (15K)
+
+#### [BUGD-4] QUEST: Pixel Peek [Uncommon]
+- **Card**: Door Peeker
+- **ID Seed**: `ttc_quest_card_bugd_doorpeeker`
+- **Objectives**:
+  - [QE: KillsWhileCrouched] Get 10 kills while crouched
+  - [QE: HealthLoss] Lose 2,000 HP total
+- **Description**: *"Door Peeker. You peeked one pixel around the corner. The server showed your entire body. Two thousand HP lost and ten crouched kills. Desync is a feature, not a bug."*
+- **Rewards**: 3,000 XP, Door Peeker card
+- **Barter**: Random Scav Case (15K)
+
+#### [BUGD-5] QUEST: Phantom Flash [Uncommon]
+- **Card**: Ghost Flashbang
+- **ID Seed**: `ttc_quest_card_bugd_ghostflash`
+- **Objectives**:
+  - [QE: DamageWithGrenades] Deal 1,000 damage with grenades
+  - [QE: FixLightBleed] Fix 5 light bleeds
+- **Description**: *"Ghost Flashbang. No one threw it. There's no pin on the ground. But your screen is white and you're blind for ten seconds. A thousand grenade damage and five bleeds fixed. The ghost got you."*
+- **Rewards**: 3,000 XP, Ghost Flashbang card
+- **Barter**: Random Scav Case (15K)
+
+#### [BUGD-6] QUEST: Loot Suspended [Uncommon]
+- **Card**: Floating Loot Crate
+- **ID Seed**: `ttc_quest_card_bugd_floatingcrate`
+- **Objectives**:
+  - [QE: SearchContainer] Search 50 containers
+  - [QE: LootItem] Loot 50 items
+- **Description**: *"Floating Loot Crate. The crate is hovering two meters off the ground. You can still open it if you jump. Fifty containers searched and fifty items looted. Physics is optional."*
+- **Rewards**: 3,000 XP, Floating Loot Crate card
+- **Barter**: Random Scav Case (15K)
+
+#### [BUGD-7] QUEST: Scope Lock [Uncommon]
+- **Card**: ADS Lock
+- **ID Seed**: `ttc_quest_card_bugd_adslock`
+- **Objectives**:
+  - [QE: KillsWhileADS] Get 20 kills while ADS
+  - [QE: DamageWithDMR] Deal 3,000 damage with marksman rifles
+- **Description**: *"ADS Lock. You aimed down sights and the game forgot to let you stop. Twenty ADS kills and three thousand DMR damage. At least your aim is steady."*
+- **Rewards**: 3,000 XP, ADS Lock card
+- **Barter**: Random Scav Case (15K)
+
+#### [BUGD-8] QUEST: Infinite Frag [Rare]
+- **Card**: The Infinite Grenade
+- **ID Seed**: `ttc_quest_card_bugd_infinitegrenade`
+- **Objectives**:
+  - [QE: DamageWithGrenades] Deal 5,000 damage with grenades
+  - [QE: FixHeavyBleed] Fix 10 heavy bleeds
+- **Description**: *"The Infinite Grenade. One grenade thrown, twelve explosions heard. Five thousand grenade damage and ten heavy bleeds fixed. The server duplicated your grenade. You're welcome."*
+- **Rewards**: 10,000 XP, The Infinite Grenade card
+- **Barter**: 5× M67 grenades
+
+#### [BUGD-9] QUEST: Weight Glitch [Rare]
+- **Card**: Invisible Backpack
+- **ID Seed**: `ttc_quest_card_bugd_invisiblebag`
+- **Objectives**:
+  - [QE: EncumberedTimeInSeconds] Spend 600 seconds encumbered
+  - [QE: LootItem] Loot 100 items
+- **Description**: *"Invisible Backpack. Your backpack vanished but the weight stayed. Ten minutes encumbered and a hundred items looted. You're carrying nothing and everything at the same time."*
+- **Rewards**: 10,000 XP, Invisible Backpack card
+- **Barter**: Random Scav Case (95K)
+
+#### [BUGD-10] QUEST: Extract Denied [Rare]
+- **Card**: MIA by Extraction Bug
+- **ID Seed**: `ttc_quest_card_bugd_miabug`
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 15 times
+- **Description**: *"MIA by Extraction Bug. You stood in the extract. The timer hit zero. MIA. Survive fifteen raids. This time, the extract will work. Probably."*
+- **Rewards**: 10,000 XP, MIA by Extraction Bug card
+- **Barter**: Random Scav Case (95K)
+
+#### [BUGD-11] QUEST: Item Not Found [Rare]
+- **Card**: Vanishing Graphics Card
+- **ID Seed**: `ttc_quest_card_bugd_vanishinggpu`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 1 graphics card
+  - [QE: SearchContainer] Search 100 containers
+- **Description**: *"Vanishing Graphics Card. You found a GPU. You put it in your backpack. It's gone. Hand over one GPU and search a hundred containers. The loot gods giveth and the bugs taketh away."*
+- **Rewards**: 10,000 XP, Vanishing Graphics Card card
+- **Barter**: 1× Graphics card
+
+#### [BUGD-12] QUEST: Teleport Kill [Rare]
+- **Card**: Teleporting Scav
+- **ID Seed**: `ttc_quest_card_bugd_teleportscav`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 30 scavs
+  - [QE: KillsWithoutADS] Get 15 kills without ADS
+- **Description**: *"Teleporting Scav. He was in front of you. Then behind you. Then inside a wall. Thirty scav kills and fifteen hipfire kills. You can't aim at what teleports."*
+- **Rewards**: 10,000 XP, Teleporting Scav card
+- **Barter**: Random Scav Case (95K)
+
+#### [BUGD-13] QUEST: No Sound Detected [Epic]
+- **Card**: No Footstep Audio
+- **ID Seed**: `ttc_quest_card_bugd_silentsteps`
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 20 kills while silent
+  - [QE: MoveDistanceWhileSilent] Move 2,000m silently
+- **Description**: *"No Footstep Audio. The audio engine forgot to play footsteps. You can't hear them. They can't hear you. Twenty silent kills and two kilometers of silent movement. It's not a bug, it's stealth."*
+- **Rewards**: 20,000 XP, No Footstep Audio card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [BUGD-14] QUEST: Wall Bang [Legendary]
+- **Card**: Head-Eyes Through Concrete
+- **ID Seed**: `ttc_quest_card_bugd_headeyesconcrete`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 30 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
+  - [QE: TotalShotDistanceWithSnipers] Accumulate 10,000m total shot distance with snipers
+- **Description**: *"Head-Eyes Through Concrete. Behind a wall. Behind a rock. Behind a building. Doesn't matter — head, eyes. Thirty PMC headshots and ten thousand meters of sniper distance. The bullets find a way."*
+- **Rewards**: 35,000 XP, Head-Eyes Through Concrete card
+- **Barter**: Random Scav Case (Intel)
+
+#### [BUGD-15] QUEST: Undying [Secret]
+- **Card**: 0 HP Thorax Survivor
+- **ID Seed**: `ttc_quest_card_bugd_zerohp`
+- **Objectives**:
+  - [QE: HealthLoss] Lose 30,000 HP total
+  - [QE: DestroyBodyPart] Have 20 body parts destroyed
+  - [QE: RestoreBodyPart] Restore 20 body parts
+  - [QE: HealthGain] Restore 10,000 HP total
+- **Description**: *"0 HP Thorax Survivor. Your thorax hit zero. You should be dead. But you're still standing, still fighting, still extracting. Thirty thousand HP lost, twenty body parts destroyed and restored, ten thousand HP healed. You cannot be killed. You are the bug."*
+- **Rewards**: 60,000 XP, 0 HP Thorax Survivor card
+- **Barter**: Random Meds (30 items)
+
+---
+
+### Collection Quest
+
+#### [BUGD-C] QUEST: Kolya's Bug Report [Collection]
+- **ID Seed**: `ttc_quest_collection_bugged_reality`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 bugged reality cards (one of each, not FIR)
+- **Description**: *"Every bug documented, every glitch experienced. From staircase desync to zero HP survival, you've lived through every broken mechanic Tarkov has to offer. Hand over the cards and complete the bug report."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Medicine Case + Injector Case + 5× Surv12 + 5× M.U.L.E. + 5× Propital
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Staircase Desync Death | Common | Random Scav Case (2.5K) |
+| 2 | Rubberband Sprint | Common | Random Scav Case (2.5K) |
+| 3 | Floating Scav | Uncommon | Random Scav Case (15K) |
+| 4 | Door Peeker | Uncommon | Random Scav Case (15K) |
+| 5 | Ghost Flashbang | Uncommon | Random Scav Case (15K) |
+| 6 | Floating Loot Crate | Uncommon | Random Scav Case (15K) |
+| 7 | ADS Lock | Uncommon | Random Scav Case (15K) |
+| 8 | The Infinite Grenade | Rare | 5× M67 grenades |
+| 9 | Invisible Backpack | Rare | Random Scav Case (95K) |
+| 10 | MIA by Extraction Bug | Rare | Random Scav Case (95K) |
+| 11 | Vanishing Graphics Card | Rare | 1× Graphics card |
+| 12 | Teleporting Scav | Rare | Random Scav Case (95K) |
+| 13 | No Footstep Audio | Epic | Random Scav Case (Moonshine) |
+| 14 | Head-Eyes Through Concrete | Legendary | Random Scav Case (Intel) |
+| 15 | 0 HP Thorax Survivor | Secret | Random Meds (30 items) |
+| **Collection** | All 15 bugged cards | — | Medicine Case + Injector Case + 5× Surv12 + 5× M.U.L.E. + 5× Propital |
+
+---
+
+*Remaining 5 themes to be designed...*

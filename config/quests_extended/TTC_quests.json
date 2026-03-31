@@ -1860,5 +1860,199 @@
         "ConditionType": "CompleteWorkout"
       }
     ]
+  },
+  "cb890b5cb7644d36dbe9edbd": {
+    "QuestId": "cb890b5cb7644d36dbe9edbd",
+    "QuestName": "Error 404",
+    "Conditions": [
+      {
+        "ConditionId": "137c27f2dce85855177d3130",
+        "ConditionType": "HealthLoss"
+      }
+    ]
+  },
+  "88b13e3cd6ec1d914209e3b4": {
+    "QuestId": "88b13e3cd6ec1d914209e3b4",
+    "QuestName": "Stairs of Death",
+    "Conditions": [
+      {
+        "ConditionId": "f68cf34645076efc0f4bb115",
+        "ConditionType": "FixFracture"
+      }
+    ]
+  },
+  "1e837e8a7d506e255b9166b1": {
+    "QuestId": "1e837e8a7d506e255b9166b1",
+    "QuestName": "Lag Spike Sprint",
+    "Conditions": [
+      {
+        "ConditionId": "184dc62c1525ad1fbe312e3a",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "3215367e03f45c97e6bd2438",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "f0863bbe807e66239ffc1cec": {
+    "QuestId": "f0863bbe807e66239ffc1cec",
+    "QuestName": "Aim at Nothing",
+    "Conditions": [
+      {
+        "ConditionId": "53855500d982960123a828b4",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "29a451495490c59338842f35": {
+    "QuestId": "29a451495490c59338842f35",
+    "QuestName": "Pixel Peek",
+    "Conditions": [
+      {
+        "ConditionId": "87d8345c18534e9985306541",
+        "ConditionType": "KillsWhileCrouched"
+      },
+      {
+        "ConditionId": "cd012e5c4f518faf5435e6d1",
+        "ConditionType": "HealthLoss"
+      }
+    ]
+  },
+  "324d7ee5cd487aa530976a8b": {
+    "QuestId": "324d7ee5cd487aa530976a8b",
+    "QuestName": "Phantom Flash",
+    "Conditions": [
+      {
+        "ConditionId": "61dcb60bb970a3fda1218e01",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "ba3247841e97b171094694ac",
+        "ConditionType": "FixLightBleed"
+      }
+    ]
+  },
+  "d8a9cf3dbd685795062c1bff": {
+    "QuestId": "d8a9cf3dbd685795062c1bff",
+    "QuestName": "Loot Suspended",
+    "Conditions": [
+      {
+        "ConditionId": "e4b5bf0c3c01d43919c7ace9",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "de83193957885ab15fc180a8",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "3fba74026278d95e9d9a8e34": {
+    "QuestId": "3fba74026278d95e9d9a8e34",
+    "QuestName": "Scope Lock",
+    "Conditions": [
+      {
+        "ConditionId": "f7dd1a8316ddbaec1950166b",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "d0e6973119cbe41450691a5b",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "20ad9d7cb836b52e509ddf5c": {
+    "QuestId": "20ad9d7cb836b52e509ddf5c",
+    "QuestName": "Infinite Frag",
+    "Conditions": [
+      {
+        "ConditionId": "844e521f53876d1bfeaddab2",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "507c3d644c4001a6c7d48589",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
+  },
+  "618e1bac52a842f52e017547": {
+    "QuestId": "618e1bac52a842f52e017547",
+    "QuestName": "Weight Glitch",
+    "Conditions": [
+      {
+        "ConditionId": "bd565a90b316cb52dafa8312",
+        "ConditionType": "EncumberedTimeInSeconds"
+      },
+      {
+        "ConditionId": "44d8eb7751d32952e121a7a8",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "2960a4e23df51808b882bd83": {
+    "QuestId": "2960a4e23df51808b882bd83",
+    "QuestName": "Item Not Found",
+    "Conditions": [
+      {
+        "ConditionId": "440214dbee9321fd716a02b7",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "49185423620782dde8bbf532": {
+    "QuestId": "49185423620782dde8bbf532",
+    "QuestName": "Teleport Kill",
+    "Conditions": [
+      {
+        "ConditionId": "c90ad8e02525d389e9e19922",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "0e1c1f14eee61e821ccf4388": {
+    "QuestId": "0e1c1f14eee61e821ccf4388",
+    "QuestName": "No Sound Detected",
+    "Conditions": [
+      {
+        "ConditionId": "fb99944ebf4b4d4b718c5839",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "68c3da6c2828e42b1f3db586",
+        "ConditionType": "MoveDistanceWhileSilent"
+      }
+    ]
+  },
+  "c87488326bcfa5086e784636": {
+    "QuestId": "c87488326bcfa5086e784636",
+    "QuestName": "Wall Bang",
+    "Conditions": [
+      {
+        "ConditionId": "87d6f6ef0aeb3914df04913e",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "0896588f3bf0693d6af487d7": {
+    "QuestId": "0896588f3bf0693d6af487d7",
+    "QuestName": "Undying",
+    "Conditions": [
+      {
+        "ConditionId": "cadbf2b769d2c8eaaafb6375",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "726ebee3323bca52e07b6283",
+        "ConditionType": "DestroyBodyPart"
+      },
+      {
+        "ConditionId": "404fa7a7ae2b081723ad8658",
+        "ConditionType": "RestoreBodyPart"
+      },
+      {
+        "ConditionId": "c554d83dfa12ffb1cce49040",
+        "ConditionType": "HealthGain"
+      }
+    ]
   }
 }
