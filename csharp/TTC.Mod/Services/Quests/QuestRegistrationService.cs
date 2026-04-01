@@ -56,6 +56,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(BuggedRealityThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(SecretArtifactsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(PatchNotesParodiesThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(SeasonalEventsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

@@ -2340,5 +2340,165 @@
         "ConditionType": "SearchContainer"
       }
     ]
+  },
+  "29a7153f6dfe7c46325b41f3": {
+    "QuestId": "29a7153f6dfe7c46325b41f3",
+    "QuestName": "Event Calendar",
+    "Conditions": [
+      {
+        "ConditionId": "d83fba9c0b4a79770c93d2f4",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "289fca182850449a67c4befd": {
+    "QuestId": "289fca182850449a67c4befd",
+    "QuestName": "One Golden Bullet",
+    "Conditions": [
+      {
+        "ConditionId": "97ca04a20fcf65ee28820fcc",
+        "ConditionType": "DamageWithPistols"
+      },
+      {
+        "ConditionId": "8092a9645ffcc4602a688d45",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "692b01102231959817c459fa": {
+    "QuestId": "692b01102231959817c459fa",
+    "QuestName": "Party Grenades",
+    "Conditions": [
+      {
+        "ConditionId": "e85d80d74a9513a57a9f1a44",
+        "ConditionType": "DamageWithGrenades"
+      }
+    ]
+  },
+  "6ebd0a1306414316ffb593e0": {
+    "QuestId": "6ebd0a1306414316ffb593e0",
+    "QuestName": "Sick Day",
+    "Conditions": [
+      {
+        "ConditionId": "54df685b5da688e05c9f0a3a",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "73e8745d0e76b30ca8564025",
+        "ConditionType": "FixAnyBleed"
+      }
+    ]
+  },
+  "2f641061b4bbd018830ca774": {
+    "QuestId": "2f641061b4bbd018830ca774",
+    "QuestName": "Under the Tree",
+    "Conditions": [
+      {
+        "ConditionId": "c96ffe75dfe0c8fad4c5a966",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "050f151652103fd53a531fd8",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "a9b93e3760b66a0101b0f7d1": {
+    "QuestId": "a9b93e3760b66a0101b0f7d1",
+    "QuestName": "Ho Ho Headshot",
+    "Conditions": [
+      {
+        "ConditionId": "0d8e163f2a7bad272d5655c7",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "8af8823251710773aef620b3": {
+    "QuestId": "8af8823251710773aef620b3",
+    "QuestName": "Delivery Service",
+    "Conditions": [
+      {
+        "ConditionId": "d538bb85de33bc5a957d0ae0",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "4839e938ea5798d47e1e1b59": {
+    "QuestId": "4839e938ea5798d47e1e1b59",
+    "QuestName": "Beach Day",
+    "Conditions": [
+      {
+        "ConditionId": "ff3ac65cb732d96f064e8ceb",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "3933520ddcc56827e7231ff4": {
+    "QuestId": "3933520ddcc56827e7231ff4",
+    "QuestName": "Fright Night",
+    "Conditions": [
+      {
+        "ConditionId": "5026b7762f334ff2969d34de",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "102d956caa23e64ac63ec8c6": {
+    "QuestId": "102d956caa23e64ac63ec8c6",
+    "QuestName": "Cult Season",
+    "Conditions": [
+      {
+        "ConditionId": "9377ff13d868fe425273bcbd",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "731d90c00778107c6e256e53": {
+    "QuestId": "731d90c00778107c6e256e53",
+    "QuestName": "Drop Day",
+    "Conditions": [
+      {
+        "ConditionId": "b25325c9a55ad055502c413c",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "2daff05dae4abd126b983e24",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "f30e3687d8d9644f40b79914": {
+    "QuestId": "f30e3687d8d9644f40b79914",
+    "QuestName": "Boss Rush",
+    "Conditions": [
+      {
+        "ConditionId": "0dc7fdc72fd767bd8fa29883",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "618dd3eb4e1e753cd16a876f": {
+    "QuestId": "618dd3eb4e1e753cd16a876f",
+    "QuestName": "Final Countdown",
+    "Conditions": [
+      {
+        "ConditionId": "ee25539471b6b5b76c3fa10c",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "6d0c56cf966d3e4a39cc0e0e",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "78d4076cf53c3c83f21831a6": {
+    "QuestId": "78d4076cf53c3c83f21831a6",
+    "QuestName": "Open Access",
+    "Conditions": [
+      {
+        "ConditionId": "dc4658abaf8eb5d6ba9b2f2f",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
   }
 }

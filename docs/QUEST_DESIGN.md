@@ -4259,4 +4259,222 @@ Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives refle
 
 ---
 
-*Remaining 3 themes to be designed...*
+## Theme: Seasonal Events
+
+**15 cards** (3 Common, 5 Uncommon, 3 Rare, 2 Epic, 1 Legendary, 1 Secret)
+
+Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, night raids, cultist hunts, boss showdowns, and economy events.
+
+### [SEAS-0] QUEST: Event Calendar (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_seasonal_events`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: LootItem] Loot 15 items
+  - [Vanilla: ExitStatus] Survive and extract 2 times
+- **Description**: *"Tarkov celebrates everything — Christmas, Halloween, wipe days, anniversary events. Loot fifteen items and survive two raids. The event calendar is open."*
+- **Rewards**:
+  - 1× Seasonal Events Binder
+  - 1,000 XP
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [SEAS-1] QUEST: One Golden Bullet [Common]
+- **Card**: April Fool's "Golden Gun Day"
+- **ID Seed**: `ttc_quest_card_seas_goldengun`
+- **Objectives**:
+  - [QE: DamageWithPistols] Deal 1,000 damage with pistols
+  - [QE: KillsWithoutADS] Get 3 kills without ADS
+- **Description**: *"Golden Gun Day. Every April 1st, Tarkov goes golden — pistols only, no ADS, pure chaos. A thousand pistol damage and three hipfire kills. One golden bullet is all you need."*
+- **Rewards**: 1,000 XP, Golden Gun Day card
+- **Barter**: 1× TT-33 pistol (fully assembled)
+
+#### [SEAS-2] QUEST: Party Grenades [Common]
+- **Card**: April Fools' Confetti Nades
+- **ID Seed**: `ttc_quest_card_seas_confettinades`
+- **Objectives**:
+  - [QE: DamageWithGrenades] Deal 500 damage with grenades
+  - [Vanilla: Kills] Eliminate 5 targets
+- **Description**: *"Confetti Nades. The grenades explode into confetti. The shrapnel is still real. Five hundred grenade damage and five kills. Surprise!"*
+- **Rewards**: 1,000 XP, Confetti Nades card
+- **Barter**: 1× F-1 hand grenade
+
+#### [SEAS-3] QUEST: Sick Day [Common]
+- **Card**: Therapist's Flu Epidemic
+- **ID Seed**: `ttc_quest_card_seas_fluepidemic`
+- **Objectives**:
+  - [QE: HealthGain] Restore 1,500 HP total
+  - [QE: FixAnyBleed] Fix 5 bleedings
+- **Description**: *"Flu Epidemic. Therapist declared a health emergency — everyone's coughing, bleeding, and out of meds. Restore fifteen hundred HP and fix five bleedings. Stay healthy out there."*
+- **Rewards**: 1,000 XP, Flu Epidemic card
+- **Barter**: 1× AFAK
+
+#### [SEAS-4] QUEST: Under the Tree [Uncommon]
+- **Card**: Christmas Tree Stash
+- **ID Seed**: `ttc_quest_card_seas_treestash`
+- **Objectives**:
+  - [QE: SearchContainer] Search 40 containers
+  - [QE: LootItem] Loot 40 items
+- **Description**: *"Christmas Tree Stash. The presents are under the tree — if you can find the tree, and if the presents haven't been looted already. Forty containers and forty items. Merry Christmas."*
+- **Rewards**: 3,000 XP, Christmas Tree Stash card
+- **Barter**: Random Scav Case (15K)
+
+#### [SEAS-5] QUEST: Gift Exchange [Uncommon]
+- **Card**: New Year Gift Case
+- **ID Seed**: `ttc_quest_card_seas_giftcase`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 food items *(parent class: Food)*
+  - [Vanilla: HandoverItem] Hand over 5 electronic components *(parent class: Electronics)*
+- **Description**: *"New Year Gift Case. The annual gift exchange — bring food for the party and electronics for the raffle. Five food items and five electronics. Kolya's throwing a New Year's party."*
+- **Rewards**: 3,000 XP, New Year Gift Case card
+- **Barter**: Random Scav Case (15K)
+
+#### [SEAS-6] QUEST: Ho Ho Headshot [Uncommon]
+- **Card**: Santa Scav Surprise
+- **ID Seed**: `ttc_quest_card_seas_santascav`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 scavs
+  - [QE: KillsWhileCrouched] Get 5 kills while crouched
+- **Description**: *"Santa Scav Surprise. He sees you when you're looting, he knows when you're AFK. Ten scav kills and five crouched kills. Santa's naughty list just got shorter."*
+- **Rewards**: 3,000 XP, Santa Scav Surprise card
+- **Barter**: Random Scav Case (15K)
+
+#### [SEAS-7] QUEST: Delivery Service [Uncommon]
+- **Card**: Santa Scav's Gift Run
+- **ID Seed**: `ttc_quest_card_seas_giftrun`
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 5,000m while running
+  - [Vanilla: ExitStatus] Survive and extract 5 times
+- **Description**: *"Santa Scav's Gift Run. Presents don't deliver themselves — sprint five kilometers and survive five raids. The gift run stops for no one."*
+- **Rewards**: 3,000 XP, Gift Run card
+- **Barter**: Random Scav Case (15K)
+
+#### [SEAS-8] QUEST: Beach Day [Uncommon]
+- **Card**: Summer Rogue Beach Party
+- **ID Seed**: `ttc_quest_card_seas_roguebeach`
+- **Location**: Lighthouse
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Lighthouse 2 times
+  - [QE: SearchContainer] Search 40 containers
+- **Description**: *"Summer Rogue Beach Party. The rogues put on Hawaiian shirts and set up coolers between the mounted guns. Survive Lighthouse twice and search forty containers. Beach day, Tarkov style."*
+- **Rewards**: 3,000 XP, Rogue Beach Party card
+- **Barter**: Random Scav Case (15K)
+
+#### [SEAS-9] QUEST: Fright Night [Rare]
+- **Card**: Halloween
+- **ID Seed**: `ttc_quest_card_seas_halloween`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 15 targets at night *(KillDaytimeFrom: 22, KillDaytimeTo: 6)*
+  - [QE: KillsWhileSilent] Get 10 kills while silent
+- **Description**: *"Halloween. Jack-o-lanterns in the hallways, fog in the forests, and something moving in the dark. Fifteen night kills and ten silent kills. Trick or treat."*
+- **Rewards**: 10,000 XP, Halloween card
+- **Barter**: Random Scav Case (95K)
+
+#### [SEAS-10] QUEST: Cult Season [Rare]
+- **Card**: Halloween Cult Hunt
+- **ID Seed**: `ttc_quest_card_seas_culthunt`
+- **Objectives**:
+  - [QE: CollectCultistOffering] Collect 3 Cultist Offerings
+  - [Vanilla: Kills] Eliminate 10 PMCs at night *(KillDaytimeFrom: 22, KillDaytimeTo: 6)*
+- **Description**: *"Halloween Cult Hunt. The cultists come out in force during Halloween — blades drawn, poison ready. Three cultist offerings and ten PMC night kills. Hunt the hunters."*
+- **Rewards**: 10,000 XP, Cult Hunt card
+- **Barter**: Random Scav Case (95K)
+
+#### [SEAS-11] QUEST: Drop Day [Rare]
+- **Card**: Twitch Drops Frenzy
+- **ID Seed**: `ttc_quest_card_seas_twitchdrops`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 2,000,000₽ from transactions
+  - [QE: SearchContainer] Search 80 containers
+- **Description**: *"Twitch Drops Frenzy. Leave the stream running, collect the drops, sell the loot. Two million roubles and eighty containers searched. The drops are live."*
+- **Rewards**: 10,000 XP, Twitch Drops Frenzy card
+- **Barter**: Twitch Rivals 2020 mask + glasses + 2021 balaclava + Rivals cap + beanie + armband + PACA (Rivals Edition)
+
+#### [SEAS-12] QUEST: Boss Rush [Epic]
+- **Card**: Killa & Tagilla Factory Showdown
+- **ID Seed**: `ttc_quest_card_seas_killatagilla`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate Killa *(savageRole: ["bossKilla"])*
+  - [Vanilla: Kills] Eliminate Tagilla *(savageRole: ["bossTagilla"])*
+  - [Vanilla: Kills] Eliminate 20 targets on Factory
+  - [Vanilla: Kills] Eliminate 20 targets on Interchange
+  - [QE: DamageWithShotguns] Deal 3,000 damage with shotguns
+- **Description**: *"Killa & Tagilla Factory Showdown. The seasonal boss rush event — Killa patrols Interchange, Tagilla owns Factory. Kill them both, clear twenty targets on each map, and deal three thousand shotgun damage. The showdown is on."*
+- **Rewards**: 20,000 XP, Killa & Tagilla card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [SEAS-13] QUEST: Final Countdown [Epic]
+- **Card**: New Year "Wipe Countdown"
+- **ID Seed**: `ttc_quest_card_seas_wipecountdown`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 5,000,000₽ from transactions
+  - [QE: CraftAnyItem] Craft 20 items
+  - [Vanilla: ExitStatus] Survive and extract 15 times
+- **Description**: *"Wipe Countdown. The clock is ticking — spend everything, craft everything, survive everything before the wipe hits. Five million roubles, twenty crafts, fifteen extractions. The final countdown."*
+- **Rewards**: 20,000 XP, Wipe Countdown card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [SEAS-14] QUEST: Diplomatic Immunity [Legendary]
+- **Card**: Lightkeeper Live Negotiation
+- **ID Seed**: `ttc_quest_card_seas_livenegotiation`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3,000,000₽ in roubles
+  - [Vanilla: Kills] Eliminate 30 PMCs
+  - [Vanilla: TraderLoyalty] Have Peacekeeper LL3
+- **Description**: *"Lightkeeper Live Negotiation. The Lightkeeper doesn't negotiate with amateurs — Peacekeeper vouches for you, three million roubles on the table, and thirty PMC kills to prove you're serious. Diplomatic immunity costs."*
+- **Rewards**: 35,000 XP, Live Negotiation card
+- **Barter**: Random Scav Case (Intel)
+
+#### [SEAS-15] QUEST: Open Access [Secret]
+- **Card**: Anniversary "Free Labs Access"
+- **ID Seed**: `ttc_quest_card_seas_freelabs`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Labs 20 times
+  - [Vanilla: Kills] Eliminate 50 targets on Labs
+  - [QE: EarnMoneyOnTransaction] Earn 15,000,000₽ from transactions
+- **Description**: *"Anniversary Free Labs Access. For the anniversary event, Labs is open to all — no keycard required. Twenty extractions, fifty kills, and fifteen million roubles. The anniversary celebration never ends."*
+- **Rewards**: 60,000 XP, Free Labs Access card
+- **Barter**: 10× TerraGroup Labs access keycard
+
+---
+
+### Collection Quest
+
+#### [SEAS-C] QUEST: Kolya's Event Archive [Collection]
+- **ID Seed**: `ttc_quest_collection_seasonal_events`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 seasonal cards (one of each, not FIR)
+- **Description**: *"Every event archived, every season celebrated. From Golden Gun Day to Free Labs Access, you've lived through every seasonal event Tarkov has to offer. Hand over the cards and complete the archive."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Christmas tree life extender + 10× Moonshine + Mr. Holodilnick + Injector case + Keycard holder
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Golden Gun Day | Common | 1× TT-33 pistol (assembled) |
+| 2 | Confetti Nades | Common | 1× F-1 grenade |
+| 3 | Flu Epidemic | Common | 1× AFAK |
+| 4 | Tree Stash | Uncommon | Random Scav Case (15K) |
+| 5 | Gift Case | Uncommon | Random Scav Case (15K) |
+| 6 | Santa Scav | Uncommon | Random Scav Case (15K) |
+| 7 | Gift Run | Uncommon | Random Scav Case (15K) |
+| 8 | Rogue Beach | Uncommon | Random Scav Case (15K) |
+| 9 | Halloween | Rare | Random Scav Case (95K) |
+| 10 | Cult Hunt | Rare | Random Scav Case (95K) |
+| 11 | Twitch Drops | Rare | 7× Twitch Rivals items |
+| 12 | Killa & Tagilla | Epic | Random Scav Case (Moonshine) |
+| 13 | Wipe Countdown | Epic | Random Scav Case (Moonshine) |
+| 14 | Live Negotiation | Legendary | Random Scav Case (Intel) |
+| 15 | Free Labs Access | Secret | 10× Labs access keycard |
+| **Collection** | All 15 seasonal cards | — | Xmas tree + 10× Moonshine + Holodilnick + Injector + Keycard holder |
+
+---
+
+*Remaining 2 themes to be designed...*
