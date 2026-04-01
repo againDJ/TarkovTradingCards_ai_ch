@@ -1544,7 +1544,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Kills] Eliminate 5 targets with headshots *(KillTarget: "Any", KillBodyParts: ["Head"])*
 - **XP**: 10,000
 - **Description**: *"Scav Mosin From Mars. You're in full tier 6 armor, running across an open field, and a scav with an iron-sight Mosin one-taps you from 200 meters away. The impossible shot. Five kills from over 150 meters and five headshots. Channel the Mosin gods."*
-- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Barter Unlocked**: Trade card → 1× Mosin sniper (full preset) + 60× LPS Gzh + 60× SNB
 - **Unlocks**: Next card quest
 
 #### 10. QUEST: Peek Punishment [Rare]
@@ -1596,7 +1596,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Survive] Survive and extract 10 times
 - **XP**: 20,000
 - **Description**: *"Scav Army Convergence. You kill one, three more appear. You kill those, five more come running. Before you know it, every scav on the map has converged on your position and you're out of ammo. Fifty scavs eliminated and ten successful extractions. Fight the horde."*
-- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Barter Unlocked**: Trade card → 1× Moonshine + 1× Pilgrim backpack
 - **Unlocks**: Next card quest
 
 #### 14. QUEST: The Dry Death [Legendary]
@@ -1657,11 +1657,11 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 6 | Grenade from Nowhere | Uncommon | 2× F-1 grenade |
 | 7 | Friendly Fire Fiasco | Uncommon | Random Scav Case (15K) |
 | 8 | Landmine Misstep | Uncommon | 1× CMS surgical kit |
-| 9 | Scav Mosin From Mars | Rare | Random Scav Case (95K) |
+| 9 | Scav Mosin From Mars | Rare | 1× Mosin sniper (full preset) + 60× LPS Gzh + 60× SNB |
 | 10 | Door Peeker's Regret | Rare | Random Scav Case (95K) |
 | 11 | Head-Eyes Classic | Rare | 1× Maska-1SCh + face shield |
 | 12 | Cheeki Breeki Shotgun | Rare | Random Scav Case (95K) |
-| 13 | Scav Army Convergence | Epic | Random Scav Case (Moonshine) |
+| 13 | Scav Army Convergence | Epic | 1× Moonshine + 1× Pilgrim backpack |
 | 14 | Tarkov Hydration Fail | Legendary | 10× Emergency water ration |
 | 15 | Server Disconnect Doom | Secret | 1× SICC case |
 | **Collection** | All 15 cards | — | 1× Red Rebel ice pick |
@@ -1745,7 +1745,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Survive] Survive and extract 5 times
 - **XP**: 3,000
 - **Description**: *"The Quest Slave. Your entire raid is a checklist. Find this item, visit that location, hand over these dog tags. You don't play for fun — you play for progress. Fifty items looted, fifty containers searched, five extractions. Check the list."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 6× Maps (Factory, Customs, Woods, Shoreline, Shoreline Resort, Interchange)
 - **Unlocks**: Next card quest
 
 #### 5. QUEST: Count Every Round [Uncommon]
@@ -1757,7 +1757,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Kills] Eliminate 10 targets with headshots using iron sights only *(KillTarget: "Any", KillBodyParts: ["Head"], KillWeaponModsExclusive: all scope IDs — no optics allowed)*
 - **XP**: 3,000
 - **Description**: *"The Ammo Accountant. You know the price of every round, the pen value of every caliber, and you never miss because missing costs money. Ten headshots with iron sights only — no scopes, no red dots, just raw aim. Make every bullet count."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 60× 5.45 BT + 60× 5.56 M855A1
 - **Unlocks**: Next card quest
 
 #### 6. QUEST: Hot Mic [Uncommon]
@@ -1770,7 +1770,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: KillsWithoutADS] Get 5 kills without ADS *(Hipfire while talking)*
 - **XP**: 3,000
 - **Description**: *"The Voice Comedian. VOIP on, bad jokes loaded, approaching every PMC with 'friendly friendly!' before pulling the trigger. Five kills from under ten meters and five hipfire kills. Get close, get personal."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 1× Peltor ComTac II headset
 - **Unlocks**: Next card quest
 
 #### 7. QUEST: First Wipe Problems [Uncommon]
@@ -1797,7 +1797,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: KillsWithoutADS] Get 10 kills without ADS *(Who needs sights?)*
 - **XP**: 3,000
 - **Description**: *"The Mag-Dumper. Why fire one bullet when you can fire thirty? Recoil control is for cowards — just hold the trigger and let God sort it out. Five thousand AR damage and ten hipfire kills. Spray and pray, brother."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 2× AK 6L31 60-round magazine
 - **Unlocks**: Next card quest
 
 #### 9. QUEST: Supreme Rat [Rare]
@@ -1811,7 +1811,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: MoveDistanceWhileCrouched] Move 3,000m while crouched *(Rats stay low)*
 - **XP**: 10,000
 - **Description**: *"The Rat King. Supreme ruler of the shadows. You never take a fair fight, you never push a position, and you always know where the best loot spawns. A hundred containers, a hundred items, three kilometers crouched. Long live the king."*
-- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Barter Unlocked**: Trade card → 1× Lucky Scav Junk box
 - **Unlocks**: Next card quest
 
 #### 10. QUEST: Gate Guardian [Rare]
@@ -1851,7 +1851,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Kills] Eliminate 10 PMCs with a suppressed weapon *(KillTarget: "AnyPmc", KillWeaponModsInclusive: suppressor IDs)*
 - **XP**: 20,000
 - **Description**: *"The Ambush Artist. You never fire first — you wait, you listen, you let them walk into your trap. Fifteen silent kills and ten PMC kills with a suppressed weapon. The prey never hears you coming."*
-- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Barter Unlocked**: Trade card → 1× VSS Vintorez (full preset) + 2× 20-round mag + 60× SP-6
 - **Unlocks**: Next card quest
 
 #### 13. QUEST: One Bullet Wonder [Epic]
@@ -1921,15 +1921,15 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | 1 | Hatchling Hero | Common | 1× Berkut backpack |
 | 2 | Budget Warrior | Common | Random Scav Case (2.5K) |
 | 3 | Offline Tourist | Common | 1× Compass |
-| 4 | Quest Slave | Uncommon | Random Scav Case (15K) |
-| 5 | Ammo Accountant | Uncommon | Random Scav Case (15K) |
-| 6 | Voice Comedian | Uncommon | Random Scav Case (15K) |
+| 4 | Quest Slave | Uncommon | 6× Maps (Factory, Customs, Woods, Shoreline, Shoreline Resort, Interchange) |
+| 5 | Ammo Accountant | Uncommon | 60× 5.45 BT + 60× 5.56 M855A1 |
+| 6 | Voice Comedian | Uncommon | 1× Peltor ComTac II headset |
 | 7 | Timmy | Uncommon | 6× Map plans (all maps) |
-| 8 | Mag-Dumper | Uncommon | Random Scav Case (15K) |
-| 9 | Rat King | Rare | Random Scav Case (95K) |
+| 8 | Mag-Dumper | Uncommon | 2× AK 6L31 60-round magazine |
+| 9 | Rat King | Rare | 1× Lucky Scav Junk box |
 | 10 | Extractor Camper | Rare | Random Scav Case (95K) |
 | 11 | Hideout Hermit | Rare | Random Scav Case (95K) |
-| 12 | Ambush Artist | Epic | Random Scav Case (Moonshine) |
+| 12 | Ambush Artist | Epic | 1× VSS Vintorez (full preset) + 2× 20-round mag + 60× SP-6 |
 | 13 | Lucky Headshot | Epic | Random Scav Case (Moonshine) |
 | 14 | Chad Rampage | Legendary | Random Scav Case (Intel) |
 | 15 | Friendly Betrayer | Secret | 1× SICC case |
@@ -1985,7 +1985,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Survive] Survive and extract from Woods 3 times
 - **XP**: 3,000
 - **Description**: *"Jaeger's Huntsman Path. The old man lives in the woods — you need to find him first. Unlock Jaeger as a trader and survive three Woods raids. Walk the Huntsman's path."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 1× Aquamari water bottle
 - **Unlocks**: Next card quest
 
 #### 3. QUEST: [TRAD-3] Frugal Hunter [Uncommon]
@@ -2086,7 +2086,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: SearchContainer] Search 50 containers
 - **XP**: 10,000
 - **Description**: *"Skier's Chemical Part 4. The shadiest quest from the shadiest trader. Get his trust to level two, find the chemical transport on Customs, search fifty containers, and extract alive. Don't ask what the chemicals are for."*
-- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Barter Unlocked**: Trade card → 3× Propital
 - **Unlocks**: Next card quest
 
 #### 10. QUEST: [TRAD-10] Golden Exchange [Rare]
@@ -2099,7 +2099,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: LootItem] Loot 80 items
 - **XP**: 10,000
 - **Description**: *"Skier's Golden Swag Exchange. Everything has a price, and Skier knows them all. Earn a million roubles in transactions and loot eighty items. The golden exchange is always open."*
-- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Barter Unlocked**: Trade card → 200,000 Roubles
 - **Unlocks**: Next card quest
 
 #### 11. QUEST: [TRAD-11] Gunsmith Mastery [Epic]
@@ -2131,7 +2131,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Kills] Eliminate 10 PMCs while wearing a balaclava and scav vest *(KillTarget: "AnyPmc", KillEquipmentInclusive: balaclava IDs + scav vest IDs — same as Punisher Part 4)*
 - **XP**: 20,000
 - **Description**: *"Ragman's Stylish One. Fashion in Tarkov isn't about looking good — it's about looking dangerous while dressed like a scav. Reach Ragman LL3 and eliminate ten PMCs while wearing a balaclava and a scav vest. The deadliest fashion statement."*
-- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Barter Unlocked**: Trade card → 1× Slick plate carrier (with plates + soft armor)
 - **Unlocks**: Next card quest
 
 #### 13. QUEST: [TRAD-13] Make Amends [Legendary]
@@ -2200,17 +2200,17 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 | # | Card | Rarity | Barter Reward |
 |---|------|--------|---------------|
 | 1 | Prapor "Debut Contract" | Common | 2× IFAK |
-| 2 | Jaeger "Huntsman Path" | Uncommon | Random Scav Case (15K) |
+| 2 | Jaeger "Huntsman Path" | Uncommon | 1× Aquamari water bottle |
 | 3 | Jaeger "Frugality" | Uncommon | 1× Salewa |
 | 4 | Prapor "No Rest" | Uncommon | Random Scav Case (15K) |
 | 5 | Therapist "Aquarius" | Uncommon | 1× Aquamari |
 | 6 | Therapist "Supply Plans" | Uncommon | 1× Grizzly |
 | 7 | Mechanic "Gunsmith VII" | Rare | 1× Weapon repair kit (HandoverItem quest) |
 | 8 | Peacekeeper "Wet Job" | Rare | Random Scav Case (95K) |
-| 9 | Skier "Chemical 4" | Rare | Random Scav Case (95K) |
-| 10 | Skier "Golden Swag" | Rare | Random Scav Case (95K) |
+| 9 | Skier "Chemical 4" | Rare | 3× Propital |
+| 10 | Skier "Golden Swag" | Rare | 200,000 Roubles |
 | 11 | Mechanic "Gunsmith Mastery" | Epic | Random Scav Case (Moonshine) (HandoverItem quest) |
-| 12 | Ragman "Stylish One" | Epic | Random Scav Case (Moonshine) |
+| 12 | Ragman "Stylish One" | Epic | 1× Slick plate carrier (with plates + soft armor) |
 | 13 | Lightkeeper "Make Amends" | Legendary | Random Scav Case (Intel) |
 | 14 | Prapor "Punisher 6" | Legendary | Random Scav Case (Intel) |
 | 15 | Fence "The Collector" | Secret | 1× Item case |
@@ -2260,7 +2260,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: HandoverItem] Hand over 5× Screw nuts *(57347c77245977448d35f6e2)*
 - **XP**: 1,000
 - **Description**: *"Pockets Full of Screws. The true scav fills every pocket with hardware — screws, nuts, bolts. Bring me five of each. Kolya's building something."*
-- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Barter Unlocked**: Trade card → 1× Leatherman Multitool
 - **Unlocks**: Next card quest
 
 #### 2. QUEST: [SCAV-2] Drip Check [Common]
@@ -2273,7 +2273,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Survive] Survive and extract 3 times
 - **XP**: 1,000
 - **Description**: *"Tracksuit Pride. The Adidas tracksuit is the scav's formal wear. Sprint five kilometers and survive three raids — looking good while doing it."*
-- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Barter Unlocked**: Trade card → 1× Shemagh + 1× Round frame sunglasses
 - **Unlocks**: Next card quest
 
 #### 3. QUEST: [SCAV-3] Canned Goods [Common]
@@ -2286,7 +2286,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: HandoverItem] Hand over 2× Can of beef stew (Large) *(57347da92459774491567cf5)*
 - **XP**: 1,000
 - **Description**: *"Lucky Tushonka. The holy grail of scav loot — canned beef stew. Bring me three small cans and two large ones. Kolya's hungry."*
-- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Barter Unlocked**: Trade card → 3× Can of beef stew (Small)
 - **Unlocks**: Next card quest
 
 #### 4. QUEST: [SCAV-4] Bag Man [Common]
@@ -2299,7 +2299,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: LootItem] Loot 50 items *(Fill that duffle bag)*
 - **XP**: 1,000
 - **Description**: *"Duffle Bag Dragon. Every duffle bag in Tarkov has been touched by a scav at least once. Search fifty containers and loot fifty items. The duffle bag dragon hoards everything."*
-- **Barter Unlocked**: Trade card → Random Scav Case (2.5K) reward
+- **Barter Unlocked**: Trade card → 1× Scav backpack
 - **Unlocks**: Next card quest
 
 #### 5. QUEST: [SCAV-5] Two Shots, One Prayer [Uncommon]
@@ -2350,7 +2350,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: LootItem] Loot 60 items
 - **XP**: 3,000
 - **Description**: *"Flea Market Scholar. Buy low, sell high, and never pay full price. Five hundred thousand roubles earned and sixty items looted. The market rewards those who study it."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 50,000 Roubles
 - **Unlocks**: Next card quest
 
 #### 9. QUEST: [SCAV-9] Follow the Boom [Uncommon]
@@ -2363,7 +2363,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: SearchContainer] Search 50 containers
 - **XP**: 3,000
 - **Description**: *"Homing Sense to Gunshots. Every scav knows — gunshots mean loot. Run toward the sound, wait for the dust to settle, loot the bodies. Ten scav kills and fifty containers searched. Follow the boom."*
-- **Barter Unlocked**: Trade card → Random Scav Case (15K) reward
+- **Barter Unlocked**: Trade card → 1× GSSh-01 headset
 - **Unlocks**: Next card quest
 
 #### 10. QUEST: [SCAV-10] Liquid Courage [Rare]
@@ -2375,7 +2375,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: Kills + HealthEffect] Eliminate 10 targets while under stimulant effect *(KillTarget: "Any", HealthEffect: bodyPart=Head, effect=Stimulator — same as Jaeger's "Junkie" quest)*
 - **XP**: 10,000
 - **Description**: *"Vodka Before Raid. A shot of something before every fight — for courage, obviously. Eliminate ten targets while under any stimulant effect. Liquid courage has its perks."*
-- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Barter Unlocked**: Trade card → 3× Vodka + 1× Propital
 - **Unlocks**: Next card quest
 
 #### 11. QUEST: [SCAV-11] Taxi Service [Rare]
@@ -2393,7 +2393,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [Vanilla: ExitName] Extract via V-Ex on Ground Zero *(exit: "Sandbox_VExit", map: Sandbox/Sandbox_high)*
 - **XP**: 10,000
 - **Description**: *"Car Extract Entrepreneur. Every paid extract on every map — the V-Ex taxi service tour of Tarkov. Customs, Woods, Shoreline, Lighthouse, Streets, Interchange, and Ground Zero. Complete the grand tour."*
-- **Barter Unlocked**: Trade card → Random Scav Case (95K) reward
+- **Barter Unlocked**: Trade card → 3× Car first aid kit
 - **Unlocks**: Next card quest
 
 #### 12. QUEST: [SCAV-12] Trust No One [Rare]
@@ -2419,7 +2419,7 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
   - [QE: EarnMoneyOnTransaction] Earn 2,000,000₽ from transactions
 - **XP**: 20,000
 - **Description**: *"Scav Boss Cousin. Every scav claims to be related to Reshala. Cousin, nephew, former roommate — the connections are dubious at best. Twenty scav kills, ten PMC kills, and two million roubles. Run the family business."*
-- **Barter Unlocked**: Trade card → Random Scav Case (Moonshine) reward
+- **Barter Unlocked**: Trade card → 1× Moonshine
 - **Unlocks**: Next card quest
 
 #### 14. QUEST: [SCAV-14] One Round Wonder [Legendary]
@@ -2470,19 +2470,19 @@ Every quest is given to and turned in at **Kolya** (Nikolai Vetrov), the custom 
 
 | # | Card | Rarity | Barter Reward |
 |---|------|--------|---------------|
-| 1 | Pockets Full of Screws | Common | Random Scav Case (2.5K) |
-| 2 | Tracksuit Pride | Common | Random Scav Case (2.5K) |
-| 3 | Lucky Tushonka | Common | Random Scav Case (2.5K) |
-| 4 | Duffle Bag Dragon | Common | Random Scav Case (2.5K) |
+| 1 | Pockets Full of Screws | Common | 1× Leatherman Multitool |
+| 2 | Tracksuit Pride | Common | 1× Shemagh + 1× Round frame sunglasses |
+| 3 | Lucky Tushonka | Common | 3× Can of beef stew (Small) |
+| 4 | Duffle Bag Dragon | Common | 1× Scav backpack |
 | 5 | Double Barrel with 3 Shells | Uncommon | Random Scav Case (15K) |
 | 6 | Mosin, No Scope, No Fear | Uncommon | Random Scav Case (15K) |
 | 7 | Scav-on-Scav Etiquette | Uncommon | Random Scav Case (15K) |
-| 8 | Flea Market Scholar | Uncommon | Random Scav Case (15K) |
-| 9 | Homing Sense to Gunshots | Uncommon | Random Scav Case (15K) |
-| 10 | Vodka Before Raid | Rare | Random Scav Case (95K) |
-| 11 | Car Extract Entrepreneur | Rare | Random Scav Case (95K) |
+| 8 | Flea Market Scholar | Uncommon | 50,000 Roubles |
+| 9 | Homing Sense to Gunshots | Uncommon | 1× GSSh-01 headset |
+| 10 | Vodka Before Raid | Rare | 3× Vodka + 1× Propital |
+| 11 | Car Extract Entrepreneur | Rare | 3× Car first aid kit |
 | 12 | AI Friend, Human Enemy | Rare | Random Scav Case (95K) |
-| 13 | Scav Boss Cousin | Epic | Random Scav Case (Moonshine) |
+| 13 | Scav Boss Cousin | Epic | 1× Moonshine |
 | 14 | Last Bullet Hero | Legendary | Random Scav Case (Intel) |
 | 15 | Jacket Lottery Winner | Secret | 3× Random Scav Case (Intel) |
 | **Collection** | All 15 scav cards | — | 7× Marked room keys |
@@ -2739,7 +2739,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [QE: LootItem] Loot 15 items
 - **Description**: *"Mags Without Bullets. You loaded the mag, but forgot to load the ammo. Hand over five magazines and loot fifteen items. At least the mags are good for something."*
 - **Rewards**: 1,000 XP, Mags Without Bullets card
-- **Barter**: Random Scav Case (2.5K)
+- **Barter**: 3× AK 6L23 30-round magazine
 
 #### [FAIL-2] QUEST: The Naked Run [Common]
 - **Card**: Backpack Left Behind
@@ -2749,7 +2749,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [Vanilla: ExitName] Extract via Hole Exfill on Interchange 1 time *(requires no backpack)*
 - **Description**: *"Backpack Left Behind. Sometimes the only way out is through the hole in the fence — but only if you ditch the bag. Extract through the Hole Exfill on Interchange. Leave your backpack behind. It hurts every time."*
 - **Rewards**: 1,000 XP, Backpack Left Behind card
-- **Barter**: Random Scav Case (2.5K)
+- **Barter**: 1× Scav Vest + 1× PM Makarov pistol
 
 #### [FAIL-3] QUEST: Spray and Pray [Common]
 - **Card**: Scope Left at Base
@@ -2780,7 +2780,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [QE: FixAnyMalfunction] Fix 1 weapon malfunction
 - **Description**: *"Wrong Ammo Type. You packed buckshot for a sniper duel. You loaded 9x18 into a 9x19 mag. And when the gun finally jammed, you had to fix it mid-firefight. Deal five hundred shotgun damage, kill ten scavs, and fix a weapon malfunction."*
 - **Rewards**: 3,000 XP, Wrong Ammo Type card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 20× 5.45 PRS + 20× 5.56 FMJ + 20× 9x19 PSO
 
 #### [FAIL-6] QUEST: Should've Alt-Tabbed Faster [Uncommon]
 - **Card**: Tarkov Tab Out
@@ -2801,7 +2801,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [Vanilla: ExitStatus] Survive and extract 2 times
 - **Description**: *"Extract in Wrong Direction. You ran the entire length of the map to an extract that wasn't yours. Take the car extract on Customs and Interchange — at least that one's always available if you have the roubles."*
 - **Rewards**: 3,000 XP, Extract in Wrong Direction card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Compass
 
 #### [FAIL-8] QUEST: Flashbang Boomerang [Uncommon]
 - **Card**: Flashbang Yourself
@@ -2811,7 +2811,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [QE: FixBleed] Fix 5 light bleeds
 - **Description**: *"Flashbang Yourself. You pulled the pin, threw the flashbang, and it bounced right back. Deal five hundred grenade damage and fix five light bleeds. The shrapnel always finds you."*
 - **Rewards**: 3,000 XP, Flashbang Yourself card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 4× Zarya stun grenade
 
 #### [FAIL-9] QUEST: Two Seconds Too Late [Rare]
 - **Card**: Forgot Extract Timer
@@ -2821,7 +2821,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [QE: EarnMoneyOnTransaction] Earn 500,000₽ from transactions
 - **Description**: *"Forgot Extract Timer. Seven seconds on the clock, full backpack, sprinting to extract, and... MIA. Survive ten raids and earn half a million roubles. This time, check the timer."*
 - **Rewards**: 10,000 XP, Forgot Extract Timer card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 1× Compass + 50,000 Roubles
 
 #### [FAIL-10] QUEST: Healing Under Fire [Rare]
 - **Card**: Healing in the Open
@@ -2841,7 +2841,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [QE: FixHeavyBleed] Fix 5 heavy bleeds
 - **Description**: *"Grenading Yourself. You cooked it too long. Or threw it into a doorframe. Or forgot about the bounce physics. Two thousand grenade damage and five heavy bleeds fixed. The shrapnel is yours."*
 - **Rewards**: 10,000 XP, Grenading Yourself card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 4× RGD-5 + 2× VOG-25
 
 #### [FAIL-12] QUEST: Rage Quit Protocol [Epic]
 - **Card**: Alt+F4 Hero
@@ -2864,7 +2864,7 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
   - [Vanilla: ExitStatus] Survive and extract from Labs 5 times
 - **Description**: *"Misfire in Labs. The most expensive map in Tarkov — every entry costs a keycard whether you live or die. Your gun jams on the first raider. Eliminate fifteen PMCs and ten raiders on Labs, and survive five extractions."*
 - **Rewards**: 20,000 XP, Misfire in Labs card
-- **Barter**: Random Scav Case (Moonshine)
+- **Barter**: 3× Labs access keycard
 
 #### [FAIL-14] QUEST: System Failure [Legendary]
 - **Card**: Tarkov Alt+Tab Crash
@@ -2906,19 +2906,19 @@ Prefix: **[FAIL]** — Conditions centered on punishment, medical emergencies, g
 
 | # | Card | Rarity | Barter Reward |
 |---|------|--------|---------------|
-| 1 | Mags Without Bullets | Common | Random Scav Case (2.5K) |
-| 2 | Backpack Left Behind | Common | Random Scav Case (2.5K) |
+| 1 | Mags Without Bullets | Common | 3× AK 6L23 30-round magazine |
+| 2 | Backpack Left Behind | Common | 1× Scav Vest + 1× PM Makarov pistol |
 | 3 | Scope Left at Base | Common | Random Scav Case (2.5K) |
 | 4 | Wrong Key | Uncommon | Random Keys (3 items) |
-| 5 | Wrong Ammo Type | Uncommon | Random Scav Case (15K) |
+| 5 | Wrong Ammo Type | Uncommon | 20× 5.45 PRS + 20× 5.56 FMJ + 20× 9x19 PSO |
 | 6 | Tarkov Tab Out | Uncommon | Random Scav Case (15K) |
-| 7 | Extract in Wrong Direction | Uncommon | Random Scav Case (15K) |
-| 8 | Flashbang Yourself | Uncommon | Random Scav Case (15K) |
-| 9 | Forgot Extract Timer | Rare | Random Scav Case (95K) |
+| 7 | Extract in Wrong Direction | Uncommon | 1× Compass |
+| 8 | Flashbang Yourself | Uncommon | 4× Zarya stun grenade |
+| 9 | Forgot Extract Timer | Rare | 1× Compass + 50,000 Roubles |
 | 10 | Healing in the Open | Rare | Random Meds (5 items) |
-| 11 | Grenading Yourself | Rare | Random Scav Case (95K) |
+| 11 | Grenading Yourself | Rare | 4× RGD-5 + 2× VOG-25 |
 | 12 | Alt+F4 Hero | Epic | Random Scav Case (Moonshine) |
-| 13 | Misfire in Labs | Epic | Random Scav Case (Moonshine) |
+| 13 | Misfire in Labs | Epic | 3× Labs access keycard |
 | 14 | Tarkov Alt+Tab Crash | Legendary | Random Scav Case (Intel) |
 | 15 | Accidental Discard | Secret | 3× Random Scav Case (Intel) |
 | **Collection** | All 15 fail cards | — | Grenade Case + 2× Ammo Case + 2× Mag Case |
@@ -2985,7 +2985,7 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
   - [Vanilla: Kills] Eliminate 10 targets on Factory with shotguns
 - **Description**: *"Factory Friday. The community tradition — every Friday, Factory, shotguns only. Ten kills on Factory with a shotgun. It's Friday somewhere."*
 - **Rewards**: 1,000 XP, Factory Friday card
-- **Barter**: Random Scav Case (2.5K)
+- **Barter**: 30× 12/70 Flechette
 
 #### [MEME-5] QUEST: Loot and Scoot [Uncommon]
 - **Card**: Press F to Pay RESERVE
@@ -2996,7 +2996,7 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
   - [QE: SearchContainer] Search 40 containers
 - **Description**: *"Press F to Pay RESERVE. The underground loot paradise — if you can extract alive. Survive Reserve five times and search forty containers. Press F to pay respects to your lost loadouts."*
 - **Rewards**: 3,000 XP, Press F to Pay RESERVE card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Trizip backpack
 
 #### [MEME-6] QUEST: Betrayal Protocol [Uncommon]
 - **Card**: VOIP 'Friendly!' Spam
@@ -3036,7 +3036,7 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
   - [Vanilla: HandoverItem] Hand over 5 electronic components *(parent class: Electronics)*
 - **Description**: *"Quest Item? KEK! Every Tarkov player knows the pain — you need five of something and the game gives you everything except that. Hand over food, drugs, and electronics. Kolya's shopping list from hell."*
 - **Rewards**: 10,000 XP, Quest Item? KEK! card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 3× Secure Flash drive
 
 #### [MEME-10] QUEST: Third Floor, Second Door [Rare]
 - **Card**: Guy on the Stairs
@@ -3047,7 +3047,7 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
   - [Vanilla: Kills] Eliminate 10 targets on Factory
 - **Description**: *"Guy on the Stairs. There's always someone sitting on the stairs in Factory. Crouched behind the railing, waiting for footsteps. Fifteen kills while crouched and ten kills on Factory. Be the guy on the stairs."*
 - **Rewards**: 10,000 XP, Guy on the Stairs card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: Random Keys ×5
 
 #### [MEME-11] QUEST: The Eternal Debate [Epic]
 - **Card**: Chad vs Rat Showdown
@@ -3068,7 +3068,7 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
   - [Vanilla: HandoverItem] Hand over 1,000,000₽ in roubles
 - **Description**: *"Ruble Sink Deluxe. Tarkov's economy is designed to drain your wallet. Max out your Rest Space — the ultimate luxury — and hand over a million roubles. Money comes, money goes, mostly goes."*
 - **Rewards**: 20,000 XP, Ruble Sink Deluxe card
-- **Barter**: Random Scav Case (Moonshine)
+- **Barter**: 200,000 Roubles
 
 #### [MEME-13] QUEST: Blood Ritual [Epic]
 - **Card**: Dorms Marked Room Ritual
@@ -3077,7 +3077,7 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
   - [QE: CollectCultistOffering] Collect 10 Cultist Offerings
 - **Description**: *"Dorms Marked Room Ritual. The community legend — sacrifice items to the cultist circle and the marked room rewards you. Ten cultist offerings collected. Feed the circle. Appease the gods of loot."*
 - **Rewards**: 20,000 XP, Dorms Marked Room Ritual card
-- **Barter**: Random Scav Case (Moonshine)
+- **Barter**: Random Cultist Circle reward
 
 #### [MEME-14] QUEST: Content Creator [Legendary]
 - **Card**: Streamer's Labs Keycard
@@ -3125,16 +3125,16 @@ Prefix: **[MEME]** — Fun, absurd, and community-inspired objectives. Each ques
 | 1 | Factory Hatchet Runner | Common | Random Scav Case (2.5K) |
 | 2 | Just a G-Phone | Common | 1× Golden 1GPhone |
 | 3 | The Friendly Wiggle | Common | Random Scav Case (2.5K) |
-| 4 | Factory Friday | Common | Random Scav Case (2.5K) |
-| 5 | Press F to Pay RESERVE | Uncommon | Random Scav Case (15K) |
+| 4 | Factory Friday | Common | 30× 12/70 Flechette |
+| 5 | Press F to Pay RESERVE | Uncommon | 1× Trizip backpack |
 | 6 | VOIP 'Friendly!' Spam | Uncommon | Random Scav Case (15K) |
 | 7 | Bush Wookie Tradition | Uncommon | Random Scav Case (15K) |
 | 8 | Bad RNG Blues | Rare | Random Scav Case (95K) |
-| 9 | Quest Item? KEK! | Rare | Random Scav Case (95K) |
-| 10 | Guy on the Stairs | Rare | Random Scav Case (95K) |
+| 9 | Quest Item? KEK! | Rare | 3× Secure Flash drive |
+| 10 | Guy on the Stairs | Rare | Random Keys ×5 |
 | 11 | Chad vs Rat Showdown | Epic | Random Scav Case (Moonshine) |
-| 12 | Ruble Sink Deluxe | Epic | Random Scav Case (Moonshine) |
-| 13 | Dorms Marked Room Ritual | Epic | Random Scav Case (Moonshine) |
+| 12 | Ruble Sink Deluxe | Epic | 200,000 Roubles |
+| 13 | Dorms Marked Room Ritual | Epic | Random Cultist Circle reward |
 | 14 | Streamer's Labs Keycard | Legendary | Random Scav Case (Intel) |
 | 15 | Where's the Kappa? | Secret | 3× Random Scav Case (Intel) |
 | **Collection** | All 15 meme cards | — | Secure container Gamma (Loui Peeton) |
@@ -3213,7 +3213,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [Vanilla: HandoverItem] Hand over 10 electronic components *(parent class: Electronics)*
 - **Description**: *"Stash Tetris World Record. The art of fitting one more item into an already full stash. Hand over ten food items and ten electronic components. Kolya needs to reorganize."*
 - **Rewards**: 3,000 XP, Stash Tetris World Record card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Item case
 
 #### [STRM-6] QUEST: Sound Whoring [Rare]
 - **Card**: Veritas Audio Trap
@@ -3223,7 +3223,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [Vanilla: Kills] Eliminate 5 PMCs with suppressed weapons
 - **Description**: *"Veritas Audio Trap. The man who taught Tarkov to listen. Every footstep, every reload, every bush rustle — Veritas hears it all. Ten silent kills and five PMC kills with a suppressor. Hear them before they hear you."*
 - **Rewards**: 10,000 XP, Veritas Audio Trap card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 1× Walker's XCEL 500BT headset
 
 #### [STRM-7] QUEST: Solo Hunt [Rare]
 - **Card**: DeadlySlob Solo Boss
@@ -3233,7 +3233,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [Vanilla: Kills] Eliminate 3 bosses *(KillTarget: "Savage", savageRole: all boss roles)*
 - **Description**: *"DeadlySlob Solo Boss. The solo hunter — tracking down bosses across Tarkov with nothing but skill and patience. Kill three bosses on any map. The hunt is on."*
 - **Rewards**: 10,000 XP, DeadlySlob Solo Boss card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 120× M80 ammo
 
 #### [STRM-8] QUEST: The Dorms Classic [Rare]
 - **Card**: Ambush at Dorms 3-Story
@@ -3244,7 +3244,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [QE: KillsWhileCrouched] Get 5 kills while crouched
 - **Description**: *"Ambush at Dorms 3-Story. The clip that every Tarkov streamer has — crouched in a dorm room, door closed, waiting for the footsteps. Five kills in the dorms and five crouched kills. The dorms classic."*
 - **Rewards**: 10,000 XP, Ambush at Dorms 3-Story card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: Random Keys ×5
 
 #### [STRM-9] QUEST: One Tap Montage [Rare]
 - **Card**: Don't Peek – Montage
@@ -3254,7 +3254,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [QE: DamageWithDMR] Deal 5,000 damage with marksman rifles
 - **Description**: *"Don't Peek – Montage. The compilation clip of one-taps that makes chat spam 'HEAD EYES'. Ten headshots and five thousand DMR damage. Don't peek the angle."*
 - **Rewards**: 10,000 XP, Don't Peek – Montage card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 120× M61 ammo
 
 #### [STRM-10] QUEST: Kobe! [Rare]
 - **Card**: Grenade Kobe Clip
@@ -3264,7 +3264,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [Vanilla: Kills] Eliminate 5 targets from under 15m
 - **Description**: *"Grenade Kobe Clip. The perfect arc, the perfect bounce, the perfect kill. Three thousand grenade damage and five close-range kills. KOBE!"*
 - **Rewards**: 10,000 XP, Grenade Kobe Clip card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 4× RGD-5 grenades
 
 #### [STRM-11] QUEST: The Marathon [Epic]
 - **Card**: Pestily's Punisher Marathon
@@ -3286,7 +3286,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [Vanilla: ExitStatus] Survive and extract from Labs 5 times
 - **Description**: *"Klean Night Labs Run. Labs — fluorescent lights flickering, every shadow could be a raider or a PMC. Twenty kills on Labs and five extractions. Lights out."*
 - **Rewards**: 20,000 XP, Klean Night Labs Run card
-- **Barter**: Random Scav Case (Moonshine)
+- **Barter**: 1× PVS-14 NVG
 
 #### [STRM-13] QUEST: Cross-Map Headshot [Epic]
 - **Card**: Stream Sniper Outplayed
@@ -3296,7 +3296,7 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
   - [QE: TotalShotDistanceWithSnipers] Accumulate 5,000m total shot distance with sniper rifles
 - **Description**: *"Stream Sniper Outplayed. They came to ruin the stream, and they got outplayed from 200 meters. Five PMC kills from over 150 meters and five thousand meters of total sniper shot distance. Counter-snipe the snipers."*
 - **Rewards**: 20,000 XP, Stream Sniper Outplayed card
-- **Barter**: Random Scav Case (Moonshine)
+- **Barter**: 1× March 3-24x42 FFP scope
 
 #### [STRM-14] QUEST: From Nothing to Everything [Legendary]
 - **Card**: Zero to Hero Run
@@ -3354,15 +3354,15 @@ Prefix: **[STRM]** — Elite combat, iconic streamer plays, and content creator 
 | 2 | JesseKazam Budget Warrior | Uncommon | Random Scav Case (15K) |
 | 3 | Onepeg Patch Breakdown | Uncommon | Random Scav Case (15K) |
 | 4 | NiceGuy Dev Tracker | Uncommon | Random Scav Case (15K) |
-| 5 | Stash Tetris World Record | Uncommon | Random Scav Case (15K) |
-| 6 | Veritas Audio Trap | Rare | Random Scav Case (95K) |
-| 7 | DeadlySlob Solo Boss | Rare | Random Scav Case (95K) |
-| 8 | Ambush at Dorms 3-Story | Rare | Random Scav Case (95K) |
-| 9 | Don't Peek – Montage | Rare | Random Scav Case (95K) |
-| 10 | Grenade Kobe Clip | Rare | Random Scav Case (95K) |
+| 5 | Stash Tetris World Record | Uncommon | 1× Item case |
+| 6 | Veritas Audio Trap | Rare | 1× Walker's XCEL 500BT headset |
+| 7 | DeadlySlob Solo Boss | Rare | 120× M80 ammo |
+| 8 | Ambush at Dorms 3-Story | Rare | Random Keys ×5 |
+| 9 | Don't Peek – Montage | Rare | 120× M61 ammo |
+| 10 | Grenade Kobe Clip | Rare | 4× RGD-5 grenades |
 | 11 | Pestily's Punisher Marathon | Epic | Random Scav Case (Moonshine) |
-| 12 | Klean Night Labs Run | Epic | Random Scav Case (Moonshine) |
-| 13 | Stream Sniper Outplayed | Epic | Random Scav Case (Moonshine) |
+| 12 | Klean Night Labs Run | Epic | 1× PVS-14 NVG |
+| 13 | Stream Sniper Outplayed | Epic | 1× March 3-24x42 FFP scope |
 | 14 | Zero to Hero Run | Legendary | Random Scav Case (Intel) |
 | 15 | LVNDMARK's 10-Man Wipe | Secret | 3× Random Scav Case (Intel) |
 | **Collection** | All 15 streamer cards | — | Streamer item case + 40 Collector items |
@@ -3430,7 +3430,7 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
   - [QE: DamageWithSMG] Deal 2,000 damage with SMGs
 - **Description**: *"First Week Meta Shift. Every wipe the meta changes — ARs one day, SMGs the next. Three thousand AR damage and two thousand SMG damage. Adapt or die."*
 - **Rewards**: 3,000 XP, First Week Meta Shift card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 60× 5.45 BT ammo
 
 #### [WIPE-5] QUEST: Factory Sweep [Uncommon]
 - **Card**: Factory Nightmares
@@ -3453,7 +3453,7 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
   - [QE: KillsWhileADS] Get 10 kills while ADS
 - **Description**: *"Day Seven Chads. One week into wipe and the first chads appear — class 4 armor, modded AKs, and the confidence of someone with a Bitcoin Farm. Ten PMC kills and ten ADS kills. Join the chads."*
 - **Rewards**: 3,000 XP, Day Seven Chads card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× PACA armor (with soft armor inserts)
 
 #### [WIPE-7] QUEST: Market Hustle [Uncommon]
 - **Card**: Early Wipe Flea Hustler
@@ -3463,7 +3463,7 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
   - [QE: SearchContainer] Search 50 containers
 - **Description**: *"Early Wipe Flea Hustler. The flea market opens and suddenly everyone's a day trader. One million roubles earned and fifty containers searched. Buy low, sell high."*
 - **Rewards**: 3,000 XP, Early Wipe Flea Hustler card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 100,000 Roubles
 
 #### [WIPE-8] QUEST: Sidearm Specialist [Rare]
 - **Card**: Pistol Only Heroes
@@ -3482,7 +3482,7 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
   - [Vanilla: Kills] Eliminate 5 bosses *(KillTarget: "Savage", savageRole: all boss roles)*
 - **Description**: *"Scav Boss First Kill. That first time you see Reshala's golden TT or hear Killa's RPK — and you actually win. Five boss kills across any map. The boss hunter rises."*
 - **Rewards**: 10,000 XP, Scav Boss First Kill card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 1× Labs access keycard
 
 #### [WIPE-10] QUEST: Keycard Required [Rare]
 - **Card**: First Labs Runs
@@ -3493,7 +3493,7 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
   - [Vanilla: ExitStatus] Survive and extract from Labs 3 times
 - **Description**: *"First Labs Runs. The first time you swipe that keycard and the elevator door opens — raiders, loot, and certain death. Fifteen kills on Labs and three extractions. Welcome to endgame."*
 - **Rewards**: 10,000 XP, First Labs Runs card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 1× Labs access keycard
 
 #### [WIPE-11] QUEST: Jackpot Hunter [Epic]
 - **Card**: Level 1 Red Keycard Pull
@@ -3583,13 +3583,13 @@ Prefix: **[WIPE]** — Wipe progression milestones from day one to endgame. Trad
 | 1 | Day One Hatchet Rush | Common | Random Scav Case (2.5K) |
 | 2 | Shotgun Wipe Starter | Common | Random Scav Case (2.5K) |
 | 3 | Hatchling Wars | Common | Random Scav Case (2.5K) |
-| 4 | First Week Meta Shift | Uncommon | Random Scav Case (15K) |
+| 4 | First Week Meta Shift | Uncommon | 60× 5.45 BT ammo |
 | 5 | Factory Nightmares | Uncommon | Random Scav Case (15K) |
-| 6 | Day Seven Chads | Uncommon | Random Scav Case (15K) |
-| 7 | Early Wipe Flea Hustler | Uncommon | Random Scav Case (15K) |
+| 6 | Day Seven Chads | Uncommon | 1× PACA armor (with soft armor inserts) |
+| 7 | Early Wipe Flea Hustler | Uncommon | 100,000 Roubles |
 | 8 | Pistol Only Heroes | Rare | 1× FN Five-seveN (Priscilu build) |
-| 9 | Scav Boss First Kill | Rare | Random Scav Case (95K) |
-| 10 | First Labs Runs | Rare | Random Scav Case (95K) |
+| 9 | Scav Boss First Kill | Rare | 1× Labs access keycard |
+| 10 | First Labs Runs | Rare | 1× Labs access keycard |
 | 11 | Red Keycard Pull | Epic | Random Scav Case (Moonshine) |
 | 12 | Economy Reset Millionaire | Epic | 1,000,000₽ roubles |
 | 13 | Kappa Completionist | Legendary | Random Scav Case (Intel) |
@@ -3689,7 +3689,7 @@ Prefix: **[BUGD]** — Glitch-themed objectives inspired by infamous Tarkov bugs
   - [QE: DamageWithDMR] Deal 3,000 damage with marksman rifles
 - **Description**: *"ADS Lock. You aimed down sights and the game forgot to let you stop. Twenty ADS kills and three thousand DMR damage. At least your aim is steady."*
 - **Rewards**: 3,000 XP, ADS Lock card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× EOTech Vudu 1-6x24 scope
 
 #### [BUGD-8] QUEST: Infinite Frag [Rare]
 - **Card**: The Infinite Grenade
@@ -3748,7 +3748,7 @@ Prefix: **[BUGD]** — Glitch-themed objectives inspired by infamous Tarkov bugs
   - [QE: MoveDistanceWhileSilent] Move 2,000m silently
 - **Description**: *"No Footstep Audio. The audio engine forgot to play footsteps. You can't hear them. They can't hear you. Twenty silent kills and two kilometers of silent movement. It's not a bug, it's stealth."*
 - **Rewards**: 20,000 XP, No Footstep Audio card
-- **Barter**: Random Scav Case (Moonshine)
+- **Barter**: 1× of each headset (12 total: ComTac II, RAC, Sordin, GSSh-01, Tactical Sport, Walker's Razor, XCEL 500BT, Earmor M32, ComTac IV, Liberator, ComTac V, ComTac VI)
 
 #### [BUGD-14] QUEST: Wall Bang [Legendary]
 - **Card**: Head-Eyes Through Concrete
@@ -3797,13 +3797,13 @@ Prefix: **[BUGD]** — Glitch-themed objectives inspired by infamous Tarkov bugs
 | 4 | Door Peeker | Uncommon | Random Scav Case (15K) |
 | 5 | Ghost Flashbang | Uncommon | Random Scav Case (15K) |
 | 6 | Floating Loot Crate | Uncommon | Random Scav Case (15K) |
-| 7 | ADS Lock | Uncommon | Random Scav Case (15K) |
+| 7 | ADS Lock | Uncommon | 1× EOTech Vudu 1-6x24 scope |
 | 8 | The Infinite Grenade | Rare | 5× M67 grenades |
 | 9 | Invisible Backpack | Rare | Random Scav Case (95K) |
 | 10 | MIA by Extraction Bug | Rare | Random Scav Case (95K) |
 | 11 | Vanishing Graphics Card | Rare | 1× Graphics card |
 | 12 | Teleporting Scav | Rare | Random Scav Case (95K) |
-| 13 | No Footstep Audio | Epic | Random Scav Case (Moonshine) |
+| 13 | No Footstep Audio | Epic | 1× of each headset (12 total) |
 | 14 | Head-Eyes Through Concrete | Legendary | Random Scav Case (Intel) |
 | 15 | 0 HP Thorax Survivor | Secret | Random Meds (30 items) |
 | **Collection** | All 15 bugged cards | — | Medicine Case + Injector Case + 5× Surv12 + 5× M.U.L.E. + 5× Propital |
@@ -4102,7 +4102,7 @@ Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives refle
   - [QE: DamageWithShotguns] Deal 1,000 damage with shotguns
 - **Description**: *"Door Breaching Feature. 'Added ability to breach locked doors.' The door is open. Everyone inside is dead. Ten close-range kills and a thousand shotgun damage. Breach and clear."*
 - **Rewards**: 3,000 XP, Door Breaching Feature card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 2× Zarya flashbang + 2× RDG-2B smoke grenade
 
 #### [PTCH-5] QUEST: Medic Patch [Uncommon]
 - **Card**: Therapist Restock
@@ -4112,7 +4112,7 @@ Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives refle
   - [QE: RestoreBodyPart] Restore 5 body parts
 - **Description**: *"Therapist Restock. 'Adjusted medical item availability.' Translation: Salewas are back in stock for exactly twelve seconds. Restore three thousand HP and five body parts. Stock up while you can."*
 - **Rewards**: 3,000 XP, Therapist Restock card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× IFAK + 1× CALOK-B hemostatic
 
 #### [PTCH-6] QUEST: Lag Compensation [Rare]
 - **Card**: Fixed Desync
@@ -4142,7 +4142,7 @@ Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives refle
   - [QE: DamageWithPistols] Deal 3,000 damage with pistols
 - **Description**: *"Flashlight Fix. 'Corrected tactical flashlight rendering.' The flashlight now blinds you AND the enemy. Ten night kills and three thousand pistol damage. Lights on."*
 - **Rewards**: 10,000 XP, Flashlight Fix card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 1× Klesch-2U + 1× XHP35 flashlight + 1× Zenit 2DS flashlight
 
 #### [PTCH-9] QUEST: Carrying Capacity [Rare]
 - **Card**: Weight System Tweak
@@ -4198,7 +4198,7 @@ Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives refle
   - [Vanilla: Kills] Eliminate 30 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
 - **Description**: *"Recoil Rework. 'Completely overhauled weapon recoil system.' The guns now kick like a mule on the first shot and laser beam after that. Fifteen thousand AR damage, ten thousand SMG damage, and thirty PMC headshots. Master the new recoil."*
 - **Rewards**: 35,000 XP, Recoil Rework card
-- **Barter**: Random Scav Case (Intel)
+- **Barter**: 120× AP-20 slugs
 
 #### [PTCH-14] QUEST: Fair Play Update [Legendary]
 - **Card**: Anti-Cheat Improvements
@@ -4243,16 +4243,16 @@ Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives refle
 | 1 | Sound Occlusion Update | Common | 1× Peltor ComTac IV headset |
 | 2 | Factory Balance Patch | Common | Random Scav Case (2.5K) |
 | 3 | Improved VoIP | Uncommon | Random Scav Case (15K) |
-| 4 | Door Breaching Feature | Uncommon | Random Scav Case (15K) |
-| 5 | Therapist Restock | Uncommon | Random Scav Case (15K) |
+| 4 | Door Breaching Feature | Uncommon | 2× Zarya flashbang + 2× RDG-2B smoke grenade |
+| 5 | Therapist Restock | Uncommon | 1× IFAK + 1× CALOK-B hemostatic |
 | 6 | Fixed Desync | Rare | Random Scav Case (95K) |
 | 7 | AI Smarter | Rare | Random Scav Case (95K) |
-| 8 | Flashlight Fix | Rare | Random Scav Case (95K) |
+| 8 | Flashlight Fix | Rare | 1× Klesch-2U + 1× XHP35 + 1× Zenit 2DS |
 | 9 | Weight System Tweak | Rare | 1× M.U.L.E. stimulant |
 | 10 | Optimized Netcode | Epic | Random Scav Case (Moonshine) |
 | 11 | Hideout Expansion | Epic | Random Scav Case (Moonshine) |
 | 12 | Woods Redesign | Epic | 1× Shturman's stash key |
-| 13 | Recoil Rework | Legendary | Random Scav Case (Intel) |
+| 13 | Recoil Rework | Legendary | 120× AP-20 slugs |
 | 14 | Anti-Cheat Improvements | Legendary | Random Scav Case (Intel) |
 | 15 | Flea Market Overhaul | Secret | 5× Physical Bitcoin |
 | **Collection** | All 15 patch cards | — | 10× Bitcoin + 5M₽ + 10K$ + 10K€ |
@@ -4319,7 +4319,7 @@ Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, nigh
   - [QE: LootItem] Loot 40 items
 - **Description**: *"Christmas Tree Stash. The presents are under the tree — if you can find the tree, and if the presents haven't been looted already. Forty containers and forty items. Merry Christmas."*
 - **Rewards**: 3,000 XP, Christmas Tree Stash card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Santa hat
 
 #### [SEAS-5] QUEST: Gift Exchange [Uncommon]
 - **Card**: New Year Gift Case
@@ -4349,7 +4349,7 @@ Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, nigh
   - [Vanilla: ExitStatus] Survive and extract 5 times
 - **Description**: *"Santa Scav's Gift Run. Presents don't deliver themselves — sprint five kilometers and survive five raids. The gift run stops for no one."*
 - **Rewards**: 3,000 XP, Gift Run card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Pilgrim backpack
 
 #### [SEAS-8] QUEST: Beach Day [Uncommon]
 - **Card**: Summer Rogue Beach Party
@@ -4360,7 +4360,7 @@ Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, nigh
   - [QE: SearchContainer] Search 40 containers
 - **Description**: *"Summer Rogue Beach Party. The rogues put on Hawaiian shirts and set up coolers between the mounted guns. Survive Lighthouse twice and search forty containers. Beach day, Tarkov style."*
 - **Rewards**: 3,000 XP, Rogue Beach Party card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Round frame sunglasses + 1× Shemagh
 
 #### [SEAS-9] QUEST: Fright Night [Rare]
 - **Card**: Halloween
@@ -4370,7 +4370,7 @@ Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, nigh
   - [QE: KillsWhileSilent] Get 10 kills while silent
 - **Description**: *"Halloween. Jack-o-lanterns in the hallways, fog in the forests, and something moving in the dark. Fifteen night kills and ten silent kills. Trick or treat."*
 - **Rewards**: 10,000 XP, Halloween card
-- **Barter**: Random Scav Case (95K)
+- **Barter**: 1× PVS-14 NVG
 
 #### [SEAS-10] QUEST: Cult Season [Rare]
 - **Card**: Halloween Cult Hunt
@@ -4461,12 +4461,12 @@ Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, nigh
 | 1 | Golden Gun Day | Common | 1× TT-33 pistol (assembled) |
 | 2 | Confetti Nades | Common | 1× F-1 grenade |
 | 3 | Flu Epidemic | Common | 1× AFAK |
-| 4 | Tree Stash | Uncommon | Random Scav Case (15K) |
+| 4 | Tree Stash | Uncommon | 1× Santa hat |
 | 5 | Gift Case | Uncommon | Random Scav Case (15K) |
 | 6 | Santa Scav | Uncommon | Random Scav Case (15K) |
-| 7 | Gift Run | Uncommon | Random Scav Case (15K) |
-| 8 | Rogue Beach | Uncommon | Random Scav Case (15K) |
-| 9 | Halloween | Rare | Random Scav Case (95K) |
+| 7 | Gift Run | Uncommon | 1× Pilgrim backpack |
+| 8 | Rogue Beach | Uncommon | 1× Round frame sunglasses + 1× Shemagh |
+| 9 | Halloween | Rare | 1× PVS-14 NVG |
 | 10 | Cult Hunt | Rare | Random Scav Case (95K) |
 | 11 | Twitch Drops | Rare | 7× Twitch Rivals items |
 | 12 | Killa & Tagilla | Epic | Random Scav Case (Moonshine) |
@@ -4555,7 +4555,7 @@ Prefix: **[SPFT]** — Meta SPT theme comparing the single-player experience to 
   - [QE: CraftAnyItem] Craft 10 items
 - **Description**: *"Skip the Grind. No more waiting days for a Bitcoin. No more grinding levels for flea market access. Craft ten items and enjoy the shortcut. SPT lets you skip the parts that aren't fun."*
 - **Rewards**: 3,000 XP, Skip the Grind card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Toolset + 1× Screwdriver
 
 #### [SPFT-7] QUEST: Known Issues [Rare]
 - **Card**: Patch Day Salt
@@ -4681,7 +4681,7 @@ Prefix: **[SPFT]** — Meta SPT theme comparing the single-player experience to 
 | 3 | Offline Zen | Uncommon | Random Scav Case (15K) |
 | 4 | Faster Queue Times | Uncommon | Random Scav Case (15K) |
 | 5 | Balancing Done Right | Uncommon | Random Scav Case (15K) |
-| 6 | Skip the Grind | Uncommon | Random Scav Case (15K) |
+| 6 | Skip the Grind | Uncommon | 1× Toolset + 1× Screwdriver |
 | 7 | Patch Day Salt | Rare | Random Scav Case (95K) |
 | 8 | Custom Traders | Rare | Random Scav Case (95K) |
 | 9 | The Tarkov We Deserve | Rare | Random Scav Case (95K) |
@@ -4735,7 +4735,7 @@ Prefix: **[MODS]** — Hommage to legendary SPT mods and their creators. Each qu
   - [QE: KillsWhileADS] Get 5 kills while ADS
 - **Description**: *"Audio Accessibility Indicators. The mod that shows you where sounds come from — footsteps, gunshots, grenades — all visualized on screen. Five silent kills and five ADS kills. Hear what you can't hear."*
 - **Rewards**: 3,000 XP, Audio Indicators card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Peltor ComTac IV headset
 
 #### [MODS-3] QUEST: Pet the Cat [Uncommon]
 - **Card**: Hideout Cat
@@ -4745,7 +4745,7 @@ Prefix: **[MODS]** — Hommage to legendary SPT mods and their creators. Each qu
   - [QE: CompleteWorkout] Complete 1 gym workout
 - **Description**: *"Hideout Cat. The mod that added a cat to your hideout — and somehow made the whole game better. Craft ten items and hit the gym once. The cat watches you work out."*
 - **Rewards**: 3,000 XP, Hideout Cat card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 3× Can of condensed milk
 
 #### [MODS-4] QUEST: Map Awareness [Uncommon]
 - **Card**: Dynamic Maps
@@ -4756,7 +4756,7 @@ Prefix: **[MODS]** — Hommage to legendary SPT mods and their creators. Each qu
   - [Vanilla: ExitStatus] Survive and extract 5 times
 - **Description**: *"Dynamic Maps. The mod that gives you a real-time map with your position, extracts, and quest markers. Visit two landmarks on Woods and survive five raids. The map knows where you are."*
 - **Rewards**: 3,000 XP, Dynamic Maps card
-- **Barter**: Random Scav Case (15K)
+- **Barter**: 1× Compass
 
 #### [MODS-5] QUEST: Eye Candy [Uncommon]
 - **Card**: Amands Graphics Preset
@@ -4889,9 +4889,9 @@ Prefix: **[MODS]** — Hommage to legendary SPT mods and their creators. Each qu
 | # | Card | Rarity | Barter Reward |
 |---|------|--------|---------------|
 | 1 | SVM | Common | Random Scav Case (2.5K) |
-| 2 | Audio Indicators | Uncommon | Random Scav Case (15K) |
-| 3 | Hideout Cat | Uncommon | Random Scav Case (15K) |
-| 4 | Dynamic Maps | Uncommon | Random Scav Case (15K) |
+| 2 | Audio Indicators | Uncommon | 1× Peltor ComTac IV headset |
+| 3 | Hideout Cat | Uncommon | 3× Can of condensed milk |
+| 4 | Dynamic Maps | Uncommon | 1× Compass |
 | 5 | Amands Preset | Uncommon | Random Scav Case (15K) |
 | 6 | Pack 'n' Strap | Uncommon | Random Scav Case (15K) |
 | 7 | Weapon Customizer | Rare | Random Scav Case (95K) |
