@@ -58,6 +58,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(PatchNotesParodiesThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(SeasonalEventsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(SptVsEftThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(ModsSptLegendsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

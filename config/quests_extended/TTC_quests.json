@@ -2662,5 +2662,133 @@
         "ConditionType": "CompleteWorkout"
       }
     ]
+  },
+  "80755425d42809750dbc4d37": {
+    "QuestId": "80755425d42809750dbc4d37",
+    "QuestName": "Mod Manager",
+    "Conditions": [
+      {
+        "ConditionId": "59b61d1e4b4f881247d91965",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "e4700bc049fbf3cce5c91c17": {
+    "QuestId": "e4700bc049fbf3cce5c91c17",
+    "QuestName": "Tweak Everything",
+    "Conditions": [
+      {
+        "ConditionId": "0a007273cc5ecf59992e1784",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "f12d4ef546c9173eb03b7b5b": {
+    "QuestId": "f12d4ef546c9173eb03b7b5b",
+    "QuestName": "Sound Design",
+    "Conditions": [
+      {
+        "ConditionId": "090dfa0b5d0844b7a75ede61",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "06e66f25f15559ed73b67f06",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "cf150685bbd7a315ebbf3d1b": {
+    "QuestId": "cf150685bbd7a315ebbf3d1b",
+    "QuestName": "Pet the Cat",
+    "Conditions": [
+      {
+        "ConditionId": "385ad2ac2cbc064071c8d1bc",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "2785c5153f06a0e28f6f8c12",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "83c68ea904c3fae6d91f03d4": {
+    "QuestId": "83c68ea904c3fae6d91f03d4",
+    "QuestName": "Eye Candy",
+    "Conditions": [
+      {
+        "ConditionId": "e51e6da51b386fd8bc2df893",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "f29b7cb798cebf28014aaab1": {
+    "QuestId": "f29b7cb798cebf28014aaab1",
+    "QuestName": "Custom Build",
+    "Conditions": [
+      {
+        "ConditionId": "aea569aa01eca293e76e235e",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "119526cb94013fcaa04d690a",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "9c1fff7920fd02da0a9e52a7": {
+    "QuestId": "9c1fff7920fd02da0a9e52a7",
+    "QuestName": "Level Up",
+    "Conditions": [
+      {
+        "ConditionId": "ccee435b9f7cc1b8935e7c06",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "1c24bc247414703e775cf8fd": {
+    "QuestId": "1c24bc247414703e775cf8fd",
+    "QuestName": "Scavenger AI",
+    "Conditions": [
+      {
+        "ConditionId": "0667b5f5efdbbd4491c5673d",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "68dd8b35607df5eae16eddf8",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "c64d2c94d84c806ba70608d4",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "484e2380791e23675f34a886": {
+    "QuestId": "484e2380791e23675f34a886",
+    "QuestName": "Mission AI",
+    "Conditions": [
+      {
+        "ConditionId": "8181225ae94fae5d9fbaa138",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "bb4462afc6c2305a82494e6f": {
+    "QuestId": "bb4462afc6c2305a82494e6f",
+    "QuestName": "Hardcore Mode",
+    "Conditions": [
+      {
+        "ConditionId": "7c7e7bd1be2c2a101686460c",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "655334f3262258541679048a",
+        "ConditionType": "FixFracture"
+      },
+      {
+        "ConditionId": "742e37514d0f4b7160572ec0",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
   }
 }

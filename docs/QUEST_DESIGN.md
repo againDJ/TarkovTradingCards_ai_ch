@@ -4695,4 +4695,216 @@ Prefix: **[SPFT]** — Meta SPT theme comparing the single-player experience to 
 
 ---
 
-*Remaining 1 theme to be designed...*
+## Theme: Mods & SPT Legends
+
+**15 cards** (1 Common, 5 Uncommon, 4 Rare, 2 Epic, 2 Legendary, 1 Secret)
+
+Prefix: **[MODS]** — Hommage to legendary SPT mods and their creators. Each quest reflects the spirit of the mod it references.
+
+### [MODS-0] QUEST: Mod Manager (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_mods_spt_legends`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: CraftAnyItem] Craft 3 items
+  - [Vanilla: ExitStatus] Survive and extract 2 times
+- **Description**: *"Kolya picked fifteen mods he's particularly fond of — iconic ones, creative ones, ones that changed how he plays Tarkov. This list isn't exhaustive or complete. Some of these mods may have disappeared by now, and new legends have surely taken their place. This is just a glimpse of the incredible diversity the SPT modding community has to offer. If you're a creator and you're not on this list, don't feel left out — there are only fifteen cards, and thousands of amazing mods. Craft three items and survive two raids. The mod showcase begins."*
+- **Rewards**:
+  - 1× Mods & SPT Legends Binder
+  - 1,000 XP
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [MODS-1] QUEST: Tweak Everything [Common]
+- **Card**: Server Value Modifier (SVM)
+- **ID Seed**: `ttc_quest_card_mods_svm`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 100,000₽ from transactions
+  - [Vanilla: ExitStatus] Survive and extract 3 times
+- **Description**: *"Server Value Modifier. The mod that lets you tweak every value in the game — loot rates, bot difficulty, raid timers, everything. Earn a hundred thousand roubles and survive three raids. The values are yours to set."*
+- **Rewards**: 1,000 XP, SVM card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [MODS-2] QUEST: Sound Design [Uncommon]
+- **Card**: Audio Accessibility Indicators
+- **ID Seed**: `ttc_quest_card_mods_audioindicators`
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 5 kills while silent
+  - [QE: KillsWhileADS] Get 5 kills while ADS
+- **Description**: *"Audio Accessibility Indicators. The mod that shows you where sounds come from — footsteps, gunshots, grenades — all visualized on screen. Five silent kills and five ADS kills. Hear what you can't hear."*
+- **Rewards**: 3,000 XP, Audio Indicators card
+- **Barter**: Random Scav Case (15K)
+
+#### [MODS-3] QUEST: Pet the Cat [Uncommon]
+- **Card**: Hideout Cat
+- **ID Seed**: `ttc_quest_card_mods_hideoutcat`
+- **Objectives**:
+  - [QE: CraftAnyItem] Craft 10 items
+  - [QE: CompleteWorkout] Complete 1 gym workout
+- **Description**: *"Hideout Cat. The mod that added a cat to your hideout — and somehow made the whole game better. Craft ten items and hit the gym once. The cat watches you work out."*
+- **Rewards**: 3,000 XP, Hideout Cat card
+- **Barter**: Random Scav Case (15K)
+
+#### [MODS-4] QUEST: Map Awareness [Uncommon]
+- **Card**: Dynamic Maps
+- **ID Seed**: `ttc_quest_card_mods_dynamicmaps`
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate Jaeger's camp on Woods *(zone: huntsman_001)*
+  - [Vanilla: VisitPlace] Locate the USEC camp on Woods *(zone: pr_scout_base)*
+  - [Vanilla: ExitStatus] Survive and extract 5 times
+- **Description**: *"Dynamic Maps. The mod that gives you a real-time map with your position, extracts, and quest markers. Visit two landmarks on Woods and survive five raids. The map knows where you are."*
+- **Rewards**: 3,000 XP, Dynamic Maps card
+- **Barter**: Random Scav Case (15K)
+
+#### [MODS-5] QUEST: Eye Candy [Uncommon]
+- **Card**: Amands Graphics Preset
+- **ID Seed**: `ttc_quest_card_mods_amandspreset`
+- **Objectives**:
+  - [QE: MoveDistance] Cover 10,000m on foot
+- **Description**: *"Amands Graphics Preset. The mod that makes Tarkov look like it was meant to look — vibrant, sharp, and beautiful. Walk ten kilometers and enjoy the scenery. It's never looked this good."*
+- **Rewards**: 3,000 XP, Amands Preset card
+- **Barter**: Random Scav Case (15K)
+
+#### [MODS-6] QUEST: Gear Up [Uncommon]
+- **Card**: WTT Pack 'n' Strap
+- **ID Seed**: `ttc_quest_card_mods_packnstrap`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 20 magazines *(parent class: Magazine)*
+- **Description**: *"WTT Pack 'n' Strap. The mod that adds tactical belts to carry extra mags and gear on your waist. Hand over twenty magazines. Kolya needs to fill his new belt."*
+- **Rewards**: 3,000 XP, Pack 'n' Strap card
+- **Barter**: Random Scav Case (15K)
+
+#### [MODS-7] QUEST: Custom Build [Rare]
+- **Card**: Weapon Customizer
+- **ID Seed**: `ttc_quest_card_mods_weaponcustomizer`
+- **Objectives**:
+  - [QE: DamageWithAR] Deal 5,000 damage with assault rifles
+  - [QE: DamageWithSMG] Deal 3,000 damage with SMGs
+  - [Vanilla: HandoverItem] Hand over 5 electronic components *(parent class: Electronics)*
+- **Description**: *"Weapon Customizer. The mod that unlocks every attachment combination the game never allowed — combine it with 'All In Weapon' for maximum creative freedom. Five thousand AR damage, three thousand SMG damage, and five electronics. Build the impossible."*
+- **Rewards**: 10,000 XP, Weapon Customizer card
+- **Barter**: Random Scav Case (95K)
+
+#### [MODS-8] QUEST: Level Up [Rare]
+- **Card**: Valens Progression
+- **ID Seed**: `ttc_quest_card_mods_valensprogression`
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Jaeger LL2
+  - [QE: EarnMoneyOnTransaction] Earn 1,000,000₽ from transactions
+  - [Vanilla: ExitStatus] Survive and extract 10 times
+- **Description**: *"Valens Progression. The mod that reworks Tarkov's progression system into something that actually makes sense. Jaeger LL2, a million roubles, and ten extractions. Progress, the right way."*
+- **Rewards**: 10,000 XP, Valens Progression card
+- **Barter**: Random Scav Case (95K)
+
+#### [MODS-9] QUEST: Kill Counter [Rare]
+- **Card**: StatTrack
+- **ID Seed**: `ttc_quest_card_mods_stattrack`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets in a single raid *(KillTarget: "Any", resetOnSessionEnd)*
+- **Description**: *"StatTrack. The mod that tracks every kill, every headshot, every stat on your weapon. Ten kills in a single raid. Make the counter spin."*
+- **Rewards**: 10,000 XP, StatTrack card
+- **Barter**: Random Scav Case (95K)
+
+#### [MODS-10] QUEST: Better Spawns [Rare]
+- **Card**: ABPS – Bot Placement System
+- **ID Seed**: `ttc_quest_card_mods_abps`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 bosses *(savageRole: all boss roles)*
+  - [Vanilla: ExitStatus] Survive and extract 10 times
+- **Description**: *"ABPS. The mod that places bots where they should be — not stacked in corners or spawning on top of you. Five boss kills and ten extractions. Better spawns, better fights."*
+- **Rewards**: 10,000 XP, ABPS card
+- **Barter**: Random Scav Case (95K)
+
+#### [MODS-11] QUEST: Scavenger AI [Epic]
+- **Card**: Looting Bots
+- **ID Seed**: `ttc_quest_card_mods_lootingbots`
+- **Objectives**:
+  - [QE: SearchContainer] Search 100 containers
+  - [QE: LootItem] Loot 100 items
+  - [QE: EarnMoneyOnTransaction] Earn 3,000,000₽ from transactions
+- **Description**: *"Looting Bots. The mod that makes bots actually loot bodies and containers — like real players would. A hundred containers, a hundred items, three million roubles. If the bots can do it, so can you."*
+- **Rewards**: 20,000 XP, Looting Bots card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [MODS-12] QUEST: Mission AI [Epic]
+- **Card**: Questing Bots
+- **ID Seed**: `ttc_quest_card_mods_questingbots`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 30 PMCs
+  - [Vanilla: Kills] Eliminate 20 scavs with headshots *(KillTarget: "Savage", KillBodyParts: ["Head"])*
+  - [QE: DamageWithDMR] Deal 5,000 damage with marksman rifles
+- **Description**: *"Questing Bots. The mod that gives bots actual objectives — they extract, they quest, they fight with purpose. Thirty PMC kills, twenty scav headshots, and five thousand DMR damage. The bots have missions. Do you?"*
+- **Rewards**: 20,000 XP, Questing Bots card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [MODS-13] QUEST: Tactical AI [Legendary]
+- **Card**: SAIN
+- **ID Seed**: `ttc_quest_card_mods_sain`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 60 PMCs
+  - [Vanilla: Kills] Eliminate 15 bosses *(savageRole: all boss roles)*
+- **Description**: *"SAIN. The mod that made Tarkov's AI actually terrifying — flanking, pushing, suppressing, coordinating. Sixty PMC kills and fifteen boss kills. The AI fights back. Hard."*
+- **Rewards**: 35,000 XP, SAIN card
+- **Barter**: Random Scav Case (Intel)
+
+#### [MODS-14] QUEST: Hardcore Mode [Legendary]
+- **Card**: Realism Mod
+- **ID Seed**: `ttc_quest_card_mods_realismmod`
+- **Objectives**:
+  - [QE: HealthLoss] Lose 10,000 HP total
+  - [QE: FixFracture] Fix 10 fractures
+  - [QE: FixHeavyBleed] Fix 10 heavy bleeds
+  - [Vanilla: ExitStatus] Survive and extract 20 times
+- **Description**: *"Realism Mod. The mod that makes Tarkov brutally realistic — one bullet kills, realistic ballistics, and medical systems that punish every mistake. Ten thousand HP lost, ten fractures, ten heavy bleeds, twenty extractions. This is Tarkov on hard mode."*
+- **Rewards**: 35,000 XP, Realism Mod card
+- **Barter**: Random Scav Case (Intel)
+
+#### [MODS-15] QUEST: From Chazu [Secret]
+- **Card**: Tarkov Trading Cards
+- **ID Seed**: `ttc_quest_card_mods_ttc`
+- **Objectives**: None (auto-completable)
+- **Description**: *"Tarkov Trading Cards. Thank you for downloading this mod — it means the world to me. I love creating things for this community, and sharing them with you is the best part. I'm curious to hear your feedback on TTC and on Kolya — don't hesitate to share your thoughts! If you enjoyed the mod and want to see what else I've been working on, check out my profile 'Chazu' on The Forge. This card is free. Thank you for playing."*
+- **Rewards**: 60,000 XP, TTC card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [MODS-C] QUEST: Kolya's Mod Hall of Fame [Collection]
+- **ID Seed**: `ttc_quest_collection_mods_spt_legends`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 mod legend cards (one of each, not FIR)
+- **Description**: *"Every legendary mod documented, every creator honored. From SVM to TTC, the SPT modding community built something extraordinary. Hand over the cards and complete the Mod Hall of Fame."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: T H I C C Weapons Case
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | SVM | Common | Random Scav Case (2.5K) |
+| 2 | Audio Indicators | Uncommon | Random Scav Case (15K) |
+| 3 | Hideout Cat | Uncommon | Random Scav Case (15K) |
+| 4 | Dynamic Maps | Uncommon | Random Scav Case (15K) |
+| 5 | Amands Preset | Uncommon | Random Scav Case (15K) |
+| 6 | Pack 'n' Strap | Uncommon | Random Scav Case (15K) |
+| 7 | Weapon Customizer | Rare | Random Scav Case (95K) |
+| 8 | Valens Progression | Rare | Random Scav Case (95K) |
+| 9 | StatTrack | Rare | Random Scav Case (95K) |
+| 10 | ABPS | Rare | Random Scav Case (95K) |
+| 11 | Looting Bots | Epic | Random Scav Case (Moonshine) |
+| 12 | Questing Bots | Epic | Random Scav Case (Moonshine) |
+| 13 | SAIN | Legendary | Random Scav Case (Intel) |
+| 14 | Realism Mod | Legendary | Random Scav Case (Intel) |
+| 15 | Tarkov Trading Cards | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 mod cards | — | T H I C C Weapons Case |
+
+---
+
+*All 20 themes designed and documented.*
