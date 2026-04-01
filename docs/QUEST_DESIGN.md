@@ -4477,4 +4477,222 @@ Prefix: **[SEAS]** — Seasonal and event-themed objectives. Holiday kills, nigh
 
 ---
 
-*Remaining 2 themes to be designed...*
+## Theme: SPT vs EFT
+
+**15 cards** (2 Common, 4 Uncommon, 3 Rare, 3 Epic, 2 Legendary, 1 Secret)
+
+Prefix: **[SPFT]** — Meta SPT theme comparing the single-player experience to live EFT. Economy, crafting, hideout, traders, and appreciation for the modding community.
+
+### [SPFT-0] QUEST: The SPT Experience (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_spt_vs_eft`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 3 times
+  - [QE: SearchContainer] Search 10 containers
+- **Description**: *"SPT — Single Player Tarkov. No queue times, no cheaters, no desync. Just you, the bots, and a world you can shape however you want. Survive three raids and search ten containers. Welcome to the SPT experience."*
+- **Rewards**:
+  - 1× SPT vs EFT Binder
+  - 1,000 XP
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [SPFT-1] QUEST: Just Me [Common]
+- **Card**: Solo Peace
+- **ID Seed**: `ttc_quest_card_spft_solopeace`
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 5 times
+- **Description**: *"Solo Peace. No squads, no voice chat betrayals, no stream snipers. Just you and the zone. Survive five raids in perfect solitude. This is the peace that live Tarkov never gave you."*
+- **Rewards**: 1,000 XP, Solo Peace card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [SPFT-2] QUEST: Loot Paradise [Common]
+- **Card**: GPU Spawns Exist
+- **ID Seed**: `ttc_quest_card_spft_gpuspawns`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 1 graphics card
+  - [QE: SearchContainer] Search 30 containers
+- **Description**: *"GPU Spawns Exist. In SPT, GPUs actually spawn where they're supposed to. Hand over one GPU and search thirty containers. See? They do exist."*
+- **Rewards**: 1,000 XP, GPU Spawns Exist card
+- **Barter**: 1× Graphics card
+
+#### [SPFT-3] QUEST: No Rush [Uncommon]
+- **Card**: Offline Zen
+- **ID Seed**: `ttc_quest_card_spft_offlinezen`
+- **Objectives**:
+  - [QE: MoveDistance] Cover 5,000m on foot
+  - [QE: LootItem] Loot 30 items
+- **Description**: *"Offline Zen. No timer anxiety, no extract rush. Walk five kilometers and loot thirty items at your own pace. This is Tarkov without the stress."*
+- **Rewards**: 3,000 XP, Offline Zen card
+- **Barter**: Random Scav Case (15K)
+
+#### [SPFT-4] QUEST: Instant Action [Uncommon]
+- **Card**: Faster Queue Times
+- **ID Seed**: `ttc_quest_card_spft_fasterqueues`
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract 5 times
+  - [QE: EarnMoneyOnTransaction] Earn 300,000₽ from transactions
+- **Description**: *"Faster Queue Times. Zero seconds in queue. Every time. Survive five raids and earn three hundred thousand roubles. Time saved on loading is time spent looting."*
+- **Rewards**: 3,000 XP, Faster Queue Times card
+- **Barter**: Random Scav Case (15K)
+
+#### [SPFT-5] QUEST: Your Rules [Uncommon]
+- **Card**: Balancing Done Right
+- **ID Seed**: `ttc_quest_card_spft_balancingright`
+- **Objectives**:
+  - [QE: DamageWithAR] Deal 2,000 damage with assault rifles
+  - [QE: DamageWithShotguns] Deal 1,000 damage with shotguns
+- **Description**: *"Balancing Done Right. In SPT, you can tweak the balance to your liking. Two thousand AR damage and a thousand shotgun damage. Every weapon is viable when you set the rules."*
+- **Rewards**: 3,000 XP, Balancing Done Right card
+- **Barter**: Random Scav Case (15K)
+
+#### [SPFT-6] QUEST: Craft and Chill [Uncommon]
+- **Card**: Skip the Grind
+- **ID Seed**: `ttc_quest_card_spft_skipgrind`
+- **Objectives**:
+  - [QE: CraftAnyItem] Craft 10 items
+- **Description**: *"Skip the Grind. No more waiting days for a Bitcoin. No more grinding levels for flea market access. Craft ten items and enjoy the shortcut. SPT lets you skip the parts that aren't fun."*
+- **Rewards**: 3,000 XP, Skip the Grind card
+- **Barter**: Random Scav Case (15K)
+
+#### [SPFT-7] QUEST: Known Issues [Rare]
+- **Card**: Patch Day Salt
+- **ID Seed**: `ttc_quest_card_spft_patchdaysalt`
+- **Objectives**:
+  - [QE: HealthLoss] Lose 3,000 HP total
+  - [QE: DestroyBodyPart] Have 5 body parts destroyed
+  - [Vanilla: ExitStatus] Survive and extract 10 times
+- **Description**: *"Patch Day Salt. Every patch breaks something. In SPT, at least you can roll back. Three thousand HP lost, five body parts destroyed, and ten extractions. Survive the salt."*
+- **Rewards**: 10,000 XP, Patch Day Salt card
+- **Barter**: Random Scav Case (95K)
+
+#### [SPFT-8] QUEST: Best Trader [Rare]
+- **Card**: Custom Traders
+- **ID Seed**: `ttc_quest_card_spft_customtraders`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 500,000₽ in roubles
+- **Description**: *"Custom Traders. Kolya is the best trader in Tarkov — hand over half a million roubles to show your appreciation. Custom traders make SPT special."*
+- **Rewards**: 10,000 XP, Custom Traders card
+- **Barter**: Random Scav Case (95K)
+
+#### [SPFT-9] QUEST: The Better Way [Rare]
+- **Card**: The Tarkov We Deserve
+- **ID Seed**: `ttc_quest_card_spft_bettertarkov`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 PMCs
+  - [QE: KillsWhileADS] Get 15 kills while ADS
+  - [QE: EarnMoneyOnTransaction] Earn 1,000,000₽ from transactions
+- **Description**: *"The Tarkov We Deserve. Fair fights, no cheaters, no desync deaths. Twenty PMC kills, fifteen ADS kills, and a million roubles. This is the Tarkov experience as it should be."*
+- **Rewards**: 10,000 XP, The Tarkov We Deserve card
+- **Barter**: Random Scav Case (95K)
+
+#### [SPFT-10] QUEST: Expanded Base [Epic]
+- **Card**: Modded Hideout
+- **ID Seed**: `ttc_quest_card_spft_moddedhideout`
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Gym level 1 *(areaType: 23)*
+  - [Vanilla: HideoutArea] Have Gear Rack level 1 *(areaType: 26)*
+  - [QE: CraftAnyItem] Craft 20 items
+  - [QE: CraftCyclicItem] Craft 10 cyclic items
+- **Description**: *"Modded Hideout. The hideout has more rooms than BSG ever planned — you can even spot a cat wandering around and customize your posters with... whatever you want. Gym, gear rack, twenty crafts, ten cyclic crafts. Build the hideout that SPT made possible."*
+- **Rewards**: 20,000 XP, Modded Hideout card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [SPFT-11] QUEST: No Restrictions [Epic]
+- **Card**: Flea Freedom
+- **ID Seed**: `ttc_quest_card_spft_fleafreedom`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 5,000,000₽ from transactions
+  - [QE: SearchContainer] Search 100 containers
+  - [QE: LootItem] Loot 100 items
+- **Description**: *"Flea Freedom. No FIR restrictions, no level requirements, no arbitrary limits. Five million roubles, a hundred containers, a hundred items. The flea market as it should be — free."*
+- **Rewards**: 20,000 XP, Flea Freedom card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [SPFT-12] QUEST: Jackpot Rates [Epic]
+- **Card**: Loot Rate Multiplier
+- **ID Seed**: `ttc_quest_card_spft_lootmultiplier`
+- **Objectives**:
+  - [QE: SearchContainer] Search 150 containers
+  - [QE: LootItem] Loot 150 items
+  - [Vanilla: HandoverItem] Hand over 1 LEDX
+- **Description**: *"Loot Rate Multiplier. In SPT, the loot rates are whatever you want them to be. A hundred fifty containers, a hundred fifty items, and a LEDX. The multiplier is real."*
+- **Rewards**: 20,000 XP, Loot Rate Multiplier card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [SPFT-13] QUEST: Fresh Start [Legendary]
+- **Card**: Wipe When You Want
+- **ID Seed**: `ttc_quest_card_spft_customwipe`
+- **Objectives**:
+  - [Vanilla: TraderLoyalty] Have Prapor LL3
+  - [Vanilla: TraderLoyalty] Have Therapist LL3
+  - [Vanilla: TraderLoyalty] Have Skier LL3
+  - [Vanilla: TraderLoyalty] Have Peacekeeper LL3
+  - [Vanilla: TraderLoyalty] Have Mechanic LL3
+  - [Vanilla: TraderLoyalty] Have Ragman LL3
+  - [Vanilla: TraderLoyalty] Have Jaeger LL3
+  - [QE: EarnMoneyOnTransaction] Earn 10,000,000₽ from transactions
+- **Description**: *"Wipe When You Want. In SPT, you wipe on your schedule — not BSG's. All seven traders at LL3 and ten million roubles. You've earned the right to wipe when you choose."*
+- **Rewards**: 35,000 XP, Custom Wipe card
+- **Barter**: Random Scav Case (Intel)
+
+#### [SPFT-14] QUEST: Community Power [Legendary]
+- **Card**: Community Overlords
+- **ID Seed**: `ttc_quest_card_spft_overlords`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 PMCs
+  - [Vanilla: Kills] Eliminate 10 bosses *(savageRole: all boss roles)*
+  - [QE: CompleteWorkout] Complete 10 gym workouts
+- **Description**: *"Community Overlords. The SPT community built something BSG never intended — a thriving single-player ecosystem. Fifty PMC kills, ten boss kills, and ten gym sessions. The community is the real boss."*
+- **Rewards**: 35,000 XP, Community Overlords card
+- **Barter**: Random Scav Case (Intel)
+
+#### [SPFT-15] QUEST: A Message [Secret]
+- **Card**: Thanks, Devs
+- **ID Seed**: `ttc_quest_card_spft_thanksdevs`
+- **Objectives**: None (auto-completable)
+- **Description**: *"Thanks, Devs. This card isn't earned through kills or loot — it's earned by being here. Thank you for playing SPT, thank you for supporting this project, and thank you to every developer, modder, and community member who makes this possible. If you want to show your appreciation, join the SPT Discord and say thanks to the people who keep this dream alive. This card is free. You've already earned it."*
+- **Rewards**: 60,000 XP, Thanks Devs card
+- **Barter**: 3× Random Scav Case (Intel)
+
+---
+
+### Collection Quest
+
+#### [SPFT-C] QUEST: Kolya's SPT Manifest [Collection]
+- **ID Seed**: `ttc_quest_collection_spt_vs_eft`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 SPT vs EFT cards (one of each, not FIR)
+- **Description**: *"Every difference documented, every advantage celebrated. SPT isn't just a mod — it's a love letter to what Tarkov could be. Hand over the cards and complete the manifest. Thank you for playing."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: T H I C C Items Case
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Solo Peace | Common | Random Scav Case (2.5K) |
+| 2 | GPU Spawns Exist | Common | 1× GPU |
+| 3 | Offline Zen | Uncommon | Random Scav Case (15K) |
+| 4 | Faster Queue Times | Uncommon | Random Scav Case (15K) |
+| 5 | Balancing Done Right | Uncommon | Random Scav Case (15K) |
+| 6 | Skip the Grind | Uncommon | Random Scav Case (15K) |
+| 7 | Patch Day Salt | Rare | Random Scav Case (95K) |
+| 8 | Custom Traders | Rare | Random Scav Case (95K) |
+| 9 | The Tarkov We Deserve | Rare | Random Scav Case (95K) |
+| 10 | Modded Hideout | Epic | Random Scav Case (Moonshine) |
+| 11 | Flea Freedom | Epic | Random Scav Case (Moonshine) |
+| 12 | Loot Rate Multiplier | Epic | Random Scav Case (Moonshine) |
+| 13 | Wipe When You Want | Legendary | Random Scav Case (Intel) |
+| 14 | Community Overlords | Legendary | Random Scav Case (Intel) |
+| 15 | Thanks, Devs | Secret | 3× Random Scav Case (Intel) |
+| **Collection** | All 15 SPT cards | — | T H I C C Items Case |
+
+---
+
+*Remaining 1 theme to be designed...*

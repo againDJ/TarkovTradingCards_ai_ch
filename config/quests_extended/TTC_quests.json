@@ -2500,5 +2500,167 @@
         "ConditionType": "EarnMoneyOnTransaction"
       }
     ]
+  },
+  "d655f8c8ea0e375f0d036d65": {
+    "QuestId": "d655f8c8ea0e375f0d036d65",
+    "QuestName": "The SPT Experience",
+    "Conditions": [
+      {
+        "ConditionId": "bdac8af74bb8787e13c5e41e",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "1cc3a6170e1ffc0663beb7e9": {
+    "QuestId": "1cc3a6170e1ffc0663beb7e9",
+    "QuestName": "Loot Paradise",
+    "Conditions": [
+      {
+        "ConditionId": "31411d45203a5a0c09fcea88",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "7224b9292b28e9376476d537": {
+    "QuestId": "7224b9292b28e9376476d537",
+    "QuestName": "No Rush",
+    "Conditions": [
+      {
+        "ConditionId": "1ea9f9546ba7dc891316158c",
+        "ConditionType": "MoveDistance"
+      },
+      {
+        "ConditionId": "944f32fec1551fdcf0ba21d6",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "65c54e22f59193eaf352fcad": {
+    "QuestId": "65c54e22f59193eaf352fcad",
+    "QuestName": "Instant Action",
+    "Conditions": [
+      {
+        "ConditionId": "2a40c79bfa82237db72de6a2",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "29dba43271f6f9b7fbc655eb": {
+    "QuestId": "29dba43271f6f9b7fbc655eb",
+    "QuestName": "Your Rules",
+    "Conditions": [
+      {
+        "ConditionId": "46b7dace0a4e8e14b3301c7b",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "9c612cb1d56d6abd83a99d37",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "4ab8b1ffcff1debf3fa52a21": {
+    "QuestId": "4ab8b1ffcff1debf3fa52a21",
+    "QuestName": "Craft and Chill",
+    "Conditions": [
+      {
+        "ConditionId": "d3d3ed33c5c3a5eacb813781",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "1d707087f3eb396ad5e3b142": {
+    "QuestId": "1d707087f3eb396ad5e3b142",
+    "QuestName": "Known Issues",
+    "Conditions": [
+      {
+        "ConditionId": "ee052e478e7bea3ed81b01a6",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "ed039d6eb8b22dafce8c8bd2",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "a0f9fa6bfbc9aaea96c6d986": {
+    "QuestId": "a0f9fa6bfbc9aaea96c6d986",
+    "QuestName": "The Better Way",
+    "Conditions": [
+      {
+        "ConditionId": "2583b1d5b0b7804737320290",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "bc3212c0b044f566f55b92d8",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "79e245a9e82bbd92c7682534": {
+    "QuestId": "79e245a9e82bbd92c7682534",
+    "QuestName": "Expanded Base",
+    "Conditions": [
+      {
+        "ConditionId": "81c1ce1ff0e437d02a94286f",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "57aaf7403e6d1170a3d78187",
+        "ConditionType": "CraftCyclicItem"
+      }
+    ]
+  },
+  "9656d7b0de5aaf08f9601c9b": {
+    "QuestId": "9656d7b0de5aaf08f9601c9b",
+    "QuestName": "No Restrictions",
+    "Conditions": [
+      {
+        "ConditionId": "b40895648bf26613aa3a9500",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "0739bca2d5bea45a0987da19",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "8cf2a8e091e6765173c5c1a6",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "569e43c9465dc61f8c5e58be": {
+    "QuestId": "569e43c9465dc61f8c5e58be",
+    "QuestName": "Jackpot Rates",
+    "Conditions": [
+      {
+        "ConditionId": "c8f106b05fb41107e2b8c7a3",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "597c54412b3f8428c580101e",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "4c0adaac52aa78f26b184ca3": {
+    "QuestId": "4c0adaac52aa78f26b184ca3",
+    "QuestName": "Fresh Start",
+    "Conditions": [
+      {
+        "ConditionId": "091167d163cefe9368fc5ff8",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "7bacb0766b2cfc1b7f50a64b": {
+    "QuestId": "7bacb0766b2cfc1b7f50a64b",
+    "QuestName": "Community Power",
+    "Conditions": [
+      {
+        "ConditionId": "a0b656b697838dd47fafb5b8",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
   }
 }

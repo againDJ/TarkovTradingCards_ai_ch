@@ -185,6 +185,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(SecretArtifactsThemeDefinitions.GetAll());
 				allDefs.AddRange(PatchNotesParodiesThemeDefinitions.GetAll());
 				allDefs.AddRange(SeasonalEventsThemeDefinitions.GetAll());
+				allDefs.AddRange(SptVsEftThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 
