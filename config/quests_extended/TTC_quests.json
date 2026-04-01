@@ -2054,5 +2054,117 @@
         "ConditionType": "HealthGain"
       }
     ]
+  },
+  "b8219002ee9c01b83ab6c791": {
+    "QuestId": "b8219002ee9c01b83ab6c791",
+    "QuestName": "The Artifact Hunter",
+    "Conditions": [
+      {
+        "ConditionId": "9726d8bf197d81acd4d306a4",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "dfd5beda2b16e28ed2c5ec8f",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "eead44334761425e18d84bf5": {
+    "QuestId": "eead44334761425e18d84bf5",
+    "QuestName": "Old Currency",
+    "Conditions": [
+      {
+        "ConditionId": "1359fa7b651b7339e7b303fa",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "0fa13f56b973d89e8a2fce94": {
+    "QuestId": "0fa13f56b973d89e8a2fce94",
+    "QuestName": "Written in Blood",
+    "Conditions": [
+      {
+        "ConditionId": "60d7dc8340081574c2ce05a6",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "877fb1d22a42fed333651e81": {
+    "QuestId": "877fb1d22a42fed333651e81",
+    "QuestName": "Lost Signal",
+    "Conditions": [
+      {
+        "ConditionId": "630298bd50b21094ee474f25",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "560d71ac5e078fdc4715f3e3": {
+    "QuestId": "560d71ac5e078fdc4715f3e3",
+    "QuestName": "Night Ritual",
+    "Conditions": [
+      {
+        "ConditionId": "d33d9bd07cf2ee97ebfa8cec",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "9c5cd079fea558446c16f20c": {
+    "QuestId": "9c5cd079fea558446c16f20c",
+    "QuestName": "Signal Sweep",
+    "Conditions": [
+      {
+        "ConditionId": "330ffdddd2762813ed44f779",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "1c53641a040d19b111b86df7",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "897bd3a798b692a34dbfb2a3": {
+    "QuestId": "897bd3a798b692a34dbfb2a3",
+    "QuestName": "Dark Offering",
+    "Conditions": [
+      {
+        "ConditionId": "27b3dcee15ea0a1c1b93b780",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "105b9e36e7c4bc3bec0d484b": {
+    "QuestId": "105b9e36e7c4bc3bec0d484b",
+    "QuestName": "The Black Key",
+    "Conditions": [
+      {
+        "ConditionId": "837fdba59be8638950e0bf49",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "80d5617ef52f1bb38af8e15e": {
+    "QuestId": "80d5617ef52f1bb38af8e15e",
+    "QuestName": "Encrypted Data",
+    "Conditions": [
+      {
+        "ConditionId": "2b93f18c57340de8b5628041",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "634e81dac41b9ec6293a39e8",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "e10ddd0ea289505f512c2ea5": {
+    "QuestId": "e10ddd0ea289505f512c2ea5",
+    "QuestName": "The Prototype",
+    "Conditions": [
+      {
+        "ConditionId": "858e6b7d2563ae47d517ffd1",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
   }
 }

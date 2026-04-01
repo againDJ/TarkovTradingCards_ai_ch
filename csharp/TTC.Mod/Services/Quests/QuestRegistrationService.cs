@@ -54,6 +54,7 @@ public sealed class QuestRegistrationService
 		RegisterThemeQuests(StreamerMomentsThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(LegendsOfTheWipeThemeDefinitions.GetAll(), ref created, ref failed);
 		RegisterThemeQuests(BuggedRealityThemeDefinitions.GetAll(), ref created, ref failed);
+		RegisterThemeQuests(SecretArtifactsThemeDefinitions.GetAll(), ref created, ref failed);
 
 		return (created, failed);
 	}

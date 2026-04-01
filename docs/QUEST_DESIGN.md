@@ -3810,4 +3810,234 @@ Prefix: **[BUGD]** — Glitch-themed objectives inspired by infamous Tarkov bugs
 
 ---
 
-*Remaining 5 themes to be designed...*
+## Theme: Secret Artifacts
+
+**15 cards** (0 Common, 2 Uncommon, 6 Rare, 2 Epic, 3 Legendary, 2 Secret)
+
+Prefix: **[ARTF]** — Exploration, mystery, and rare item hunts. VisitPlace, ExitName, HandoverItem rare items, Labs survival, and boss kills. Higher difficulty = higher rewards.
+
+### [ARTF-0] QUEST: The Artifact Hunter (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_secret_artifacts`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: SearchContainer] Search 20 containers
+  - [QE: MoveDistance] Cover 3,000m on foot
+- **Description**: *"Tarkov hides secrets in every corner. Ancient coins, encrypted drives, classified blueprints — artifacts that tell the real story of what happened here. Search twenty containers and walk three kilometers. The artifact hunter's journey begins."*
+- **Rewards**:
+  - 1× Secret Artifacts Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Uncommon → Secret)
+
+#### [ARTF-1] QUEST: Old Currency [Uncommon]
+- **Card**: Old World Coin 'Tsar's Rouble'
+- **ID Seed**: `ttc_quest_card_artf_tsarsrouble`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 jewelry items *(parent class: Jewelry)*
+  - [QE: EarnMoneyOnTransaction] Earn 200,000₽ from transactions
+- **Description**: *"Old World Coin. A Tsar's Rouble from another era — worth more as a collectible than as currency. Hand over five pieces of jewelry and earn two hundred thousand roubles. The old world pays."*
+- **Rewards**: 3,000 XP, Old World Coin card
+- **Barter**: 1× Roler Submariner gold watch
+
+#### [ARTF-2] QUEST: Rogue Intel [Uncommon]
+- **Card**: Rogue Commander Dog Tag 'Zero-Three'
+- **ID Seed**: `ttc_quest_card_artf_zerothreetag`
+- **Location**: Lighthouse
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 rogues on Lighthouse *(KillTarget: "Savage", savageRole: ["exUsec"], location: Lighthouse)*
+  - [Vanilla: ExitStatus] Survive and extract from Lighthouse 3 times
+- **Description**: *"Rogue Commander Dog Tag. The tag reads 'Zero-Three' — a rogue commander who went dark. Ten rogues eliminated on Lighthouse and three extractions. Find out who Zero-Three was."*
+- **Rewards**: 3,000 XP, Rogue Commander Dog Tag card
+- **Barter**: 1× Dogtag case
+
+#### [ARTF-3] QUEST: Classified Access [Rare]
+- **Card**: Blueprint: TerraGroup Labs Level 3
+- **ID Seed**: `ttc_quest_card_artf_labsblueprint`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: VisitPlace] Scout the control room in Labs *(zone: Control_room)*
+  - [Vanilla: VisitPlace] Scout the server room in Labs *(zone: Server_room)*
+  - [Vanilla: VisitPlace] Scout the hazard dome in Labs *(zone: Dome)*
+  - [Vanilla: ExitStatus] Survive and extract from Labs 3 times
+- **Description**: *"Blueprint: TerraGroup Labs Level 3. Classified. Eyes only. Scout the control room, server room, and hazard dome — then get out alive three times. The blueprint reveals what TerraGroup built below."*
+- **Rewards**: 10,000 XP, Blueprint Labs L3 card
+- **Barter**: 3× TerraGroup Labs access keycard
+
+#### [ARTF-4] QUEST: Bunker Network [Rare]
+- **Card**: Encrypted Bunker Map ZB-013
+- **ID Seed**: `ttc_quest_card_artf_bunkermap`
+- **Objectives**:
+  - [Vanilla: ExitName] Extract via ZB-1011 on Customs *(exit: ZB-1011, map: bigmap)*
+  - [Vanilla: ExitName] Extract via D-2 on Reserve *(exit: EXFIL_Bunker_D2, map: RezervBase)*
+  - [Vanilla: ExitStatus] Survive and extract 5 times
+- **Description**: *"Encrypted Bunker Map. The underground network connects Customs to Reserve — ZB-1011 to D-2. Extract through both bunkers and survive five raids. The map reveals the tunnels beneath Tarkov."*
+- **Rewards**: 10,000 XP, Encrypted Bunker Map card
+- **Barter**: 1× Lucky Scav Junk Box
+
+#### [ARTF-5] QUEST: Written in Blood [Rare]
+- **Card**: Mysterious Blood-Stained Letter
+- **ID Seed**: `ttc_quest_card_artf_bloodletter`
+- **Objectives**:
+  - [Vanilla: VisitPlace] Locate dorm room 214 on Customs *(zone: room214)*
+  - [Vanilla: VisitPlace] Locate Sanitar's office in the Resort *(zone: place_meh_sanitar_room)*
+  - [QE: SearchContainer] Search 60 containers
+- **Description**: *"Blood-Stained Letter. Found in dorm room 214, addressed to someone in Sanitar's office. Visit both locations and search sixty containers. The letter tells a story no one was meant to read."*
+- **Rewards**: 10,000 XP, Blood-Stained Letter card
+- **Barter**: 1× Intelligence folder
+
+#### [ARTF-6] QUEST: Lost Signal [Rare]
+- **Card**: Strange Signal Amplifier
+- **ID Seed**: `ttc_quest_card_artf_signalamplifier`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 10 electronic components *(parent class: Electronics)*
+  - [QE: CraftAnyItem] Craft 10 items
+- **Description**: *"Strange Signal Amplifier. It picks up a frequency no one can identify. Hand over ten electronic components and craft ten items. Maybe Kolya can decode the signal."*
+- **Rewards**: 10,000 XP, Signal Amplifier card
+- **Barter**: 1× Graphics card
+
+#### [ARTF-7] QUEST: Night Ritual [Rare]
+- **Card**: Cultist Relic Mask
+- **ID Seed**: `ttc_quest_card_artf_relicmask`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets at night *(KillTarget: "Any", KillDaytimeFrom: 22, KillDaytimeTo: 6)*
+  - [QE: KillsWhileSilent] Get 10 kills while silent
+- **Description**: *"Cultist Relic Mask. Worn during the night rituals — stained with something that isn't paint. Ten night kills and ten silent kills. Walk the path of the cultists."*
+- **Rewards**: 10,000 XP, Cultist Relic Mask card
+- **Barter**: 1× Sacred Amulet
+
+#### [ARTF-8] QUEST: Signal Sweep [Rare]
+- **Card**: Classified UHF Scanner
+- **ID Seed**: `ttc_quest_card_artf_uhfscanner`
+- **Objectives**:
+  - [QE: SearchContainer] Search 100 containers
+  - [QE: LootItem] Loot 80 items
+- **Description**: *"Classified UHF Scanner. Sweeps every frequency, finds every signal. A hundred containers searched and eighty items looted. The scanner reveals what's hidden."*
+- **Rewards**: 10,000 XP, Classified UHF Scanner card
+- **Barter**: 1× FLIR RS-32 thermal riflescope
+
+#### [ARTF-9] QUEST: Dark Offering [Epic]
+- **Card**: Cultist Relic 'Obelisk Shard'
+- **ID Seed**: `ttc_quest_card_artf_obeliskshard`
+- **Objectives**:
+  - [QE: CollectCultistOffering] Collect 5 Cultist Offerings
+  - [Vanilla: Kills] Eliminate 15 PMCs at night *(KillTarget: "AnyPmc", KillDaytimeFrom: 22, KillDaytimeTo: 6)*
+- **Description**: *"Obelisk Shard. A fragment of the cultist obelisk — pulsing with something that isn't electricity. Five cultist offerings collected and fifteen PMCs eliminated at night. The obelisk demands blood."*
+- **Rewards**: 20,000 XP, Obelisk Shard card
+- **Barter**: 5× Moonshine
+
+#### [ARTF-10] QUEST: Lab Rat's Notes [Epic]
+- **Card**: Labs Blueprint Fragment
+- **ID Seed**: `ttc_quest_card_artf_labsfragment`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 targets on Labs *(KillTarget: "Any", location: laboratory)*
+  - [Vanilla: HandoverItem] Hand over 3 intelligence folders
+- **Description**: *"Labs Blueprint Fragment. A torn piece of a larger document — coordinates, chemical formulas, and a name that's been redacted. Twenty kills on Labs and three intel folders. Piece together the truth."*
+- **Rewards**: 20,000 XP, Labs Blueprint Fragment card
+- **Barter**: 1× Injector case
+
+#### [ARTF-11] QUEST: The Black Key [Legendary]
+- **Card**: TerraGroup Black Key
+- **ID Seed**: `ttc_quest_card_artf_blackkey`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Labs 10 times
+  - [QE: SearchContainer] Search 150 containers
+  - [Vanilla: HandoverItem] Hand over 5 keys *(parent class: KeyMechanical)*
+- **Description**: *"TerraGroup Black Key. Opens a door that doesn't officially exist. Survive Labs ten times, search a hundred fifty containers, and hand over five keys. The Black Key unlocks the truth."*
+- **Rewards**: 35,000 XP, TerraGroup Black Key card
+- **Barter**: 1× Keycard holder + 5× TerraGroup Labs access keycard
+
+#### [ARTF-12] QUEST: Encrypted Data [Legendary]
+- **Card**: Encrypted Red Drive
+- **ID Seed**: `ttc_quest_card_artf_reddrive`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 5 secure flash drives
+  - [QE: EarnMoneyOnTransaction] Earn 10,000,000₽ from transactions
+  - [QE: CompleteWorkout] Complete 10 gym workouts
+- **Description**: *"Encrypted Red Drive. Military-grade encryption, TerraGroup markings, and data that could end careers. Five flash drives, ten million roubles, and ten gym sessions. The drive holds the key to everything."*
+- **Rewards**: 35,000 XP, Encrypted Red Drive card
+- **Barter**: 5× Physical Bitcoin
+
+#### [ARTF-13] QUEST: The Ledger [Legendary]
+- **Card**: Lightkeeper's Sealed Ledger
+- **ID Seed**: `ttc_quest_card_artf_lightkeeperledger`
+- **Location**: Lighthouse
+- **Objectives**:
+  - [Vanilla: VisitPlace] Visit the Lighthouse building *(zone: meh_50_visit_area_check_1)*
+  - [Vanilla: VisitPlace] Locate the radar station commandant's office *(zone: qlight_extension_bariga1_exploration1)*
+  - [Vanilla: VisitPlace] Locate the hidden recording studio *(zone: qlight_extension_mechanik1_exploration1)*
+  - [Vanilla: VisitPlace] Locate the hidden drug lab *(zone: qlight_extension_medic1_exploration1)*
+  - [Vanilla: HandoverItem] Hand over 2,000,000₽ in roubles
+  - [Vanilla: ExitStatus] Survive and extract from Lighthouse 8 times
+- **Description**: *"Lightkeeper's Sealed Ledger. The Lightkeeper's personal accounts — every transaction, every deal, every secret. Visit four Lighthouse locations, hand over two million roubles, and survive eight raids. The ledger reveals everything."*
+- **Rewards**: 35,000 XP, Lightkeeper's Sealed Ledger card
+- **Barter**: 2× Weapon case
+
+#### [ARTF-14] QUEST: The Prototype [Secret]
+- **Card**: Kappa Container Mock-up
+- **ID Seed**: `ttc_quest_card_artf_kappamockup`
+- **Objectives**:
+  - [Vanilla: HandoverItem] Hand over 3 graphics cards
+  - [Vanilla: HandoverItem] Hand over 3 LEDX Skin Transilluminators
+  - [Vanilla: HandoverItem] Hand over 3 intelligence folders
+  - [QE: EarnMoneyOnTransaction] Earn 15,000,000₽ from transactions
+- **Description**: *"Kappa Container Mock-up. A prototype of the legendary Kappa — unfinished, imperfect, but real. Three GPUs, three LEDXs, three intel folders, and fifteen million roubles. The prototype demands sacrifice."*
+- **Rewards**: 60,000 XP, Kappa Container Mock-up card
+- **Barter**: 1,000,000₽ + 10,000$ + 10,000€
+
+#### [ARTF-15] QUEST: The Red Protocol [Secret]
+- **Card**: Red Keycard Prototype
+- **ID Seed**: `ttc_quest_card_artf_redprototype`
+- **Location**: Laboratory
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Labs 15 times
+  - [Vanilla: Kills] Eliminate 50 targets on Labs *(KillTarget: "Any", location: laboratory)*
+  - [Vanilla: Kills] Eliminate 10 bosses *(KillTarget: "Savage", savageRole: all boss roles)*
+- **Description**: *"Red Keycard Prototype. The original. Before the copies, before the duplicates — this is the one that opened the first door. Survive Labs fifteen times, fifty kills on Labs, and ten boss kills. The Red Protocol is complete."*
+- **Rewards**: 60,000 XP, Red Keycard Prototype card
+- **Barter**: TerraGroup Labs keycard (Red)
+
+---
+
+### Collection Quest
+
+#### [ARTF-C] QUEST: Kolya's Vault of Secrets [Collection]
+- **ID Seed**: `ttc_quest_collection_secret_artifacts`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 artifact cards (one of each, not FIR)
+- **Description**: *"Every artifact recovered, every secret uncovered. From the Tsar's Rouble to the Red Keycard Prototype, you've assembled the most dangerous collection in Tarkov. Hand over the cards and seal the vault."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: Red keycard + 5× Bitcoin + Keycard holder + 5× Labs keycard + 2× Weapon case + Injector case + 5× Moonshine + FLIR thermal scope + Sacred Amulet + GPU + Intel folder + Lucky Scav Junk Box + Dogtag case + 3× Labs keycard + Roler + 1M₽ + 10K$ + 10K€
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Tsar's Rouble | Uncommon | 1× Roler gold watch |
+| 2 | Dog Tag Zero-Three | Uncommon | 1× Dogtag case |
+| 3 | Labs L3 Blueprint | Rare | 3× Labs access keycard |
+| 4 | Encrypted Bunker Map | Rare | 1× Lucky Scav Junk Box |
+| 5 | Blood-Stained Letter | Rare | 1× Intel folder |
+| 6 | Signal Amplifier | Rare | 1× GPU |
+| 7 | Cultist Relic Mask | Rare | 1× Sacred Amulet |
+| 8 | UHF Scanner | Rare | 1× FLIR thermal scope |
+| 9 | Obelisk Shard | Epic | 5× Moonshine |
+| 10 | Labs Fragment | Epic | 1× Injector case |
+| 11 | TerraGroup Black Key | Legendary | Keycard holder + 5× Labs keycard |
+| 12 | Encrypted Red Drive | Legendary | 5× Bitcoin |
+| 13 | Lightkeeper's Ledger | Legendary | 2× Weapon case |
+| 14 | Kappa Mock-up | Secret | 1M₽ + 10K$ + 10K€ |
+| 15 | Red Keycard Prototype | Secret | Red keycard |
+| **Collection** | All 15 artifact cards | — | All above combined (high to low) |
+
+---
+
+*Remaining 4 themes to be designed...*
