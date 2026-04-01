@@ -43,9 +43,20 @@ public static class ScavLifeThemeDefinitions
 	private const string MarkedAbandonedFactory = "63a3a93f8a56922e82001f5d";
 	private const string MarkedMysteriousRoom = "64ccc25f95763a1ae376e447";
 
-	// Reward display item
+	// Reward items
 	private const string Ifak = "590c678286f77426c9660122";
 	private const string ItemCase = "59fb042886f7746c5005a7b2";
+	private const string MultiTool = "544fb5454bdc2df8738b456a";
+	private const string Shemagh = "5ab8f85d86f7745cd93a1cf5";
+	private const string RoundGlasses = "67af42b38d9ef5c57e0d5126";
+	private const string Tushonka = "57347d7224597744596b4e72";
+	private const string ScavBackpack = "56e335e4d2720b6c058b456d";
+	private const string Roubles = "5449016a4bdc2d6f028b456f";
+	private const string Vodka = "5d40407c86f774318526545a";
+	private const string Propital = "5c0e530286f7747fa1419862";
+	private const string CarMedkit = "590c661e86f7741e566b646a";
+	private const string GSShO1 = "5b432b965acfc47a8774094e";
+	private const string Moonshine = "5d1b376e86f774252519444e";
 
 	/// <summary>Small magazine IDs (≤10 rounds) for Last Bullet Hero quest.</summary>
 	internal static List<List<string>> SmallMagazines { get; private set; } = new();
@@ -119,8 +130,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardScrews,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = MultiTool } }
 				}
 			},
 
@@ -146,8 +156,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardTracksuit,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = Shemagh }, new() { TemplateId = RoundGlasses } }
 				}
 			},
 
@@ -173,8 +182,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardTushonka,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = Tushonka, Count = 3 } }
 				}
 			},
 
@@ -200,8 +208,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDuffleBag,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = ScavBackpack } }
 				}
 			},
 
@@ -313,8 +320,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardFleaMarket,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Roubles, Count = 50000 } }
 				}
 			},
 
@@ -340,8 +346,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardGunshots,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = GSShO1 } }
 				}
 			},
 
@@ -372,8 +377,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardVodka,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Vodka, Count = 3 }, new() { TemplateId = Propital } }
 				}
 			},
 
@@ -404,8 +408,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardCarExtract,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = CarMedkit, Count = 3 } }
 				}
 			},
 
@@ -458,8 +461,7 @@ public static class ScavLifeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardBossCousin,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = Moonshine } }
 				}
 			},
 

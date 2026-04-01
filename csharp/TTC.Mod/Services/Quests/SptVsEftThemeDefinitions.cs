@@ -33,6 +33,8 @@ public static class SptVsEftThemeDefinitions
 	private const string GpuItem = "57347ca924597744596b4e71";
 	private const string LedxItem = "5c0530ee86f774697952d952";
 	private const string Roubles = "5449016a4bdc2d6f028b456f";
+	private const string ToolSet = "590c2e1186f77425357b6124";
+	private const string Screwdriver = "590c2d8786f774245b1f03f3";
 	private const string ThiccItemCase = "5c0a840b86f7742ffa4f2482";
 
 	// Parent class IDs
@@ -230,8 +232,7 @@ public static class SptVsEftThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardSkipGrind,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = ToolSet }, new() { TemplateId = Screwdriver } }
 				}
 			},
 

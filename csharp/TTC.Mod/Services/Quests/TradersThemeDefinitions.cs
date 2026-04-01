@@ -36,6 +36,7 @@ public static class TradersThemeDefinitions
 	private const string ItemCase = "59fb042886f7746c5005a7b2";
 	private const string WeaponCase = "59fb023c86f7746d0d4b423c";
 	private const string InjectorCase = "619cbf7d23893217ec30b689";
+	private const string Propital = "5c0e530286f7747fa1419862";
 	private const string WaterBottle = "5448fee04bdc2dbc018b4567";
 
 	// Trader IDs
@@ -46,6 +47,7 @@ public static class TradersThemeDefinitions
 	private const string TraderRagman = "5ac3b934156ae10c4430e83c";
 	private const string TraderPrapor = "54cb50c76803fa8b248b4571";
 	private const string Roubles = "5449016a4bdc2d6f028b456f";
+	private const string SlickCarrier = "5e4abb5086f77406975c9342";
 
 	// Map IDs
 	private const string MapCustoms = "56f40101d2720b2a4d8b45d6";
@@ -163,8 +165,7 @@ public static class TradersThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardJaegerHuntsman,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Aquamari } }
 				}
 			},
 
@@ -342,8 +343,7 @@ public static class TradersThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardSkierChemical,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Propital, Count = 3 } }
 				}
 			},
 
@@ -369,8 +369,7 @@ public static class TradersThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardSkierGolden,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Roubles, Count = 200000 } }
 				}
 			},
 
@@ -435,8 +434,20 @@ public static class TradersThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardRagmanStylish,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new()
+					{
+						new()
+						{
+							TemplateId = SlickCarrier,
+							Parts = new()
+							{
+								new() { TemplateId = "656fa76500d62bcd2e024080", SlotId = "Front_plate" },
+								new() { TemplateId = "656fa76500d62bcd2e024080", SlotId = "Back_plate" },
+								new() { TemplateId = "6575e71760703324250610c3", SlotId = "Soft_armor_front" },
+								new() { TemplateId = "6575e72660703324250610c7", SlotId = "Soft_armor_back" }
+							}
+						}
+					}
 				}
 			},
 

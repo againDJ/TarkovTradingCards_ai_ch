@@ -35,6 +35,9 @@ public static class CommunityMemesThemeDefinitions
 	private const string IntelFolderItem = "5c12613b86f7743bbe2c3f76";
 	private const string GpuItem = "57347ca924597744596b4e71";
 	private const string GammaUnheard = "665ee77ccf2d642e98220bca";
+	private const string FlashDrive = "590c621186f774138d11ea29";
+	private const string Flechette12ga = "5d6e6911a4b9361bd5780d52";
+	private const string TrizipBackpack = "66b5f22b78bbc0200425f904";
 
 	// Parent class IDs
 	private const string ClassFood = "5448e8d04bdc2ddf718b4569";
@@ -169,8 +172,7 @@ public static class CommunityMemesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardFactoryFriday,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = Flechette12ga, Count = 30 } }
 				}
 			},
 
@@ -197,8 +199,7 @@ public static class CommunityMemesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardReserve,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = TrizipBackpack } }
 				}
 			},
 
@@ -305,8 +306,7 @@ public static class CommunityMemesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardQuestItem,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = FlashDrive, Count = 3 } }
 				}
 			},
 
@@ -333,8 +333,9 @@ public static class CommunityMemesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardStairs,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Ifak, DisplayName = "Random Keys" } },
+					RandomReward = RandomRewardType.RandomKeys,
+					RandomRewardCount = 5
 				}
 			},
 
@@ -388,8 +389,7 @@ public static class CommunityMemesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardRubleSink,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = Roubles, Count = 200000 } }
 				}
 			},
 
@@ -414,8 +414,8 @@ public static class CommunityMemesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardMarkedRitual,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = Ifak, DisplayName = "Cultist Circle" } },
+					RandomReward = RandomRewardType.CultistCircle
 				}
 			},
 

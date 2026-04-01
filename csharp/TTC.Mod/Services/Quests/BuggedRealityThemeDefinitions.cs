@@ -36,6 +36,19 @@ public static class BuggedRealityThemeDefinitions
 	private const string Surv12 = "5d02797c86f774203f38e30a";
 	private const string Mule = "5ed51652f6c34d2cc26336a1";
 	private const string Propital = "5c0e530286f7747fa1419862";
+	private const string VuduScope = "5b3b99475acfc432ff4dcbee";
+	private const string ComTac2 = "5645bcc04bdc2d363b8b4572";
+	private const string OpsCorRAC = "5a16b9fffcdbcb0176308b34";
+	private const string SordinSupreme = "5aa2ba71e5b5b000137b758f";
+	private const string GSShO1 = "5b432b965acfc47a8774094e";
+	private const string TacticalSport = "5c165d832e2216398b5a7e36";
+	private const string WalkersRazor = "5e4d34ca86f774264f758330";
+	private const string WalkersXCEL = "5f60cd6cf2bcbb675b00dac6";
+	private const string EarmorM32 = "6033fa48ffd42c541047f728";
+	private const string ComTac4 = "628e4e576d783146b124c64d";
+	private const string Liberator = "66b5f68de98be930d701c00e";
+	private const string ComTac5 = "66b5f693acff495a294927e3";
+	private const string ComTac6 = "66b5f6985891c84aab75ca76";
 
 	public static List<QuestDefinition> GetAll()
 	{
@@ -245,8 +258,7 @@ public static class BuggedRealityThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardAdsLock,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = VuduScope } }
 				}
 			},
 
@@ -396,8 +408,21 @@ public static class BuggedRealityThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardSilentSteps,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new()
+					{
+						new() { TemplateId = ComTac2 },
+						new() { TemplateId = OpsCorRAC },
+						new() { TemplateId = SordinSupreme },
+						new() { TemplateId = GSShO1 },
+						new() { TemplateId = TacticalSport },
+						new() { TemplateId = WalkersRazor },
+						new() { TemplateId = WalkersXCEL },
+						new() { TemplateId = EarmorM32 },
+						new() { TemplateId = ComTac4 },
+						new() { TemplateId = Liberator },
+						new() { TemplateId = ComTac5 },
+						new() { TemplateId = ComTac6 }
+					}
 				}
 			},
 

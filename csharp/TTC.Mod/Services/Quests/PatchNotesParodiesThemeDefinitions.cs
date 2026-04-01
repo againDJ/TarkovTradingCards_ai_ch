@@ -29,6 +29,7 @@ public static class PatchNotesParodiesThemeDefinitions
 
 	// Reward IDs (verified from SPT DB)
 	private const string Ifak = "590c678286f77426c9660122";
+	private const string CalokB = "5e8488fa988a8701445df1e4";
 	private const string PeltorComtacIV = "628e4e576d783146b124c64d";
 	private const string Mule = "5ed51652f6c34d2cc26336a1";
 	private const string Bitcoin = "59faff1d86f7746c51718c9c";
@@ -36,6 +37,12 @@ public static class PatchNotesParodiesThemeDefinitions
 	private const string Dollars = "5696686a4bdc2da3298b456a";
 	private const string Euros = "569668774bdc2da2298b4568";
 	private const string ShturmanKey = "5d08d21286f774736e7c94c3";
+	private const string ZaryaFlashbang = "5a0c27731526d80618476ac4";
+	private const string SmokeGrenade = "5a2a57cfc4a2826c6e06d44a";
+	private const string Klesch2U = "5b3a337e5acfc4704b4a19a0";
+	private const string XHP35 = "59d790f486f77403cb06aec6";
+	private const string Zenit2DS = "646f62fee779812413011ab7";
+	private const string AP20Slug = "5d6e68a8a4b9360b6c0d54e2";
 
 	// Map IDs
 	private const string MapFactory = "55f2d3fd4bdc2d5f408b4567";
@@ -173,8 +180,7 @@ public static class PatchNotesParodiesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDoorBreach,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = ZaryaFlashbang, Count = 2 }, new() { TemplateId = SmokeGrenade, Count = 2 } }
 				}
 			},
 
@@ -200,8 +206,7 @@ public static class PatchNotesParodiesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardTherapistRestock,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Ifak }, new() { TemplateId = CalokB } }
 				}
 			},
 
@@ -281,8 +286,7 @@ public static class PatchNotesParodiesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardFlashlightFix,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Klesch2U }, new() { TemplateId = XHP35 }, new() { TemplateId = Zenit2DS } }
 				}
 			},
 
@@ -412,8 +416,7 @@ public static class PatchNotesParodiesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardRecoilRework,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Intel" } },
-					RandomReward = RandomRewardType.ScavCaseIntel
+					Items = new() { new() { TemplateId = AP20Slug, Count = 120 } }
 				}
 			},
 

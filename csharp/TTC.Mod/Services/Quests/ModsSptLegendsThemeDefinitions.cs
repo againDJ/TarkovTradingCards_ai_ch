@@ -30,6 +30,9 @@ public static class ModsSptLegendsThemeDefinitions
 	// Reward IDs (verified)
 	private const string Ifak = "590c678286f77426c9660122";
 	private const string ThiccWeaponCase = "5b6d9ce188a4501afc1b2b25";
+	private const string ComTac4 = "628e4e576d783146b124c64d";
+	private const string CondensedMilk = "5734773724597737fd047c14";
+	private const string Compass = "5f4f9eb969cdc30ff33f09db";
 
 	// Parent class IDs
 	private const string ClassElectronics = "57864a66245977548f04a81f";
@@ -121,8 +124,7 @@ public static class ModsSptLegendsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardAudioIndicators,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = ComTac4 } }
 				}
 			},
 
@@ -148,8 +150,7 @@ public static class ModsSptLegendsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardHideoutCat,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = CondensedMilk, Count = 3 } }
 				}
 			},
 
@@ -176,8 +177,7 @@ public static class ModsSptLegendsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDynamicMaps,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Compass } }
 				}
 			},
 

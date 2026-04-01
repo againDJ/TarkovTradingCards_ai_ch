@@ -31,6 +31,9 @@ public static class LegendsOfTheWipeThemeDefinitions
 	private const string Ifak = "590c678286f77426c9660122";
 	private const string Roubles = "5449016a4bdc2d6f028b456f";
 	private const string FnFiveSevenTpl = "5d3eb3b0a4b93615055e84d2";
+	private const string LabsKeycard = "5c94bbff86f7747ee735c08f";
+	private const string Ammo545BT = "56dff061d2720bb5668b4567";
+	private const string PACArmor = "5648a7494bdc2d9d488b4583";
 
 	// All dogtag template IDs (verified from SPT DB — 14 total: 7 BEAR + 7 USEC)
 	private static readonly List<string> AllDogtagIds = new()
@@ -238,8 +241,7 @@ public static class LegendsOfTheWipeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardMetaShift,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Ammo545BT, Count = 60 } }
 				}
 			},
 
@@ -295,8 +297,20 @@ public static class LegendsOfTheWipeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDaySevenChads,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new()
+					{
+						new()
+						{
+							TemplateId = PACArmor,
+							Parts = new()
+							{
+								new() { TemplateId = "65703d866584602f7d057a8a", SlotId = "Soft_armor_front" },
+								new() { TemplateId = "65703fa06584602f7d057a8e", SlotId = "Soft_armor_back" },
+								new() { TemplateId = "65703fe46a912c8b5c03468b", SlotId = "Soft_armor_left" },
+								new() { TemplateId = "657040374e67e8ec7a0d261c", SlotId = "soft_armor_right" }
+							}
+						}
+					}
 				}
 			},
 
@@ -322,8 +336,7 @@ public static class LegendsOfTheWipeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardFleaHustler,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Roubles, Count = 100000 } }
 				}
 			},
 
@@ -385,8 +398,7 @@ public static class LegendsOfTheWipeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardBossFirstKill,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = LabsKeycard } }
 				}
 			},
 
@@ -413,8 +425,7 @@ public static class LegendsOfTheWipeThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardFirstLabs,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = LabsKeycard } }
 				}
 			},
 

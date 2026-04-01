@@ -34,6 +34,16 @@ public static class PlayerArchetypesThemeDefinitions
 	private const string Salewa = "544fb45d4bdc2dee738b4568";
 	private const string SiccCase = "5d235bb686f77443f4331278";
 	private const string T7Thermal = "5c110624d174af029e69734c";
+	private const string Ammo545BT = "56dff061d2720bb5668b4567";
+	private const string Ammo556M855A1 = "54527ac44bdc2d36668b4567";
+	private const string ComTac2 = "5645bcc04bdc2d363b8b4572";
+	private const string LuckyScavJunkbox = "5b7c710788a4506dec015957";
+
+	// Weapon & ammo items
+	private const string Ak6L31Mag = "55d482194bdc2d1d4e8b456b";
+	private const string VSSVintorez = "57838ad32459774a17445cd2";
+	private const string VSSMag20 = "57838f9f2459774a150289a0";
+	private const string AmmoSP6 = "57a0e5022459774d1673f889";
 
 	// Map plan items
 	private const string MapFactory = "574eb85c245977648157eec3";
@@ -256,8 +266,15 @@ public static class PlayerArchetypesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardQuestSlave,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new()
+					{
+						new() { TemplateId = MapFactory },
+						new() { TemplateId = MapCustoms },
+						new() { TemplateId = MapWoods },
+						new() { TemplateId = MapShoreline },
+						new() { TemplateId = MapShorelineResort },
+						new() { TemplateId = MapInterchange }
+					}
 				}
 			},
 
@@ -288,8 +305,7 @@ public static class PlayerArchetypesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardAmmo,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Ammo545BT, Count = 60 }, new() { TemplateId = Ammo556M855A1, Count = 60 } }
 				}
 			},
 
@@ -315,8 +331,7 @@ public static class PlayerArchetypesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardVoip,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = ComTac2 } }
 				}
 			},
 
@@ -374,8 +389,7 @@ public static class PlayerArchetypesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardMagDumper,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Ak6L31Mag, Count = 2 } }
 				}
 			},
 
@@ -402,8 +416,7 @@ public static class PlayerArchetypesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardRatKing,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = LuckyScavJunkbox } }
 				}
 			},
 
@@ -496,8 +509,24 @@ public static class PlayerArchetypesThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardAmbush,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new()
+					{
+						new()
+						{
+							TemplateId = VSSVintorez,
+							Parts = new()
+							{
+								new() { TemplateId = "57838f0b2459774a256959b2", SlotId = "mod_magazine" },
+								new() { TemplateId = "57838c962459774a1651ec63", SlotId = "mod_muzzle" },
+								new() { TemplateId = "57838e1b2459774a256959b1", SlotId = "mod_sight_rear" },
+								new() { TemplateId = "578395402459774a256959b5", SlotId = "mod_reciever" },
+								new() { TemplateId = "578395e82459774a0e553c7b", SlotId = "mod_stock" },
+								new() { TemplateId = "6565bb7eb4b12a56eb04b084", SlotId = "mod_handguard" }
+							}
+						},
+						new() { TemplateId = VSSMag20, Count = 2 },
+						new() { TemplateId = AmmoSP6, Count = 60 }
+					}
 				}
 			},
 

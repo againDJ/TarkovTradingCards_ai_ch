@@ -36,6 +36,20 @@ public static class TarkovFailsThemeDefinitions
 	private const string AmmoCase = "5aafbde786f774389d0cbc0f";
 	private const string MagCase = "5c127c4486f7745625356c13";
 
+	// Reward item IDs (specific barter rewards)
+	private const string ScavVest = "572b7adb24597762ae139821";
+	private const string PMPistol = "5448bd6b4bdc2dfc2f8b4569";
+	private const string Ammo545PRS = "56dff338d2720bbd668b4569";
+	private const string Ammo556FMJ = "59e6920f86f77411d82aa167";
+	private const string Ammo9x19PSO = "58864a4f2459770fcc257101";
+	private const string Ak30Mag = "55d480c04bdc2d1d4e8b456a";
+	private const string Compass = "5f4f9eb969cdc30ff33f09db";
+	private const string Roubles = "5449016a4bdc2d6f028b456f";
+	private const string ZaryaFlashbang = "5a0c27731526d80618476ac4";
+	private const string RGD5 = "5448be9a4bdc2dfd2f8b456a";
+	private const string VOG25 = "5656eb674bdc2d35148b457c";
+	private const string LabsKeycard = "5c94bbff86f7747ee735c08f";
+
 	// Parent class IDs
 	private const string ClassKeyMechanical = "5c99f98d86f7745c314214b3";
 	private const string ClassMagazine = "5448bc234bdc2d3c308b4569";
@@ -90,8 +104,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardEmptyMags,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = Ak30Mag, Count = 3 } }
 				}
 			},
 
@@ -117,8 +130,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardLeftBehind,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 2.5K" } },
-					RandomReward = RandomRewardType.ScavCase2500
+					Items = new() { new() { TemplateId = ScavVest }, new() { TemplateId = PMPistol } }
 				}
 			},
 
@@ -200,8 +212,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardWrongAmmo,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Ammo545PRS, Count = 20 }, new() { TemplateId = Ammo556FMJ, Count = 20 }, new() { TemplateId = Ammo9x19PSO, Count = 20 } }
 				}
 			},
 
@@ -255,8 +266,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardWrongExtract,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = Compass } }
 				}
 			},
 
@@ -282,8 +292,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardFlashbang,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = ZaryaFlashbang, Count = 4 } }
 				}
 			},
 
@@ -309,8 +318,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardExtractTimer,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Compass }, new() { TemplateId = Roubles, Count = 50000 } }
 				}
 			},
 
@@ -364,8 +372,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardSelfNade,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = RGD5, Count = 4 }, new() { TemplateId = VOG25, Count = 2 } }
 				}
 			},
 
@@ -421,8 +428,7 @@ public static class TarkovFailsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardMisfireLabs,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = LabsKeycard, Count = 3 } }
 				}
 			},
 

@@ -31,6 +31,13 @@ public static class StreamerMomentsThemeDefinitions
 	// Reward IDs (verified)
 	private const string Ifak = "590c678286f77426c9660122";
 	private const string StreamerItemCase = "66bc98a01a47be227a5e956e";
+	private const string ItemsCase = "59fb042886f7746c5005a7b2";
+	private const string WalkersXCEL = "5f60cd6cf2bcbb675b00dac6";
+	private const string AmmoM61 = "5a6086ea4f39f99cd479502f";
+	private const string AmmoM80 = "58dd3ad986f77403051cba8f";
+	private const string RGD5 = "5448be9a4bdc2dfd2f8b456a";
+	private const string PVS14 = "57235b6f24597759bf5a30f1";
+	private const string MarchScope = "57c5ac0824597754771e88a9";
 
 	// Collector items (all 40, verified from Fence Collector quest)
 	private const string OldFiresteel = "5bc9c377d4351e3bac12251b";
@@ -259,8 +266,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardStashTetris,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = ItemsCase } }
 				}
 			},
 
@@ -291,8 +297,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardVeritas,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = WalkersXCEL } }
 				}
 			},
 
@@ -321,8 +326,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDeadlySlob,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = AmmoM80, Count = 120 } }
 				}
 			},
 
@@ -354,8 +358,9 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDormsAmbush,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = Ifak, DisplayName = "Random Keys" } },
+					RandomReward = RandomRewardType.RandomKeys,
+					RandomRewardCount = 5
 				}
 			},
 
@@ -381,8 +386,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardDontPeek,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = AmmoM61, Count = 120 } }
 				}
 			},
 
@@ -408,8 +412,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardKobe,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = RGD5, Count = 4 } }
 				}
 			},
 
@@ -468,8 +471,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardKlean,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = PVS14 } }
 				}
 			},
 
@@ -495,8 +497,7 @@ public static class StreamerMomentsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardOutplayed,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = MarchScope } }
 				}
 			},
 

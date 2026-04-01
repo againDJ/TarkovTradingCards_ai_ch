@@ -39,6 +39,11 @@ public static class SeasonalEventsThemeDefinitions
 	private const string Holodilnick = "5c093db286f7740a1b2617e3";
 	private const string InjectorCase = "619cbf7d23893217ec30b689";
 	private const string KeycardHolder = "619cbf9e0a7c3a1a2731940a";
+	private const string SantaHat = "5a43957686f7742a2c2f11b0";
+	private const string PilgrimBackpack = "59e763f286f7742ee57895da";
+	private const string RoundGlasses = "67af42b38d9ef5c57e0d5126";
+	private const string Shemagh = "5ab8f85d86f7745cd93a1cf5";
+	private const string PVS14 = "57235b6f24597759bf5a30f1";
 
 	// Twitch Rivals items
 	private const string TwitchMask2020 = "5e71f6be86f77429f2683c44";
@@ -194,8 +199,7 @@ public static class SeasonalEventsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardTreeStash,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = SantaHat } }
 				}
 			},
 
@@ -275,8 +279,7 @@ public static class SeasonalEventsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardGiftRun,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = PilgrimBackpack } }
 				}
 			},
 
@@ -303,8 +306,7 @@ public static class SeasonalEventsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardRogueBeach,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 15K" } },
-					RandomReward = RandomRewardType.ScavCase15000
+					Items = new() { new() { TemplateId = RoundGlasses }, new() { TemplateId = Shemagh } }
 				}
 			},
 
@@ -330,8 +332,7 @@ public static class SeasonalEventsThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardHalloween,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new() { new() { TemplateId = PVS14 } }
 				}
 			},
 

@@ -40,6 +40,11 @@ public static class ManyWaysToDieThemeDefinitions
 	private const string EmergencyWater = "60098b1705871270cd5352a1";
 	private const string SiccCase = "5d235bb686f77443f4331278";
 	private const string RedRebel = "5c0126f40db834002a125382";
+	private const string MosinSniper = "5ae08f0a5acfc408fb1398a1";
+	private const string AmmoLPS = "5887431f2459777e1612938f";
+	private const string AmmoSNB = "560d61e84bdc2da74d8b4571";
+	private const string Moonshine = "5d1b376e86f774252519444e";
+	private const string PilgrimBackpack = "59e763f286f7742ee57895da";
 
 	// Maska built-in armor parts
 	private static readonly List<PresetPart> MaskaParts = new()
@@ -304,8 +309,23 @@ public static class ManyWaysToDieThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardScavMosin,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case 95K" } },
-					RandomReward = RandomRewardType.ScavCase95000
+					Items = new()
+					{
+						new()
+						{
+							TemplateId = MosinSniper,
+							Parts = new()
+							{
+								new() { TemplateId = "5ae0973a5acfc4001562206c", SlotId = "mod_magazine" },
+								new() { TemplateId = "5ae096d95acfc400185c2c81", SlotId = "mod_stock" },
+								new() { TemplateId = "5ae09bff5acfc4001562219d", SlotId = "mod_barrel" },
+								new() { TemplateId = "5ae099875acfc4001714e593", SlotId = "mod_sight_front" },
+								new() { TemplateId = "5ae099925acfc4001a5fc7b3", SlotId = "mod_sight_rear" }
+							}
+						},
+						new() { TemplateId = AmmoLPS, Count = 60 },
+						new() { TemplateId = AmmoSNB, Count = 60 }
+					}
 				}
 			},
 
@@ -417,8 +437,7 @@ public static class ManyWaysToDieThemeDefinitions
 				BarterUnlock = new()
 				{
 					CardTemplateId = CardScavArmy,
-					Items = new() { new() { TemplateId = Ifak, DisplayName = "Scav Case Moonshine" } },
-					RandomReward = RandomRewardType.ScavCaseMoonshine
+					Items = new() { new() { TemplateId = Moonshine }, new() { TemplateId = PilgrimBackpack } }
 				}
 			},
 
