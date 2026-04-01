@@ -64,7 +64,7 @@ public static class TarkovFailsThemeDefinitions
 					Note = "Have 2 body parts destroyed.",
 					SuccessMessage = "Welcome to the Wall of Shame."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderFails } }
 			},
 

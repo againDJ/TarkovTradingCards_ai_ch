@@ -67,7 +67,7 @@ public static class CommunityMemesThemeDefinitions
 					Note = "Move 1,000m while crouched.",
 					SuccessMessage = "Welcome to meme culture."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderMemes } }
 			},
 

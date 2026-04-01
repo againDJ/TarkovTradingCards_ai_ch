@@ -76,7 +76,7 @@ public static class SptVsEftThemeDefinitions
 					Note = "Survive 3 times and search 10 containers.",
 					SuccessMessage = "Welcome to SPT."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderSpt } }
 			},
 

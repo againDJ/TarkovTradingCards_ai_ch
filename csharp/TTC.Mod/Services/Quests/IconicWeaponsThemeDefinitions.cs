@@ -195,7 +195,7 @@ public static class IconicWeaponsThemeDefinitions
 					Note = "Craft 3 items at any workstation, then receive the Iconic Weapons binder.",
 					SuccessMessage = "A man who knows his way around a workbench. Here's your catalog."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderWeapons } }
 			},
 

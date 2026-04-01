@@ -57,7 +57,7 @@ public static class BuggedRealityThemeDefinitions
 					Note = "Lose 500 HP total.",
 					SuccessMessage = "Error 404: Stability not found."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderBugged } }
 			},
 

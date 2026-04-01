@@ -119,7 +119,7 @@ public static class StreamerMomentsThemeDefinitions
 					Note = "5 ADS kills and 500 AR damage.",
 					SuccessMessage = "Camera's rolling. Content potential confirmed."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderStreamer } }
 			},
 

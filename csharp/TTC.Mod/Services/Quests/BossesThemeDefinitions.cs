@@ -173,7 +173,7 @@ public static class BossesThemeDefinitions
 					Note = "Get 3 ADS kills to prove yourself, then receive the Bosses & Mini-Bosses binder.",
 					SuccessMessage = "Solid work. Here's your dossier binder \u2014 fill it up."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderBosses } }
 			},
 

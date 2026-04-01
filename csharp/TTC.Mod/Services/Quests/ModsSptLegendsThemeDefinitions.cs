@@ -68,7 +68,7 @@ public static class ModsSptLegendsThemeDefinitions
 					Note = "Craft 3 items and survive 2 times.",
 					SuccessMessage = "Mod manager loaded. The showcase begins."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderMods } }
 			},
 

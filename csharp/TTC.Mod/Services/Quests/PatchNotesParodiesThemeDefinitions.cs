@@ -70,7 +70,7 @@ public static class PatchNotesParodiesThemeDefinitions
 					Note = "Fix 1 malfunction and survive 2 times.",
 					SuccessMessage = "Patch applied. Known issues remain."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderPatch } }
 			},
 

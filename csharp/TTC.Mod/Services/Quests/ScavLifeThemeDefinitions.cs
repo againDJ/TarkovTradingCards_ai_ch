@@ -92,7 +92,7 @@ public static class ScavLifeThemeDefinitions
 					Note = "Search 20 containers and loot 20 items.",
 					SuccessMessage = "The hustle is real. Here are the scav legends."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderScav } }
 			},
 

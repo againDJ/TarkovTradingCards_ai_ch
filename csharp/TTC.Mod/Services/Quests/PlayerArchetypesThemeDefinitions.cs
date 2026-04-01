@@ -158,7 +158,7 @@ public static class PlayerArchetypesThemeDefinitions
 					Note = "Eliminate 5 targets and search 10 containers.",
 					SuccessMessage = "A bit of everything. Here's the field guide."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderArchetypes } }
 			},
 

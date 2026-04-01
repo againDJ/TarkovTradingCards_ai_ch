@@ -102,7 +102,7 @@ public static class SeasonalEventsThemeDefinitions
 					Note = "Loot 15 items and survive 2 times.",
 					SuccessMessage = "Calendar open. Events incoming."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderSeasonal } }
 			},
 

@@ -111,7 +111,7 @@ public static class IconicLocationsThemeDefinitions
 					Note = "Cover 5km on foot, then receive the Iconic Locations binder.",
 					SuccessMessage = "Five kilometers of Tarkov under your boots. Here are my notes."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderLocations } }
 			},
 

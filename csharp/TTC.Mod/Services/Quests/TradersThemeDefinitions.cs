@@ -114,7 +114,7 @@ public static class TradersThemeDefinitions
 					Note = "Earn 100,000\u20bd and search 15 containers.",
 					SuccessMessage = "Business is booming. Here are my notes."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderTraders } }
 			},
 

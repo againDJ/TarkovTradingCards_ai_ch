@@ -97,7 +97,7 @@ public static class ManyWaysToDieThemeDefinitions
 					Note = "Fix 1 light bleeding and 1 heavy bleeding.",
 					SuccessMessage = "You've bled and survived. Here are my notes."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderDeath } }
 			},
 

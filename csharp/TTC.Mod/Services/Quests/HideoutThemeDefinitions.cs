@@ -84,7 +84,7 @@ public static class HideoutThemeDefinitions
 					Note = "Have Security level 1, then receive the Hideout binder.",
 					SuccessMessage = "Security is up. Now let's build something real."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderHideout } }
 			},
 

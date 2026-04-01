@@ -78,7 +78,7 @@ public static class MemorableQuestItemsThemeDefinitions
 					Note = "Hand over 5 food items and search 20 containers.",
 					SuccessMessage = "The quest board is open. Let's document them all."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderQuestItems } }
 			},
 

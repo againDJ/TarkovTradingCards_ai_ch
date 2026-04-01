@@ -87,7 +87,7 @@ public static class SecretArtifactsThemeDefinitions
 					Note = "Search 20 containers and cover 3km.",
 					SuccessMessage = "The hunt begins."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderArtifacts } }
 			},
 

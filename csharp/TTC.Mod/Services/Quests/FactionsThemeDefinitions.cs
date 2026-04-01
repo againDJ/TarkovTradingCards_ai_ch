@@ -165,7 +165,7 @@ public static class FactionsThemeDefinitions
 					Note = "Eliminate 5 scavs and 3 PMCs.",
 					SuccessMessage = "Two factions met, the hard way. Here are my notes."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderFactions } }
 			},
 

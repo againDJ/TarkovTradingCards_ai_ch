@@ -131,7 +131,7 @@ public static class LegendsOfTheWipeThemeDefinitions
 					Note = "Survive 3 times and loot 15 items.",
 					SuccessMessage = "Fresh spawn no more."
 				},
-				XpReward = 1000,
+				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderWipe } }
 			},
 
