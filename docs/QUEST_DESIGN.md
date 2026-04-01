@@ -4040,4 +4040,223 @@ Prefix: **[ARTF]** — Exploration, mystery, and rare item hunts. VisitPlace, Ex
 
 ---
 
-*Remaining 4 themes to be designed...*
+## Theme: Patch Note Parodies
+
+**15 cards** (2 Common, 3 Uncommon, 4 Rare, 3 Epic, 2 Legendary, 1 Secret)
+
+Prefix: **[PTCH]** — Each quest parodies a Tarkov patch note. Objectives reflect what the "patch" changed — audio, recoil, netcode, AI, weight system, flea market, etc.
+
+### [PTCH-0] QUEST: Patch Notes Loaded (Binder Quest)
+- **ID Seed**: `ttc_quest_binder_patch_note_parodies`
+- **Prerequisites**: Welcome to the Collection (completed)
+- **Type**: Completion
+- **Objectives**:
+  - [QE: FixAnyMalfunction] Fix 1 weapon malfunction
+  - [Vanilla: ExitStatus] Survive and extract 2 times
+- **Description**: *"Patch 0.14.X.X — Known issues: everything. Fix a weapon malfunction and survive two raids. The patch is live. Good luck."*
+- **Rewards**:
+  - 1× Patch Note Parodies Binder
+  - 1,000 XP
+- **Unlocks**: First card quest
+
+---
+
+### Card Quests (ordered by rarity: Common → Secret)
+
+#### [PTCH-1] QUEST: Audio Patch [Common]
+- **Card**: Sound Occlusion Update
+- **ID Seed**: `ttc_quest_card_ptch_soundocclusion`
+- **Objectives**:
+  - [QE: KillsWhileSilent] Get 5 kills while silent
+  - [QE: KillsWhileADS] Get 5 kills while ADS
+- **Description**: *"Sound Occlusion Update. 'Improved audio propagation through walls and floors.' Translation: you still can't tell if he's above you or below you. Five silent kills and five ADS kills. Listen carefully."*
+- **Rewards**: 1,000 XP, Sound Occlusion Update card
+- **Barter**: 1× Peltor ComTac IV Hybrid headset
+
+#### [PTCH-2] QUEST: Factory Hotfix [Common]
+- **Card**: Factory Balance Patch
+- **ID Seed**: `ttc_quest_card_ptch_factorypatch`
+- **Location**: Factory
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets on Factory
+  - [Vanilla: ExitStatus] Survive and extract from Factory 3 times
+- **Description**: *"Factory Balance Patch. 'Adjusted spawn points and extract timers.' Still spawning next to someone with a shotgun. Ten kills on Factory and three extractions. Balance achieved."*
+- **Rewards**: 1,000 XP, Factory Balance Patch card
+- **Barter**: Random Scav Case (2.5K)
+
+#### [PTCH-3] QUEST: Comms Check [Uncommon]
+- **Card**: Improved VoIP
+- **ID Seed**: `ttc_quest_card_ptch_voip`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 5 PMCs from under 10m
+  - [QE: KillsWithoutADS] Get 5 kills without ADS
+- **Description**: *"Improved VoIP. 'Enhanced proximity voice chat quality.' Now you can hear them say 'friendly' in crystal clear audio before they shoot you. Five PMC kills under ten meters and five hipfire kills."*
+- **Rewards**: 3,000 XP, Improved VoIP card
+- **Barter**: Random Scav Case (15K)
+
+#### [PTCH-4] QUEST: Breach and Clear [Uncommon]
+- **Card**: Door Breaching Feature
+- **ID Seed**: `ttc_quest_card_ptch_doorbreach`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets from under 15m
+  - [QE: DamageWithShotguns] Deal 1,000 damage with shotguns
+- **Description**: *"Door Breaching Feature. 'Added ability to breach locked doors.' The door is open. Everyone inside is dead. Ten close-range kills and a thousand shotgun damage. Breach and clear."*
+- **Rewards**: 3,000 XP, Door Breaching Feature card
+- **Barter**: Random Scav Case (15K)
+
+#### [PTCH-5] QUEST: Medic Patch [Uncommon]
+- **Card**: Therapist Restock
+- **ID Seed**: `ttc_quest_card_ptch_therapistrestock`
+- **Objectives**:
+  - [QE: HealthGain] Restore 3,000 HP total
+  - [QE: RestoreBodyPart] Restore 5 body parts
+- **Description**: *"Therapist Restock. 'Adjusted medical item availability.' Translation: Salewas are back in stock for exactly twelve seconds. Restore three thousand HP and five body parts. Stock up while you can."*
+- **Rewards**: 3,000 XP, Therapist Restock card
+- **Barter**: Random Scav Case (15K)
+
+#### [PTCH-6] QUEST: Lag Compensation [Rare]
+- **Card**: Fixed Desync
+- **ID Seed**: `ttc_quest_card_ptch_fixeddesync`
+- **Objectives**:
+  - [QE: MoveDistanceWhileRunning] Cover 10,000m while running
+  - [Vanilla: ExitStatus] Survive and extract 10 times
+- **Description**: *"Fixed Desync. 'Resolved network synchronization issues.' Narrator: they did not fix desync. Ten kilometers of running and ten extractions. The server will catch up. Eventually."*
+- **Rewards**: 10,000 XP, Fixed Desync card
+- **Barter**: Random Scav Case (95K)
+
+#### [PTCH-7] QUEST: Bot Upgrade [Rare]
+- **Card**: AI Smarter
+- **ID Seed**: `ttc_quest_card_ptch_aismarter`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 scavs with headshots *(KillTarget: "Savage", KillBodyParts: ["Head"])*
+  - [QE: KillsWhileCrouched] Get 10 kills while crouched
+- **Description**: *"AI Smarter. 'Improved bot pathfinding and combat behavior.' The scavs now pre-fire corners and throw grenades with surgical precision. Twenty scav headshots and ten crouched kills. Outsmart the smart."*
+- **Rewards**: 10,000 XP, AI Smarter card
+- **Barter**: Random Scav Case (95K)
+
+#### [PTCH-8] QUEST: Lights On [Rare]
+- **Card**: Flashlight Fix
+- **ID Seed**: `ttc_quest_card_ptch_flashlightfix`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 10 targets at night *(KillTarget: "Any", KillDaytimeFrom: 22, KillDaytimeTo: 6)*
+  - [QE: DamageWithPistols] Deal 3,000 damage with pistols
+- **Description**: *"Flashlight Fix. 'Corrected tactical flashlight rendering.' The flashlight now blinds you AND the enemy. Ten night kills and three thousand pistol damage. Lights on."*
+- **Rewards**: 10,000 XP, Flashlight Fix card
+- **Barter**: Random Scav Case (95K)
+
+#### [PTCH-9] QUEST: Carrying Capacity [Rare]
+- **Card**: Weight System Tweak
+- **ID Seed**: `ttc_quest_card_ptch_weighttweak`
+- **Objectives**:
+  - [QE: EncumberedTimeInSeconds] Spend 600 seconds encumbered
+  - [QE: OverEncumberedTimeInSeconds] Spend 300 seconds overencumbered
+- **Description**: *"Weight System Tweak. 'Adjusted weight thresholds and stamina drain.' You can now carry 0.5kg more before your PMC has a heart attack. Ten minutes encumbered and five minutes overencumbered. Feel the weight."*
+- **Rewards**: 10,000 XP, Weight System Tweak card
+- **Barter**: 1× M.U.L.E. stimulant injector
+
+#### [PTCH-10] QUEST: Server Stability [Epic]
+- **Card**: Optimized Netcode
+- **ID Seed**: `ttc_quest_card_ptch_netcode`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 20 PMCs
+  - [QE: EarnMoneyOnTransaction] Earn 3,000,000₽ from transactions
+- **Description**: *"Optimized Netcode. 'Improved server tick rate and hit registration.' The bullets now register 50% of the time instead of 40%. Twenty PMC kills and three million roubles. The netcode works. Trust us."*
+- **Rewards**: 20,000 XP, Optimized Netcode card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [PTCH-11] QUEST: Build Update [Epic]
+- **Card**: Hideout Expansion
+- **ID Seed**: `ttc_quest_card_ptch_hideoutexpansion`
+- **Objectives**:
+  - [Vanilla: HideoutArea] Have Gym level 1 *(areaType: 23, level: 1)*
+  - [Vanilla: HideoutArea] Have Gear Rack level 1 *(areaType: 26, level: 1)*
+  - [Vanilla: HideoutArea] Have Hall of Fame level 1 *(areaType: 16, level: 1)*
+  - [QE: CraftAnyItem] Craft 30 items
+  - [QE: CollectScavCase] Collect 10 Scav Case results
+- **Description**: *"Hideout Expansion. 'Added new hideout stations.' The hideout now has a gym, a gear rack, and a hall of fame. Build all three, craft thirty items, and collect ten scav case results. The expansion is live."*
+- **Rewards**: 20,000 XP, Hideout Expansion card
+- **Barter**: Random Scav Case (Moonshine)
+
+#### [PTCH-12] QUEST: Map Rework [Epic]
+- **Card**: Woods Redesign
+- **ID Seed**: `ttc_quest_card_ptch_woodsredesign`
+- **Location**: Woods
+- **Objectives**:
+  - [Vanilla: ExitStatus] Survive and extract from Woods 10 times
+  - [Vanilla: Kills] Eliminate 5 bosses *(KillTarget: "Savage", savageRole: all boss roles)*
+  - [QE: SearchContainer] Search 80 containers
+- **Description**: *"Woods Redesign. 'Expanded playable area and added new POIs.' The map is bigger but Shturman is still at the sawmill. Survive Woods ten times, kill five bosses, and search eighty containers. Explore the redesign."*
+- **Rewards**: 20,000 XP, Woods Redesign card
+- **Barter**: 1× Shturman's stash key
+
+#### [PTCH-13] QUEST: Ballistics Update [Legendary]
+- **Card**: Recoil Rework
+- **ID Seed**: `ttc_quest_card_ptch_recoilrework`
+- **Objectives**:
+  - [QE: DamageWithAR] Deal 15,000 damage with assault rifles
+  - [QE: DamageWithSMG] Deal 10,000 damage with SMGs
+  - [Vanilla: Kills] Eliminate 30 PMCs with headshots *(KillTarget: "AnyPmc", KillBodyParts: ["Head"])*
+- **Description**: *"Recoil Rework. 'Completely overhauled weapon recoil system.' The guns now kick like a mule on the first shot and laser beam after that. Fifteen thousand AR damage, ten thousand SMG damage, and thirty PMC headshots. Master the new recoil."*
+- **Rewards**: 35,000 XP, Recoil Rework card
+- **Barter**: Random Scav Case (Intel)
+
+#### [PTCH-14] QUEST: Fair Play Update [Legendary]
+- **Card**: Anti-Cheat Improvements
+- **ID Seed**: `ttc_quest_card_ptch_anticheat`
+- **Objectives**:
+  - [Vanilla: Kills] Eliminate 50 PMCs
+  - [QE: TotalShotDistanceWithSnipers] Accumulate 10,000m total shot distance with snipers
+- **Description**: *"Anti-Cheat Improvements. 'Enhanced detection algorithms.' The cheaters are gone. Definitely. For sure. Fifty PMC kills and ten thousand meters of sniper distance. Play fair. Or else."*
+- **Rewards**: 35,000 XP, Anti-Cheat Improvements card
+- **Barter**: Random Scav Case (Intel)
+
+#### [PTCH-15] QUEST: Economy Reset [Secret]
+- **Card**: Flea Market Overhaul
+- **ID Seed**: `ttc_quest_card_ptch_fleaoverhaul`
+- **Objectives**:
+  - [QE: EarnMoneyOnTransaction] Earn 20,000,000₽ from transactions
+  - [Vanilla: HandoverItem] Hand over 10 Physical Bitcoins
+  - [QE: SearchContainer] Search 200 containers
+- **Description**: *"Flea Market Overhaul. 'Restructured marketplace fees and FIR requirements.' Everything costs more, sells for less, and the fees eat your profits. Twenty million roubles, ten bitcoins, and two hundred containers. The economy resets."*
+- **Rewards**: 60,000 XP, Flea Market Overhaul card
+- **Barter**: 5× Physical Bitcoin
+
+---
+
+### Collection Quest
+
+#### [PTCH-C] QUEST: Kolya's Changelog [Collection]
+- **ID Seed**: `ttc_quest_collection_patch_note_parodies`
+- **Prerequisites**: All 15 card quests completed
+- **Objectives**:
+  - Hand over all 15 patch note cards (one of each, not FIR)
+- **Description**: *"Every patch documented, every changelog parodied. From sound occlusion to flea market overhauls, you've survived every update Tarkov has thrown at you. Hand over the cards and complete the changelog."*
+- **Rewards**: 50,000 XP, +0.15 standing
+- **Collection Barter**: 10× Physical Bitcoin + 5,000,000₽ + 10,000$ + 10,000€
+
+---
+
+### Barter Summary
+
+| # | Card | Rarity | Barter Reward |
+|---|------|--------|---------------|
+| 1 | Sound Occlusion Update | Common | 1× Peltor ComTac IV headset |
+| 2 | Factory Balance Patch | Common | Random Scav Case (2.5K) |
+| 3 | Improved VoIP | Uncommon | Random Scav Case (15K) |
+| 4 | Door Breaching Feature | Uncommon | Random Scav Case (15K) |
+| 5 | Therapist Restock | Uncommon | Random Scav Case (15K) |
+| 6 | Fixed Desync | Rare | Random Scav Case (95K) |
+| 7 | AI Smarter | Rare | Random Scav Case (95K) |
+| 8 | Flashlight Fix | Rare | Random Scav Case (95K) |
+| 9 | Weight System Tweak | Rare | 1× M.U.L.E. stimulant |
+| 10 | Optimized Netcode | Epic | Random Scav Case (Moonshine) |
+| 11 | Hideout Expansion | Epic | Random Scav Case (Moonshine) |
+| 12 | Woods Redesign | Epic | 1× Shturman's stash key |
+| 13 | Recoil Rework | Legendary | Random Scav Case (Intel) |
+| 14 | Anti-Cheat Improvements | Legendary | Random Scav Case (Intel) |
+| 15 | Flea Market Overhaul | Secret | 5× Physical Bitcoin |
+| **Collection** | All 15 patch cards | — | 10× Bitcoin + 5M₽ + 10K$ + 10K€ |
+
+---
+
+*Remaining 3 themes to be designed...*

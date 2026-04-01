@@ -183,6 +183,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(LegendsOfTheWipeThemeDefinitions.GetAll());
 				allDefs.AddRange(BuggedRealityThemeDefinitions.GetAll());
 				allDefs.AddRange(SecretArtifactsThemeDefinitions.GetAll());
+				allDefs.AddRange(PatchNotesParodiesThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
 

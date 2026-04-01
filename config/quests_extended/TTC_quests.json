@@ -2166,5 +2166,179 @@
         "ConditionType": "EarnMoneyOnTransaction"
       }
     ]
+  },
+  "d3e6505679d29e08648a3560": {
+    "QuestId": "d3e6505679d29e08648a3560",
+    "QuestName": "Patch Notes Loaded",
+    "Conditions": [
+      {
+        "ConditionId": "9c2a1fa9ddd0aa3f5004a6aa",
+        "ConditionType": "FixAnyMalfunction"
+      }
+    ]
+  },
+  "c6519049bf98ea9c5f223137": {
+    "QuestId": "c6519049bf98ea9c5f223137",
+    "QuestName": "Audio Patch",
+    "Conditions": [
+      {
+        "ConditionId": "5412f0bb9da23723ae5c6059",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "9e333774d7e016907fb20e52",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "b8cbc07264042cee848ff58b": {
+    "QuestId": "b8cbc07264042cee848ff58b",
+    "QuestName": "Comms Check",
+    "Conditions": [
+      {
+        "ConditionId": "e0253ce62dc3e5857d113414",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "3911f6dcf7bbebd576a2b99f": {
+    "QuestId": "3911f6dcf7bbebd576a2b99f",
+    "QuestName": "Breach and Clear",
+    "Conditions": [
+      {
+        "ConditionId": "ce02f659b730a881ccfb34b0",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "80af000dcb830295cd2997c8": {
+    "QuestId": "80af000dcb830295cd2997c8",
+    "QuestName": "Medic Patch",
+    "Conditions": [
+      {
+        "ConditionId": "e99b4161c18d133513910790",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "d220d5ad4bd78a9f19de95ce",
+        "ConditionType": "RestoreBodyPart"
+      }
+    ]
+  },
+  "bb02e8d6e65ae218c45f1f9c": {
+    "QuestId": "bb02e8d6e65ae218c45f1f9c",
+    "QuestName": "Lag Compensation",
+    "Conditions": [
+      {
+        "ConditionId": "5e2d6c95740d399ede4e8e75",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "f49e53f13872c920e93710dd": {
+    "QuestId": "f49e53f13872c920e93710dd",
+    "QuestName": "Bot Upgrade",
+    "Conditions": [
+      {
+        "ConditionId": "16738aaa4bab1cd26a4ec7ce",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "aec44e7697d23d3cefcb57ab": {
+    "QuestId": "aec44e7697d23d3cefcb57ab",
+    "QuestName": "Lights On",
+    "Conditions": [
+      {
+        "ConditionId": "01af513c3d61849f6ca5742b",
+        "ConditionType": "DamageWithPistols"
+      }
+    ]
+  },
+  "b94ef9192775ceb18db07fd8": {
+    "QuestId": "b94ef9192775ceb18db07fd8",
+    "QuestName": "Carrying Capacity",
+    "Conditions": [
+      {
+        "ConditionId": "792a008ee8de058d2c4770f2",
+        "ConditionType": "EncumberedTimeInSeconds"
+      },
+      {
+        "ConditionId": "4c545f7549eb0bd13ebdd3d2",
+        "ConditionType": "OverEncumberedTimeInSeconds"
+      }
+    ]
+  },
+  "ce0ed4569009b6c29e1aa245": {
+    "QuestId": "ce0ed4569009b6c29e1aa245",
+    "QuestName": "Server Stability",
+    "Conditions": [
+      {
+        "ConditionId": "f8ef785f25233cff71db43a2",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "6f024c1fb832111fa066277d": {
+    "QuestId": "6f024c1fb832111fa066277d",
+    "QuestName": "Build Update",
+    "Conditions": [
+      {
+        "ConditionId": "f25bcb230ba035751d8834f4",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "8e30a876f077bbf903da2593",
+        "ConditionType": "CollectScavCase"
+      }
+    ]
+  },
+  "5e10e3936a52d2c5c2be051e": {
+    "QuestId": "5e10e3936a52d2c5c2be051e",
+    "QuestName": "Map Rework",
+    "Conditions": [
+      {
+        "ConditionId": "670a9fca3a0ed0b5bddaebc8",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "fc4dfdfdfc57da34f8929b66": {
+    "QuestId": "fc4dfdfdfc57da34f8929b66",
+    "QuestName": "Ballistics Update",
+    "Conditions": [
+      {
+        "ConditionId": "340c55f6628adbf5dc73b939",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "bf94c3ac2e4009f5b47d1112",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "d4b3e0ddf60ffd54976a7d9e": {
+    "QuestId": "d4b3e0ddf60ffd54976a7d9e",
+    "QuestName": "Fair Play Update",
+    "Conditions": [
+      {
+        "ConditionId": "65564d9465628055b3e9a6fe",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "b47bc432177aa81e2f9e0e46": {
+    "QuestId": "b47bc432177aa81e2f9e0e46",
+    "QuestName": "Economy Reset",
+    "Conditions": [
+      {
+        "ConditionId": "699a38667e4fe80b416be031",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "4149720cc860e08cfd9031e3",
+        "ConditionType": "SearchContainer"
+      }
+    ]
   }
 }
