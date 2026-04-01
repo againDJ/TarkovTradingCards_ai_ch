@@ -11,6 +11,7 @@ using SPTarkov.Server.Core.Models.Utils;
 using SPTarkov.Server.Core.Servers;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Utils;
+using TTC.Mod.Services.Common;
 
 namespace TTC.Mod.Services.Quests;
 
@@ -30,6 +31,7 @@ public sealed class RandomRewardService
 	private readonly ItemFilterService _itemFilterService;
 	private readonly SeasonalEventService _seasonalEventService;
 	private readonly HideoutConfig _hideoutConfig;
+	private readonly State _state;
 
 	public RandomRewardService(
 		ISptLogger<RandomRewardService> logger,
@@ -41,7 +43,8 @@ public sealed class RandomRewardService
 		RandomUtil randomUtil,
 		ItemFilterService itemFilterService,
 		SeasonalEventService seasonalEventService,
-		ConfigServer configServer)
+		ConfigServer configServer,
+		State state)
 	{
 		_logger = logger;
 		_scavCaseRewardGenerator = scavCaseRewardGenerator;
@@ -53,6 +56,7 @@ public sealed class RandomRewardService
 		_itemFilterService = itemFilterService;
 		_seasonalEventService = seasonalEventService;
 		_hideoutConfig = configServer.GetConfig<HideoutConfig>();
+		_state = state;
 	}
 
 	// Recipe IDs for each scav case type
@@ -360,5 +364,90 @@ public sealed class RandomRewardService
 		}
 
 		return pool.ToList();
+	}
+
+	// Booster pack rarity weights: 40% C, 30% U, 20% R, 8% E, 1.5% L, 0.5% S
+	private static readonly (string rarity, double weight)[] BoosterRarityWeights =
+	{
+		("Common", 40.0),
+		("Uncommon", 30.0),
+		("Rare", 20.0),
+		("Epic", 8.0),
+		("Legendary", 1.5),
+		("Secret", 0.5)
+	};
+
+	private Dictionary<string, List<string>>? _cardsByRarity;
+
+	/// <summary>
+	/// Generate a booster pack: 5 weighted-random cards + 1 Empty Booster Pack.
+	/// Cards are NOT found in raid.
+	/// </summary>
+	public List<Item> GenerateBoosterPackReward(string emptyBoosterId)
+	{
+		try
+		{
+			if (_cardsByRarity == null)
+			{
+				_cardsByRarity = new Dictionary<string, List<string>>();
+				foreach (var card in _state.Cards)
+				{
+					if (!_cardsByRarity.ContainsKey(card.rarity))
+						_cardsByRarity[card.rarity] = new List<string>();
+					_cardsByRarity[card.rarity].Add(card.id);
+				}
+			}
+
+			var items = new List<Item>();
+			var random = new Random();
+
+			for (int i = 0; i < 5; i++)
+			{
+				// Roll rarity
+				var roll = random.NextDouble() * 100.0;
+				double cumulative = 0;
+				string selectedRarity = "Common";
+				foreach (var (rarity, weight) in BoosterRarityWeights)
+				{
+					cumulative += weight;
+					if (roll < cumulative)
+					{
+						selectedRarity = rarity;
+						break;
+					}
+				}
+
+				// Pick random card of that rarity
+				if (_cardsByRarity.TryGetValue(selectedRarity, out var pool) && pool.Count > 0)
+				{
+					var cardId = pool[random.Next(pool.Count)];
+					items.Add(new Item
+					{
+						Id = new MongoId(Guid.NewGuid().ToString("N")[..24]),
+						Template = new MongoId(cardId),
+						Upd = new Upd { StackObjectsCount = 1 }
+					});
+				}
+			}
+
+			// Add 1x Empty Booster Pack
+			if (!string.IsNullOrWhiteSpace(emptyBoosterId))
+			{
+				items.Add(new Item
+				{
+					Id = new MongoId(Guid.NewGuid().ToString("N")[..24]),
+					Template = new MongoId(emptyBoosterId),
+					Upd = new Upd { StackObjectsCount = 1 }
+				});
+			}
+
+			_logger.Info($"[TTC][BoosterPack] Generated 5 random cards + 1 empty booster");
+			return items;
+		}
+		catch (Exception ex)
+		{
+			_logger.Error($"[TTC][BoosterPack] Failed: {ex.Message}");
+			return new List<Item>();
+		}
 	}
 }

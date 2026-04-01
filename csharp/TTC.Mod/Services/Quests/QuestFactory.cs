@@ -86,13 +86,14 @@ public sealed class QuestFactory
 	}
 
 	/// <summary>
-	/// Build the introduction quest — no objectives, instant complete, rewards Empty Booster.
+	/// Build the introduction quest — no objectives, instant complete, rewards Booster Pack.
 	/// </summary>
 	public NewQuestDetails BuildIntroQuest(string emptyBoosterId)
 	{
 		var questSeed = "ttc_quest_introduction";
 		var questId = QuestIds.QuestId(questSeed);
 		var traderId = new MongoId(QuestIds.KolyaTraderId);
+		var boosterPackCrateId = QuestIds.CrateTemplateId("ttc_booster_pack");
 
 		int rewardIdx = 0;
 		var rewards = new List<Reward>();
@@ -105,28 +106,26 @@ public sealed class QuestFactory
 			Index = rewardIdx
 		});
 
-		if (!string.IsNullOrWhiteSpace(emptyBoosterId))
+		// Reward: 1x Booster Pack (intercepted by RewardCrateRouter → 5 random cards + 1 empty booster via mail)
+		var boosterRewardId = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++));
+		var boosterItemId = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++));
+		rewards.Add(new Reward
 		{
-			var boosterRewardId = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++));
-			var boosterItemId = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++));
-			rewards.Add(new Reward
+			Id = boosterRewardId,
+			Type = RewardType.Item,
+			Value = 1,
+			Index = rewardIdx,
+			Target = boosterItemId,
+			Items = new List<Item>
 			{
-				Id = boosterRewardId,
-				Type = RewardType.Item,
-				Value = 1,
-				Index = rewardIdx,
-				Target = boosterItemId,
-				Items = new List<Item>
+				new Item
 				{
-					new Item
-					{
-						Id = boosterItemId,
-						Template = new MongoId(emptyBoosterId),
-						Upd = new Upd { StackObjectsCount = 1 }
-					}
+					Id = boosterItemId,
+					Template = new MongoId(boosterPackCrateId),
+					Upd = new Upd { StackObjectsCount = 1 }
 				}
-			});
-		}
+			}
+		});
 
 		var quest = BuildShell(questId, questSeed, traderId);
 		quest.Rewards["Success"] = rewards;
@@ -134,7 +133,7 @@ public sealed class QuestFactory
 		var locales = new Dictionary<string, string>
 		{
 			[$"{questId} name"] = "Welcome to the Collection",
-			[$"{questId} description"] = "Ah, a new face! Come in, come in. I'm Kolya \u2014 Nikolai Vetrov, if we're being formal. Before all this chaos, I was an archivist for TerraGroup. Now? I document everything I see through these cards. Every boss, every bullet, every absurd death in this forsaken city. I've started a little collection project, and I could use someone with your... field experience. Take this booster pack \u2014 consider it a welcome gift. Open it up, see what you find. If you're interested in more, I've got work for you. Each collection tells a story, and I need help completing them all.",
+			[$"{questId} description"] = "Ah, a new face! Come in, come in. I'm Kolya \u2014 Nikolai Vetrov, if we're being formal. Before all this chaos, I was an archivist for TerraGroup. Now? I document everything I see through these cards. Every boss, every bullet, every absurd death in this forsaken city. I've started a little collection project, and I could use someone with your... field experience. Take this booster pack \u2014 consider it a welcome gift. Five random cards from my archives. A word of advice: hold onto them. Every card can be traded back to me for something useful \u2014 weapons, gear, keys, you name it. The rarer the card, the better the reward. If you want more packs, I sell them too. And if you're interested in targeted collecting, I've got work for you. Each collection tells a story, and I need help completing them all.",
 			[$"{questId} note"] = "Meet Kolya and receive your first booster pack.",
 			[$"{questId} successMessageText"] = "Welcome aboard, collector. This is just the beginning.",
 			[$"{questId} startedMessageText"] = "Take a look around, friend. I've got plenty of work for someone like you.",

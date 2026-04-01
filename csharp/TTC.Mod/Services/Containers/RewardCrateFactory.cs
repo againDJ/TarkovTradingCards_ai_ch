@@ -75,6 +75,7 @@ public sealed class RewardCrateFactory
 					RandomRewardType.CultistCircle => "Cultist Offering",
 					RandomRewardType.RandomMeds => "Medical Supply",
 					RandomRewardType.RandomKeys => "Key Lottery",
+					RandomRewardType.BoosterPack => "Booster Pack",
 					_ => "Mystery Crate"
 				};
 				shortName = randomCount > 1 ? $"{randomCount}x {baseName}" : baseName;
@@ -84,6 +85,7 @@ public sealed class RewardCrateFactory
 					RandomRewardType.CultistCircle => "A mysterious package from Kolya. The cultist circle has spoken — the contents are unknown until opened.",
 					RandomRewardType.RandomMeds => $"A medical supply crate from Kolya. Contains {randomCount} random medical items — medkits, drugs, or stimulators.",
 					RandomRewardType.RandomKeys => $"A key collection from Kolya's scav network. Contains {randomCount} random keys — could be worthless, could open a fortune.",
+					RandomRewardType.BoosterPack => "A sealed TTC booster pack containing 5 random trading cards and an empty booster pack for storage. Rarity distribution: 40% Common, 30% Uncommon, 20% Rare, 8% Epic, 1.5% Legendary, 0.5% Secret. Kolya advises keeping the cards — they can be traded for interesting rewards later.",
 					_ => randomCount > 1
 						? $"A package from Kolya's scav network. Contains {randomCount} independent random rolls — each delivered as a separate message."
 						: "A package from Kolya's scav network. The contents are random — could be junk, could be gold."
@@ -114,9 +116,13 @@ public sealed class RewardCrateFactory
 				FleaPriceRoubles = null
 			};
 
-			var prefabPath = randomType != null
-				? LookupPrefabPath(tables, "5b7c710788a4506dec015957") // Lucky Scav Junk Box icon for all random crates
-				: LookupPrefabPath(tables, contents);
+			var prefabPath = randomType switch
+			{
+				RandomRewardType.BoosterPack when !string.IsNullOrEmpty(_state.EmptyBooster?.item_prefab_path)
+					=> _state.EmptyBooster.item_prefab_path,
+				not null => LookupPrefabPath(tables, "5b7c710788a4506dec015957"), // Lucky Scav Junk Box icon for other random crates
+				_ => LookupPrefabPath(tables, contents)
+			};
 			var isRandom = randomType != null;
 			var props = new TemplateItemProperties
 			{
@@ -131,13 +137,14 @@ public sealed class RewardCrateFactory
 					RandomRewardType.CultistCircle => "red",
 					RandomRewardType.RandomMeds => "blue",
 					RandomRewardType.RandomKeys => "yellow",
+					RandomRewardType.BoosterPack => "violet",
 					_ => "grey"
 				},
 				Weight = 0.5f,
 				ItemSound = containerBase.item_sound,
 				ExaminedByDefault = true,
-				Width = isRandom ? 2 : 1,
-				Height = isRandom ? 2 : 1,
+				Width = randomType == RandomRewardType.BoosterPack ? 1 : isRandom ? 2 : 1,
+				Height = randomType == RandomRewardType.BoosterPack ? 1 : isRandom ? 2 : 1,
 				CanSellOnRagfair = false,
 				IsUnbuyable = true
 			};

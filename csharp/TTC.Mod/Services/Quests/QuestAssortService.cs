@@ -57,6 +57,17 @@ public sealed class QuestAssortService
 
 		int count = 0;
 
+		// Booster Pack purchase (200K roubles, LL1, no quest gate) — registered first so it appears at the top of Kolya's shop
+		if (!string.IsNullOrWhiteSpace(emptyBoosterId))
+		{
+			var boosterCrateId = QuestIds.CrateTemplateId("ttc_booster_pack");
+			_crateRegistry.RegisterRandom(boosterCrateId, RandomRewardType.BoosterPack);
+			_crateRegistry.SetBoosterEmptyId(emptyBoosterId);
+			var assortItemId = AddRoublePurchaseItem(trader.Assort, boosterCrateId, 200000, 1);
+			if (assortItemId is MongoId bpId)
+				count++;
+		}
+
 		// Card→item barters gated by card quest completion
 		foreach (var def in allDefinitions)
 		{

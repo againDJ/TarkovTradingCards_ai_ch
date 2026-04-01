@@ -16,7 +16,8 @@ public enum RandomRewardType
 	ScavCaseIntel,      // Intelligence folder — best odds
 	CultistCircle,      // 5M rouble budget, includes quest/hideout items
 	RandomMeds,         // Random pick from all medkits, drugs, and stimulators
-	RandomKeys          // Random pick from all mechanical keys (no keycards)
+	RandomKeys,         // Random pick from all mechanical keys (no keycards)
+	BoosterPack         // 5 weighted-random cards + 1 Empty Booster Pack
 }
 
 [Injectable]
@@ -29,6 +30,7 @@ public sealed class RewardCrateRegistry
 	private readonly Dictionary<string, List<BarterRewardItem>> _contents = new();
 	private readonly Dictionary<string, RandomRewardType> _randomRewards = new();
 	private readonly Dictionary<string, int> _randomCounts = new();
+	private string? _boosterEmptyId;
 
 	/// <summary>Register a crate template and its fixed reward items.</summary>
 	public void Register(string crateTemplateId, List<BarterRewardItem> items)
@@ -61,4 +63,10 @@ public sealed class RewardCrateRegistry
 
 	/// <summary>All registered crate template IDs (fixed + random).</summary>
 	public IEnumerable<string> AllCrateTemplateIds => _contents.Keys.Concat(_randomRewards.Keys).Distinct();
+
+	/// <summary>Store the Empty Booster Pack template ID for booster pack rewards.</summary>
+	public void SetBoosterEmptyId(string emptyId) => _boosterEmptyId = emptyId;
+
+	/// <summary>Get the Empty Booster Pack template ID.</summary>
+	public string? GetBoosterEmptyId() => _boosterEmptyId;
 }

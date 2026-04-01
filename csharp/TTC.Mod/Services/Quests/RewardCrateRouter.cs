@@ -163,6 +163,21 @@ public sealed class RewardCrateRouter(
 				{
 					var rollCount = registry.GetRandomCount(tpl);
 
+					if (randomType.Value is RandomRewardType.BoosterPack)
+					{
+						var boosterItems = randomRewardService.GenerateBoosterPackReward(
+							registry.GetBoosterEmptyId() ?? "");
+						if (boosterItems.Count > 0)
+						{
+							mailSend.SendDirectNpcMessageToPlayer(
+								sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+								"Here's your booster pack, friend! Five cards fresh from my collection. Keep them — you'll want them for barters later.",
+								boosterItems);
+							logger.Info($"[TTC][BoosterPack] Sent {boosterItems.Count} items (5 cards + empty booster) via mail");
+						}
+						continue;
+					}
+
 					if (randomType.Value is RandomRewardType.RandomMeds or RandomRewardType.RandomKeys)
 					{
 						// Pool-based: pick rollCount items, send in one mail
