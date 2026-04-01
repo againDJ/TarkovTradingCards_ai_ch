@@ -229,12 +229,19 @@ public sealed class PostDb : IOnLoad
 		// Make TTC cards compatible with S I C C and Documents case containers
 		_pouchCompatibilityUpdater.Update();
 
-		// Remove TTC cards from PMC loot tables (scavs keep them)
+		// Remove TTC cards from PMC loot tables
 		if (_state.Config.blacklist_cards_from_pmc_loot)
 		{
 			var botRemoved = _botLootCleanup.RemoveCardsFromPmcLoot();
 			if (verbose && botRemoved > 0)
-				_logger.Info($"[TTC][Bots] Removed {botRemoved} card entries from PMC loot tables");
+				_logger.Info($"[TTC][Bots] Blacklisted {botRemoved} card IDs from PMC loot");
+		}
+
+		// Inject TTC cards into scav bot loot pools
+		{
+			var scavAdded = _botLootCleanup.InjectCardsIntoScavLoot();
+			if (verbose && scavAdded > 0)
+				_logger.Info($"[TTC][Bots] Injected {scavAdded} card entries into scav loot pools");
 		}
 
 		// Inject TTC cards into static containers
