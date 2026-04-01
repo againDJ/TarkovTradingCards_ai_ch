@@ -17,4 +17,5 @@ public record ModConfig
     public Dictionary<string, int> trader_sell_prices { get; init; } = new();
 
     public bool enable_quests { get; init; } = true;
+    public bool unlock_all_barters { get; init; } = false;
 }

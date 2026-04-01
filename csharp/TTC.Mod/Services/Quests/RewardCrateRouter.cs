@@ -11,6 +11,7 @@ using SPTarkov.Server.Core.Models.Utils;
 using SPTarkov.Server.Core.Models.Spt.Server;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Utils;
+using SPTarkov.Server.Core.Models.Eft.Quests;
 using TTC.Mod.Models;
 
 namespace TTC.Mod.Services.Quests;
@@ -35,12 +36,15 @@ public sealed class RewardCrateRouter(
 	new RouteAction<ItemEventRouterRequest>(
 		"/client/game/profile/items/moving",
 		(url, requestData, sessionId, output) =>
-			ProcessOutput(sessionId, output, registry, profileHelper, inventoryHelper, mailSend, databaseService, randomRewardService, logger)
+			ProcessOutput(sessionId, output, requestData, registry, profileHelper, inventoryHelper, mailSend, databaseService, randomRewardService, logger)
 	)
 ])
 {
+	private static readonly string IntroQuestId = QuestIds.QuestId("ttc_quest_introduction");
+
 	private static ValueTask<string> ProcessOutput(
 		MongoId sessionId, string? output,
+		ItemEventRouterRequest? requestData,
 		RewardCrateRegistry registry,
 		ProfileHelper profileHelper,
 		InventoryHelper inventoryHelper,
@@ -54,6 +58,9 @@ public sealed class RewardCrateRouter(
 
 		try
 		{
+			// Check for intro quest completion → send 5 random cards via mail
+			CheckIntroQuestCompletion(requestData, sessionId, registry, mailSend, randomRewardService, logger);
+
 			// Quick check: if no crates are registered, skip entirely
 			if (!registry.HasAnyCrates)
 				return ValueTask.FromResult(output);
@@ -317,6 +324,41 @@ public sealed class RewardCrateRouter(
 
 			if (part.Parts != null)
 				AddPartsRecursive(items, partId, part.Parts);
+		}
+	}
+
+	/// <summary>
+	/// Detect intro quest completion by checking if the request contains a QuestComplete action
+	/// for the TTC introduction quest. If so, send 5 random cards via mail as a welcome booster.
+	/// </summary>
+	private static void CheckIntroQuestCompletion(
+		ItemEventRouterRequest? requestData,
+		MongoId sessionId,
+		RewardCrateRegistry registry,
+		MailSendService mailSend,
+		RandomRewardService randomRewardService,
+		ISptLogger<RewardCrateRouter> logger)
+	{
+		if (requestData?.Data == null) return;
+
+		foreach (var action in requestData.Data)
+		{
+			if (action is not CompleteQuestRequestData completeReq) continue;
+			if (completeReq.QuestId.ToString() != IntroQuestId) continue;
+
+			// Intro quest completed! Send 5 random cards + 1 empty booster via mail
+			var emptyBoosterId = registry.GetBoosterEmptyId() ?? "";
+			var boosterItems = randomRewardService.GenerateBoosterPackReward(emptyBoosterId);
+
+			if (boosterItems.Count > 0)
+			{
+				mailSend.SendDirectNpcMessageToPlayer(
+					sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+					"Here's your welcome booster, friend! Five cards fresh from my collection. Keep them — you'll want them for barters later.",
+					boosterItems);
+				logger.Info($"[TTC][BoosterPack] Sent {boosterItems.Count} welcome cards via mail on intro quest completion");
+			}
+			break;
 		}
 	}
 }

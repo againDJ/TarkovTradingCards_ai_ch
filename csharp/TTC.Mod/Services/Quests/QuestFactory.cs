@@ -9,6 +9,7 @@ using SPTarkov.Server.Core.Utils;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Utils.Json;
 using TTC.Mod.Models;
+using TTC.Mod.Services.Common;
 
 namespace TTC.Mod.Services.Quests;
 
@@ -20,12 +21,14 @@ public sealed class QuestFactory
 {
 	private static readonly string RoubleTpl = "5449016a4bdc2d6f028b456f";
 	private readonly DatabaseService _db;
+	private readonly State _state;
 	private readonly Dictionary<string, List<string>> _parentClassCache = new();
 	private HashSet<string>? _ttcItemIds;
 
-	public QuestFactory(DatabaseService db)
+	public QuestFactory(DatabaseService db, State state)
 	{
 		_db = db;
+		_state = state;
 	}
 
 	/// <summary>
@@ -86,46 +89,19 @@ public sealed class QuestFactory
 	}
 
 	/// <summary>
-	/// Build the introduction quest — no objectives, instant complete, rewards Booster Pack.
+	/// Build the introduction quest — no objectives, instant complete, rewards Empty Booster.
+	/// 5 random cards are sent separately via mail when the quest is completed (handled by RewardCrateRouter).
 	/// </summary>
 	public NewQuestDetails BuildIntroQuest(string emptyBoosterId)
 	{
 		var questSeed = "ttc_quest_introduction";
 		var questId = QuestIds.QuestId(questSeed);
 		var traderId = new MongoId(QuestIds.KolyaTraderId);
-		var boosterPackCrateId = QuestIds.CrateTemplateId("ttc_booster_pack");
 
 		int rewardIdx = 0;
 		var rewards = new List<Reward>();
 
-		rewards.Add(new Reward
-		{
-			Id = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++)),
-			Type = RewardType.Experience,
-			Value = 500,
-			Index = rewardIdx
-		});
-
-		// Reward: 1x Booster Pack (intercepted by RewardCrateRouter → 5 random cards + 1 empty booster via mail)
-		var boosterRewardId = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++));
-		var boosterItemId = new MongoId(QuestIds.RewardId(questSeed, rewardIdx++));
-		rewards.Add(new Reward
-		{
-			Id = boosterRewardId,
-			Type = RewardType.Item,
-			Value = 1,
-			Index = rewardIdx,
-			Target = boosterItemId,
-			Items = new List<Item>
-			{
-				new Item
-				{
-					Id = boosterItemId,
-					Template = new MongoId(boosterPackCrateId),
-					Upd = new Upd { StackObjectsCount = 1 }
-				}
-			}
-		});
+		// 5 random cards + 1 Empty Booster are sent via mail on quest completion (see RewardCrateRouter)
 
 		var quest = BuildShell(questId, questSeed, traderId);
 		quest.Rewards["Success"] = rewards;
@@ -740,5 +716,44 @@ public sealed class QuestFactory
 			.Replace("Spt", "SPT")
 			.Replace("Eft", "EFT")
 			.Replace("Pmc", "PMC");
+	}
+
+	// Booster pack rarity weights: 40% C, 30% U, 20% R, 8% E, 1.5% L, 0.5% S
+	private static readonly (string rarity, double weight)[] BoosterRarityWeights =
+	{
+		("Common", 40.0), ("Uncommon", 30.0), ("Rare", 20.0),
+		("Epic", 8.0), ("Legendary", 1.5), ("Secret", 0.5)
+	};
+
+	/// <summary>
+	/// Pick N cards using weighted rarity distribution (same weights as Booster Pack).
+	/// </summary>
+	private List<string> PickRandomCards(int count)
+	{
+		var cardsByRarity = new Dictionary<string, List<string>>();
+		foreach (var card in _state.Cards)
+		{
+			if (!cardsByRarity.ContainsKey(card.rarity))
+				cardsByRarity[card.rarity] = new List<string>();
+			cardsByRarity[card.rarity].Add(card.id);
+		}
+
+		var result = new List<string>();
+		var random = new Random();
+		for (int i = 0; i < count; i++)
+		{
+			var roll = random.NextDouble() * 100.0;
+			double cumulative = 0;
+			string selectedRarity = "Common";
+			foreach (var (rarity, weight) in BoosterRarityWeights)
+			{
+				cumulative += weight;
+				if (roll < cumulative) { selectedRarity = rarity; break; }
+			}
+
+			if (cardsByRarity.TryGetValue(selectedRarity, out var pool) && pool.Count > 0)
+				result.Add(pool[random.Next(pool.Count)]);
+		}
+		return result;
 	}
 }

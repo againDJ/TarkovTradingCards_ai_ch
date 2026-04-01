@@ -163,9 +163,14 @@
   // ─────────────────────────────────────────────
   // QUESTS & KOLYA TRADER
   // ─────────────────────────────────────────────
-  /* When true, the custom trader "Kolya" is registered with collection quests.
-     Binders and Empty Booster are only purchasable after completing the
-     relevant quests. When false, Kolya and quests are disabled entirely
-     and binders/booster are sold at their configured trader. */
-  "enable_quests": true
+  /* When true, Kolya offers collection quests with objectives.
+     When false, Kolya is still available as a trader with all barters
+     unlocked, but no quests are registered. */
+  "enable_quests": true,
+
+  /* When true, all card barters are available at Kolya without needing
+     to complete quests first. Quests still exist but are not required
+     to unlock barters. When false (default), barters unlock only after
+     completing the corresponding quest. Ignored if enable_quests is false. */
+  "unlock_all_barters": false
 }

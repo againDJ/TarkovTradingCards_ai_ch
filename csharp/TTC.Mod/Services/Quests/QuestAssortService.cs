@@ -48,8 +48,11 @@ public sealed class QuestAssortService
 			return 0;
 		}
 
+		// When quests are disabled or unlock_all_barters is true, skip quest-gating
+		var skipQuestGating = !_state.Config.enable_quests || _state.Config.unlock_all_barters;
+
 		var questAssortSuccess = trader.QuestAssort?["success"];
-		if (questAssortSuccess == null)
+		if (questAssortSuccess == null && !skipQuestGating)
 		{
 			_logger.Error("[TTC][QuestAssort] QuestAssort success dictionary missing");
 			return 0;
@@ -90,7 +93,8 @@ public sealed class QuestAssortService
 
 				if (assortItemId is MongoId id)
 				{
-					questAssortSuccess[id] = new MongoId(questId);
+					if (!skipQuestGating && questAssortSuccess != null)
+						questAssortSuccess[id] = new MongoId(questId);
 					AddAssortmentUnlockReward(tables, questId, def.Seed, crateTemplateId, 1, 0);
 					count++;
 				}
@@ -106,7 +110,8 @@ public sealed class QuestAssortService
 
 				if (assortItemId is MongoId id)
 				{
-					questAssortSuccess[id] = new MongoId(questId);
+					if (!skipQuestGating && questAssortSuccess != null)
+						questAssortSuccess[id] = new MongoId(questId);
 					AddAssortmentUnlockReward(tables, questId, def.Seed, crateTemplateId, 1, 0);
 					count++;
 				}
@@ -120,7 +125,8 @@ public sealed class QuestAssortService
 
 				if (assortItemId is MongoId id)
 				{
-					questAssortSuccess[id] = new MongoId(questId);
+					if (!skipQuestGating && questAssortSuccess != null)
+						questAssortSuccess[id] = new MongoId(questId);
 					AddAssortmentUnlockReward(tables, questId, def.Seed, item.TemplateId, item.Count, 0);
 					count++;
 				}
@@ -143,7 +149,8 @@ public sealed class QuestAssortService
 				var assortItemId = AddRoublePurchaseItem(trader.Assort, binder.id, binder.price, 1);
 				if (assortItemId is MongoId id)
 				{
-					questAssortSuccess[id] = new MongoId(questId);
+					if (!skipQuestGating && questAssortSuccess != null)
+						questAssortSuccess[id] = new MongoId(questId);
 					AddAssortmentUnlockReward(tables, questId, def.Seed, binder.id, 1, 0);
 					count++;
 				}
@@ -171,7 +178,8 @@ public sealed class QuestAssortService
 
 				if (assortItemId is MongoId id)
 				{
-					questAssortSuccess[id] = new MongoId(questId);
+					if (!skipQuestGating && questAssortSuccess != null)
+						questAssortSuccess[id] = new MongoId(questId);
 					AddAssortmentUnlockReward(tables, questId, def.Seed, crateTemplateId, 1, 0);
 					count++;
 				}
@@ -183,25 +191,9 @@ public sealed class QuestAssortService
 
 				if (assortItemId is MongoId id)
 				{
-					questAssortSuccess[id] = new MongoId(questId);
+					if (!skipQuestGating && questAssortSuccess != null)
+						questAssortSuccess[id] = new MongoId(questId);
 					AddAssortmentUnlockReward(tables, questId, def.Seed, rewardItem.TemplateId, rewardItem.Count, 0);
-					count++;
-				}
-			}
-		}
-
-		// Empty Booster purchase (roubles) gated by introduction quest
-		if (!string.IsNullOrWhiteSpace(emptyBoosterId))
-		{
-			var boosterPrice = _state.EmptyBooster?.price ?? 5000;
-			if (boosterPrice > 0)
-			{
-				var introQuestId = QuestIds.QuestId("ttc_quest_introduction");
-				var assortItemId = AddRoublePurchaseItem(trader.Assort, emptyBoosterId, boosterPrice, 1);
-				if (assortItemId is MongoId boosterId)
-				{
-					questAssortSuccess[boosterId] = new MongoId(introQuestId);
-					AddAssortmentUnlockReward(tables, introQuestId, "ttc_quest_introduction", emptyBoosterId, 1, 0);
 					count++;
 				}
 			}

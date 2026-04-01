@@ -145,26 +145,34 @@ public sealed class PostDb : IOnLoad
 			_secureContainerFilterUpdater.AddToSecureContainers(emptyBoosterId);
 		}
 
-		// Register custom trader Kolya + quests
-		if (_state.Config.enable_quests && !string.IsNullOrEmpty(_state.TraderBasePath))
+		// Register custom trader Kolya (always if trader base path exists)
+		if (!string.IsNullOrEmpty(_state.TraderBasePath))
 		{
 			var kolyaOk = _kolyaRegistration.Register(_state.TraderBasePath);
 			if (kolyaOk)
 			{
 				_logger.Info("[TTC][Kolya] Trader registered");
 
-				// Exclude TTC card/binder/container IDs from HandoverItem category resolution
-				var ttcIds = _state.Cards.Select(c => c.id)
-					.Concat(_state.Binders?.Select(b => b.id) ?? Enumerable.Empty<string>());
-				_questFactory.SetTtcItemIds(ttcIds);
+				// Register quests (only when enabled)
+				if (_state.Config.enable_quests)
+				{
+					// Exclude TTC card/binder/container IDs from HandoverItem category resolution
+					var ttcIds = _state.Cards.Select(c => c.id)
+						.Concat(_state.Binders?.Select(b => b.id) ?? Enumerable.Empty<string>());
+					_questFactory.SetTtcItemIds(ttcIds);
 
-				var (questsCreated, questsFailed) = _questRegistration.RegisterAll(emptyBoosterId);
-				if (questsFailed > 0)
-					_logger.Warning($"[TTC][Quests] Created {questsCreated}, failed {questsFailed}");
+					var (questsCreated, questsFailed) = _questRegistration.RegisterAll(emptyBoosterId);
+					if (questsFailed > 0)
+						_logger.Warning($"[TTC][Quests] Created {questsCreated}, failed {questsFailed}");
+					else
+						_logger.Info($"[TTC][Quests] Created {questsCreated} quests");
+				}
 				else
-					_logger.Info($"[TTC][Quests] Created {questsCreated} quests");
+				{
+					_logger.Info("[TTC][Quests] Quests disabled by config — barters will be unlocked without quests");
+				}
 
-				// Set up quest-gated assort entries (registers reward crates in the process)
+				// Set up assort entries (quest-gated or unlocked depending on config)
 				var allDefs = new List<Models.QuestDefinition>();
 				allDefs.AddRange(BossesThemeDefinitions.GetAll());
 				allDefs.AddRange(IconicWeaponsThemeDefinitions.GetAll());
@@ -188,7 +196,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(SptVsEftThemeDefinitions.GetAll());
 				allDefs.AddRange(ModsSptLegendsThemeDefinitions.GetAll());
 				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
-				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items to quest completion");
+				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items");
 
 				// Create reward crate item templates (must happen after SetupAll populates the registry)
 				var (cratesCreated, cratesFailed) = _rewardCrateFactory.CreateAll(_rewardCrateRegistry);
@@ -211,7 +219,7 @@ public sealed class PostDb : IOnLoad
 			}
 			else
 			{
-				_logger.Warning("[TTC][Kolya] Failed to register trader — quests disabled");
+				_logger.Warning("[TTC][Kolya] Failed to register trader");
 			}
 		}
 
