@@ -172,5 +172,10 @@
      to complete quests first. Quests still exist but are not required
      to unlock barters. When false (default), barters unlock only after
      completing the corresponding quest. Ignored if enable_quests is false. */
-  "unlock_all_barters": false
+  "unlock_all_barters": false,
+
+  /* When true, TTC cards are removed from PMC bot loot pools so PMCs
+     don't spawn with cards in their inventories. When false, PMCs can
+     spawn with cards like any other loot item. */
+  "blacklist_cards_from_pmc_loot": true
 }

@@ -230,6 +230,7 @@ public sealed class PostDb : IOnLoad
 		_pouchCompatibilityUpdater.Update();
 
 		// Remove TTC cards from PMC loot tables (scavs keep them)
+		if (_state.Config.blacklist_cards_from_pmc_loot)
 		{
 			var botRemoved = _botLootCleanup.RemoveCardsFromPmcLoot();
 			if (verbose && botRemoved > 0)

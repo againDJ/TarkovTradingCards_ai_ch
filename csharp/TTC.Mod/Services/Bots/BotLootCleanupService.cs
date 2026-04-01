@@ -1,75 +1,52 @@
 using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.Models.Common;
-using SPTarkov.Server.Core.Services;
+using SPTarkov.Server.Core.Models.Spt.Config;
+using SPTarkov.Server.Core.Servers;
 using TTC.Mod.Services.Common;
 
 namespace TTC.Mod.Services.Bots;
 
 [Injectable]
 /// <summary>
-/// Removes TTC card IDs from PMC bot loot tables so PMCs don't spawn with cards in their inventories.
-/// Scavs and other bot types are left untouched.
+/// Adds TTC card IDs to PmcConfig.GlobalLootBlacklist so PMC bots don't spawn with cards.
+/// Scavs and other bot types are left untouched — cards can still appear on them.
 /// </summary>
 public sealed class BotLootCleanupService
 {
-	private static readonly HashSet<string> PmcBotTypes = new(StringComparer.OrdinalIgnoreCase)
-	{
-		"bear", "usec", "pmcbear", "pmcusec", "pmcbot"
-	};
+    private readonly ConfigServer _configServer;
+    private readonly State _state;
 
-	private readonly DatabaseService _db;
-	private readonly State _state;
+    public BotLootCleanupService(ConfigServer configServer, State state)
+    {
+        _configServer = configServer;
+        _state = state;
+    }
 
-	public BotLootCleanupService(DatabaseService db, State state)
-	{
-		_db = db;
-		_state = state;
-	}
+    /// <summary>
+    /// Add all TTC card template IDs to the PMC global loot blacklist.
+    /// Returns the number of IDs added.
+    /// </summary>
+    public int RemoveCardsFromPmcLoot()
+    {
+        var ttcIds = _state.Cards.Select(c => c.id).ToList();
+        if (ttcIds.Count == 0) return 0;
 
-	/// <summary>
-	/// Purge TTC card template IDs from PMC bot inventory loot pools only.
-	/// Returns the total number of entries removed.
-	/// </summary>
-	public int RemoveCardsFromPmcLoot()
-	{
-		var ttcIds = new HashSet<string>(_state.Cards.Select(c => c.id));
-		if (ttcIds.Count == 0) return 0;
+        var pmcConfig = _configServer.GetConfig<PmcConfig>();
+        if (pmcConfig == null) return 0;
 
-		var bots = _db.GetBots();
-		var removed = 0;
+        pmcConfig.GlobalLootBlacklist ??= new List<MongoId>();
+        var existing = new HashSet<string>(pmcConfig.GlobalLootBlacklist.Select(m => m.ToString()));
+        var added = 0;
 
-		foreach (var (botType, bot) in bots.Types)
-		{
-			if (!PmcBotTypes.Contains(botType)) continue;
+        foreach (var id in ttcIds)
+        {
+            if (existing.Add(id))
+            {
+                pmcConfig.GlobalLootBlacklist.Add(new MongoId(id));
+                added++;
+            }
+        }
 
-			var items = bot?.BotInventory?.Items;
-			if (items == null) continue;
-
-			var containers = new[]
-			{
-				items.Backpack,
-				items.Pockets,
-				items.SecuredContainer,
-				items.SpecialLoot,
-				items.TacticalVest
-			};
-
-			foreach (var container in containers)
-			{
-				if (container == null) continue;
-
-				var toRemove = container.Keys
-					.Where(k => ttcIds.Contains(k.ToString()))
-					.ToList();
-
-				foreach (var key in toRemove)
-				{
-					container.Remove(key);
-					removed++;
-				}
-			}
-		}
-
-		return removed;
-	}
+        return added;
+    }
 }
