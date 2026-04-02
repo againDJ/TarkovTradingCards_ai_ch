@@ -140,7 +140,7 @@ public sealed class RewardCrateFactory
 					RandomRewardType.BoosterPack => "violet",
 					_ => "grey"
 				},
-				Weight = 0.5f,
+				Weight = 0.1f,
 				ItemSound = containerBase.item_sound,
 				ExaminedByDefault = true,
 				Width = randomType == RandomRewardType.BoosterPack ? 1 : isRandom ? 2 : 1,
