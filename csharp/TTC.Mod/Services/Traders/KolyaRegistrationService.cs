@@ -61,7 +61,7 @@ public sealed class KolyaRegistrationService
                 UnlockedByDefault = true,
                 Medic = false,
                 CustomizationSeller = false,
-                BuyerUp = false,
+                BuyerUp = true,
                 Discount = 0,
                 DiscountEnd = 0,
                 BalanceRub = 5000000,
@@ -89,7 +89,7 @@ public sealed class KolyaRegistrationService
                 },
                 ItemsBuy = new ItemBuyData
                 {
-                    Category = new HashSet<MongoId> { new MongoId("5b47574386f77428ca22b2f1") },
+                    Category = new HashSet<MongoId> { new MongoId("54009119af1c881c07000029") }, // Item (root class — accepts everything)
                     IdList = new HashSet<MongoId>()
                 },
                 ItemsBuyProhibited = new ItemBuyData
@@ -101,9 +101,9 @@ public sealed class KolyaRegistrationService
                 LoyaltyLevels = new List<TraderLoyaltyLevel>
                 {
                     new() { BuyPriceCoefficient = 60, MinLevel = 1, MinSalesSum = 0, MinStanding = 0 },
-                    new() { BuyPriceCoefficient = 55, MinLevel = 1, MinSalesSum = 0, MinStanding = 0.20 },
-                    new() { BuyPriceCoefficient = 50, MinLevel = 1, MinSalesSum = 0, MinStanding = 0.40 },
-                    new() { BuyPriceCoefficient = 45, MinLevel = 1, MinSalesSum = 0, MinStanding = 0.60 }
+                    new() { BuyPriceCoefficient = 55, MinLevel = 1, MinSalesSum = 0, MinStanding = 1.80 },
+                    new() { BuyPriceCoefficient = 50, MinLevel = 1, MinSalesSum = 0, MinStanding = 4.00 },
+                    new() { BuyPriceCoefficient = 45, MinLevel = 1, MinSalesSum = 0, MinStanding = 6.50 }
                 }
             };
 

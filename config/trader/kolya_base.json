@@ -6,7 +6,7 @@
   "balance_rub": 5000000,
   "balance_dol": 0,
   "balance_eur": 0,
-  "buyer_up": false,
+  "buyer_up": true,
   "currency": "RUB",
   "customization_seller": false,
   "discount": 0,

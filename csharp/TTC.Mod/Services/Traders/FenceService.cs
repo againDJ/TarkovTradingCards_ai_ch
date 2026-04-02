@@ -29,6 +29,37 @@ public sealed class FenceService
     /// </summary>
     public void PurgeTtcAndUpdateBlacklist()
     {
+        // Collect ALL TTC item IDs: cards + binders + containers + mega items
+        var allTtcIds = new HashSet<string>(_state.Cards.Select(c => c.id));
+
+        if (_state.Binders != null)
+            foreach (var b in _state.Binders)
+                allTtcIds.Add(b.id);
+
+        if (_state.EmptyBooster != null)
+            allTtcIds.Add(_state.EmptyBooster.id);
+
+        if (_state.MegaBinder != null)
+            allTtcIds.Add(_state.MegaBinder.id);
+
+        if (_state.MegaBooster != null)
+            allTtcIds.Add(_state.MegaBooster.id);
+
+        PurgeAndBlacklist(allTtcIds);
+    }
+
+    /// <summary>
+    /// Add additional template IDs to the Fence blacklist (e.g. reward crate IDs created after initial purge).
+    /// </summary>
+    public void BlacklistAdditionalIds(IEnumerable<string> templateIds)
+    {
+        PurgeAndBlacklist(new HashSet<string>(templateIds));
+    }
+
+    private void PurgeAndBlacklist(HashSet<string> idsToBlock)
+    {
+        if (idsToBlock.Count == 0) return;
+
         try
         {
             // Purge current assort of TTC items
@@ -37,8 +68,7 @@ public sealed class FenceService
             var fenceId = "579dc571d53a0658a154fbec";
             if (traders != null && traders.TryGetValue(fenceId, out var fence) && fence?.Assort != null)
             {
-                var ttcTpls = new HashSet<MongoId>(_state.Cards.Select(c => new MongoId(c.id)));
-                var before = fence.Assort.Items?.Count ?? 0;
+                var ttcTpls = new HashSet<MongoId>(idsToBlock.Select(id => new MongoId(id)));
                 var removedAssortIds = new HashSet<MongoId>();
 
                 if (fence.Assort.Items != null)
@@ -60,11 +90,9 @@ public sealed class FenceService
                         fence.Assort.LoyalLevelItems?.Remove(rid);
                     }
                 }
-
-                var after = fence.Assort.Items?.Count ?? 0;
             }
 
-            // Update trader config fence blacklist set (typed)
+            // Update trader config fence blacklist set
             TraderConfig? traderCfg = null;
             try { traderCfg = _configServer.GetConfigByString<TraderConfig>("trader"); } catch { }
             if (traderCfg == null) { try { traderCfg = _configServer.GetConfigByString<TraderConfig>("spt-trader"); } catch { } }
@@ -78,11 +106,11 @@ public sealed class FenceService
                 {
                     if (fenceCfg.Blacklist is ISet<MongoId> setMi)
                     {
-                        foreach (var tpl in _state.Cards.Select(c => c.id)) _ = setMi.Add(new MongoId(tpl));
+                        foreach (var id in idsToBlock) _ = setMi.Add(new MongoId(id));
                     }
                     else if (fenceCfg.Blacklist is ISet<string> setStr)
                     {
-                        foreach (var tpl in _state.Cards.Select(c => c.id)) _ = setStr.Add(tpl);
+                        foreach (var id in idsToBlock) _ = setStr.Add(id);
                     }
                 }
                 catch { }
