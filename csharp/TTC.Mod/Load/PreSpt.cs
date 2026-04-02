@@ -50,9 +50,16 @@ public sealed class PreSpt : IOnLoad
 			var bindersDir = Path.Combine(configDir, "containers");
 			var binders = _loader.LoadBinderOverrides(bindersDir);
 			var emptyBooster = _loader.LoadEmptyBoosterOverride(bindersDir);
+			var megaBinder = _loader.LoadContainerOverride(bindersDir, "ttc_mega_binder.json");
+			var megaBooster = _loader.LoadContainerOverride(bindersDir, "ttc_mega_booster.json");
 
-			_state.Set(cfg, cards, cardBase, containerBase, binderBase, binders, emptyBooster);
-			if (verbose) _logger.Info($"[TTC][Config] Loaded {cards.Count} cards, binders={binders.Count}, emptyBooster={(emptyBooster?.id ?? "none")}");
+			_state.Set(cfg, cards, cardBase, containerBase, binderBase, binders, emptyBooster, megaBinder, megaBooster);
+
+			// Set trader base path for Kolya registration
+			var traderBasePath = Path.Combine(configDir, "trader", "kolya_base.json");
+			_state.SetTraderBasePath(traderBasePath);
+
+			if (verbose) _logger.Info($"[TTC][Config] Loaded {cards.Count} cards, binders={binders.Count}, emptyBooster={(emptyBooster?.id ?? "none")}, megaBinder={(megaBinder?.id ?? "none")}, megaBooster={(megaBooster?.id ?? "none")}");
 		}
 		catch (Exception ex)
 		{

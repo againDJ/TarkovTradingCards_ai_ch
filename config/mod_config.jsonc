@@ -14,6 +14,23 @@
    /* Verbose logs (more details). When false, logs are short and concise. */
    "verbose_logs": false,
 
+  /* When false, cards will show as "???" until examined.
+     When true, cards show their full details immediately. */
+  "cards_examined_by_default": false,
+
+  /* When true, cards can be bought and sold on the flea market.
+     When false, cards cannot be bought or sold on flea market (raid-only). */
+  "cards_tradeable_on_flea": false,
+
+  /* When true, TTC cards are also sold by Fence in addition to any configured trader.
+     When false, Fence won't sell TTC cards. This is independent from per-card "sold" flags. */
+  "cards_sold_on_fence": false,
+
+  /* When true, TTC cards are removed from PMC bot loot pools so PMCs
+     don't spawn with cards in their inventories. When false, PMCs can
+     spawn with cards like any other loot item. */
+  "blacklist_cards_from_pmc_loot": true,
+
    // ─────────────────────────────────────────────
    // FINDING CARDS IN CONTAINERS
    // ─────────────────────────────────────────────
@@ -112,36 +129,24 @@
       "66acff0a1d8e1083b303f5af": 1
    },
 
-  /* When false, cards will show as "???" until examined.
-     When true, cards show their full details immediately. */
-  "cards_examined_by_default": false,
-
-  /* When true, cards can be bought and sold on the flea market.
-     When false, cards cannot be bought or sold on flea market (raid-only). */
-  "cards_tradeable_on_flea": false,
-
-  /* When true, TTC cards are also sold by Fence in addition to any configured trader.
-     When false, Fence won’t sell TTC cards. This is independent from per-card "sold" flags. */
-  "cards_sold_on_fence": false,
-
   // ─────────────────────────────────────────────
   // RARITY WEIGHTS  (MUST ADD UP TO 1.0)
   // ─────────────────────────────────────────────
   /* These six numbers are fractions of the TOTAL card
      weight budget. The sum MUST stay exactly 1.0.
      Example below keeps the vanilla-style rarity curve:
-         Common   50 %
-         Uncommon 28 %
-         Rare     15 %
-         Epic      5 %
+         Common   40 %
+         Uncommon 30 %
+         Rare     20 %
+         Epic      8 %
          Legendary 1.5 %
          Secret    0.5 %
   */
   "rarity_weights": {
-    "Common":     0.50,
-    "Uncommon":   0.28,
-    "Rare":       0.15,
-    "Epic":       0.05,
+    "Common":     0.40,
+    "Uncommon":   0.30,
+    "Rare":       0.20,
+    "Epic":       0.08,
     "Legendary":  0.015,
     "Secret":     0.005
   },
@@ -158,5 +163,19 @@
     "Epic":       80000,
     "Legendary":  200000,
     "Secret":     500000
-  }
+  },
+
+  // ─────────────────────────────────────────────
+  // QUESTS & KOLYA TRADER
+  // ─────────────────────────────────────────────
+  /* When true, Kolya offers collection quests with objectives.
+     When false, Kolya is still available as a trader with all barters
+     unlocked, but no quests are registered. */
+  "enable_quests": true,
+
+  /* When true, all card barters are available at Kolya without needing
+     to complete quests first. Quests still exist but are not required
+     to unlock barters. When false (default), barters unlock only after
+     completing the corresponding quest. Ignored if enable_quests is false. */
+  "unlock_all_barters": false
 }

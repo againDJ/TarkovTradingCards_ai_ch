@@ -1,0 +1,33 @@
+{
+  // Quest reward tuning per tier. Adjust values to balance progression.
+  "tier_1": {
+    "cards_required": 3,
+    "target_rarities": ["Common", "Uncommon"],
+    "xp_reward": 3000,
+    "rouble_reward": 25000,
+    "standing_reward": 0.02,
+    "min_level": 1
+  },
+  "tier_2": {
+    "cards_required": 2,
+    "target_rarities": ["Rare"],
+    "xp_reward": 6000,
+    "rouble_reward": 50000,
+    "standing_reward": 0.03
+  },
+  "tier_3": {
+    "cards_required": 1,
+    "target_rarities": ["Epic"],
+    "xp_reward": 12000,
+    "rouble_reward": 100000,
+    "standing_reward": 0.04
+  },
+  "tier_4": {
+    "cards_required": 2,
+    "target_rarities": ["Legendary", "Secret"],
+    "xp_reward": 25000,
+    "rouble_reward": 250000,
+    "standing_reward": 0.05
+  },
+  "found_in_raid_required": true
+}

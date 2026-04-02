@@ -1,0 +1,11 @@
+{
+  "id": "a1785d37c4ee5431af6bf5d6",
+  "item_name": "Kolya's MEGA Binder",
+  "item_short_name": "MEGA Binder",
+  "item_description": "The ultimate collector's binder. Contains one slot for every TTC card in existence — all 300 cards from all 20 themes. A true archivist's treasure.",
+  "item_prefab_path": "containers/ttc_booster_pack.bundle",
+  "color": "#FFD700",
+  "price": 5000000,
+  "currency": "roubles",
+  "trader": "a1b2c3d4e5f6a7b8c9d0e1f2"
+}

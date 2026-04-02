@@ -100,4 +100,75 @@ public sealed class EmptyBoosterFactory
         }
         return string.Empty;
     }
+
+    /// <summary>
+    /// Creates the MEGA Booster container (20x20 grid) filtered to accept TTC cards.
+    /// </summary>
+    public string CreateMegaBooster()
+    {
+        try
+        {
+            var containerBase = _state.ContainerBase;
+            var cfg = _state.MegaBooster;
+            if (cfg == null) return string.Empty;
+
+            var gameLocale = _localeService.GetDesiredGameLocale();
+            const string english = "en";
+
+            var locales = new Dictionary<string, LocaleDetails>
+            {
+                [gameLocale] = new LocaleDetails { Name = cfg.item_name, ShortName = cfg.item_short_name, Description = cfg.item_description },
+                [english] = new LocaleDetails { Name = cfg.item_name, ShortName = cfg.item_short_name, Description = cfg.item_description }
+            };
+
+            var details = new NewItemFromCloneDetails
+            {
+                NewId = cfg.id,
+                ItemTplToClone = containerBase.clone_item,
+                ParentId = containerBase.item_parent,
+                Locales = locales,
+                HandbookParentId = containerBase.category_id,
+                HandbookPriceRoubles = cfg.price > 0 ? cfg.price : null,
+                FleaPriceRoubles = null
+            };
+
+            var props = new TemplateItemProperties
+            {
+                Prefab = new Prefab { Path = cfg.item_prefab_path },
+                BackgroundColor = cfg.color,
+                Weight = (float)containerBase.weight,
+                ItemSound = containerBase.item_sound,
+                ExaminedByDefault = _state.Config.cards_examined_by_default,
+                Width = containerBase.ExternalSize.width,
+                Height = containerBase.ExternalSize.height
+            };
+
+            var grid = new Grid
+            {
+                Name = "cardCase",
+                Parent = new MongoId(cfg.id),
+                Properties = new GridProperties
+                {
+                    CellsH = 15,
+                    CellsV = 15,
+                    MinCount = 0,
+                    Filters = new[]
+                    {
+                        new GridFilter
+                        {
+                            Filter = new HashSet<MongoId>(_state.Cards.Select(c => new MongoId(c.id)))
+                        }
+                    }
+                }
+            };
+            props.Grids = new[] { grid };
+            props.Slots = null;
+
+            details.OverrideProperties = props;
+            var result = _customItemService.CreateItemFromClone(details);
+            if (result.Success == true) return cfg.id;
+        }
+        catch { }
+        return string.Empty;
+    }
 }

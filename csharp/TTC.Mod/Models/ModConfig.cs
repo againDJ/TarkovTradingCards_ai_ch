@@ -15,4 +15,8 @@ public record ModConfig
 
     public Dictionary<string, double> rarity_weights { get; init; } = new();
     public Dictionary<string, int> trader_sell_prices { get; init; } = new();
+
+    public bool enable_quests { get; init; } = true;
+    public bool unlock_all_barters { get; init; } = false;
+    public bool blacklist_cards_from_pmc_loot { get; init; } = true;
 }

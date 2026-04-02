@@ -24,6 +24,7 @@ public sealed class TraderOfferService
 
     /// <summary>
     /// Add trader offers for binders and (optionally) the Empty Booster.
+    /// When quests are enabled, items targeting Kolya are skipped (handled by quest system).
     /// </summary>
     /// <param name="emptyBoosterId">Template id of the Empty Booster, or empty if not configured.</param>
     public void AddOffers(string emptyBoosterId)
@@ -37,6 +38,7 @@ public sealed class TraderOfferService
                 return;
             }
 
+            var questsEnabled = _state.Config.enable_quests;
             int offersAttempted = 0, offersAdded = 0;
             var binderCandidates = _state.Binders?.Where(b => b != null && b.price > 0 && !string.IsNullOrWhiteSpace(b.trader)).ToList() ?? new List<BinderOverride>();
 
@@ -97,25 +99,29 @@ public sealed class TraderOfferService
                 catch { return false; }
             }
 
-            // Add binders
+            // Add binders (skip Kolya-targeted items when quests handle them)
             if (_state.Binders != null)
             {
                 foreach (var b in _state.Binders)
                 {
                     if (b.price <= 0 || string.IsNullOrWhiteSpace(b.trader)) continue;
+                    if (questsEnabled && b.trader == Models.QuestIds.KolyaTraderId) continue;
                     offersAttempted++;
                     var ok = AddOffer(b.trader, b.id, b.price, b.currency ?? "roubles", Math.Max(1, _state.BinderBase.trader_loyalty_level), true, _state.BinderBase.stock_amount);
                     if (ok) { offersAdded++; }
                 }
             }
 
-            // Add empty booster if present
+            // Add empty booster if present (skip Kolya-targeted items when quests handle them)
             var emptyCfg = _state.EmptyBooster;
             if (!string.IsNullOrWhiteSpace(emptyBoosterId) && emptyCfg != null && emptyCfg.price > 0 && !string.IsNullOrWhiteSpace(emptyCfg.trader))
             {
-                offersAttempted++;
-                var ok = AddOffer(emptyCfg.trader, emptyBoosterId, emptyCfg.price, emptyCfg.currency ?? "roubles", Math.Max(1, _state.ContainerBase.trader_loyalty_level), _state.ContainerBase.unlimited_stock, _state.ContainerBase.stock_amount);
-                if (ok) { offersAdded++; }
+                if (!(questsEnabled && emptyCfg.trader == Models.QuestIds.KolyaTraderId))
+                {
+                    offersAttempted++;
+                    var ok = AddOffer(emptyCfg.trader, emptyBoosterId, emptyCfg.price, emptyCfg.currency ?? "roubles", Math.Max(1, _state.ContainerBase.trader_loyalty_level), _state.ContainerBase.unlimited_stock, _state.ContainerBase.stock_amount);
+                    if (ok) { offersAdded++; }
+                }
             }
         }
         catch { }

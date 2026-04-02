@@ -5,11 +5,12 @@
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
     <AssemblyName>TTC.Mod</AssemblyName>
+    <Version>3.0.0</Version>
     <RootNamespace>TTC.Mod</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
-    <SPT_DIR>D:\SPT\4.0\SPT</SPT_DIR>
+    <SPT_DIR>C:\Games\SPT-4.0\SPT</SPT_DIR>
   </PropertyGroup>
 
   <!-- Copy bundles.json to output for packaging convenience -->
@@ -61,5 +62,42 @@
   <!-- Require SPT_DIR to be set; we always build against SPT -->
   <Target Name="EnsureSptDirProvided" BeforeTargets="Build">
     <Error Condition="'$(SPT_DIR)' == ''" Text="SPT_DIR must be set (path to SPT server DLLs) to build this project." />
+  </Target>
+
+  <!-- Deploy mod to SPT after build -->
+  <PropertyGroup>
+    <ModDeployDir>$(SPT_DIR)\user\mods\TTC</ModDeployDir>
+  </PropertyGroup>
+
+  <Target Name="DeployMod" AfterTargets="Build" Condition="Exists('$(ModDeployDir)')">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModDeployDir)" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="[TTC] Deployed DLL to $(ModDeployDir)" />
+  </Target>
+
+  <Target Name="DeployModAssets" AfterTargets="Build" Condition="Exists('$(ModDeployDir)')">
+    <ItemGroup>
+      <ConfigFiles Include="..\..\config\**\*.*" />
+      <BundleFiles Include="..\..\bundles\**\*.*" />
+      <BundlesJson Include="..\..\bundles.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ConfigFiles)" DestinationFiles="@(ConfigFiles->'$(ModDeployDir)\config\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(BundleFiles)" DestinationFiles="@(BundleFiles->'$(ModDeployDir)\bundles\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(BundlesJson)" DestinationFolder="$(ModDeployDir)" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <TraderFiles Include="..\..\files\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(TraderFiles)" DestinationFiles="@(TraderFiles->'$(ModDeployDir)\files\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Deploy QuestsExtended quest definitions to BepInEx plugins folder -->
+  <PropertyGroup>
+    <QeDeployDir>$(SPT_DIR)\..\BepInEx\plugins\QuestsExtended\Quests</QeDeployDir>
+  </PropertyGroup>
+  <Target Name="DeployQuestsExtended" AfterTargets="Build" Condition="Exists('$(QeDeployDir)')">
+    <ItemGroup>
+      <QeFiles Include="..\..\config\quests_extended\*.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(QeFiles)" DestinationFolder="$(QeDeployDir)" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="[TTC] Deployed QuestsExtended files to $(QeDeployDir)" />
   </Target>
 </Project>

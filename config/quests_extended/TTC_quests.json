@@ -1,0 +1,2794 @@
+{
+  "153a44e1bc3e5de0f17a84c6": {
+    "QuestId": "153a44e1bc3e5de0f17a84c6",
+    "QuestName": "The Hunter's Dossier",
+    "Conditions": [
+      {
+        "ConditionId": "9c0b212c9db111462b1e503f",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "4223877642ae5ddee25f9738": {
+    "QuestId": "4223877642ae5ddee25f9738",
+    "QuestName": "Ghost of the Pines",
+    "Conditions": [
+      {
+        "ConditionId": "d3a3f285d4f1ae14f14df701",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "94fdcaf2049dd07cd76f7070": {
+    "QuestId": "94fdcaf2049dd07cd76f7070",
+    "QuestName": "The Sawmill's Glint",
+    "Conditions": [
+      {
+        "ConditionId": "cd14c1da84d069afdf8d85cd",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "787439682f318cee537557f8": {
+    "QuestId": "787439682f318cee537557f8",
+    "QuestName": "Blink and You're Dead",
+    "Conditions": [
+      {
+        "ConditionId": "4162885d3d9475893864dfa9",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "87e5785dc500619c5b4b1ecb": {
+    "QuestId": "87e5785dc500619c5b4b1ecb",
+    "QuestName": "Six Guards, Zero Mercy",
+    "Conditions": [
+      {
+        "ConditionId": "57417c082291e9db57a876cc",
+        "ConditionType": "DamageWithAR"
+      }
+    ]
+  },
+  "1ce886d5fec176e64650800d": {
+    "QuestId": "1ce886d5fec176e64650800d",
+    "QuestName": "The PMC Butcher's Bill",
+    "Conditions": [
+      {
+        "ConditionId": "7f955476df667765e58d746f",
+        "ConditionType": "DamageToArmour"
+      }
+    ]
+  },
+  "fef77af4bfefe4b2e1044818": {
+    "QuestId": "fef77af4bfefe4b2e1044818",
+    "QuestName": "Bad Medicine",
+    "Conditions": [
+      {
+        "ConditionId": "29724a810ad0256542fa8eff",
+        "ConditionType": "HealthGain"
+      }
+    ]
+  },
+  "b224b944f785db2f49c25af1": {
+    "QuestId": "b224b944f785db2f49c25af1",
+    "QuestName": "Frag Out",
+    "Conditions": [
+      {
+        "ConditionId": "2d6fe1f1e49a0fd7b75d2a27",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "e47a558c1d0bf5347ae66c01": {
+    "QuestId": "e47a558c1d0bf5347ae66c01",
+    "QuestName": "Tarkov's Traffic Cop",
+    "Conditions": [
+      {
+        "ConditionId": "28722cc6837bb7fdb7b769a2",
+        "ConditionType": "EncumberedTimeInSeconds"
+      }
+    ]
+  },
+  "d831becdbacc4b5cdbf3c752": {
+    "QuestId": "d831becdbacc4b5cdbf3c752",
+    "QuestName": "Golden TT",
+    "Conditions": [
+      {
+        "ConditionId": "de3034c8f8ef577bbfdf4ff6",
+        "ConditionType": "DamageWithPistols"
+      }
+    ]
+  },
+  "a85d3e0d843df52ee2a4954b": {
+    "QuestId": "a85d3e0d843df52ee2a4954b",
+    "QuestName": "The Sledgehammer Waltz",
+    "Conditions": [
+      {
+        "ConditionId": "b818ae92d96024fcf1292d1b",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "61267ae4823d4e1a212afb7c": {
+    "QuestId": "61267ae4823d4e1a212afb7c",
+    "QuestName": "Mall Sweep",
+    "Conditions": [
+      {
+        "ConditionId": "1886db7a3882903e5c2e10b4",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "e587496c7c7b82fc9d1cb312",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "ad5198a4fcae5ecc3a8c0519": {
+    "QuestId": "ad5198a4fcae5ecc3a8c0519",
+    "QuestName": "Commander's Orders",
+    "Conditions": [
+      {
+        "ConditionId": "34f68aebfb6d5579fff35428",
+        "ConditionType": "DamageWithLMG"
+      }
+    ]
+  },
+  "9a6438ecc910d1cb58830013": {
+    "QuestId": "9a6438ecc910d1cb58830013",
+    "QuestName": "Lighthouse Judgement",
+    "Conditions": [
+      {
+        "ConditionId": "b01145ba09949304f10ef8f0",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      },
+      {
+        "ConditionId": "528a9d0b7a2fb6532f5ed87b",
+        "ConditionType": "KillsWhileProne"
+      }
+    ]
+  },
+  "456216cd352a90595a4bd8d6": {
+    "QuestId": "456216cd352a90595a4bd8d6",
+    "QuestName": "The Midnight Ritual",
+    "Conditions": [
+      {
+        "ConditionId": "1656517df63472bcadc83e71",
+        "ConditionType": "MoveDistanceWhileSilent"
+      },
+      {
+        "ConditionId": "a0ee822ce489149eb109028b",
+        "ConditionType": "FixAnyBleed"
+      }
+    ]
+  },
+  "06694eb6a7a94ec6e95b43db": {
+    "QuestId": "06694eb6a7a94ec6e95b43db",
+    "QuestName": "Echo in the Dark",
+    "Conditions": [
+      {
+        "ConditionId": "3d89c1e7bb9c2be7cd45ddb9",
+        "ConditionType": "KillsWithoutADS"
+      },
+      {
+        "ConditionId": "6791e4b9013eb6f0ba09195c",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "34d2952e95387bd7d2e3bc8b": {
+    "QuestId": "34d2952e95387bd7d2e3bc8b",
+    "QuestName": "The Armorer's Catalog",
+    "Conditions": [
+      {
+        "ConditionId": "f05744b0f938d88ce44b692c",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "ef78177bb5b7e5b9de7a6653": {
+    "QuestId": "ef78177bb5b7e5b9de7a6653",
+    "QuestName": "Pocket Cannon",
+    "Conditions": [
+      {
+        "ConditionId": "f774a9c047b29a955ad0488f",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "80dba63368811a41c6c1133e": {
+    "QuestId": "80dba63368811a41c6c1133e",
+    "QuestName": "Farming Season",
+    "Conditions": [
+      {
+        "ConditionId": "c2999eacbda61322734e998d",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "ce570adce05ad78b75558d21",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "e06d6d3bdafe03aaa31311d5": {
+    "QuestId": "e06d6d3bdafe03aaa31311d5",
+    "QuestName": "Suppressive Authority",
+    "Conditions": [
+      {
+        "ConditionId": "cba278065edd7ae0f01ef7df",
+        "ConditionType": "DamageWithLMG"
+      }
+    ]
+  },
+  "ae4b82cf7e21f091227636e6": {
+    "QuestId": "ae4b82cf7e21f091227636e6",
+    "QuestName": "Shadow Protocol",
+    "Conditions": [
+      {
+        "ConditionId": "91d22c7b340448caef2ab3a8",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "67fa42f0f85a200600c22368": {
+    "QuestId": "67fa42f0f85a200600c22368",
+    "QuestName": "Precision Buzzsaw",
+    "Conditions": [
+      {
+        "ConditionId": "86a22d4f9f94b018ac5c406b",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "b42b118b6008df4c922c1364": {
+    "QuestId": "b42b118b6008df4c922c1364",
+    "QuestName": "Leg Day",
+    "Conditions": [
+      {
+        "ConditionId": "8fb9e859a539b5fa6eff4450",
+        "ConditionType": "DestroyLegsWithSMG"
+      }
+    ]
+  },
+  "5aacb229cf3f458371a4c987": {
+    "QuestId": "5aacb229cf3f458371a4c987",
+    "QuestName": "The Meta Chase",
+    "Conditions": [
+      {
+        "ConditionId": "8e7b0f312397c6329e7727d5",
+        "ConditionType": "DamageToArmour"
+      }
+    ]
+  },
+  "2379059d933b86c3a3a0f398": {
+    "QuestId": "2379059d933b86c3a3a0f398",
+    "QuestName": "Hand Cannon",
+    "Conditions": [
+      {
+        "ConditionId": "abdaec548058a1e75fbb5e04",
+        "ConditionType": "DamageWithRevolvers"
+      }
+    ]
+  },
+  "8dda836b3cf40b89420dd794": {
+    "QuestId": "8dda836b3cf40b89420dd794",
+    "QuestName": "The Patient Shot",
+    "Conditions": [
+      {
+        "ConditionId": "794a5549afa9a2d185b9a8db",
+        "ConditionType": "KillsWhileProne"
+      }
+    ]
+  },
+  "889c0de750b3e29fe15506e8": {
+    "QuestId": "889c0de750b3e29fe15506e8",
+    "QuestName": "Night Operations",
+    "Conditions": [
+      {
+        "ConditionId": "c634c35722c431bcb7d0beb0",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "791b4492d195ce329ef1cf68",
+        "ConditionType": "MoveDistanceWhileSilent"
+      }
+    ]
+  },
+  "8cd666efd834972ecfadbaa2": {
+    "QuestId": "8cd666efd834972ecfadbaa2",
+    "QuestName": "One Shot, One Kill",
+    "Conditions": [
+      {
+        "ConditionId": "952745077333cafed7dd18a2",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "47b4efdd1706e9a95a7abffb": {
+    "QuestId": "47b4efdd1706e9a95a7abffb",
+    "QuestName": "Full Auto Everything",
+    "Conditions": [
+      {
+        "ConditionId": "57b35610109b441dcb11e2cc",
+        "ConditionType": "DamageWithPistols"
+      },
+      {
+        "ConditionId": "e8a46f2905570c0f84fe620f",
+        "ConditionType": "KillsWithoutADS"
+      },
+      {
+        "ConditionId": "50a479445bb281368f3f8ce3",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "2112c2d8b380caf8535c0998": {
+    "QuestId": "2112c2d8b380caf8535c0998",
+    "QuestName": "The Cartographer's Notes",
+    "Conditions": [
+      {
+        "ConditionId": "06277b22bce41560a781cb2b",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "00d9752970908c07825809d4": {
+    "QuestId": "00d9752970908c07825809d4",
+    "QuestName": "Consumer Paradise",
+    "Conditions": [
+      {
+        "ConditionId": "8bd48ea19155b79799833196",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "0817a9ffd65be5d004b3d54d",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "19ab91312bcbaac722f0be76": {
+    "QuestId": "19ab91312bcbaac722f0be76",
+    "QuestName": "Rooftop Sovereign",
+    "Conditions": [
+      {
+        "ConditionId": "6268716b7dbe49f9592916c8",
+        "ConditionType": "MoveDistanceWhileCrouched"
+      }
+    ]
+  },
+  "4261f4d700710c02f35febc8": {
+    "QuestId": "4261f4d700710c02f35febc8",
+    "QuestName": "The Techlight Sprint",
+    "Conditions": [
+      {
+        "ConditionId": "ae2545a95704d6988d942d2e",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "bbe693e24d9cc4f5e925260e",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "f4bf96bf7c6d8967373754b7",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "7a9c6b537bbbf0e75ea1e93c": {
+    "QuestId": "7a9c6b537bbbf0e75ea1e93c",
+    "QuestName": "The Pipe Dream",
+    "Conditions": [
+      {
+        "ConditionId": "36b8c0d4255fd34ec1112225",
+        "ConditionType": "HealthGain"
+      }
+    ]
+  },
+  "b918baa73ae139c89b402d88": {
+    "QuestId": "b918baa73ae139c89b402d88",
+    "QuestName": "Underground Empire",
+    "Conditions": [
+      {
+        "ConditionId": "f66f27644c8f69843b1ae687",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "7661c79faccb2654499e8822": {
+    "QuestId": "7661c79faccb2654499e8822",
+    "QuestName": "The Forbidden Floor",
+    "Conditions": [
+      {
+        "ConditionId": "c0dc5c0f3a69df46e96d0835",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "32d9e32e022ff006bfc6a76e": {
+    "QuestId": "32d9e32e022ff006bfc6a76e",
+    "QuestName": "The Final Lighthouse",
+    "Conditions": [
+      {
+        "ConditionId": "3f16408aada8eebc058d0fb9",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "722338018c6e676ca4287453": {
+    "QuestId": "722338018c6e676ca4287453",
+    "QuestName": "Let There Be Light",
+    "Conditions": [
+      {
+        "ConditionId": "19e179b6fc2118e258f91996",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "83bf3edaedf575c5f99eccaf",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "2ad7280ad7f818efa74dc90f": {
+    "QuestId": "2ad7280ad7f818efa74dc90f",
+    "QuestName": "Flush with Resources",
+    "Conditions": [
+      {
+        "ConditionId": "218ea0ca955e9f0e16afcd93",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "ab13ba2f613809c948c9d71d",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "486536425ab7e80dd0e926d8": {
+    "QuestId": "486536425ab7e80dd0e926d8",
+    "QuestName": "The Tinkerer",
+    "Conditions": [
+      {
+        "ConditionId": "1060f0199835ff687bc45ac4",
+        "ConditionType": "FixAnyMalfunction"
+      },
+      {
+        "ConditionId": "9e85328827f3e5a1198bb36d",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "7580dfca5f9ccdce8498b0bf": {
+    "QuestId": "7580dfca5f9ccdce8498b0bf",
+    "QuestName": "Stay Warm",
+    "Conditions": [
+      {
+        "ConditionId": "3b210a9624358abd723f3417",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "8b72d412516d46b2872087d1",
+        "ConditionType": "FixAnyBleed"
+      }
+    ]
+  },
+  "ac4bb31cf9583b7cc45d7e1a": {
+    "QuestId": "ac4bb31cf9583b7cc45d7e1a",
+    "QuestName": "Water is Life",
+    "Conditions": [
+      {
+        "ConditionId": "15dd6807f5088602f9251184",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "fc627951189d899803b9adc4": {
+    "QuestId": "fc627951189d899803b9adc4",
+    "QuestName": "Filtered Air",
+    "Conditions": [
+      {
+        "ConditionId": "3e559ba71664b73565ad070c",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "45158024408eb70c83bb9309",
+        "ConditionType": "FixFracture"
+      }
+    ]
+  },
+  "dbe2588748ab82068c5ebe71": {
+    "QuestId": "dbe2588748ab82068c5ebe71",
+    "QuestName": "Moonshine Run",
+    "Conditions": [
+      {
+        "ConditionId": "c48335d8da6cfe81916245b0",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "dbb6c82da24c229852f0b603",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "7afe0b9571c75fb0b3e7e4dd": {
+    "QuestId": "7afe0b9571c75fb0b3e7e4dd",
+    "QuestName": "Power Grid",
+    "Conditions": [
+      {
+        "ConditionId": "90804196a37fd1c3b429cb39",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "b9f32209c1b31abbe7ca3096",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "e9c6d9386fd5d272124180cd": {
+    "QuestId": "e9c6d9386fd5d272124180cd",
+    "QuestName": "Field Medic",
+    "Conditions": [
+      {
+        "ConditionId": "bf0b7dd0dd1e6033cadb336f",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "38ff9fe5011687bd0ea940e7",
+        "ConditionType": "FixFracture"
+      },
+      {
+        "ConditionId": "9a9ea90ca178fd51986a7192",
+        "ConditionType": "FixAnyBleed"
+      }
+    ]
+  },
+  "e5ffc3164a65dcc1113026ef": {
+    "QuestId": "e5ffc3164a65dcc1113026ef",
+    "QuestName": "The Analyst",
+    "Conditions": [
+      {
+        "ConditionId": "8f78a3284622d2b90f3fc28f",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "423f34303f2a1968ef27795a": {
+    "QuestId": "423f34303f2a1968ef27795a",
+    "QuestName": "Jackpot Machine",
+    "Conditions": [
+      {
+        "ConditionId": "53fc3a9edc5411872e52f376",
+        "ConditionType": "CollectScavCase"
+      }
+    ]
+  },
+  "f61efc44b4033a408aabacb5": {
+    "QuestId": "f61efc44b4033a408aabacb5",
+    "QuestName": "Digital Gold",
+    "Conditions": [
+      {
+        "ConditionId": "76f87fd2adaf80c9eed6b548",
+        "ConditionType": "CraftCyclicItem"
+      },
+      {
+        "ConditionId": "7cf312c74d30014acfad13d7",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "4ac2be08da84e0995a247b03",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "824ef80530268ab3a109afa7": {
+    "QuestId": "824ef80530268ab3a109afa7",
+    "QuestName": "Unlimited Power",
+    "Conditions": [
+      {
+        "ConditionId": "408a1eb5b29b7dbcadf49b04",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "f07973801b09f503e8610430",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "4627a77f625c64ecb77f06a3": {
+    "QuestId": "4627a77f625c64ecb77f06a3",
+    "QuestName": "The Dark Ritual",
+    "Conditions": [
+      {
+        "ConditionId": "dca0b720a8df35d506d239df",
+        "ConditionType": "CraftCyclicItem"
+      },
+      {
+        "ConditionId": "fcd24a6837f7bd3c6c0b0fa7",
+        "ConditionType": "FixAnyBleed"
+      },
+      {
+        "ConditionId": "717a64eb101456be56ae0aa3",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "73507adfa3a4a9cdde51f808": {
+    "QuestId": "73507adfa3a4a9cdde51f808",
+    "QuestName": "Rat Run",
+    "Conditions": [
+      {
+        "ConditionId": "bd2c42868e1d9f256557f698",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "fba610c9a3fef39818d9a6cc",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "51cb861394b249b36f91f7f4": {
+    "QuestId": "51cb861394b249b36f91f7f4",
+    "QuestName": "Covert Sabotage",
+    "Conditions": [
+      {
+        "ConditionId": "167fa003bb99c8cdd5142ec2",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "7c76c2c7a91ae2d3d22c961a": {
+    "QuestId": "7c76c2c7a91ae2d3d22c961a",
+    "QuestName": "Midnight Blade",
+    "Conditions": [
+      {
+        "ConditionId": "a87d14342a99ef38fb6a5a08",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "a3152a148ff13e228b0621b7": {
+    "QuestId": "a3152a148ff13e228b0621b7",
+    "QuestName": "The Obituary Writer",
+    "Conditions": [
+      {
+        "ConditionId": "2681c5e2d927836039eead16",
+        "ConditionType": "FixLightBleed"
+      },
+      {
+        "ConditionId": "8231acddbedf871e9d5ce964",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
+  },
+  "58388e13a04f1110da9598f6": {
+    "QuestId": "58388e13a04f1110da9598f6",
+    "QuestName": "Leaf Camouflage",
+    "Conditions": [
+      {
+        "ConditionId": "c54972d3f8b4dbb84492f00f",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "48e812c6847d6b0ba027b43d": {
+    "QuestId": "48e812c6847d6b0ba027b43d",
+    "QuestName": "Gravity Check",
+    "Conditions": [
+      {
+        "ConditionId": "5025c01fbeaf6b85c751af88",
+        "ConditionType": "FixFracture"
+      }
+    ]
+  },
+  "ba3462d1a704ecc48b73204f": {
+    "QuestId": "ba3462d1a704ecc48b73204f",
+    "QuestName": "Sound of Silence",
+    "Conditions": [
+      {
+        "ConditionId": "7d2cd2e14b8c1fa1a8a839fc",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "7f5954843f588348b545c2cd": {
+    "QuestId": "7f5954843f588348b545c2cd",
+    "QuestName": "Patience Kills",
+    "Conditions": [
+      {
+        "ConditionId": "be97c9693a574a74e053bea2",
+        "ConditionType": "KillsWhileProne"
+      },
+      {
+        "ConditionId": "c072e5ee409139b5dcdd732e",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "921f0baf797c170face819f8": {
+    "QuestId": "921f0baf797c170face819f8",
+    "QuestName": "Out of Nowhere",
+    "Conditions": [
+      {
+        "ConditionId": "d931fd9b700c9b21dbf8afa9",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "83f5e0475cb672baa2e7c53f": {
+    "QuestId": "83f5e0475cb672baa2e7c53f",
+    "QuestName": "Oops, Wrong Target",
+    "Conditions": [
+      {
+        "ConditionId": "35e2d1a93d0021e2b9037bb8",
+        "ConditionType": "KillsWhileBlindFiring"
+      }
+    ]
+  },
+  "1ebd75be9359565f1541a2c1": {
+    "QuestId": "1ebd75be9359565f1541a2c1",
+    "QuestName": "One Step Too Far",
+    "Conditions": [
+      {
+        "ConditionId": "e21109eda0943c7eeb11c646",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "0fc01cd5b4ed2ba0a6ade435": {
+    "QuestId": "0fc01cd5b4ed2ba0a6ade435",
+    "QuestName": "Peek Punishment",
+    "Conditions": [
+      {
+        "ConditionId": "45720f63ea96270aa5e2ad27",
+        "ConditionType": "HealthLoss"
+      }
+    ]
+  },
+  "ef2bf5355e0febf2a78060b4": {
+    "QuestId": "ef2bf5355e0febf2a78060b4",
+    "QuestName": "The One-Tap",
+    "Conditions": [
+      {
+        "ConditionId": "44927d14aa7a4626233dcab7",
+        "ConditionType": "DamageWithPistols"
+      }
+    ]
+  },
+  "612a3b68f1533938a46489bd": {
+    "QuestId": "612a3b68f1533938a46489bd",
+    "QuestName": "Cheeki Breeki",
+    "Conditions": [
+      {
+        "ConditionId": "2ae593c7c1d004f61ef7f78f",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "11168ce239b30274ed929621": {
+    "QuestId": "11168ce239b30274ed929621",
+    "QuestName": "The Dry Death",
+    "Conditions": [
+      {
+        "ConditionId": "9bb868755d048beb0abd0ffb",
+        "ConditionType": "EncumberedTimeInSeconds"
+      },
+      {
+        "ConditionId": "807f10ec7a9b67a4daad3722",
+        "ConditionType": "HealthLoss"
+      }
+    ]
+  },
+  "be8f5157a0b27bf07889f002": {
+    "QuestId": "be8f5157a0b27bf07889f002",
+    "QuestName": "Alt+F4",
+    "Conditions": [
+      {
+        "ConditionId": "22415c98a0f9b963c57768dd",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "7e4bb1c3b6c30ae1376c3748": {
+    "QuestId": "7e4bb1c3b6c30ae1376c3748",
+    "QuestName": "Know Thyself",
+    "Conditions": [
+      {
+        "ConditionId": "f58558fb4617a2cceec69893",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "6fd1cbf04df7ea48599ff1a8": {
+    "QuestId": "6fd1cbf04df7ea48599ff1a8",
+    "QuestName": "Zero to Hero",
+    "Conditions": [
+      {
+        "ConditionId": "27b18023e258066227600885",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "7a6469d5b7dbf080ea42c225",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "8a7da1a15956e88b536c6b45": {
+    "QuestId": "8a7da1a15956e88b536c6b45",
+    "QuestName": "Penny Pincher",
+    "Conditions": [
+      {
+        "ConditionId": "67bb6969d56f9e11d6b83bba",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "9a2d8d3ac213bbe07beae1f8",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "b9050b3af3d026452d5023a7": {
+    "QuestId": "b9050b3af3d026452d5023a7",
+    "QuestName": "Sightseeing",
+    "Conditions": [
+      {
+        "ConditionId": "d11dcc9e1aee1eb63d9915c1",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "b55c0f0a7711052c323b3a4b": {
+    "QuestId": "b55c0f0a7711052c323b3a4b",
+    "QuestName": "Check the List",
+    "Conditions": [
+      {
+        "ConditionId": "f2af051fe888e5067af6dd93",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "d5b77ddeeae2e388d5dd360f",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "047bff8fdc27e2a10ecc5430": {
+    "QuestId": "047bff8fdc27e2a10ecc5430",
+    "QuestName": "Hot Mic",
+    "Conditions": [
+      {
+        "ConditionId": "2b55569d57135445ac5ab1ea",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "3ce9066bcf4db8fa581e3ecf": {
+    "QuestId": "3ce9066bcf4db8fa581e3ecf",
+    "QuestName": "First Wipe Problems",
+    "Conditions": [
+      {
+        "ConditionId": "63ecec9681798b1c73d172a4",
+        "ConditionType": "FixAnyBleed"
+      },
+      {
+        "ConditionId": "3cdeb4ae88a9c1bed17c73ea",
+        "ConditionType": "FixFracture"
+      },
+      {
+        "ConditionId": "7d10b86d3ae6bc126f0c6b4e",
+        "ConditionType": "HealthGain"
+      }
+    ]
+  },
+  "e2b494fd0313f32b6d358175": {
+    "QuestId": "e2b494fd0313f32b6d358175",
+    "QuestName": "Spray and Pray",
+    "Conditions": [
+      {
+        "ConditionId": "5f03839367383c9e71f9e221",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "40f477c13aef1ae5fb0e01de",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "3503c97bf1bc284a6d107de5": {
+    "QuestId": "3503c97bf1bc284a6d107de5",
+    "QuestName": "Supreme Rat",
+    "Conditions": [
+      {
+        "ConditionId": "5ef5340706e8e23555e3171c",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "9c411314035e6cc224754b5b",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "46d5a9649df8cad21781d316",
+        "ConditionType": "MoveDistanceWhileCrouched"
+      }
+    ]
+  },
+  "4c1618df6bf0bc28f3ae119f": {
+    "QuestId": "4c1618df6bf0bc28f3ae119f",
+    "QuestName": "Gate Guardian",
+    "Conditions": [
+      {
+        "ConditionId": "93f0a18530365723489291b8",
+        "ConditionType": "KillsWhileProne"
+      }
+    ]
+  },
+  "ecc2b97a13827a1cdbd418ba": {
+    "QuestId": "ecc2b97a13827a1cdbd418ba",
+    "QuestName": "Bunker Dweller",
+    "Conditions": [
+      {
+        "ConditionId": "85200f4c5ada738cc6791017",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "5d78ce6519be332022d59481",
+        "ConditionType": "CraftCyclicItem"
+      },
+      {
+        "ConditionId": "b1795cebe4a16a830a79f355",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "da28d5e6d16e7d82544d387c": {
+    "QuestId": "da28d5e6d16e7d82544d387c",
+    "QuestName": "Patient Predator",
+    "Conditions": [
+      {
+        "ConditionId": "005f98d342484f248617db6a",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "150669383244487e9362dde4": {
+    "QuestId": "150669383244487e9362dde4",
+    "QuestName": "Full Send",
+    "Conditions": [
+      {
+        "ConditionId": "92c4c3fae882b80fec869767",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "039e0954e13ab8247db31ad7": {
+    "QuestId": "039e0954e13ab8247db31ad7",
+    "QuestName": "Trust Issues",
+    "Conditions": [
+      {
+        "ConditionId": "6f7a69de224787c856c2b2af",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "47ede8c0a54a6989e6d56a4a": {
+    "QuestId": "47ede8c0a54a6989e6d56a4a",
+    "QuestName": "The Middleman",
+    "Conditions": [
+      {
+        "ConditionId": "40228438e77cac9f8c1d6f27",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "1ce2dafa1a451133386d533b",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "fab83defaa12c5f90311bffc": {
+    "QuestId": "fab83defaa12c5f90311bffc",
+    "QuestName": "Frugal Hunter",
+    "Conditions": [
+      {
+        "ConditionId": "b26df98ec41b682457326b13",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "74cb8276af686fa646453c7c",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "ddfda3b813a53f6b8ff48994": {
+    "QuestId": "ddfda3b813a53f6b8ff48994",
+    "QuestName": "Medical Supplies",
+    "Conditions": [
+      {
+        "ConditionId": "4a23bd830b9be3e710d1ca50",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "c7ad41ab144eb5c5fe32a0a4",
+        "ConditionType": "RestoreBodyPart"
+      }
+    ]
+  },
+  "bacd89df022ad582d471e120": {
+    "QuestId": "bacd89df022ad582d471e120",
+    "QuestName": "Chemical Warfare",
+    "Conditions": [
+      {
+        "ConditionId": "596028939dad218ec3b92693",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "f881759e05a098c3f71ebb96": {
+    "QuestId": "f881759e05a098c3f71ebb96",
+    "QuestName": "Golden Exchange",
+    "Conditions": [
+      {
+        "ConditionId": "2aa4f4167f211ddc533f4615",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "8e673420f1ecc46fc46d6627",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "1fe65e7029b843b13fc46d9e": {
+    "QuestId": "1fe65e7029b843b13fc46d9e",
+    "QuestName": "Tales from the Dumpster",
+    "Conditions": [
+      {
+        "ConditionId": "68c076579aa63c7f58b9ab0a",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "6b94be30a00daf7c8636a85b",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "b32f008171ebf1693c9bca35": {
+    "QuestId": "b32f008171ebf1693c9bca35",
+    "QuestName": "Drip Check",
+    "Conditions": [
+      {
+        "ConditionId": "3459b0b2af235611529b52af",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "eb5b6e47ef049c41c2885530": {
+    "QuestId": "eb5b6e47ef049c41c2885530",
+    "QuestName": "Bag Man",
+    "Conditions": [
+      {
+        "ConditionId": "8f51fe3d4cd8e094d774ee1f",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "6be793f119d1bce74522d7e2",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "165d0e5c0ad0105a3c12fab7": {
+    "QuestId": "165d0e5c0ad0105a3c12fab7",
+    "QuestName": "Two Shots One Prayer",
+    "Conditions": [
+      {
+        "ConditionId": "cf2078b71baa4fd55e063d48",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "9bede983b6b8fb240545fa9b": {
+    "QuestId": "9bede983b6b8fb240545fa9b",
+    "QuestName": "Dont Shoot Me Bro",
+    "Conditions": [
+      {
+        "ConditionId": "2d00a4bd1ad7f8bca6121638",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "4923664c4b1a0c146d8995b4": {
+    "QuestId": "4923664c4b1a0c146d8995b4",
+    "QuestName": "Market Manipulation",
+    "Conditions": [
+      {
+        "ConditionId": "19e41162c311a42a94941bef",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "c561a9fcab491da545b29e78",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "34de9f701fada6e2f52329c5": {
+    "QuestId": "34de9f701fada6e2f52329c5",
+    "QuestName": "Follow the Boom",
+    "Conditions": [
+      {
+        "ConditionId": "d1db8a9d28cd55b39fe673e8",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "cff6eb4da8f695e112f94dc0": {
+    "QuestId": "cff6eb4da8f695e112f94dc0",
+    "QuestName": "Family Business",
+    "Conditions": [
+      {
+        "ConditionId": "d54833032da4a88f3e245398",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "40149882fc567e99e7b0ea98": {
+    "QuestId": "40149882fc567e99e7b0ea98",
+    "QuestName": "The Golden Key",
+    "Conditions": [
+      {
+        "ConditionId": "abad5b3bbdb19d72641c820e",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "b7037a40d5952c6621987b0c",
+        "ConditionType": "CollectScavCase"
+      }
+    ]
+  },
+  "1da2af30de23019d0e60f8ba": {
+    "QuestId": "1da2af30de23019d0e60f8ba",
+    "QuestName": "The Quest Board",
+    "Conditions": [
+      {
+        "ConditionId": "9e7a562595cd6ee1785a7488",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "cbc6dd83c7a7ea1525eb20f9": {
+    "QuestId": "cbc6dd83c7a7ea1525eb20f9",
+    "QuestName": "The Pocket Watch",
+    "Conditions": [
+      {
+        "ConditionId": "4dfea65fab9e6214cb898bac",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "354781b50e93345d8f5a910c": {
+    "QuestId": "354781b50e93345d8f5a910c",
+    "QuestName": "Golden Flame",
+    "Conditions": [
+      {
+        "ConditionId": "973166f8ea09a079afa6dd9b",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "04a434e66529859a0da45804": {
+    "QuestId": "04a434e66529859a0da45804",
+    "QuestName": "The Analyzer Grind",
+    "Conditions": [
+      {
+        "ConditionId": "8c4af5b418bde09942dcf55b",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "3985e4548b7eb9a8308d43c1": {
+    "QuestId": "3985e4548b7eb9a8308d43c1",
+    "QuestName": "Chemical Recipes",
+    "Conditions": [
+      {
+        "ConditionId": "fd3d1a95c1f3a9fd1ab33730",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "948a622d050a1331c382cb06": {
+    "QuestId": "948a622d050a1331c382cb06",
+    "QuestName": "The Keymaster",
+    "Conditions": [
+      {
+        "ConditionId": "1ac154d0cf013a441851080a",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "bd55d2c92ef116b7a648d779": {
+    "QuestId": "bd55d2c92ef116b7a648d779",
+    "QuestName": "Data Recovery",
+    "Conditions": [
+      {
+        "ConditionId": "1e02aa504d425fd0024186fa",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "bb08ff65c5688f4fcc3ea9d1": {
+    "QuestId": "bb08ff65c5688f4fcc3ea9d1",
+    "QuestName": "Heavy Lifting",
+    "Conditions": [
+      {
+        "ConditionId": "35612f97d2e0b634a24d4825",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "4376b809935c90239b374c79": {
+    "QuestId": "4376b809935c90239b374c79",
+    "QuestName": "Sample Collection",
+    "Conditions": [
+      {
+        "ConditionId": "36ce5c6a400bc9aa04dc1cf8",
+        "ConditionType": "HealthGain"
+      }
+    ]
+  },
+  "3fb7f949689e2089d97d0430": {
+    "QuestId": "3fb7f949689e2089d97d0430",
+    "QuestName": "Field Medic Protocol",
+    "Conditions": [
+      {
+        "ConditionId": "d382adbb54b3d1ce3c1fd35c",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "7f638ff7f696a93c9d3a8c53",
+        "ConditionType": "RestoreBodyPart"
+      }
+    ]
+  },
+  "80047dbccf3450c08f1839ed": {
+    "QuestId": "80047dbccf3450c08f1839ed",
+    "QuestName": "The Holy Grail",
+    "Conditions": [
+      {
+        "ConditionId": "8a6796748dc0651c3d677057",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "d92425f1616607da3de9d073",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "ca4fa1f5d486fbd7ca486e12": {
+    "QuestId": "ca4fa1f5d486fbd7ca486e12",
+    "QuestName": "Digital Gold",
+    "Conditions": [
+      {
+        "ConditionId": "d17041d992aef32cc571cc59",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "ee85c0f0eb8badc822861130": {
+    "QuestId": "ee85c0f0eb8badc822861130",
+    "QuestName": "The Behemoth",
+    "Conditions": [
+      {
+        "ConditionId": "87b98c23aff088b4a487b62b",
+        "ConditionType": "OverEncumberedTimeInSeconds"
+      },
+      {
+        "ConditionId": "10d892c62d9389e2ecb565a6",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "6597c7a8a6fe0194c6943144": {
+    "QuestId": "6597c7a8a6fe0194c6943144",
+    "QuestName": "The Intelligence Network",
+    "Conditions": [
+      {
+        "ConditionId": "11f50a229d6828ea0d0bed27",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "dfc07b6805dd4222d05ce530",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "a06d209e135858b809d2eba2": {
+    "QuestId": "a06d209e135858b809d2eba2",
+    "QuestName": "The Wall of Shame",
+    "Conditions": [
+      {
+        "ConditionId": "9b830b5f57c4be1466e327dd",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "b0b22ef3b4917fa31c768063": {
+    "QuestId": "b0b22ef3b4917fa31c768063",
+    "QuestName": "Click Click Click",
+    "Conditions": [
+      {
+        "ConditionId": "71532a8fcc72430e3ed19d11",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "0dc0381a185afa628430a682": {
+    "QuestId": "0dc0381a185afa628430a682",
+    "QuestName": "Spray and Pray",
+    "Conditions": [
+      {
+        "ConditionId": "0f63f1897b6a150a940013c7",
+        "ConditionType": "KillsWithoutADS"
+      },
+      {
+        "ConditionId": "42611169a3020819f6ed6fbb",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "b472af41050800adcc980692": {
+    "QuestId": "b472af41050800adcc980692",
+    "QuestName": "Every Door Wrong Key",
+    "Conditions": [
+      {
+        "ConditionId": "1c464e66e1e55cf8f81f8162",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "55fc4e2b799993bff5316d5b": {
+    "QuestId": "55fc4e2b799993bff5316d5b",
+    "QuestName": "Wrong Caliber",
+    "Conditions": [
+      {
+        "ConditionId": "f08b631d0b2459425c544798",
+        "ConditionType": "DamageWithShotguns"
+      },
+      {
+        "ConditionId": "c2894eb23f31b4ff9854a989",
+        "ConditionType": "FixAnyMalfunction"
+      }
+    ]
+  },
+  "121d654eb5485620c3fc01ca": {
+    "QuestId": "121d654eb5485620c3fc01ca",
+    "QuestName": "Should Have Alt-Tabbed Faster",
+    "Conditions": [
+      {
+        "ConditionId": "275b0e6be9de5cf87b0f1b37",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "c771c6e02e0619218d87001f",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "da4f497fd64615eb60b067ae": {
+    "QuestId": "da4f497fd64615eb60b067ae",
+    "QuestName": "Flashbang Boomerang",
+    "Conditions": [
+      {
+        "ConditionId": "7ec011a509070ee401ddfe75",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "76f4934c892c94b848a5d1bf",
+        "ConditionType": "FixLightBleed"
+      }
+    ]
+  },
+  "e68ed7849802d9cd6e0ea163": {
+    "QuestId": "e68ed7849802d9cd6e0ea163",
+    "QuestName": "Two Seconds Too Late",
+    "Conditions": [
+      {
+        "ConditionId": "879546ea03584aa94c4f01fd",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "c461f25f5525673a31cfb844": {
+    "QuestId": "c461f25f5525673a31cfb844",
+    "QuestName": "Healing Under Fire",
+    "Conditions": [
+      {
+        "ConditionId": "a80e2d05c5f8100db7554582",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "f01f9ae0bf4692bc7f66c5d6",
+        "ConditionType": "RestoreBodyPart"
+      }
+    ]
+  },
+  "51678462e30fad4dc506aa74": {
+    "QuestId": "51678462e30fad4dc506aa74",
+    "QuestName": "Cooking Grenades",
+    "Conditions": [
+      {
+        "ConditionId": "dc7cc4213a2497d01e96b0b6",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "04ff08192e0c39f61b1134a7",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
+  },
+  "a3541f515d6d2ea7d6985426": {
+    "QuestId": "a3541f515d6d2ea7d6985426",
+    "QuestName": "Rage Quit Protocol",
+    "Conditions": [
+      {
+        "ConditionId": "5a3a9ceb1136fa5a2634acb5",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "0a4a5d78a9b05cb6ede1d1e1",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "a347fb2b66d3815af4e2ecc8": {
+    "QuestId": "a347fb2b66d3815af4e2ecc8",
+    "QuestName": "System Failure",
+    "Conditions": [
+      {
+        "ConditionId": "d3e64f230ac0db5c723e899f",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "ea345345e3922647c0dd6251",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "eb5c9c8985b6ba7ce2adb506": {
+    "QuestId": "eb5c9c8985b6ba7ce2adb506",
+    "QuestName": "The Meme Board",
+    "Conditions": [
+      {
+        "ConditionId": "9ba7738f6868faa19b1ecb67",
+        "ConditionType": "MoveDistanceWhileCrouched"
+      }
+    ]
+  },
+  "f9785183152d6aa9123e9b2e": {
+    "QuestId": "f9785183152d6aa9123e9b2e",
+    "QuestName": "Zero to Hero",
+    "Conditions": [
+      {
+        "ConditionId": "90dfb808e15c4e926370ffbe",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "6b697ec964e2015aa1e65959": {
+    "QuestId": "6b697ec964e2015aa1e65959",
+    "QuestName": "Dont Shoot",
+    "Conditions": [
+      {
+        "ConditionId": "aff81f7903f34da24b6a0810",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "d1c1d42d0ae66b7cf65df022": {
+    "QuestId": "d1c1d42d0ae66b7cf65df022",
+    "QuestName": "Loot and Scoot",
+    "Conditions": [
+      {
+        "ConditionId": "e05c347871b7d0d161b11883",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "f257ebb0aefc24e41938c078": {
+    "QuestId": "f257ebb0aefc24e41938c078",
+    "QuestName": "Betrayal Protocol",
+    "Conditions": [
+      {
+        "ConditionId": "96f202f3d24ac12bf84a56f4",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "eef0d01a025e53c6e675e7f7": {
+    "QuestId": "eef0d01a025e53c6e675e7f7",
+    "QuestName": "Camouflage Expert",
+    "Conditions": [
+      {
+        "ConditionId": "9f90d9f45ed2a28070fa65d0",
+        "ConditionType": "KillsWhileProne"
+      }
+    ]
+  },
+  "f108a929663ed806b3753092": {
+    "QuestId": "f108a929663ed806b3753092",
+    "QuestName": "RNG God",
+    "Conditions": [
+      {
+        "ConditionId": "61a162fcb1f86e2852847f6b",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "e0cb8d58d744d9c443023ada",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "3139fae96dc724e3fa7388c5": {
+    "QuestId": "3139fae96dc724e3fa7388c5",
+    "QuestName": "Third Floor Second Door",
+    "Conditions": [
+      {
+        "ConditionId": "ea5fb214ec871d327694e7f9",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "d33b816aafe867ec2c1c3900": {
+    "QuestId": "d33b816aafe867ec2c1c3900",
+    "QuestName": "The Eternal Debate",
+    "Conditions": [
+      {
+        "ConditionId": "b0c90d8dc2f19fea6baaa94a",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "8f175d2cdfc3512ae4f3475e",
+        "ConditionType": "MoveDistanceWhileCrouched"
+      }
+    ]
+  },
+  "00cc90358ee5341470cf3ffc": {
+    "QuestId": "00cc90358ee5341470cf3ffc",
+    "QuestName": "Blood Ritual",
+    "Conditions": [
+      {
+        "ConditionId": "ca248cdf0c9d612817416c16",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "aa704f4d9b40a4dd739c5620": {
+    "QuestId": "aa704f4d9b40a4dd739c5620",
+    "QuestName": "Content Creator",
+    "Conditions": [
+      {
+        "ConditionId": "9650f1373792a289a5bbb248",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "c6ef19f8ffd7238c5717862b": {
+    "QuestId": "c6ef19f8ffd7238c5717862b",
+    "QuestName": "The Kappa Grind",
+    "Conditions": [
+      {
+        "ConditionId": "18d7ee9fb2b9a7c48e788abf",
+        "ConditionType": "CompleteWorkout"
+      },
+      {
+        "ConditionId": "cb6567436fcd9f1d073ca37f",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "2d6315c893813046a9704568": {
+    "QuestId": "2d6315c893813046a9704568",
+    "QuestName": "The Highlight Reel",
+    "Conditions": [
+      {
+        "ConditionId": "ab2f371c76bf314bf5b59142",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "ea9a2e431f798679b5d57883",
+        "ConditionType": "DamageWithAR"
+      }
+    ]
+  },
+  "8e31034a8edf3fc057cb7581": {
+    "QuestId": "8e31034a8edf3fc057cb7581",
+    "QuestName": "Naked and Famous",
+    "Conditions": [
+      {
+        "ConditionId": "e1742e01c2e8011f2da2a7ba",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "61a6e5aa51055d75ff40431a": {
+    "QuestId": "61a6e5aa51055d75ff40431a",
+    "QuestName": "The Budget Build",
+    "Conditions": [
+      {
+        "ConditionId": "23341ab4b5a07e34dcf7d535",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "42dd131227c8ba5c8bd7006d": {
+    "QuestId": "42dd131227c8ba5c8bd7006d",
+    "QuestName": "Patch Day",
+    "Conditions": [
+      {
+        "ConditionId": "f5f246e05854719b49f28733",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "a585a92b3dba87637b3d2bca",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "4e8ed4d4344da028b05fecca": {
+    "QuestId": "4e8ed4d4344da028b05fecca",
+    "QuestName": "Bug Report",
+    "Conditions": [
+      {
+        "ConditionId": "669f8e04f6f6f4378b8f52b1",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "5e378e21d7dffcb744aec7b8",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "e5362bebbf53d7de410b4156": {
+    "QuestId": "e5362bebbf53d7de410b4156",
+    "QuestName": "Sound Whoring",
+    "Conditions": [
+      {
+        "ConditionId": "dd16d5ccd85529e539ad2bc1",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "c768966d9249cf81dfcf8dba": {
+    "QuestId": "c768966d9249cf81dfcf8dba",
+    "QuestName": "The Dorms Classic",
+    "Conditions": [
+      {
+        "ConditionId": "5c3d744cd89108433d877502",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "324f7bc73ea2e7b170c047f7": {
+    "QuestId": "324f7bc73ea2e7b170c047f7",
+    "QuestName": "One Tap Montage",
+    "Conditions": [
+      {
+        "ConditionId": "93a5c7a9091874598e52acbd",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "66fb9135a061d836a629384f": {
+    "QuestId": "66fb9135a061d836a629384f",
+    "QuestName": "Kobe!",
+    "Conditions": [
+      {
+        "ConditionId": "51bf7d4997ad83d35d24f407",
+        "ConditionType": "DamageWithGrenades"
+      }
+    ]
+  },
+  "b93629cb8986ca5c225794d8": {
+    "QuestId": "b93629cb8986ca5c225794d8",
+    "QuestName": "Cross-Map Headshot",
+    "Conditions": [
+      {
+        "ConditionId": "2b1437ff0987f0b72cef6458",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "6607d4157f62b2a13527209a": {
+    "QuestId": "6607d4157f62b2a13527209a",
+    "QuestName": "From Nothing to Everything",
+    "Conditions": [
+      {
+        "ConditionId": "a0c3c91d5b36ed4ab6bfcf06",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "9946ea080512f913bcc78faf": {
+    "QuestId": "9946ea080512f913bcc78faf",
+    "QuestName": "The Lobby Wipe",
+    "Conditions": [
+      {
+        "ConditionId": "0e4682a3754afca2b2f3848b",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "f2ffce1965974c039c5f4ded": {
+    "QuestId": "f2ffce1965974c039c5f4ded",
+    "QuestName": "Fresh Spawn",
+    "Conditions": [
+      {
+        "ConditionId": "dba3f6aa109db02676e536d1",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "caa1be0481e2e6b6da9e83ac": {
+    "QuestId": "caa1be0481e2e6b6da9e83ac",
+    "QuestName": "Sprint and Grab",
+    "Conditions": [
+      {
+        "ConditionId": "d909baa125b61fd0a868f0d1",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "85299e3a8994e16452d6714d",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "0756afd8dfdd9846de07d716": {
+    "QuestId": "0756afd8dfdd9846de07d716",
+    "QuestName": "Buckshot Budget",
+    "Conditions": [
+      {
+        "ConditionId": "989a846601d89a485d246800",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "dc278201253d4d31de6eccca": {
+    "QuestId": "dc278201253d4d31de6eccca",
+    "QuestName": "Hipfire Hustle",
+    "Conditions": [
+      {
+        "ConditionId": "e35392750b8863493bce0edb",
+        "ConditionType": "KillsWithoutADS"
+      },
+      {
+        "ConditionId": "1f48ea595f851f6df6ac60ce",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "e59ae5bc235325f5d539c144": {
+    "QuestId": "e59ae5bc235325f5d539c144",
+    "QuestName": "Flavor of the Week",
+    "Conditions": [
+      {
+        "ConditionId": "10125c2b6f7f47391b4116cc",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "52fd5198aed7cb07f845e5aa",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "1cc2c0652c9410ea215923c7": {
+    "QuestId": "1cc2c0652c9410ea215923c7",
+    "QuestName": "Geared Up",
+    "Conditions": [
+      {
+        "ConditionId": "3f814ba7b2592aeeedb58e06",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "551c6c2879d5bbfbc775a68f": {
+    "QuestId": "551c6c2879d5bbfbc775a68f",
+    "QuestName": "Market Hustle",
+    "Conditions": [
+      {
+        "ConditionId": "aee8dae32b56969783f360b0",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "4f8a75cfa60d1dcd90662c8d",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "15e18bf677120c84529118c9": {
+    "QuestId": "15e18bf677120c84529118c9",
+    "QuestName": "Sidearm Specialist",
+    "Conditions": [
+      {
+        "ConditionId": "079607869df519b80e74d3b9",
+        "ConditionType": "DamageWithPistols"
+      }
+    ]
+  },
+  "c8cc0e02408254a9134b77ec": {
+    "QuestId": "c8cc0e02408254a9134b77ec",
+    "QuestName": "Jackpot Hunter",
+    "Conditions": [
+      {
+        "ConditionId": "22faf4470e568d2c815884b0",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "dfdbbca871c653c70e81511b",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "ed581790525e08620c068a64",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "0fba6c3cef428a3466c3a703": {
+    "QuestId": "0fba6c3cef428a3466c3a703",
+    "QuestName": "Economic Dominance",
+    "Conditions": [
+      {
+        "ConditionId": "0c40c75bbfc432dff4be6f71",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "73263b9342c9ad0dd9f35df2",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "fe0fb589813d437f8f9ffc31": {
+    "QuestId": "fe0fb589813d437f8f9ffc31",
+    "QuestName": "Endgame Builder",
+    "Conditions": [
+      {
+        "ConditionId": "542eea30075b03c61086679e",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "db00b66e941dbf64e92ca77f": {
+    "QuestId": "db00b66e941dbf64e92ca77f",
+    "QuestName": "The Absolute Unit",
+    "Conditions": [
+      {
+        "ConditionId": "a3b160b1f2f35470ef67389c",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "abff59ecbcd77768528d9ec5",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "cb890b5cb7644d36dbe9edbd": {
+    "QuestId": "cb890b5cb7644d36dbe9edbd",
+    "QuestName": "Error 404",
+    "Conditions": [
+      {
+        "ConditionId": "137c27f2dce85855177d3130",
+        "ConditionType": "HealthLoss"
+      }
+    ]
+  },
+  "88b13e3cd6ec1d914209e3b4": {
+    "QuestId": "88b13e3cd6ec1d914209e3b4",
+    "QuestName": "Stairs of Death",
+    "Conditions": [
+      {
+        "ConditionId": "f68cf34645076efc0f4bb115",
+        "ConditionType": "FixFracture"
+      }
+    ]
+  },
+  "1e837e8a7d506e255b9166b1": {
+    "QuestId": "1e837e8a7d506e255b9166b1",
+    "QuestName": "Lag Spike Sprint",
+    "Conditions": [
+      {
+        "ConditionId": "184dc62c1525ad1fbe312e3a",
+        "ConditionType": "MoveDistanceWhileRunning"
+      },
+      {
+        "ConditionId": "3215367e03f45c97e6bd2438",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "f0863bbe807e66239ffc1cec": {
+    "QuestId": "f0863bbe807e66239ffc1cec",
+    "QuestName": "Aim at Nothing",
+    "Conditions": [
+      {
+        "ConditionId": "53855500d982960123a828b4",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "29a451495490c59338842f35": {
+    "QuestId": "29a451495490c59338842f35",
+    "QuestName": "Pixel Peek",
+    "Conditions": [
+      {
+        "ConditionId": "87d8345c18534e9985306541",
+        "ConditionType": "KillsWhileCrouched"
+      },
+      {
+        "ConditionId": "cd012e5c4f518faf5435e6d1",
+        "ConditionType": "HealthLoss"
+      }
+    ]
+  },
+  "324d7ee5cd487aa530976a8b": {
+    "QuestId": "324d7ee5cd487aa530976a8b",
+    "QuestName": "Phantom Flash",
+    "Conditions": [
+      {
+        "ConditionId": "61dcb60bb970a3fda1218e01",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "ba3247841e97b171094694ac",
+        "ConditionType": "FixLightBleed"
+      }
+    ]
+  },
+  "d8a9cf3dbd685795062c1bff": {
+    "QuestId": "d8a9cf3dbd685795062c1bff",
+    "QuestName": "Loot Suspended",
+    "Conditions": [
+      {
+        "ConditionId": "e4b5bf0c3c01d43919c7ace9",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "de83193957885ab15fc180a8",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "3fba74026278d95e9d9a8e34": {
+    "QuestId": "3fba74026278d95e9d9a8e34",
+    "QuestName": "Scope Lock",
+    "Conditions": [
+      {
+        "ConditionId": "f7dd1a8316ddbaec1950166b",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "d0e6973119cbe41450691a5b",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "20ad9d7cb836b52e509ddf5c": {
+    "QuestId": "20ad9d7cb836b52e509ddf5c",
+    "QuestName": "Infinite Frag",
+    "Conditions": [
+      {
+        "ConditionId": "844e521f53876d1bfeaddab2",
+        "ConditionType": "DamageWithGrenades"
+      },
+      {
+        "ConditionId": "507c3d644c4001a6c7d48589",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
+  },
+  "618e1bac52a842f52e017547": {
+    "QuestId": "618e1bac52a842f52e017547",
+    "QuestName": "Weight Glitch",
+    "Conditions": [
+      {
+        "ConditionId": "bd565a90b316cb52dafa8312",
+        "ConditionType": "EncumberedTimeInSeconds"
+      },
+      {
+        "ConditionId": "44d8eb7751d32952e121a7a8",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "2960a4e23df51808b882bd83": {
+    "QuestId": "2960a4e23df51808b882bd83",
+    "QuestName": "Item Not Found",
+    "Conditions": [
+      {
+        "ConditionId": "440214dbee9321fd716a02b7",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "49185423620782dde8bbf532": {
+    "QuestId": "49185423620782dde8bbf532",
+    "QuestName": "Teleport Kill",
+    "Conditions": [
+      {
+        "ConditionId": "c90ad8e02525d389e9e19922",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "0e1c1f14eee61e821ccf4388": {
+    "QuestId": "0e1c1f14eee61e821ccf4388",
+    "QuestName": "No Sound Detected",
+    "Conditions": [
+      {
+        "ConditionId": "fb99944ebf4b4d4b718c5839",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "68c3da6c2828e42b1f3db586",
+        "ConditionType": "MoveDistanceWhileSilent"
+      }
+    ]
+  },
+  "c87488326bcfa5086e784636": {
+    "QuestId": "c87488326bcfa5086e784636",
+    "QuestName": "Wall Bang",
+    "Conditions": [
+      {
+        "ConditionId": "87d6f6ef0aeb3914df04913e",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "0896588f3bf0693d6af487d7": {
+    "QuestId": "0896588f3bf0693d6af487d7",
+    "QuestName": "Undying",
+    "Conditions": [
+      {
+        "ConditionId": "cadbf2b769d2c8eaaafb6375",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "726ebee3323bca52e07b6283",
+        "ConditionType": "DestroyBodyPart"
+      },
+      {
+        "ConditionId": "404fa7a7ae2b081723ad8658",
+        "ConditionType": "RestoreBodyPart"
+      },
+      {
+        "ConditionId": "c554d83dfa12ffb1cce49040",
+        "ConditionType": "HealthGain"
+      }
+    ]
+  },
+  "b8219002ee9c01b83ab6c791": {
+    "QuestId": "b8219002ee9c01b83ab6c791",
+    "QuestName": "The Artifact Hunter",
+    "Conditions": [
+      {
+        "ConditionId": "9726d8bf197d81acd4d306a4",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "dfd5beda2b16e28ed2c5ec8f",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "eead44334761425e18d84bf5": {
+    "QuestId": "eead44334761425e18d84bf5",
+    "QuestName": "Old Currency",
+    "Conditions": [
+      {
+        "ConditionId": "1359fa7b651b7339e7b303fa",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "0fa13f56b973d89e8a2fce94": {
+    "QuestId": "0fa13f56b973d89e8a2fce94",
+    "QuestName": "Written in Blood",
+    "Conditions": [
+      {
+        "ConditionId": "60d7dc8340081574c2ce05a6",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "877fb1d22a42fed333651e81": {
+    "QuestId": "877fb1d22a42fed333651e81",
+    "QuestName": "Lost Signal",
+    "Conditions": [
+      {
+        "ConditionId": "630298bd50b21094ee474f25",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "560d71ac5e078fdc4715f3e3": {
+    "QuestId": "560d71ac5e078fdc4715f3e3",
+    "QuestName": "Night Ritual",
+    "Conditions": [
+      {
+        "ConditionId": "d33d9bd07cf2ee97ebfa8cec",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "9c5cd079fea558446c16f20c": {
+    "QuestId": "9c5cd079fea558446c16f20c",
+    "QuestName": "Signal Sweep",
+    "Conditions": [
+      {
+        "ConditionId": "330ffdddd2762813ed44f779",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "1c53641a040d19b111b86df7",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "897bd3a798b692a34dbfb2a3": {
+    "QuestId": "897bd3a798b692a34dbfb2a3",
+    "QuestName": "Dark Offering",
+    "Conditions": [
+      {
+        "ConditionId": "27b3dcee15ea0a1c1b93b780",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "105b9e36e7c4bc3bec0d484b": {
+    "QuestId": "105b9e36e7c4bc3bec0d484b",
+    "QuestName": "The Black Key",
+    "Conditions": [
+      {
+        "ConditionId": "837fdba59be8638950e0bf49",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "80d5617ef52f1bb38af8e15e": {
+    "QuestId": "80d5617ef52f1bb38af8e15e",
+    "QuestName": "Encrypted Data",
+    "Conditions": [
+      {
+        "ConditionId": "2b93f18c57340de8b5628041",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "634e81dac41b9ec6293a39e8",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "e10ddd0ea289505f512c2ea5": {
+    "QuestId": "e10ddd0ea289505f512c2ea5",
+    "QuestName": "The Prototype",
+    "Conditions": [
+      {
+        "ConditionId": "858e6b7d2563ae47d517ffd1",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "d3e6505679d29e08648a3560": {
+    "QuestId": "d3e6505679d29e08648a3560",
+    "QuestName": "Patch Notes Loaded",
+    "Conditions": [
+      {
+        "ConditionId": "9c2a1fa9ddd0aa3f5004a6aa",
+        "ConditionType": "FixAnyMalfunction"
+      }
+    ]
+  },
+  "c6519049bf98ea9c5f223137": {
+    "QuestId": "c6519049bf98ea9c5f223137",
+    "QuestName": "Audio Patch",
+    "Conditions": [
+      {
+        "ConditionId": "5412f0bb9da23723ae5c6059",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "9e333774d7e016907fb20e52",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "b8cbc07264042cee848ff58b": {
+    "QuestId": "b8cbc07264042cee848ff58b",
+    "QuestName": "Comms Check",
+    "Conditions": [
+      {
+        "ConditionId": "e0253ce62dc3e5857d113414",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "3911f6dcf7bbebd576a2b99f": {
+    "QuestId": "3911f6dcf7bbebd576a2b99f",
+    "QuestName": "Breach and Clear",
+    "Conditions": [
+      {
+        "ConditionId": "ce02f659b730a881ccfb34b0",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "80af000dcb830295cd2997c8": {
+    "QuestId": "80af000dcb830295cd2997c8",
+    "QuestName": "Medic Patch",
+    "Conditions": [
+      {
+        "ConditionId": "e99b4161c18d133513910790",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "d220d5ad4bd78a9f19de95ce",
+        "ConditionType": "RestoreBodyPart"
+      }
+    ]
+  },
+  "bb02e8d6e65ae218c45f1f9c": {
+    "QuestId": "bb02e8d6e65ae218c45f1f9c",
+    "QuestName": "Lag Compensation",
+    "Conditions": [
+      {
+        "ConditionId": "5e2d6c95740d399ede4e8e75",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "f49e53f13872c920e93710dd": {
+    "QuestId": "f49e53f13872c920e93710dd",
+    "QuestName": "Bot Upgrade",
+    "Conditions": [
+      {
+        "ConditionId": "16738aaa4bab1cd26a4ec7ce",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "aec44e7697d23d3cefcb57ab": {
+    "QuestId": "aec44e7697d23d3cefcb57ab",
+    "QuestName": "Lights On",
+    "Conditions": [
+      {
+        "ConditionId": "01af513c3d61849f6ca5742b",
+        "ConditionType": "DamageWithPistols"
+      }
+    ]
+  },
+  "b94ef9192775ceb18db07fd8": {
+    "QuestId": "b94ef9192775ceb18db07fd8",
+    "QuestName": "Carrying Capacity",
+    "Conditions": [
+      {
+        "ConditionId": "792a008ee8de058d2c4770f2",
+        "ConditionType": "EncumberedTimeInSeconds"
+      },
+      {
+        "ConditionId": "4c545f7549eb0bd13ebdd3d2",
+        "ConditionType": "OverEncumberedTimeInSeconds"
+      }
+    ]
+  },
+  "ce0ed4569009b6c29e1aa245": {
+    "QuestId": "ce0ed4569009b6c29e1aa245",
+    "QuestName": "Server Stability",
+    "Conditions": [
+      {
+        "ConditionId": "f8ef785f25233cff71db43a2",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "6f024c1fb832111fa066277d": {
+    "QuestId": "6f024c1fb832111fa066277d",
+    "QuestName": "Build Update",
+    "Conditions": [
+      {
+        "ConditionId": "f25bcb230ba035751d8834f4",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "8e30a876f077bbf903da2593",
+        "ConditionType": "CollectScavCase"
+      }
+    ]
+  },
+  "5e10e3936a52d2c5c2be051e": {
+    "QuestId": "5e10e3936a52d2c5c2be051e",
+    "QuestName": "Map Rework",
+    "Conditions": [
+      {
+        "ConditionId": "670a9fca3a0ed0b5bddaebc8",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "fc4dfdfdfc57da34f8929b66": {
+    "QuestId": "fc4dfdfdfc57da34f8929b66",
+    "QuestName": "Ballistics Update",
+    "Conditions": [
+      {
+        "ConditionId": "340c55f6628adbf5dc73b939",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "bf94c3ac2e4009f5b47d1112",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "d4b3e0ddf60ffd54976a7d9e": {
+    "QuestId": "d4b3e0ddf60ffd54976a7d9e",
+    "QuestName": "Fair Play Update",
+    "Conditions": [
+      {
+        "ConditionId": "65564d9465628055b3e9a6fe",
+        "ConditionType": "TotalShotDistanceWithSnipers"
+      }
+    ]
+  },
+  "b47bc432177aa81e2f9e0e46": {
+    "QuestId": "b47bc432177aa81e2f9e0e46",
+    "QuestName": "Economy Reset",
+    "Conditions": [
+      {
+        "ConditionId": "699a38667e4fe80b416be031",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "4149720cc860e08cfd9031e3",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "29a7153f6dfe7c46325b41f3": {
+    "QuestId": "29a7153f6dfe7c46325b41f3",
+    "QuestName": "Event Calendar",
+    "Conditions": [
+      {
+        "ConditionId": "d83fba9c0b4a79770c93d2f4",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "289fca182850449a67c4befd": {
+    "QuestId": "289fca182850449a67c4befd",
+    "QuestName": "One Golden Bullet",
+    "Conditions": [
+      {
+        "ConditionId": "97ca04a20fcf65ee28820fcc",
+        "ConditionType": "DamageWithPistols"
+      },
+      {
+        "ConditionId": "8092a9645ffcc4602a688d45",
+        "ConditionType": "KillsWithoutADS"
+      }
+    ]
+  },
+  "692b01102231959817c459fa": {
+    "QuestId": "692b01102231959817c459fa",
+    "QuestName": "Party Grenades",
+    "Conditions": [
+      {
+        "ConditionId": "e85d80d74a9513a57a9f1a44",
+        "ConditionType": "DamageWithGrenades"
+      }
+    ]
+  },
+  "6ebd0a1306414316ffb593e0": {
+    "QuestId": "6ebd0a1306414316ffb593e0",
+    "QuestName": "Sick Day",
+    "Conditions": [
+      {
+        "ConditionId": "54df685b5da688e05c9f0a3a",
+        "ConditionType": "HealthGain"
+      },
+      {
+        "ConditionId": "73e8745d0e76b30ca8564025",
+        "ConditionType": "FixAnyBleed"
+      }
+    ]
+  },
+  "2f641061b4bbd018830ca774": {
+    "QuestId": "2f641061b4bbd018830ca774",
+    "QuestName": "Under the Tree",
+    "Conditions": [
+      {
+        "ConditionId": "c96ffe75dfe0c8fad4c5a966",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "050f151652103fd53a531fd8",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "a9b93e3760b66a0101b0f7d1": {
+    "QuestId": "a9b93e3760b66a0101b0f7d1",
+    "QuestName": "Ho Ho Headshot",
+    "Conditions": [
+      {
+        "ConditionId": "0d8e163f2a7bad272d5655c7",
+        "ConditionType": "KillsWhileCrouched"
+      }
+    ]
+  },
+  "8af8823251710773aef620b3": {
+    "QuestId": "8af8823251710773aef620b3",
+    "QuestName": "Delivery Service",
+    "Conditions": [
+      {
+        "ConditionId": "d538bb85de33bc5a957d0ae0",
+        "ConditionType": "MoveDistanceWhileRunning"
+      }
+    ]
+  },
+  "4839e938ea5798d47e1e1b59": {
+    "QuestId": "4839e938ea5798d47e1e1b59",
+    "QuestName": "Beach Day",
+    "Conditions": [
+      {
+        "ConditionId": "ff3ac65cb732d96f064e8ceb",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "3933520ddcc56827e7231ff4": {
+    "QuestId": "3933520ddcc56827e7231ff4",
+    "QuestName": "Fright Night",
+    "Conditions": [
+      {
+        "ConditionId": "5026b7762f334ff2969d34de",
+        "ConditionType": "KillsWhileSilent"
+      }
+    ]
+  },
+  "102d956caa23e64ac63ec8c6": {
+    "QuestId": "102d956caa23e64ac63ec8c6",
+    "QuestName": "Cult Season",
+    "Conditions": [
+      {
+        "ConditionId": "9377ff13d868fe425273bcbd",
+        "ConditionType": "CollectCultistOffering"
+      }
+    ]
+  },
+  "731d90c00778107c6e256e53": {
+    "QuestId": "731d90c00778107c6e256e53",
+    "QuestName": "Drop Day",
+    "Conditions": [
+      {
+        "ConditionId": "b25325c9a55ad055502c413c",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "2daff05dae4abd126b983e24",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "f30e3687d8d9644f40b79914": {
+    "QuestId": "f30e3687d8d9644f40b79914",
+    "QuestName": "Boss Rush",
+    "Conditions": [
+      {
+        "ConditionId": "0dc7fdc72fd767bd8fa29883",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "618dd3eb4e1e753cd16a876f": {
+    "QuestId": "618dd3eb4e1e753cd16a876f",
+    "QuestName": "Final Countdown",
+    "Conditions": [
+      {
+        "ConditionId": "ee25539471b6b5b76c3fa10c",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "6d0c56cf966d3e4a39cc0e0e",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "78d4076cf53c3c83f21831a6": {
+    "QuestId": "78d4076cf53c3c83f21831a6",
+    "QuestName": "Open Access",
+    "Conditions": [
+      {
+        "ConditionId": "dc4658abaf8eb5d6ba9b2f2f",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "d655f8c8ea0e375f0d036d65": {
+    "QuestId": "d655f8c8ea0e375f0d036d65",
+    "QuestName": "The SPT Experience",
+    "Conditions": [
+      {
+        "ConditionId": "bdac8af74bb8787e13c5e41e",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "1cc3a6170e1ffc0663beb7e9": {
+    "QuestId": "1cc3a6170e1ffc0663beb7e9",
+    "QuestName": "Loot Paradise",
+    "Conditions": [
+      {
+        "ConditionId": "31411d45203a5a0c09fcea88",
+        "ConditionType": "SearchContainer"
+      }
+    ]
+  },
+  "7224b9292b28e9376476d537": {
+    "QuestId": "7224b9292b28e9376476d537",
+    "QuestName": "No Rush",
+    "Conditions": [
+      {
+        "ConditionId": "1ea9f9546ba7dc891316158c",
+        "ConditionType": "MoveDistance"
+      },
+      {
+        "ConditionId": "944f32fec1551fdcf0ba21d6",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "65c54e22f59193eaf352fcad": {
+    "QuestId": "65c54e22f59193eaf352fcad",
+    "QuestName": "Instant Action",
+    "Conditions": [
+      {
+        "ConditionId": "2a40c79bfa82237db72de6a2",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "29dba43271f6f9b7fbc655eb": {
+    "QuestId": "29dba43271f6f9b7fbc655eb",
+    "QuestName": "Your Rules",
+    "Conditions": [
+      {
+        "ConditionId": "46b7dace0a4e8e14b3301c7b",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "9c612cb1d56d6abd83a99d37",
+        "ConditionType": "DamageWithShotguns"
+      }
+    ]
+  },
+  "4ab8b1ffcff1debf3fa52a21": {
+    "QuestId": "4ab8b1ffcff1debf3fa52a21",
+    "QuestName": "Craft and Chill",
+    "Conditions": [
+      {
+        "ConditionId": "d3d3ed33c5c3a5eacb813781",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "1d707087f3eb396ad5e3b142": {
+    "QuestId": "1d707087f3eb396ad5e3b142",
+    "QuestName": "Known Issues",
+    "Conditions": [
+      {
+        "ConditionId": "ee052e478e7bea3ed81b01a6",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "ed039d6eb8b22dafce8c8bd2",
+        "ConditionType": "DestroyBodyPart"
+      }
+    ]
+  },
+  "a0f9fa6bfbc9aaea96c6d986": {
+    "QuestId": "a0f9fa6bfbc9aaea96c6d986",
+    "QuestName": "The Better Way",
+    "Conditions": [
+      {
+        "ConditionId": "2583b1d5b0b7804737320290",
+        "ConditionType": "KillsWhileADS"
+      },
+      {
+        "ConditionId": "bc3212c0b044f566f55b92d8",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "79e245a9e82bbd92c7682534": {
+    "QuestId": "79e245a9e82bbd92c7682534",
+    "QuestName": "Expanded Base",
+    "Conditions": [
+      {
+        "ConditionId": "81c1ce1ff0e437d02a94286f",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "57aaf7403e6d1170a3d78187",
+        "ConditionType": "CraftCyclicItem"
+      }
+    ]
+  },
+  "9656d7b0de5aaf08f9601c9b": {
+    "QuestId": "9656d7b0de5aaf08f9601c9b",
+    "QuestName": "No Restrictions",
+    "Conditions": [
+      {
+        "ConditionId": "b40895648bf26613aa3a9500",
+        "ConditionType": "EarnMoneyOnTransaction"
+      },
+      {
+        "ConditionId": "0739bca2d5bea45a0987da19",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "8cf2a8e091e6765173c5c1a6",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "569e43c9465dc61f8c5e58be": {
+    "QuestId": "569e43c9465dc61f8c5e58be",
+    "QuestName": "Jackpot Rates",
+    "Conditions": [
+      {
+        "ConditionId": "c8f106b05fb41107e2b8c7a3",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "597c54412b3f8428c580101e",
+        "ConditionType": "LootItem"
+      }
+    ]
+  },
+  "4c0adaac52aa78f26b184ca3": {
+    "QuestId": "4c0adaac52aa78f26b184ca3",
+    "QuestName": "Fresh Start",
+    "Conditions": [
+      {
+        "ConditionId": "091167d163cefe9368fc5ff8",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "7bacb0766b2cfc1b7f50a64b": {
+    "QuestId": "7bacb0766b2cfc1b7f50a64b",
+    "QuestName": "Community Power",
+    "Conditions": [
+      {
+        "ConditionId": "a0b656b697838dd47fafb5b8",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "80755425d42809750dbc4d37": {
+    "QuestId": "80755425d42809750dbc4d37",
+    "QuestName": "Mod Manager",
+    "Conditions": [
+      {
+        "ConditionId": "59b61d1e4b4f881247d91965",
+        "ConditionType": "CraftAnyItem"
+      }
+    ]
+  },
+  "e4700bc049fbf3cce5c91c17": {
+    "QuestId": "e4700bc049fbf3cce5c91c17",
+    "QuestName": "Tweak Everything",
+    "Conditions": [
+      {
+        "ConditionId": "0a007273cc5ecf59992e1784",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "f12d4ef546c9173eb03b7b5b": {
+    "QuestId": "f12d4ef546c9173eb03b7b5b",
+    "QuestName": "Sound Design",
+    "Conditions": [
+      {
+        "ConditionId": "090dfa0b5d0844b7a75ede61",
+        "ConditionType": "KillsWhileSilent"
+      },
+      {
+        "ConditionId": "06e66f25f15559ed73b67f06",
+        "ConditionType": "KillsWhileADS"
+      }
+    ]
+  },
+  "cf150685bbd7a315ebbf3d1b": {
+    "QuestId": "cf150685bbd7a315ebbf3d1b",
+    "QuestName": "Pet the Cat",
+    "Conditions": [
+      {
+        "ConditionId": "385ad2ac2cbc064071c8d1bc",
+        "ConditionType": "CraftAnyItem"
+      },
+      {
+        "ConditionId": "2785c5153f06a0e28f6f8c12",
+        "ConditionType": "CompleteWorkout"
+      }
+    ]
+  },
+  "83c68ea904c3fae6d91f03d4": {
+    "QuestId": "83c68ea904c3fae6d91f03d4",
+    "QuestName": "Eye Candy",
+    "Conditions": [
+      {
+        "ConditionId": "e51e6da51b386fd8bc2df893",
+        "ConditionType": "MoveDistance"
+      }
+    ]
+  },
+  "f29b7cb798cebf28014aaab1": {
+    "QuestId": "f29b7cb798cebf28014aaab1",
+    "QuestName": "Custom Build",
+    "Conditions": [
+      {
+        "ConditionId": "aea569aa01eca293e76e235e",
+        "ConditionType": "DamageWithAR"
+      },
+      {
+        "ConditionId": "119526cb94013fcaa04d690a",
+        "ConditionType": "DamageWithSMG"
+      }
+    ]
+  },
+  "9c1fff7920fd02da0a9e52a7": {
+    "QuestId": "9c1fff7920fd02da0a9e52a7",
+    "QuestName": "Level Up",
+    "Conditions": [
+      {
+        "ConditionId": "ccee435b9f7cc1b8935e7c06",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "1c24bc247414703e775cf8fd": {
+    "QuestId": "1c24bc247414703e775cf8fd",
+    "QuestName": "Scavenger AI",
+    "Conditions": [
+      {
+        "ConditionId": "0667b5f5efdbbd4491c5673d",
+        "ConditionType": "SearchContainer"
+      },
+      {
+        "ConditionId": "68dd8b35607df5eae16eddf8",
+        "ConditionType": "LootItem"
+      },
+      {
+        "ConditionId": "c64d2c94d84c806ba70608d4",
+        "ConditionType": "EarnMoneyOnTransaction"
+      }
+    ]
+  },
+  "484e2380791e23675f34a886": {
+    "QuestId": "484e2380791e23675f34a886",
+    "QuestName": "Mission AI",
+    "Conditions": [
+      {
+        "ConditionId": "8181225ae94fae5d9fbaa138",
+        "ConditionType": "DamageWithDMR"
+      }
+    ]
+  },
+  "bb4462afc6c2305a82494e6f": {
+    "QuestId": "bb4462afc6c2305a82494e6f",
+    "QuestName": "Hardcore Mode",
+    "Conditions": [
+      {
+        "ConditionId": "7c7e7bd1be2c2a101686460c",
+        "ConditionType": "HealthLoss"
+      },
+      {
+        "ConditionId": "655334f3262258541679048a",
+        "ConditionType": "FixFracture"
+      },
+      {
+        "ConditionId": "742e37514d0f4b7160572ec0",
+        "ConditionType": "FixHeavyBleed"
+      }
+    ]
+  }
+}

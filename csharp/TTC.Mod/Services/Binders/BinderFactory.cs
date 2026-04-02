@@ -122,4 +122,84 @@ public sealed class BinderFactory
 
         return (created, failed);
     }
+
+    /// <summary>
+    /// Create the MEGA Binder — one slot for every card across all themes.
+    /// </summary>
+    public string? CreateMegaBinder()
+    {
+        var mega = _state.MegaBinder;
+        if (mega == null || string.IsNullOrWhiteSpace(mega.id)) return null;
+
+        var gameLocale = _localeService.GetDesiredGameLocale();
+        const string english = "en";
+
+        var locales = new Dictionary<string, LocaleDetails>
+        {
+            [gameLocale] = new LocaleDetails { Name = mega.item_name, ShortName = mega.item_short_name, Description = mega.item_description },
+            [english] = new LocaleDetails { Name = mega.item_name, ShortName = mega.item_short_name, Description = mega.item_description }
+        };
+
+        var details = new NewItemFromCloneDetails
+        {
+            NewId = mega.id,
+            ItemTplToClone = _state.BinderBase.clone_item,
+            ParentId = _state.BinderBase.item_parent,
+            Locales = locales,
+            HandbookParentId = _state.BinderBase.category_id,
+            HandbookPriceRoubles = mega.price > 0 ? mega.price : null,
+            FleaPriceRoubles = null
+        };
+
+        var props = new TemplateItemProperties
+        {
+            Prefab = new Prefab { Path = mega.item_prefab_path },
+            BackgroundColor = mega.color,
+            Weight = (float)_state.BinderBase.weight,
+            ItemSound = _state.BinderBase.item_sound,
+            ExaminedByDefault = _state.Config.cards_examined_by_default,
+            Width = _state.BinderBase.ExternalSize.width,
+            Height = _state.BinderBase.ExternalSize.height
+        };
+
+        // One slot per card across ALL themes
+        double WeightFor(string rarity)
+        {
+            if (_state.Config.rarity_weights != null && _state.Config.rarity_weights.TryGetValue(rarity, out var w)) return w;
+            return 0d;
+        }
+
+        var ordered = _state.Cards
+            .OrderBy(c => c.theme, StringComparer.OrdinalIgnoreCase)
+            .ThenByDescending(c => WeightFor(c.rarity))
+            .ThenBy(c => c.item_name, StringComparer.OrdinalIgnoreCase);
+
+        var slots = new List<Slot>();
+        foreach (var card in ordered)
+        {
+            slots.Add(new Slot
+            {
+                Name = $"mod_mount_{card.id}",
+                MaxCount = 1,
+                Required = false,
+                Properties = new SlotProperties
+                {
+                    Filters = new[] {
+                        new SlotFilter
+                        {
+                            Filter = new HashSet<MongoId>(new[] { new MongoId(card.id) }),
+                            MaxStackCount = 1
+                        }
+                    }
+                }
+            });
+        }
+
+        props.Slots = slots;
+        props.Grids = null;
+        details.OverrideProperties = props;
+
+        var result = _customItemService.CreateItemFromClone(details);
+        return result.Success == true ? mega.id : null;
+    }
 }

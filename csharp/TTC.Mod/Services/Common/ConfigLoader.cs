@@ -82,4 +82,16 @@ public sealed class ConfigLoader
         }
         catch { return null; }
     }
+
+    public ContainerOverride? LoadContainerOverride(string containersDir, string filename)
+    {
+        try
+        {
+            var file = Path.Combine(containersDir, filename);
+            if (!File.Exists(file)) return null;
+            var txt = File.ReadAllText(file);
+            return JsonSerializer.Deserialize<ContainerOverride>(txt, _opts);
+        }
+        catch { return null; }
+    }
 }

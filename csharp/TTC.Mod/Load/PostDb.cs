@@ -7,9 +7,13 @@ using TTC.Mod.Services.Ragfair;
 using TTC.Mod.Services.Cards;
 using TTC.Mod.Services.Binders;
 using TTC.Mod.Services.Loot;
+using TTC.Mod.Services.Bots;
+using TTC.Mod.Services.Quests;
 using SPTarkov.Server.Core.Services;
 using SPTarkov.Server.Core.Services.Mod;
 using SPTarkov.Server.Core.Servers;
+using TTC.Mod.Models;
+using SPTarkov.Server.Core.Generators;
 using TTC.Mod.Services.Common;
 
 namespace TTC.Mod.Load;
@@ -35,13 +39,28 @@ public sealed class PostDb : IOnLoad
 	private readonly Services.Traders.FenceService _fenceService;
 	private readonly RagfairConfigurator _ragfairConfigurator;
 	private readonly LootInjector _lootInjector;
+	private readonly BotLootCleanupService _botLootCleanup;
+	private readonly KolyaRegistrationService _kolyaRegistration;
+	private readonly QuestRegistrationService _questRegistration;
+	private readonly QuestAssortService _questAssort;
+	private readonly RewardCrateFactory _rewardCrateFactory;
+	private readonly RewardCrateRegistry _rewardCrateRegistry;
+	private readonly RagfairOfferGenerator _ragfairOfferGenerator;
+	private readonly QuestFactory _questFactory;
 
 	public PostDb(ISptLogger<PostDb> logger, State state,
 				  DatabaseService db, LocaleService localeService, CustomItemService customItemService, ConfigServer configServer,
 				  EmptyBoosterFactory emptyBoosterFactory, SecureContainerFilterUpdater secureContainerFilterUpdater, PouchCompatibilityUpdater pouchCompatibilityUpdater,
 				  CardItemFactory cardItemFactory, BinderFactory binderFactory,
 				  TraderOfferService traderOfferService, TTC.Mod.Services.Traders.FenceService fenceService, RagfairConfigurator ragfairConfigurator,
-				  LootInjector lootInjector)
+				  LootInjector lootInjector, BotLootCleanupService botLootCleanup,
+				  KolyaRegistrationService kolyaRegistration,
+				  QuestRegistrationService questRegistration,
+				  QuestAssortService questAssort,
+				  RewardCrateFactory rewardCrateFactory,
+				  RewardCrateRegistry rewardCrateRegistry,
+				  RagfairOfferGenerator ragfairOfferGenerator,
+				  QuestFactory questFactory)
 	{
 		_logger = logger;
 		_state = state;
@@ -58,6 +77,14 @@ public sealed class PostDb : IOnLoad
 		_fenceService = fenceService;
 		_ragfairConfigurator = ragfairConfigurator;
 		_lootInjector = lootInjector;
+		_botLootCleanup = botLootCleanup;
+		_kolyaRegistration = kolyaRegistration;
+		_questRegistration = questRegistration;
+		_questAssort = questAssort;
+		_rewardCrateFactory = rewardCrateFactory;
+		_rewardCrateRegistry = rewardCrateRegistry;
+		_ragfairOfferGenerator = ragfairOfferGenerator;
+		_questFactory = questFactory;
 	}
 
 	/// <summary>
@@ -115,15 +142,119 @@ public sealed class PostDb : IOnLoad
 		var emptyBoosterId = _emptyBoosterFactory.Create();
 		if (!string.IsNullOrWhiteSpace(emptyBoosterId))
 		{
-			// Add Empty Booster to secure container filters
 			_secureContainerFilterUpdater.AddToSecureContainers(emptyBoosterId);
 		}
 
-		// List binders and Empty Booster for sale at traders
+		// Create MEGA containers (LL4 items)
+		var megaBinderId = _binderFactory.CreateMegaBinder();
+		if (!string.IsNullOrWhiteSpace(megaBinderId) && verbose)
+			_logger.Info("[TTC][MegaBinder] Created MEGA Binder");
+
+		var megaBoosterId = _emptyBoosterFactory.CreateMegaBooster();
+		if (!string.IsNullOrWhiteSpace(megaBoosterId))
+		{
+			_secureContainerFilterUpdater.AddToSecureContainers(megaBoosterId);
+			if (verbose) _logger.Info("[TTC][MegaBooster] Created MEGA Booster");
+		}
+
+		// Register custom trader Kolya (always if trader base path exists)
+		if (!string.IsNullOrEmpty(_state.TraderBasePath))
+		{
+			var kolyaOk = _kolyaRegistration.Register(_state.TraderBasePath);
+			if (kolyaOk)
+			{
+				_logger.Info("[TTC][Kolya] Trader registered");
+
+				// Register quests (only when enabled)
+				if (_state.Config.enable_quests)
+				{
+					// Exclude TTC card/binder/container IDs from HandoverItem category resolution
+					var ttcIds = _state.Cards.Select(c => c.id)
+						.Concat(_state.Binders?.Select(b => b.id) ?? Enumerable.Empty<string>());
+					_questFactory.SetTtcItemIds(ttcIds);
+
+					var (questsCreated, questsFailed) = _questRegistration.RegisterAll(emptyBoosterId);
+					if (questsFailed > 0)
+						_logger.Warning($"[TTC][Quests] Created {questsCreated}, failed {questsFailed}");
+					else
+						_logger.Info($"[TTC][Quests] Created {questsCreated} quests");
+				}
+				else
+				{
+					_logger.Info("[TTC][Quests] Quests disabled by config — barters will be unlocked without quests");
+				}
+
+				// Set up assort entries (quest-gated or unlocked depending on config)
+				var allDefs = new List<Models.QuestDefinition>();
+				allDefs.AddRange(BossesThemeDefinitions.GetAll());
+				allDefs.AddRange(IconicWeaponsThemeDefinitions.GetAll());
+				allDefs.AddRange(IconicLocationsThemeDefinitions.GetAll());
+				allDefs.AddRange(HideoutThemeDefinitions.GetAll());
+				allDefs.AddRange(FactionsThemeDefinitions.GetAll());
+				allDefs.AddRange(ManyWaysToDieThemeDefinitions.GetAll());
+				allDefs.AddRange(PlayerArchetypesThemeDefinitions.GetAll());
+				allDefs.AddRange(TradersThemeDefinitions.GetAll());
+				ScavLifeThemeDefinitions.InitSmallMagazines(_db);
+				allDefs.AddRange(ScavLifeThemeDefinitions.GetAll());
+				allDefs.AddRange(MemorableQuestItemsThemeDefinitions.GetAll());
+				allDefs.AddRange(TarkovFailsThemeDefinitions.GetAll());
+				allDefs.AddRange(CommunityMemesThemeDefinitions.GetAll());
+				allDefs.AddRange(StreamerMomentsThemeDefinitions.GetAll());
+				allDefs.AddRange(LegendsOfTheWipeThemeDefinitions.GetAll());
+				allDefs.AddRange(BuggedRealityThemeDefinitions.GetAll());
+				allDefs.AddRange(SecretArtifactsThemeDefinitions.GetAll());
+				allDefs.AddRange(PatchNotesParodiesThemeDefinitions.GetAll());
+				allDefs.AddRange(SeasonalEventsThemeDefinitions.GetAll());
+				allDefs.AddRange(SptVsEftThemeDefinitions.GetAll());
+				allDefs.AddRange(ModsSptLegendsThemeDefinitions.GetAll());
+				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId, megaBinderId, megaBoosterId);
+				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items");
+
+				// Create reward crate item templates (must happen after SetupAll populates the registry)
+				var (cratesCreated, cratesFailed) = _rewardCrateFactory.CreateAll(_rewardCrateRegistry);
+				if (cratesFailed > 0)
+					_logger.Warning($"[TTC][RewardCrates] Created {cratesCreated}, failed {cratesFailed}");
+				else if (cratesCreated > 0 && verbose)
+					_logger.Info($"[TTC][RewardCrates] Created {cratesCreated} reward crate templates");
+
+				// Add Kolya to ragfair traders whitelist and generate his flea offers
+				_ragfairConfigurator.AddKolyaToRagfairTraders();
+				try
+				{
+					_ragfairOfferGenerator.GenerateFleaOffersForTrader(QuestIds.KolyaTraderId);
+					_logger.Info("[TTC][Ragfair] Generated flea offers for Kolya");
+				}
+				catch (Exception ex)
+				{
+					_logger.Warning($"[TTC][Ragfair] Failed to generate flea offers for Kolya: {ex.Message}");
+				}
+			}
+			else
+			{
+				_logger.Warning("[TTC][Kolya] Failed to register trader");
+			}
+		}
+
+		// List binders and Empty Booster for sale at other traders (non-Kolya, if configured)
 		_traderOfferService.AddOffers(emptyBoosterId);
 
 		// Make TTC cards compatible with S I C C and Documents case containers
 		_pouchCompatibilityUpdater.Update();
+
+		// Remove TTC cards from PMC loot tables
+		if (_state.Config.blacklist_cards_from_pmc_loot)
+		{
+			var botRemoved = _botLootCleanup.RemoveCardsFromPmcLoot();
+			if (verbose && botRemoved > 0)
+				_logger.Info($"[TTC][Bots] Blacklisted {botRemoved} card IDs from PMC loot");
+		}
+
+		// Inject TTC cards into scav bot loot pools
+		{
+			var scavAdded = _botLootCleanup.InjectCardsIntoScavLoot();
+			if (verbose && scavAdded > 0)
+				_logger.Info($"[TTC][Bots] Injected {scavAdded} card entries into scav loot pools");
+		}
 
 		// Inject TTC cards into static containers
 		_lootInjector.InjectCardsIntoStaticLoot(_state, s => _logger.Info(s), s => _logger.Warning(s), verbose);
@@ -132,4 +263,3 @@ public sealed class PostDb : IOnLoad
 	}
 
 }
-
