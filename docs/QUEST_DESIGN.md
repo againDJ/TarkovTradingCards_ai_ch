@@ -4861,11 +4861,11 @@ Prefix: **[MODS]** — Hommage to legendary SPT mods and their creators. Each qu
 - **Rewards**: 35,000 XP, Realism Mod card
 - **Barter**: Random Scav Case (Intel)
 
-#### [MODS-15] QUEST: From Chazu [Secret]
+#### [MODS-15] QUEST: From Chazut [Secret]
 - **Card**: Tarkov Trading Cards
 - **ID Seed**: `ttc_quest_card_mods_ttc`
 - **Objectives**: None (auto-completable)
-- **Description**: *"Tarkov Trading Cards. Thank you for downloading this mod — it means the world to me. I love creating things for this community, and sharing them with you is the best part. I'm curious to hear your feedback on TTC and on Kolya — don't hesitate to share your thoughts! If you enjoyed the mod and want to see what else I've been working on, check out my profile 'Chazu' on The Forge. This card is free. Thank you for playing."*
+- **Description**: *"Tarkov Trading Cards. Thank you for downloading this mod — it means the world to me. I love creating things for this community, and sharing them with you is the best part. I'm curious to hear your feedback on TTC and on Kolya — don't hesitate to share your thoughts! If you enjoyed the mod and want to see what else I've been working on, check out my profile 'Chazut' on The Forge. This card is free. Thank you for playing."*
 - **Rewards**: 60,000 XP, TTC card
 - **Barter**: 3× Random Scav Case (Intel)
 

@@ -462,10 +462,10 @@ public static class ModsSptLegendsThemeDefinitions
 				Objectives = new(), // No objectives — auto-completable
 				Locale = new()
 				{
-					Name = "[MODS-15] From Chazu",
-					Description = "Tarkov Trading Cards. Thank you for downloading this mod \u2014 it means the world to me. I love creating things for this community, and sharing them with you is the best part. I'm curious to hear your feedback on TTC and on Kolya \u2014 don't hesitate to share your thoughts! If you enjoyed the mod and want to see what else I've been working on, check out my profile 'Chazu' on The Forge. This card is free. Thank you for playing.",
+					Name = "[MODS-15] From Chazut",
+					Description = "Tarkov Trading Cards. Thank you for downloading this mod \u2014 it means the world to me. I love creating things for this community, and sharing them with you is the best part. I'm curious to hear your feedback on TTC and on Kolya \u2014 don't hesitate to share your thoughts! If you enjoyed the mod and want to see what else I've been working on, check out my profile 'Chazut' on The Forge. This card is free. Thank you for playing.",
 					Note = "No objective. Just accept the quest and complete it.",
-					SuccessMessage = "Thank you for playing TTC. \u2014 Chazu"
+					SuccessMessage = "Thank you for playing TTC. \u2014 Chazut"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardTtc } },
