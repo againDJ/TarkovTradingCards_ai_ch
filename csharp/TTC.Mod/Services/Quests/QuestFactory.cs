@@ -580,14 +580,28 @@ public sealed class QuestFactory
 			});
 		}
 
-		// Standing
-		if (def.StandingReward > 0)
+		// Standing — auto-assign based on XP (rarity) if not explicitly set
+		var standing = def.StandingReward;
+		if (standing <= 0 && def.XpReward > 0)
+		{
+			standing = def.XpReward switch
+			{
+				1000 => 0.01,   // Common
+				3000 => 0.02,   // Uncommon
+				10000 => 0.03,  // Rare
+				20000 => 0.05,  // Epic
+				35000 => 0.08,  // Legendary
+				60000 => 0.10,  // Secret
+				_ => 0
+			};
+		}
+		if (standing > 0)
 		{
 			rewards.Add(new Reward
 			{
 				Id = new MongoId(QuestIds.RewardId(def.Seed, rewardIdx++)),
 				Type = RewardType.TraderStanding,
-				Value = def.StandingReward,
+				Value = standing,
 				Target = QuestIds.KolyaTraderId,
 				TraderId = QuestIds.KolyaTraderId,
 				Index = rewardIdx

@@ -1,0 +1,11 @@
+{
+  "id": "04b93832334159c8d03398c2",
+  "item_name": "Kolya's Card Case",
+  "item_short_name": "Card Case",
+  "item_description": "A premium card storage case with room for hundreds of cards. Kolya reserves these for his most dedicated collectors.",
+  "item_prefab_path": "assets/content/items/containers/item_container_junkbox/item_container_junkbox.bundle",
+  "color": "#FFD700",
+  "price": 2000000,
+  "currency": "roubles",
+  "trader": "a1b2c3d4e5f6a7b8c9d0e1f2"
+}

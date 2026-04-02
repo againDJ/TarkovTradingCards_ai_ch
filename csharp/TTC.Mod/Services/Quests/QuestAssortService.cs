@@ -39,7 +39,7 @@ public sealed class QuestAssortService
 	/// the player gives a card, receives useful items. Gated by quest completion.
 	/// Also sets up rouble purchases for binders and Empty Booster gated by their quests.
 	/// </summary>
-	public int SetupAll(List<QuestDefinition> allDefinitions, string emptyBoosterId)
+	public int SetupAll(List<QuestDefinition> allDefinitions, string emptyBoosterId, string? megaBinderId = null, string? megaBoosterId = null)
 	{
 		var tables = _db.GetTables();
 		if (!tables.Traders.TryGetValue(QuestIds.KolyaTraderId, out var trader) || trader?.Assort == null)
@@ -68,6 +68,22 @@ public sealed class QuestAssortService
 			_crateRegistry.SetBoosterEmptyId(emptyBoosterId);
 			var assortItemId = AddRoublePurchaseItem(trader.Assort, boosterCrateId, 200000, 1);
 			if (assortItemId is MongoId bpId)
+				count++;
+		}
+
+		// MEGA items (LL4, 10M roubles each, no quest gate)
+		if (!string.IsNullOrWhiteSpace(megaBinderId))
+		{
+			var megaBinderPrice = _state.MegaBinder?.price ?? 5000000;
+			var assortItemId = AddRoublePurchaseItem(trader.Assort, megaBinderId, megaBinderPrice, 4);
+			if (assortItemId is MongoId mbId)
+				count++;
+		}
+		if (!string.IsNullOrWhiteSpace(megaBoosterId))
+		{
+			var megaBoosterPrice = _state.MegaBooster?.price ?? 2000000;
+			var assortItemId = AddRoublePurchaseItem(trader.Assort, megaBoosterId, megaBoosterPrice, 4);
+			if (assortItemId is MongoId mbsId)
 				count++;
 		}
 

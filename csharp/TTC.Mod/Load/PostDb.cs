@@ -145,6 +145,18 @@ public sealed class PostDb : IOnLoad
 			_secureContainerFilterUpdater.AddToSecureContainers(emptyBoosterId);
 		}
 
+		// Create MEGA containers (LL4 items)
+		var megaBinderId = _binderFactory.CreateMegaBinder();
+		if (!string.IsNullOrWhiteSpace(megaBinderId) && verbose)
+			_logger.Info("[TTC][MegaBinder] Created MEGA Binder");
+
+		var megaBoosterId = _emptyBoosterFactory.CreateMegaBooster();
+		if (!string.IsNullOrWhiteSpace(megaBoosterId))
+		{
+			_secureContainerFilterUpdater.AddToSecureContainers(megaBoosterId);
+			if (verbose) _logger.Info("[TTC][MegaBooster] Created MEGA Booster");
+		}
+
 		// Register custom trader Kolya (always if trader base path exists)
 		if (!string.IsNullOrEmpty(_state.TraderBasePath))
 		{
@@ -195,7 +207,7 @@ public sealed class PostDb : IOnLoad
 				allDefs.AddRange(SeasonalEventsThemeDefinitions.GetAll());
 				allDefs.AddRange(SptVsEftThemeDefinitions.GetAll());
 				allDefs.AddRange(ModsSptLegendsThemeDefinitions.GetAll());
-				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId);
+				var assortCount = _questAssort.SetupAll(allDefs, emptyBoosterId, megaBinderId, megaBoosterId);
 				_logger.Info($"[TTC][QuestAssort] Linked {assortCount} items");
 
 				// Create reward crate item templates (must happen after SetupAll populates the registry)
