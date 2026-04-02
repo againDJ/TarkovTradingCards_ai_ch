@@ -217,6 +217,9 @@ public sealed class PostDb : IOnLoad
 				else if (cratesCreated > 0 && verbose)
 					_logger.Info($"[TTC][RewardCrates] Created {cratesCreated} reward crate templates");
 
+				// Blacklist reward crate IDs from Fence (created after initial Fence purge)
+				_fenceService.BlacklistAdditionalIds(_rewardCrateRegistry.AllCrateTemplateIds);
+
 				// Add Kolya to ragfair traders whitelist and generate his flea offers
 				_ragfairConfigurator.AddKolyaToRagfairTraders();
 				try
