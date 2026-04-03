@@ -20,6 +20,12 @@ namespace TTC.Mod.Services.Quests;
 public sealed class QuestFactory
 {
 	private static readonly string RoubleTpl = "5449016a4bdc2d6f028b456f";
+	private static readonly List<string> AllMapIds = new()
+	{
+		"bigmap", "factory4_day", "factory4_night", "Interchange", "Woods",
+		"Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory",
+		"Sandbox", "Sandbox_high"
+	};
 	private static readonly string[] AllLocaleCodes = { "ch", "cz", "en", "es-mx", "es", "fr", "ge", "hu", "it", "jp", "kr", "pl", "po", "ro", "ru", "sk", "tu" };
 
 	/// <summary>Replicate locale entries across all supported languages (English text as fallback).</summary>
@@ -212,8 +218,15 @@ public sealed class QuestFactory
 		}
 
 		// Objectives (CounterCreator conditions)
-		foreach (var obj in def.Objectives)
+		foreach (var rawObj in def.Objectives)
 		{
+			// Auto-fill SurviveLocations for "Survive" conditions without explicit maps
+			var obj = rawObj;
+			if (obj.ConditionType == "Survive" && obj.SurviveLocations == null)
+			{
+				obj = obj with { SurviveLocations = AllMapIds };
+			}
+
 			var condId = QuestIds.ConditionId(def.Seed, condIdx++);
 
 			if (obj.HealthEffectType != null)
