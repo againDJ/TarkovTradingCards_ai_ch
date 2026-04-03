@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
     <AssemblyName>TTC.Mod</AssemblyName>
-    <Version>3.0.4</Version>
+    <Version>3.0.5</Version>
     <RootNamespace>TTC.Mod</RootNamespace>
   </PropertyGroup>
 
