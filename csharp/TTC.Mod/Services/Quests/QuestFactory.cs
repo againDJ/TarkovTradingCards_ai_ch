@@ -20,6 +20,11 @@ namespace TTC.Mod.Services.Quests;
 public sealed class QuestFactory
 {
 	private static readonly string RoubleTpl = "5449016a4bdc2d6f028b456f";
+	private static readonly string[] AllLocaleCodes = { "ch", "cz", "en", "es-mx", "es", "fr", "ge", "hu", "it", "jp", "kr", "pl", "po", "ro", "ru", "sk", "tu" };
+
+	/// <summary>Replicate locale entries across all supported languages (English text as fallback).</summary>
+	private static Dictionary<string, Dictionary<string, string>> AllLocales(Dictionary<string, string> entries)
+		=> AllLocaleCodes.ToDictionary(lang => lang, _ => entries);
 	private readonly DatabaseService _db;
 	private readonly State _state;
 	private readonly Dictionary<string, List<string>> _parentClassCache = new();
@@ -121,7 +126,7 @@ public sealed class QuestFactory
 		return new NewQuestDetails
 		{
 			NewQuest = quest,
-			Locales = new Dictionary<string, Dictionary<string, string>> { ["en"] = locales }
+			Locales = AllLocales(locales)
 		};
 	}
 
@@ -151,7 +156,7 @@ public sealed class QuestFactory
 		return new NewQuestDetails
 		{
 			NewQuest = quest,
-			Locales = new Dictionary<string, Dictionary<string, string>> { ["en"] = locales }
+			Locales = AllLocales(locales)
 		};
 	}
 
@@ -647,7 +652,7 @@ public sealed class QuestFactory
 		return new NewQuestDetails
 		{
 			NewQuest = quest,
-			Locales = new Dictionary<string, Dictionary<string, string>> { ["en"] = locales }
+			Locales = AllLocales(locales)
 		};
 	}
 
