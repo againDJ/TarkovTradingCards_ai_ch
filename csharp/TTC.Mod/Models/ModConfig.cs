@@ -19,4 +19,5 @@ public record ModConfig
     public bool enable_quests { get; init; } = true;
     public bool unlock_all_barters { get; init; } = false;
     public bool blacklist_cards_from_pmc_loot { get; init; } = true;
+    public bool enable_cards_in_scav_loot { get; init; } = true;
 }
