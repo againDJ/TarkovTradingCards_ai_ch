@@ -253,6 +253,7 @@ public sealed class PostDb : IOnLoad
 		}
 
 		// Inject TTC cards into scav bot loot pools
+		if (_state.Config.enable_cards_in_scav_loot)
 		{
 			var scavAdded = _botLootCleanup.InjectCardsIntoScavLoot();
 			if (verbose && scavAdded > 0)

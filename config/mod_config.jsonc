@@ -31,6 +31,10 @@
      spawn with cards like any other loot item. */
   "blacklist_cards_from_pmc_loot": true,
 
+  /* When true, TTC cards are injected into scav bot loot pools (pockets, vests, backpacks).
+     When false, scavs won't carry any cards. */
+  "enable_cards_in_scav_loot": true,
+
    // ─────────────────────────────────────────────
    // FINDING CARDS IN CONTAINERS
    // ─────────────────────────────────────────────
