@@ -123,7 +123,7 @@ public sealed class RewardCrateFactory
 					RandomRewardType.RandomMeds => 50000,
 					RandomRewardType.RandomKeys => 100000,
 					RandomRewardType.BoosterPack => 200000,
-					_ => 10000
+					_ => 5000000 // Fixed reward crates (collection rewards, multi-item barters) — high value prevents scav case from rolling them
 				},
 				FleaPriceRoubles = null
 			};
