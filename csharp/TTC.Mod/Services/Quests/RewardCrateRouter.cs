@@ -42,6 +42,10 @@ public sealed class RewardCrateRouter(
 {
 	private static readonly string IntroQuestId = QuestIds.QuestId("ttc_quest_introduction");
 
+	// Cache of crate item IDs in player inventory → their template IDs
+	// Updated before each request processing so we can identify sold crates
+	private static readonly Dictionary<string, string> _crateInventoryCache = new();
+
 	private static ValueTask<string> ProcessOutput(
 		MongoId sessionId, string? output,
 		ItemEventRouterRequest? requestData,
@@ -64,6 +68,9 @@ public sealed class RewardCrateRouter(
 			// Quick check: if no crates are registered, skip entirely
 			if (!registry.HasAnyCrates)
 				return ValueTask.FromResult(output);
+
+			// Refresh crate inventory cache — add any NEW crate items (don't clear, only add)
+			RefreshCrateCache(profileHelper, sessionId, registry);
 
 			using var doc = JsonDocument.Parse(output);
 			var root = doc.RootElement;
@@ -102,31 +109,66 @@ public sealed class RewardCrateRouter(
 					profileKeys.Add(prop.Name);
 			}
 
+			var soldCrates = new List<string>(); // tpl only (already removed from inventory)
+
+			// Check requestData for sell actions containing crate items
+			if (requestData?.Data != null)
+			{
+				foreach (var action in requestData.Data)
+				{
+					if (action is SPTarkov.Server.Core.Models.Eft.Trade.ProcessSellTradeRequestData sellReq)
+					{
+						// Look up sold items in the cache (populated from PREVIOUS request)
+						foreach (var soldItem in sellReq.Items)
+						{
+							if (_crateInventoryCache.TryGetValue(soldItem.Id, out var tpl))
+							{
+								soldCrates.Add(tpl);
+								_crateInventoryCache.Remove(soldItem.Id);
+								logger.Debug($"[TTC][RewardCrate] Sold crate {soldItem.Id}: {tpl}");
+							}
+						}
+					}
+				}
+			}
+
 			foreach (var key in profileKeys)
 			{
 				if (!profileChanges.TryGetProperty(key, out var profileEntry)) continue;
 				if (!profileEntry.TryGetProperty("items", out var items)) continue;
-				if (!items.TryGetProperty("new", out var newItems)) continue;
-				if (newItems.ValueKind != JsonValueKind.Array) continue;
 
-				foreach (var item in newItems.EnumerateArray())
+				// Check new items (purchased crates)
+				if (items.TryGetProperty("new", out var newItems) && newItems.ValueKind == JsonValueKind.Array)
 				{
-					if (!item.TryGetProperty("_tpl", out var tplProp)) continue;
-					var tpl = tplProp.GetString();
-					if (tpl == null || !registry.IsCrate(tpl)) continue;
+					foreach (var item in newItems.EnumerateArray())
+					{
+						if (!item.TryGetProperty("_tpl", out var tplProp)) continue;
+						var tpl = tplProp.GetString();
+						if (tpl == null || !registry.IsCrate(tpl)) continue;
 
-					if (!item.TryGetProperty("_id", out var idProp)) continue;
-					var id = idProp.GetString();
-					if (id == null) continue;
+						if (!item.TryGetProperty("_id", out var idProp)) continue;
+						var id = idProp.GetString();
+						if (id == null) continue;
 
-					cratesToProcess.Add((id, tpl));
+						cratesToProcess.Add((id, tpl));
+					}
 				}
+
+			}
+
+			if (cratesToProcess.Count == 0 && soldCrates.Count == 0)
+				return ValueTask.FromResult(output);
+
+			// Process sold crates first (no JSON modification needed — already removed by sell)
+			foreach (var tpl in soldCrates)
+			{
+				ProcessCrateReward(tpl, sessionId, registry, mailSend, randomRewardService, databaseService, logger);
 			}
 
 			if (cratesToProcess.Count == 0)
 				return ValueTask.FromResult(output);
 
-			logger.Info($"[TTC][RewardCrate] Detected {cratesToProcess.Count} crate(s) in response, intercepting...");
+			logger.Info($"[TTC][RewardCrate] Detected {cratesToProcess.Count} purchased crate(s), intercepting...");
 
 			// Parse as mutable JsonNode for modification
 			var node = JsonNode.Parse(output);
@@ -360,5 +402,100 @@ public sealed class RewardCrateRouter(
 			}
 			break;
 		}
+	}
+
+	private static void RefreshCrateCache(ProfileHelper profileHelper, MongoId sessionId, RewardCrateRegistry registry)
+	{
+		try
+		{
+			var pmcProfile = profileHelper.GetPmcProfile(sessionId);
+			if (pmcProfile?.Inventory?.Items == null) return;
+
+			// Only ADD new entries, don't clear — sold items are removed explicitly when processed
+			foreach (var item in pmcProfile.Inventory.Items)
+			{
+				var tpl = item.Template.ToString();
+				if (registry.IsCrate(tpl))
+					_crateInventoryCache.TryAdd(item.Id.ToString(), tpl);
+			}
+		}
+		catch { }
+	}
+
+	/// <summary>
+	/// Process a crate reward (used for both purchased and sold crates).
+	/// Generates the appropriate reward items and sends them via mail.
+	/// </summary>
+	private static void ProcessCrateReward(
+		string tpl, MongoId sessionId,
+		RewardCrateRegistry registry,
+		MailSendService mailSend,
+		RandomRewardService randomRewardService,
+		DatabaseService databaseService,
+		ISptLogger<RewardCrateRouter> logger)
+	{
+		var randomType = registry.GetRandomType(tpl);
+		if (randomType != null)
+		{
+			var rollCount = registry.GetRandomCount(tpl);
+
+			if (randomType.Value is RandomRewardType.BoosterPack)
+			{
+				var boosterItems = randomRewardService.GenerateBoosterPackReward(
+					registry.GetBoosterEmptyId() ?? "");
+				if (boosterItems.Count > 0)
+					mailSend.SendDirectNpcMessageToPlayer(
+						sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+						"Here's your booster pack, friend! Five cards fresh from my collection. Keep them — you'll want them for barters later.",
+						boosterItems);
+			}
+			else if (randomType.Value is RandomRewardType.RandomMeds or RandomRewardType.RandomKeys)
+			{
+				var randomItems = randomRewardService.GenerateRandomPoolReward(randomType.Value, rollCount);
+				if (randomItems.Count > 0)
+					mailSend.SendDirectNpcMessageToPlayer(
+						sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+						randomType.Value == RandomRewardType.RandomKeys
+							? "Found some keys in a dead scav's pockets. Maybe one of them opens something good."
+							: "Raided a medical supply cache. Here's what was inside.",
+						randomItems);
+			}
+			else
+			{
+				for (int roll = 0; roll < rollCount; roll++)
+				{
+					var randomItems = randomType.Value switch
+					{
+						RandomRewardType.ScavCase2500 or RandomRewardType.ScavCase15000 or
+						RandomRewardType.ScavCase95000 or RandomRewardType.ScavCaseMoonshine or
+						RandomRewardType.ScavCaseIntel => randomRewardService.GenerateScavCaseReward(randomType.Value),
+						RandomRewardType.CultistCircle => randomRewardService.GenerateCultistCircleReward(sessionId),
+						_ => new List<Item>()
+					};
+
+					if (randomItems.Count > 0)
+						mailSend.SendDirectNpcMessageToPlayer(
+							sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+							randomType.Value == RandomRewardType.CultistCircle
+								? "The circle has spoken. Accept its offerings."
+								: "My scav network came through. Here's what they found.",
+							randomItems);
+				}
+			}
+
+			logger.Info($"[TTC][RewardCrate] Processed sold crate {tpl[..8]}... ({randomType.Value})");
+			return;
+		}
+
+		// Fixed reward crate
+		var rewards = registry.GetContents(tpl);
+		if (rewards == null || rewards.Count == 0) return;
+
+		var mailItems = BuildMailItems(rewards, databaseService);
+		mailSend.SendDirectNpcMessageToPlayer(
+			sessionId, QuestIds.KolyaTraderId, MessageType.MessageWithItems,
+			"Here are your barter rewards, friend. Use them wisely.",
+			mailItems);
+		logger.Info($"[TTC][RewardCrate] Processed sold fixed crate {tpl[..8]}...");
 	}
 }
