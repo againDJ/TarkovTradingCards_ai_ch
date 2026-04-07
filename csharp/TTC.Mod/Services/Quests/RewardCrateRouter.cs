@@ -37,6 +37,15 @@ public sealed class RewardCrateRouter(
 		"/client/game/profile/items/moving",
 		(url, requestData, sessionId, output) =>
 			ProcessOutput(sessionId, output, requestData, registry, profileHelper, inventoryHelper, mailSend, databaseService, randomRewardService, logger)
+	),
+	new RouteAction<object>(
+		"/client/game/profile/list",
+		(url, requestData, sessionId, output) =>
+		{
+			// Pre-fill crate cache when profile loads (before any sell action)
+			RefreshCrateCache(profileHelper, sessionId, registry);
+			return ValueTask.FromResult(output ?? string.Empty);
+		}
 	)
 ])
 {
@@ -110,6 +119,7 @@ public sealed class RewardCrateRouter(
 			}
 
 			var soldCrates = new List<string>(); // tpl only (already removed from inventory)
+			int soldCratePrice = 0;
 
 			// Check requestData for sell actions containing crate items
 			if (requestData?.Data != null)
@@ -118,16 +128,18 @@ public sealed class RewardCrateRouter(
 				{
 					if (action is SPTarkov.Server.Core.Models.Eft.Trade.ProcessSellTradeRequestData sellReq)
 					{
-						// Look up sold items in the cache (populated from PREVIOUS request)
+						bool hasCrate = false;
 						foreach (var soldItem in sellReq.Items)
 						{
 							if (_crateInventoryCache.TryGetValue(soldItem.Id, out var tpl))
 							{
 								soldCrates.Add(tpl);
 								_crateInventoryCache.Remove(soldItem.Id);
-								logger.Debug($"[TTC][RewardCrate] Sold crate {soldItem.Id}: {tpl}");
+								hasCrate = true;
 							}
 						}
+						if (hasCrate && sellReq.Price > 0)
+							soldCratePrice += (int)sellReq.Price;
 					}
 				}
 			}
@@ -163,6 +175,50 @@ public sealed class RewardCrateRouter(
 			foreach (var tpl in soldCrates)
 			{
 				ProcessCrateReward(tpl, sessionId, registry, mailSend, randomRewardService, databaseService, logger);
+			}
+
+			// Remove roubles gained from crate sales — modify response AND profile
+			if (soldCratePrice > 0)
+			{
+				try
+				{
+					var responseNode = JsonNode.Parse(output);
+					var changes = responseNode?["data"]?["profileChanges"] ?? responseNode?["profileChanges"];
+					if (changes != null)
+					{
+						var roubleTpl = "5449016a4bdc2d6f028b456f";
+						foreach (var profileProp in changes.AsObject())
+						{
+							var changeItems = profileProp.Value?["items"]?["change"]?.AsArray();
+							if (changeItems == null) continue;
+
+							foreach (var changeItem in changeItems)
+							{
+								if (changeItem?["_tpl"]?.GetValue<string>() != roubleTpl) continue;
+								var upd = changeItem?["upd"];
+								if (upd == null) continue;
+								var stack = upd["StackObjectsCount"]?.GetValue<int>() ?? 0;
+								var newStack = Math.Max(0, stack - soldCratePrice);
+								upd["StackObjectsCount"] = newStack;
+
+								// Also update server-side profile
+								var itemId = changeItem?["_id"]?.GetValue<string>();
+								if (itemId != null)
+								{
+									var pmc = profileHelper.GetPmcProfile(sessionId);
+									var invItem = pmc?.Inventory?.Items?.FirstOrDefault(i => i.Id.ToString() == itemId);
+									if (invItem?.Upd != null)
+										invItem.Upd.StackObjectsCount = newStack;
+								}
+
+								output = responseNode.ToJsonString(new JsonSerializerOptions { WriteIndented = false });
+								break;
+							}
+							break;
+						}
+					}
+				}
+				catch { }
 			}
 
 			if (cratesToProcess.Count == 0)

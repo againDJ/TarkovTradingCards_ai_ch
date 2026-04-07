@@ -112,7 +112,19 @@ public sealed class RewardCrateFactory
 				ParentId = containerBase.item_parent,
 				Locales = locales,
 				HandbookParentId = containerBase.category_id,
-				HandbookPriceRoubles = 1000,
+				HandbookPriceRoubles = randomType switch
+				{
+					RandomRewardType.ScavCase2500 => 2500,
+					RandomRewardType.ScavCase15000 => 15000,
+					RandomRewardType.ScavCase95000 => 95000,
+					RandomRewardType.ScavCaseMoonshine => 200000,
+					RandomRewardType.ScavCaseIntel => 300000,
+					RandomRewardType.CultistCircle => 1000000,
+					RandomRewardType.RandomMeds => 50000,
+					RandomRewardType.RandomKeys => 100000,
+					RandomRewardType.BoosterPack => 200000,
+					_ => 10000
+				},
 				FleaPriceRoubles = null
 			};
 
