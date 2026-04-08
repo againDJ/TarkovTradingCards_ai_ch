@@ -277,7 +277,7 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_wrongextract",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithGrenades", Value = 500, Description = "Deal 500 damage with grenades" },
+					new() { ConditionType = "DamageWithThrowables", Value = 500, Description = "Deal 500 damage with grenades" },
 					new() { ConditionType = "FixLightBleed", Value = 5, Description = "Fix 5 light bleeds" }
 				},
 				Locale = new()
@@ -357,7 +357,7 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_openheal",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithGrenades", Value = 2000, Description = "Deal 2,000 damage with grenades" },
+					new() { ConditionType = "DamageWithThrowables", Value = 2000, Description = "Deal 2,000 damage with grenades" },
 					new() { ConditionType = "FixHeavyBleed", Value = 5, Description = "Fix 5 heavy bleeds" }
 				},
 				Locale = new()

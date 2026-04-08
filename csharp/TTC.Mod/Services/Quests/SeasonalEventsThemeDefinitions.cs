@@ -140,7 +140,7 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_goldengun",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithGrenades", Value = 500, Description = "Deal 500 damage with grenades" },
+					new() { ConditionType = "DamageWithThrowables", Value = 500, Description = "Deal 500 damage with grenades" },
 					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets", KillTarget = "Any" }
 				},
 				Locale = new()

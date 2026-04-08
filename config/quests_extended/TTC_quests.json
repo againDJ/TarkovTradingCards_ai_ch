@@ -1371,7 +1371,7 @@
     "Conditions": [
       {
         "ConditionId": "7ec011a509070ee401ddfe75",
-        "ConditionType": "DamageWithGrenades"
+        "ConditionType": "DamageWithThrowables"
       },
       {
         "ConditionId": "76f4934c892c94b848a5d1bf",
@@ -1409,7 +1409,7 @@
     "Conditions": [
       {
         "ConditionId": "dc7cc4213a2497d01e96b0b6",
-        "ConditionType": "DamageWithGrenades"
+        "ConditionType": "DamageWithThrowables"
       },
       {
         "ConditionId": "04ff08192e0c39f61b1134a7",
@@ -1675,7 +1675,7 @@
     "Conditions": [
       {
         "ConditionId": "51bf7d4997ad83d35d24f407",
-        "ConditionType": "DamageWithGrenades"
+        "ConditionType": "DamageWithThrowables"
       }
     ]
   },
@@ -1925,7 +1925,7 @@
     "Conditions": [
       {
         "ConditionId": "61dcb60bb970a3fda1218e01",
-        "ConditionType": "DamageWithGrenades"
+        "ConditionType": "DamageWithThrowables"
       },
       {
         "ConditionId": "ba3247841e97b171094694ac",
@@ -1967,7 +1967,7 @@
     "Conditions": [
       {
         "ConditionId": "844e521f53876d1bfeaddab2",
-        "ConditionType": "DamageWithGrenades"
+        "ConditionType": "DamageWithThrowables"
       },
       {
         "ConditionId": "507c3d644c4001a6c7d48589",
@@ -2371,7 +2371,7 @@
     "Conditions": [
       {
         "ConditionId": "e85d80d74a9513a57a9f1a44",
-        "ConditionType": "DamageWithGrenades"
+        "ConditionType": "DamageWithThrowables"
       }
     ]
   },

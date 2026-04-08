@@ -397,7 +397,7 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_dontpeek",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithGrenades", Value = 3000, Description = "Deal 3,000 damage with grenades" },
+					new() { ConditionType = "DamageWithThrowables", Value = 3000, Description = "Deal 3,000 damage with grenades" },
 					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets from under 15m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
 				},
 				Locale = new()
