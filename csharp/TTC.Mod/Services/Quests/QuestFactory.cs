@@ -681,7 +681,7 @@ public sealed class QuestFactory
 		// Damage-related
 		"DamageWithAR" or "DamageWithDMR" or "DamageWithLMG" or "DamageWithPistols"
 			or "DamageWithRevolvers" or "DamageWithShotguns" or "DamageWithSMG" or "DamageWithAny"
-			or "DamageToArmour" or "DamageToArmourWithShotguns"
+			or "DamageWithThrowables" or "DamageToArmour" or "DamageToArmourWithShotguns"
 			or "TotalShotDistanceWithSnipers" or "DestroyLegsWithSMG" => "Elimination",
 		// Everything else
 		_ => "Completion"

@@ -11,7 +11,7 @@ public sealed record TTCModMetadata : AbstractModMetadata
     public override string Name { get; init; } = "TarkovTradingCards";
     public override string Author { get; init; } = "Chazut";
     public override List<string>? Contributors { get; init; } = null;
-    public override SemVerVersion Version { get; init; } = new("3.0.7");
+    public override SemVerVersion Version { get; init; } = new("3.0.8");
     public override SemVerRange SptVersion { get; init; } = new("~4.0.0");
     public override List<string>? Incompatibilities { get; init; } = null;
     public override Dictionary<string, SemVerRange>? ModDependencies { get; init; } = null;

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net471</TargetFramework>
     <AssemblyName>TTC</AssemblyName>
-    <Version>3.0.7</Version>
+    <Version>3.0.8</Version>
     <LangVersion>latest</LangVersion>
     <GameRoot>C:\Games\SPT-4.0</GameRoot>
   </PropertyGroup>

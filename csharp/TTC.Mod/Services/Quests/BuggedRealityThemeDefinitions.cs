@@ -189,7 +189,7 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_doorpeeker",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithGrenades", Value = 1000, Description = "Deal 1,000 damage with grenades" },
+					new() { ConditionType = "DamageWithThrowables", Value = 1000, Description = "Deal 1,000 damage with grenades" },
 					new() { ConditionType = "FixLightBleed", Value = 5, Description = "Fix 5 light bleeds" }
 				},
 				Locale = new()
@@ -269,7 +269,7 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_adslock",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithGrenades", Value = 5000, Description = "Deal 5,000 damage with grenades" },
+					new() { ConditionType = "DamageWithThrowables", Value = 5000, Description = "Deal 5,000 damage with grenades" },
 					new() { ConditionType = "FixHeavyBleed", Value = 10, Description = "Fix 10 heavy bleeds" }
 				},
 				Locale = new()
