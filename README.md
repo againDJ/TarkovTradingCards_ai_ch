@@ -1,4 +1,7 @@
 # TarkovTradingCards
+![Stars](https://img.shields.io/github/stars/Chazut/TarkovTradingCards?style=flat-square&label=STARS&color=007ec6)
+![Issues](https://img.shields.io/github/issues/Chazut/TarkovTradingCards?style=flat-square&label=ISSUES&color=44cc11)
+![Downloads](https://img.shields.io/github/downloads/Chazut/TarkovTradingCards/total?style=flat-square&label=DOWNLOADS&color=44cc11)
 
 TarkovTradingCards is an SPT mod that adds collectible trading cards, themed binders, and an optional "Empty Booster" container to Escape From Tarkov. It also wires cards into traders/Ragfair and injects them into static loot with a configurable, predictable pipeline.
 
