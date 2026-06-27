@@ -69,14 +69,14 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "DestroyBodyPart", Value = 2, Description = "Have 2 body parts destroyed" }
+					new() { ConditionType = "DestroyBodyPart", Value = 2, Description = "摧毁2个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-0] The Wall of Shame",
-					Description = "Everyone fails in Tarkov. The question is whether you learn from it or just add another clip to the highlight reel. Get two body parts destroyed \u2014 shouldn't take long \u2014 and Kolya will give you his binder of legendary failures.",
-					Note = "Have 2 body parts destroyed.",
-					SuccessMessage = "Welcome to the Wall of Shame."
+					Name = "[FAIL-0] 耻辱墙",
+					Description = "塔科夫人人都会失败。问题是你从中学习还是只是给集锦再加一段素材。被摧毁两个身体部位——应该用不了多久——Kolya就会把他那本传奇失败集给你。",
+					Note = "被摧毁2个身体部位。",
+					SuccessMessage = "欢迎来到耻辱墙。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderFails } }
@@ -89,15 +89,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_tarkov_fails",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 magazines", HandoverTargets = new() { ClassMagazine } },
-					new() { ConditionType = "LootItem", Value = 15, Description = "Loot 15 items" }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个弹匣", HandoverTargets = new() { ClassMagazine } },
+					new() { ConditionType = "LootItem", Value = 15, Description = "搜刮15个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-1] Click Click Click",
-					Description = "Mags Without Bullets. You loaded the mag, but forgot to load the ammo. Hand over five magazines and loot fifteen items. At least the mags are good for something.",
-					Note = "Hand over 5 magazines and loot 15 items.",
-					SuccessMessage = "Click. Click. Bang. Finally."
+					Name = "[FAIL-1] 咔嗒咔嗒咔嗒",
+					Description = "没装子弹的弹匣。你装了弹匣，但忘了装子弹。交出五个弹匣并摸十五件物品。至少弹匣还有点用。",
+					Note = "交出5个弹匣并搜刮15件物品。",
+					SuccessMessage = "咔嗒。咔嗒。砰。终于。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardEmptyMags } },
@@ -116,14 +116,14 @@ public static class TarkovFailsThemeDefinitions
 				Location = MapInterchange,
 				Objectives = new()
 				{
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via Hole Exfill on Interchange", ExitNameId = "Hole Exfill", ExitLocations = new() { "Interchange" } }
+					new() { ConditionType = "ExitName", Value = 1, Description = "在立交桥通过地洞撤离", ExitNameId = "Hole Exfill", ExitLocations = new() { "Interchange" } }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-2] The Naked Run",
-					Description = "Backpack Left Behind. Sometimes the only way out is through the hole in the fence \u2014 but only if you ditch the bag. Extract through the Hole Exfill on Interchange. Leave your backpack behind. It hurts every time.",
-					Note = "Extract via Hole Exfill on Interchange.",
-					SuccessMessage = "The backpack stays. You don't."
+					Name = "[FAIL-2] 裸奔跑刀",
+					Description = "背包留下了。有时候唯一的路是穿过围栏的洞——但只有丢下背包才行。通过Interchange的破洞撤离点撤离。留下你的背包。每次都心疼。",
+					Note = "通过Interchange的破洞撤离点撤离。",
+					SuccessMessage = "背包留下。你不用。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardLeftBehind } },
@@ -141,15 +141,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_leftbehind",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWithoutADS", Value = 3, Description = "Get 3 kills without aiming down sights" },
-					new() { ConditionType = "DamageWithSMG", Value = 300, Description = "Deal 300 damage with SMGs" }
+					new() { ConditionType = "KillsWithoutADS", Value = 3, Description = "不瞄准击杀3个目标" },
+					new() { ConditionType = "DamageWithSMG", Value = 300, Description = "使用冲锋枪造成300伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-3] Spray and Pray",
-					Description = "Scope Left at Base. You brought a gun to a gunfight but forgot the scope. Three hipfire kills and three hundred SMG damage \u2014 the spray-and-pray special.",
-					Note = "3 hipfire kills and 300 SMG damage.",
-					SuccessMessage = "Who needs a scope anyway?"
+					Name = "[FAIL-3] 随缘枪法",
+					Description = "镜子落家了。你带了枪来打枪战但忘了镜子。三次腰射击杀和三百冲锋枪伤害——扫射祈祷特供。",
+					Note = "完成3次腰射击杀并造成300冲锋枪伤害。",
+					SuccessMessage = "谁需要瞄具啊？"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardNoScope } },
@@ -168,15 +168,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_noscope",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 keys", HandoverTargets = new() { ClassKeyMechanical } },
-					new() { ConditionType = "SearchContainer", Value = 25, Description = "Search 25 containers" }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5把钥匙", HandoverTargets = new() { ClassKeyMechanical } },
+					new() { ConditionType = "SearchContainer", Value = 25, Description = "搜索25个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-4] Every Door, Wrong Key",
-					Description = "Wrong Key. You brought seventeen keys and none of them fit. Every PMC has stood in front of a locked door, cycling through their keybar in desperation. Hand over five keys and search twenty-five containers. Maybe one of them was right.",
-					Note = "Hand over 5 keys and search 25 containers.",
-					SuccessMessage = "None of them fit. As expected."
+					Name = "[FAIL-4] 每扇门都不对钥匙",
+					Description = "带错钥匙。你带了十七把钥匙没一把对的。每个PMC都站在锁着的门前绝望地翻自己的钥匙包。交出五把钥匙并搜二十五个容器。也许有一把是对的。",
+					Note = "交出5把钥匙并搜索25个容器。",
+					SuccessMessage = "没一把是对的。不出所料。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardWrongKey } },
@@ -196,16 +196,16 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_wrongkey",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithShotguns", Value = 500, Description = "Deal 500 damage with shotguns" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "FixAnyMalfunction", Value = 1, Description = "Fix 1 weapon malfunction" }
+					new() { ConditionType = "DamageWithShotguns", Value = 500, Description = "使用霰弹枪造成500伤害" },
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "FixAnyMalfunction", Value = 1, Description = "修复1次武器故障" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-5] Wrong Caliber",
-					Description = "Wrong Ammo Type. You packed buckshot for a sniper duel. You loaded 9x18 into a 9x19 mag. And when the gun finally jammed, you had to fix it mid-firefight. Deal five hundred shotgun damage, kill ten scavs, and fix a weapon malfunction.",
-					Note = "500 shotgun damage, 10 scav kills, fix 1 malfunction.",
-					SuccessMessage = "Wrong ammo, right result."
+					Name = "[FAIL-5] 搞错口径",
+					Description = "子弹口径搞错。你装了鹿弹去打狙击对决。你把9x18装进了9x19弹匣。当枪终于卡壳的时候你还得在交火中修它。造成五百霰弹枪伤害、杀十个Scav、修一次故障。",
+					Note = "造成500霰弹枪伤害，击杀10个Scav，修复1次故障。",
+					SuccessMessage = "错误的子弹，正确的结果。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardWrongAmmo } },
@@ -223,15 +223,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_wrongammo",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 1500, Description = "Lose 1,500 HP total" },
-					new() { ConditionType = "DestroyBodyPart", Value = 3, Description = "Have 3 body parts destroyed" }
+					new() { ConditionType = "HealthLoss", Value = 1500, Description = "累计损失1,500 HP" },
+					new() { ConditionType = "DestroyBodyPart", Value = 3, Description = "摧毁3个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-6] Should've Alt-Tabbed Faster",
-					Description = "Tarkov Tab Out. You alt-tabbed to check Discord and came back to a black screen and a death recap. Lose fifteen hundred HP and have three body parts destroyed. It'll happen whether you try or not.",
-					Note = "Lose 1,500 HP and have 3 body parts destroyed.",
-					SuccessMessage = "Should've tabbed faster."
+					Name = "[FAIL-6] 本应该更快切屏",
+					Description = "塔科夫切出去。你Alt+Tab出去看Discord，回来时黑屏和死亡回放。损失一千五百HP并被摧毁三个身体部位。不管你是不是故意的都会发生。",
+					Note = "损失1,500生命值并被摧毁3个身体部位。",
+					SuccessMessage = "应该切屏更快的。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTabOut } },
@@ -250,16 +250,16 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_tabout",
 				Objectives = new()
 				{
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via Dorms V-Ex on Customs", ExitNameId = "Dorms V-Ex", ExitLocations = new() { "bigmap" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via PP Exfil on Interchange", ExitNameId = "PP Exfil", ExitLocations = new() { "Interchange" } },
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract 2 times" }
+					new() { ConditionType = "ExitName", Value = 1, Description = "在海关通过宿舍V-Ex撤离", ExitNameId = "Dorms V-Ex", ExitLocations = new() { "bigmap" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在立交桥通过PP撤离点撤离", ExitNameId = "PP Exfil", ExitLocations = new() { "Interchange" } },
+					new() { ConditionType = "Survive", Value = 2, Description = "存活并撤离2次" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-7] Wrong Way",
-					Description = "Extract in Wrong Direction. You ran the entire length of the map to an extract that wasn't yours. Take the car extract on Customs and Interchange \u2014 at least that one's always available if you have the roubles.",
-					Note = "Car extract on Customs and Interchange, survive 2 times.",
-					SuccessMessage = "At least you found the right way eventually."
+					Name = "[FAIL-7] 走错了方向",
+					Description = "走错方向撤离。你跑了整张地图的长度，到了一个不是你的撤离点。在Customs和Interchange坐付费车辆撤离——至少那一个只要你花钱就永远可用。",
+					Note = "在Customs和Interchange通过付费车辆撤离，存活2次。",
+					SuccessMessage = "至少你最后还是找对了方向。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardWrongExtract } },
@@ -277,15 +277,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_wrongextract",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithThrowables", Value = 500, Description = "Deal 500 damage with grenades" },
-					new() { ConditionType = "FixLightBleed", Value = 5, Description = "Fix 5 light bleeds" }
+					new() { ConditionType = "DamageWithThrowables", Value = 500, Description = "使用手榴弹造成500伤害" },
+					new() { ConditionType = "FixLightBleed", Value = 5, Description = "处理5次轻度出血" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-8] Flashbang Boomerang",
-					Description = "Flashbang Yourself. You pulled the pin, threw the flashbang, and it bounced right back. Deal five hundred grenade damage and fix five light bleeds. The shrapnel always finds you.",
-					Note = "500 grenade damage and fix 5 light bleeds.",
-					SuccessMessage = "The shrapnel found you. Again."
+					Name = "[FAIL-8] 闪光弹回力镖",
+					Description = "闪到自己。你拔了保险、扔出闪光弹、它弹回来了。造成五百手雷伤害并处理五次轻流血。弹片总能找到你。",
+					Note = "造成500手雷伤害并处理5次轻流血。",
+					SuccessMessage = "弹片又找到你了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFlashbang } },
@@ -303,15 +303,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_flashbang",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract 10 times" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 500000, Description = "Earn 500,000\u20bd from transactions" }
+					new() { ConditionType = "Survive", Value = 10, Description = "存活并撤离10次" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 500000, Description = "通过交易赚取500,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-9] Two Seconds Too Late",
-					Description = "Forgot Extract Timer. Seven seconds on the clock, full backpack, sprinting to extract, and... MIA. Survive ten raids and earn half a million roubles. This time, check the timer.",
-					Note = "Survive 10 raids and earn 500,000\u20bd.",
-					SuccessMessage = "This time you made it. Barely."
+					Name = "[FAIL-9] 晚了两秒",
+					Description = "忘了撤离计时器。还剩七秒、背包满满的、冲向撤离点、然后……MIA。存活十局赚五十万卢布。这次，记得看计时器。",
+					Note = "存活10局并赚取500,000₽。",
+					SuccessMessage = "这次你成功了。勉强。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardExtractTimer } },
@@ -329,15 +329,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_extracttimer",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthGain", Value = 5000, Description = "Restore 5,000 HP total" },
-					new() { ConditionType = "RestoreBodyPart", Value = 10, Description = "Restore 10 body parts" }
+					new() { ConditionType = "HealthGain", Value = 5000, Description = "累计恢复5,000 HP" },
+					new() { ConditionType = "RestoreBodyPart", Value = 10, Description = "恢复10个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-10] Healing Under Fire",
-					Description = "Healing in the Open. No cover, no concealment, just you and a Salewa in the middle of a firefight. Restore five thousand health points and ten body parts. Field medicine at its most desperate.",
-					Note = "Restore 5,000 HP and 10 body parts.",
-					SuccessMessage = "Patched up. For now."
+					Name = "[FAIL-10] 火线治疗",
+					Description = "在开阔地打药。没掩体、没遮挡，就你和一支Salewa在交火中。恢复五千点生命值并修复十个身体部位。最绝望的战地医疗。",
+					Note = "恢复5,000生命值并修复10个身体部位。",
+					SuccessMessage = "已包扎。暂时的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardOpenHeal } },
@@ -357,15 +357,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_openheal",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithThrowables", Value = 2000, Description = "Deal 2,000 damage with grenades" },
-					new() { ConditionType = "FixHeavyBleed", Value = 5, Description = "Fix 5 heavy bleeds" }
+					new() { ConditionType = "DamageWithThrowables", Value = 2000, Description = "使用手榴弹造成2,000伤害" },
+					new() { ConditionType = "FixHeavyBleed", Value = 5, Description = "处理5次大出血" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-11] Cooking Grenades",
-					Description = "Grenading Yourself. You cooked it too long. Or threw it into a doorframe. Or forgot about the bounce physics. Two thousand grenade damage and five heavy bleeds fixed. The shrapnel is yours.",
-					Note = "2,000 grenade damage and fix 5 heavy bleeds.",
-					SuccessMessage = "The shrapnel is definitely yours."
+					Name = "[FAIL-11] 煮手雷",
+					Description = "炸到自己。你煮太久了。或者扔到门框上弹回来了。或者忘了反弹物理。两千手雷伤害和处理五次大出血。弹片是你的。",
+					Note = "造成2,000手雷伤害并处理5次大出血。",
+					SuccessMessage = "弹片绝对是你放的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSelfNade } },
@@ -383,16 +383,16 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_selfnade",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 5000, Description = "Lose 5,000 HP total" },
-					new() { ConditionType = "DestroyBodyPart", Value = 10, Description = "Have 10 body parts destroyed" },
-					new() { ConditionType = "Survive", Value = 15, Description = "Survive and extract 15 times" }
+					new() { ConditionType = "HealthLoss", Value = 5000, Description = "累计损失5,000 HP" },
+					new() { ConditionType = "DestroyBodyPart", Value = 10, Description = "摧毁10个身体部位" },
+					new() { ConditionType = "Survive", Value = 15, Description = "存活并撤离15次" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-12] Rage Quit Protocol",
-					Description = "Alt+F4 Hero. The rage quit is an art form. Lose five thousand HP, have ten body parts destroyed, but survive fifteen raids anyway. The real Alt+F4 Hero is the one who keeps coming back.",
-					Note = "Lose 5,000 HP, 10 body parts destroyed, survive 15 raids.",
-					SuccessMessage = "You kept coming back. Respect."
+					Name = "[FAIL-12] 怒退协议",
+					Description = "Alt+F4英雄。怒退是一种艺术。损失五千HP、十个身体部位被摧毁，但依然存活十五局。真正的Alt+F4英雄是那个总是再回来的人。",
+					Note = "损失5,000生命值，10个身体部位被摧毁，存活15局。",
+					SuccessMessage = "你一直回来。尊重。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardAltF4 } },
@@ -412,16 +412,16 @@ public static class TarkovFailsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 PMCs on Labs", KillTarget = "AnyPmc", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 raiders on Labs", KillTarget = "Savage", KillSavageRole = new() { "pmcBot" }, KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from Labs 5 times", SurviveLocations = new() { "laboratory" } }
+					new() { ConditionType = "Kills", Value = 15, Description = "在实验室击杀15名PMC", KillTarget = "AnyPmc", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "Kills", Value = 10, Description = "在实验室击杀10名掠夺者", KillTarget = "Savage", KillSavageRole = new() { "pmcBot" }, KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "Survive", Value = 5, Description = "从实验室存活并撤离5次", SurviveLocations = new() { "laboratory" } }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-13] Lab Rat Disaster",
-					Description = "Misfire in Labs. The most expensive map in Tarkov \u2014 every entry costs a keycard whether you live or die. Your gun jams on the first raider. Eliminate fifteen PMCs and ten raiders on Labs, and survive five extractions.",
-					Note = "15 PMC kills, 10 raider kills, survive Labs 5 times.",
-					SuccessMessage = "Labs conquered. Your wallet did not survive."
+					Name = "[FAIL-13] 实验室灾难",
+					Description = "实验室哑火。塔科夫最贵的地图——每次进入都要消耗一张钥匙卡，无论生死。你的枪在对第一个Raider时卡壳了。在Labs消灭十五个PMC和十个Raider并存活五次撤离。",
+					Note = "完成15次PMC击杀、10次Raider击杀，在Labs存活5次。",
+					SuccessMessage = "实验室已征服。你的钱包没活下来。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardMisfireLabs } },
@@ -439,15 +439,15 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_misfirelabs",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 20000, Description = "Lose 20,000 HP total" },
-					new() { ConditionType = "CompleteWorkout", Value = 5, Description = "Complete 5 gym workouts" }
+					new() { ConditionType = "HealthLoss", Value = 20000, Description = "累计损失20,000 HP" },
+					new() { ConditionType = "CompleteWorkout", Value = 5, Description = "完成5次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-14] System Failure",
-					Description = "Tarkov Alt+Tab Crash. The game froze, the screen went black, and you woke up dead. Lose twenty thousand HP across your raids and hit the gym five times. Your PMC needs therapy \u2014 physical and mental.",
-					Note = "Lose 20,000 HP and complete 5 gym workouts.",
-					SuccessMessage = "System recovered. Barely."
+					Name = "[FAIL-14] 系统故障",
+					Description = "塔科夫Alt+Tab崩溃。游戏冻结了、屏幕黑了、你醒来时已经死了。在战局中损失两万HP并去五次健身房。你的PMC需要治疗——身体上和心理上。",
+					Note = "损失20,000生命值并完成5次健身。",
+					SuccessMessage = "系统恢复了。勉强。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardAltTabCrash } },
@@ -466,16 +466,16 @@ public static class TarkovFailsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_fail_alttabcrash",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 intelligence folders", HandoverTargets = new() { IntelFolderItem } },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 graphics cards", HandoverTargets = new() { GpuItem } },
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 LEDX Skin Transilluminator", HandoverTargets = new() { LedxItem } }
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3份情报文件夹", HandoverTargets = new() { IntelFolderItem } },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3张显卡", HandoverTargets = new() { GpuItem } },
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1个LEDX皮肤透照器", HandoverTargets = new() { LedxItem } }
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-15] The Discard Button",
-					Description = "Accidental Discard. You clicked 'Discard', YOU. Three intel folders, three graphics cards, and a LEDX \u2014 gone into the void. Hand them all over to Kolya. It hurts just as much the second time.",
-					Note = "Hand over 3 intel folders, 3 GPUs, 1 LEDX.",
-					SuccessMessage = "Gone. All of it. Again."
+					Name = "[FAIL-15] 丢弃按钮",
+						Description = "误点丢弃。你点了“丢弃”，是“你”。三个情报文件夹、三个显卡、一个LEDX——消失在虚空中。全部交给Kolya。第二次一样心疼。",
+					Note = "交出3个情报文件夹、3个GPU、1个LEDX。",
+					SuccessMessage = "没了。全没了。又。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardDiscard } },
@@ -505,7 +505,7 @@ public static class TarkovFailsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 fail cards (one of each)",
+					Description = "上交全部15张失败时刻卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardEmptyMags] = "Empty Mags",
@@ -527,10 +527,10 @@ public static class TarkovFailsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[FAIL-C] Kolya's Blooper Reel",
-					Description = "Every fail documented, every embarrassment immortalized. From empty mags to accidental discards, you've lived through every nightmare Tarkov has to offer. Hand over the cards and complete the blooper reel.",
-					Note = "Hand over one of each fail card to complete the collection.",
-					SuccessMessage = "The Blooper Reel is complete. Every fail immortalized."
+					Name = "[FAIL-C] Kolya的失败集锦",
+					Description = "每次失败都已记录、每次尴尬永垂不朽。从空弹匣到误丢弃，你活过了塔科夫能给你的每一个噩梦。交出卡牌，失败集锦就完整了。",
+					Note = "交出所有失败卡牌各一张以完成收集。",
+					SuccessMessage = "失败集锦已完成。每次失败永垂不朽。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

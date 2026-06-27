@@ -102,14 +102,14 @@ public static class IconicLocationsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistance", Value = 5000, Description = "Cover 5,000m on foot" }
+					new() { ConditionType = "MoveDistance", Value = 5000, Description = "步行5,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-0] The Cartographer's Notes",
-					Description = "Every location in Tarkov has a story written in blood and bullet holes. I've been mapping the conflict zone since the beginning \u2014 every hotspot, every ambush point, every death trap that's claimed a hundred lives. Before I hand over my cartographer's notes, I need to know you've actually been out there. Cover five kilometers on foot. Any direction, any map. Just move.",
-					Note = "Cover 5km on foot, then receive the Iconic Locations binder.",
-					SuccessMessage = "Five kilometers of Tarkov under your boots. Here are my notes."
+					Name = "[LOCA-0] 制图师的笔记",
+					Description = "塔科夫的每个地点都有一个用鲜血和弹孔写的故事。我从一开始就在绘制这片冲突区域——每个热点、每个伏击点、每个夺走百人生命的死亡陷阱。在把我的制图笔记交给你之前，我得确认你真的去过那里。徒步走五公里。随便哪个方向、哪张地图。走起来就行。",
+					Note = "徒步5公里，获取标志性地点图鉴。",
+					SuccessMessage = "塔科夫的五公里在你脚下。这是我的笔记。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderLocations } }
@@ -125,16 +125,16 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapWoods,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate Jaeger's camp on Woods", VisitZoneId = "huntsman_001" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the USEC camp on Woods", VisitZoneId = "pr_scout_base" },
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract from Woods 2 times", SurviveLocations = new() { "Woods" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在森林找到Jaeger的营地", VisitZoneId = "huntsman_001" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在森林找到USEC营地", VisitZoneId = "pr_scout_base" },
+					new() { ConditionType = "Survive", Value = 2, Description = "从森林存活并撤离2次", SurviveLocations = new() { "Woods" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-1] The Woodsman",
-					Description = "The Sawmill on Woods. It's the center of gravity for the entire map \u2014 every gunfight, every ambush, every desperate sprint for the extract passes through those log stacks. But before you document it, I need you to learn the forest. Find Jaeger's camp, locate the old USEC position, and make it out alive \u2014 twice. Prove you know these woods.",
-					Note = "Visit Jaeger's camp, the USEC camp, and survive Woods 2 times.",
-					SuccessMessage = "You know the forest now. The Woodsman has spoken."
+					Name = "[LOCA-1] 森林之子",
+					Description = "Woods的锯木厂。它是整张地图的重力中心——每一场枪战、每一次伏击、每一次对撤离点的绝望冲刺都要穿过那些木料堆。但在你记录它之前，我要你了解这片森林。找到Jaeger的营地，定位老USEC据点，活着出来——两次。证明你了解这片树林。",
+					Note = "访问Jaeger营地、USEC营地，并在Woods存活2次。",
+					SuccessMessage = "你现在了解这片森林了。森林人说了。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardSawmill } },
@@ -149,20 +149,20 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "ExitName", Value = 3, Description = "Extract 3 times through ZB-1011 on Customs", ExitNameId = "ZB-1011", ExitLocations = new() { "bigmap" } },
+					new() { ConditionType = "ExitName", Value = 3, Description = "在海关通过ZB-1011撤离3次", ExitNameId = "ZB-1011", ExitLocations = new() { "bigmap" } },
 					new()
 					{
 						ConditionType = "Kills", Value = 5,
-						Description = "Eliminate 5 scavs on Customs",
+						Description = "在海关击杀5名Scav",
 						KillTarget = "Savage", KillLocations = new() { "bigmap" }
 					}
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-2] Into the Deep",
-					Description = "ZB-1011. Every PMC who's ever walked Customs knows that bunker extract by the train tracks. Down the stairs, through the door, you're out. It's the first extract most people learn, and the one they keep coming back to. I need you to use it three times and clear out five scavs along the way. Earn your right to call this your exit.",
-					Note = "Extract 3 times through ZB-1011 and eliminate 5 scavs on Customs.",
-					SuccessMessage = "You've been to the deep and came back. That takes guts."
+					Name = "[LOCA-2] 深入密林",
+						Description = "ZB-1011。每个走过Customs的PMC都知道铁轨旁那个地堡撤离点。下楼梯，过门，走人。这是大多数人学会的第一个撤离点，也是他们反复使用的那一个。我要你用三次，顺路清理五个Scav。赢得称它为“你的出口”的权利。",
+					Note = "通过ZB-1011撤离3次并在Customs消灭5个Scav。",
+					SuccessMessage = "你去过深处并活着回来了。这需要勇气。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardBunker } },
@@ -177,16 +177,16 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate dorm room 214 on Customs", VisitZoneId = "room214" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the secret exfil on Customs", VisitZoneId = "exit777" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Customs 3 times", SurviveLocations = new() { "bigmap" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在海关找到214宿舍房间", VisitZoneId = "room214" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在海关找到秘密撤离点", VisitZoneId = "exit777" },
+					new() { ConditionType = "Survive", Value = 3, Description = "从海关存活并撤离3次", SurviveLocations = new() { "bigmap" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-3] Hallway Horror",
-					Description = "Dorms on Customs. Three floors of pure chaos. The hallways are so narrow that every engagement is a coin flip. Room 204's sightline down the corridor is legendary. I need you to find room 214, locate the secret extraction point, and survive Customs three times. Knowledge is power in those hallways.",
-					Note = "Visit room 214, the secret exfil, survive Customs 3 times.",
-					SuccessMessage = "You know the Dorms now. That knowledge will save your life."
+					Name = "[LOCA-3] 走廊噩梦",
+					Description = "Customs的宿舍楼。三层纯粹的混乱。走廊窄到每次交火都是抛硬币。204房间俯瞰走廊的视线是传奇。我要你找到214房间，定位秘密撤离点，在Customs活下来三次。在那些走廊里，知识就是力量。",
+					Note = "访问214房间和秘密撤离点，在Customs存活3次。",
+					SuccessMessage = "你了解宿舍楼了。这知识会救你的命。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardDorms } },
@@ -205,14 +205,14 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "ExitName", Value = 5, Description = "Extract 5 times through Gate 3 on Factory", ExitNameId = "Gate 3", ExitLocations = new() { "factory4_day", "factory4_night" } }
+					new() { ConditionType = "ExitName", Value = 5, Description = "在工厂通过3号门撤离5次", ExitNameId = "Gate 3", ExitLocations = new() { "factory4_day", "factory4_night" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-4] Last Man Standing",
-					Description = "Factory Gate 3. The light at the end of the tunnel \u2014 literally. Every raid on Factory ends with a desperate sprint toward that green smoke, praying nobody's watching the angle. The bodies pile up at the extract like nowhere else. Extract through Gate 3 five times \u2014 day or night. Earn your ticket out.",
-					Note = "Extract 5 times through Gate 3 on Factory.",
-					SuccessMessage = "Five times through the gate. You know the way out."
+					Name = "[LOCA-4] 最后的幸存者",
+					Description = "Factory 3号门。隧道尽头的灯光——字面意义上的。每局Factory都以冲向绿烟的绝望冲刺告终，祈祷没人架着那个角度。撤离点的尸体比任何地方都多。通过3号门撤离五次——白天或黑夜都行。赢取你的通行证。",
+					Note = "通过Factory 3号门撤离5次。",
+					SuccessMessage = "五次通过那道门。你知道出去的路。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGate3 } },
@@ -227,17 +227,17 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapInterchange,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the AVOKADO store on Interchange", VisitZoneId = "place_SALE_03_AVOKADO" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the KOSTIN store on Interchange", VisitZoneId = "place_SALE_03_KOSTIN" },
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" },
-					new() { ConditionType = "LootItem", Value = 30, Description = "Loot 30 items" }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在立交桥找到AVOKADO商店", VisitZoneId = "place_SALE_03_AVOKADO" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在立交桥找到KOSTIN商店", VisitZoneId = "place_SALE_03_KOSTIN" },
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" },
+					new() { ConditionType = "LootItem", Value = 30, Description = "搜刮30个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-5] Consumer Paradise",
-					Description = "The Ultra Mall Atrium on Interchange. That massive open space where Killa patrols and every shop is a potential goldmine \u2014 or a death trap. AVOKADO, KOSTIN, Techlight... I need you to scout the stores, search fifty containers, and loot thirty items. Shop till you drop, friend.",
-					Note = "Visit 2 stores, search 50 containers, loot 30 items.",
-					SuccessMessage = "The mall has been picked clean. Excellent shopping trip."
+					Name = "[LOCA-5] 购物天堂",
+					Description = "Interchange的超大商场中庭。Killa巡逻的巨大开放式空间，每个商店都可能是金矿——也可能是死亡陷阱。AVOKADO、KOSTIN、Techlight……我要你侦察这些商店，搜五十个容器，拿三十件物品。血拼到倒，朋友。",
+					Note = "访问2个商店，搜索50个容器，搜刮30件物品。",
+					SuccessMessage = "商场被搜刮干净了。愉快的购物之旅。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardUltra } },
@@ -255,18 +255,18 @@ public static class IconicLocationsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 15,
-						Description = "Eliminate 15 targets on Customs",
+						Description = "在海关击杀15个目标",
 						KillTarget = "Any", KillLocations = new() { "bigmap" }
 					},
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from Customs 5 times", SurviveLocations = new() { "bigmap" } },
-					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 2000, Description = "Move 2,000m while crouched" }
+					new() { ConditionType = "Survive", Value = 5, Description = "从海关存活并撤离5次", SurviveLocations = new() { "bigmap" } },
+					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 2000, Description = "蹲伏移动2,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-6] Rooftop Sovereign",
-					Description = "The Stronghold Roof on Customs. Whoever holds the high ground controls the entire mid-section of the map. The fortress in the center draws every fight to it \u2014 hold it and you control the flow of the entire raid. Eliminate fifteen targets on Customs, survive five raids, and move two kilometers crouched. Stay low and own the rooftops.",
-					Note = "15 kills on Customs, survive 5 times, crouch-walk 2km.",
-					SuccessMessage = "The Stronghold is yours. The rooftop sovereign."
+					Name = "[LOCA-6] 屋顶霸主",
+					Description = "Customs的要塞屋顶。谁占据高地谁就掌控地图中段。中心的堡垒吸引了所有战斗——守住它，你就控制了整局比赛的节奏。在Customs消灭十五个目标，存活五局，蹲走两公里。保持低姿态，占领屋顶。",
+					Note = "在Customs击杀15人，存活5次，蹲走2公里。",
+					SuccessMessage = "要塞是你的。屋顶之王。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardStronghold } },
@@ -280,16 +280,16 @@ public static class IconicLocationsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_locations_stronghold",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "Cover 10,000m while running" },
-					new() { ConditionType = "SearchContainer", Value = 60, Description = "Search 60 containers" },
-					new() { ConditionType = "LootItem", Value = 50, Description = "Loot 50 items" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "奔跑10,000米" },
+					new() { ConditionType = "SearchContainer", Value = 60, Description = "搜索60个容器" },
+					new() { ConditionType = "LootItem", Value = 50, Description = "搜刮50个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-7] The Techlight Sprint",
-					Description = "The Techlight Rush. That mad sprint from spawn to the second floor of Interchange, praying you get there before the other PMCs. GPUs, LEDX, Tetriz \u2014 the loot is insane if you're first. Ten kilometers of running, sixty containers searched, fifty items grabbed. Speed is survival.",
-					Note = "Run 10km, search 60 containers, loot 50 items.",
-					SuccessMessage = "First to Techlight, first to the loot. Speed kills."
+					Name = "[LOCA-7] 科技之光冲刺",
+					Description = "Techlight冲刺。从出生点疯狂冲向Interchange二楼，祈祷比别的PMC先到。GPU、LEDX、Tetriz——如果你是第一个到的，战利品多到不可理喻。跑十公里，搜六十个容器，拿五十件物品。速度就是活命。",
+					Note = "跑步10公里，搜索60个容器，搜刮50件物品。",
+					SuccessMessage = "第一个到科技之光，第一个拿到货。速度就是胜利。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardTechlight } },
@@ -304,17 +304,17 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Recon the first treatment plant roof", VisitZoneId = "qlight_extension_prapor1_exploration1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Recon the second treatment plant roof", VisitZoneId = "qlight_extension_prapor1_exploration2" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Recon the third treatment plant roof", VisitZoneId = "qlight_extension_prapor1_exploration3" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Lighthouse 3 times", SurviveLocations = new() { "Lighthouse" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察第一个水处理厂屋顶", VisitZoneId = "qlight_extension_prapor1_exploration1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察第二个水处理厂屋顶", VisitZoneId = "qlight_extension_prapor1_exploration2" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察第三个水处理厂屋顶", VisitZoneId = "qlight_extension_prapor1_exploration3" },
+					new() { ConditionType = "Survive", Value = 3, Description = "从灯塔存活并撤离3次", SurviveLocations = new() { "Lighthouse" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-8] Cliffside Overwatch",
-					Description = "The Water Treatment Plant Overwatch on Lighthouse. Rogues patrol the rooftops with .50 cals and grenade launchers. I need you to recon all three treatment plant rooftops \u2014 yes, that means getting past the Rogues. Then survive Lighthouse three times. Prove you can handle the approach.",
-					Note = "Recon 3 treatment plant roofs, survive Lighthouse 3 times.",
-					SuccessMessage = "Three rooftops scouted, three extractions. You own the cliffs."
+					Name = "[LOCA-8] 悬崖守望",
+					Description = "Lighthouse的水处理厂俯瞰点。Rogues拿着.50机枪和榴弹发射器在屋顶巡逻。我要你侦察全部三个处理厂屋顶——没错，这意味着绕过Rogues。然后在Lighthouse活下来三次。证明你能搞定接近路线。",
+					Note = "侦察3个水处理厂屋顶，在Lighthouse存活3次。",
+					SuccessMessage = "三个屋顶已侦察，三次撤离。悬崖属于你。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardTreatment } },
@@ -337,17 +337,17 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the crashed helicopter", VisitZoneId = "qlight_find_crushed_heli" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Find the lost group in the chalets", VisitZoneId = "qlight_find_scav_group1" },
-					new() { ConditionType = "HealthGain", Value = 1500, Description = "Restore 1,500 HP total" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Lighthouse 3 times", SurviveLocations = new() { "Lighthouse" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到坠毁的直升机", VisitZoneId = "qlight_find_crushed_heli" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在小木屋找到失踪的小队", VisitZoneId = "qlight_find_scav_group1" },
+					new() { ConditionType = "HealthGain", Value = 1500, Description = "累计恢复1,500 HP" },
+					new() { ConditionType = "Survive", Value = 3, Description = "从灯塔存活并撤离3次", SurviveLocations = new() { "Lighthouse" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-9] The Pipe Dream",
-					Description = "The Water Treatment Plant. Getting inside means fighting through waves of Rogues in full kit. But I don't need you to fight \u2014 I need you to explore. Find the crashed helicopter, locate the lost scav group in the chalets, heal up fifteen hundred HP worth of wounds, and survive three more Lighthouse raids. This is endurance, not firepower.",
-					Note = "Visit 2 locations, restore 1,500 HP, survive Lighthouse 3 times.",
-					SuccessMessage = "Battered but alive. The treatment plant holds no more secrets."
+					Name = "[LOCA-9] 管道迷梦",
+					Description = "水处理厂。进去意味着要跟一波波全装Rogues交火。但我不需要你打——我需要你探索。找到坠毁的直升机，定位小木屋中失踪的Scav小队，治疗一千五百点生命值，再在Lighthouse存活三局。这个靠耐力，不靠火力。",
+					Note = "访问2个地点，恢复1,500生命值，在Lighthouse存活3次。",
+					SuccessMessage = "遍体鳞伤但活着。水处理厂再无秘密。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardWaterPlant } },
@@ -362,17 +362,17 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapShoreline,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the east wing generators", VisitZoneId = "place_peacemaker_008_4_N1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the west wing generators", VisitZoneId = "place_peacemaker_008_4_N2" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate Sanitar's office in the Resort", VisitZoneId = "place_meh_sanitar_room" },
-					new() { ConditionType = "Survive", Value = 4, Description = "Survive and extract from Shoreline 4 times", SurviveLocations = new() { "Shoreline" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到东翼发电机", VisitZoneId = "place_peacemaker_008_4_N1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到西翼发电机", VisitZoneId = "place_peacemaker_008_4_N2" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在疗养院找到Sanitar的办公室", VisitZoneId = "place_meh_sanitar_room" },
+					new() { ConditionType = "Survive", Value = 4, Description = "从海岸线存活并撤离4次", SurviveLocations = new() { "Shoreline" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-10] The Scariest Hallway",
-					Description = "West Wing Room 310 on Shoreline. The Health Resort is the single most contested building in Tarkov. Every hallway is a death sentence. I need you to scout the generators in both wings, find Sanitar's office, and survive four Shoreline raids. Explore every corner of that resort \u2014 it'll save your life one day.",
-					Note = "Visit 3 Resort locations, survive Shoreline 4 times.",
-					SuccessMessage = "The Resort has no secrets left. You've walked every hallway."
+					Name = "[LOCA-10] 最恐怖的走廊",
+					Description = "Shoreline的西翼310房间。疗养院是塔科夫争夺最激烈的建筑。每条走廊都是死刑判决。我要你侦察两翼的发电机，找到Sanitar的办公室，在Shoreline存活四局。探索疗养院的每个角落——有一天这会救你的命。",
+					Note = "访问3个疗养院地点，在Shoreline存活4次。",
+					SuccessMessage = "疗养院再无秘密。每条走廊你都走过。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardWestWing } },
@@ -389,31 +389,31 @@ public static class IconicLocationsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 2,
-						Description = "Eliminate 2 sniper scavs on Streets",
+						Description = "在街区击杀2名狙击Scav",
 						KillTarget = "Savage", KillSavageRole = new() { "marksman" },
 						KillLocations = new() { "TarkovStreets" }
 					},
 					new()
 					{
 						ConditionType = "Kills", Value = 2,
-						Description = "Eliminate 2 sniper scavs on Customs",
+						Description = "在海关击杀2名狙击Scav",
 						KillTarget = "Savage", KillSavageRole = new() { "marksman" },
 						KillLocations = new() { "bigmap" }
 					},
 					new()
 					{
 						ConditionType = "Kills", Value = 2,
-						Description = "Eliminate 2 sniper scavs on Shoreline",
+						Description = "在海岸线击杀2名狙击Scav",
 						KillTarget = "Savage", KillSavageRole = new() { "marksman" },
 						KillLocations = new() { "Shoreline" }
 					}
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-11] Street Warfare",
-					Description = "Somewhere in Tarkov, there's a rooftop the locals call the King Building. The name stuck because whoever holds the high ground rules the fight below. Snipers know this better than anyone \u2014 they perch on rooftops across every map, picking off PMCs who never think to look up. To earn this card, you need to dethrone them. Hunt down sniper scavs on Streets, Customs, and Shoreline. Two on each map. Rule from above.",
-					Note = "Kill 2 sniper scavs on each map: Streets, Customs, Shoreline.",
-					SuccessMessage = "The snipers are gone. The King Building is yours."
+					Name = "[LOCA-11] 街头战争",
+					Description = "在塔科夫某个地方，有个屋顶被当地人称为王楼。这名字流传开来，因为谁占据高地谁就主宰下方的战斗。狙击手比谁都清楚——他们在每张地图的屋顶上蹲守，干掉那些从不抬头看天的PMC。想拿这张卡，你得废黜他们。猎杀Streets、Customs和Shoreline的狙击Scav。每张地图两个。从高处统治。",
+					Note = "在以下地图各击杀2个狙击Scav：Streets、Customs、Shoreline。",
+					SuccessMessage = "狙击手已清除。王楼归你。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardKingBuilding } },
@@ -437,17 +437,17 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapStreets,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the Sparja store in Pinewood hotel", VisitZoneId = "quest_produkt3" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the cultist ritual spot on Chekannaya st.", VisitZoneId = "quest_zone_c27_sect" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the ritual spot on Chekannaya 15", VisitZoneId = "quest_zone_find_2st_mech" },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from Streets 5 times", SurviveLocations = new() { "TarkovStreets" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察松木酒店内的Sparja商店", VisitZoneId = "quest_produkt3" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在切卡纳亚街找到邪教徒仪式点", VisitZoneId = "quest_zone_c27_sect" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在切卡纳亚15号找到仪式点", VisitZoneId = "quest_zone_find_2st_mech" },
+					new() { ConditionType = "Survive", Value = 5, Description = "从街区存活并撤离5次", SurviveLocations = new() { "TarkovStreets" } }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-12] Welcome to the Hotel",
-					Description = "The Pinewood Hotel Lobby on Streets. Marble floors, chandelier fragments, and enough blood to fill the swimming pool out back. Scout the Sparja store, find both ritual spots on Chekannaya street, and survive five more Streets raids. This hotel checks you in, but doesn't check you out.",
-					Note = "Visit 3 zones, survive Streets 5 times.",
-					SuccessMessage = "Checked in, checked out. The Pinewood has no more surprises."
+					Name = "[LOCA-12] 欢迎来到酒店",
+					Description = "Streets的松木酒店大堂。大理石地板、吊灯碎片、还有足够填满后院游泳池的血。侦察Sparja商店，找到Chekannaya街上的两个仪式点，在Streets再存活五局。这家酒店帮你入住，但不会帮你退房。",
+					Note = "访问3个区域，在Streets存活5次。",
+					SuccessMessage = "入住，退房。松木酒店再无意外。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardPinewood } },
@@ -474,18 +474,18 @@ public static class IconicLocationsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 15,
-						Description = "Eliminate 15 targets on Reserve",
+						Description = "在储备站击杀15个目标",
 						KillTarget = "Any", KillLocations = new() { "RezervBase" }
 					},
-					new() { ConditionType = "ExitName", Value = 3, Description = "Extract 3 times through D-2", ExitNameId = "EXFIL_Bunker_D2", ExitLocations = new() { "RezervBase" } },
-					new() { ConditionType = "SearchContainer", Value = 80, Description = "Search 80 containers" }
+					new() { ConditionType = "ExitName", Value = 3, Description = "通过D-2撤离3次", ExitNameId = "EXFIL_Bunker_D2", ExitLocations = new() { "RezervBase" } },
+					new() { ConditionType = "SearchContainer", Value = 80, Description = "搜索80个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-13] Underground Empire",
-					Description = "The Queen Bunker on Reserve. The underground network beneath the military base is a labyrinth of corridors, server rooms, and dead PMCs. Whoever controls the bunker controls the best loot on Reserve. I need you to fight your way through, extract via D-2 three times, and loot eighty containers. Fifteen kills to prove you own the place. Rule the underground.",
-					Note = "15 kills on Reserve, extract D-2 3 times, search 80 containers.",
-					SuccessMessage = "The underground empire is yours. D-2 knows your name."
+					Name = "[LOCA-13] 地下帝国",
+					Description = "Reserve的女王地堡。军事基地下方的地下网络是一座迷宫——走廊、服务器机房、和死去的PMC。谁掌控地堡谁就掌控Reserve最好的战利品。我要你一路打过去，通过D-2撤离三次，拿八十个容器。十五次击杀证明你是这地方的主人。统治地下。",
+					Note = "在Reserve击杀15人，通过D-2撤离3次，搜索80个容器。",
+					SuccessMessage = "地下帝国是你的。D-2知道你的名字。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardQueenBunker } },
@@ -500,18 +500,18 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the control room in The Lab", VisitZoneId = "Control_room" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the server room in The Lab", VisitZoneId = "Server_room" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the hazard dome in The Lab", VisitZoneId = "Dome" },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from The Lab 5 times", SurviveLocations = new() { "laboratory" } },
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察实验室控制室", VisitZoneId = "Control_room" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察实验室服务器室", VisitZoneId = "Server_room" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察实验室危险穹顶", VisitZoneId = "Dome" },
+					new() { ConditionType = "Survive", Value = 5, Description = "从实验室存活并撤离5次", SurviveLocations = new() { "laboratory" } },
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-14] The Forbidden Floor",
-					Description = "The Lab Server Nexus. The most dangerous location in all of Tarkov. Access costs a keycard, death costs everything. I need you to scout the control room, the server room, and the hazard dome \u2014 then survive five Lab raids and search a hundred containers. Raiders patrol with endgame gear, and every PMC you meet is a geared veteran. Welcome to the endgame.",
-					Note = "Visit 3 Lab zones, survive Labs 5 times, search 100 containers.",
-					SuccessMessage = "The Lab has been fully documented. You survived the forbidden floor."
+					Name = "[LOCA-14] 禁区楼层",
+					Description = "实验室服务器枢纽。全塔科夫最危险的地点。进入需要钥匙卡，死亡代价是一切。我要你侦察控制室、服务器房和危险穹顶——然后在实验室存活五局，搜一百个容器。Raiders带着顶级装备巡逻，你遇到的每一个PMC都是重装老兵。欢迎来到终局。",
+					Note = "访问3个实验室区域，在Labs存活5次，搜索100个容器。",
+					SuccessMessage = "实验室已被全面记录。你征服了禁忌楼层。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardLabNexus } },
@@ -526,19 +526,19 @@ public static class IconicLocationsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Visit the Lighthouse building", VisitZoneId = "meh_50_visit_area_check_1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the radar commandant's office", VisitZoneId = "qlight_extension_bariga1_exploration1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the hidden recording studio", VisitZoneId = "qlight_extension_mechanik1_exploration1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the hidden drug lab", VisitZoneId = "qlight_extension_medic1_exploration1" },
-					new() { ConditionType = "Survive", Value = 8, Description = "Survive and extract from Lighthouse 8 times", SurviveLocations = new() { "Lighthouse" } },
-					new() { ConditionType = "MoveDistance", Value = 50000, Description = "Cover 50,000m on foot" }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "访问灯塔建筑", VisitZoneId = "meh_50_visit_area_check_1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到雷达站指挥官办公室", VisitZoneId = "qlight_extension_bariga1_exploration1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到隐藏录音室", VisitZoneId = "qlight_extension_mechanik1_exploration1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到隐藏制毒实验室", VisitZoneId = "qlight_extension_medic1_exploration1" },
+					new() { ConditionType = "Survive", Value = 8, Description = "从灯塔存活并撤离8次", SurviveLocations = new() { "Lighthouse" } },
+					new() { ConditionType = "MoveDistance", Value = 50000, Description = "步行50,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-15] The Final Lighthouse",
-					Description = "The Lightkeeper's Island Jetty. The most mysterious location in Tarkov. Who is the Lightkeeper? What does he want? I need you to visit the Lighthouse itself, find the commandant's office at the radar station, locate the hidden recording studio and the drug lab. Survive Lighthouse eight times and cover fifty kilometers on foot. Only then will you understand why they call it the final lighthouse.",
-					Note = "Visit 4 Lighthouse zones, survive 8 times, cover 50km on foot.",
-					SuccessMessage = "The final lighthouse has been documented. Its secrets are yours."
+					Name = "[LOCA-15] 最后的灯塔",
+					Description = "灯塔守卫的岛码头。塔科夫最神秘的地点。灯塔守卫是谁？他想要什么？我要你亲自去灯塔，找到雷达站的指挥官办公室，定位隐藏的录音室和毒品实验室。在Lighthouse存活八次，徒步五十公里。只有那时你才会明白为什么他们叫它最后的灯塔。",
+					Note = "访问4个Lighthouse区域，存活8次，徒步50公里。",
+					SuccessMessage = "最后的灯塔已被记录。其秘密归你所有。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardLightkeeper } },
@@ -560,7 +560,7 @@ public static class IconicLocationsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 location cards (one of each)",
+					Description = "上交全部15张标志地点卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardSawmill] = "Sawmill Overwatch",
@@ -582,10 +582,10 @@ public static class IconicLocationsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[LOCA-C] Kolya's Atlas of Tarkov",
-					Description = "You've walked every street, cleared every building, mapped every bunker. From the sawmill on Woods to the Lightkeeper's island, you've documented every iconic location in Tarkov. This atlas is the most complete guide to the conflict zone ever assembled. Hand over the cards and the Atlas of Tarkov is yours to keep.",
-					Note = "Hand over one of each location card to complete the collection.",
-					SuccessMessage = "The Atlas of Tarkov is complete. Every location documented."
+					Name = "[LOCA-C] Kolya的塔科夫地图集",
+					Description = "你走过了每条街道，清理了每栋建筑，标注了每座地堡。从Woods的锯木厂到灯塔守卫的岛屿，你记录了塔科夫每个标志性地点。这个地图集是有史以来最完整的冲突区域指南。交出卡牌，塔科夫地图集就是你的了。",
+					Note = "交出所有地点卡牌各一张以完成收集。",
+					SuccessMessage = "塔科夫地图集已完成。每个地点都已记录。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

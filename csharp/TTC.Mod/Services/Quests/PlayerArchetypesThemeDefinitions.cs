@@ -158,15 +158,15 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets", KillTarget = "Any" },
-					new() { ConditionType = "SearchContainer", Value = 10, Description = "Search 10 containers" }
+					new() { ConditionType = "Kills", Value = 5, Description = "击杀5个目标", KillTarget = "Any" },
+					new() { ConditionType = "SearchContainer", Value = 10, Description = "搜索10个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-0] Know Thyself",
-					Description = "Every PMC in Tarkov falls into an archetype. Rats, chads, hatchlings, hermits \u2014 we all have our style. Before I hand over my field guide on player types, show me you can do a bit of everything. Five kills and ten containers. Jack of all trades.",
-					Note = "Eliminate 5 targets and search 10 containers.",
-					SuccessMessage = "A bit of everything. Here's the field guide."
+					Name = "[ARCH-0] 认识自我",
+					Description = "塔科夫的每个PMC都属于一种原型。老鼠、Chad、跑刀仔、隐士——我们都有自己的风格。在我把玩家类型战地指南交给你之前，证明你什么都会一点。五次击杀和十个容器。全能选手。",
+					Note = "消灭5个目标并搜索10个容器。",
+					SuccessMessage = "什么都会一点。这是战地指南。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderArchetypes } }
@@ -179,15 +179,15 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_player_archetypes",
 				Objectives = new()
 				{
-					new() { ConditionType = "LootItem", Value = 30, Description = "Loot 30 items" },
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "Cover 5,000m while running" }
+					new() { ConditionType = "LootItem", Value = 30, Description = "搜刮30个物品" },
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "奔跑5,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-1] Zero to Hero",
-					Description = "The Hatchling Hero. No armor, no gun, just a hatchet and a dream. Sprint to the high-value loot, shove it in your secure container, and pray nobody catches you. Thirty items looted and five kilometers of sprinting. Embrace the naked lifestyle.",
-					Note = "Loot 30 items and run 5km.",
-					SuccessMessage = "Thirty items grabbed. The hatchling prevails."
+					Name = "[ARCH-1] 从零到英雄",
+					Description = "跑刀英雄。没甲、没枪，就一把斧头和一个梦。冲向高价值战利品、塞进保险箱、祈祷没人抓到你。摸三十件物品并冲刺五公里。拥抱裸奔生活。",
+					Note = "搜刮30件物品并跑步5公里。",
+					SuccessMessage = "三十件物品到手。跑刀仔赢了。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardHatchling } },
@@ -201,15 +201,15 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_hatchling",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 200000, Description = "Earn 200,000\u20bd from transactions" },
-					new() { ConditionType = "SearchContainer", Value = 30, Description = "Search 30 containers" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 200000, Description = "通过交易赚取200,000₽" },
+					new() { ConditionType = "SearchContainer", Value = 30, Description = "搜索30个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-2] Penny Pincher",
-					Description = "The Budget Warrior. SKS, PACA, and a dream. Every rouble counts, every bullet is an investment, and you never throw away a mag. Earn two hundred thousand roubles and search thirty containers. Maximum efficiency, minimum expense.",
-					Note = "Earn 200,000\u20bd and search 30 containers.",
-					SuccessMessage = "Budget maximized. Every rouble accounted for."
+					Name = "[ARCH-2] 精打细算",
+					Description = "预算战士。SKS、PACA、一个梦。每一卢布都重要、每发子弹都是投资、你从不扔掉弹匣。赚二十万卢布并搜三十个容器。效率最大化、开销最小化。",
+					Note = "赚取200,000₽并搜索30个容器。",
+					SuccessMessage = "预算最大化。每卢布都花在刀刃上。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardBudget } },
@@ -228,15 +228,15 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_budget",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistance", Value = 10000, Description = "Cover 10,000m on foot" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
+					new() { ConditionType = "MoveDistance", Value = 10000, Description = "步行10,000米" },
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-3] Sightseeing",
-					Description = "The Offline Tourist. You load into a raid just to look around. No fighting, no looting, just... walking. Enjoying the scenery. Ten kilometers on foot and three extractions. Take the scenic route.",
-					Note = "Cover 10km and survive 3 raids.",
-					SuccessMessage = "The scenic route was worth it."
+					Name = "[ARCH-3] 观光旅游",
+					Description = "离线观光客。你加载进战局就为了到处看看。不打架、不摸东西，就……走走。欣赏风景。徒步十公里并撤离三次。走风景路线。",
+					Note = "徒步10公里并存活3局。",
+					SuccessMessage = "风景路线值得走。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardTourist } },
@@ -250,16 +250,16 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_tourist",
 				Objectives = new()
 				{
-					new() { ConditionType = "LootItem", Value = 50, Description = "Loot 50 items" },
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
+					new() { ConditionType = "LootItem", Value = 50, Description = "搜刮50个物品" },
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" },
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-4] Check the List",
-					Description = "The Quest Slave. Your entire raid is a checklist. Find this item, visit that location, hand over these dog tags. You don't play for fun \u2014 you play for progress. Fifty items looted, fifty containers searched, five extractions. Check the list.",
-					Note = "Loot 50 items, search 50 containers, survive 5 raids.",
-					SuccessMessage = "List checked. Progress made."
+					Name = "[ARCH-4] 按图索骥",
+					Description = "任务奴隶。你的整局游戏就是一张清单。找这个物品、访问那个地点、交这些狗牌。你玩不是为了乐趣——你玩是为了进度。摸五十件物品、搜五十个容器、撤离五次。检查清单。",
+					Note = "搜刮50件物品，搜索50个容器，存活5局。",
+					SuccessMessage = "清单已检查。进度已达成。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardQuestSlave } },
@@ -288,17 +288,17 @@ public static class PlayerArchetypesThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 targets with headshots using iron sights only",
+						Description = "仅使用机械瞄具爆头击杀10个目标",
 						KillTarget = "Any", KillBodyParts = new() { "Head" },
 						KillWeaponModsExclusive = AllScopeIds.Select(id => new List<string> { id }).ToList()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-5] Count Every Round",
-					Description = "The Ammo Accountant. You know the price of every round, the pen value of every caliber, and you never miss because missing costs money. Ten headshots with iron sights only \u2014 no scopes, no red dots, just raw aim. Make every bullet count.",
-					Note = "10 headshots with iron sights only.",
-					SuccessMessage = "Ten headshots, zero wasted rounds. Efficient."
+					Name = "[ARCH-5] 弹无虚发",
+					Description = "弹药会计。你知道每种子弹的价格、每个口径的穿透值、你从不错过因为错过等于浪费钱。只用机瞄完成十次爆头——没镜子、没红点，就纯粹的瞄准。让每一发都有价值。",
+					Note = "只用机瞄完成10次爆头。",
+					SuccessMessage = "十次爆头，零浪费的子弹。高效。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardAmmo } },
@@ -316,15 +316,15 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_ammo",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs from under 10m", KillTarget = "AnyPmc", KillDistanceCompare = "<=", KillDistanceValue = 10 },
-					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "Get 5 kills without ADS" }
+					new() { ConditionType = "Kills", Value = 5, Description = "在10米内击杀5名PMC", KillTarget = "AnyPmc", KillDistanceCompare = "<=", KillDistanceValue = 10 },
+					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "不瞄准击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-6] Hot Mic",
-					Description = "The Voice Comedian. VOIP on, bad jokes loaded, approaching every PMC with 'friendly friendly!' before pulling the trigger. Five PMC kills from under ten meters and five hipfire kills. Get close, get personal.",
-					Note = "5 PMC kills from under 10m and 5 hipfire kills.",
-					SuccessMessage = "Friendly fire. The comedian strikes again."
+					Name = "[ARCH-6] 麦克风",
+						Description = "语音喜剧人。VOIP打开、烂笑话准备好、接近每个PMC时喊“友善友善！”然后扣扳机。五次十米内PMC击杀和五次腰射击杀。靠近、贴脸。",
+					Note = "完成5次10米内PMC击杀和5次腰射击杀。",
+					SuccessMessage = "友军火力。喜剧人再次得手。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardVoip } },
@@ -342,16 +342,16 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_voip",
 				Objectives = new()
 				{
-					new() { ConditionType = "FixAnyBleed", Value = 10, Description = "Fix 10 bleedings" },
-					new() { ConditionType = "FixFracture", Value = 5, Description = "Fix 5 fractures" },
-					new() { ConditionType = "HealthGain", Value = 1000, Description = "Restore 1,000 HP total" }
+					new() { ConditionType = "FixAnyBleed", Value = 10, Description = "处理10次流血" },
+					new() { ConditionType = "FixFracture", Value = 5, Description = "处理5次骨折" },
+					new() { ConditionType = "HealthGain", Value = 1000, Description = "累计恢复1,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-7] First Wipe Problems",
-					Description = "Timmy. Fresh off the boat, no idea what he's doing. Gets lost on Customs, can't find the extract, gets killed by a scav with a Makarov. Ten bleedings patched, five fractures fixed, a thousand HP restored. We all started as Timmy.",
-					Note = "Fix 10 bleedings, 5 fractures, restore 1,000 HP.",
-					SuccessMessage = "We all started as Timmy. Welcome to Tarkov."
+					Name = "[ARCH-7] 新人档期问题",
+					Description = "Timmy。刚下船、完全不知道在干嘛。在Customs迷路、找不到撤离点、被拿马卡洛夫的Scav杀了。处理十次流血、接好五处骨折、恢复一千HP。我们都从Timmy起步。",
+					Note = "处理10次流血、5处骨折，恢复1,000生命值。",
+					SuccessMessage = "我们都从Timmy起步。欢迎来到塔科夫。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTimmy } },
@@ -374,15 +374,15 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_timmy",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithAR", Value = 5000, Description = "Deal 5,000 damage with assault rifles" },
-					new() { ConditionType = "KillsWithoutADS", Value = 10, Description = "Get 10 kills without ADS" }
+					new() { ConditionType = "DamageWithAR", Value = 5000, Description = "使用突击步枪造成5,000伤害" },
+					new() { ConditionType = "KillsWithoutADS", Value = 10, Description = "不瞄准击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-8] Spray and Pray",
-					Description = "The Mag-Dumper. Why fire one bullet when you can fire thirty? Recoil control is for cowards \u2014 just hold the trigger and let God sort it out. Five thousand AR damage and ten hipfire kills. Spray and pray, brother.",
-					Note = "Deal 5,000 AR damage and get 10 hipfire kills.",
-					SuccessMessage = "Thirty rounds, one target, zero aim. Perfection."
+					Name = "[ARCH-8] 随缘枪法",
+					Description = "弹匣清空者。能射三十发为什么要射一发？后座控制是给懦夫的——就扣住扳机剩下的交给上帝。五千AR伤害和十次腰射击杀。扫射祈祷吧，兄弟。",
+					Note = "造成5,000 AR伤害并完成10次腰射击杀。",
+					SuccessMessage = "三十发子弹，一个目标，零精度。完美。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardMagDumper } },
@@ -400,16 +400,16 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_magdumper",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" },
-					new() { ConditionType = "LootItem", Value = 100, Description = "Loot 100 items" },
-					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 3000, Description = "Move 3,000m while crouched" }
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" },
+					new() { ConditionType = "LootItem", Value = 100, Description = "搜刮100个物品" },
+					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 3000, Description = "蹲伏移动3,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-9] Supreme Rat",
-					Description = "The Rat King. Supreme ruler of the shadows. You never take a fair fight, you never push a position, and you always know where the best loot spawns. A hundred containers, a hundred items, three kilometers crouched. Long live the king.",
-					Note = "Search 100 containers, loot 100 items, crouch-walk 3km.",
-					SuccessMessage = "Long live the Rat King."
+					Name = "[ARCH-9] 至尊鼠王",
+					Description = "鼠王。阴影的至高统治者。你从不打公平仗、你从不推进位置、你永远知道最好的战利品在哪刷。一百个容器、一百件物品、蹲走三公里。鼠王万岁。",
+					Note = "搜索100个容器，搜刮100件物品，蹲走3公里。",
+					SuccessMessage = "鼠王万岁。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardRatKing } },
@@ -427,21 +427,21 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_ratking",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileProne", Value = 10, Description = "Get 10 kills while prone" },
+					new() { ConditionType = "KillsWhileProne", Value = 10, Description = "在卧倒状态下击杀10个目标" },
 					new()
 					{
 						ConditionType = "Kills", Value = 5,
-						Description = "Eliminate 5 targets at night from over 100m",
+						Description = "夜间在100米外击杀5个目标",
 						KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 100,
 						KillDaytimeFrom = 22, KillDaytimeTo = 6
 					}
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-10] Gate Guardian",
-					Description = "The Gate Guardian. Prone at the extract, suppressed rifle, waiting in the dark. You don't even feel bad anymore. Ten prone kills and five night kills from over a hundred meters. Guard the gate.",
-					Note = "10 prone kills and 5 night kills from 100m+.",
-					SuccessMessage = "The gate is guarded. No one passes."
+					Name = "[ARCH-10] 关卡守护者",
+					Description = "关卡守护者。趴在撤离点、消音步枪、在黑暗中等待。你甚至不再觉得愧疚了。十次卧姿击杀和五次百米外夜间击杀。守住关卡。",
+					Note = "完成10次卧姿击杀和5次百米外夜间击杀。",
+					SuccessMessage = "门已守住。无人通过。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardExitCamper } },
@@ -460,16 +460,16 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_exitcamper",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 30, Description = "Craft 30 items" },
-					new() { ConditionType = "CraftCyclicItem", Value = 10, Description = "Craft 10 cyclic items" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 500000, Description = "Earn 500,000\u20bd from transactions" }
+					new() { ConditionType = "CraftAnyItem", Value = 30, Description = "制作30个物品" },
+					new() { ConditionType = "CraftCyclicItem", Value = 10, Description = "制作10个循环物品" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 500000, Description = "通过交易赚取500,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-11] Bunker Dweller",
-					Description = "The Hideout Hermit. Why risk your life in a raid when you can craft moonshine and bitcoin from the safety of your bunker? Thirty items crafted, ten cyclic crafts, half a million roubles earned. Never leave home.",
-					Note = "Craft 30 items, 10 cyclic crafts, earn 500,000\u20bd.",
-					SuccessMessage = "The hermit thrives. Never left the bunker."
+					Name = "[ARCH-11] 地堡居民",
+					Description = "藏身处隐士。既然可以在掩体的安全中做私酿和比特币，为什么去战局里冒险？做三十件物品、十次循环制作、赚五十万卢布。永不离家。",
+					Note = "制作30件物品，10次循环制作，赚取500,000₽。",
+					SuccessMessage = "隐士繁荣。从没离开过地堡。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardHermit } },
@@ -488,21 +488,21 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_hermit",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 15, Description = "Get 15 kills while silent" },
+					new() { ConditionType = "KillsWhileSilent", Value = 15, Description = "在静默状态下击杀15个目标" },
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 PMCs with a suppressed weapon",
+						Description = "使用消音武器击杀10名PMC",
 						KillTarget = "AnyPmc",
 						KillWeaponModsInclusive = AllSuppressorIds.Select(id => new List<string> { id }).ToList()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-12] Patient Predator",
-					Description = "The Ambush Artist. You never fire first \u2014 you wait, you listen, you let them walk into your trap. Fifteen silent kills and ten PMC kills with a suppressed weapon. The prey never hears you coming.",
-					Note = "15 silent kills and 10 PMC kills with suppressor.",
-					SuccessMessage = "The ambush was perfect. They never heard you."
+					Name = "[ARCH-12] 耐心猎手",
+					Description = "伏击艺术家。你从不先开火——你等待、你倾听、你让他们走进你的陷阱。十五次消音击杀和十次消音器PMC击杀。猎物从没听到你来。",
+					Note = "完成15次消音击杀和10次消音器PMC击杀。",
+					SuccessMessage = "伏击完美。他们从没听到你。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardAmbush } },
@@ -537,21 +537,21 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_ambush",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "Kills", Value = 20, Description = "爆头击杀20名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 targets from over 150m with iron sights only",
+						Description = "仅使用机械瞄具在150米外击杀10个目标",
 						KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 150,
 						KillWeaponModsExclusive = AllScopeIds.Select(id => new List<string> { id }).ToList()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-13] One Bullet Wonder",
-					Description = "The Lucky Headshot. One bullet, one kill, pure luck disguised as skill. Twenty PMC headshots and ten kills from over 150 meters with iron sights only. Sometimes the bullet finds its mark and you just nod like you meant to do that.",
-					Note = "20 PMC headshots and 10 kills from 150m+ with iron sights.",
-					SuccessMessage = "Pure skill. Definitely not luck. Definitely."
+					Name = "[ARCH-13] 一发奇迹",
+					Description = "幸运爆头。一颗子弹、一次击杀、纯运气伪装成技术。二十次PMC爆头和十次一百五十米外只用机瞄的击杀。有时候子弹刚好中了，你点点头装成故意的。",
+					Note = "20次PMC爆头和10次150米外机瞄击杀。",
+					SuccessMessage = "纯技术。绝对不是运气。绝对不是。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardLuckyShot } },
@@ -570,17 +570,17 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_luckyshot",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs in a single raid", KillTarget = "AnyPmc", KillResetOnSessionEnd = true },
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs total", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 targets from under 25m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 25 },
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 30000, Description = "Cover 30,000m while running" }
+					new() { ConditionType = "Kills", Value = 5, Description = "单局击杀5名PMC", KillTarget = "AnyPmc", KillResetOnSessionEnd = true },
+					new() { ConditionType = "Kills", Value = 30, Description = "累计击杀30名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 50, Description = "在25米内击杀50个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 25 },
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 30000, Description = "奔跑30,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-14] Full Send",
-					Description = "The Chad Rampage. Full tier 6, meta weapon, Slick plate, Altyn helmet. You don't hide, you don't rat, you W-key into every fight and dare the server to stop you. Five PMCs in a single raid, thirty PMCs total, fifty close-range kills, and thirty kilometers of sprinting. Full send.",
-					Note = "5 PMCs in one raid, 30 PMCs total, 50 kills under 25m, run 30km.",
-					SuccessMessage = "FULL SEND. The Chad has spoken."
+					Name = "[ARCH-14] 全力冲刺",
+					Description = "Chad狂暴。全套六级甲、Meta武器、Slick板甲、Altyn头盔。你不躲、你不老鼠——你W键冲进每一场战斗，挑战服务器阻止你。一局内五个PMC、总共三十个PMC、五十次近距击杀、冲刺三十公里。全力输出。",
+					Note = "一局内5个PMC，共30个PMC，25米内50次击杀，跑30公里。",
+					SuccessMessage = "全力冲刺。Chad说了。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardChad } },
@@ -599,16 +599,16 @@ public static class PlayerArchetypesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_archetype_chad",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 targets from under 10m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 10 },
-					new() { ConditionType = "KillsWithoutADS", Value = 50, Description = "Get 50 kills without ADS" }
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 50, Description = "在10米内击杀50个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 10 },
+					new() { ConditionType = "KillsWithoutADS", Value = 50, Description = "不瞄准击杀50个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-15] Trust Issues",
-					Description = "The Friendly Betrayer. 'Friendly! Friendly! Don't shoot!' And then you shoot. Trust is the most valuable currency in Tarkov, and you spend it like monopoly money. Fifty PMC kills, fifty kills from under ten meters, fifty hipfire kills. The ultimate betrayal requires proximity.",
-					Note = "50 PMC kills, 50 kills under 10m, 50 hipfire kills.",
-					SuccessMessage = "Trust broken. Two hundred times over."
+					Name = "[ARCH-15] 信任危机",
+						Description = "友善背叛者。“友善！友善！别开枪！”然后你开枪了。信任是塔科夫最有价值的货币，而你像大富翁钞票一样挥霍它。五十次PMC击杀、五十次十米内击杀、五十次腰射击杀。终极背叛需要近距离。",
+					Note = "50个PMC击杀，50次10米内击杀，50次腰射击杀。",
+					SuccessMessage = "信任已破碎。两百次了。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardBetrayer } },
@@ -630,7 +630,7 @@ public static class PlayerArchetypesThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 archetype cards (one of each)",
+					Description = "上交全部15张玩家类型卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardHatchling] = "Hatchling Hero",
@@ -652,10 +652,10 @@ public static class PlayerArchetypesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[ARCH-C] Kolya's Player Field Guide",
-					Description = "Every playstyle documented, from the noble hatchling to the treacherous betrayer. You've lived them all and earned every card. Hand them over and the Player Field Guide is complete.",
-					Note = "Hand over one of each archetype card to complete the collection.",
-					SuccessMessage = "The Field Guide is complete. Every archetype documented."
+					Name = "[ARCH-C] Kolya的玩家图鉴",
+					Description = "每种玩法都已记录，从高贵的跑刀仔到奸诈的背叛者。你全活过并赢得了每一张卡。全部交出，玩家战地指南就完整了。",
+					Note = "交出所有玩家原型卡牌各一张以完成收集。",
+					SuccessMessage = "战地指南已完成。每种原型都已记录。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

@@ -93,15 +93,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 20, Description = "Search 20 containers" },
-					new() { ConditionType = "LootItem", Value = 20, Description = "Loot 20 items" }
+					new() { ConditionType = "SearchContainer", Value = 20, Description = "搜索20个容器" },
+					new() { ConditionType = "LootItem", Value = 20, Description = "搜刮20个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-0] Tales from the Dumpster",
-					Description = "Every scav has a story. Most of them start in a dumpster and end at the extract \u2014 if they're lucky. Before I hand over my collection of scav legends, show me you know the hustle. Twenty containers searched, twenty items grabbed.",
-					Note = "Search 20 containers and loot 20 items.",
-					SuccessMessage = "The hustle is real. Here are the scav legends."
+					Name = "[SCAV-0] 垃圾箱故事",
+					Description = "每个Scav都有故事。大多数始于垃圾箱、终于撤离点——如果运气好的话。在我把Scav传说集给你之前，让我看看你懂行。搜二十个容器、拿二十件物品。",
+					Note = "搜索20个容器并搜刮20件物品。",
+					SuccessMessage = "这生意做得不错。这是Scav的传说。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderScav } }
@@ -114,16 +114,16 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_legends_of_scav_life",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 packs of screws", HandoverTargets = new() { PackOfScrews } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 bolts", HandoverTargets = new() { Bolts } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 screw nuts", HandoverTargets = new() { ScrewNuts } }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5包螺丝", HandoverTargets = new() { PackOfScrews } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个螺栓", HandoverTargets = new() { Bolts } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个螺母", HandoverTargets = new() { ScrewNuts } }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-1] Hardware Store Raid",
-					Description = "Pockets Full of Screws. The true scav fills every pocket with hardware \u2014 screws, nuts, bolts. Bring me five of each. Kolya's building something.",
-					Note = "Hand over 5 packs of screws, 5 bolts, 5 screw nuts.",
-					SuccessMessage = "Hardware delivered. Kolya's got plans."
+					Name = "[SCAV-1] 五金店突袭",
+					Description = "满口袋的螺丝。真正的Scav把每个口袋都塞满五金——螺丝、螺母、螺栓。每样交五个。Kolya在造东西。",
+					Note = "交出5包螺丝、5个螺栓、5个螺母。",
+					SuccessMessage = "硬件已送达。Kolya有计划。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardScrews } },
@@ -141,15 +141,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_screws",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "Cover 5,000m while running" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "奔跑5,000米" },
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-2] Drip Check",
-					Description = "Tracksuit Pride. The Adidas tracksuit is the scav's formal wear. Sprint five kilometers and survive three raids \u2014 looking good while doing it.",
-					Note = "Run 5km and survive 3 raids.",
-					SuccessMessage = "Five kilometers in style. Drip confirmed."
+					Name = "[SCAV-2] 穿搭检查",
+					Description = "运动服的自豪。Adidas运动服是Scav的正装。冲刺五公里并存活三局——在此过程中保持有型。",
+					Note = "跑步5公里并存活3局。",
+					SuccessMessage = "五公里有型有范。穿搭确认。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardTracksuit } },
@@ -167,15 +167,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_tracksuit",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 cans of beef stew (small)", HandoverTargets = new() { TushonkaSmall } },
-					new() { ConditionType = "HandoverItem", Value = 2, Description = "Hand over 2 cans of beef stew (large)", HandoverTargets = new() { TushonkaLarge } }
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3罐小份炖牛肉", HandoverTargets = new() { TushonkaSmall } },
+					new() { ConditionType = "HandoverItem", Value = 2, Description = "上交2罐大份炖牛肉", HandoverTargets = new() { TushonkaLarge } }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-3] Canned Goods",
-					Description = "Lucky Tushonka. The holy grail of scav loot \u2014 canned beef stew. Bring me three small cans and two large ones. Kolya's hungry.",
-					Note = "Hand over 3 small + 2 large cans of beef stew.",
-					SuccessMessage = "Dinner is served. Tushonka night at Kolya's."
+					Name = "[SCAV-3] 罐装美食",
+					Description = "幸运炖牛肉。Scav战利品中的圣杯——罐装炖牛肉。给我带三个小罐和两个大罐。Kolya饿了。",
+					Note = "交出3个小罐+2个大罐炖牛肉。",
+					SuccessMessage = "晚餐已上桌。Kolya家的炖牛肉之夜。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardTushonka } },
@@ -193,15 +193,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_tushonka",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" },
-					new() { ConditionType = "LootItem", Value = 50, Description = "Loot 50 items" }
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" },
+					new() { ConditionType = "LootItem", Value = 50, Description = "搜刮50个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-4] Bag Man",
-					Description = "Duffle Bag Dragon. Every duffle bag in Tarkov has been touched by a scav at least once. Search fifty containers and loot fifty items. The duffle bag dragon hoards everything.",
-					Note = "Search 50 containers and loot 50 items.",
-					SuccessMessage = "Fifty bags opened. The dragon is satisfied."
+					Name = "[SCAV-4] 背包客",
+					Description = "背包龙。塔科夫的每一个行李袋都被Scav至少摸过一次。搜五十个容器，摸五十件物品。背包龙什么都囤。",
+					Note = "搜索50个容器并搜刮50件物品。",
+					SuccessMessage = "五十个包已打开。龙满意了。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardDuffleBag } },
@@ -219,15 +219,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_dufflebag",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithShotguns", Value = 2000, Description = "Deal 2,000 damage with shotguns" },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets from under 15m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
+					new() { ConditionType = "DamageWithShotguns", Value = 2000, Description = "使用霰弹枪造成2,000伤害" },
+					new() { ConditionType = "Kills", Value = 5, Description = "在15米内击杀5个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-5] Two Shots, One Prayer",
-					Description = "Double Barrel with 3 Shells. Two in the chamber, one in the pocket, zero plan. Two thousand shotgun damage and five close-range kills. The classic scav loadout.",
-					Note = "Deal 2,000 shotgun damage and 5 kills under 15m.",
-					SuccessMessage = "Two shots, one prayer, five kills. Classic scav."
+					Name = "[SCAV-5] 两发子弹，一份祈祷",
+					Description = "三发子弹的双管。两发在膛、一发在兜、零计划。两千霰弹枪伤害和五次近距击杀。经典Scav装备。",
+					Note = "造成2,000霰弹枪伤害并完成5次15米内击杀。",
+					SuccessMessage = "两发子弹，一份祈祷，五次击杀。经典Scav。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardDoubleBarrel } },
@@ -249,17 +249,17 @@ public static class ScavLifeThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 5,
-						Description = "Eliminate 5 targets from over 50m with iron sights only",
+						Description = "仅使用机械瞄具在50米外击杀5个目标",
 						KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 50,
 						KillWeaponModsExclusive = PlayerArchetypesThemeDefinitions.AllScopeIds.Select(id => new List<string> { id }).ToList()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-6] Iron Sight Legend",
-					Description = "Mosin, No Scope, No Fear. Iron sights, one bullet, and the confidence of a man with nothing to lose. Five kills from over fifty meters with iron sights only. Channel the Mosin spirit.",
-					Note = "5 kills from 50m+ with iron sights only.",
-					SuccessMessage = "Iron sights, pure skill. The Mosin spirit lives."
+					Name = "[SCAV-6] 机瞄传说",
+					Description = "莫辛、没镜、无畏。机瞄、一颗子弹、一个一无所有者的自信。只用机瞄完成五次五十米外击杀。祈求莫辛之魂。",
+					Note = "只用机瞄完成5次50米外击杀。",
+					SuccessMessage = "机瞄，纯粹技艺。莫辛精神不死。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardMosin } },
@@ -278,15 +278,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_mosin",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } },
-					new() { ConditionType = "LootItem", Value = 40, Description = "Loot 40 items" }
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } },
+					new() { ConditionType = "LootItem", Value = 40, Description = "搜刮40个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-7] Don't Shoot Me Bro",
-					Description = "Scav-on-Scav Etiquette. The unwritten rule \u2014 don't shoot another scav. Five extractions and forty items looted. Be the friendly scav \u2014 loot, don't shoot.",
-					Note = "Survive 5 raids and loot 40 items.",
-					SuccessMessage = "Friendly scav confirmed. Loot, don't shoot."
+					Name = "[SCAV-7] 兄弟别开枪",
+					Description = "Scav之间不互打的规矩。不成文的规则——别打另一个Scav。五次撤离和四十件物品。做友善Scav——摸，别打。",
+					Note = "存活5局并搜刮40件物品。",
+					SuccessMessage = "友好Scav确认。摸，别打。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardEtiquette } },
@@ -305,15 +305,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_etiquette",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 500000, Description = "Earn 500,000\u20bd from transactions" },
-					new() { ConditionType = "LootItem", Value = 60, Description = "Loot 60 items" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 500000, Description = "通过交易赚取500,000₽" },
+					new() { ConditionType = "LootItem", Value = 60, Description = "搜刮60个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-8] Market Manipulation",
-					Description = "Flea Market Scholar. Buy low, sell high, and never pay full price. Five hundred thousand roubles earned and sixty items looted. The market rewards those who study it.",
-					Note = "Earn 500,000\u20bd and loot 60 items.",
-					SuccessMessage = "Half a million roubles. The scholar profits."
+					Name = "[SCAV-8] 市场操纵",
+					Description = "跳蚤市场学者。低买、高卖、永不全价。赚五十万卢布摸六十件物品。市场奖励研究它的人。",
+					Note = "赚取500,000₽并搜刮60件物品。",
+					SuccessMessage = "五十万卢布。学者有利润。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFleaMarket } },
@@ -331,15 +331,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_fleamarket",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" }
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-9] Follow the Boom",
-					Description = "Homing Sense to Gunshots. Every scav knows \u2014 gunshots mean loot. Run toward the sound, wait for the dust to settle, loot the bodies. Ten scav kills and fifty containers searched. Follow the boom.",
-					Note = "Eliminate 10 scavs and search 50 containers.",
-					SuccessMessage = "Followed the boom. Found the loot."
+					Name = "[SCAV-9] 追逐爆炸声",
+					Description = "闻声寻枪。每个Scav都知道——枪声等于战利品。跑向声音、等尘埃落定、摸尸。十次Scav击杀和五十个容器。跟着爆炸声。",
+					Note = "消灭10个Scav并搜索50个容器。",
+					SuccessMessage = "跟着爆炸声。找到了战利品。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGunshots } },
@@ -360,17 +360,17 @@ public static class ScavLifeThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 targets while under stimulant effect",
+						Description = "在兴奋剂效果下击杀10个目标",
 						KillTarget = "Any",
 						HealthEffectType = "Stimulator", HealthEffectBodyPart = "Head"
 					}
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-10] Liquid Courage",
-					Description = "Vodka Before Raid. A shot of something before every fight \u2014 for courage, obviously. Eliminate ten targets while under any stimulant effect. Liquid courage has its perks.",
-					Note = "Eliminate 10 targets while under stimulant effect.",
-					SuccessMessage = "Ten kills under the influence. Cheers."
+					Name = "[SCAV-10] 液体勇气",
+					Description = "战前一口伏特加。每场战斗前喝一小口——为了勇气，当然。在任何兴奋剂效果下消灭十个目标。液体勇气有它的好处。",
+					Note = "在兴奋剂效果下消灭10个目标。",
+					SuccessMessage = "兴奋剂状态下十次击杀。干杯。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardVodka } },
@@ -388,20 +388,20 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_vodka",
 				Objectives = new()
 				{
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via Dorms V-Ex on Customs", ExitNameId = "Dorms V-Ex", ExitLocations = new() { "bigmap" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via V-Ex on Woods", ExitNameId = "South V-Ex", ExitLocations = new() { "Woods" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via V-Ex on Shoreline", ExitNameId = "Shorl_V-Ex", ExitLocations = new() { "Shoreline" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via V-Ex on Lighthouse", ExitNameId = " V-Ex_light", ExitLocations = new() { "Lighthouse" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via V-Ex on Streets", ExitNameId = "E7_car", ExitLocations = new() { "TarkovStreets" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via V-Ex on Interchange", ExitNameId = "PP Exfil", ExitLocations = new() { "Interchange" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via V-Ex on Ground Zero", ExitNameId = "Sandbox_VExit", ExitLocations = new() { "Sandbox", "Sandbox_high" } }
+					new() { ConditionType = "ExitName", Value = 1, Description = "在海关通过宿舍V-Ex撤离", ExitNameId = "Dorms V-Ex", ExitLocations = new() { "bigmap" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在森林通过V-Ex撤离", ExitNameId = "South V-Ex", ExitLocations = new() { "Woods" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在海岸线通过V-Ex撤离", ExitNameId = "Shorl_V-Ex", ExitLocations = new() { "Shoreline" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在灯塔通过V-Ex撤离", ExitNameId = " V-Ex_light", ExitLocations = new() { "Lighthouse" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在街区通过V-Ex撤离", ExitNameId = "E7_car", ExitLocations = new() { "TarkovStreets" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在立交桥通过V-Ex撤离", ExitNameId = "PP Exfil", ExitLocations = new() { "Interchange" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在零号地通过V-Ex撤离", ExitNameId = "Sandbox_VExit", ExitLocations = new() { "Sandbox", "Sandbox_high" } }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-11] Taxi Service",
-					Description = "Car Extract Entrepreneur. Every paid extract on every map \u2014 the V-Ex taxi service tour of Tarkov. Customs, Woods, Shoreline, Lighthouse, Streets, Interchange, and Ground Zero. Complete the grand tour.",
-					Note = "Extract via car extract on all 7 maps.",
-					SuccessMessage = "Grand tour complete. The taxi driver retires."
+					Name = "[SCAV-11] 出租车服务",
+					Description = "付费撤离企业家。每张地图的每个付费撤离——穿越塔科夫的V-Ex出租车之旅。Customs、Woods、Shoreline、Lighthouse、Streets、Interchange和Ground Zero。完成环游之旅。",
+					Note = "在所有7张地图上通过付费撤离点撤离。",
+					SuccessMessage = "环游之旅完成。出租车司机退休了。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCarExtract } },
@@ -419,14 +419,14 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_carextract",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 PMCs", KillTarget = "AnyPmc" }
+					new() { ConditionType = "Kills", Value = 15, Description = "击杀15名PMC", KillTarget = "AnyPmc" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-12] Trust No One",
-					Description = "AI Friend, Human Enemy. Scavs trust the AI \u2014 it's the humans you have to watch out for. Fifteen PMC kills. Trust no one with a backpack full of gear.",
-					Note = "Eliminate 15 PMCs.",
-					SuccessMessage = "Fifteen PMCs down. Trust issues justified."
+					Name = "[SCAV-12] 无人可信",
+					Description = "AI是朋友，人类是敌人。Scav信任AI——要小心的是人类。十五次PMC击杀。别信任背包里装满装备的任何人。",
+					Note = "消灭15个PMC。",
+					SuccessMessage = "十五个PMC倒下。信任危机有理有据。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardTrustNoOne } },
@@ -445,16 +445,16 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_trustnoone",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 2000000, Description = "Earn 2,000,000\u20bd from transactions" }
+					new() { ConditionType = "Kills", Value = 20, Description = "击杀20名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 2000000, Description = "通过交易赚取2,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-13] Family Business",
-					Description = "Scav Boss Cousin. Every scav claims to be related to Reshala. Cousin, nephew, former roommate \u2014 the connections are dubious at best. Twenty scav kills, ten PMC kills, and two million roubles. Run the family business.",
-					Note = "20 scav kills, 10 PMC kills, earn 2,000,000\u20bd.",
-					SuccessMessage = "The family business is booming."
+					Name = "[SCAV-13] 家族生意",
+					Description = "Scav Boss的亲戚。每个Scav都自称跟Reshala沾亲。表哥、侄子、前室友——这些关系最多算可疑。二十次Scav击杀、十次PMC击杀、两百万卢布。经营家族生意。",
+					Note = "完成20次Scav击杀、10次PMC击杀，赚取2,000,000₽。",
+					SuccessMessage = "家族生意正红火。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardBossCousin } },
@@ -475,24 +475,24 @@ public static class ScavLifeThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 20,
-						Description = "Eliminate 20 PMCs with headshots (weapon with \u226410 round mag)",
+						Description = "爆头击杀20名PMC（使用弹匣容量≤10发的武器）",
 						KillTarget = "AnyPmc", KillBodyParts = new() { "Head" },
 						KillWeaponModsInclusive = SmallMagazines
 					},
 					new()
 					{
 						ConditionType = "Kills", Value = 5,
-						Description = "Eliminate 5 PMCs in a single raid (weapon with \u226410 round mag)",
+						Description = "单局击杀5名PMC（使用弹匣容量≤10发的武器）",
 						KillTarget = "AnyPmc", KillResetOnSessionEnd = true,
 						KillWeaponModsInclusive = SmallMagazines
 					}
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-14] One Round Wonder",
-					Description = "Last Bullet Hero. Low ammo, low capacity, high stakes. Twenty PMC headshots and five PMCs in a single raid \u2014 all with weapons holding ten rounds or less. Every bullet is your last bullet.",
-					Note = "20 PMC headshots + 5 PMCs in one raid, with \u226410 round mags.",
-					SuccessMessage = "Every bullet counted. The last bullet hero."
+					Name = "[SCAV-14] 一弹奇迹",
+					Description = "最后一发英雄。少弹药、低容量、高风险。二十次PMC爆头，一局内五个PMC——全部用十发或以下容量的武器。每颗子弹都是你的最后一发。",
+					Note = "20次PMC爆头+一局内5个PMC，使用10发或以下容量弹匣。",
+					SuccessMessage = "每颗子弹都算数。最后一弹英雄。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardLastBullet } },
@@ -511,15 +511,15 @@ public static class ScavLifeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_scav_lastbullet",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "Earn 10,000,000\u20bd from transactions" },
-					new() { ConditionType = "CollectScavCase", Value = 20, Description = "Collect 20 Scav Case results" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "通过交易赚取10,000,000₽" },
+					new() { ConditionType = "CollectScavCase", Value = 20, Description = "收集20次Scav箱子结果" }
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-15] The Golden Key",
-					Description = "Jacket Lottery Winner. Every scav dreams of hitting the jackpot. Ten million roubles earned and twenty scav case results collected. Play the lottery long enough and you always win.",
-					Note = "Earn 10,000,000\u20bd and collect 20 scav case results.",
-					SuccessMessage = "The jackpot hits. The golden key is yours."
+					Name = "[SCAV-15] 金钥匙",
+					Description = "夹克彩票赢家。每个Scav都梦想中大奖。赚一千万卢布，收集二十次Scav宝箱结果。赌得够久你总会赢。",
+					Note = "赚取10,000,000₽并收集20次Scav宝箱结果。",
+					SuccessMessage = "中了头奖。金钥匙归你。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardJacketLottery } },
@@ -547,7 +547,7 @@ public static class ScavLifeThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 scav cards (one of each)",
+					Description = "上交全部15张Scav生活卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardScrews] = "Pockets Full of Screws",
@@ -569,10 +569,10 @@ public static class ScavLifeThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[SCAV-C] Kolya's Scav Almanac",
-					Description = "Every scav legend documented, from the dumpster diver to the jacket lottery winner. You've lived the scav life and earned every card. Hand them over and the Scav Almanac is complete.",
-					Note = "Hand over one of each scav card to complete the collection.",
-					SuccessMessage = "The Scav Almanac is complete. Long live the scav life."
+					Name = "[SCAV-C] Kolya的Scav年鉴",
+					Description = "每个Scav传说都已记录，从垃圾箱潜水员到夹克彩票赢家。你活过了Scav生涯赢得了每一张卡。全部交出，Scav年鉴就完整了。",
+					Note = "交出所有Scav生活卡牌各一张以完成收集。",
+					SuccessMessage = "Scav年鉴已完成。Scav生涯万岁。"
 				},
 				XpReward = 50000,
 

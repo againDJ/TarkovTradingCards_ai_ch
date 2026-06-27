@@ -92,15 +92,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "FixLightBleed", Value = 1, Description = "Fix 1 light bleeding" },
-					new() { ConditionType = "FixHeavyBleed", Value = 1, Description = "Fix 1 heavy bleeding" }
+					new() { ConditionType = "FixLightBleed", Value = 1, Description = "处理1次轻度出血" },
+					new() { ConditionType = "FixHeavyBleed", Value = 1, Description = "处理1次大出血" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-0] The Obituary Writer",
-					Description = "You want to document the many ways Tarkov kills people? That's morbid, friend. But I respect the honesty. Before I hand over my notes, show me you've survived at least one close call. Patch a light bleed and a heavy bleed. Then we'll talk.",
-					Note = "Fix 1 light bleeding and 1 heavy bleeding.",
-					SuccessMessage = "You've bled and survived. Here are my notes."
+					Name = "[DEAD-0] 讣告撰写人",
+					Description = "你想记录塔科夫的各种死法？真够病态的，朋友。但我尊重这份诚实。在给你笔记之前，让我看看你至少经历过一次死里逃生。处理一次轻流血和一次大出血。然后我们再聊。",
+					Note = "处理1次轻流血和1次大出血。",
+					SuccessMessage = "你流血并活了下来。这是我的笔记。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderDeath } }
@@ -113,14 +113,14 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_many_ways_to_die",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "Get 10 kills while crouched" }
+					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "在蹲伏状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-1] Leaf Camouflage",
-					Description = "The Bush Sniper. Every Tarkov player has been killed by one \u2014 you're running through a field, feeling safe, and then BAM. Some guy crouched in a bush you didn't even see. Ten kills while crouched. Become the bush.",
-					Note = "Get 10 kills while crouched.",
-					SuccessMessage = "Ten kills from the bushes. Nobody saw you."
+					Name = "[DEAD-1] 树叶伪装",
+					Description = "每个塔科夫玩家都被这种人杀过——你在田野上奔跑，感觉安全，然后BAM。某个人蹲在你根本没看到的灌木丛里。十次蹲姿击杀。化身为草丛。",
+					Note = "完成10次蹲姿击杀。",
+					SuccessMessage = "从草丛中击杀十人。没人看到你。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardBushSniper } },
@@ -134,14 +134,14 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_bushsniper",
 				Objectives = new()
 				{
-					new() { ConditionType = "FixFracture", Value = 2, Description = "Fix 2 fractures" }
+					new() { ConditionType = "FixFracture", Value = 2, Description = "处理2次骨折" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-2] Gravity Check",
-					Description = "Falling Two Floors. The classic Tarkov mistake. You think you can make that jump, you can't, and now both your legs are broken in a ditch. Fix two fractures. Gravity doesn't care about your armor.",
-					Note = "Fix 2 fractures.",
-					SuccessMessage = "Two bones fixed. Gravity still undefeated."
+					Name = "[DEAD-2] 重力检测",
+					Description = "跌落两层楼。经典的塔科夫错误。你以为你能跳过去，你不行，现在你双腿骨折躺在沟里。接好两处骨折。重力不在乎你的护甲。",
+					Note = "接好2处骨折。",
+					SuccessMessage = "两处骨折接好。重力依然不败。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardFalling } },
@@ -155,14 +155,14 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_falling",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 1, Description = "Get 1 melee kill", KillTarget = "Any", KillWeapons = AllMeleeWeapons }
+					new() { ConditionType = "Kills", Value = 1, Description = "近战击杀1个目标", KillTarget = "Any", KillWeapons = AllMeleeWeapons }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-3] Stabby Surprise",
-					Description = "The Bush Knife Surprise. You're looting a body, minding your business, and suddenly a naked man with a hatchet appears from a bush and ends your raid. One melee kill. Be the surprise.",
-					Note = "Get 1 melee kill.",
-					SuccessMessage = "The hatchet finds its mark. Surprise!"
+					Name = "[DEAD-3] 捅刀惊喜",
+					Description = "你在摸尸，专注自己的事，突然一个裸男拿着斧头从灌木丛里冒出来终结了你的战局。一次近战击杀。成为惊喜。",
+					Note = "完成1次近战击杀。",
+					SuccessMessage = "小刀找到了目标。惊喜！"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardBushKnife } },
@@ -176,15 +176,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_bushknife",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "Get 5 kills while silent" },
-					new() { ConditionType = "Kills", Value = 3, Description = "Eliminate 3 targets from under 15m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
+					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "在静默状态下击杀5个目标" },
+					new() { ConditionType = "Kills", Value = 3, Description = "在15米内击杀3个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-4] Sound of Silence",
-					Description = "The Silent Grenade. You hear nothing. No footsteps, no pin pull, nothing. Then you're dead. Five silent kills and three close-range kills. Make them wonder what happened.",
-					Note = "5 silent kills and 3 kills from under 15m.",
-					SuccessMessage = "Silent and deadly. They never heard you coming."
+					Name = "[DEAD-4] 寂静之声",
+					Description = "你什么都没听到。没脚步声、没拔插销声、什么都没有。然后你就死了。五次消音击杀，三次近距击杀。让他们搞不清发生了什么。",
+					Note = "完成5次消音击杀和3次15米内击杀。",
+					SuccessMessage = "沉默而致命。他们从没听到你来。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardSilentGrenade } },
@@ -198,15 +198,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_silentgrenade",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileProne", Value = 5, Description = "Get 5 kills while prone" },
-					new() { ConditionType = "KillsWhileADS", Value = 10, Description = "Get 10 kills while ADS" }
+					new() { ConditionType = "KillsWhileProne", Value = 5, Description = "在卧倒状态下击杀5个目标" },
+					new() { ConditionType = "KillsWhileADS", Value = 10, Description = "在瞄准状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-5] Patience Kills",
-					Description = "The Extract Camper. The most hated playstyle in Tarkov. Lying prone at the extract, scope trained on the approach, waiting for someone to sprint toward the green smoke. Five prone kills and ten ADS kills. Be the nightmare.",
-					Note = "5 prone kills and 10 ADS kills.",
-					SuccessMessage = "Patient and lethal. The extract belongs to you."
+					Name = "[DEAD-5] 耐心杀人",
+					Description = "塔科夫最招恨的玩法。趴在撤离点，准镜瞄着来路，等待有人冲向绿烟。五次卧姿击杀和十次ADS击杀。成为噩梦。",
+					Note = "完成5次卧姿击杀和10次ADS击杀。",
+					SuccessMessage = "耐心而致命。撤离点属于你。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardExtractCamper } },
@@ -225,15 +225,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_extractcamper",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithShotguns", Value = 3000, Description = "Deal 3,000 damage with shotguns" },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets from under 10m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 10 }
+					new() { ConditionType = "DamageWithShotguns", Value = 3000, Description = "使用霰弹枪造成3,000伤害" },
+					new() { ConditionType = "Kills", Value = 5, Description = "在10米内击杀5个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 10 }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-6] Out of Nowhere",
-					Description = "Grenade from Nowhere. You're behind cover, feeling safe, and a grenade bounces off the wall right into your lap. Five kills from under ten meters and three thousand shotgun damage. Bring the chaos up close.",
-					Note = "5 kills from under 10m and deal 3,000 shotgun damage.",
-					SuccessMessage = "Close range chaos delivered. Out of nowhere."
+					Name = "[DEAD-6] 突如其来",
+					Description = "你在掩体后面，感觉安全，然后一颗雷弹墙弹进你怀里。五次十米内击杀和三千点霰弹枪伤害。把混乱带到脸上。",
+					Note = "完成5次10米内击杀并造成3,000霰弹枪伤害。",
+					SuccessMessage = "近距离混乱已送达。出其不意。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGrenadeNowhere } },
@@ -247,14 +247,14 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_grenadenowhere",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileBlindFiring", Value = 1, Description = "Get 1 kill while blind firing" }
+					new() { ConditionType = "KillsWhileBlindFiring", Value = 1, Description = "在盲射状态下击杀1个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-7] Oops, Wrong Target",
-					Description = "Friendly Fire Fiasco. Communication breakdown, wrong callout, and suddenly you're shooting your own teammate. It happens more than anyone admits. One kill while blind firing. You won't see what you hit either.",
-					Note = "Get 1 kill while blind firing.",
-					SuccessMessage = "Blind fire, confirmed kill. Sorry about that."
+					Name = "[DEAD-7] 糟糕，打错了",
+					Description = "通讯故障、报点错误，突然你在射自己的队友。这比任何人承认的都更常发生。一次盲射击杀。你也看不到打中的是什么。",
+					Note = "完成1次盲射击杀。",
+					SuccessMessage = "盲射，确认击杀。不好意思。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFriendlyFire } },
@@ -273,14 +273,14 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_friendlyfire",
 				Objectives = new()
 				{
-					new() { ConditionType = "DestroyBodyPart", Value = 10, Description = "Have 10 body parts destroyed" }
+					new() { ConditionType = "DestroyBodyPart", Value = 10, Description = "摧毁10个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-8] One Step Too Far",
-					Description = "Landmine Misstep. One wrong step on Woods or Shoreline and you're looking at two broken legs and a black screen. Have ten of your body parts destroyed \u2014 legs, arms, stomach, whatever Tarkov decides to break. Survive the damage.",
-					Note = "Have 10 body parts destroyed.",
-					SuccessMessage = "Ten parts destroyed and still standing. Somehow."
+					Name = "[DEAD-8] 多走了一步",
+					Description = "在Woods或Shoreline走错一步，你就面对两条断腿和一块黑屏。被摧毁十个身体部位——腿、胳膊、胃，塔科夫决定摧毁什么就什么。活下来承受伤害。",
+					Note = "被摧毁10个身体部位。",
+					SuccessMessage = "十个部位被摧毁，依然站着。不知怎么做到的。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardLandmine } },
@@ -294,15 +294,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_landmine",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets from over 150m", KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 150 },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets with headshots", KillTarget = "Any", KillBodyParts = new() { "Head" } }
+					new() { ConditionType = "Kills", Value = 5, Description = "在150米外击杀5个目标", KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 150 },
+					new() { ConditionType = "Kills", Value = 5, Description = "爆头击杀5个目标", KillTarget = "Any", KillBodyParts = new() { "Head" } }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-9] The Impossible Shot",
-					Description = "Scav Mosin From Mars. You're in full tier 6 armor, running across an open field, and a scav with an iron-sight Mosin one-taps you from 200 meters away. Five kills from over 150 meters and five headshots. Channel the Mosin gods.",
-					Note = "5 kills from 150m+ and 5 headshots.",
-					SuccessMessage = "The Mosin gods have blessed you."
+					Name = "[DEAD-9] 不可能的射击",
+					Description = "你穿着全套六级甲，跑过开阔地，然后一个拿机瞄莫辛的Scav从两百米外一枪带走你。五次一百五十米外击杀和五次爆头。祈求莫辛之神的眷顾。",
+					Note = "完成5次150米外击杀和5次爆头。",
+					SuccessMessage = "莫辛之神已赐福于你。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardScavMosin } },
@@ -336,14 +336,14 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_scavmosin",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 5000, Description = "Lose 5,000 HP total" }
+					new() { ConditionType = "HealthLoss", Value = 5000, Description = "累计损失5,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-10] Peek Punishment",
-					Description = "Door Peeker's Regret. You lean around the corner, just a quick peek, and there's a shotgun barrel six inches from your face. Five thousand HP worth of damage taken. Sometimes the best way to learn is to suffer.",
-					Note = "Lose 5,000 HP total.",
-					SuccessMessage = "Five thousand HP of suffering. Lesson learned."
+					Name = "[DEAD-10] 探头惩罚",
+					Description = "你探出墙角，就快速看一眼，然后一根霰弹枪管离你脸六英寸。承受五千点生命值伤害。有时候最好的学习方式就是受苦。",
+					Note = "累计损失5,000生命值。",
+					SuccessMessage = "五千生命值的折磨。教训已学会。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardDoorPeeker } },
@@ -362,15 +362,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_doorpeeker",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 targets with headshots", KillTarget = "Any", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "DamageWithPistols", Value = 3000, Description = "Deal 3,000 damage with pistols" }
+					new() { ConditionType = "Kills", Value = 15, Description = "爆头击杀15个目标", KillTarget = "Any", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "DamageWithPistols", Value = 3000, Description = "使用手枪造成3,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-11] The One-Tap",
-					Description = "Head, Eyes. The two words that haunt every Tarkov player's nightmares. Doesn't matter what armor you're wearing \u2014 one bullet to the face and it's back to the menu. Fifteen headshots and three thousand pistol damage. Deliver the classic.",
-					Note = "15 headshots and deal 3,000 pistol damage.",
-					SuccessMessage = "Head, Eyes. Fifteen times. The classic delivered."
+					Name = "[DEAD-11] 一枪毙命",
+					Description = "头眼。这两个词萦绕在每一个塔科夫玩家的噩梦中。不管你穿什么甲——一颗子弹打脸就回主菜单。十五次爆头和三千点手枪伤害。送出经典。",
+					Note = "完成15次爆头并造成3,000手枪伤害。",
+					SuccessMessage = "头眼。十五次。经典已呈现。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardHeadEyes } },
@@ -392,18 +392,18 @@ public static class ManyWaysToDieThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 scavs on Factory with shotguns",
+						Description = "在工厂使用霰弹枪击杀10名Scav",
 						KillTarget = "Savage", KillLocations = new() { "factory4_day", "factory4_night" },
 						KillWeapons = AllShotguns
 					},
-					new() { ConditionType = "KillsWithoutADS", Value = 10, Description = "Get 10 kills without ADS" }
+					new() { ConditionType = "KillsWithoutADS", Value = 10, Description = "不瞄准击杀10个目标" }
 				},
 				Locale = new()
 				{
 					Name = "[DEAD-12] Cheeki Breeki",
-					Description = "Cheeki Breeki! The war cry of the Factory scav with a shotgun. No aim, no plan, just pure aggression and buckshot. Ten scavs on Factory with a shotgun and ten hipfire kills. CHEEKI BREEKI IV DAMKE!",
-					Note = "10 scav kills with shotgun on Factory and 10 hipfire kills.",
-					SuccessMessage = "CHEEKI BREEKI! The Factory trembles."
+					Description = "Cheeki Breeki！Factory拿喷子Scav的战吼。没瞄准、没计划，就纯粹的侵略性和鹿弹。在Factory用霰弹枪杀十个Scav，十次腰射击杀。CHEEKI BREEKI IV DAMKE！",
+					Note = "在Factory用霰弹枪击杀10个Scav并完成10次腰射击杀。",
+					SuccessMessage = "CHEEKI BREEKI！Factory在颤抖。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCheekiBreeki } },
@@ -422,15 +422,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_cheekibreeki",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract 10 times", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "Survive", Value = 10, Description = "存活并撤离10次", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-13] Army of Scavs",
-					Description = "Scav Army Convergence. You kill one, three more appear. You kill those, five more come running. Before you know it, every scav on the map has converged on your position. Fifty scavs eliminated and ten successful extractions. Fight the horde.",
-					Note = "Eliminate 50 scavs and survive 10 raids.",
-					SuccessMessage = "Fifty scavs down. The horde has been repelled."
+					Name = "[DEAD-13] Scav大军",
+					Description = "你杀了一个，三个冒出来。杀了那些，又跑来五个。不知不觉，整张地图上的每个Scav都汇聚到你的位置。消灭五十个Scav，成功撤离十次。对抗尸群。",
+					Note = "消灭50个Scav并存活10局。",
+					SuccessMessage = "五十个Scav倒下。尸群已被击退。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardScavArmy } },
@@ -451,21 +451,21 @@ public static class ManyWaysToDieThemeDefinitions
 					new()
 					{
 						ConditionType = "HealthEffect", Value = 1,
-						Description = "Survive 5 minutes while fully dehydrated",
+						Description = "完全脱水状态下存活5分钟",
 						HealthEffectType = "Dehydration", HealthEffectBodyPart = "Stomach",
 						HealthEffectDuration = 300,
 						HealthEffectLocations = new() { "laboratory", "bigmap", "Sandbox", "Sandbox_high", "RezervBase", "Interchange", "Shoreline", "Woods", "TarkovStreets", "Lighthouse" }
 					},
-					new() { ConditionType = "EncumberedTimeInSeconds", Value = 300, Description = "Spend 5 minutes encumbered" },
-					new() { ConditionType = "Survive", Value = 1, Description = "Survive and extract while dehydrated", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } },
-					new() { ConditionType = "HealthLoss", Value = 3000, Description = "Lose 3,000 HP total" }
+					new() { ConditionType = "EncumberedTimeInSeconds", Value = 300, Description = "超重状态持续5分钟" },
+					new() { ConditionType = "Survive", Value = 1, Description = "脱水状态下存活并撤离", SurviveLocations = new() { "bigmap", "factory4_day", "factory4_night", "Interchange", "Woods", "Shoreline", "RezervBase", "TarkovStreets", "Lighthouse", "laboratory", "Sandbox", "Sandbox_high" } },
+					new() { ConditionType = "HealthLoss", Value = 3000, Description = "累计损失3,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-14] The Dry Death",
-					Description = "Tarkov Hydration Fail. You forgot to bring water. Your hydration hits zero mid-raid, your health starts draining, and you're dying of thirst. Survive five minutes dehydrated, five minutes encumbered, extract alive, and take three thousand HP of damage. Never forget to hydrate.",
-					Note = "5 min dehydrated, 5 min encumbered, extract alive, lose 3,000 HP.",
-					SuccessMessage = "Hydrated at last. Never again."
+					Name = "[DEAD-14] 干渴而死",
+					Description = "你忘了带水。水分在战局中归零，生命值开始流逝，你正死于干渴。脱水五分钟，负重五分钟，活着撤离，承受三千点伤害。永远别忘了补水。",
+					Note = "脱水5分钟，负重5分钟，活着撤离，损失3,000生命值。",
+					SuccessMessage = "终于补水了。永不再犯。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardHydration } },
@@ -479,15 +479,15 @@ public static class ManyWaysToDieThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_death_hydration",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "MoveDistance", Value = 100000, Description = "Cover 100,000m on foot" }
+					new() { ConditionType = "Kills", Value = 50, Description = "爆头击杀50名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "MoveDistance", Value = 100000, Description = "步行100,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-15] Alt+F4",
-					Description = "Server Disconnect Doom. The ultimate Tarkov death \u2014 not to a bullet, not to a grenade, but to a loading screen. You were winning the fight, you had the angle, and then... connection lost. Fifty PMC headshots and a hundred kilometers on foot. Make the server remember you.",
-					Note = "50 PMC headshots and cover 100km on foot.",
-					SuccessMessage = "The server remembers you now."
+					Name = "[DEAD-15] 怒退英雄",
+					Description = "终极塔科夫之死——不是死于子弹、不是死于手雷，而是死于加载画面。你本来赢着战斗、占着角度，然后……连接断开。五十次PMC爆头，徒步一百公里。让服务器记住你。",
+					Note = "完成50次PMC爆头并徒步100公里。",
+					SuccessMessage = "服务器现在记住你了。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardDisconnect } },
@@ -509,7 +509,7 @@ public static class ManyWaysToDieThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 death cards (one of each)",
+					Description = "上交全部15张死亡方式卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardBushSniper] = "Bush Sniper",
@@ -531,10 +531,10 @@ public static class ManyWaysToDieThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[DEAD-C] Kolya's Book of the Dead",
-					Description = "Every death documented, every absurd way to die catalogued. From bush snipers to server disconnects, you've experienced them all and survived to tell the tale. Hand over the cards and the Book of the Dead is complete.",
-					Note = "Hand over one of each death card to complete the collection.",
-					SuccessMessage = "The Book of the Dead is complete. Rest in peace... or not."
+					Name = "[DEAD-C] Kolya的亡者之书",
+					Description = "每种死亡都已记录，每种荒谬的死法都已编目。从灌木丛狙击手到服务器掉线，你全经历过而且活下来讲述了。交出卡牌，亡者之书就完整了。",
+					Note = "交出所有死法卡牌各一张以完成收集。",
+					SuccessMessage = "亡者之书已完成。安息吧……或者不。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

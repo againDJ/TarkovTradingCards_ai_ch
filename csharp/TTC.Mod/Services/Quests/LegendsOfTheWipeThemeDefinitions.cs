@@ -124,15 +124,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times" },
-					new() { ConditionType = "LootItem", Value = 15, Description = "Loot 15 items" }
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次" },
+					new() { ConditionType = "LootItem", Value = 15, Description = "搜刮15个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-0] Fresh Spawn",
-					Description = "Every wipe starts the same \u2014 naked, broke, and confused. Survive three raids and loot fifteen items. The wipe journey begins here.",
-					Note = "Survive 3 times and loot 15 items.",
-					SuccessMessage = "Fresh spawn no more."
+					Name = "[WIPE-0] 新档起点",
+					Description = "每个档期都一样起步——光屁股、没钱、一脸懵。存活三局，摸十五件物品。档期之旅从这里开始。",
+					Note = "存活3次并搜刮15件物品。",
+					SuccessMessage = "不再是新人了。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderWipe } }
@@ -145,15 +145,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_legends_of_the_wipe",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "Cover 5,000m while running" },
-					new() { ConditionType = "LootItem", Value = 20, Description = "Loot 20 items" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "奔跑5,000米" },
+					new() { ConditionType = "LootItem", Value = 20, Description = "搜刮20个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-1] Sprint and Grab",
-					Description = "Day One Hatchet Rush. No gear, no plan, just sprint to the nearest loot spawn and shove it in the container. Five kilometers of running and twenty items looted. Day one energy.",
-					Note = "5km running and loot 20 items.",
-					SuccessMessage = "Sprint. Grab. Extract. Repeat."
+					Name = "[WIPE-1] 冲刺抢夺",
+					Description = "首日跑刀冲刺。没装备、没计划，就冲向最近的战利品刷新点然后塞进保险箱。跑五公里，摸二十件物品。首日的干劲。",
+					Note = "跑步5公里并搜刮20件物品。",
+					SuccessMessage = "冲刺。抓。撤离。重复。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardHatchetRush } },
@@ -172,15 +172,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_hatchetrush",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithShotguns", Value = 1000, Description = "Deal 1,000 damage with shotguns" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs", KillTarget = "Savage" }
+					new() { ConditionType = "DamageWithShotguns", Value = 1000, Description = "使用霰弹枪造成1,000伤害" },
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名Scav", KillTarget = "Savage" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-2] Buckshot Budget",
-					Description = "Shotgun Wipe Starter. The MP-133 is free, buckshot is cheap, and scavs don't dodge. A thousand shotgun damage and ten scavs down. The early wipe classic.",
-					Note = "1,000 shotgun damage and 10 scav kills.",
-					SuccessMessage = "Buckshot budget. Maximum value."
+					Name = "[WIPE-2] 鹿弹经济",
+					Description = "霰弹枪开局。MP-133是免费的，鹿弹便宜，Scav不会躲。一千点霰弹枪伤害，十个Scav倒下。早期档期经典。",
+					Note = "造成1,000霰弹枪伤害并击杀10个Scav。",
+					SuccessMessage = "鹿弹预算。最高性价比。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardShotgunStarter } },
@@ -199,15 +199,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_shotgunstarter",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "Get 5 kills without ADS" },
-					new() { ConditionType = "LootItem", Value = 30, Description = "Loot 30 items" }
+					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "不瞄准击杀5个目标" },
+					new() { ConditionType = "LootItem", Value = 30, Description = "搜刮30个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-3] Hipfire Hustle",
-					Description = "Hatchling Wars. When everyone's broke, every fight is a hipfire scramble. Five hipfire kills and thirty items looted. The early wipe survival loop.",
-					Note = "5 hipfire kills and loot 30 items.",
-					SuccessMessage = "Hipfire hustle. Survived the wars."
+					Name = "[WIPE-3] 腰射狂潮",
+					Description = "跑刀大战。当所有人都穷，每场战斗都是腰射混战。五次腰射击杀，摸三十件物品。早期档期生存循环。",
+					Note = "完成5次腰射击杀并搜刮30件物品。",
+					SuccessMessage = "腰射拼搏。挺过了战争。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardHatchlingWars } },
@@ -226,15 +226,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_hatchlingwars",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithAR", Value = 3000, Description = "Deal 3,000 damage with assault rifles" },
-					new() { ConditionType = "DamageWithSMG", Value = 2000, Description = "Deal 2,000 damage with SMGs" }
+					new() { ConditionType = "DamageWithAR", Value = 3000, Description = "使用突击步枪造成3,000伤害" },
+					new() { ConditionType = "DamageWithSMG", Value = 2000, Description = "使用冲锋枪造成2,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-4] Flavor of the Week",
-					Description = "First Week Meta Shift. Every wipe the meta changes \u2014 ARs one day, SMGs the next. Three thousand AR damage and two thousand SMG damage. Adapt or die.",
-					Note = "3,000 AR damage and 2,000 SMG damage.",
-					SuccessMessage = "Meta adapted. For now."
+					Name = "[WIPE-4] 本周热门",
+					Description = "首周Meta转变。每个档期Meta都在变——今天是AR，明天是冲锋枪。三千点AR伤害，两千点冲锋枪伤害。适应或死亡。",
+					Note = "造成3,000 AR伤害和2,000冲锋枪伤害。",
+					SuccessMessage = "Meta已适应。暂时的。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardMetaShift } },
@@ -253,17 +253,17 @@ public static class LegendsOfTheWipeThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate scout point 1 on Factory", VisitZoneId = "place_pacemaker_SCOUT_01", OneSessionOnly = true },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate scout point 2 on Factory", VisitZoneId = "place_pacemaker_SCOUT_02", OneSessionOnly = true },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate scout point 3 on Factory", VisitZoneId = "place_pacemaker_SCOUT_03", OneSessionOnly = true },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets on Factory in a single raid", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" }, KillResetOnSessionEnd = true }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在工厂找到侦察点1", VisitZoneId = "place_pacemaker_SCOUT_01", OneSessionOnly = true },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在工厂找到侦察点2", VisitZoneId = "place_pacemaker_SCOUT_02", OneSessionOnly = true },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在工厂找到侦察点3", VisitZoneId = "place_pacemaker_SCOUT_03", OneSessionOnly = true },
+					new() { ConditionType = "Kills", Value = 5, Description = "在工厂单局击杀5个目标", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" }, KillResetOnSessionEnd = true }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-5] Factory Sweep",
-					Description = "Factory Nightmares. Early wipe Factory is pure chaos. Visit three scout points and eliminate five targets \u2014 all in a single raid. Survive the nightmare.",
-					Note = "Visit 3 scout points + 5 kills on Factory (one raid).",
-					SuccessMessage = "Factory swept. Nightmare survived."
+					Name = "[WIPE-5] 工厂清扫",
+					Description = "Factory噩梦。早期档期的Factory是纯粹混乱。访问三个侦察点并消灭五个目标——全部在一局内完成。挺过噩梦。",
+					Note = "访问3个侦察点+在Factory击杀5人（一局内完成）。",
+					SuccessMessage = "Factory已清扫。噩梦已挺过。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFactoryNightmares } },
@@ -282,15 +282,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_factorynightmares",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "KillsWhileADS", Value = 10, Description = "Get 10 kills while ADS" }
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "KillsWhileADS", Value = 10, Description = "在瞄准状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-6] Geared Up",
-					Description = "Day Seven Chads. One week into wipe and the first chads appear \u2014 class 4 armor, modded AKs, and the confidence of someone with a Bitcoin Farm. Ten PMC kills and ten ADS kills. Join the chads.",
-					Note = "10 PMC kills and 10 ADS kills.",
-					SuccessMessage = "Geared up. Chad status achieved."
+					Name = "[WIPE-6] 整装待发",
+					Description = "第七天的Chad们。开档一周，首批Chad出现——四级甲、改装AK、带着有比特币矿场的人的自信。十次PMC击杀和十次ADS击杀。加入Chad行列。",
+					Note = "完成10次PMC击杀和10次ADS击杀。",
+					SuccessMessage = "全装完毕。Chad状态达成。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardDaySevenChads } },
@@ -321,15 +321,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_daysevenchard",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "Earn 1,000,000\u20bd from transactions" },
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "通过交易赚取1,000,000₽" },
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-7] Market Hustle",
-					Description = "Early Wipe Flea Hustler. The flea market opens and suddenly everyone's a day trader. One million roubles earned and fifty containers searched. Buy low, sell high.",
-					Note = "Earn 1M\u20bd and search 50 containers.",
-					SuccessMessage = "Market hustle. First million earned."
+					Name = "[WIPE-7] 市场风云",
+					Description = "早期档期跳蚤市场倒爷。跳蚤市场一开，突然人人都是短线交易员。赚一百万卢布，搜五十个容器。低买高卖。",
+					Note = "赚取1M₽并搜索50个容器。",
+					SuccessMessage = "市场拼搏。第一个百万到手。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFleaHustler } },
@@ -347,19 +347,19 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_fleahustler",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithPistols", Value = 5000, Description = "Deal 5,000 damage with pistols" },
+					new() { ConditionType = "DamageWithPistols", Value = 5000, Description = "使用手枪造成5,000伤害" },
 					new()
 					{
-						ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets with headshots using pistols",
+						ConditionType = "Kills", Value = 10, Description = "使用手枪爆头击杀10个目标",
 						KillTarget = "Any", KillBodyParts = new() { "Head" }, KillWeapons = AllPistolIds()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-8] Sidearm Specialist",
-					Description = "Pistol Only Heroes. The players who run nothing but a sidearm and still walk out with a full backpack. Five thousand pistol damage and ten headshots with a pistol. The sidearm specialist.",
-					Note = "5,000 pistol damage and 10 pistol headshots.",
-					SuccessMessage = "Sidearm specialist. Pistol perfection."
+					Name = "[WIPE-8] 副武器专家",
+					Description = "只带手枪的英雄。那些只带一把副武器还背着满满一包走出去的玩家。五千点手枪伤害，十次手枪爆头。副武器专家。",
+					Note = "造成5,000手枪伤害并完成10次手枪爆头。",
+					SuccessMessage = "手枪专家。手枪完美主义。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardPistolHeroes } },
@@ -382,16 +382,16 @@ public static class LegendsOfTheWipeThemeDefinitions
 				{
 					new()
 					{
-						ConditionType = "Kills", Value = 5, Description = "Eliminate 5 bosses",
+						ConditionType = "Kills", Value = 5, Description = "击杀5名Boss",
 						KillTarget = "Savage", KillSavageRole = AllBossRoles
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-9] Boss Hunter",
-					Description = "Scav Boss First Kill. That first time you see Reshala's golden TT or hear Killa's RPK \u2014 and you actually win. Five boss kills across any map. The boss hunter rises.",
-					Note = "Eliminate 5 bosses.",
-					SuccessMessage = "Five bosses down. The hunter rises."
+					Name = "[WIPE-9] Boss猎人",
+					Description = "首次Scav Boss击杀。第一次看到Reshala的金色TT或听到Killa的RPK——而且你居然赢了。在任意地图杀五个Boss。Boss猎人崛起。",
+					Note = "消灭5个Boss。",
+					SuccessMessage = "五个Boss倒下。猎人崛起。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBossFirstKill } },
@@ -410,15 +410,15 @@ public static class LegendsOfTheWipeThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 targets on Labs", KillTarget = "Any", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Labs 3 times", SurviveLocations = new() { "laboratory" } }
+					new() { ConditionType = "Kills", Value = 15, Description = "在实验室击杀15个目标", KillTarget = "Any", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "Survive", Value = 3, Description = "从实验室存活并撤离3次", SurviveLocations = new() { "laboratory" } }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-10] Keycard Required",
-					Description = "First Labs Runs. The first time you swipe that keycard and the elevator door opens \u2014 raiders, loot, and certain death. Fifteen kills on Labs and three extractions. Welcome to endgame.",
-					Note = "15 kills on Labs and survive 3 times.",
-					SuccessMessage = "Labs conquered. Welcome to endgame."
+					Name = "[WIPE-10] 需要钥匙卡",
+					Description = "首次实验室之旅。第一次刷那张钥匙卡，电梯门打开——Raider、战利品、还有确定的死亡。在Labs杀十五个，撤离三次。欢迎来到终局。",
+					Note = "在Labs击杀15人并存活3次。",
+					SuccessMessage = "实验室已征服。欢迎来到终局。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardFirstLabs } },
@@ -436,16 +436,16 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_firstlabs",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 200, Description = "Search 200 containers" },
-					new() { ConditionType = "LootItem", Value = 200, Description = "Loot 200 items" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "Earn 5,000,000\u20bd from transactions" }
+					new() { ConditionType = "SearchContainer", Value = 200, Description = "搜索200个容器" },
+					new() { ConditionType = "LootItem", Value = 200, Description = "搜刮200个物品" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "通过交易赚取5,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-11] Jackpot Hunter",
-					Description = "Level 1 Red Keycard Pull. The legendary loot pull \u2014 a red keycard from a random jacket at level one. Two hundred containers, two hundred items, five million roubles. Chase the jackpot.",
-					Note = "200 containers, 200 items, earn 5M\u20bd.",
-					SuccessMessage = "Jackpot. The RNG gods smiled."
+					Name = "[WIPE-11] 大奖猎手",
+					Description = "一级抽到红卡。传说中的摸金——一级时从随机夹克里摸出红卡。两百个容器、两百件物品、五百万卢布。追逐大奖。",
+					Note = "200个容器，200件物品，赚取5M₽。",
+					SuccessMessage = "中了头奖。RNG之神微笑了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardRedKeycard } },
@@ -464,16 +464,16 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_redkeycard",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "Earn 10,000,000\u20bd from transactions" },
-					new() { ConditionType = "CraftAnyItem", Value = 30, Description = "Craft 30 items" },
-					new() { ConditionType = "HandoverItem", Value = 1000000, Description = "Hand over 1,000,000\u20bd", HandoverTargets = new() { Roubles } }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "通过交易赚取10,000,000₽" },
+					new() { ConditionType = "CraftAnyItem", Value = 30, Description = "制作30个物品" },
+					new() { ConditionType = "HandoverItem", Value = 1000000, Description = "上交1,000,000₽", HandoverTargets = new() { Roubles } }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-12] Economic Dominance",
-					Description = "Economy Reset Millionaire. Ten million earned, thirty items crafted, and a million handed to Kolya as proof. The economy bends to your will.",
-					Note = "Earn 10M\u20bd, craft 30 items, hand over 1M\u20bd.",
-					SuccessMessage = "Economic dominance. The market is yours."
+					Name = "[WIPE-12] 经济霸主",
+					Description = "经济重置后的百万富翁。赚一千万，做三十件物品，交一百万给Kolya作为证明。经济屈服于你的意志。",
+					Note = "赚取10M₽，制作30件物品，交出1M₽。",
+					SuccessMessage = "经济统治。市场是你的。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardMillionaire } },
@@ -487,21 +487,21 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_millionaire",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Prapor LL3", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Therapist LL3", TraderLoyaltyId = TraderTherapist, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Skier LL3", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Peacekeeper LL3", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Mechanic LL3", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Ragman LL3", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Jaeger LL3", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "HandoverItem", Value = 50, Description = "Hand over 50 dogtags", HandoverTargets = AllDogtagIds }
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Prapor 3级", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Therapist 3级", TraderLoyaltyId = TraderTherapist, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Skier 3级", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Peacekeeper 3级", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Mechanic 3级", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Ragman 3级", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Jaeger 3级", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "HandoverItem", Value = 50, Description = "上交50个狗牌", HandoverTargets = AllDogtagIds }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-13] Trusted by All",
-					Description = "Kappa Completionist. Every trader at loyalty level three and fifty dogtags collected. You've earned the trust of every trader in Tarkov. The Kappa path demands loyalty.",
-					Note = "All 7 traders LL3 + hand over 50 dogtags.",
-					SuccessMessage = "Trusted by all. The Kappa path awaits."
+					Name = "[WIPE-13] 人皆信之",
+					Description = "Kappa完美主义者。每个商人忠诚度三级，收集五十个狗牌。你赢得了塔科夫每个商人的信任。Kappa之路需要忠诚。",
+					Note = "所有7个商人达到LL3并交出50个狗牌。",
+					SuccessMessage = "所有人皆可信。Kappa之路在等待。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardKappaComplete } },
@@ -520,16 +520,16 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_kappacomplete",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 30, Description = "Survive and extract 30 times" },
-					new() { ConditionType = "MoveDistance", Value = 100000, Description = "Cover 100,000m on foot" },
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Bitcoin Farm level 3", HideoutAreaType = 20, HideoutAreaLevel = 3 }
+					new() { ConditionType = "Survive", Value = 30, Description = "存活并撤离30次" },
+					new() { ConditionType = "MoveDistance", Value = 100000, Description = "步行100,000米" },
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有3级比特币农场", HideoutAreaType = 20, HideoutAreaLevel = 3 }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-14] Endgame Builder",
-					Description = "The Final Wipe Extract. Thirty extractions, a hundred kilometers walked, and Bitcoin Farm maxed. You've seen every corner of Tarkov and built the ultimate hideout. The endgame builder.",
-					Note = "Survive 30 times, 100km on foot, Bitcoin Farm level 3.",
-					SuccessMessage = "Endgame built. The wipe is yours."
+					Name = "[WIPE-14] 终局建造者",
+					Description = "最终档期撤离。三十次撤离、徒步一百公里、比特币矿场满级。你见过了塔科夫的每个角落，建造了终极藏身处。终局建造者。",
+					Note = "存活30次，徒步100公里，3级比特币矿场。",
+					SuccessMessage = "终局已建成。档期归你。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardFinalExtract } },
@@ -548,22 +548,22 @@ public static class LegendsOfTheWipeThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_wipe_finalextract",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Prapor LL4", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Therapist LL4", TraderLoyaltyId = TraderTherapist, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Skier LL4", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Peacekeeper LL4", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Mechanic LL4", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Ragman LL4", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Jaeger LL4", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 4 },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 20000000, Description = "Earn 20,000,000\u20bd from transactions" },
-					new() { ConditionType = "CompleteWorkout", Value = 20, Description = "Complete 20 gym workouts" }
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Prapor 4级", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Therapist 4级", TraderLoyaltyId = TraderTherapist, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Skier 4级", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Peacekeeper 4级", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Mechanic 4级", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Ragman 4级", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Jaeger 4级", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 4 },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 20000000, Description = "通过交易赚取20,000,000₽" },
+					new() { ConditionType = "CompleteWorkout", Value = 20, Description = "完成20次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-15] The Absolute Unit",
-					Description = "First Kappa Chaser. Every trader maxed, twenty million roubles earned, and twenty gym sessions completed. The absolute unit of Tarkov. This is what endgame looks like.",
-					Note = "All 7 traders LL4, earn 20M\u20bd, 20 workouts.",
-					SuccessMessage = "The Absolute Unit. Tarkov conquered."
+					Name = "[WIPE-15] 究极战士",
+					Description = "首个Kappa追逐者。每个商人满级，赚两千万卢布，完成二十次健身。塔科夫的绝对究极体。这才是终局该有的样子。",
+					Note = "所有7个商人达到LL4，赚取20M₽，20次健身。",
+					SuccessMessage = "究极战士。塔科夫已征服。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardKappaChaser } },
@@ -593,7 +593,7 @@ public static class LegendsOfTheWipeThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 wipe cards (one of each)",
+					Description = "上交全部15张Wipe传说卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardHatchetRush] = "Hatchet Rush",
@@ -615,10 +615,10 @@ public static class LegendsOfTheWipeThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[WIPE-C] Kolya's Wipe Chronicle",
-					Description = "Every milestone documented, from the first hatchet rush to the Kappa chase. You've lived an entire wipe cycle. Hand over the cards and complete the chronicle.",
-					Note = "Hand over one of each wipe card to complete the collection.",
-					SuccessMessage = "The Wipe Chronicle is complete. Every milestone immortalized."
+					Name = "[WIPE-C] Kolya的档期编年史",
+					Description = "每个里程碑都已记录，从首次跑刀冲刺到追逐Kappa。你经历了整整一个档期周期。交出卡牌，档期编年史就完整了。",
+					Note = "交出所有档期卡牌各一张以完成收集。",
+					SuccessMessage = "档期编年史已完成。每个里程碑永垂不朽。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

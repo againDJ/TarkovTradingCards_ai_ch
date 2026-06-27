@@ -155,15 +155,15 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "Kills", Value = 3, Description = "Eliminate 3 PMCs", KillTarget = "AnyPmc" }
+					new() { ConditionType = "Kills", Value = 5, Description = "击杀5名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "Kills", Value = 3, Description = "击杀3名PMC", KillTarget = "AnyPmc" }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-0] War Correspondent",
-					Description = "Every faction in Tarkov has its own story, its own methods, its own reasons for being here. Scavs, PMCs, rogues, cultists \u2014 they all think they're the good guys. Before I give you my field notes on the factions, show me you've interacted with at least two of them. The hard way.",
-					Note = "Eliminate 5 scavs and 3 PMCs.",
-					SuccessMessage = "Two factions met, the hard way. Here are my notes."
+					Name = "[FACT-0] 战地记者",
+					Description = "塔科夫的每个阵营都有自己的故事、自己的手段、自己来这里的理由。Scav、PMC、Rogue、邪教徒——他们都觉得自己是好人。在我把阵营战地笔记交给你之前，证明你至少跟其中两个打过交道。硬核方式。",
+					Note = "消灭5个Scav和3个PMC。",
+					SuccessMessage = "和两个阵营以硬核方式打过交道。这是我的笔记。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderFactions } }
@@ -179,14 +179,14 @@ public static class FactionsThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs on Customs", KillTarget = "Savage", KillLocations = new() { "bigmap" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "在海关击杀10名Scav", KillTarget = "Savage", KillLocations = new() { "bigmap" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-1] Track and Eliminate",
-					Description = "The Bloodhound Mercs. Trackers, hunters, hired guns who follow the scent of loot and leave bodies in their wake. They work the back alleys of Customs like they own the place. Ten scavs on Customs \u2014 track them down like a true bloodhound.",
-					Note = "Eliminate 10 scavs on Customs.",
-					SuccessMessage = "Tracked and eliminated. The Bloodhound approves."
+					Name = "[FACT-1] 追猎清除",
+					Description = "血犬佣兵。追踪者、猎人、雇佣枪手，循着战利品的气味留下一地尸体。他们在Customs的后巷活动，像主人一样。在Customs杀十个Scav——像真正的血犬一样追踪他们。",
+					Note = "在Customs消灭10个Scav。",
+					SuccessMessage = "追踪并消灭。血犬赞赏。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardBloodhound } },
@@ -201,14 +201,14 @@ public static class FactionsThemeDefinitions
 				Location = MapInterchange,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs on Interchange", KillTarget = "Savage", KillLocations = new() { "Interchange" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "在立交桥击杀10名Scav", KillTarget = "Savage", KillLocations = new() { "Interchange" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-2] Turf War",
-					Description = "The Scav Syndicate runs Interchange like a flea market with guns. They've carved out territories in every store, every hallway, every parking garage. If you want to understand how organized scavs operate, go break up their operation. Ten scavs on Interchange.",
-					Note = "Eliminate 10 scavs on Interchange.",
-					SuccessMessage = "Turf reclaimed. The Syndicate won't forget."
+					Name = "[FACT-2] 地盘之争",
+					Description = "Scav帮派在Interchange像持枪跳蚤市场一样运作。他们在每个商店、每条走廊、每个停车场划了地盘。想了解有组织的Scav怎么运作，就去砸了他们的生意。在Interchange杀十个Scav。",
+					Note = "在Interchange消灭10个Scav。",
+					SuccessMessage = "地盘已夺回。帮会不会忘记。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardScavSyndicate } },
@@ -222,15 +222,15 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_scavsyndicate",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 40, Description = "Search 40 containers" },
-					new() { ConditionType = "LootItem", Value = 40, Description = "Loot 40 items" }
+					new() { ConditionType = "SearchContainer", Value = 40, Description = "搜索40个容器" },
+					new() { ConditionType = "LootItem", Value = 40, Description = "搜刮40个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-3] Rat Run",
-					Description = "The Back-Alley Loot Rat. Every scav starts here \u2014 sprint in, grab what you can, sprint out. No fighting, no heroics, just survival and profit. Forty containers and forty items. Show me the rat lifestyle.",
-					Note = "Search 40 containers and loot 40 items.",
-					SuccessMessage = "Pure rat energy. Efficient and alive."
+					Name = "[FACT-3] 老鼠行动",
+					Description = "每个Scav都从这起步——冲进去、能拿什么拿什么、冲出来。不打、不逞英雄，就活命和利润。四十个容器，四十件物品。让我看看老鼠的生活方式。",
+					Note = "搜索40个容器并搜刮40件物品。",
+					SuccessMessage = "纯粹鼠辈能量。高效存活。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardLootRat } },
@@ -244,14 +244,14 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_lootrat",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 USEC PMCs with AK-series weapons", KillTarget = "Usec", KillWeapons = AkWeapons }
+					new() { ConditionType = "Kills", Value = 5, Description = "使用AK系列武器击杀5名USEC PMC", KillTarget = "Usec", KillWeapons = AkWeapons }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-4] Vympel Heritage",
-					Description = "BEAR. Battle Encounter Assault Regiment. Ex-FSB, ex-Vympel, the kind of operators that make special forces look like boy scouts. They came to Tarkov with a mission and they're not leaving until it's done. Eliminate five USEC operatives with an AK \u2014 any model. That's the BEAR way.",
-					Note = "Eliminate 5 USEC PMCs with AK-series weapons.",
-					SuccessMessage = "Five USEC down with an AK. Vympel would be proud."
+					Name = "[FACT-4] 信号旗传承",
+					Description = "BEAR。战斗遭遇突击团。前FSB、前信号旗，让特种部队看起来像童子军的狠角色。他们带着任务来塔科夫，不完成绝不离开。用任意AK消灭五个USEC特工。这才是BEAR的作风。",
+					Note = "用AK系列武器消灭5个USEC PMC。",
+					SuccessMessage = "五个USEC倒在AK下。信号旗会骄傲的。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardBear } },
@@ -265,14 +265,14 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_bear",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "Get 10 kills while silent" }
+					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "在静默状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-5] Covert Sabotage",
-					Description = "BEAR Saboteurs. The ones you never see coming. They move in silence, plant their charges, and vanish before anyone knows what happened. Ten silent kills. Become the shadow.",
-					Note = "Get 10 kills while silent.",
-					SuccessMessage = "Silent and deadly. The saboteur vanishes."
+					Name = "[FACT-5] 秘密破坏",
+					Description = "BEAR破坏者。你永远不会看到他们来。他们无声移动、安放炸药、在任何人知道发生了什么之前消失。十次消音击杀。成为影子。",
+					Note = "完成10次消音击杀。",
+					SuccessMessage = "沉默而致命。破坏者消失了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardBearSaboteur } },
@@ -287,15 +287,15 @@ public static class FactionsThemeDefinitions
 				Location = MapShoreline,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets from over 100m", KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 100 },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Shoreline 3 times", SurviveLocations = new() { "Shoreline" } }
+					new() { ConditionType = "Kills", Value = 5, Description = "在100米外击杀5个目标", KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 100 },
+					new() { ConditionType = "Survive", Value = 3, Description = "从海岸线存活并撤离3次", SurviveLocations = new() { "Shoreline" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-6] Deep Behind Lines",
-					Description = "USEC Deep Recon. These operators go where nobody else dares \u2014 deep behind enemy lines, alone, with nothing but a rifle and a radio. Five kills from over a hundred meters and three Shoreline extractions. Go deep, stay alive.",
-					Note = "5 kills from 100m+ and survive Shoreline 3 times.",
-					SuccessMessage = "Deep recon complete. You made it back alive."
+					Name = "[FACT-6] 深入敌后",
+					Description = "USEC深度侦察。这些特工去没人敢去的地方——深入敌后、独自一人、只有一把步枪和一台无线电。五次百米外击杀，在Shoreline存活三次。深入、活着。",
+					Note = "完成5次100米外击杀并在Shoreline存活3次。",
+					SuccessMessage = "深层侦察完成。你活着回来了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardUsecRecon } },
@@ -309,14 +309,14 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_usecrecon",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 BEAR PMCs with Western SMGs", KillTarget = "Bear", KillWeapons = WesternSmgs }
+					new() { ConditionType = "Kills", Value = 5, Description = "使用西方冲锋枪击杀5名BEAR PMC", KillTarget = "Bear", KillWeapons = WesternSmgs }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-7] The Contractor",
-					Description = "USEC. United Security. Private military contractors with deep pockets and deeper secrets. They came for TerraGroup's dirty work and got stuck in the same hell as everyone else. Eliminate five BEAR operatives using a Western SMG. That's how contractors do it.",
-					Note = "Eliminate 5 BEAR PMCs with Western SMGs.",
-					SuccessMessage = "Contract fulfilled. Five BEAR down."
+					Name = "[FACT-7] 雇佣兵",
+					Description = "USEC。联合安保。口袋深厚、秘密更深的私人军事承包商。他们来为TerraGroup干脏活，却跟其他人一样困在了这个地狱。用西方冲锋枪消灭五个BEAR特工。承包商的作风。",
+					Note = "用西方冲锋枪消灭5个BEAR PMC。",
+					SuccessMessage = "合同已完成。五个BEAR倒下。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardUsec } },
@@ -330,15 +330,15 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_usec",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 1, Description = "Get 1 melee kill", KillTarget = "Any", KillWeapons = AllMeleeWeapons },
-					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "Get 5 kills while silent" }
+					new() { ConditionType = "Kills", Value = 1, Description = "近战击杀1个目标", KillTarget = "Any", KillWeapons = AllMeleeWeapons },
+					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "在静默状态下击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-8] Midnight Blade",
-					Description = "The Cultist Acolyte. Lowest rank in the hierarchy, but don't let that fool you \u2014 they move like ghosts and their blades are coated in something foul. One melee kill and five silent kills. Prove you can work with a blade.",
-					Note = "Get 1 melee kill and 5 silent kills.",
-					SuccessMessage = "The blade has tasted blood. The acolyte rises."
+					Name = "[FACT-8] 午夜利刃",
+					Description = "邪教侍僧。等级制度的最底层，但别被骗了——他们像幽灵一样移动，刀刃上涂着什么恶心的东西。一次近战击杀和五次消音击杀。证明你能用刀干活。",
+					Note = "完成1次近战击杀和5次消音击杀。",
+					SuccessMessage = "刀刃尝到了血。侍僧晋升了。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCultistAcolyte } },
@@ -353,14 +353,14 @@ public static class FactionsThemeDefinitions
 				Location = MapFactoryNight,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets on Factory at night", KillTarget = "Any", KillLocations = new() { "factory4_night" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "夜间在工厂击杀10个目标", KillTarget = "Any", KillLocations = new() { "factory4_night" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-9] Initiation",
-					Description = "Initiation into the cult happens at night. Always at night. Factory after dark is where they gather \u2014 no lights, no mercy, only the sound of blades and chanting. Ten kills on night Factory. Prove you belong in the dark.",
-					Note = "Eliminate 10 targets on Factory at night.",
-					SuccessMessage = "Ten souls claimed in the dark. You are initiated."
+					Name = "[FACT-9] 入会测试",
+					Description = "入教仪式在夜里进行。永远在夜里。天黑后的Factory是他们聚集的地方——没灯、没怜悯，只有刀刃声和诵唱。在夜间Factory杀十个。证明你属于黑暗。",
+					Note = "在夜间Factory消灭10个目标。",
+					SuccessMessage = "黑暗中夺取十条命。你已入教。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCultistInitiate } },
@@ -386,15 +386,15 @@ public static class FactionsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets on Lighthouse", KillTarget = "Any", KillLocations = new() { "Lighthouse" } },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Lighthouse 3 times", SurviveLocations = new() { "Lighthouse" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "在灯塔击杀10个目标", KillTarget = "Any", KillLocations = new() { "Lighthouse" } },
+					new() { ConditionType = "Survive", Value = 3, Description = "从灯塔存活并撤离3次", SurviveLocations = new() { "Lighthouse" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-10] Guns for Hire",
-					Description = "The Rogue Alliance. Ex-USEC operators who went independent \u2014 no loyalty, no flag, just the highest bidder. They've fortified the water treatment plant on Lighthouse and they shoot anyone who gets close. Ten kills and three extractions on Lighthouse. Break through their perimeter.",
-					Note = "10 kills on Lighthouse and survive 3 times.",
-					SuccessMessage = "Perimeter breached. The rogues know your name."
+					Name = "[FACT-10] 雇佣枪手",
+					Description = "Rogue联盟。前USEC特工独立出来——没忠诚、没旗帜，只认最高出价者。他们在Lighthouse的水处理厂筑了防线，靠近就打。在Lighthouse杀十个，撤离三次。突破他们的防线。",
+					Note = "在Lighthouse击杀10人并存活3次。",
+					SuccessMessage = "防线突破。Rogues记住了你的名字。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardRogueAlliance } },
@@ -408,21 +408,21 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_roguealliance",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets with LMGs", KillTarget = "Any", KillWeapons = AllLmgs },
+					new() { ConditionType = "Kills", Value = 10, Description = "使用轻机枪击杀10个目标", KillTarget = "Any", KillWeapons = AllLmgs },
 					new()
 					{
 						ConditionType = "Kills", Value = 3,
-						Description = "Eliminate 3 targets with stationary weapons",
+						Description = "使用固定武器击杀3个目标",
 						KillTarget = "Any",
 						KillWeapons = new() { "5cdeb229d7f00c000e7ce174", "5d52cc5ba4b9367408500062" } // NSV Utyos, AGS-30
 					}
 				},
 				Locale = new()
 				{
-					Name = "[FACT-11] Gas Station Hold",
-					Description = "The Gas-Station Gunner. This rogue strapped himself behind a mounted gun and dared anyone to come close. Ten kills with a machine gun and three mounted kills. Hold the line like a true gunner.",
-					Note = "10 kills with LMGs and 3 mounted kills.",
-					SuccessMessage = "Line held. The gunner's position is yours."
+					Name = "[FACT-11] 加油站守卫",
+					Description = "加油站枪手。这个Rogue把自己绑在固定机枪后面，挑衅任何人靠近。十次机枪击杀，三次固定武器击杀。像真正的炮手一样守住阵地。",
+					Note = "用机枪完成10次击杀和3次固定武器击杀。",
+					SuccessMessage = "阵地守住。炮手的位置是你的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardRogueGunner } },
@@ -440,15 +440,15 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_roguegunner",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets with headshots", KillTarget = "Any", KillBodyParts = new() { "Head" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 10, Description = "爆头击杀10个目标", KillTarget = "Any", KillBodyParts = new() { "Head" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-12] Shadow Cell",
-					Description = "UNISG. United Nations Internal Security Group. Officially, they don't exist. Unofficially, they're running operations in Tarkov that nobody talks about. Precision is their calling card. Ten PMC kills and ten headshots. Clean, efficient, deniable.",
-					Note = "10 PMC kills and 10 headshot kills.",
-					SuccessMessage = "Clean. Efficient. Deniable. Shadow Cell approved."
+					Name = "[FACT-12] 影子小队",
+					Description = "UNISG。联合国内部安保组。官方上，他们不存在。非官方上，他们在塔科夫执行着没人谈论的行动。精准是他们的名片。十次PMC击杀和十次爆头。干净、高效、可否认。",
+					Note = "完成10次PMC击杀和10次爆头。",
+					SuccessMessage = "干净。高效。可否认。影子小队批准。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardUnisg } },
@@ -463,15 +463,15 @@ public static class FactionsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets on Labs", KillTarget = "Any", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Labs 3 times", SurviveLocations = new() { "laboratory" } }
+					new() { ConditionType = "Kills", Value = 20, Description = "在实验室击杀20个目标", KillTarget = "Any", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "Survive", Value = 3, Description = "从实验室存活并撤离3次", SurviveLocations = new() { "laboratory" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-13] Labs Crusher",
-					Description = "The Labs Crusher. Raiders patrol The Lab like they own the place \u2014 tier 5 armor, meta weapons, and zero hesitation. They'll push you, flank you, and grenade you before you can say 'extract.' Twenty kills on Labs and three successful extractions. Crush the crushers.",
-					Note = "20 kills on Labs and survive 3 times.",
-					SuccessMessage = "The crushers have been crushed. Labs is yours."
+					Name = "[FACT-13] 实验室粉碎者",
+						Description = "实验室粉碎者。Raiders像主人一样在实验室巡逻——五级甲、Meta武器、零犹豫。他们会推你、包抄你、在你来得及说“撤离”前扔雷炸你。在Labs杀二十个，成功撤离三次。粉碎粉碎者。",
+					Note = "在Labs击杀20人并存活3次。",
+					SuccessMessage = "碾压者已被碾压。实验室是你的。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardRaider } },
@@ -485,15 +485,15 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_raider",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 25, Description = "Eliminate 25 PMCs with Western ARs", KillTarget = "AnyPmc", KillWeapons = WesternArs },
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } }
+					new() { ConditionType = "Kills", Value = 25, Description = "使用西方突击步枪击杀25名PMC", KillTarget = "AnyPmc", KillWeapons = WesternArs },
+					new() { ConditionType = "Kills", Value = 15, Description = "爆头击杀15名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-14] Blacksite Protocol",
-					Description = "TerraGroup Security. The blacksite guards. Whatever TerraGroup was hiding in those labs, these operators were paid enough to kill for it and never ask questions. Twenty-five PMCs downed with Western assault rifles, fifteen of them headshots. Enforce the blacksite protocol.",
-					Note = "25 PMC kills with Western ARs and 15 PMC headshots.",
-					SuccessMessage = "Blacksite protocol enforced. TerraGroup would approve."
+					Name = "[FACT-14] 黑色站点协议",
+					Description = "TerraGroup安保。黑色站点的守卫。不管TerraGroup在那些实验室里藏了什么，这些特工拿够了钱去杀人而且从不提问。用西方突击步枪干掉二十五个PMC，其中十五个爆头。执行黑色站点协议。",
+					Note = "用西方突击步枪完成25次PMC击杀和15次PMC爆头。",
+					SuccessMessage = "黑色站点协议已执行。TerraGroup会赞成。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardTerraGroup } },
@@ -507,16 +507,16 @@ public static class FactionsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_factions_terragroup",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 BEAR PMCs", KillTarget = "Bear" },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 USEC PMCs", KillTarget = "Usec" },
-					new() { ConditionType = "Kills", Value = 100, Description = "Eliminate 100 scavs", KillTarget = "Savage" }
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名BEAR PMC", KillTarget = "Bear" },
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名USEC PMC", KillTarget = "Usec" },
+					new() { ConditionType = "Kills", Value = 100, Description = "击杀100名Scav", KillTarget = "Savage" }
 				},
 				Locale = new()
 				{
-					Name = "[FACT-15] The Fragile Truce",
-					Description = "The PMC Coalition. A fragile truce between BEAR and USEC \u2014 born out of necessity, held together by desperation. Both sides agreed to stop killing each other long enough to deal with the real threats. But truces don't last in Tarkov. Fifty BEAR, fifty USEC, a hundred scavs. Break the truce yourself.",
-					Note = "50 BEAR, 50 USEC, 100 scavs.",
-					SuccessMessage = "The truce is broken. Two hundred bodies tell the tale."
+					Name = "[FACT-15] 脆弱的休战",
+					Description = "PMC联盟。BEAR和USEC之间脆弱的休战——生于必要、靠绝望维系。双方同意暂时停火以应对真正的威胁。但休战在塔科夫不会持久。五十个BEAR、五十个USEC、一百个Scav。亲自撕毁休战。",
+					Note = "50个BEAR、50个USEC、100个Scav。",
+					SuccessMessage = "休战已撕毁。两百具尸体述说一切。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardCoalition } },
@@ -538,7 +538,7 @@ public static class FactionsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 faction cards (one of each)",
+					Description = "上交全部15张阵营卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardBloodhound] = "Bloodhound Merc",
@@ -560,10 +560,10 @@ public static class FactionsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[FACT-C] Kolya's Faction Dossier",
-					Description = "Every faction documented, every allegiance mapped. BEAR, USEC, rogues, cultists, raiders, TerraGroup \u2014 you've crossed paths with all of them and lived to tell the tale. Hand over the cards and the dossier is complete.",
-					Note = "Hand over one of each faction card to complete the collection.",
-					SuccessMessage = "The Faction Dossier is complete. Every allegiance documented."
+					Name = "[FACT-C] Kolya的阵营档案",
+					Description = "每个阵营都已记录，每条忠诚都已绘制。BEAR、USEC、Rogue、邪教徒、Raider、TerraGroup——你全打过交道而且活下来讲述了。交出卡牌，阵营档案就完整了。",
+					Note = "交出所有阵营卡牌各一张以完成收集。",
+					SuccessMessage = "阵营档案已完成。每个效忠都已记录。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

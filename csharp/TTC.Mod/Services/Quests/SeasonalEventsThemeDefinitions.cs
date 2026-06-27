@@ -97,15 +97,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "LootItem", Value = 15, Description = "Loot 15 items" },
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract 2 times" }
+					new() { ConditionType = "LootItem", Value = 15, Description = "搜刮15个物品" },
+					new() { ConditionType = "Survive", Value = 2, Description = "存活并撤离2次" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-0] Event Calendar",
-					Description = "Tarkov celebrates everything \u2014 Christmas, Halloween, wipe days, anniversary events. Loot fifteen items and survive two raids. The event calendar is open.",
-					Note = "Loot 15 items and survive 2 times.",
-					SuccessMessage = "Calendar open. Events incoming."
+					Name = "[SEAS-0] 活动日历",
+					Description = "塔科夫庆祝一切——圣诞、万圣、清档日、周年活动。摸十五件物品并存活两局。活动日历已打开。",
+					Note = "搜刮15件物品并存活2次。",
+					SuccessMessage = "日历已打开。活动即将到来。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderSeasonal } }
@@ -118,15 +118,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_seasonal_events",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithPistols", Value = 1000, Description = "Deal 1,000 damage with pistols" },
-					new() { ConditionType = "KillsWithoutADS", Value = 3, Description = "Get 3 kills without ADS" }
+					new() { ConditionType = "DamageWithPistols", Value = 1000, Description = "使用手枪造成1,000伤害" },
+					new() { ConditionType = "KillsWithoutADS", Value = 3, Description = "不瞄准击杀3个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-1] One Golden Bullet",
-					Description = "Golden Gun Day. Every April 1st, Tarkov goes golden \u2014 pistols only, no ADS, pure chaos. A thousand pistol damage and three hipfire kills. One golden bullet is all you need.",
-					Note = "1,000 pistol damage and 3 hipfire kills.",
-					SuccessMessage = "Golden. One bullet was enough."
+					Name = "[SEAS-1] 一枚金色子弹",
+					Description = "金色手枪日。每年4月1日，塔科夫变成金色——只准手枪、不准ADS、纯粹混乱。一千点手枪伤害和三次腰射击杀。一颗金色子弹就够了。",
+					Note = "造成1,000手枪伤害并完成3次腰射击杀。",
+					SuccessMessage = "金色。一颗子弹就够了。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardGoldenGun } },
@@ -140,15 +140,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_goldengun",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithThrowables", Value = 500, Description = "Deal 500 damage with grenades" },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets", KillTarget = "Any" }
+					new() { ConditionType = "DamageWithThrowables", Value = 500, Description = "使用手榴弹造成500伤害" },
+					new() { ConditionType = "Kills", Value = 5, Description = "击杀5个目标", KillTarget = "Any" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-2] Party Grenades",
-					Description = "Confetti Nades. The grenades explode into confetti. The shrapnel is still real. Five hundred grenade damage and five kills. Surprise!",
-					Note = "500 grenade damage and 5 kills.",
-					SuccessMessage = "Surprise! The confetti was lethal."
+					Name = "[SEAS-2] 派对手雷",
+					Description = "彩纸手雷。手雷炸出的是彩纸。弹片还是真的。五百手雷伤害和五次击杀。惊喜！",
+					Note = "造成500手雷伤害并完成5次击杀。",
+					SuccessMessage = "惊喜！彩纸是致命的。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardConfettiNades } },
@@ -162,15 +162,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_confettinades",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthGain", Value = 1500, Description = "Restore 1,500 HP total" },
-					new() { ConditionType = "FixAnyBleed", Value = 5, Description = "Fix 5 bleedings" }
+					new() { ConditionType = "HealthGain", Value = 1500, Description = "累计恢复1,500 HP" },
+					new() { ConditionType = "FixAnyBleed", Value = 5, Description = "处理5次流血" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-3] Sick Day",
-					Description = "Flu Epidemic. Therapist declared a health emergency \u2014 everyone's coughing, bleeding, and out of meds. Restore fifteen hundred HP and fix five bleedings. Stay healthy out there.",
-					Note = "Restore 1,500 HP and fix 5 bleedings.",
-					SuccessMessage = "Recovered. Until next flu season."
+					Name = "[SEAS-3] 病假日",
+					Description = "流感疫情。Therapist宣布了健康紧急状态——所有人都在咳嗽、流血、药用完了。恢复一千五百HP并处理五次流血。在外面保持健康。",
+					Note = "恢复1,500生命值并处理5次流血。",
+					SuccessMessage = "已康复。直到下个流感季。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardFluEpidemic } },
@@ -184,15 +184,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_fluepidemic",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 40, Description = "Search 40 containers" },
-					new() { ConditionType = "LootItem", Value = 40, Description = "Loot 40 items" }
+					new() { ConditionType = "SearchContainer", Value = 40, Description = "搜索40个容器" },
+					new() { ConditionType = "LootItem", Value = 40, Description = "搜刮40个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-4] Under the Tree",
-					Description = "Christmas Tree Stash. The presents are under the tree \u2014 if you can find the tree, and if the presents haven't been looted already. Forty containers and forty items. Merry Christmas.",
-					Note = "Search 40 containers and loot 40 items.",
-					SuccessMessage = "Merry Christmas. The loot was under the tree."
+					Name = "[SEAS-4] 圣诞树下",
+					Description = "圣诞树下的藏匿物。礼物在树下——如果你能找到树，而且礼物还没被别人摸走的话。四十个容器和四十件物品。圣诞快乐。",
+					Note = "搜索40个容器并搜刮40件物品。",
+					SuccessMessage = "圣诞快乐。战利品在树下。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTreeStash } },
@@ -210,15 +210,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_treestash",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 food items", HandoverTargets = new() { ClassFood } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 electronic components", HandoverTargets = new() { ClassElectronics } }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个食物", HandoverTargets = new() { ClassFood } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个电子元件", HandoverTargets = new() { ClassElectronics } }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-5] Gift Exchange",
-					Description = "New Year Gift Case. The annual gift exchange \u2014 bring food for the party and electronics for the raffle. Five food items and five electronics. Kolya's throwing a New Year's party.",
-					Note = "Hand over 5 food and 5 electronics.",
-					SuccessMessage = "Gifts exchanged. Happy New Year."
+					Name = "[SEAS-5] 礼物交换",
+					Description = "新年礼物箱。年度礼物交换——带食物来派对，带电子元件来抽奖。五份食物和五个电子元件。Kolya要办新年派对。",
+					Note = "交出5份食物和5个电子元件。",
+					SuccessMessage = "礼物已交换。新年快乐。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGiftCase } },
@@ -237,15 +237,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_giftcase",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "KillsWhileCrouched", Value = 5, Description = "Get 5 kills while crouched" }
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "KillsWhileCrouched", Value = 5, Description = "在蹲伏状态下击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-6] Ho Ho Headshot",
-					Description = "Santa Scav Surprise. He sees you when you're looting, he knows when you're AFK. Ten scav kills and five crouched kills. Santa's naughty list just got shorter.",
-					Note = "10 scav kills and 5 crouched kills.",
-					SuccessMessage = "Ho ho ho. Naughty list cleared."
+					Name = "[SEAS-6] 嗬嗬爆头",
+					Description = "圣诞Scav的惊喜。他知道你在摸东西，他知道你挂机。十个Scav击杀和五次蹲姿击杀。圣诞老人的淘气名单又变短了。",
+					Note = "完成10次Scav击杀和5次蹲姿击杀。",
+					SuccessMessage = "嗬嗬嗬。淘气名单已清空。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardSantaScav } },
@@ -264,15 +264,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_santascav",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "Cover 5,000m while running" },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 5000, Description = "奔跑5,000米" },
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-7] Delivery Service",
-					Description = "Santa Scav's Gift Run. Presents don't deliver themselves \u2014 sprint five kilometers and survive five raids. The gift run stops for no one.",
-					Note = "5km running and survive 5 times.",
-					SuccessMessage = "Deliveries complete. All presents accounted for."
+					Name = "[SEAS-7] 快递服务",
+					Description = "圣诞Scav的送礼物。礼物不会自己送到——冲刺五公里并存活五局。送礼物不等人。",
+					Note = "跑步5公里并存活5次。",
+					SuccessMessage = "礼物已全部送达。所有包裹已签收。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGiftRun } },
@@ -291,15 +291,15 @@ public static class SeasonalEventsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract from Lighthouse 2 times", SurviveLocations = new() { "Lighthouse" } },
-					new() { ConditionType = "SearchContainer", Value = 40, Description = "Search 40 containers" }
+					new() { ConditionType = "Survive", Value = 2, Description = "从灯塔存活并撤离2次", SurviveLocations = new() { "Lighthouse" } },
+					new() { ConditionType = "SearchContainer", Value = 40, Description = "搜索40个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-8] Beach Day",
-					Description = "Summer Rogue Beach Party. The rogues put on Hawaiian shirts and set up coolers between the mounted guns. Survive Lighthouse five times and search forty containers. Beach day, Tarkov style.",
-					Note = "Survive Lighthouse 5 times and search 40 containers.",
-					SuccessMessage = "Beach day survived. Sunburn and bullet holes."
+					Name = "[SEAS-8] 海滩日",
+					Description = "夏日Rogue海滩派对。Rogues穿上夏威夷衫，在机枪之间摆上冰桶。在Lighthouse存活五次并搜四十个容器。塔科夫风格的海滩日。",
+					Note = "在Lighthouse存活5次并搜索40个容器。",
+					SuccessMessage = "海滩日活下来了。晒伤和弹孔。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardRogueBeach } },
@@ -317,15 +317,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_roguebeach",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 targets at night", KillTarget = "Any", KillDaytimeFrom = 22, KillDaytimeTo = 6 },
-					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "Get 10 kills while silent" }
+					new() { ConditionType = "Kills", Value = 15, Description = "夜间击杀15个目标", KillTarget = "Any", KillDaytimeFrom = 22, KillDaytimeTo = 6 },
+					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "在静默状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-9] Fright Night",
-					Description = "Halloween. Jack-o-lanterns in the hallways, fog in the forests, and something moving in the dark. Fifteen night kills and ten silent kills. Trick or treat.",
-					Note = "15 night kills and 10 silent kills.",
-					SuccessMessage = "Trick or treat. The treats were bullets."
+					Name = "[SEAS-9] 惊悚之夜",
+					Description = "万圣节。走廊里的南瓜灯、森林里的雾气、黑暗中移动的什么东西。十五次夜间击杀和十次消音击杀。不给糖就捣蛋。",
+					Note = "完成15次夜间击杀和10次消音击杀。",
+					SuccessMessage = "不给糖就捣蛋。结果是子弹。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardHalloween } },
@@ -343,15 +343,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_halloween",
 				Objectives = new()
 				{
-					new() { ConditionType = "CollectCultistOffering", Value = 3, Description = "Collect 3 Cultist Offerings" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 PMCs at night", KillTarget = "AnyPmc", KillDaytimeFrom = 22, KillDaytimeTo = 6 }
+					new() { ConditionType = "CollectCultistOffering", Value = 3, Description = "收集3个邪教徒祭品" },
+					new() { ConditionType = "Kills", Value = 10, Description = "夜间击杀10名PMC", KillTarget = "AnyPmc", KillDaytimeFrom = 22, KillDaytimeTo = 6 }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-10] Cult Season",
-					Description = "Halloween Cult Hunt. The cultists come out in force during Halloween \u2014 blades drawn, poison ready. Three cultist offerings and ten PMC night kills. Hunt the hunters.",
-					Note = "3 cultist offerings and 10 PMC night kills.",
-					SuccessMessage = "The cult has been hunted."
+					Name = "[SEAS-10] 邪教季节",
+					Description = "万圣节邪教狩猎。万圣期间邪教徒倾巢而出——刀已出鞘、毒已就绪。三份邪教供品和十次PMC夜间击杀。猎杀猎手。",
+					Note = "收集3份邪教供品并完成10次PMC夜间击杀。",
+					SuccessMessage = "邪教已被猎杀。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCultHunt } },
@@ -370,15 +370,15 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_culthunt",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 2000000, Description = "Earn 2,000,000\u20bd from transactions" },
-					new() { ConditionType = "SearchContainer", Value = 80, Description = "Search 80 containers" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 2000000, Description = "通过交易赚取2,000,000₽" },
+					new() { ConditionType = "SearchContainer", Value = 80, Description = "搜索80个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-11] Drop Day",
-					Description = "Twitch Drops Frenzy. Leave the stream running, collect the drops, sell the loot. Two million roubles and eighty containers searched. The drops are live.",
-					Note = "Earn 2M\u20bd and search 80 containers.",
-					SuccessMessage = "Drops collected. Stream still running."
+					Name = "[SEAS-11] 掉落日",
+					Description = "Twitch掉宝狂欢。把直播开着、收掉落、卖战利品。两百万卢布和八十个容器。掉落已上线。",
+					Note = "赚取2M₽并搜索80个容器。",
+					SuccessMessage = "掉落已收取。直播依然开着。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardTwitchDrops } },
@@ -405,18 +405,18 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_twitchdrops",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 1, Description = "Eliminate Killa", KillTarget = "Savage", KillSavageRole = new() { "bossKilla" } },
-					new() { ConditionType = "Kills", Value = 1, Description = "Eliminate Tagilla", KillTarget = "Savage", KillSavageRole = new() { "bossTagilla" } },
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets on Factory", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" } },
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets on Interchange", KillTarget = "Any", KillLocations = new() { "Interchange" } },
-					new() { ConditionType = "DamageWithShotguns", Value = 3000, Description = "Deal 3,000 damage with shotguns" }
+					new() { ConditionType = "Kills", Value = 1, Description = "击杀Killa", KillTarget = "Savage", KillSavageRole = new() { "bossKilla" } },
+					new() { ConditionType = "Kills", Value = 1, Description = "击杀Tagilla", KillTarget = "Savage", KillSavageRole = new() { "bossTagilla" } },
+					new() { ConditionType = "Kills", Value = 20, Description = "在工厂击杀20个目标", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" } },
+					new() { ConditionType = "Kills", Value = 20, Description = "在立交桥击杀20个目标", KillTarget = "Any", KillLocations = new() { "Interchange" } },
+					new() { ConditionType = "DamageWithShotguns", Value = 3000, Description = "使用霰弹枪造成3,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-12] Boss Rush",
-					Description = "Killa & Tagilla Factory Showdown. The seasonal boss rush event \u2014 Killa patrols Interchange, Tagilla owns Factory. Kill them both, clear twenty targets on each map, and deal three thousand shotgun damage. The showdown is on.",
-					Note = "Kill Killa + Tagilla, 20 kills Factory + Interchange, 3K shotgun damage.",
-					SuccessMessage = "Both bosses down. Showdown won."
+					Name = "[SEAS-12] Boss rush模式",
+					Description = "Killa和Tagilla的Factory对决。季度Boss Rush活动——Killa巡逻Interchange、Tagilla主宰Factory。两个都杀了，在每张地图清二十个目标，造成三千霰弹枪伤害。对决开始。",
+					Note = "击杀Killa和Tagilla，在Factory和Interchange各击杀20人，造成3K霰弹枪伤害。",
+					SuccessMessage = "两个Boss都倒了。对决已赢。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardKillaTagilla } },
@@ -435,16 +435,16 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_killatagilla",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "Earn 5,000,000\u20bd from transactions" },
-					new() { ConditionType = "CraftAnyItem", Value = 20, Description = "Craft 20 items" },
-					new() { ConditionType = "Survive", Value = 15, Description = "Survive and extract 15 times" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "通过交易赚取5,000,000₽" },
+					new() { ConditionType = "CraftAnyItem", Value = 20, Description = "制作20个物品" },
+					new() { ConditionType = "Survive", Value = 15, Description = "存活并撤离15次" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-13] Final Countdown",
-					Description = "Wipe Countdown. The clock is ticking \u2014 spend everything, craft everything, survive everything before the wipe hits. Five million roubles, twenty crafts, fifteen extractions. The final countdown.",
-					Note = "Earn 5M\u20bd, craft 20 items, survive 15 times.",
-					SuccessMessage = "Countdown complete. The wipe spares no one."
+					Name = "[SEAS-13] 最终倒计时",
+					Description = "删档倒计时。时钟在走——清档前花光一切、做光一切、存活一切。五百万卢布、二十件物品、十五次撤离。最终倒计时。",
+					Note = "赚取5M₽，制作20件物品，存活15次。",
+					SuccessMessage = "倒计时完成。档期不饶人。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardWipeCountdown } },
@@ -463,16 +463,16 @@ public static class SeasonalEventsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_seas_wipecountdown",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3000000, Description = "Hand over 3,000,000\u20bd", HandoverTargets = new() { Roubles } },
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Peacekeeper LL3", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 3 }
+					new() { ConditionType = "HandoverItem", Value = 3000000, Description = "上交3,000,000₽", HandoverTargets = new() { Roubles } },
+					new() { ConditionType = "Kills", Value = 30, Description = "击杀30名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Peacekeeper 3级", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 3 }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-14] Diplomatic Immunity",
-					Description = "Lightkeeper Live Negotiation. The Lightkeeper doesn't negotiate with amateurs \u2014 Peacekeeper vouches for you, three million roubles on the table, and thirty PMC kills to prove you're serious. Diplomatic immunity costs.",
-					Note = "Hand over 3M\u20bd, 30 PMC kills, Peacekeeper LL3.",
-					SuccessMessage = "Negotiations concluded. Immunity granted."
+					Name = "[SEAS-14] 外交豁免",
+					Description = "灯塔守卫的现场谈判。灯塔守卫不和业余人士谈判——Peacekeeper为你担保、三百万卢布放桌上、三十次PMC击杀证明你是认真的。外交豁免的代价。",
+					Note = "交出3M₽，完成30次PMC击杀，Peacekeeper达到LL3。",
+					SuccessMessage = "谈判已结束。豁免已授予。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardLiveNegotiation } },
@@ -492,16 +492,16 @@ public static class SeasonalEventsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 20, Description = "Survive and extract from Labs 20 times", SurviveLocations = new() { "laboratory" } },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 targets on Labs", KillTarget = "Any", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 15000000, Description = "Earn 15,000,000\u20bd from transactions" }
+					new() { ConditionType = "Survive", Value = 20, Description = "从实验室存活并撤离20次", SurviveLocations = new() { "laboratory" } },
+					new() { ConditionType = "Kills", Value = 50, Description = "在实验室击杀50个目标", KillTarget = "Any", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 15000000, Description = "通过交易赚取15,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-15] Open Access",
-					Description = "Anniversary Free Labs Access. For the anniversary event, Labs is open to all \u2014 no keycard required. Twenty extractions, fifty kills, and fifteen million roubles. The anniversary celebration never ends.",
-					Note = "Survive Labs 20, 50 Labs kills, earn 15M\u20bd.",
-					SuccessMessage = "Free access used. Anniversary celebrated."
+					Name = "[SEAS-15] 开放访问",
+					Description = "周年庆免费Labs进入。周年活动期间，Labs对所有人开放——不需要钥匙卡。二十次撤离、五十次击杀、一千五百万卢布。周年庆永不结束。",
+					Note = "在Labs存活20次，击杀50人，赚取15M₽。",
+					SuccessMessage = "免费通行已使用。周年庆已庆祝。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardFreeLabs } },
@@ -525,7 +525,7 @@ public static class SeasonalEventsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 seasonal cards (one of each)",
+					Description = "上交全部15张季节活动卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardGoldenGun] = "Golden Gun Day",
@@ -547,10 +547,10 @@ public static class SeasonalEventsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[SEAS-C] Kolya's Event Archive",
-					Description = "Every event archived, every season celebrated. From Golden Gun Day to Free Labs Access, you've lived through every seasonal event Tarkov has to offer. Hand over the cards and complete the archive.",
-					Note = "Hand over one of each seasonal card to complete the collection.",
-					SuccessMessage = "Event archive complete. Every season documented."
+					Name = "[SEAS-C] Kolya的活动档案",
+					Description = "每个活动都已归档、每个季节都被庆祝。从金色手枪日到免费Labs访问，你经历了塔科夫每一个季度活动。交出卡牌，活动档案就完整了。",
+					Note = "交出所有节日活动卡牌各一张以完成收集。",
+					SuccessMessage = "活动档案已完成。每个节日已记录。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

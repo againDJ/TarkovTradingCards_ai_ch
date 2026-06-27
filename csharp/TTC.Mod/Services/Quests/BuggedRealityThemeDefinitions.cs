@@ -61,14 +61,14 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 500, Description = "Lose 500 HP total" }
+					new() { ConditionType = "HealthLoss", Value = 500, Description = "累计损失500 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-0] Error 404",
-					Description = "Tarkov is a perfectly functioning game with zero bugs. Prove it by losing five hundred HP. The bugs will find you.",
-					Note = "Lose 500 HP total.",
-					SuccessMessage = "Error 404: Stability not found."
+					Name = "[BUGD-0] 错误404",
+					Description = "塔科夫是一个完美运行的游戏，零Bug。丢五百点生命值来证明。Bug会找到你的。",
+					Note = "累计损失500生命值。",
+					SuccessMessage = "错误404：稳定性未找到。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderBugged } }
@@ -81,15 +81,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_bugged_reality",
 				Objectives = new()
 				{
-					new() { ConditionType = "FixFracture", Value = 2, Description = "Fix 2 fractures" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times" }
+					new() { ConditionType = "FixFracture", Value = 2, Description = "处理2次骨折" },
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-1] Stairs of Death",
-					Description = "Staircase Desync Death. You walked down the stairs normally. The server disagreed. Two fractures fixed and three extractions. The stairs are not your friend.",
-					Note = "Fix 2 fractures and survive 3 times.",
-					SuccessMessage = "Stairs survived. This time."
+					Name = "[BUGD-1] 死亡楼梯",
+					Description = "你正常走下楼梯。服务器不同意。接好两处骨折，撤离三次。楼梯不是你的朋友。",
+					Note = "接好2处骨折并存活3次。",
+					SuccessMessage = "楼梯活下来了。这次。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardStairDesync } },
@@ -108,15 +108,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_stairdesync",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 3000, Description = "Cover 3,000m while running" },
-					new() { ConditionType = "LootItem", Value = 15, Description = "Loot 15 items" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 3000, Description = "奔跑3,000米" },
+					new() { ConditionType = "LootItem", Value = 15, Description = "搜刮15个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-2] Lag Spike Sprint",
-					Description = "Rubberband Sprint. You ran forward, then you were back where you started. Then forward again. Three kilometers of running and fifteen items looted. Assuming the server agrees you moved.",
-					Note = "3km running and loot 15 items.",
-					SuccessMessage = "Forward. Back. Forward. Eventually forward."
+					Name = "[BUGD-2] 延迟冲刺",
+					Description = "你向前跑，然后回到了起点。然后又向前了。跑三公里，摸十五件物品。需要服务器同意你确实移动了。",
+					Note = "跑步3公里并搜刮15件物品。",
+					SuccessMessage = "前进。后退。前进。最终前进了。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardRubberband } },
@@ -135,15 +135,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_rubberband",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs with headshots", KillTarget = "Savage", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "KillsWhileADS", Value = 10, Description = "Get 10 kills while ADS" }
+					new() { ConditionType = "Kills", Value = 10, Description = "爆头击杀10名Scav", KillTarget = "Savage", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "KillsWhileADS", Value = 10, Description = "在瞄准状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-3] Aim at Nothing",
-					Description = "Floating Scav. He's three meters in the air, T-posing, and somehow still shooting at you. Ten scav headshots and ten ADS kills. Aim where the hitbox should be, not where the model is.",
-					Note = "10 scav headshots and 10 ADS kills.",
-					SuccessMessage = "Hitbox located. Eventually."
+					Name = "[BUGD-3] 瞄准空气",
+					Description = "他飘在三米高的空中、T-pose、然而不知怎么还在朝你开枪。十次Scav爆头和十次ADS击杀。瞄着判定框的位置打，别瞄着模型打。",
+					Note = "完成10次Scav爆头和10次ADS击杀。",
+					SuccessMessage = "命中判定找到了。终于。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFloatingScav } },
@@ -162,15 +162,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_floatingscav",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "Get 10 kills while crouched" },
-					new() { ConditionType = "HealthLoss", Value = 2000, Description = "Lose 2,000 HP total" }
+					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "在蹲伏状态下击杀10个目标" },
+					new() { ConditionType = "HealthLoss", Value = 2000, Description = "累计损失2,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-4] Pixel Peek",
-					Description = "Door Peeker. You peeked one pixel around the corner. The server showed your entire body. Two thousand HP lost and ten crouched kills. Desync is a feature, not a bug.",
-					Note = "10 crouched kills and lose 2,000 HP.",
-					SuccessMessage = "Desync acknowledged. Feature confirmed."
+					Name = "[BUGD-4] 像素侦察",
+					Description = "你探出墙角一个像素。服务器显示了你整个身体。损失两千点生命值，十次蹲姿击杀。延迟是特性，不是Bug。",
+					Note = "完成10次蹲姿击杀并损失2,000生命值。",
+					SuccessMessage = "掉线已确认。功能未变。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardDoorPeeker } },
@@ -189,15 +189,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_doorpeeker",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithThrowables", Value = 1000, Description = "Deal 1,000 damage with grenades" },
-					new() { ConditionType = "FixLightBleed", Value = 5, Description = "Fix 5 light bleeds" }
+					new() { ConditionType = "DamageWithThrowables", Value = 1000, Description = "使用手榴弹造成1,000伤害" },
+					new() { ConditionType = "FixLightBleed", Value = 5, Description = "处理5次轻度出血" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-5] Phantom Flash",
-					Description = "Ghost Flashbang. No one threw it. There's no pin on the ground. But your screen is white and you're blind for ten seconds. A thousand grenade damage and five bleeds fixed. The ghost got you.",
-					Note = "1,000 grenade damage and fix 5 light bleeds.",
-					SuccessMessage = "The phantom flashed. You survived."
+					Name = "[BUGD-5] 幽灵闪光",
+					Description = "没人扔。地上没有保险销。但你的屏幕是白的，你瞎了十秒钟。一千点手雷伤害，处理五次流血。幽灵抓住了你。",
+					Note = "造成1,000手雷伤害并处理5次轻流血。",
+					SuccessMessage = "幻影闪过。你活下来了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGhostFlash } },
@@ -216,15 +216,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_ghostflash",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" },
-					new() { ConditionType = "LootItem", Value = 50, Description = "Loot 50 items" }
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" },
+					new() { ConditionType = "LootItem", Value = 50, Description = "搜刮50个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-6] Loot Suspended",
-					Description = "Floating Loot Crate. The crate is hovering two meters off the ground. You can still open it if you jump. Fifty containers searched and fifty items looted. Physics is optional.",
-					Note = "Search 50 containers and loot 50 items.",
-					SuccessMessage = "Physics defied. Loot acquired."
+					Name = "[BUGD-6] 悬浮战利品",
+					Description = "箱子飘在离地两米的地方。你跳起来还是能打开。搜五十个容器，摸五十件物品。物理是可选的。",
+					Note = "搜索50个容器并搜刮50件物品。",
+					SuccessMessage = "物理已违背。战利品已获得。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFloatingCrate } },
@@ -243,15 +243,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_floatingcrate",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileADS", Value = 20, Description = "Get 20 kills while ADS" },
-					new() { ConditionType = "DamageWithDMR", Value = 3000, Description = "Deal 3,000 damage with marksman rifles" }
+					new() { ConditionType = "KillsWhileADS", Value = 20, Description = "在瞄准状态下击杀20个目标" },
+					new() { ConditionType = "DamageWithDMR", Value = 3000, Description = "使用精确步枪造成3,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-7] Scope Lock",
-					Description = "ADS Lock. You aimed down sights and the game forgot to let you stop. Twenty ADS kills and three thousand DMR damage. At least your aim is steady.",
-					Note = "20 ADS kills and 3,000 DMR damage.",
-					SuccessMessage = "Scope locked. Permanently aimed."
+					Name = "[BUGD-7] 瞄具锁定",
+					Description = "你开镜瞄准，然后游戏忘了让你停下来。二十次ADS击杀和三千点DMR伤害。至少你的瞄准是稳定的。",
+					Note = "完成20次ADS击杀并造成3,000 DMR伤害。",
+					SuccessMessage = "瞄具已锁定。永远在瞄准。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardAdsLock } },
@@ -269,15 +269,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_adslock",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithThrowables", Value = 5000, Description = "Deal 5,000 damage with grenades" },
-					new() { ConditionType = "FixHeavyBleed", Value = 10, Description = "Fix 10 heavy bleeds" }
+					new() { ConditionType = "DamageWithThrowables", Value = 5000, Description = "使用手榴弹造成5,000伤害" },
+					new() { ConditionType = "FixHeavyBleed", Value = 10, Description = "处理10次大出血" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-8] Infinite Frag",
-					Description = "The Infinite Grenade. One grenade thrown, twelve explosions heard. Five thousand grenade damage and ten heavy bleeds fixed. The server duplicated your grenade. You're welcome.",
-					Note = "5,000 grenade damage and fix 10 heavy bleeds.",
-					SuccessMessage = "Infinite frags. Infinite shrapnel."
+					Name = "[BUGD-8] 无限手雷",
+					Description = "扔了一颗雷，听到十二次爆炸。五千点手雷伤害和十次大出血处理。服务器复制了你的手雷。不客气。",
+					Note = "造成5,000手雷伤害并处理10次大出血。",
+					SuccessMessage = "无限碎片。无限弹片。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardInfiniteGrenade } },
@@ -291,15 +291,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_infinitegrenade",
 				Objectives = new()
 				{
-					new() { ConditionType = "EncumberedTimeInSeconds", Value = 600, Description = "Spend 600 seconds encumbered" },
-					new() { ConditionType = "LootItem", Value = 100, Description = "Loot 100 items" }
+					new() { ConditionType = "EncumberedTimeInSeconds", Value = 600, Description = "超重状态持续600秒" },
+					new() { ConditionType = "LootItem", Value = 100, Description = "搜刮100个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-9] Weight Glitch",
-					Description = "Invisible Backpack. Your backpack vanished but the weight stayed. Ten minutes encumbered and a hundred items looted. You're carrying nothing and everything at the same time.",
-					Note = "10 min encumbered and loot 100 items.",
-					SuccessMessage = "Weight: yes. Backpack: no."
+					Name = "[BUGD-9] 重量Bug",
+					Description = "你的背包消失了但重量还在。负重十分钟，摸一百件物品。你同时什么都没背又什么都背着。",
+					Note = "负重10分钟并搜刮100件物品。",
+					SuccessMessage = "重量：有。背包：没。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardInvisibleBag } },
@@ -318,14 +318,14 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_invisiblebag",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 15, Description = "Survive and extract 15 times" }
+					new() { ConditionType = "Survive", Value = 15, Description = "存活并撤离15次" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-10] Extract Denied",
-					Description = "MIA by Extraction Bug. You stood in the extract. The timer hit zero. MIA. Survive fifteen raids. This time, the extract will work. Probably.",
-					Note = "Survive and extract 15 times.",
-					SuccessMessage = "Extracted. For real this time."
+					Name = "[BUGD-10] 撤离拒绝",
+					Description = "你站在撤离点。计时归零。MIA。存活十五局。这次撤离会管用的。大概。",
+					Note = "存活并撤离15次。",
+					SuccessMessage = "已撤离。这次是真的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardMiaBug } },
@@ -344,15 +344,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_miabug",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 graphics card", HandoverTargets = new() { GpuItem } },
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" }
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1张显卡", HandoverTargets = new() { GpuItem } },
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-11] Item Not Found",
-					Description = "Vanishing Graphics Card. You found a GPU. You put it in your backpack. It's gone. Hand over one GPU and search a hundred containers. The loot gods giveth and the bugs taketh away.",
-					Note = "Hand over 1 GPU and search 100 containers.",
-					SuccessMessage = "GPU found. This one stayed."
+					Name = "[BUGD-11] 物品未找到",
+					Description = "你找到了一个GPU。你把它放进背包。它不见了。交出一个GPU并搜一百个容器。战利品之神给予，Bug夺走。",
+					Note = "交出1个GPU并搜索100个容器。",
+					SuccessMessage = "GPU找到了。这个没消失。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardVanishingGpu } },
@@ -366,15 +366,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_vanishinggpu",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "KillsWithoutADS", Value = 15, Description = "Get 15 kills without ADS" }
+					new() { ConditionType = "Kills", Value = 30, Description = "击杀30名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "KillsWithoutADS", Value = 15, Description = "不瞄准击杀15个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-12] Teleport Kill",
-					Description = "Teleporting Scav. He was in front of you. Then behind you. Then inside a wall. Thirty scav kills and fifteen hipfire kills. You can't aim at what teleports.",
-					Note = "30 scav kills and 15 hipfire kills.",
-					SuccessMessage = "Teleporter eliminated. All three of him."
+					Name = "[BUGD-12] 瞬移击杀",
+					Description = "他在你前面。然后在你后面。然后在墙里面。三十次Scav击杀和十五次腰射击杀。你没法瞄准会瞬移的东西。",
+					Note = "完成30次Scav击杀和15次腰射击杀。",
+					SuccessMessage = "传送者已消灭。三个全没了。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardTeleportScav } },
@@ -393,15 +393,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_teleportscav",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 20, Description = "Get 20 kills while silent" },
-					new() { ConditionType = "MoveDistanceWhileSilent", Value = 2000, Description = "Move 2,000m silently" }
+					new() { ConditionType = "KillsWhileSilent", Value = 20, Description = "在静默状态下击杀20个目标" },
+					new() { ConditionType = "MoveDistanceWhileSilent", Value = 2000, Description = "静默移动2,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-13] No Sound Detected",
-					Description = "No Footstep Audio. The audio engine forgot to play footsteps. You can't hear them. They can't hear you. Twenty silent kills and two kilometers of silent movement. It's not a bug, it's stealth.",
-					Note = "20 silent kills and 2km silent movement.",
-					SuccessMessage = "Audio engine: offline. Stealth: maximum."
+					Name = "[BUGD-13] 无声模式",
+					Description = "音频引擎忘了播放脚步声。你听不到他们。他们也听不到你。二十次消音击杀和两公里无声移动。这不是Bug，这是潜行。",
+					Note = "完成20次消音击杀并无声移动2公里。",
+					SuccessMessage = "音频引擎：离线。潜行：最大。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardSilentSteps } },
@@ -433,15 +433,15 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_silentsteps",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 10000, Description = "Accumulate 10,000m total shot distance with snipers" }
+					new() { ConditionType = "Kills", Value = 30, Description = "爆头击杀30名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 10000, Description = "使用狙击枪累计10,000米射击距离" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-14] Wall Bang",
-					Description = "Head-Eyes Through Concrete. Behind a wall. Behind a rock. Behind a building. Doesn't matter \u2014 head, eyes. Thirty PMC headshots and ten thousand meters of sniper distance. The bullets find a way.",
-					Note = "30 PMC headshots and 10,000m sniper distance.",
-					SuccessMessage = "Through concrete. Through steel. Head, eyes."
+					Name = "[BUGD-14] 穿墙射击",
+					Description = "穿墙头眼。在墙后面、石头后面、建筑后面。不重要——头，眼。三十次PMC爆头和一万米狙击距离。子弹总会找到路。",
+					Note = "完成30次PMC爆头并累计10,000米狙击距离。",
+					SuccessMessage = "穿墙。穿钢。头眼。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardHeadEyesConcrete } },
@@ -460,17 +460,17 @@ public static class BuggedRealityThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bugd_headeyesconcrete",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 30000, Description = "Lose 30,000 HP total" },
-					new() { ConditionType = "DestroyBodyPart", Value = 20, Description = "Have 20 body parts destroyed" },
-					new() { ConditionType = "RestoreBodyPart", Value = 20, Description = "Restore 20 body parts" },
-					new() { ConditionType = "HealthGain", Value = 10000, Description = "Restore 10,000 HP total" }
+					new() { ConditionType = "HealthLoss", Value = 30000, Description = "累计损失30,000 HP" },
+					new() { ConditionType = "DestroyBodyPart", Value = 20, Description = "摧毁20个身体部位" },
+					new() { ConditionType = "RestoreBodyPart", Value = 20, Description = "恢复20个身体部位" },
+					new() { ConditionType = "HealthGain", Value = 10000, Description = "累计恢复10,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-15] Undying",
-					Description = "0 HP Thorax Survivor. Your thorax hit zero. You should be dead. But you're still standing, still fighting, still extracting. Thirty thousand HP lost, twenty body parts destroyed and restored, ten thousand HP healed. You cannot be killed. You are the bug.",
-					Note = "Lose 30K HP, 20 body parts destroyed + restored, heal 10K HP.",
-					SuccessMessage = "You are the bug. Undying. Unkillable."
+					Name = "[BUGD-15] 不死之身",
+					Description = "你的胸腔归零了。你应该死了。但你依然站着、依然战斗、依然撤离。损失三万点生命值、二十个身体部位被摧毁并修复、治疗一万点生命值。你不可被杀。你就是Bug。",
+					Note = "损失30K生命值，20个身体部位被摧毁并修复，治疗10K生命值。",
+					SuccessMessage = "你就是Bug。不死。不灭。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardZeroHp } },
@@ -499,7 +499,7 @@ public static class BuggedRealityThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 bugged reality cards (one of each)",
+					Description = "上交全部15张Bug现实卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardStairDesync] = "Stair Desync",
@@ -521,10 +521,10 @@ public static class BuggedRealityThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[BUGD-C] Kolya's Bug Report",
-					Description = "Every bug documented, every glitch experienced. From staircase desync to zero HP survival, you've lived through every broken mechanic Tarkov has to offer. Hand over the cards and complete the bug report.",
-					Note = "Hand over one of each bugged reality card to complete the collection.",
-					SuccessMessage = "Bug report filed. Status: Won't Fix."
+					Name = "[BUGD-C] Kolya的Bug报告",
+					Description = "每个Bug都已记录、每个故障都已经历。从楼梯延迟到零血存活，你挺过了塔科夫每一个坏掉的机制。交出卡牌，Bug报告就完成了。",
+					Note = "交出所有Bug主题卡牌各一张以完成收集。",
+					SuccessMessage = "Bug报告已提交。状态：不会修复。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

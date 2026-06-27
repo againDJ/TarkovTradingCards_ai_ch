@@ -68,15 +68,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 food items", HandoverTargets = new() { ClassFood } },
-					new() { ConditionType = "SearchContainer", Value = 20, Description = "Search 20 containers" }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个食物", HandoverTargets = new() { ClassFood } },
+					new() { ConditionType = "SearchContainer", Value = 20, Description = "搜索20个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-0] The Quest Board",
-					Description = "Every quest starts with supplies. Before Kolya shares his notes on the items that defined Tarkov's quest system, bring back some provisions and search a few containers. You'll be doing a lot of both if you want to complete this collection.",
-					Note = "Hand over 5 food items and search 20 containers.",
-					SuccessMessage = "The quest board is open. Let's document them all."
+					Name = "[ITEM-0] 任务布告栏",
+					Description = "每个任务都从补给开始。在Kolya分享他关于定义塔科夫任务系统的物品笔记之前，带回一些物资并搜几个容器。想要完成这个收藏的话，这两样你都要做很多。",
+					Note = "交出5份食物并搜索20个容器。",
+					SuccessMessage = "任务公告栏已开启。让我们记录一切。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderQuestItems } }
@@ -90,15 +90,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract from Customs 2 times", SurviveLocations = new() { "bigmap" } },
-					new() { ConditionType = "SearchContainer", Value = 15, Description = "Search 15 containers" }
+					new() { ConditionType = "Survive", Value = 2, Description = "从海关存活并撤离2次", SurviveLocations = new() { "bigmap" } },
+					new() { ConditionType = "SearchContainer", Value = 15, Description = "搜索15个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-1] The Pocket Watch",
-					Description = "Bronze Pocket Watch. Every PMC's first real objective in Customs \u2014 head to the truck near the construction site, pop the lock, and pray nobody's waiting. Survive two Customs raids and search fifteen containers. Just like the old days.",
-					Note = "Survive Customs 2 times and search 15 containers.",
-					SuccessMessage = "Found it. The watch that started everything."
+					Name = "[ITEM-1] 怀表",
+					Description = "铜怀表。每个PMC在Customs的第一个真正目标——去建筑工地附近的卡车、撬开锁、祈祷没人在等。在Customs存活两次并搜十五个容器。就像从前一样。",
+					Note = "在Customs存活2次并搜索15个容器。",
+					SuccessMessage = "找到了。一切开始的那块怀表。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardPocketWatch } },
@@ -118,15 +118,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				Location = MapWoods,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Woods 3 times", SurviveLocations = new() { "Woods" } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 food items", HandoverTargets = new() { ClassFood } }
+					new() { ConditionType = "Survive", Value = 3, Description = "从森林存活并撤离3次", SurviveLocations = new() { "Woods" } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个食物", HandoverTargets = new() { ClassFood } }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-2] The Huntsman's Note",
-					Description = "Jaeger's Letter. Deep in the Woods near a wrecked plane, an old hunter left a message. Finding it means finding Jaeger himself. Survive three Woods raids and bring back provisions \u2014 the Huntsman appreciates a well-fed operative.",
-					Note = "Survive Woods 3 times and hand over 5 food items.",
-					SuccessMessage = "The letter is found. The Huntsman awaits."
+					Name = "[ITEM-2] 猎人的便条",
+					Description = "Jaeger的信。在Woods深处一架坠毁飞机旁，一个老猎人留下了口信。找到它就意味着找到Jaeger本人。在Woods存活三次并带回补给——猎人欣赏补给充足的干员。",
+					Note = "在Woods存活3次并交出5份食物。",
+					SuccessMessage = "信已找到。猎人在等待。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardJaegerLetter } },
@@ -145,15 +145,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_jaegerletter",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 75000, Description = "Earn 75,000\u20bd from transactions" },
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 Zibbo lighter", HandoverTargets = new() { ZibboItem } }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 75000, Description = "通过交易赚取75,000₽" },
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1个Zibbo打火机", HandoverTargets = new() { ZibboItem } }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-3] Golden Flame",
-					Description = "Golden Zibbo Lighter. A collector's item passed between traders like currency. Therapist wanted it, Mechanic admired it, and everyone searched for it. Earn seventy-five thousand roubles and bring back a Zibbo. The golden flame finds a new home.",
-					Note = "Earn 75,000\u20bd and hand over 1 Zibbo lighter.",
-					SuccessMessage = "The golden flame ignites. A true collector's piece."
+					Name = "[ITEM-3] 金色火焰",
+					Description = "金色Zibbo打火机。像货币一样在商人之间流转的收藏品。Therapist想要它、Mechanic欣赏它、所有人都在找它。赚七万五千卢布并带回一个Zibbo。金色火焰找到新家了。",
+					Note = "赚取75,000₽并交出1个Zibbo打火机。",
+					SuccessMessage = "金色火焰点燃了。真正的收藏品。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardZibbo } },
@@ -167,15 +167,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_zibbo",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 40, Description = "Search 40 containers" },
-					new() { ConditionType = "HandoverItem", Value = 2, Description = "Hand over 2 gas analyzers", HandoverTargets = new() { GasAnalyzerItem } }
+					new() { ConditionType = "SearchContainer", Value = 40, Description = "搜索40个容器" },
+					new() { ConditionType = "HandoverItem", Value = 2, Description = "上交2个气体分析仪", HandoverTargets = new() { GasAnalyzerItem } }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-4] The Analyzer Grind",
-					Description = "Gas Analyzer. The item that broke a thousand keyboards. Every new PMC spends their first week searching every filing cabinet, every shelf, every tech crate for this cursed device. Search forty containers and hand over two gas analyzers. Welcome to the grind.",
-					Note = "Search 40 containers and hand over 2 gas analyzers.",
-					SuccessMessage = "Two gas analyzers. The nightmare is over. Until next wipe."
+					Name = "[ITEM-4] 分析仪之路",
+					Description = "燃气分析仪。毁了无数键盘的物品。每个新PMC的第一周都在搜遍每个文件柜、每个架子、每个科技箱找这个被诅咒的设备。搜四十个容器并交出两个燃气分析仪。欢迎加入肝帝之路。",
+					Note = "搜索40个容器并交出2个燃气分析仪。",
+					SuccessMessage = "两个燃气分析仪。噩梦结束了。到下个档期。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardGasAnalyzer } },
@@ -189,15 +189,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_gasanalyzer",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 5, Description = "Craft 5 items in the hideout" },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 drugs or stimulators", HandoverTargets = new() { ClassDrug, ClassStimulator } }
+					new() { ConditionType = "CraftAnyItem", Value = 5, Description = "在藏身处制作5个物品" },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3个药品或兴奋剂", HandoverTargets = new() { ClassDrug, ClassStimulator } }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-5] Chemical Recipes",
-					Description = "Reagent Bottle #3. Skier's chemistry quest line turned every PMC into an amateur pharmacist. Craft five items in your hideout and hand over three drugs or stimulants. The formula demands ingredients.",
-					Note = "Craft 5 items and hand over 3 drugs/stimulators.",
-					SuccessMessage = "The formula is complete. Chemistry pays off."
+					Name = "[ITEM-5] 化学配方",
+					Description = "试剂瓶#3。Skier的化学品任务线把每个PMC变成了业余药剂师。在藏身处做五件物品并交出三份药物或兴奋剂。配方需要原料。",
+					Note = "制作5件物品并交出3份药物/兴奋剂。",
+					SuccessMessage = "配方已完成。化学实验有回报。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardReagentBottle } },
@@ -217,15 +217,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_reagentbottle",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 30, Description = "Search 30 containers" },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 keys", HandoverTargets = new() { ClassKeyMechanical } }
+					new() { ConditionType = "SearchContainer", Value = 30, Description = "搜索30个容器" },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3把钥匙", HandoverTargets = new() { ClassKeyMechanical } }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-6] The Keymaster",
-					Description = "Unknown Key with Note. Found in a jacket pocket with a cryptic note attached. Every key in Tarkov hides a story and a room full of loot. Search thirty containers and hand over three keys \u2014 the keymaster's offering.",
-					Note = "Search 30 containers and hand over 3 keys.",
-					SuccessMessage = "Another key, another door, another story."
+					Name = "[ITEM-6] 钥匙大师",
+					Description = "带便条的未知钥匙。在夹克口袋里发现的，附着一张神秘便条。塔科夫的每把钥匙都藏着一个故事和一个充满战利品的房间。搜三十个容器并交出三把钥匙——钥匙大师的贡品。",
+					Note = "搜索30个容器并交出3把钥匙。",
+					SuccessMessage = "又一把钥匙，又一道门，又一个故事。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardUnknownKey } },
@@ -245,15 +245,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_unknownkey",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 secure flash drives", HandoverTargets = new() { FlashDriveItem } },
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" }
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3个加密U盘", HandoverTargets = new() { FlashDriveItem } },
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-7] Data Recovery",
-					Description = "Secure Flash Drive. Every intelligence operative needs data. These drives show up in filing cabinets, computer towers, and the occasional dead scav's pocket. Hand over three flash drives and search fifty containers. Data recovery is a slow business.",
-					Note = "Hand over 3 flash drives and search 50 containers.",
-					SuccessMessage = "Three drives recovered. The data speaks volumes."
+					Name = "[ITEM-7] 数据恢复",
+					Description = "安全U盘。每个情报人员都需要数据。这些U盘出现在文件柜、电脑主机和偶尔死Scav的口袋里。交出三个U盘并搜五十个容器。数据恢复是慢活。",
+					Note = "交出3个U盘并搜索50个容器。",
+					SuccessMessage = "三个U盘已恢复。数据诉说一切。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardFlashDrive } },
@@ -267,15 +267,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_flashdrive",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 2, Description = "Hand over 2 car batteries", HandoverTargets = new() { CarBatteryItem } },
-					new() { ConditionType = "CompleteWorkout", Value = 1, Description = "Complete 1 gym workout" }
+					new() { ConditionType = "HandoverItem", Value = 2, Description = "上交2个汽车电池", HandoverTargets = new() { CarBatteryItem } },
+					new() { ConditionType = "CompleteWorkout", Value = 1, Description = "完成1次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-8] Heavy Lifting",
-					Description = "Car Battery. Twelve kilos of lead and acid that every PMC has lugged across a map at least once. The weight slows you down, the fear speeds you up. Hand over two car batteries and hit the gym. You'll need the strength.",
-					Note = "Hand over 2 car batteries and complete 1 gym workout.",
-					SuccessMessage = "Batteries delivered. Your back will recover. Eventually."
+					Name = "[ITEM-8] 负重训练",
+					Description = "汽车电池。每个PMC至少一次扛着这十二公斤的铅和酸穿越整张地图。重量让你慢下来，恐惧让你快起来。交出两个汽车电池并去健身。你会需要力气的。",
+					Note = "交出2个汽车电池并完成1次健身。",
+					SuccessMessage = "电池已交付。你的背最终会好的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCarBattery } },
@@ -289,15 +289,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_carbattery",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 saline solutions", HandoverTargets = new() { SalineItem } },
-					new() { ConditionType = "HealthGain", Value = 2000, Description = "Restore 2,000 HP total" }
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3个生理盐水", HandoverTargets = new() { SalineItem } },
+					new() { ConditionType = "HealthGain", Value = 2000, Description = "累计恢复2,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-9] Sample Collection",
-					Description = "Chemical Sample Vials. Medical research in Tarkov requires steady hands and a strong stomach. Collect three saline solutions and restore two thousand health points. Science demands sacrifice.",
-					Note = "Hand over 3 saline solutions and restore 2,000 HP.",
-					SuccessMessage = "Samples collected. The research continues."
+					Name = "[ITEM-9] 样本采集",
+					Description = "化学品样本管。塔科夫的医学研究需要稳定的手和强大的胃。收集三袋生理盐水并恢复两千点生命值。科学需要牺牲。",
+					Note = "交出3袋生理盐水并恢复2,000生命值。",
+					SuccessMessage = "样本已采集。研究继续。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSampleVials } },
@@ -317,15 +317,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_samplevials",
 				Objectives = new()
 				{
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Upgrade Generator to level 2", HideoutAreaType = 4, HideoutAreaLevel = 2 },
-					new() { ConditionType = "HandoverItem", Value = 20, Description = "Hand over 20 electronic components", HandoverTargets = new() { ClassElectronics } }
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "将发电机升级到2级", HideoutAreaType = 4, HideoutAreaLevel = 2 },
+					new() { ConditionType = "HandoverItem", Value = 20, Description = "上交20个电子元件", HandoverTargets = new() { ClassElectronics } }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-10] Power Grid",
-					Description = "Military Power Filter. The backbone of every hideout's electrical system. Without it, the generator stays at level one and half your crafts don't work. Upgrade your generator to level two and bring back twenty electronic components.",
-					Note = "Generator level 2 and hand over 20 electronic components.",
-					SuccessMessage = "Power grid stabilized. The hideout hums."
+					Name = "[ITEM-10] 电网",
+					Description = "军用电源滤波器。每个藏身处电力系统的支柱。没它，发电机只能停在一级，你一半的制作都做不了。把发电机升到二级并带回二十个电子元件。",
+					Note = "2级发电机并交出20个电子元件。",
+					SuccessMessage = "电网已稳定。藏身处嗡嗡作响。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardPowerFilter } },
@@ -344,15 +344,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_powerfilter",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthGain", Value = 3000, Description = "Restore 3,000 HP total" },
-					new() { ConditionType = "RestoreBodyPart", Value = 5, Description = "Restore 5 body parts" }
+					new() { ConditionType = "HealthGain", Value = 3000, Description = "累计恢复3,000 HP" },
+					new() { ConditionType = "RestoreBodyPart", Value = 5, Description = "恢复5个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-11] Field Medic Protocol",
-					Description = "Blood Sample Kit. Therapist's medical quests taught every PMC the value of field medicine. Restore three thousand health points and bring five body parts back from zero. The field medic protocol never ends.",
-					Note = "Restore 3,000 HP and restore 5 body parts.",
-					SuccessMessage = "Samples processed. Therapist would be proud."
+					Name = "[ITEM-11] 战地医疗协议",
+					Description = "血样采集套装。Therapist的医疗任务教会了每个PMC战地医疗的价值。恢复三千点生命值并把五个身体部位从零拉回来。战地医疗协议永不完结。",
+					Note = "恢复3,000生命值并修复5个身体部位。",
+					SuccessMessage = "样本已处理。Therapist会骄傲的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBloodSampleKit } },
@@ -372,16 +372,16 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_bloodsamplekit",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" },
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 LEDX Skin Transilluminator", HandoverTargets = new() { LedxItem } },
-					new() { ConditionType = "LootItem", Value = 100, Description = "Loot 100 items" }
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" },
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1个LEDX皮肤透照器", HandoverTargets = new() { LedxItem } },
+					new() { ConditionType = "LootItem", Value = 100, Description = "搜刮100个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-12] The Holy Grail",
-					Description = "LEDX Skin Transilluminator. The most sought-after medical device in Tarkov. Found in medical rooms behind locked doors, fought over by squads, worth more than most loadouts combined. Search a hundred containers, loot a hundred items, and hand over one LEDX. The holy grail of quest items.",
-					Note = "Search 100 containers, loot 100 items, hand over 1 LEDX.",
-					SuccessMessage = "The holy grail is found. Kolya handles it with reverence."
+					Name = "[ITEM-12] 圣杯",
+					Description = "LEDX透皮照明器。塔科夫最抢手的医疗设备。在锁着的门后面的医疗房里被发现、被小队争夺、价值超过大多数装备组合。搜一百个容器、摸一百件物品、交出一个LEDX。任务物品中的圣杯。",
+					Note = "搜索100个容器，搜刮100件物品，交出1个LEDX。",
+					SuccessMessage = "圣杯找到了。Kolya恭敬地接过它。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardLedx } },
@@ -395,15 +395,15 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_ledx",
 				Objectives = new()
 				{
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Bitcoin Farm level 2", HideoutAreaType = 20, HideoutAreaLevel = 2 },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 3000000, Description = "Earn 3,000,000\u20bd from transactions" }
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有2级比特币农场", HideoutAreaType = 20, HideoutAreaLevel = 2 },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 3000000, Description = "通过交易赚取3,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-13] Digital Gold",
-					Description = "Tetriz Portable Game Console. Not just a nostalgic toy \u2014 it's the key to Bitcoin farming. Every PMC who's maxed their Bitcoin farm knows the Tetriz-to-Bitcoin pipeline. Reach Bitcoin Farm level two and earn three million roubles. Digital gold.",
-					Note = "Bitcoin Farm level 2 and earn 3,000,000\u20bd.",
-					SuccessMessage = "The Bitcoin farm hums. Digital gold flows."
+					Name = "[ITEM-13] 数字黄金",
+					Description = "Tetriz便携游戏机。不只是怀旧玩具——它是比特币挖矿的钥匙。每个把比特币矿场升满的PMC都懂Tetriz到比特币的流水线。达到比特币矿场二级并赚三百万卢布。数字黄金。",
+					Note = "2级比特币矿场并赚取3,000,000₽。",
+					SuccessMessage = "比特币矿场嗡嗡作响。数字黄金在流淌。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardTetriz } },
@@ -417,16 +417,16 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_tetriz",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 tank battery", HandoverTargets = new() { TankBatteryItem } },
-					new() { ConditionType = "OverEncumberedTimeInSeconds", Value = 300, Description = "Spend 300 seconds overencumbered" },
-					new() { ConditionType = "CompleteWorkout", Value = 10, Description = "Complete 10 gym workouts" }
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1个坦克电池", HandoverTargets = new() { TankBatteryItem } },
+					new() { ConditionType = "OverEncumberedTimeInSeconds", Value = 300, Description = "严重超重状态持续300秒" },
+					new() { ConditionType = "CompleteWorkout", Value = 10, Description = "完成10次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-14] The Behemoth",
-					Description = "Tank Battery. Sixty-five kilograms of raw power. Finding one is hard enough \u2014 extracting with it is the real challenge. Your movement speed drops to nothing, and every PMC on the map can hear you shuffling. Hand over a tank battery, spend five minutes overweight in raids, and hit the gym ten times. Only the strongest carry the Behemoth.",
-					Note = "Hand over 1 tank battery, 5 min overencumbered, 10 gym workouts.",
-					SuccessMessage = "The Behemoth is delivered. Legends carry sixty-five kilos."
+					Name = "[ITEM-14] 巨兽",
+					Description = "坦克电池。六十五公斤的原始力量。找到已经够难了——背着它撤离才是真正的挑战。你的移动速度降到几乎没有，地图上每个PMC都能听到你艰难的脚步。交出一个坦克电池、在战局中超重五分钟、去十次健身。只有最强健的人才能扛起巨兽。",
+					Note = "交出1个坦克电池，超重5分钟，完成10次健身。",
+					SuccessMessage = "巨兽已送达。传奇扛得起六十五公斤。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardTankBattery } },
@@ -440,16 +440,16 @@ public static class MemorableQuestItemsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_item_tankbattery",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 intelligence folders", HandoverTargets = new() { IntelFolderItem } },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "Earn 5,000,000\u20bd from transactions" },
-					new() { ConditionType = "SearchContainer", Value = 200, Description = "Search 200 containers" }
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3份情报文件夹", HandoverTargets = new() { IntelFolderItem } },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "通过交易赚取5,000,000₽" },
+					new() { ConditionType = "SearchContainer", Value = 200, Description = "搜索200个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-15] The Intelligence Network",
-					Description = "Folder with Intelligence. The ultimate quest currency. Every high-tier quest and scav case demands intelligence folders. They contain classified documents, operational data, and the kind of information that makes or breaks operations. Hand over three folders, earn five million roubles, and search two hundred containers. Intelligence is everything.",
-					Note = "Hand over 3 intel folders, earn 5,000,000\u20bd, search 200 containers.",
-					SuccessMessage = "The intelligence network is established. Knowledge is power."
+					Name = "[ITEM-15] 情报网络",
+					Description = "情报文件夹。终极任务货币。每个高级任务和Scav宝箱都要求情报文件夹。它们包含机密文件、作战数据和那种能决定成败的信息。交出三个文件夹、赚五百万卢布、搜两百个容器。情报就是一切。",
+					Note = "交出3个情报文件夹，赚取5,000,000₽，搜索200个容器。",
+					SuccessMessage = "情报网络已建立。信息就是力量。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardIntelFolder } },
@@ -478,7 +478,7 @@ public static class MemorableQuestItemsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 quest item cards (one of each)",
+					Description = "上交全部15张任务物品卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardPocketWatch] = "Pocket Watch",
@@ -500,10 +500,10 @@ public static class MemorableQuestItemsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[ITEM-C] Kolya's Quest Museum",
-					Description = "Every item documented, every quest referenced. From the Bronze Pocket Watch to the Intelligence Folder, you've collected the artifacts that define Tarkov's quest system. Hand over the cards and complete the museum.",
-					Note = "Hand over one of each quest item card to complete the collection.",
-					SuccessMessage = "The Quest Museum is complete. Every item accounted for."
+					Name = "[ITEM-C] Kolya的任务博物馆",
+					Description = "每个物品都已记录、每个任务都已引用。从铜怀表到情报文件夹，你收集了定义塔科夫任务系统的神器。交出卡牌，任务博物馆就完整了。",
+					Note = "交出所有任务物品卡牌各一张以完成收集。",
+					SuccessMessage = "任务博物馆已完成。每件物品都已记录。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

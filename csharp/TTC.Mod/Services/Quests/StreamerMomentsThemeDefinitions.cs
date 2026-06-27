@@ -116,15 +116,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileADS", Value = 5, Description = "Get 5 kills while aiming down sights" },
-					new() { ConditionType = "DamageWithAR", Value = 500, Description = "Deal 500 damage with assault rifles" }
+					new() { ConditionType = "KillsWhileADS", Value = 5, Description = "在瞄准状态下击杀5个目标" },
+					new() { ConditionType = "DamageWithAR", Value = 500, Description = "使用突击步枪造成500伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-0] The Highlight Reel",
-					Description = "Every streamer has a highlight reel. The clutch plays, the impossible shots, the moments that make chat go wild. Before Kolya shares his collection of legendary streamer moments, show him you've got content potential. Five ADS kills and five hundred AR damage. Camera's rolling.",
-					Note = "5 ADS kills and 500 AR damage.",
-					SuccessMessage = "Camera's rolling. Content potential confirmed."
+					Name = "[STRM-0] 精彩集锦",
+					Description = "每个主播都有精彩集锦。绝地翻盘、不可能的枪法、让聊天室疯狂的瞬间。在Kolya分享他的传奇主播时刻收藏之前，先让他看看你有内容潜力。五次ADS击杀和五百AR伤害。镜头在拍了。",
+					Note = "完成5次ADS击杀并造成500 AR伤害。",
+					SuccessMessage = "镜头开着。内容潜力已确认。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderStreamer } }
@@ -138,15 +138,15 @@ public static class StreamerMomentsThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Factory 3 times", SurviveLocations = new() { "factory4_day", "factory4_night" } },
-					new() { ConditionType = "KillsWithoutADS", Value = 3, Description = "Get 3 kills without ADS" }
+					new() { ConditionType = "Survive", Value = 3, Description = "从工厂存活并撤离3次", SurviveLocations = new() { "factory4_day", "factory4_night" } },
+					new() { ConditionType = "KillsWithoutADS", Value = 3, Description = "不瞄准击杀3个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-1] Naked and Famous",
-					Description = "Hatchling Diplomat. The streamer classic \u2014 load into Factory with nothing, wiggle at everyone, and somehow walk out alive. Survive Factory three times and get three hipfire kills. Content gold.",
-					Note = "Survive Factory 3 times and 3 hipfire kills.",
-					SuccessMessage = "Naked and famous. The hatchling way."
+					Name = "[STRM-1] 裸奔成名",
+					Description = "跑刀外交官。主播经典——空手进Factory、向所有人摇摆、不知怎么活着走出来。在Factory存活三次并完成三次腰射击杀。内容黄金。",
+					Note = "在Factory存活3次并完成3次腰射击杀。",
+					SuccessMessage = "光屁股而成名。跑刀仔之路。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardHatchling } },
@@ -165,20 +165,20 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_hatchling",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 200000, Description = "Earn 200,000\u20bd from transactions" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 200000, Description = "通过交易赚取200,000₽" },
 					new()
 					{
-						ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs with iron sights only",
+						ConditionType = "Kills", Value = 10, Description = "仅使用机械瞄具击杀10名Scav",
 						KillTarget = "Savage",
 						KillWeaponModsExclusive = AllScopeClassIds.Select(id => new List<string> { id }).ToList()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[STRM-2] The Budget Build",
-					Description = "JesseKazam Budget Warrior. The king of budget builds \u2014 proving you don't need meta gear to dominate. Earn two hundred thousand roubles and eliminate ten scavs with iron sights only. Budget excellence.",
-					Note = "Earn 200,000\u20bd and 10 scav kills with iron sights.",
-					SuccessMessage = "Budget build. Maximum value."
+					Name = "[STRM-2] 经济装备",
+					Description = "JesseKazam预算战士。预算之王——证明不需要Meta装备也能统治战场。赚二十万卢布并只用机瞄消灭十个Scav。预算卓越。",
+					Note = "赚取200,000₽并用机瞄击杀10个Scav。",
+					SuccessMessage = "经济装备。最高性价比。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardJesseKazam } },
@@ -197,15 +197,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_jessekazam",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 30, Description = "Search 30 containers" },
-					new() { ConditionType = "LootItem", Value = 30, Description = "Loot 30 items" }
+					new() { ConditionType = "SearchContainer", Value = 30, Description = "搜索30个容器" },
+					new() { ConditionType = "LootItem", Value = 30, Description = "搜刮30个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-3] Patch Day",
-					Description = "Onepeg Patch Breakdown. Every patch, every change, every hidden nerf \u2014 Onepeg breaks it all down. Search thirty containers and loot thirty items. Patch notes are just the beginning.",
-					Note = "Search 30 containers and loot 30 items.",
-					SuccessMessage = "Patch analyzed. Hidden changes found."
+					Name = "[STRM-3] 补丁日",
+					Description = "Onepeg补丁分析。每次更新、每次改动、每个隐藏削弱——Onepeg全分析透。搜三十个容器摸三十件物品。补丁说明只是开始。",
+					Note = "搜索30个容器并搜刮30件物品。",
+					SuccessMessage = "补丁已分析。隐藏变化已发现。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardOnepeg } },
@@ -224,15 +224,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_onepeg",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 5, Description = "Craft 5 items" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 100000, Description = "Earn 100,000\u20bd from transactions" }
+					new() { ConditionType = "CraftAnyItem", Value = 5, Description = "制作5个物品" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 100000, Description = "通过交易赚取100,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-4] Bug Report",
-					Description = "NiceGuy Dev Tracker. The community's watchdog \u2014 tracking every dev response, every bug report, every promise. Craft five items and earn a hundred thousand roubles. Someone has to keep track.",
-					Note = "Craft 5 items and earn 100,000\u20bd.",
-					SuccessMessage = "Bug report filed. Status: Acknowledged."
+					Name = "[STRM-4] 问题报告",
+					Description = "NiceGuy开发者追踪。社区的看门狗——追踪每次开发者回应、每个Bug报告、每个承诺。做五件物品赚十万卢布。总得有人来追踪。",
+					Note = "制作5件物品并赚取100,000₽。",
+					SuccessMessage = "Bug报告已提交。状态：已确认。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardNiceGuy } },
@@ -251,15 +251,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_niceguy",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 10, Description = "Hand over 10 food items", HandoverTargets = new() { ClassFood } },
-					new() { ConditionType = "HandoverItem", Value = 10, Description = "Hand over 10 electronic components", HandoverTargets = new() { ClassElectronics } }
+					new() { ConditionType = "HandoverItem", Value = 10, Description = "上交10个食物", HandoverTargets = new() { ClassFood } },
+					new() { ConditionType = "HandoverItem", Value = 10, Description = "上交10个电子元件", HandoverTargets = new() { ClassElectronics } }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-5] Inventory Management",
-					Description = "Stash Tetris World Record. The art of fitting one more item into an already full stash. Hand over ten food items and ten electronic components. Kolya needs to reorganize.",
-					Note = "Hand over 10 food and 10 electronics.",
-					SuccessMessage = "Perfect fit. Not a single cell wasted."
+					Name = "[STRM-5] 仓库管理",
+					Description = "仓库俄罗斯方块世界纪录。往已经满的仓库里再多塞一件物品的艺术。交出十份食物和十个电子元件。Kolya需要重新整理。",
+					Note = "交出10份食物和10个电子元件。",
+					SuccessMessage = "完美契合。一格子都没浪费。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardStashTetris } },
@@ -277,20 +277,20 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_stashtetris",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "Get 10 kills while silent" },
+					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "在静默状态下击杀10个目标" },
 					new()
 					{
-						ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs with suppressed weapons",
+						ConditionType = "Kills", Value = 5, Description = "使用消音武器击杀5名PMC",
 						KillTarget = "AnyPmc",
 						KillWeaponModsInclusive = new() { new() { ClassSilencer } }
 					}
 				},
 				Locale = new()
 				{
-					Name = "[STRM-6] Sound Whoring",
-					Description = "Veritas Audio Trap. The man who taught Tarkov to listen. Every footstep, every reload, every bush rustle \u2014 Veritas hears it all. Ten silent kills and five PMC kills with a suppressor. Hear them before they hear you.",
-					Note = "10 silent kills and 5 PMC kills with suppressor.",
-					SuccessMessage = "Every sound tells a story."
+					Name = "[STRM-6] 听声辨位",
+					Description = "Veritas声音陷阱。教会塔科夫倾听的人。每一次脚步、每一次换弹、每一次草丛窸窣——Veritas全听见了。十次消音击杀和五次消音器PMC击杀。在他们听到你之前听到他们。",
+					Note = "完成10次消音击杀和5次消音器PMC击杀。",
+					SuccessMessage = "每个声音都在讲一个故事。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardVeritas } },
@@ -310,16 +310,16 @@ public static class StreamerMomentsThemeDefinitions
 				{
 					new()
 					{
-						ConditionType = "Kills", Value = 3, Description = "Eliminate 3 bosses",
+						ConditionType = "Kills", Value = 3, Description = "击杀3名Boss",
 						KillTarget = "Savage", KillSavageRole = AllBossRoles
 					}
 				},
 				Locale = new()
 				{
-					Name = "[STRM-7] Solo Hunt",
-					Description = "DeadlySlob Solo Boss. The solo hunter \u2014 tracking down bosses across Tarkov with nothing but skill and patience. Kill three bosses on any map. The hunt is on.",
-					Note = "Eliminate 3 bosses.",
-					SuccessMessage = "Three bosses down. Solo. Legend."
+					Name = "[STRM-7] 独狼猎杀",
+					Description = "DeadlySlob独狼Boss。独狼猎手——仅凭技巧和耐心在塔科夫各地追踪Boss。在任意地图杀三个Boss。狩猎开始了。",
+					Note = "消灭3个Boss。",
+					SuccessMessage = "三个Boss倒下。单人。传奇。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardDeadlySlob } },
@@ -340,18 +340,18 @@ public static class StreamerMomentsThemeDefinitions
 				{
 					new()
 					{
-						ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets in the dorms area",
+						ConditionType = "Kills", Value = 5, Description = "在宿舍区击杀5个目标",
 						KillTarget = "Any", KillLocations = new() { "bigmap" },
 						KillZoneIds = new() { "huntsman_020" }
 					},
-					new() { ConditionType = "KillsWhileCrouched", Value = 5, Description = "Get 5 kills while crouched" }
+					new() { ConditionType = "KillsWhileCrouched", Value = 5, Description = "在蹲伏状态下击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-8] The Dorms Classic",
-					Description = "Ambush at Dorms 3-Story. The clip that every Tarkov streamer has \u2014 crouched in a dorm room, door closed, waiting for the footsteps. Ten kills in the dorms and ten crouched kills. The dorms classic.",
-					Note = "10 kills in dorms and 10 crouched kills.",
-					SuccessMessage = "The dorms are yours."
+					Name = "[STRM-8] 宿舍楼经典",
+					Description = "三层宿舍楼的伏击。每个塔科夫主播都有的经典片段——蹲在宿舍楼房间里、门关着、等待脚步。在宿舍楼杀十个并完成十次蹲姿击杀。宿舍楼经典。",
+					Note = "在宿舍楼击杀10人并完成10次蹲姿击杀。",
+					SuccessMessage = "宿舍楼归你了。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardDormsAmbush } },
@@ -371,15 +371,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_dormsambush",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets with headshots", KillTarget = "Any", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "DamageWithDMR", Value = 5000, Description = "Deal 5,000 damage with marksman rifles" }
+					new() { ConditionType = "Kills", Value = 10, Description = "爆头击杀10个目标", KillTarget = "Any", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "DamageWithDMR", Value = 5000, Description = "使用精确步枪造成5,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-9] One Tap Montage",
-					Description = "Don't Peek \u2013 Montage. The compilation clip of one-taps that makes chat spam 'HEAD EYES'. Ten headshots and five thousand DMR damage. Don't peek the angle.",
-					Note = "10 headshots and 5,000 DMR damage.",
-					SuccessMessage = "HEAD EYES. Don't peek."
+					Name = "[STRM-9] 一枪集锦",
+						Description = "别探头的集锦。让聊天室刷“头眼”的一枪合集。十次爆头和五千DMR伤害。别探头看那个角度。",
+					Note = "完成10次爆头并造成5,000 DMR伤害。",
+					SuccessMessage = "头眼。别探头。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardDontPeek } },
@@ -397,15 +397,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_dontpeek",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithThrowables", Value = 3000, Description = "Deal 3,000 damage with grenades" },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 targets from under 15m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
+					new() { ConditionType = "DamageWithThrowables", Value = 3000, Description = "使用手榴弹造成3,000伤害" },
+					new() { ConditionType = "Kills", Value = 5, Description = "在15米内击杀5个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-10] Kobe!",
-					Description = "Grenade Kobe Clip. The perfect arc, the perfect bounce, the perfect kill. Three thousand grenade damage and five close-range kills. KOBE!",
-					Note = "3,000 grenade damage and 5 kills <15m.",
-					SuccessMessage = "KOBE! Nothing but net."
+					Name = "[STRM-10] 科比！",
+					Description = "手雷Kobe集锦。完美的弧线、完美的反弹、完美的击杀。三千手雷伤害和五次近距击杀。KOBE！",
+					Note = "造成3,000手雷伤害并完成5次15米内击杀。",
+					SuccessMessage = "KOBE！空心入网。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardKobe } },
@@ -423,16 +423,16 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_kobe",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "Survive", Value = 15, Description = "Survive and extract 15 times" }
+					new() { ConditionType = "Kills", Value = 30, Description = "击杀30名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 10, Description = "爆头击杀10名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "Survive", Value = 15, Description = "存活并撤离15次" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-11] The Marathon",
-					Description = "Pestily's Punisher Marathon. The man who speed-runs the entire Punisher quest line in a single stream. Thirty PMC kills, ten headshots, fifteen extractions. Marathon, not sprint. Actually, sprint.",
-					Note = "30 PMC kills, 10 headshots, survive 15 times.",
-					SuccessMessage = "Marathon complete. Pestily would be proud."
+					Name = "[STRM-11] 马拉松",
+					Description = "Pestily的惩罚者马拉松。在一场直播中速通整个惩罚者任务线的男人。三十次PMC击杀、十次爆头、十五次撤离。马拉松，不是冲刺。其实，还是冲刺。",
+					Note = "完成30次PMC击杀、10次爆头，存活15次。",
+					SuccessMessage = "马拉松完成。Pestily会骄傲的。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardPestily } },
@@ -454,17 +454,17 @@ public static class StreamerMomentsThemeDefinitions
 				{
 					new()
 					{
-						ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets on Labs",
+						ConditionType = "Kills", Value = 20, Description = "在实验室击杀20个目标",
 						KillTarget = "Any", KillLocations = new() { "laboratory" }
 					},
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from Labs 5 times", SurviveLocations = new() { "laboratory" } }
+					new() { ConditionType = "Survive", Value = 5, Description = "从实验室存活并撤离5次", SurviveLocations = new() { "laboratory" } }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-12] Lights Out",
-					Description = "Klean Night Labs Run. Labs \u2014 fluorescent lights flickering, every shadow could be a raider or a PMC. Twenty kills on Labs and five extractions. Lights out.",
-					Note = "20 kills on Labs and survive 5 times.",
-					SuccessMessage = "Lights out. Labs cleared."
+					Name = "[STRM-12] 熄灯",
+					Description = "Klean夜间Labs跑。Labs——荧光灯闪烁、每个阴影都可能是Raider或PMC。在Labs杀二十个并撤离五次。熄灯。",
+					Note = "在Labs击杀20人并存活5次。",
+					SuccessMessage = "灯灭了。实验室已清理。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardKlean } },
@@ -482,15 +482,15 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_klean",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs from over 150m", KillTarget = "AnyPmc", KillDistanceCompare = ">=", KillDistanceValue = 150 },
-					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 5000, Description = "Accumulate 5,000m total shot distance with snipers" }
+					new() { ConditionType = "Kills", Value = 5, Description = "在150米外击杀5名PMC", KillTarget = "AnyPmc", KillDistanceCompare = ">=", KillDistanceValue = 150 },
+					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 5000, Description = "使用狙击枪累计5,000米射击距离" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-13] Cross-Map Headshot",
-					Description = "Stream Sniper Outplayed. They came to ruin the stream, and they got outplayed from 200 meters. Five PMC kills from over 150 meters and five thousand meters of total sniper shot distance. Counter-snipe the snipers.",
-					Note = "5 PMC kills >150m and 5,000m sniper distance.",
-					SuccessMessage = "Outplayed. From 200 meters."
+					Name = "[STRM-13] 全图爆头",
+					Description = "直播狙击被反杀。他们来毁直播，然后从两百米外被反杀。五次一百五十米外PMC击杀和五千米累计狙击距离。反狙击狙击手。",
+					Note = "完成5次150米外PMC击杀并累计5,000米狙击距离。",
+					SuccessMessage = "被反杀了。从200米外。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardOutplayed } },
@@ -508,16 +508,16 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_outplayed",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs in a single raid", KillTarget = "AnyPmc", KillResetOnSessionEnd = true },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 PMCs total", KillTarget = "AnyPmc" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "Earn 10,000,000\u20bd from transactions" }
+					new() { ConditionType = "Kills", Value = 5, Description = "单局击杀5名PMC", KillTarget = "AnyPmc", KillResetOnSessionEnd = true },
+					new() { ConditionType = "Kills", Value = 50, Description = "累计击杀50名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "通过交易赚取10,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-14] From Nothing to Everything",
-					Description = "Zero to Hero Run. Start with nothing, end with everything. The ultimate streamer challenge \u2014 five PMCs in a single raid, fifty total, and ten million roubles earned. From zero to legend.",
-					Note = "5 PMC kills in one raid, 50 total, earn 10M\u20bd.",
-					SuccessMessage = "From zero to legend."
+					Name = "[STRM-14] 从一无所有到拥有一切",
+					Description = "从零到英雄。空手开始，满载结束。终极主播挑战——一局内五个PMC、总计五十个、赚一千万卢布。从零到传奇。",
+					Note = "一局内击杀5个PMC，共50个，赚取10M₽。",
+					SuccessMessage = "从零到传奇。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardZeroToHero } },
@@ -536,16 +536,16 @@ public static class StreamerMomentsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_strm_zerotohero",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets in a single raid", KillTarget = "Any", KillResetOnSessionEnd = true },
-					new() { ConditionType = "Kills", Value = 100, Description = "Eliminate 100 PMCs total", KillTarget = "AnyPmc" },
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 50000, Description = "Cover 50,000m while running" }
+					new() { ConditionType = "Kills", Value = 20, Description = "单局击杀20个目标", KillTarget = "Any", KillResetOnSessionEnd = true },
+					new() { ConditionType = "Kills", Value = 100, Description = "累计击杀100名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 50000, Description = "奔跑50,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[STRM-15] The Lobby Wipe",
-					Description = "LVNDMARK's 10-Man Wipe. The clip that broke Twitch. Twenty kills in a single raid \u2014 wipe the entire lobby. A hundred PMC kills total and fifty kilometers of W-key sprinting. Become the lobby boss.",
-					Note = "20 kills in one raid, 100 PMC kills total, 50km running.",
-					SuccessMessage = "LOBBY WIPED."
+					Name = "[STRM-15] 灭队",
+					Description = "LVNDMARK的灭队。打破Twitch的片段。一局内二十个击杀——清空整个大厅。总计一百个PMC击杀和五十公里W键冲刺。成为大厅Boss。",
+					Note = "一局内击杀20人，共100个PMC击杀，跑50公里。",
+					SuccessMessage = "清场完毕。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardLvndmark } },
@@ -573,7 +573,7 @@ public static class StreamerMomentsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 streamer cards (one of each)",
+					Description = "上交全部15张主播时刻卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardHatchling] = "Hatchling Diplomat",
@@ -595,10 +595,10 @@ public static class StreamerMomentsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[STRM-C] Kolya's Hall of Fame",
-					Description = "Every streamer moment documented, every legendary play immortalized. From the hatchling diplomat to the 10-man wipe, you've relived the greatest moments in Tarkov content history. Hand over the cards and complete the Hall of Fame.",
-					Note = "Hand over one of each streamer card to complete the collection.",
-					SuccessMessage = "The Hall of Fame is complete. Legends immortalized."
+					Name = "[STRM-C] Kolya的名人堂",
+					Description = "每个主播时刻都已记录、每个传奇操作永垂不朽。从跑刀外交官到十人灭队，你重温了塔科夫内容史上最伟大的瞬间。交出卡牌，名人堂就完整了。",
+					Note = "交出所有主播时刻卡牌各一张以完成收集。",
+					SuccessMessage = "名人堂已完成。传奇永垂不朽。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

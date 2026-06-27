@@ -67,15 +67,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "FixAnyMalfunction", Value = 1, Description = "Fix 1 weapon malfunction" },
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract 2 times" }
+					new() { ConditionType = "FixAnyMalfunction", Value = 1, Description = "修复1次武器故障" },
+					new() { ConditionType = "Survive", Value = 2, Description = "存活并撤离2次" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-0] Patch Notes Loaded",
-					Description = "Patch 0.14.X.X \u2014 Known issues: everything. Fix a weapon malfunction and survive two raids. The patch is live. Good luck.",
-					Note = "Fix 1 malfunction and survive 2 times.",
-					SuccessMessage = "Patch applied. Known issues remain."
+					Name = "[PTCH-0] 补丁说明已加载",
+					Description = "补丁0.14.X.X——已知问题：一切。修复一次武器故障并存活两局。补丁已上线。祝你好运。",
+					Note = "修复1次故障并存活2次。",
+					SuccessMessage = "补丁已应用。已知问题依然存在。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderPatch } }
@@ -88,15 +88,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_patch_note_parodies",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "Get 5 kills while silent" },
-					new() { ConditionType = "KillsWhileADS", Value = 5, Description = "Get 5 kills while ADS" }
+					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "在静默状态下击杀5个目标" },
+					new() { ConditionType = "KillsWhileADS", Value = 5, Description = "在瞄准状态下击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-1] Audio Patch",
-					Description = "Sound Occlusion Update. 'Improved audio propagation through walls and floors.' Translation: you still can't tell if he's above you or below you. Five silent kills and five ADS kills. Listen carefully.",
-					Note = "5 silent kills and 5 ADS kills.",
-					SuccessMessage = "Audio patched. Still can't hear stairs."
+					Name = "[PTCH-1] 声音修复",
+						Description = "声音遮挡更新。“改进了穿过墙壁和地板的音频传播。”翻译：你还是分不清他在你上面还是下面。五次消音击杀和五次ADS击杀。仔细听。",
+					Note = "完成5次消音击杀和5次ADS击杀。",
+					SuccessMessage = "音频已修复。依然听不到楼梯。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardSoundOcclusion } },
@@ -111,15 +111,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets on Factory", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" } },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Factory 3 times", SurviveLocations = new() { "factory4_day", "factory4_night" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "在工厂击杀10个目标", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" } },
+					new() { ConditionType = "Survive", Value = 3, Description = "从工厂存活并撤离3次", SurviveLocations = new() { "factory4_day", "factory4_night" } }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-2] Factory Hotfix",
-					Description = "Factory Balance Patch. 'Adjusted spawn points and extract timers.' Still spawning next to someone with a shotgun. Ten kills on Factory and three extractions. Balance achieved.",
-					Note = "10 kills on Factory and survive 3 times.",
-					SuccessMessage = "Factory balanced. Narrator: it wasn't."
+					Name = "[PTCH-2] 工厂热修",
+						Description = "Factory平衡补丁。“调整了出生点和撤离计时器。”还是出生在拿霰弹枪的人旁边。在Factory杀十个并撤离三次。平衡已达成。",
+					Note = "在Factory击杀10人并存活3次。",
+					SuccessMessage = "Factory已平衡。旁白：并没有。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardFactoryPatch } },
@@ -138,15 +138,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_factorypatch",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs from under 10m", KillTarget = "AnyPmc", KillDistanceCompare = "<=", KillDistanceValue = 10 },
-					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "Get 5 kills without ADS" }
+					new() { ConditionType = "Kills", Value = 5, Description = "在10米内击杀5名PMC", KillTarget = "AnyPmc", KillDistanceCompare = "<=", KillDistanceValue = 10 },
+					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "不瞄准击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-3] Comms Check",
-					Description = "Improved VoIP. 'Enhanced proximity voice chat quality.' Now you can hear them say 'friendly' in crystal clear audio before they shoot you. Five PMC kills under ten meters and five hipfire kills.",
-					Note = "5 PMC kills <10m and 5 hipfire kills.",
-					SuccessMessage = "Comms clear. Still got shot."
+					Name = "[PTCH-3] 通讯检测",
+						Description = "改进的VOIP。“增强了近距离语音聊天质量。”现在你可以听到他们说“友善”的高清音频，然后他们开枪打你。五次十米内PMC击杀和五次腰射击杀。",
+					Note = "完成5次10米内PMC击杀和5次腰射击杀。",
+					SuccessMessage = "通讯清晰。还是中枪了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardVoip } },
@@ -165,15 +165,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_voip",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets from under 15m", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 },
-					new() { ConditionType = "DamageWithShotguns", Value = 1000, Description = "Deal 1,000 damage with shotguns" }
+					new() { ConditionType = "Kills", Value = 10, Description = "在15米内击杀10个目标", KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15 },
+					new() { ConditionType = "DamageWithShotguns", Value = 1000, Description = "使用霰弹枪造成1,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-4] Breach and Clear",
-					Description = "Door Breaching Feature. 'Added ability to breach locked doors.' The door is open. Everyone inside is dead. Ten close-range kills and a thousand shotgun damage. Breach and clear.",
-					Note = "10 kills <15m and 1,000 shotgun damage.",
-					SuccessMessage = "Breached. Cleared. Looted."
+					Name = "[PTCH-4] 破门清理",
+						Description = "破门功能。“增加了破坏锁门的能力。”门开了。里面的人都死了。十次近距击杀和一千霰弹枪伤害。破门清理。",
+					Note = "完成10次15米内击杀并造成1,000霰弹枪伤害。",
+					SuccessMessage = "突破。清理。搜刮。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardDoorBreach } },
@@ -191,15 +191,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_doorbreach",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthGain", Value = 3000, Description = "Restore 3,000 HP total" },
-					new() { ConditionType = "RestoreBodyPart", Value = 5, Description = "Restore 5 body parts" }
+					new() { ConditionType = "HealthGain", Value = 3000, Description = "累计恢复3,000 HP" },
+					new() { ConditionType = "RestoreBodyPart", Value = 5, Description = "恢复5个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-5] Medic Patch",
-					Description = "Therapist Restock. 'Adjusted medical item availability.' Translation: Salewas are back in stock for exactly twelve seconds. Restore three thousand HP and five body parts. Stock up while you can.",
-					Note = "Restore 3,000 HP and 5 body parts.",
-					SuccessMessage = "Restocked. For twelve seconds."
+					Name = "[PTCH-5] 医疗补丁",
+						Description = "Therapist补货。“调整了医疗物品可用性。”翻译：Salewa背包再次有货，持续正好十二秒。恢复三千HP并修复五个身体部位。趁有货赶紧囤。",
+					Note = "恢复3,000生命值并修复5个身体部位。",
+					SuccessMessage = "已补货。持续了十二秒。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTherapistRestock } },
@@ -217,15 +217,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_therapistrestock",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "Cover 10,000m while running" },
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract 10 times" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "奔跑10,000米" },
+					new() { ConditionType = "Survive", Value = 10, Description = "存活并撤离10次" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-6] Lag Compensation",
-					Description = "Fixed Desync. 'Resolved network synchronization issues.' Narrator: they did not fix desync. Ten kilometers of running and ten extractions. The server will catch up. Eventually.",
-					Note = "10km running and survive 10 times.",
-					SuccessMessage = "Desync fixed. Citation needed."
+					Name = "[PTCH-6] 延迟补偿",
+						Description = "修复了延迟。“解决了网络同步问题。”旁白：他们没修复延迟。跑十公里并撤离十次。服务器会赶上的。最终。",
+					Note = "跑步10公里并存活10次。",
+					SuccessMessage = "掉线已修复。需要引用。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardFixedDesync } },
@@ -244,15 +244,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_fixeddesync",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 scavs with headshots", KillTarget = "Savage", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "Get 10 kills while crouched" }
+					new() { ConditionType = "Kills", Value = 20, Description = "爆头击杀20名Scav", KillTarget = "Savage", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "在蹲伏状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-7] Bot Upgrade",
-					Description = "AI Smarter. 'Improved bot pathfinding and combat behavior.' The scavs now pre-fire corners and throw grenades with surgical precision. Twenty scav headshots and ten crouched kills. Outsmart the smart.",
-					Note = "20 scav headshots and 10 crouched kills.",
-					SuccessMessage = "AI outsmarted. For now."
+					Name = "[PTCH-7] Bot升级",
+						Description = "AI更聪明了。“改进了Bot的寻路和战斗行为。”Scav现在会提前枪穿墙角并以手术精度扔手雷。二十次Scav爆头和十次蹲姿击杀。智胜聪明人。",
+					Note = "完成20次Scav爆头和10次蹲姿击杀。",
+					SuccessMessage = "AI被智取了。暂时的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardAiSmarter } },
@@ -271,15 +271,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_aismarter",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets at night", KillTarget = "Any", KillDaytimeFrom = 22, KillDaytimeTo = 6 },
-					new() { ConditionType = "DamageWithPistols", Value = 3000, Description = "Deal 3,000 damage with pistols" }
+					new() { ConditionType = "Kills", Value = 10, Description = "夜间击杀10个目标", KillTarget = "Any", KillDaytimeFrom = 22, KillDaytimeTo = 6 },
+					new() { ConditionType = "DamageWithPistols", Value = 3000, Description = "使用手枪造成3,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-8] Lights On",
-					Description = "Flashlight Fix. 'Corrected tactical flashlight rendering.' The flashlight now blinds you AND the enemy. Ten night kills and three thousand pistol damage. Lights on.",
-					Note = "10 night kills and 3,000 pistol damage.",
-					SuccessMessage = "Lights fixed. Still blinding."
+					Name = "[PTCH-8] 开灯",
+						Description = "手电修复。“修正了战术手电渲染。”手电现在同时闪瞎你和敌人。十次夜间击杀和三千点手枪伤害。开灯。",
+					Note = "完成10次夜间击杀并造成3,000手枪伤害。",
+					SuccessMessage = "灯光已修。依然刺眼。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardFlashlightFix } },
@@ -297,15 +297,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_flashlightfix",
 				Objectives = new()
 				{
-					new() { ConditionType = "EncumberedTimeInSeconds", Value = 600, Description = "Spend 600 seconds encumbered" },
-					new() { ConditionType = "OverEncumberedTimeInSeconds", Value = 300, Description = "Spend 300 seconds overencumbered" }
+					new() { ConditionType = "EncumberedTimeInSeconds", Value = 600, Description = "超重状态持续600秒" },
+					new() { ConditionType = "OverEncumberedTimeInSeconds", Value = 300, Description = "严重超重状态持续300秒" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-9] Carrying Capacity",
-					Description = "Weight System Tweak. 'Adjusted weight thresholds and stamina drain.' You can now carry 0.5kg more before your PMC has a heart attack. Ten minutes encumbered and five minutes overencumbered. Feel the weight.",
-					Note = "10 min encumbered and 5 min overencumbered.",
-					SuccessMessage = "Weight tweaked. Still heavy."
+					Name = "[PTCH-9] 负重提升",
+						Description = "负重系统调整。“调整了重量阈值和体力消耗。”你现在可以多带0.5公斤才让你的PMC心脏病发作。负重十分钟并超重五分钟。感受重量。",
+					Note = "负重10分钟并超重5分钟。",
+					SuccessMessage = "负重已调整。依然沉重。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardWeightTweak } },
@@ -319,15 +319,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_weighttweak",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 3000000, Description = "Earn 3,000,000\u20bd from transactions" }
+					new() { ConditionType = "Kills", Value = 20, Description = "击杀20名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 3000000, Description = "通过交易赚取3,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-10] Server Stability",
-					Description = "Optimized Netcode. 'Improved server tick rate and hit registration.' The bullets now register 50% of the time instead of 40%. Twenty PMC kills and three million roubles. The netcode works. Trust us.",
-					Note = "20 PMC kills and earn 3M\u20bd.",
-					SuccessMessage = "Netcode optimized. Hits registered. Mostly."
+					Name = "[PTCH-10] 服务器稳定性",
+						Description = "优化了网络代码。“改进了服务器tick率和命中判定。”子弹现在有50%的时间判定命中而不是40%。二十次PMC击杀和三百万卢布。网络代码管用了。信我们。",
+					Note = "完成20次PMC击杀并赚取3M₽。",
+					SuccessMessage = "网络代码已优化。命中已注册。大多数时候。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardNetcode } },
@@ -346,18 +346,18 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_netcode",
 				Objectives = new()
 				{
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Gym level 1", HideoutAreaType = 23, HideoutAreaLevel = 1 },
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Gear Rack level 1", HideoutAreaType = 26, HideoutAreaLevel = 1 },
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Hall of Fame level 1", HideoutAreaType = 16, HideoutAreaLevel = 1 },
-					new() { ConditionType = "CraftAnyItem", Value = 30, Description = "Craft 30 items" },
-					new() { ConditionType = "CollectScavCase", Value = 10, Description = "Collect 10 Scav Case results" }
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有1级健身房", HideoutAreaType = 23, HideoutAreaLevel = 1 },
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有1级装备架", HideoutAreaType = 26, HideoutAreaLevel = 1 },
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有1级荣誉厅", HideoutAreaType = 16, HideoutAreaLevel = 1 },
+					new() { ConditionType = "CraftAnyItem", Value = 30, Description = "制作30个物品" },
+					new() { ConditionType = "CollectScavCase", Value = 10, Description = "收集10次Scav箱子结果" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-11] Build Update",
-					Description = "Hideout Expansion. 'Added new hideout stations.' The hideout now has a gym, a gear rack, and a hall of fame. Build all three, craft thirty items, and collect ten scav case results. The expansion is live.",
-					Note = "Gym + Gear Rack + Hall of Fame lvl 1, craft 30, collect 10 scav case.",
-					SuccessMessage = "Expansion built. More money spent."
+					Name = "[PTCH-11] 版本更新",
+						Description = "藏身处扩展。“增加了新的藏身处工作站。”藏身处现在有健身房、装备架和名人堂。三个都建起来，做三十件物品，收集十次Scav宝箱结果。扩展已上线。",
+					Note = "拥有1级健身房+装备架+名人堂，制作30件物品，收集10次Scav宝箱结果。",
+					SuccessMessage = "扩展已建成。花了更多钱。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardHideoutExpansion } },
@@ -377,16 +377,16 @@ public static class PatchNotesParodiesThemeDefinitions
 				Location = MapWoods,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract from Woods 10 times", SurviveLocations = new() { "Woods" } },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 bosses", KillTarget = "Savage", KillSavageRole = AllBossRoles },
-					new() { ConditionType = "SearchContainer", Value = 80, Description = "Search 80 containers" }
+					new() { ConditionType = "Survive", Value = 10, Description = "从森林存活并撤离10次", SurviveLocations = new() { "Woods" } },
+					new() { ConditionType = "Kills", Value = 5, Description = "击杀5名Boss", KillTarget = "Savage", KillSavageRole = AllBossRoles },
+					new() { ConditionType = "SearchContainer", Value = 80, Description = "搜索80个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-12] Map Rework",
-					Description = "Woods Redesign. 'Expanded playable area and added new POIs.' The map is bigger but Shturman is still at the sawmill. Survive Woods ten times, kill five bosses, and search eighty containers. Explore the redesign.",
-					Note = "Survive Woods 10, 5 boss kills, search 80 containers.",
-					SuccessMessage = "Woods explored. Shturman still there."
+					Name = "[PTCH-12] 地图重制",
+						Description = "Woods重制。“扩展了可玩区域并增加了新的兴趣点。”地图更大了但Shturman还在锯木厂。在Woods存活十次、杀五个Boss、搜八十个容器。探索重制。",
+					Note = "在Woods存活10次，击杀5个Boss，搜索80个容器。",
+					SuccessMessage = "Woods已探索。Shturman还在那儿。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardWoodsRedesign } },
@@ -400,16 +400,16 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_woodsredesign",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithAR", Value = 15000, Description = "Deal 15,000 damage with assault rifles" },
-					new() { ConditionType = "DamageWithSMG", Value = 10000, Description = "Deal 10,000 damage with SMGs" },
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } }
+					new() { ConditionType = "DamageWithAR", Value = 15000, Description = "使用突击步枪造成15,000伤害" },
+					new() { ConditionType = "DamageWithSMG", Value = 10000, Description = "使用冲锋枪造成10,000伤害" },
+					new() { ConditionType = "Kills", Value = 30, Description = "爆头击杀30名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-13] Ballistics Update",
-					Description = "Recoil Rework. 'Completely overhauled weapon recoil system.' The guns now kick like a mule on the first shot and laser beam after that. Fifteen thousand AR damage, ten thousand SMG damage, and thirty PMC headshots. Master the new recoil.",
-					Note = "15K AR damage, 10K SMG damage, 30 PMC headshots.",
-					SuccessMessage = "Recoil mastered. New meta established."
+					Name = "[PTCH-13] 弹道更新",
+						Description = "后座重做。“彻底改变了武器后座系统。”枪现在第一发跳得像骡子踢，后面就激光束了。一万五千AR伤害、一万冲锋枪伤害、三十次PMC爆头。掌握新后座。",
+					Note = "造成15K AR伤害、10K冲锋枪伤害，30次PMC爆头。",
+					SuccessMessage = "后座力已掌握。新Meta已建立。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardRecoilRework } },
@@ -427,15 +427,15 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_recoilrework",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 10000, Description = "Accumulate 10,000m total shot distance with snipers" }
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 10000, Description = "使用狙击枪累计10,000米射击距离" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-14] Fair Play Update",
-					Description = "Anti-Cheat Improvements. 'Enhanced detection algorithms.' The cheaters are gone. Definitely. For sure. Fifty PMC kills and ten thousand meters of sniper distance. Play fair. Or else.",
-					Note = "50 PMC kills and 10,000m sniper distance.",
-					SuccessMessage = "Fair play enforced. Cheaters banned. Probably."
+					Name = "[PTCH-14] 公平游戏更新",
+						Description = "反作弊改进。“增强了检测算法。”挂狗没了。绝对。肯定。五十次PMC击杀和一万米狙击距离。公平游戏。否则。",
+					Note = "完成50次PMC击杀并累计10,000米狙击距离。",
+					SuccessMessage = "公平游戏已执行。作弊者被封。可能吧。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardAntiCheat } },
@@ -454,16 +454,16 @@ public static class PatchNotesParodiesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_ptch_anticheat",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 20000000, Description = "Earn 20,000,000\u20bd from transactions" },
-					new() { ConditionType = "HandoverItem", Value = 10, Description = "Hand over 10 Physical Bitcoins", HandoverTargets = new() { Bitcoin } },
-					new() { ConditionType = "SearchContainer", Value = 200, Description = "Search 200 containers" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 20000000, Description = "通过交易赚取20,000,000₽" },
+					new() { ConditionType = "HandoverItem", Value = 10, Description = "上交10个实体比特币", HandoverTargets = new() { Bitcoin } },
+					new() { ConditionType = "SearchContainer", Value = 200, Description = "搜索200个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-15] Economy Reset",
-					Description = "Flea Market Overhaul. 'Restructured marketplace fees and FIR requirements.' Everything costs more, sells for less, and the fees eat your profits. Twenty million roubles, ten bitcoins, and two hundred containers. The economy resets.",
-					Note = "Earn 20M\u20bd, hand over 10 bitcoins, search 200 containers.",
-					SuccessMessage = "Economy reset. Wallet empty. Again."
+					Name = "[PTCH-15] 经济重置",
+						Description = "跳蚤市场大改。“重建了市场费用和战局拾取要求。”一切成本更高、卖价更低、手续费吃掉你的利润。两千万卢布、十个比特币、两百个容器。经济重置了。",
+					Note = "赚取20M₽，交出10个比特币，搜索200个容器。",
+					SuccessMessage = "经济已重置。钱包空了。又。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardFleaOverhaul } },
@@ -487,7 +487,7 @@ public static class PatchNotesParodiesThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 patch note cards (one of each)",
+					Description = "上交全部15张更新日志卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardSoundOcclusion] = "Sound Occlusion",
@@ -509,10 +509,10 @@ public static class PatchNotesParodiesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[PTCH-C] Kolya's Changelog",
-					Description = "Every patch documented, every changelog parodied. From sound occlusion to flea market overhauls, you've survived every update Tarkov has thrown at you. Hand over the cards and complete the changelog.",
-					Note = "Hand over one of each patch note card to complete the collection.",
-					SuccessMessage = "Changelog complete. Version: final. (Not really.)"
+					Name = "[PTCH-C] Kolya的更新日志",
+					Description = "每个补丁都已记录、每份更新日志都被戏仿。从声音遮挡到跳蚤市场大改，你挺过了塔科夫扔给你的每一次更新。交出卡牌，更新日志就完整了。",
+					Note = "交出所有补丁说明卡牌各一张以完成收集。",
+					SuccessMessage = "更新日志完成。版本：最终版。（不是真的。）"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

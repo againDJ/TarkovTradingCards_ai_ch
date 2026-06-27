@@ -68,15 +68,15 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times" },
-					new() { ConditionType = "SearchContainer", Value = 10, Description = "Search 10 containers" }
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次" },
+					new() { ConditionType = "SearchContainer", Value = 10, Description = "搜索10个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-0] The SPT Experience",
-					Description = "SPT \u2014 Single Player Tarkov. No queue times, no cheaters, no desync. Just you, the bots, and a world you can shape however you want. Survive three raids and search ten containers. Welcome to the SPT experience.",
-					Note = "Survive 3 times and search 10 containers.",
-					SuccessMessage = "Welcome to SPT."
+					Name = "[SPFT-0] SPT体验",
+					Description = "SPT——单人塔科夫。没有排队时间、没有挂、没有延迟。只有你、Bot和一个可以按你意愿塑造的世界。存活三局，搜十个容器。欢迎来到SPT体验。",
+					Note = "存活3次并搜索10个容器。",
+					SuccessMessage = "欢迎来到SPT。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderSpt } }
@@ -89,14 +89,14 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_spt_vs_eft",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times" }
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-1] Just Me",
-					Description = "Solo Peace. No squads, no voice chat betrayals, no stream snipers. Just you and the zone. Survive five raids in perfect solitude. This is the peace that live Tarkov never gave you.",
-					Note = "Survive and extract 5 times.",
-					SuccessMessage = "Peace and quiet. As intended."
+					Name = "[SPFT-1] 只有我",
+					Description = "独处的平静。没有队伍、没有语音背叛、没有直播狙击。只有你和封锁区。在完美的孤独中存活五局。这是线上塔科夫从未给你的平静。",
+					Note = "存活并撤离5次。",
+					SuccessMessage = "和平与安静。本就如此。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardSoloPeace } },
@@ -115,15 +115,15 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_solopeace",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 graphics card", HandoverTargets = new() { GpuItem } },
-					new() { ConditionType = "SearchContainer", Value = 30, Description = "Search 30 containers" }
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1张显卡", HandoverTargets = new() { GpuItem } },
+					new() { ConditionType = "SearchContainer", Value = 30, Description = "搜索30个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-2] Loot Paradise",
-					Description = "GPU Spawns Exist. In SPT, GPUs actually spawn where they're supposed to. Hand over one GPU and search thirty containers. See? They do exist.",
-					Note = "Hand over 1 GPU and search 30 containers.",
-					SuccessMessage = "GPU found. They DO exist."
+					Name = "[SPFT-2] 战利品天堂",
+					Description = "GPU确实会刷。在SPT里，GPU真的在它们应该出现的地方刷新。交出一个GPU并搜三十个容器。看到了吧？它们确实存在。",
+					Note = "交出1个GPU并搜索30个容器。",
+					SuccessMessage = "GPU找到了。它们确实存在。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardGpuSpawns } },
@@ -137,15 +137,15 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_gpuspawns",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistance", Value = 5000, Description = "Cover 5,000m on foot" },
-					new() { ConditionType = "LootItem", Value = 30, Description = "Loot 30 items" }
+					new() { ConditionType = "MoveDistance", Value = 5000, Description = "步行5,000米" },
+					new() { ConditionType = "LootItem", Value = 30, Description = "搜刮30个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-3] No Rush",
-					Description = "Offline Zen. No timer anxiety, no extract rush. Walk five kilometers and loot thirty items at your own pace. This is Tarkov without the stress.",
-					Note = "5km on foot and loot 30 items.",
-					SuccessMessage = "No rush. No stress. Just Tarkov."
+					Name = "[SPFT-3] 不必匆忙",
+					Description = "离线禅意。没有计时器焦虑、没有撤离冲刺。按自己的节奏走五公里摸三十件物品。这是没有压力的塔科夫。",
+					Note = "徒步5公里并搜刮30件物品。",
+					SuccessMessage = "不着急。不压力。只是塔科夫。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardOfflineZen } },
@@ -164,15 +164,15 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_offlinezen",
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 300000, Description = "Earn 300,000\u20bd from transactions" }
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 300000, Description = "通过交易赚取300,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-4] Instant Action",
-					Description = "Faster Queue Times. Zero seconds in queue. Every time. Survive five raids and earn three hundred thousand roubles. Time saved on loading is time spent looting.",
-					Note = "Survive 5 times and earn 300K\u20bd.",
-					SuccessMessage = "Zero queue. Instant action."
+					Name = "[SPFT-4] 即时行动",
+					Description = "更快的排队时间。零秒排队。每次都是。存活五局赚三十万卢布。省下的加载时间就是用来摸东西的。",
+					Note = "存活5次并赚取300K₽。",
+					SuccessMessage = "零排队。即时行动。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardFasterQueues } },
@@ -191,15 +191,15 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_fasterqueues",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithAR", Value = 2000, Description = "Deal 2,000 damage with assault rifles" },
-					new() { ConditionType = "DamageWithShotguns", Value = 1000, Description = "Deal 1,000 damage with shotguns" }
+					new() { ConditionType = "DamageWithAR", Value = 2000, Description = "使用突击步枪造成2,000伤害" },
+					new() { ConditionType = "DamageWithShotguns", Value = 1000, Description = "使用霰弹枪造成1,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-5] Your Rules",
-					Description = "Balancing Done Right. In SPT, you can tweak the balance to your liking. Two thousand AR damage and a thousand shotgun damage. Every weapon is viable when you set the rules.",
-					Note = "2,000 AR damage and 1,000 shotgun damage.",
-					SuccessMessage = "Your rules. Your balance."
+					Name = "[SPFT-5] 你的规则",
+					Description = "平衡做得对。在SPT里，你可以按自己的喜好调整平衡。两千AR伤害和一千霰弹枪伤害。当你定规则时每把武器都能玩。",
+					Note = "造成2,000 AR伤害和1,000霰弹枪伤害。",
+					SuccessMessage = "你的规则。你的平衡。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardBalancingRight } },
@@ -218,14 +218,14 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_balancingright",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 10, Description = "Craft 10 items" }
+					new() { ConditionType = "CraftAnyItem", Value = 10, Description = "制作10个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-6] Craft and Chill",
-					Description = "Skip the Grind. No more waiting days for a Bitcoin. No more grinding levels for flea market access. Craft ten items and enjoy the shortcut. SPT lets you skip the parts that aren't fun.",
-					Note = "Craft 10 items.",
-					SuccessMessage = "Grind skipped. Fun maximized."
+					Name = "[SPFT-6] 制造与放松",
+					Description = "跳过肝度。不用再等好几天等一个比特币。不用再为跳蚤市场权限肝等级。做十件物品享受捷径。SPT让你跳过那些不好玩的部分。",
+					Note = "制作10件物品。",
+					SuccessMessage = "肝度已跳过。乐趣已最大化。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardSkipGrind } },
@@ -243,16 +243,16 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_skipgrind",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 3000, Description = "Lose 3,000 HP total" },
-					new() { ConditionType = "DestroyBodyPart", Value = 5, Description = "Have 5 body parts destroyed" },
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract 10 times" }
+					new() { ConditionType = "HealthLoss", Value = 3000, Description = "累计损失3,000 HP" },
+					new() { ConditionType = "DestroyBodyPart", Value = 5, Description = "摧毁5个身体部位" },
+					new() { ConditionType = "Survive", Value = 10, Description = "存活并撤离10次" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-7] Known Issues",
-					Description = "Patch Day Salt. Every patch breaks something. In SPT, at least you can roll back. Three thousand HP lost, five body parts destroyed, and ten extractions. Survive the salt.",
-					Note = "Lose 3K HP, 5 body parts destroyed, survive 10 times.",
-					SuccessMessage = "Patch survived. Salt levels: manageable."
+					Name = "[SPFT-7] 已知问题",
+					Description = "补丁日的怨气。每次更新都会出点问题。至少在SPT里你可以回滚。损失三千HP、五个身体部位被摧毁、十次撤离。挺过怨气。",
+					Note = "损失3K生命值，5个身体部位被摧毁，存活10次。",
+					SuccessMessage = "补丁已存活。怨气等级：可控。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardPatchDaySalt } },
@@ -271,14 +271,14 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_patchdaysalt",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 500000, Description = "Hand over 500,000\u20bd", HandoverTargets = new() { Roubles } }
+					new() { ConditionType = "HandoverItem", Value = 500000, Description = "上交500,000₽", HandoverTargets = new() { Roubles } }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-8] Best Trader",
-					Description = "Custom Traders. Kolya is the best trader in Tarkov \u2014 hand over half a million roubles to show your appreciation. Custom traders make SPT special.",
-					Note = "Hand over 500,000\u20bd to Kolya.",
-					SuccessMessage = "Kolya appreciates the gesture."
+					Name = "[SPFT-8] 最佳商人",
+					Description = "自定义商人。Kolya是塔科夫最好的商人——交出五十万卢布来表达你的感激。自定义商人让SPT变得特殊。",
+					Note = "向Kolya交出500,000₽。",
+					SuccessMessage = "Kolya很感激你的心意。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardCustomTraders } },
@@ -297,16 +297,16 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_customtraders",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "KillsWhileADS", Value = 15, Description = "Get 15 kills while ADS" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "Earn 1,000,000\u20bd from transactions" }
+					new() { ConditionType = "Kills", Value = 20, Description = "击杀20名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "KillsWhileADS", Value = 15, Description = "在瞄准状态下击杀15个目标" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "通过交易赚取1,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-9] The Better Way",
-					Description = "The Tarkov We Deserve. Fair fights, no cheaters, no desync deaths. Twenty PMC kills, fifteen ADS kills, and a million roubles. This is the Tarkov experience as it should be.",
-					Note = "20 PMC kills, 15 ADS kills, earn 1M\u20bd.",
-					SuccessMessage = "The Tarkov we deserve. The better way."
+					Name = "[SPFT-9] 更好的方式",
+					Description = "我们应得的塔科夫。公平的战斗、没有挂、没有延迟死。二十次PMC击杀、十五次ADS击杀、一百万卢布。这才是塔科夫应有的体验。",
+					Note = "完成20次PMC击杀、15次ADS击杀，赚取1M₽。",
+					SuccessMessage = "我们应得的塔科夫。更好的体验。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBetterTarkov } },
@@ -325,17 +325,17 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_bettertarkov",
 				Objectives = new()
 				{
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Gym level 1", HideoutAreaType = 23, HideoutAreaLevel = 1 },
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Gear Rack level 1", HideoutAreaType = 26, HideoutAreaLevel = 1 },
-					new() { ConditionType = "CraftAnyItem", Value = 20, Description = "Craft 20 items" },
-					new() { ConditionType = "CraftCyclicItem", Value = 10, Description = "Craft 10 cyclic items" }
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有1级健身房", HideoutAreaType = 23, HideoutAreaLevel = 1 },
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有1级装备架", HideoutAreaType = 26, HideoutAreaLevel = 1 },
+					new() { ConditionType = "CraftAnyItem", Value = 20, Description = "制作20个物品" },
+					new() { ConditionType = "CraftCyclicItem", Value = 10, Description = "制作10个循环物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-10] Expanded Base",
-					Description = "Modded Hideout. The hideout has more rooms than BSG ever planned \u2014 you can even spot a cat wandering around and customize your posters with... whatever you want. Gym, gear rack, twenty crafts, ten cyclic crafts. Build the hideout that SPT made possible.",
-					Note = "Gym + Gear Rack lvl 1, craft 20 items, 10 cyclic.",
-					SuccessMessage = "Hideout expanded. The cat approves."
+					Name = "[SPFT-10] 扩展基地",
+					Description = "改装藏身处。藏身处的房间比BSG计划的还多——你甚至能看到一只猫走来走去，还能自定义海报贴……任何你想要的。健身房、装备架、二十次制作、十次循环制作。建造SPT使之成为可能的藏身处。",
+					Note = "1级健身房+装备架，制作20件物品，10次循环制作。",
+					SuccessMessage = "藏身处已扩展。猫满意了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardModdedHideout } },
@@ -354,16 +354,16 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_moddedhideout",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "Earn 5,000,000\u20bd from transactions" },
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" },
-					new() { ConditionType = "LootItem", Value = 100, Description = "Loot 100 items" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 5000000, Description = "通过交易赚取5,000,000₽" },
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" },
+					new() { ConditionType = "LootItem", Value = 100, Description = "搜刮100个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-11] No Restrictions",
-					Description = "Flea Freedom. No FIR restrictions, no level requirements, no arbitrary limits. Five million roubles, a hundred containers, a hundred items. The flea market as it should be \u2014 free.",
-					Note = "Earn 5M\u20bd, search 100 containers, loot 100 items.",
-					SuccessMessage = "Flea market: free. As it should be."
+					Name = "[SPFT-11] 没有限制",
+					Description = "跳蚤市场自由。没有战局内拾取限制、没有等级需求、没有随意限制。五百万卢布、一百个容器、一百件物品。跳蚤市场就该这样——自由。",
+					Note = "赚取5M₽，搜索100个容器，搜刮100件物品。",
+					SuccessMessage = "跳蚤市场：自由。就该如此。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardFleaFreedom } },
@@ -382,16 +382,16 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_fleafreedom",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 150, Description = "Search 150 containers" },
-					new() { ConditionType = "LootItem", Value = 150, Description = "Loot 150 items" },
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 LEDX", HandoverTargets = new() { LedxItem } }
+					new() { ConditionType = "SearchContainer", Value = 150, Description = "搜索150个容器" },
+					new() { ConditionType = "LootItem", Value = 150, Description = "搜刮150个物品" },
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1个LEDX", HandoverTargets = new() { LedxItem } }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-12] Jackpot Rates",
-					Description = "Loot Rate Multiplier. In SPT, the loot rates are whatever you want them to be. A hundred fifty containers, a hundred fifty items, and a LEDX. The multiplier is real.",
-					Note = "Search 150 containers, loot 150 items, hand over 1 LEDX.",
-					SuccessMessage = "Loot multiplied. Jackpot hit."
+					Name = "[SPFT-12] 头奖率",
+					Description = "战利品倍率。在SPT里，战利品倍率随你心意。一百五十个容器、一百五十件物品、一个LEDX。倍率是真的。",
+					Note = "搜索150个容器，搜刮150件物品，交出1个LEDX。",
+					SuccessMessage = "战利品已倍增。中头奖了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardLootMultiplier } },
@@ -410,21 +410,21 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_lootmultiplier",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Prapor LL3", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Therapist LL3", TraderLoyaltyId = TraderTherapist, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Skier LL3", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Peacekeeper LL3", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Mechanic LL3", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Ragman LL3", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Jaeger LL3", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "Earn 10,000,000\u20bd from transactions" }
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Prapor 3级", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Therapist 3级", TraderLoyaltyId = TraderTherapist, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Skier 3级", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Peacekeeper 3级", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Mechanic 3级", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Ragman 3级", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Jaeger 3级", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "通过交易赚取10,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-13] Fresh Start",
-					Description = "Wipe When You Want. In SPT, you wipe on your schedule \u2014 not BSG's. All seven traders at LL3 and ten million roubles. You've earned the right to wipe when you choose.",
-					Note = "All 7 traders LL3 and earn 10M\u20bd.",
-					SuccessMessage = "Your wipe. Your schedule."
+					Name = "[SPFT-13] 全新开始",
+					Description = "想删档就删档。在SPT里，你按自己的时间表清档——不是BSG的。所有七个商人LL3，一千万卢布。你赢得了在自己选择的时间清档的权利。",
+					Note = "所有7个商人达到LL3并赚取10M₽。",
+					SuccessMessage = "你的档期。你的时间。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardCustomWipe } },
@@ -443,16 +443,16 @@ public static class SptVsEftThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_spft_customwipe",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 bosses", KillTarget = "Savage", KillSavageRole = AllBossRoles },
-					new() { ConditionType = "CompleteWorkout", Value = 10, Description = "Complete 10 gym workouts" }
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名Boss", KillTarget = "Savage", KillSavageRole = AllBossRoles },
+					new() { ConditionType = "CompleteWorkout", Value = 10, Description = "完成10次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-14] Community Power",
-					Description = "Community Overlords. The SPT community built something BSG never intended \u2014 a thriving single-player ecosystem. Fifty PMC kills, ten boss kills, and ten gym sessions. The community is the real boss.",
-					Note = "50 PMC kills, 10 boss kills, 10 workouts.",
-					SuccessMessage = "The community is the real boss."
+					Name = "[SPFT-14] 社区力量",
+					Description = "社区大佬。SPT社区打造了BSG从未想过的东西——一个繁荣的单人游戏生态。五十次PMC击杀、十次Boss击杀、十次健身。社区才是真正的大佬。",
+					Note = "完成50次PMC击杀、10个Boss击杀、10次健身。",
+					SuccessMessage = "社区才是真正的Boss。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardOverlords } },
@@ -472,10 +472,10 @@ public static class SptVsEftThemeDefinitions
 				Objectives = new(), // No objectives — auto-completable
 				Locale = new()
 				{
-					Name = "[SPFT-15] A Message",
-					Description = "Thanks, Devs. This card isn't earned through kills or loot \u2014 it's earned by being here. Thank you for playing SPT, thank you for supporting this project, and thank you to every developer, modder, and community member who makes this possible. If you want to show your appreciation, join the SPT Discord and say thanks to the people who keep this dream alive. This card is free. You've already earned it.",
-					Note = "No objective. Just accept the quest and complete it.",
-					SuccessMessage = "Thank you. For everything."
+					Name = "[SPFT-15] 一条消息",
+					Description = "感谢开发者们。这张卡不是靠击杀或战利品赢得的——是靠你的到来赢得的。感谢玩SPT、感谢支持这个项目、感谢每一位开发者、模组作者和社区成员使之成为可能。想表达感激的话，加入SPT Discord对那些让这个梦想继续的人说声谢谢。这张卡是免费的。你已经赢得它了。",
+					Note = "无目标。接受任务即可完成。",
+					SuccessMessage = "谢谢你。为了一切。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardThanksDevs } },
@@ -505,7 +505,7 @@ public static class SptVsEftThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 SPT vs EFT cards (one of each)",
+					Description = "上交全部15张SPT vs EFT卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardSoloPeace] = "Solo Peace",
@@ -527,10 +527,10 @@ public static class SptVsEftThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[SPFT-C] Kolya's SPT Manifest",
-					Description = "Every difference documented, every advantage celebrated. SPT isn't just a mod \u2014 it's a love letter to what Tarkov could be. Hand over the cards and complete the manifest. Thank you for playing.",
-					Note = "Hand over one of each SPT card to complete the collection.",
-					SuccessMessage = "The SPT Manifest is complete. Thank you for playing."
+					Name = "[SPFT-C] Kolya的SPT宣言",
+					Description = "每一个差异都已记录、每一项优势都被庆祝。SPT不只是一个模组——它是一封写给塔科夫本来面目的情书。交出卡牌，宣言就完整了。感谢游玩。",
+					Note = "交出所有SPT卡牌各一张以完成收集。",
+					SuccessMessage = "SPT宣言已完成。感谢游玩。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

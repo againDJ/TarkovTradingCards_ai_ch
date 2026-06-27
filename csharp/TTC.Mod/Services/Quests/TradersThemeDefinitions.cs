@@ -106,15 +106,15 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 100000, Description = "Earn 100,000\u20bd from transactions" },
-					new() { ConditionType = "SearchContainer", Value = 15, Description = "Search 15 containers" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 100000, Description = "通过交易赚取100,000₽" },
+					new() { ConditionType = "SearchContainer", Value = 15, Description = "搜索15个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-0] The Middleman",
-					Description = "Traders are the backbone of Tarkov. Without them, you've got no ammo, no meds, no way out. Before I give you my notes on who's who, show me you know how to do business. Earn a hundred thousand roubles and search fifteen containers.",
-					Note = "Earn 100,000\u20bd and search 15 containers.",
-					SuccessMessage = "Business is booming. Here are my notes."
+					Name = "[TRAD-0] 中间人",
+					Description = "商人是塔科夫的支柱。没有他们，你没弹药、没药品、没出路。在我把谁是谁的笔记给你之前，让我看看你懂怎么做生意。赚十万卢布并搜十五个容器。",
+					Note = "赚取100,000₽并搜索15个容器。",
+					SuccessMessage = "生意正红火。这是我的笔记。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderTraders } }
@@ -128,14 +128,14 @@ public static class TradersThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 scavs on Customs", KillTarget = "Savage", KillLocations = new() { "bigmap" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "在海关击杀10名Scav", KillTarget = "Savage", KillLocations = new() { "bigmap" } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-1] First Contract",
-					Description = "Prapor's Debut Contract. Every PMC's first job in Tarkov starts with Prapor and ends on Customs. Kill scavs, bring back loot, earn his trust. Ten scavs on Customs \u2014 the same way everyone starts.",
-					Note = "Eliminate 10 scavs on Customs.",
-					SuccessMessage = "First contract fulfilled. Prapor remembers."
+					Name = "[TRAD-1] 第一个合同",
+					Description = "Prapor的首份合同。每个PMC在塔科夫的第一份工作从Prapor开始，在Customs结束。杀Scav、带回战利品、赢得他的信任。在Customs杀十个Scav——跟每个人一样起步。",
+					Note = "在Customs消灭10个Scav。",
+					SuccessMessage = "第一份合同已完成。Prapor记得你。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardPraporDebut } },
@@ -150,15 +150,15 @@ public static class TradersThemeDefinitions
 				Location = MapWoods,
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Jaeger unlocked (LL1)", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 1 },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Woods 3 times", SurviveLocations = new() { "Woods" } }
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "已解锁Jaeger（1级）", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 1 },
+					new() { ConditionType = "Survive", Value = 3, Description = "从森林存活并撤离3次", SurviveLocations = new() { "Woods" } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-2] The Huntsman's Way",
-					Description = "Jaeger's Huntsman Path. The old man lives in the woods \u2014 you need to find him first. Unlock Jaeger as a trader and survive three Woods raids. Walk the Huntsman's path.",
-					Note = "Unlock Jaeger and survive Woods 3 times.",
-					SuccessMessage = "The Huntsman acknowledges you."
+					Name = "[TRAD-2] 猎人之道",
+					Description = "Jaeger的猎人之道。老家伙住在树林里——你得先找到他。解锁Jaeger作为商人并在Woods存活三次。走上猎人之道。",
+					Note = "解锁Jaeger并在Woods存活3次。",
+					SuccessMessage = "猎人认可了你。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardJaegerHuntsman } },
@@ -176,15 +176,15 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_jaeger_huntsman",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 1000, Description = "Lose 1,000 HP total" },
-					new() { ConditionType = "DestroyBodyPart", Value = 3, Description = "Have 3 body parts destroyed" }
+					new() { ConditionType = "HealthLoss", Value = 1000, Description = "累计损失1,000 HP" },
+					new() { ConditionType = "DestroyBodyPart", Value = 3, Description = "摧毁3个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-3] Frugal Hunter",
-					Description = "Jaeger's Frugality. The Huntsman believes suffering builds character. Lose a thousand HP and have three body parts destroyed. Pain is temporary, the card is forever.",
-					Note = "Lose 1,000 HP and have 3 body parts destroyed.",
-					SuccessMessage = "The Huntsman respects your suffering."
+					Name = "[TRAD-3] 节俭猎人",
+					Description = "Jaeger的节俭之道。猎人相信苦难塑造品格。损失一千HP并被摧毁三个身体部位。痛苦是暂时的，卡是永远的。",
+					Note = "损失1,000生命值并被摧毁3个身体部位。",
+					SuccessMessage = "猎人尊重你的苦难。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardJaegerFrugal } },
@@ -198,15 +198,15 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_jaeger_frugal",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs", KillTarget = "AnyPmc" }
+					new() { ConditionType = "Kills", Value = 15, Description = "击杀15名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "Kills", Value = 5, Description = "击杀5名PMC", KillTarget = "AnyPmc" }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-4] No Rest",
-					Description = "Prapor never lets you rest. The moment you finish one job, he's got three more waiting. Scavs, PMCs, it doesn't matter \u2014 Prapor wants them all dead. Fifteen scavs and five PMCs. No rest for the wicked.",
-					Note = "Eliminate 15 scavs and 5 PMCs.",
-					SuccessMessage = "No rest. But Prapor pays well."
+					Name = "[TRAD-4] 永无宁日",
+					Description = "Prapor从不让你休息。你一完成一个活，他又有三个等着。Scav、PMC，没关系——Prapor要他们全死。十五个Scav和五个PMC。恶人不休息。",
+					Note = "消灭15个Scav和5个PMC。",
+					SuccessMessage = "没有休息。但Prapor给钱不错。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardPraporNoRest } },
@@ -226,16 +226,16 @@ public static class TradersThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the water stockpile in the dorms", VisitZoneId = "room206_water", OneSessionOnly = true },
-					new() { ConditionType = "Survive", Value = 1, Description = "Survive and extract from Customs", SurviveLocations = new() { "bigmap" }, OneSessionOnly = true },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 water bottles", HandoverTargets = new() { WaterBottle } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在宿舍区找到水源储备", VisitZoneId = "room206_water", OneSessionOnly = true },
+					new() { ConditionType = "Survive", Value = 1, Description = "从海关存活并撤离", SurviveLocations = new() { "bigmap" }, OneSessionOnly = true },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3瓶水", HandoverTargets = new() { WaterBottle } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-5] Aquarius Protocol",
-					Description = "Therapist's Operation Aquarius. Find the water stockpile in the Customs dorms and extract alive \u2014 all in one raid. Then bring back three water bottles. Just like the original quest, except this time Kolya's asking.",
-					Note = "Visit dorms water + extract (one raid) + hand over 3 water bottles.",
-					SuccessMessage = "Water secured. Therapist is pleased."
+					Name = "[TRAD-5] 水瓶座协议",
+					Description = "Therapist的水瓶座行动。找到Customs宿舍楼的水储备并活着撤离——全部在一局内完成。然后带回三瓶水。就跟原版任务一样，只是这次是Kolya在问。",
+					Note = "访问宿舍楼取水点并撤离（一局内完成）+交出3瓶水。",
+					SuccessMessage = "水源已保障。Therapist很满意。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTherapistAquarius } },
@@ -249,15 +249,15 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_therapist_aquarius",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthGain", Value = 2000, Description = "Restore 2,000 HP total" },
-					new() { ConditionType = "RestoreBodyPart", Value = 5, Description = "Restore 5 body parts" }
+					new() { ConditionType = "HealthGain", Value = 2000, Description = "累计恢复2,000 HP" },
+					new() { ConditionType = "RestoreBodyPart", Value = 5, Description = "恢复5个身体部位" }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-6] Medical Supplies",
-					Description = "Therapist's Supply Plans. She needs to know you can keep people alive, including yourself. Two thousand HP restored and five body parts brought back from zero. Show her the field medic way.",
-					Note = "Restore 2,000 HP and restore 5 body parts.",
-					SuccessMessage = "The field medic delivers. Therapist approves."
+					Name = "[TRAD-6] 医疗补给",
+					Description = "Therapist的补给计划。她需要知道你能让人活命，包括你自己。恢复两千HP并修复五个从零归位的身体部位。向她展示战地医疗兵的做法。",
+					Note = "恢复2,000生命值并修复5个身体部位。",
+					SuccessMessage = "战地医疗兵做到了。Therapist赞赏。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTherapistSupply } },
@@ -271,18 +271,18 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_therapist_supply",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 pistol grips", HandoverTargets = new() { ClassPistolGrip } },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 foregrips", HandoverTargets = new() { ClassForegrip } },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 scopes/sights", HandoverTargets = ScopeClassIds },
-					new() { ConditionType = "HandoverItem", Value = 2, Description = "Hand over 2 suppressors", HandoverTargets = new() { ClassSilencer } },
-					new() { ConditionType = "HandoverItem", Value = 2, Description = "Hand over 2 muzzle devices", HandoverTargets = new() { ClassMuzzleCombo } }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个手枪握把", HandoverTargets = new() { ClassPistolGrip } },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3个前握把", HandoverTargets = new() { ClassForegrip } },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3个瞄准镜/瞄具", HandoverTargets = ScopeClassIds },
+					new() { ConditionType = "HandoverItem", Value = 2, Description = "上交2个消音器", HandoverTargets = new() { ClassSilencer } },
+					new() { ConditionType = "HandoverItem", Value = 2, Description = "上交2个枪口装置", HandoverTargets = new() { ClassMuzzleCombo } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-7] Gunsmith's Challenge",
-					Description = "Mechanic's Gunsmith Challenge. The man sees every weapon as a puzzle. Bring him five pistol grips, three foregrips, three scopes, two suppressors, and two muzzle devices. Parts for the master gunsmith.",
-					Note = "Hand over weapon parts: 5 grips, 3 foregrips, 3 scopes, 2 suppressors, 2 muzzle devices.",
-					SuccessMessage = "Parts received. The gunsmith is satisfied."
+					Name = "[TRAD-7] 枪匠挑战",
+					Description = "Mechanic的枪匠挑战。这人把每把武器都看成谜题。带给他五个手枪握把、三个前握把、三个瞄具、两个消音器、两个枪口装置。给枪匠大师的零件。",
+					Note = "交出武器零件：5个握把、3个前握把、3个瞄具、2个消音器、2个枪口装置。",
+					SuccessMessage = "零件已收到。枪匠满意了。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardMechanicGunsmith } },
@@ -297,16 +297,16 @@ public static class TradersThemeDefinitions
 				Location = MapShoreline,
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 2, Description = "Have Peacekeeper LL2", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 2 },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 PMCs on Shoreline", KillTarget = "AnyPmc", KillLocations = new() { "Shoreline" } },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from Shoreline 5 times", SurviveLocations = new() { "Shoreline" } }
+					new() { ConditionType = "TraderLoyalty", Value = 2, Description = "拥有Peacekeeper 2级", TraderLoyaltyId = TraderPeacekeeper, TraderLoyaltyLevel = 2 },
+					new() { ConditionType = "Kills", Value = 10, Description = "在海岸线击杀10名PMC", KillTarget = "AnyPmc", KillLocations = new() { "Shoreline" } },
+					new() { ConditionType = "Survive", Value = 5, Description = "从海岸线存活并撤离5次", SurviveLocations = new() { "Shoreline" } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-8] Wet Work",
-					Description = "Peacekeeper's Wet Job. The man doesn't trust anyone below loyalty level two. Get his trust, then eliminate ten PMCs on Shoreline and survive five extractions. Wet work, clean payment.",
-					Note = "Peacekeeper LL2, 10 PMC kills on Shoreline, survive 5 times.",
-					SuccessMessage = "Wet work complete. Peacekeeper pays in dollars."
+					Name = "[TRAD-8] 湿活",
+					Description = "Peacekeeper的湿活。这家伙不信任忠诚度低于二级的任何人。获取他的信任，然后在Shoreline消灭十个PMC并存活五次。湿活，干净报酬。",
+					Note = "Peacekeeper达到LL2，在Shoreline完成10次PMC击杀，存活5次。",
+					SuccessMessage = "湿活完成。Peacekeeper用美金支付。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardPeacekeeperWet } },
@@ -326,17 +326,17 @@ public static class TradersThemeDefinitions
 				Location = MapCustoms,
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 2, Description = "Have Skier LL2", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 2 },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the transport with chemicals on Customs", VisitZoneId = "gazel" },
-					new() { ConditionType = "Survive", Value = 1, Description = "Survive and extract from Customs", SurviveLocations = new() { "bigmap" } },
-					new() { ConditionType = "SearchContainer", Value = 50, Description = "Search 50 containers" }
+					new() { ConditionType = "TraderLoyalty", Value = 2, Description = "拥有Skier 2级", TraderLoyaltyId = TraderSkier, TraderLoyaltyLevel = 2 },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在海关找到化学品运输车", VisitZoneId = "gazel" },
+					new() { ConditionType = "Survive", Value = 1, Description = "从海关存活并撤离", SurviveLocations = new() { "bigmap" } },
+					new() { ConditionType = "SearchContainer", Value = 50, Description = "搜索50个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-9] Chemical Warfare",
-					Description = "Skier's Chemical Part 4. The shadiest quest from the shadiest trader. Get his trust to level two, find the chemical transport on Customs, search fifty containers, and extract alive. Don't ask what the chemicals are for.",
-					Note = "Skier LL2, visit chemical transport, extract Customs, search 50 containers.",
-					SuccessMessage = "Chemicals located. Don't ask questions."
+					Name = "[TRAD-9] 化学战争",
+					Description = "Skier的化学品Part 4。最见不得光的商人给的最见不得光的任务。把他的信任度升到二级，在Customs找到化学品运输车，搜五十个容器并活着撤离。别问化学品是干什么用的。",
+					Note = "Skier达到LL2，访问化学品运输车，从Customs撤离，搜索50个容器。",
+					SuccessMessage = "化学品已定位。别问用途。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSkierChemical } },
@@ -354,15 +354,15 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_skier_chemical",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "Earn 1,000,000\u20bd from transactions" },
-					new() { ConditionType = "LootItem", Value = 80, Description = "Loot 80 items" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "通过交易赚取1,000,000₽" },
+					new() { ConditionType = "LootItem", Value = 80, Description = "搜刮80个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-10] Golden Exchange",
-					Description = "Skier's Golden Swag Exchange. Everything has a price, and Skier knows them all. Earn a million roubles in transactions and loot eighty items. The golden exchange is always open.",
-					Note = "Earn 1,000,000\u20bd and loot 80 items.",
-					SuccessMessage = "A million roubles. The golden exchange delivers."
+					Name = "[TRAD-10] 黄金交易",
+					Description = "Skier的黄金交易。每样东西都有价格，Skier知道所有价格。靠交易赚一百万卢布并摸八十件物品。黄金交易永远开门。",
+					Note = "赚取1,000,000₽并搜刮80件物品。",
+					SuccessMessage = "一百万卢布。黄金交易做到了。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSkierGolden } },
@@ -380,21 +380,21 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_skier_golden",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 3, Description = "Have Mechanic LL3", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "HandoverItem", Value = 10, Description = "Hand over 10 pistol grips", HandoverTargets = new() { ClassPistolGrip } },
-					new() { ConditionType = "HandoverItem", Value = 8, Description = "Hand over 8 foregrips", HandoverTargets = new() { ClassForegrip } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 scopes/sights", HandoverTargets = ScopeClassIds },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 suppressors", HandoverTargets = new() { ClassSilencer } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 muzzle devices", HandoverTargets = new() { ClassMuzzleCombo } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 stocks", HandoverTargets = new() { ClassStock } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 handguards", HandoverTargets = new() { ClassHandguard } }
+					new() { ConditionType = "TraderLoyalty", Value = 3, Description = "拥有Mechanic 3级", TraderLoyaltyId = TraderMechanic, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "HandoverItem", Value = 10, Description = "上交10个手枪握把", HandoverTargets = new() { ClassPistolGrip } },
+					new() { ConditionType = "HandoverItem", Value = 8, Description = "上交8个前握把", HandoverTargets = new() { ClassForegrip } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个瞄准镜/瞄具", HandoverTargets = ScopeClassIds },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个消音器", HandoverTargets = new() { ClassSilencer } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个枪口装置", HandoverTargets = new() { ClassMuzzleCombo } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个枪托", HandoverTargets = new() { ClassStock } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个护木", HandoverTargets = new() { ClassHandguard } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-11] Gunsmith Mastery",
-					Description = "Mechanic's Gunsmith Mastery. The master gunsmith wants a full arsenal of parts. Reach loyalty level three and bring him ten pistol grips, eight foregrips, five scopes, five suppressors, five muzzle devices, five stocks, and five handguards. Build the ultimate armory.",
-					Note = "Mechanic LL3 + hand over 43 weapon parts across 7 categories.",
-					SuccessMessage = "The armory is complete. Master gunsmith status achieved."
+					Name = "[TRAD-11] 枪匠大师",
+					Description = "Mechanic的枪匠大师。枪匠大师要一个完整的武器零件库。达到忠诚度三级并给他十个手枪握把、八个前握把、五个瞄具、五个消音器、五个枪口装置、五个枪托、五个护木。建造终极军械库。",
+					Note = "Mechanic达到LL3并交出7个类别共43个武器零件。",
+					SuccessMessage = "军械库已完成。枪匠大师成就达成。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardMechanicMastery } },
@@ -413,21 +413,21 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_mechanic_mastery",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 3, Description = "Have Ragman LL3", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "TraderLoyalty", Value = 3, Description = "拥有Ragman 3级", TraderLoyaltyId = TraderRagman, TraderLoyaltyLevel = 3 },
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 PMCs while wearing a balaclava and scav vest",
+						Description = "穿戴头套和Scav背心击杀10名PMC",
 						KillTarget = "AnyPmc",
 						KillEquipmentGroups = FashionEquipmentGroups()
 					}
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-12] The Fashion Show",
-					Description = "Ragman's Stylish One. Fashion in Tarkov isn't about looking good \u2014 it's about looking dangerous while dressed like a scav. Reach Ragman LL3 and eliminate ten PMCs while wearing a balaclava and a scav vest. The deadliest fashion statement.",
-					Note = "Ragman LL3 + 10 PMC kills wearing balaclava + scav vest.",
-					SuccessMessage = "Deadly and stylish. Ragman is impressed."
+					Name = "[TRAD-12] 时装秀",
+					Description = "Ragman的时尚人士。塔科夫的时尚不是穿得好看——是穿得像Scav但看起来很危险。达到Ragman LL3并在佩戴面罩和Scav背心的情况下消灭十个PMC。最致命的时尚宣言。",
+					Note = "Ragman达到LL3并在佩戴面罩+Scav背心的情况下完成10次PMC击杀。",
+					SuccessMessage = "致命且有型。Ragman印象深刻。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardRagmanStylish } },
@@ -459,15 +459,15 @@ public static class TradersThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets on Lighthouse", KillTarget = "Any", KillLocations = new() { "Lighthouse" } },
-					new() { ConditionType = "HandoverItem", Value = 1000000, Description = "Hand over 1,000,000\u20bd", HandoverTargets = new() { Roubles } }
+					new() { ConditionType = "Kills", Value = 20, Description = "在灯塔击杀20个目标", KillTarget = "Any", KillLocations = new() { "Lighthouse" } },
+					new() { ConditionType = "HandoverItem", Value = 1000000, Description = "上交1,000,000₽", HandoverTargets = new() { Roubles } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-13] Make Amends",
-					Description = "Lightkeeper's Make Amends. The most mysterious trader in Tarkov. He doesn't take apologies \u2014 he takes cash. Eliminate twenty targets on Lighthouse and hand over a million roubles. Amends are expensive.",
-					Note = "20 kills on Lighthouse + hand over 1,000,000\u20bd.",
-					SuccessMessage = "Amends made. The Lightkeeper remembers."
+					Name = "[TRAD-13] 弥补过失",
+					Description = "灯塔守卫的弥补过错。塔科夫最神秘的商人。他不接受道歉——他收现金。在Lighthouse消灭二十个目标并交出一百万卢布。弥补很贵。",
+					Note = "在Lighthouse击杀20人并交出1,000,000₽。",
+					SuccessMessage = "已做出补偿。灯塔守卫会记得。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardLightkeeper } },
@@ -486,16 +486,16 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_lightkeeper",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 3, Description = "Have Prapor LL3", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 3 },
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 PMCs with headshots", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } }
+					new() { ConditionType = "TraderLoyalty", Value = 3, Description = "拥有Prapor 3级", TraderLoyaltyId = TraderPrapor, TraderLoyaltyLevel = 3 },
+					new() { ConditionType = "Kills", Value = 30, Description = "击杀30名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 20, Description = "爆头击杀20名PMC", KillTarget = "AnyPmc", KillBodyParts = new() { "Head" } }
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-14] The Punisher's Finale",
-					Description = "Prapor's Punisher Part 6. The final chapter of the most infamous quest chain in Tarkov. Reach Prapor LL3, thirty PMC kills, twenty of them headshots. This is where legends are forged and keyboards are broken.",
-					Note = "Prapor LL3, 30 PMC kills, 20 PMC headshots.",
-					SuccessMessage = "The Punisher is complete. Legend forged."
+					Name = "[TRAD-14] 惩罚者的终章",
+					Description = "Prapor的惩罚者Part 6。塔科夫最臭名昭著任务线的最终章。达到Prapor LL3、三十次PMC击杀、其中二十次爆头。传说在此铸造、键盘在此碎裂。",
+					Note = "Prapor达到LL3，完成30次PMC击杀、20次PMC爆头。",
+					SuccessMessage = "惩罚者已完成。传奇已锻造。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardPraporPunisher } },
@@ -514,17 +514,17 @@ public static class TradersThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_traders_prapor_punisher",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 scavs", KillTarget = "Savage" },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "SearchContainer", Value = 200, Description = "Search 200 containers" },
-					new() { ConditionType = "HandoverItem", Value = 50, Description = "Hand over 50 jewelry items", HandoverTargets = new() { "57864a3d24597754843f8721" } } // Jewelry parent class
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名Scav", KillTarget = "Savage" },
+					new() { ConditionType = "Kills", Value = 50, Description = "击杀50名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "SearchContainer", Value = 200, Description = "搜索200个容器" },
+					new() { ConditionType = "HandoverItem", Value = 50, Description = "上交50个珠宝", HandoverTargets = new() { "57864a3d24597754843f8721" } } // Jewelry parent class
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-15] The Collector's Grind",
-					Description = "Fence's Collector. The ultimate grind. Fence wants everything \u2014 every kill, every container, and your shiniest loot. Fifty scavs, fifty PMCs, two hundred containers searched, and fifty pieces of jewelry handed over. This is the endgame of the endgame.",
-					Note = "50 scavs, 50 PMCs, 200 containers, hand over 50 jewelry.",
-					SuccessMessage = "The Collector is satisfied. For now."
+					Name = "[TRAD-15] 收藏家的苦旅",
+					Description = "Fence的收藏家。终极肝帝。Fence什么都想要——每次击杀、每个容器、你最闪亮的战利品。五十个Scav、五十个PMC、两百个容器、交出五十件珠宝。终局中的终局。",
+					Note = "50个Scav、50个PMC、200个容器，交出50件珠宝。",
+					SuccessMessage = "收藏家满意了。暂时。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardFenceCollector } },
@@ -548,7 +548,7 @@ public static class TradersThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 trader cards (one of each)",
+					Description = "上交全部15张商人卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardPraporDebut] = "Prapor Debut",
@@ -570,10 +570,10 @@ public static class TradersThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[TRAD-C] Kolya's Trader Handbook",
-					Description = "Every trader documented, every iconic quest referenced. From Prapor's debut to Fence's collector grind, you've walked in every trader's shoes. Hand over the cards and the Trader Handbook is complete.",
-					Note = "Hand over one of each trader card to complete the collection.",
-					SuccessMessage = "The Trader Handbook is complete. Every deal documented."
+					Name = "[TRAD-C] Kolya的商人手册",
+					Description = "每个商人都已记录、每个标志性任务都已引用。从Prapor的首份合同到Fence的收藏家苦旅，你走过每个商人的路。交出卡牌，商人手册就完整了。",
+					Note = "交出所有商人卡牌各一张以完成收集。",
+					SuccessMessage = "商人手册已完成。每笔交易都已记录。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

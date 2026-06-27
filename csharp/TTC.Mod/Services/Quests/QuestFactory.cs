@@ -119,14 +119,14 @@ public sealed class QuestFactory
 
 		var locales = new Dictionary<string, string>
 		{
-			[$"{questId} name"] = "Welcome to the Collection",
-			[$"{questId} description"] = "Ah, a new face! Come in, come in. I'm Kolya \u2014 Nikolai Vetrov, if we're being formal. Before all this chaos, I was an archivist for TerraGroup. Now? I document everything I see through these cards. Every boss, every bullet, every absurd death in this forsaken city. I've started a little collection project, and I could use someone with your... field experience. Take this booster pack \u2014 consider it a welcome gift. Five random cards from my archives. A word of advice: hold onto them. Every card can be traded back to me for something useful \u2014 weapons, gear, keys, you name it. The rarer the card, the better the reward. If you want more packs, I sell them too. And if you're interested in targeted collecting, I've got work for you. Each collection tells a story, and I need help completing them all.",
-			[$"{questId} note"] = "Meet Kolya and receive your first booster pack.",
-			[$"{questId} successMessageText"] = "Welcome aboard, collector. This is just the beginning.",
-			[$"{questId} startedMessageText"] = "Take a look around, friend. I've got plenty of work for someone like you.",
-			[$"{questId} acceptPlayerMessage"] = "Sounds interesting. I'm in.",
-			[$"{questId} declinePlayerMessage"] = "Maybe another time.",
-			[$"{questId} completePlayerMessage"] = "Thanks for the welcome gift, Kolya."
+			[$"{questId} name"] = "欢迎加入收藏",
+			[$"{questId} description"] = "\u554a\uff0c\u65b0\u9762\u5b54\uff01\u8fdb\u6765\uff0c\u8fdb\u6765\u3002\u6211\u662fKolya\u2014\u2014\u6b63\u5f0f\u70b9\u8bf4\uff0c\u5c3c\u53e4\u62c9\u00b7\u7ef4\u7279\u7f57\u592b\u3002\u5728\u8fd9\u573a\u6df7\u4e71\u4e4b\u524d\uff0c\u6211\u662fTerraGroup\u7684\u6863\u6848\u7ba1\u7406\u5458\u3002\u73b0\u5728\uff1f\u6211\u7528\u8fd9\u4e9b\u5361\u724c\u8bb0\u5f55\u6211\u770b\u5230\u7684\u4e00\u5207\u3002\u6bcf\u4e00\u4e2aBoss\uff0c\u6bcf\u4e00\u53d1\u5b50\u5f39\uff0c\u8fd9\u5ea7\u88ab\u9057\u5f03\u57ce\u5e02\u91cc\u6bcf\u4e00\u6b21\u8352\u8c2c\u7684\u6b7b\u4ea1\u3002\u6211\u641e\u4e86\u4e2a\u5c0f\u5c0f\u7684\u6536\u85cf\u9879\u76ee\uff0c\u800c\u6709\u4f60\u8fd9\u6837\u2026\u2026\u5b9e\u6218\u7ecf\u9a8c\u7684\u4eba\u6b63\u5408\u9002\u3002\u62ff\u7740\u8fd9\u4e2a\u5361\u5305\u2014\u2014\u5c31\u5f53\u662f\u6b22\u8fce\u793c\u7269\u3002\u4ece\u6211\u6863\u6848\u91cc\u968f\u673a\u62bd\u7684\u4e94\u5f20\u5361\u3002\u7ed9\u4f60\u4e2a\u5efa\u8bae\uff1a\u597d\u597d\u4fdd\u7ba1\u3002\u6bcf\u4e00\u5f20\u5361\u90fd\u53ef\u4ee5\u627e\u6211\u6362\u6709\u7528\u7684\u4e1c\u897f\u2014\u2014\u6b66\u5668\u3001\u88c5\u5907\u3001\u94a5\u5319\uff0c\u5e94\u6709\u5c3d\u6709\u3002\u5361\u8d8a\u7a00\u6709\uff0c\u5956\u52b1\u8d8a\u597d\u3002\u60f3\u4e70\u66f4\u591a\u5361\u5305\u7684\u8bdd\uff0c\u6211\u4e5f\u5356\u3002\u5982\u679c\u4f60\u5bf9\u5b9a\u5411\u6536\u85cf\u611f\u5174\u8da3\uff0c\u6211\u4e5f\u6709\u6d3b\u7ed9\u4f60\u5e72\u3002\u6bcf\u4e2a\u7cfb\u5217\u90fd\u6709\u4e00\u6bb5\u6545\u4e8b\uff0c\u6211\u9700\u8981\u5e2e\u624b\u628a\u5b83\u4eec\u51d1\u9f50\u3002",
+			[$"{questId} note"] = "结识Kolya并领取你的第一个卡包。",
+			[$"{questId} successMessageText"] = "欢迎加入，收藏家。这只是个开始。",
+			[$"{questId} startedMessageText"] = "随便看看，朋友。像你这样的人，我有很多活给你。",
+			[$"{questId} acceptPlayerMessage"] = "听起来有意思，算我一个。",
+			[$"{questId} declinePlayerMessage"] = "下次再说。",
+			[$"{questId} completePlayerMessage"] = "谢谢你的欢迎礼物，Kolya。"
 		};
 
 		return new NewQuestDetails
@@ -149,14 +149,14 @@ public sealed class QuestFactory
 
 		var locales = new Dictionary<string, string>
 		{
-			[$"{questId} name"] = "A Note for Returning Collectors",
-			[$"{questId} description"] = "Hey, I see you've already got some cards and binders from before I set up shop here. A word of advice \u2014 if you want the full experience of earning each card through my quests, consider selling your existing cards and binders to me. My quests are designed as a progression system: each completed quest unlocks a barter deal for that specific card. If you already have the cards, you'll miss out on the thrill of the hunt. Of course, if you'd rather keep what you have, that's fine too \u2014 you can still do the quests and trade duplicates. Your call, friend.",
-			[$"{questId} note"] = "Information for players who already have TTC cards from a previous version.",
-			[$"{questId} successMessageText"] = "Good to know you've read it. Now let's get to work.",
-			[$"{questId} startedMessageText"] = "Just a heads up for returning collectors.",
-			[$"{questId} acceptPlayerMessage"] = "Got it, thanks for the heads up.",
-			[$"{questId} declinePlayerMessage"] = "I'll read this later.",
-			[$"{questId} completePlayerMessage"] = "Understood, Kolya."
+			[$"{questId} name"] = "给回归收藏家的提示",
+			[$"{questId} description"] = "\u563f\uff0c\u6211\u770b\u4f60\u5728\u6211\u5f00\u5e97\u4e4b\u524d\u5c31\u5df2\u7ecf\u641e\u5230\u4e86\u4e00\u4e9b\u5361\u724c\u548c\u5361\u518c\u3002\u7ed9\u4f60\u4e2a\u5efa\u8bae\u2014\u2014\u5982\u679c\u4f60\u60f3\u4f53\u9a8c\u901a\u8fc7\u4efb\u52a1\u6323\u6bcf\u5f20\u5361\u7684\u5b8c\u6574\u8fc7\u7a0b\uff0c\u53ef\u4ee5\u8003\u8651\u628a\u4f60\u73b0\u6709\u7684\u5361\u724c\u548c\u5361\u518c\u5356\u7ed9\u6211\u3002\u6211\u7684\u4efb\u52a1\u662f\u4e00\u4e2a\u8fdb\u5ea6\u7cfb\u7edf\uff1a\u6bcf\u5b8c\u6210\u4e00\u4e2a\u4efb\u52a1\uff0c\u5c31\u89e3\u9501\u90a3\u5f20\u5361\u5bf9\u5e94\u7684\u4ea4\u6613\u3002\u5982\u679c\u4f60\u5df2\u7ecf\u6709\u4e86\u90a3\u4e9b\u5361\uff0c\u5c31\u9519\u8fc7\u4e86\u72e9\u730e\u7684\u4e50\u8da3\u3002\u5f53\u7136\uff0c\u5982\u679c\u4f60\u60f3\u7559\u7740\u4f60\u624b\u5934\u7684\u4e1c\u897f\uff0c\u4e5f\u6ca1\u5173\u7cfb\u2014\u2014\u4f60\u8fd8\u662f\u53ef\u4ee5\u505a\u4efb\u52a1\uff0c\u7528\u91cd\u590d\u7684\u5361\u6765\u4ea4\u6613\u3002\u4f60\u8bf4\u4e86\u7b97\uff0c\u670b\u53cb\u3002",
+			[$"{questId} note"] = "给已拥有旧版TTC卡牌的玩家的信息。",
+			[$"{questId} successMessageText"] = "很好，你看过了。现在开始干活吧。",
+			[$"{questId} startedMessageText"] = "给回归收藏家的一个小提示。",
+			[$"{questId} acceptPlayerMessage"] = "明白了，谢谢提醒。",
+			[$"{questId} declinePlayerMessage"] = "回头再读。",
+			[$"{questId} completePlayerMessage"] = "了解，Kolya。"
 		};
 
 		return new NewQuestDetails

@@ -164,14 +164,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileADS", Value = 3, Description = "Get 3 kills while aiming down sights" }
+					new() { ConditionType = "KillsWhileADS", Value = 3, Description = "在瞄准状态下击杀3个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-0] The Hunter's Dossier",
-					Description = "So you want to start documenting the bosses of Tarkov? That's not for the faint-hearted, friend. These aren't your average scavs \u2014 each one of them has carved a bloody legend into this city. Before I hand over my dossier binder, I need to know you can at least handle yourself in a firefight. Go out there, take down three hostiles with precision \u2014 aimed shots, no spray-and-pray. Come back alive and the binder is yours.",
-					Note = "Get 3 ADS kills to prove yourself, then receive the Bosses & Mini-Bosses binder.",
-					SuccessMessage = "Solid work. Here's your dossier binder \u2014 fill it up."
+					Name = "[BOSS-0] 猎人的档案",
+					Description = "想记录塔科夫的Boss们？这可不是胆小之辈能干的事，朋友。他们可不是普通Scav——每个人都在这座城市刻下了血淋淋的传说。在给你档案夹之前，我得确认你至少能在枪战中保护自己。出去用精准的瞄准干掉三个敌人——不要乱扫。活着回来，夹子就是你的。",
+					Note = "完成3次ADS击杀证明自己，获取Boss与小Boss图鉴。",
+					SuccessMessage = "扎实的活。这是你的档案夹——填满它。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderBosses } }
@@ -186,14 +186,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_bosses_and_mini_bosses",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "Get 10 kills while crouched" }
+					new() { ConditionType = "KillsWhileCrouched", Value = 10, Description = "在蹲伏状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-1] Ghost of the Pines",
-					Description = "The Partisan... now there's a ghost story. He moves through the pines of Woods like he's part of the forest itself. Some say he's ex-military, others say he's just a man with nothing left to lose. Either way, if you spot him, you're probably already flanked. Show me you understand guerrilla tactics \u2014 take down ten targets while staying low and quiet.",
-					Note = "Kill 10 enemies while crouched.",
-					SuccessMessage = "Silent and deadly. The Partisan would approve."
+					Name = "[BOSS-1] 松林幽灵",
+					Description = "Partisan……那可是个鬼故事。他穿行在Woods的松林中，仿佛就是森林的一部分。有人说他是退伍军人，有人说他只是个一无所有的亡命徒。不管怎样，如果你发现了他，你很可能已经被包围了。让我看看你懂游击战术——低姿态、悄无声息地干掉十个目标。",
+					Note = "蹲姿击杀10个敌人。",
+					SuccessMessage = "沉默而致命。Partisan会赞许。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardPartisan } },
@@ -207,14 +207,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_partisan",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithDMR", Value = 1000, Description = "Deal 1,000 damage with marksman rifles" }
+					new() { ConditionType = "DamageWithDMR", Value = 1000, Description = "使用精确步枪造成1,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-2] The Sawmill's Glint",
-					Description = "Shturman doesn't miss. He sits up in that sawmill like a spider in its web, SVD ready. By the time you see the glint off his scope, you're already calculating if your armor can take the hit. Spoiler: it usually can't. I need you to put in some serious range time with a marksman rifle \u2014 show me you understand the art of the long shot.",
-					Note = "Deal 1,000 damage with DMRs.",
-					SuccessMessage = "Good shooting. Shturman would tip his hat."
+					Name = "[BOSS-2] 锯木厂的闪光",
+					Description = "Shturman从不失手。他蹲在锯木厂里就像网中的蜘蛛，SVD随时待命。当你看到瞄准镜反光的那一瞬间，你已经在计算你的护甲能扛住这一枪了。剧透：通常扛不住。我需要你用精准步枪好好练练——让我看看你懂远程射击的艺术。",
+					Note = "用DMR造成1,000伤害。",
+					SuccessMessage = "打得漂亮。Shturman会脱帽致敬。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardShturman } },
@@ -228,14 +228,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_shturman",
 				Objectives = new()
 				{
-					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 1000, Description = "Accumulate 1,000m total shot distance with sniper rifles" }
+					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 1000, Description = "使用狙击步枪累计1,000米射击距离" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-3] Blink and You're Dead",
-					Description = "Birdeye is The Goons' eyes. Perched somewhere you'd never think to look, watching through thermals while you loot that body thinking you're safe. The man is a phantom \u2014 and his shots come from distances that make you question reality. I want you to channel that energy. Get some long-range trigger time in with a proper sniper rifle. One kilometer of cumulative shots. Make every round count.",
-					Note = "Accumulate 1,000m total sniper shot distance.",
-					SuccessMessage = "That's some serious range work. Birdeye-level."
+					Name = "[BOSS-3] 眨眼即死",
+					Description = "Birdeye是The Goons的眼睛。蹲在你想都想不到的地方，透过热成像看着你自以为安全地摸尸。这人是个幽灵——他的子弹从让你怀疑现实的距离飞来。我要你展现这种气质。拿把正经狙击枪去打远距离。累计一公里的射击距离。让每一发子弹都有意义。",
+					Note = "累计狙击射击距离1,000米。",
+					SuccessMessage = "这射程表现很认真。Birdeye级别。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBirdeye } },
@@ -249,14 +249,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_birdeye",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithAR", Value = 5000, Description = "Deal 5,000 damage with assault rifles" }
+					new() { ConditionType = "DamageWithAR", Value = 5000, Description = "使用突击步枪造成5,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-4] Six Guards, Zero Mercy",
-					Description = "Glukhar runs Reserve like it's his personal kingdom. Six heavily armed guards surround him at all times \u2014 and they don't hesitate. The man himself carries enough firepower to level a building. Dealing with him means dealing with an army. I need you to put in serious work with an assault rifle. Five thousand damage worth of lead \u2014 make even Glukhar's boys think twice.",
-					Note = "Deal 5,000 damage with assault rifles.",
-					SuccessMessage = "That's some firepower. Glukhar's guards would be nervous."
+					Name = "[BOSS-4] 六个护卫，毫不留情",
+					Description = "Glukhar把Reserve当成自己的王国。六个重装护卫形影不离——而且他们从不犹豫。他本人的火力足以夷平一栋建筑。对付他等于对付一支军队。我需要你用突击步枪下真功夫。五千点伤害——让Glukhar的手下也得掂量掂量。",
+					Note = "用突击步枪造成5,000伤害。",
+					SuccessMessage = "这火力足。Glukhar的护卫们会紧张的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardGlukhar } },
@@ -270,14 +270,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_glukhar",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageToArmour", Value = 2500, Description = "Deal 2,500 damage to armor" }
+					new() { ConditionType = "DamageToArmour", Value = 2500, Description = "对护甲造成2,500伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-5] The PMC Butcher's Bill",
-					Description = "Kollontay earned his nickname the hard way. PMCs avoid his patrol routes like the plague \u2014 and the ones who don't... well, let's just say he doesn't take prisoners. The man is armored head to toe and his entourage is no different. You want this card? Show me you know how to shred through protection. Twenty-five hundred points of armor damage.",
-					Note = "Deal 2,500 damage to armor.",
-					SuccessMessage = "You know how to crack armor. Impressive."
+					Name = "[BOSS-5] PMC屠夫的账单",
+					Description = "Kollontay的绰号是打出来的。PMC们对他巡逻路线的态度跟躲瘟疫似的——至于不躲的……这么说吧，他不留活口。这人从头到脚披甲，手下也一个样。想要这张卡？让我看看你懂如何撕碎防护。两千五百点护甲伤害。",
+					Note = "对护甲造成2,500伤害。",
+					SuccessMessage = "你懂得撕碎护甲。印象深刻。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardKollontay } },
@@ -295,14 +295,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_kollontay",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthGain", Value = 1000, Description = "Restore 1,000 HP total" }
+					new() { ConditionType = "HealthGain", Value = 1000, Description = "累计恢复1,000 HP" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-6] Bad Medicine",
-					Description = "Sanitar is... complicated. Half doctor, half lunatic, all dangerous. He patches himself up mid-firefight like it's a minor inconvenience. His syringes are legendary \u2014 nobody knows exactly what's in them, but they work. Fast. If you want to earn this card, you need to understand the value of staying alive. Patch yourself up \u2014 a lot. One thousand hit points restored. Just like the Mad Surgeon himself.",
-					Note = "Restore 1,000 HP total.",
-					SuccessMessage = "The Mad Surgeon would be proud of your resilience."
+					Name = "[BOSS-6] 劣质药品",
+					Description = "Sanitar这个人……很复杂。半医生、半疯子、全危险。他能在枪林弹雨中给自己打药，仿佛那只是小麻烦。他的针剂可是传奇——没人知道里面到底是什么，但确实有用。效果极快。想拿这张卡，你得理解活命的价值。好好治疗自己——恢复一千点生命值。就像疯医本人一样。",
+					Note = "累计恢复1,000生命值。",
+					SuccessMessage = "疯医会为你的韧性骄傲。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSanitar } },
@@ -316,14 +316,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_sanitar",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithShotguns", Value = 5000, Description = "Deal 5,000 damage with shotguns" }
+					new() { ConditionType = "DamageWithShotguns", Value = 5000, Description = "使用霰弹枪造成5,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-7] Frag Out",
-					Description = "Big Pipe doesn't do subtlety. The man carries a grenade launcher like other people carry a sidearm, and when he's not raining explosives, he's in your face with raw firepower. Every corner he defends is pre-fragged, every hallway a kill zone. You want to understand Big Pipe? Grab something loud, get close, and make it hurt. Five thousand damage with shotguns.",
-					Note = "Deal 5,000 damage with shotguns.",
-					SuccessMessage = "Loud and brutal. Big Pipe approves."
+					Name = "[BOSS-7] 手雷！",
+					Description = "Big Pipe不讲究什么精妙。别人带手枪他带榴弹发射器，不放炸弹的时候就冲到你脸上火力全开。他守的每个角落都预先炸过，每条走廊都是杀戮区。想懂Big Pipe？拿把威猛的枪，靠近点，打得够痛。喷子造成五千伤害。",
+					Note = "用霰弹枪造成5,000伤害。",
+					SuccessMessage = "响亮而残忍。Big Pipe赞赏。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardBigPipe } },
@@ -337,14 +337,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_bigpipe",
 				Objectives = new()
 				{
-					new() { ConditionType = "EncumberedTimeInSeconds", Value = 3600, Description = "Spend 3,600 seconds encumbered" }
+					new() { ConditionType = "EncumberedTimeInSeconds", Value = 3600, Description = "超重状态持续3,600秒" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-8] Tarkov's Traffic Cop",
-					Description = "Kaban... that man is built like a BTR. He patrols the Streets of Tarkov with his crew like he owns the place \u2014 and honestly? He kind of does. Armored to the teeth, surrounded by heavies. Fighting him feels like assaulting a fortified position that shoots back. I want you to understand what it's like to carry that kind of weight. Load up heavy and survive. One hour encumbered should give you a real taste.",
-					Note = "Spend 60 minutes encumbered.",
-					SuccessMessage = "Now you know what it's like to be Kaban."
+					Name = "[BOSS-8] 塔科夫的交警",
+					Description = "Kaban……那家伙壮得像辆BTR。他带着手下在Streets of Tarkov巡逻，仿佛整条街是他的——老实说？某种程度上还真是。武装到牙齿，身边全是壮汉。跟他打感觉像是在攻击一个会还击的堡垒。我要你体验一下负重前行的滋味。装重甲活下去。负重一小时，你就懂了。",
+					Note = "负重累计60分钟。",
+					SuccessMessage = "现在你知道像Kaban一样是什么感觉了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardKaban } },
@@ -362,14 +362,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_kaban",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithPistols", Value = 5000, Description = "Deal 5,000 damage with pistols" }
+					new() { ConditionType = "DamageWithPistols", Value = 5000, Description = "使用手枪造成5,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-9] Golden TT",
-					Description = "Reshala thinks he's royalty. Gold TT pistol, bodyguards in every doorway, and an attitude that says 'I own this resort.' He's been running Customs like his personal fiefdom since day one. The golden TT is his signature \u2014 flashy, deadly, and completely over the top. I want you to channel that energy. Grab a pistol and put in the work. Five thousand damage \u2014 make Reshala proud.",
-					Note = "Deal 5,000 damage with pistols.",
-					SuccessMessage = "Flashy and effective. Reshala would be impressed."
+					Name = "[BOSS-9] 金色TT手枪",
+						Description = "Reshala以为自己是贵族。金色TT手枪，每个门口都有保镖，一副“这度假村归我管”的派头。他从第一天起就把Customs当自己的领地。金色TT是他的标志——花哨、致命、极尽张扬。我要你展现这种气场。拿把手枪，卖力打。五千点伤害——让Reshala为你骄傲。",
+					Note = "用手枪造成5,000伤害。",
+					SuccessMessage = "花哨而有效。Reshala会刮目相看。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardReshala } },
@@ -387,14 +387,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_reshala",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "Cover 10,000 meters while running" }
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 10000, Description = "奔跑10,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-10] The Sledgehammer Waltz",
-					Description = "You hear the sledgehammer before you see him. Tagilla doesn't walk \u2014 he charges. The man is a relentless force of nature in Factory, sprinting through corridors with that welding mask and his hammer, turning every encounter into a chase scene from a horror movie. He's pure aggression in motion. Cover ten kilometers running \u2014 sprint, push forward, never stop. That's what Tagilla would do.",
-					Note = "Cover 10km while running.",
-					SuccessMessage = "Ten kilometers at full sprint. Tagilla-level endurance."
+					Name = "[BOSS-10] 大锤圆舞曲",
+					Description = "听到锤子声的那一刻你还没看到人。Tagilla不是走路——他在冲锋。这人是Factory里不可阻挡的自然之力，戴着焊工面罩、挥着大锤在走廊里狂奔，把每次遭遇都变成恐怖片的追逐戏。他就是纯粹攻击性的化身。跑十公里——冲刺、推进、不停步。这才是Tagilla的作风。",
+					Note = "冲刺距离累计10公里。",
+					SuccessMessage = "全速冲刺十公里。Tagilla级别的耐力。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardTagilla } },
@@ -408,15 +408,15 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_tagilla",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileADS", Value = 60, Description = "Get 60 kills while aiming down sights" },
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" }
+					new() { ConditionType = "KillsWhileADS", Value = 60, Description = "在瞄准状态下击杀60个目标" },
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-11] Mall Sweep",
-					Description = "Killa. The legend of Interchange. That Maska helmet, the RPK, the way he tracks you by sound alone and then sprints at you like a freight train. He's cleared entire squads solo. The man doesn't camp \u2014 he hunts. He knows every store, every corridor, every hiding spot. I need you to channel both sides: the precision killer and the relentless patroller. Sixty aimed kills, a hundred containers searched. Own the space like Killa owns Interchange.",
-					Note = "Get 60 ADS kills and search 100 containers.",
-					SuccessMessage = "You've owned the space. The Mall Marauder recognizes a peer."
+					Name = "[BOSS-11] 商场清扫",
+					Description = "Killa。Interchange的传说。Maska头盔，RPK机枪，听声辨位后像货运列车一样向你冲来。他一个人就能清光整支小队。这人不蹲点——他狩猎。每个商店、每条走廊、每个藏身之处他都了如指掌。我要你双线并行：精确杀手与无情巡逻者。六十次瞄准击杀，一百个容器。像Killa掌控Interchange那样掌控这片空间。",
+					Note = "完成60次ADS击杀并搜索100个容器。",
+					SuccessMessage = "你掌控了这片空间。商场掠夺者认可同行。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardKilla } },
@@ -438,14 +438,14 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_killa",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithLMG", Value = 20000, Description = "Deal 20,000 damage with LMGs" }
+					new() { ConditionType = "DamageWithLMG", Value = 20000, Description = "使用轻机枪造成20,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-12] Commander's Orders",
-					Description = "Knight is the brains behind The Goons. Where Birdeye watches and Big Pipe blasts, Knight coordinates. He calls the shots, literally \u2014 and his weapon of choice is always something heavy. Autocannon bursts, suppressive fire, controlled chaos. The Rogues answer to him, and they answer with overwhelming firepower. You want this card? Grab a machine gun and put in the work. Twenty thousand damage worth of lead downrange.",
-					Note = "Deal 20,000 damage with LMGs.",
-					SuccessMessage = "That's some heavy firepower. Knight would nod in approval."
+					Name = "[BOSS-12] 指挥官的指令",
+					Description = "Knight是The Goons的大脑。Birdeye负责观察，Big Pipe负责轰炸，Knight负责协调。他说了算——而且他的武器永远是重火力。机炮连射、压制火力、有序混乱。Rogues听命于他，用压倒性的火力做回应。想要这张卡？拿起机枪好好干活。两万点伤害。",
+					Note = "用轻机枪造成20,000伤害。",
+					SuccessMessage = "这火力够猛。Knight会点头赞同。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardKnight } },
@@ -463,15 +463,15 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_knight",
 				Objectives = new()
 				{
-					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 10000, Description = "Accumulate 10,000m total shot distance with sniper rifles" },
-					new() { ConditionType = "KillsWhileProne", Value = 20, Description = "Get 20 kills while prone" }
+					new() { ConditionType = "TotalShotDistanceWithSnipers", Value = 10000, Description = "使用狙击步枪累计10,000米射击距离" },
+					new() { ConditionType = "KillsWhileProne", Value = 20, Description = "在卧倒状态下击杀20个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-13] Lighthouse Judgement",
-					Description = "Zryachiy watches from the lighthouse cliffs like a god of judgment. His rifle reaches across the entire island \u2014 if you're in his line of sight, you're in his killzone. No one knows exactly why he guards that place so fiercely, but the bodies speak for themselves. He doesn't chase. He doesn't move. He waits, prone, patient, and then the shot rings out across the water. Ten kilometers of cumulative sniper distance, and twenty kills from prone. Become the sentinel.",
-					Note = "Accumulate 10km sniper distance and get 20 prone kills.",
-					SuccessMessage = "The Cliff Sentinel would recognize a fellow marksman."
+					Name = "[BOSS-13] 灯塔审判",
+					Description = "Zryachiy在灯塔悬崖上俯视众生，如审判之神。他的步枪射程覆盖整座岛屿——如果你在他的视线内，你就在他的杀戮区内。没人知道他到底为什么如此疯狂守卫那片区域，但尸体证明了一切。他不追。他不动。他趴着等，耐心十足，然后枪声划破水面。累计十公里狙击距离，二十次卧倒击杀。成为哨兵。",
+					Note = "累计10公里狙击距离并完成20次卧姿击杀。",
+					SuccessMessage = "悬崖哨兵会认可同行射手。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardZryachiy } },
@@ -494,15 +494,15 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_zryachiy",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileSilent", Value = 5000, Description = "Move 5,000m silently" },
-					new() { ConditionType = "FixAnyBleed", Value = 50, Description = "Fix 50 bleedings" }
+					new() { ConditionType = "MoveDistanceWhileSilent", Value = 5000, Description = "静默移动5,000米" },
+					new() { ConditionType = "FixAnyBleed", Value = 50, Description = "处理50次流血" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-14] The Midnight Ritual",
-					Description = "Nobody talks about the Cultist Priest without lowering their voice. He moves in darkness, surrounded by his followers, blades dripping with some foul toxin that makes your veins burn. They don't shoot \u2014 they stab. And by the time you feel the prick, the poison is already working. Meeting them at night is a death sentence for most. I need you to understand their ways: move in silence, and learn to survive the bleeding they inflict. Fifty wounds patched, five kilometers unheard.",
-					Note = "Move 5km silently and fix 50 bleedings.",
-					SuccessMessage = "Silent and scarred. The Forsaken Prophet would be intrigued."
+					Name = "[BOSS-14] 午夜仪式",
+					Description = "谈到邪教祭司时没人不压低嗓音。他在黑暗中行动，信徒围绕，刀刃滴着让你血管沸腾的毒液。他们不开枪——他们捅。等你感到刺痛时，毒素已经开始发作。夜里遇到他们，对大多数人来说就是死刑。我要你了解他们的方式：悄无声息地行动，学会扛过他们造成的流血。五十次伤口处理，五公里无声前行。",
+					Note = "无声移动5公里并处理50次流血。",
+					SuccessMessage = "沉默而伤痕累累。被遗忘的先知会很感兴趣。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardCultistPriest } },
@@ -525,15 +525,15 @@ public static class BossesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_bosses_cultist_priest",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWithoutADS", Value = 100, Description = "Get 100 kills without aiming down sights" },
-					new() { ConditionType = "MoveDistance", Value = 100000, Description = "Cover 100,000 meters on foot" }
+					new() { ConditionType = "KillsWithoutADS", Value = 100, Description = "不瞄准击杀100个目标" },
+					new() { ConditionType = "MoveDistance", Value = 100000, Description = "步行100,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-15] Echo in the Dark",
-					Description = "You think Tagilla is scary? His shadow is worse. When Tagilla falls, something remains \u2014 an echo, a phantom that swings that sledgehammer in the dark long after the man himself is gone. No one can explain it. Some say it's a hallucination from the fumes in Factory. Others say Tarkov itself won't let him die. The Phantom Sledge doesn't aim \u2014 he swings. He doesn't stop \u2014 he roams. A hundred hipfire kills, a hundred kilometers on foot. Become the ghost.",
-					Note = "Get 100 hipfire kills and cover 100km on foot.",
-					SuccessMessage = "You've become the phantom. The echo lives on."
+					Name = "[BOSS-15] 黑暗中的回声",
+					Description = "你觉得Tagilla可怕？他的影子更甚。当Tagilla倒下时，某种东西依然存在——一个回声，一个在人死后很久仍在黑暗中挥锤的幽灵。没人能解释。有人说这是Factory烟雾制造的幻觉。也有人说塔科夫本身不让他死。幻影之锤不瞄准——他只挥击。他不停步——他漫游。一百次腰射击杀，一百公里徒步。成为幽灵。",
+					Note = "完成100次腰射击杀并徒步100公里。",
+					SuccessMessage = "你已化身幽灵。回声永远存在。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardShadowTagilla } },
@@ -565,7 +565,7 @@ public static class BossesThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 boss cards (one of each)",
+					Description = "上交全部15张Boss卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardPartisan] = "Partisan",
@@ -587,10 +587,10 @@ public static class BossesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[BOSS-C] Kolya's Boss Compendium",
-					Description = "You've done it. Every boss, every mini-boss, every legend documented and verified. This is the complete Bosses & Mini-Bosses collection \u2014 the most dangerous individuals in Tarkov, all in one binder. I've been working on this compendium for months, and you've just handed me the final pieces. This deserves something special. Hand them all over and I'll make sure you're rewarded like the legend you've become.",
-					Note = "Hand over one of each boss card to complete the collection.",
-					SuccessMessage = "The complete Boss Compendium. You've earned this, legend."
+					Name = "[BOSS-C] Kolya的Boss大全",
+					Description = "你做到了。每个Boss、每个小Boss、每个传说都被记录和验证。这就是完整的Boss大全——塔科夫最危险的个体们，全在一本册子里。我花了几个月编纂这份集子，而你刚刚把最后几块拼图交给了我。这值得特别的回报。全部交出，我保证你会得到配得上传说的回报。",
+					Note = "交出所有Boss卡牌各一张以完成收集。",
+					SuccessMessage = "完整的Boss大全。你配得上，传奇。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

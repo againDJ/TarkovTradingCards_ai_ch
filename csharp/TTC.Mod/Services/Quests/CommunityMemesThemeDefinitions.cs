@@ -61,14 +61,14 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 1000, Description = "Move 1,000m while crouched" }
+					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 1000, Description = "蹲伏移动1,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-0] The Meme Board",
-					Description = "Tarkov has its own culture. Wiggling, crouch-walking, hatchet running \u2014 traditions passed down from wipe to wipe. Crouch-walk a kilometer and Kolya will share his collection of community legends.",
-					Note = "Move 1,000m while crouched.",
-					SuccessMessage = "Welcome to meme culture."
+					Name = "[MEME-0] 梗图墙",
+					Description = "塔科夫有自己的文化。左右摇摆、蹲走、跑刀——从一个档期传到下一个档期的传统。蹲走一公里，Kolya就把他收藏的社区传说分享给你。",
+					Note = "蹲走1,000米。",
+					SuccessMessage = "欢迎来到梗文化。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderMemes } }
@@ -82,15 +82,15 @@ public static class CommunityMemesThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Factory 3 times", SurviveLocations = new() { "factory4_day", "factory4_night" } },
-					new() { ConditionType = "LootItem", Value = 20, Description = "Loot 20 items" }
+					new() { ConditionType = "Survive", Value = 3, Description = "从工厂存活并撤离3次", SurviveLocations = new() { "factory4_day", "factory4_night" } },
+					new() { ConditionType = "LootItem", Value = 20, Description = "搜刮20个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-1] Zero to Hero",
-					Description = "Factory Hatchet Runner. No gun, no armor, just a hatchet and raw determination. Sprint in, grab what you can, sprint out. Survive Factory three times and loot twenty items. The hatchet runner lifestyle.",
-					Note = "Survive Factory 3 times and loot 20 items.",
-					SuccessMessage = "Zero to hero. The hatchet way."
+					Name = "[MEME-1] 从零到英雄",
+					Description = "Factory跑刀仔。没枪、没甲，就一把斧头和纯粹的决心。冲进去、能拿什么拿什么、冲出来。在Factory存活三次，摸二十件物品。跑刀仔的生活方式。",
+					Note = "在Factory存活3次并搜刮20件物品。",
+					SuccessMessage = "从零到英雄。跑刀仔之路。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardHatchetRunner } },
@@ -109,14 +109,14 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_hatchetrunner",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 1, Description = "Hand over 1 Broken GPhone smartphone", HandoverTargets = new() { BrokenGPhone } }
+					new() { ConditionType = "HandoverItem", Value = 1, Description = "上交1部损坏的GPhone智能手机", HandoverTargets = new() { BrokenGPhone } }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-2] Tech Support",
-					Description = "Just a G-Phone. Broken, cracked screen, battery dead. Every PMC has looted one thinking it was worth something. Hand over a broken GPhone. Kolya knows a guy who fixes them.",
-					Note = "Hand over 1 Broken GPhone.",
-					SuccessMessage = "Fixed. Sort of."
+					Name = "[MEME-2] 技术支持",
+					Description = "一部GPhone。碎屏、没电。每个PMC都摸过一个以为值钱。交出一个坏掉的GPhone。Kolya认识一个会修的人。",
+					Note = "交出1个坏掉的GPhone。",
+					SuccessMessage = "修了。算修了。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardGPhone } },
@@ -130,15 +130,15 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_gphone",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileCrouched", Value = 5, Description = "Get 5 kills while crouched" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times" }
+					new() { ConditionType = "KillsWhileCrouched", Value = 5, Description = "在蹲伏状态下击杀5个目标" },
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-3] Don't Shoot",
-					Description = "The Friendly Wiggle. The universal Tarkov greeting \u2014 crouch, lean left, lean right, hope they don't shoot. Five kills while crouched and three extractions. Sometimes the wiggle is a lie.",
-					Note = "5 kills while crouched and survive 3 times.",
-					SuccessMessage = "Wiggle. Shoot. Extract."
+					Name = "[MEME-3] 别开枪",
+					Description = "友善摇摆。塔科夫的通用问候——蹲下、左倾、右倾、祈祷他们别开枪。五次蹲姿击杀和三次撤离。有时候摇摆是谎言。",
+					Note = "完成5次蹲姿击杀并存活3次。",
+					SuccessMessage = "摇摆。开枪。撤离。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardWiggle } },
@@ -158,14 +158,14 @@ public static class CommunityMemesThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets on Factory with shotguns", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" }, KillWeapons = AllShotgunIds() }
+					new() { ConditionType = "Kills", Value = 10, Description = "在工厂使用霰弹枪击杀10个目标", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" }, KillWeapons = AllShotgunIds() }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-4] Shotgun Night",
-					Description = "Factory Friday. The community tradition \u2014 every Friday, Factory, shotguns only. Ten kills on Factory with a shotgun. It's Friday somewhere.",
-					Note = "10 kills on Factory with shotguns.",
-					SuccessMessage = "TGIF. Tarkov Got Intense, Friend."
+					Name = "[MEME-4] 霰弹之夜",
+					Description = "Factory星期五。社区传统——每周五、Factory、只准喷子。在Factory用霰弹枪杀十个。某个时区总归是星期五。",
+					Note = "在Factory用霰弹枪击杀10人。",
+					SuccessMessage = "TGIF。塔科夫星期五，棒。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardFactoryFriday } },
@@ -184,15 +184,15 @@ public static class CommunityMemesThemeDefinitions
 				Location = MapReserve,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract from Reserve 5 times", SurviveLocations = new() { "RezervBase" } },
-					new() { ConditionType = "SearchContainer", Value = 40, Description = "Search 40 containers" }
+					new() { ConditionType = "Survive", Value = 5, Description = "从储备站存活并撤离5次", SurviveLocations = new() { "RezervBase" } },
+					new() { ConditionType = "SearchContainer", Value = 40, Description = "搜索40个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-5] Loot and Scoot",
-					Description = "Press F to Pay RESERVE. The underground loot paradise \u2014 if you can extract alive. Survive Reserve five times and search forty containers. Press F to pay respects to your lost loadouts.",
-					Note = "Survive Reserve 5 times and search 40 containers.",
-					SuccessMessage = "F. Respects paid."
+					Name = "[MEME-5] 捡了就跑",
+					Description = "按F致敬Reserve。地下战利品天堂——如果你能活着撤离的话。在Reserve存活五次并搜四十个容器。按F致敬你丢失的装备。",
+					Note = "在Reserve存活5次并搜索40个容器。",
+					SuccessMessage = "F。致敬已献上。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardReserve } },
@@ -210,15 +210,15 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_reserve",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 PMCs from under 10m", KillTarget = "AnyPmc", KillDistanceCompare = "<=", KillDistanceValue = 10 },
-					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "Get 5 kills without ADS" }
+					new() { ConditionType = "Kills", Value = 5, Description = "在10米内击杀5名PMC", KillTarget = "AnyPmc", KillDistanceCompare = "<=", KillDistanceValue = 10 },
+					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "不瞄准击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-6] Betrayal Protocol",
-					Description = "VOIP 'Friendly!' Spam. 'Don't shoot! Friendly! FRIENDLY!' And then the shooting starts. Five PMC kills from under ten meters and five hipfire kills. Trust no one who says 'friendly' twice.",
-					Note = "5 PMC kills <10m and 5 hipfire kills.",
-					SuccessMessage = "Friendly. NOT."
+					Name = "[MEME-6] 背叛协议",
+						Description = "“别开枪！友善！友善！”然后枪响了。五次十米内PMC击杀和五次腰射击杀。从不相信说两次“友善”的人。",
+					Note = "完成5次10米内PMC击杀和5次腰射击杀。",
+					SuccessMessage = "友好。不是。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardVoip } },
@@ -237,14 +237,14 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_voip",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileProne", Value = 10, Description = "Get 10 kills while prone" }
+					new() { ConditionType = "KillsWhileProne", Value = 10, Description = "在卧倒状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-7] Camouflage Expert",
-					Description = "Bush Wookie Tradition. Prone in a bush, ghillie on, scope trained on a chokepoint. You've been there for twenty minutes and you're not moving until someone walks by. Ten kills while prone. Become the bush.",
-					Note = "10 kills while prone.",
-					SuccessMessage = "You ARE the bush."
+					Name = "[MEME-7] 伪装大师",
+					Description = "灌木丛Wookie传统。趴在灌木丛里，吉利服穿好，准镜瞄着要道。你已经趴了二十分钟，不等到有人经过绝不动。十次卧姿击杀。化身为草丛。",
+					Note = "完成10次卧姿击杀。",
+					SuccessMessage = "你就是草丛。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardBushWookie } },
@@ -263,15 +263,15 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_bushwookie",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" },
-					new() { ConditionType = "LootItem", Value = 100, Description = "Loot 100 items" }
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" },
+					new() { ConditionType = "LootItem", Value = 100, Description = "搜刮100个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-8] RNG God",
-					Description = "Bad RNG Blues. A hundred containers searched and nothing but bolts and bandages. The RNG gods are cruel. Search a hundred containers and loot a hundred items. Surely SOMETHING good will drop. Surely.",
-					Note = "Search 100 containers and loot 100 items.",
-					SuccessMessage = "Still bolts. Always bolts."
+					Name = "[MEME-8] RNG之神",
+					Description = "一百个容器搜完，除了螺栓和绷带什么都没有。RNG之神太残酷了。搜一百个容器，摸一百件物品。肯定有好东西会掉。肯定。",
+					Note = "搜索100个容器并搜刮100件物品。",
+					SuccessMessage = "还是螺栓。永远是螺栓。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBadRng } },
@@ -290,16 +290,16 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_badrng",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 food items", HandoverTargets = new() { ClassFood } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 drugs/stimulators", HandoverTargets = new() { ClassDrug, ClassStimulator } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 electronic components", HandoverTargets = new() { ClassElectronics } }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个食物", HandoverTargets = new() { ClassFood } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个药品/兴奋剂", HandoverTargets = new() { ClassDrug, ClassStimulator } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个电子元件", HandoverTargets = new() { ClassElectronics } }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-9] Kolya's Shopping List",
-					Description = "Quest Item? KEK! Every Tarkov player knows the pain \u2014 you need five of something and the game gives you everything except that. Hand over food, drugs, and electronics. Kolya's shopping list from hell.",
-					Note = "Hand over 5 food, 5 drugs/stims, 5 electronics.",
-					SuccessMessage = "Shopping list complete. Finally."
+					Name = "[MEME-9] Kolya的购物清单",
+					Description = "任务物品？呵！每个塔科夫玩家都懂这种痛——你需要五个某样东西，游戏给你的全是别的。交出食物、药品和电子元件。Kolya的地狱购物清单。",
+					Note = "交出5份食物、5份药物/兴奋剂、5个电子元件。",
+					SuccessMessage = "购物清单已完成。终于。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardQuestItem } },
@@ -318,15 +318,15 @@ public static class CommunityMemesThemeDefinitions
 				Location = MapFactory,
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileCrouched", Value = 15, Description = "Get 15 kills while crouched" },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets on Factory", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" } }
+					new() { ConditionType = "KillsWhileCrouched", Value = 15, Description = "在蹲伏状态下击杀15个目标" },
+					new() { ConditionType = "Kills", Value = 10, Description = "在工厂击杀10个目标", KillTarget = "Any", KillLocations = new() { "factory4_day", "factory4_night" } }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-10] Third Floor, Second Door",
-					Description = "Guy on the Stairs. There's always someone sitting on the stairs in Factory. Crouched behind the railing, waiting for footsteps. Fifteen kills while crouched and ten kills on Factory. Be the guy on the stairs.",
-					Note = "15 crouched kills and 10 kills on Factory.",
-					SuccessMessage = "The stairs belong to you now."
+					Name = "[MEME-10] 三楼，第二个门",
+					Description = "楼梯上的人。Factory楼梯上永远坐着一个人。蹲在栏杆后面，等待脚步。十五次蹲姿击杀，在Factory杀十个。成为楼梯上的人。",
+					Note = "完成15次蹲姿击杀并在Factory击杀10人。",
+					SuccessMessage = "楼梯现在属于你。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardStairs } },
@@ -346,16 +346,16 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_stairs",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "MoveDistanceWhileRunning", Value = 20000, Description = "Cover 20,000m while running" },
-					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 5000, Description = "Move 5,000m while crouched" }
+					new() { ConditionType = "Kills", Value = 20, Description = "击杀20名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "MoveDistanceWhileRunning", Value = 20000, Description = "奔跑20,000米" },
+					new() { ConditionType = "MoveDistanceWhileCrouched", Value = 5000, Description = "蹲伏移动5,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-11] The Eternal Debate",
-					Description = "Chad vs Rat Showdown. The eternal Tarkov debate. Are you a W-key warrior or a crouch-walking shadow? Prove you can be both \u2014 twenty PMC kills, twenty kilometers sprinting, and five kilometers crouched. Embrace the duality.",
-					Note = "20 PMC kills, 20km running, 5km crouched.",
-					SuccessMessage = "You are both. The duality of Tarkov."
+					Name = "[MEME-11] 永恒之争",
+					Description = "Chad对老鼠的终极对决。永恒的塔科夫争论。你是W键战士还是蹲走暗影？证明你可以两者兼是——二十次PMC击杀、冲刺二十公里、蹲走五公里。拥抱双重性。",
+					Note = "完成20次PMC击杀，跑步20公里，蹲走5公里。",
+					SuccessMessage = "你两者皆是。塔科夫的双重性。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardChadVsRat } },
@@ -374,15 +374,15 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_chadvsrat",
 				Objectives = new()
 				{
-					new() { ConditionType = "HideoutArea", Value = 1, Description = "Have Rest Space level 3", HideoutAreaType = 9, HideoutAreaLevel = 3 },
-					new() { ConditionType = "HandoverItem", Value = 1000000, Description = "Hand over 1,000,000\u20bd", HandoverTargets = new() { Roubles } }
+					new() { ConditionType = "HideoutArea", Value = 1, Description = "拥有3级休息区", HideoutAreaType = 9, HideoutAreaLevel = 3 },
+					new() { ConditionType = "HandoverItem", Value = 1000000, Description = "上交1,000,000₽", HandoverTargets = new() { Roubles } }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-12] Money Pit",
-					Description = "Ruble Sink Deluxe. Tarkov's economy is designed to drain your wallet. Max out your Rest Space \u2014 the ultimate luxury \u2014 and hand over a million roubles. Money comes, money goes, mostly goes.",
-					Note = "Rest Space level 3 and hand over 1,000,000\u20bd.",
-					SuccessMessage = "Money pit filled. Wallet empty."
+					Name = "[MEME-12] 无底洞",
+					Description = "卢布焚烧炉。塔科夫的经济就是为了掏空你的钱包而设计的。把休息区升满——终极奢侈——再交一百万卢布。钱来钱走，主要是走。",
+					Note = "休息区达到3级并交出1,000,000₽。",
+					SuccessMessage = "钱坑已填满。钱包空了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardRubleSink } },
@@ -400,14 +400,14 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_rublesink",
 				Objectives = new()
 				{
-					new() { ConditionType = "CollectCultistOffering", Value = 10, Description = "Collect 10 Cultist Offerings" }
+					new() { ConditionType = "CollectCultistOffering", Value = 10, Description = "收集10个邪教徒祭品" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-13] Blood Ritual",
-					Description = "Dorms Marked Room Ritual. The community legend \u2014 sacrifice items to the cultist circle and the marked room rewards you. Ten cultist offerings collected. Feed the circle. Appease the gods of loot.",
-					Note = "Collect 10 Cultist Offerings.",
-					SuccessMessage = "The circle is pleased. The loot gods smile."
+					Name = "[MEME-13] 血祭仪式",
+					Description = "宿舍楼标记房仪式。社区传说——向邪教圈献祭物品，标记房会回报你。收集十份邪教供品。喂养圈子。取悦战利品之神。",
+					Note = "收集10份邪教供品。",
+					SuccessMessage = "邪教圈满意了。战利品之神微笑了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardMarkedRitual } },
@@ -427,16 +427,16 @@ public static class CommunityMemesThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract from Labs 10 times", SurviveLocations = new() { "laboratory" } },
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 targets on Labs", KillTarget = "Any", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "Earn 10,000,000\u20bd from transactions" }
+					new() { ConditionType = "Survive", Value = 10, Description = "从实验室存活并撤离10次", SurviveLocations = new() { "laboratory" } },
+					new() { ConditionType = "Kills", Value = 30, Description = "在实验室击杀30个目标", KillTarget = "Any", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "通过交易赚取10,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-14] Content Creator",
-					Description = "Streamer's Labs Keycard. Every content creator's bread and butter \u2014 run Labs, wipe the lobby, extract with millions. Survive Labs ten times, eliminate thirty targets, and earn ten million roubles. Content created.",
-					Note = "Survive Labs 10 times, 30 kills on Labs, earn 10M\u20bd.",
-					SuccessMessage = "Content created. Clip that."
+					Name = "[MEME-14] 内容创作",
+					Description = "内容创作者的Labs钥匙卡。每个内容创作者的本行——跑Labs、清空大厅、背着几百万撤离。在Labs存活十次，消灭三十个目标，赚一千万卢布。内容已创作。",
+					Note = "在Labs存活10次，击杀30人，赚取10M₽。",
+					SuccessMessage = "内容已创建。剪下来。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardStreamerLabs } },
@@ -455,17 +455,17 @@ public static class CommunityMemesThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_meme_streamerlabs",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 intelligence folders", HandoverTargets = new() { IntelFolderItem } },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 graphics cards", HandoverTargets = new() { GpuItem } },
-					new() { ConditionType = "CompleteWorkout", Value = 15, Description = "Complete 15 gym workouts" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 15000000, Description = "Earn 15,000,000\u20bd from transactions" }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5份情报文件夹", HandoverTargets = new() { IntelFolderItem } },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5张显卡", HandoverTargets = new() { GpuItem } },
+					new() { ConditionType = "CompleteWorkout", Value = 15, Description = "完成15次健身锻炼" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 15000000, Description = "通过交易赚取15,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[MEME-15] The Kappa Grind",
-					Description = "Where's the Kappa? The ultimate endgame grind. Every wipe, every player asks the same question. Five intel folders, five GPUs, fifteen gym sessions, and fifteen million roubles. The Kappa is a state of mind.",
-					Note = "5 intel folders, 5 GPUs, 15 workouts, earn 15M\u20bd.",
-					SuccessMessage = "The Kappa was inside you all along."
+					Name = "[MEME-15] Kappa肝帝",
+					Description = "Kappa在哪？终极终局肝。每个档期、每个玩家都在问同一个问题。五个情报文件夹、五个GPU、十五次健身、一千五百万卢布。Kappa是一种心态。",
+					Note = "5个情报文件夹、5个GPU、15次健身、赚取15M₽。",
+					SuccessMessage = "Kappa一直在你心中。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardKappa } },
@@ -495,7 +495,7 @@ public static class CommunityMemesThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 meme cards (one of each)",
+					Description = "上交全部15张社区梗卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardHatchetRunner] = "Hatchet Runner",
@@ -517,10 +517,10 @@ public static class CommunityMemesThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[MEME-C] Kolya's Meme Museum",
-					Description = "Every meme documented, every tradition honored. From the friendly wiggle to the Kappa grind, you've lived the entire Tarkov community experience. Hand over the cards and complete the meme museum.",
-					Note = "Hand over one of each meme card to complete the collection.",
-					SuccessMessage = "The Meme Museum is complete. Culture preserved."
+					Name = "[MEME-C] Kolya的梗博物馆",
+					Description = "每个梗都已记录，每个传统都被尊崇。从友善摇摆到Kappa肝帝，你经历了完整的塔科夫社区体验。交出卡牌，梗博物馆就完整了。",
+					Note = "交出所有梗图卡牌各一张以完成收集。",
+					SuccessMessage = "梗博物馆已完成。文化已被保存。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

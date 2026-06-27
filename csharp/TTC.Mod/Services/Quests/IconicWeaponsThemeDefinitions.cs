@@ -186,14 +186,14 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 3, Description = "Craft 3 items at any workstation" }
+					new() { ConditionType = "CraftAnyItem", Value = 3, Description = "在任意工作站制作3个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-0] The Armorer's Catalog",
-					Description = "You want to talk weapons? Now we're speaking my language. Before the conflict, I catalogued every prototype that came through TerraGroup's labs. Now I catalogue what keeps people alive out there. Every weapon tells a story \u2014 who carried it, what it survived, how many lives it took or saved. Before I hand over this catalog, show me you understand the craft. Hit the workbench, make something useful. An armorer appreciates a man who works with his hands.",
-					Note = "Craft 3 items at any workstation, then receive the Iconic Weapons binder.",
-					SuccessMessage = "A man who knows his way around a workbench. Here's your catalog."
+					Name = "[WEAP-0] 军械师的目录",
+					Description = "你想聊武器？这才对路。冲突之前，我把TerraGroup实验室出来的每一件原型都编了目。现在我编的是外面那些让人活命的东西。每把武器都在讲一个故事——谁拿过它、它经历过什么、夺走或救了多少条命。在把目录交给你之前，让我看看你懂手艺。去工作台做点有用的东西。枪匠欣赏动手的人。",
+					Note = "在任意工作台制作3件物品，获取标志性武器图鉴。",
+					SuccessMessage = "懂工作台的男人。这是你的目录。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderWeapons } }
@@ -212,16 +212,16 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 scavs on Customs",
+						Description = "在海关击杀10名Scav",
 						KillTarget = "Savage", KillLocations = new() { "bigmap" }
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-1] The Tarkov Standard",
-					Description = "The AK-74N. Nothing fancy, nothing exotic, just pure Soviet reliability. This is the gun that taught half the PMCs in Tarkov how to shoot. Every rat who ever cowered behind a dumpster on Customs started with one of these. Dust cover rattling, iron sights slightly crooked, and still putting rounds exactly where you need them. Ten scavs on Customs \u2014 that's where the 74N earns its legend.",
-					Note = "Eliminate 10 scavs on Customs.",
-					SuccessMessage = "The AK-74N. Simple, reliable, deadly. A classic."
+					Name = "[WEAP-1] 塔科夫标配",
+					Description = "AK-74N。不花哨、不奇特，纯苏联可靠性。这把枪教会了塔科夫一半PMC怎么开枪。每个蹲过Customs垃圾桶的穷鬼都是从这玩意儿起步的。防尘盖咔嗒响、机瞄还有点歪，但子弹就是能打到你需要的地方。在Customs干掉十个Scav——这才是74N铸就传说的地方。",
+					Note = "在Customs消灭10个Scav。",
+					SuccessMessage = "AK-74N。简单、可靠、致命。经典之作。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardAk74n } },
@@ -239,16 +239,16 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 8,
-						Description = "Eliminate 8 scavs on Factory",
+						Description = "在工厂击杀8名Scav",
 						KillTarget = "Savage", KillLocations = new() { "factory4_day", "factory4_night" }
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-2] Breacher's Welcome",
-					Description = "The Saiga-12. Semi-auto, box-fed, and absolutely merciless in close quarters. This is the gun that makes Factory a nightmare. One trigger pull and the entire doorway fills with lead. There's no finesse, no subtlety \u2014 just raw, devastating stopping power at arm's length. Eight scavs on Factory. Welcome to room clearing.",
-					Note = "Eliminate 8 scavs on Factory.",
-					SuccessMessage = "That's how you clear a room. The Saiga approves."
+					Name = "[WEAP-2] 破门礼遇",
+					Description = "Saiga-12。半自动、弹匣供弹、近战无情。这把枪就是Factory噩梦的制造者。扣一下扳机，整个门洞全是铅弹。没什么花活，没什么技巧——就是臂长距离内纯粹毁灭性的制止力。在Factory干掉八个Scav。欢迎来到破门清理课。",
+					Note = "在Factory消灭8个Scav。",
+					SuccessMessage = "这才是扫房的正确方式。Saiga赞赏。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardSaiga12 } },
@@ -265,17 +265,17 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 8,
-						Description = "Eliminate 8 targets from under 15m",
+						Description = "在15米内击杀8个目标",
 						KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 15
 					},
-					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "Get 5 kills without aiming down sights" }
+					new() { ConditionType = "KillsWithoutADS", Value = 5, Description = "不瞄准击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-3] Pocket Cannon",
-					Description = "The Obrez. Someone took a perfectly good Mosin-Nagant and hacked it down to pocket size. No stock, no barrel length, no accuracy, no mercy. It's the ugliest thing in Tarkov and it hits like a freight train. Shooting one from the hip is an act of faith. Eight close-range kills and five from the hip \u2014 show me you've got the guts to use the most reckless weapon ever conceived.",
-					Note = "Get 8 kills under 15m and 5 hipfire kills.",
-					SuccessMessage = "Reckless. Brutal. Beautiful. The Obrez would be proud."
+					Name = "[WEAP-3] 口袋大炮",
+					Description = "Obrez。有人把一把完好的莫辛纳甘锯成了口袋大小。没枪托、没枪管、没精度、没怜悯。这是塔科夫最丑的东西，打起来却像货运列车。腰射这玩意儿是一种信仰。八次近战击杀，五次腰射击杀——证明你有胆量用这把史上最疯狂的武器。",
+					Note = "完成8次15米内击杀和5次腰射击杀。",
+					SuccessMessage = "鲁莽。残忍。美丽。Obrez会骄傲的。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardObrez } },
@@ -289,15 +289,15 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_weapons_obrez",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 40, Description = "Search 40 containers" },
-					new() { ConditionType = "DamageWithShotguns", Value = 2000, Description = "Deal 2,000 damage with shotguns" }
+					new() { ConditionType = "SearchContainer", Value = 40, Description = "搜索40个容器" },
+					new() { ConditionType = "DamageWithShotguns", Value = 2000, Description = "使用霰弹枪造成2,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-4] Farming Season",
-					Description = "The MP-153. Reliable, cheap, and absolutely perfect for the Tarkov grind. This is the gun of the factory farmer \u2014 the player who runs in, blasts everything, loots everything, and extracts before anyone knows what happened. It's not glamorous, but it pays the bills. Forty containers searched and two thousand shotgun damage. Show me the hustle.",
-					Note = "Search 40 containers and deal 2,000 shotgun damage.",
-					SuccessMessage = "That's the hustle. The Factory Farmer lifestyle."
+					Name = "[WEAP-4] 收割季节",
+					Description = "MP-153。可靠、便宜、完全适合塔科夫的刷子生涯。这是工厂农民的神器——冲进去、轰一切、捡一切、趁别人没反应过来就撤离。不花哨，但赚得到钱。搜四十个容器，两千点霰弹枪伤害。让我看看你的干劲。",
+					Note = "搜索40个容器并造成2,000霰弹枪伤害。",
+					SuccessMessage = "这就是干劲。工厂刷仔的生活方式。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardMp153 } },
@@ -315,17 +315,17 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 scavs on Interchange",
+						Description = "在立交桥击杀10名Scav",
 						KillTarget = "Savage", KillLocations = new() { "Interchange" }
 					},
-					new() { ConditionType = "DamageWithLMG", Value = 3000, Description = "Deal 3,000 damage with LMGs" }
+					new() { ConditionType = "DamageWithLMG", Value = 3000, Description = "使用轻机枪造成3,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-5] Suppressive Authority",
-					Description = "The RPK-16. When your squad needs covering fire, this is what you reach for. Drum magazine loaded, bipod deployed, and a wall of 5.45 going downrange. The long corridors of Interchange are where this gun truly shines \u2014 nowhere to run, nowhere to hide. Ten kills on Interchange and three thousand LMG damage. Hold that trigger.",
-					Note = "Eliminate 10 scavs on Interchange and deal 3,000 LMG damage.",
-					SuccessMessage = "Suppressive fire like a pro. The RPK-16 has spoken."
+					Name = "[WEAP-5] 压制火力",
+					Description = "RPK-16。队友需要压制火力时就靠它。弹鼓上满、两脚架架好、一堵5.45的墙向前推进。Interchange的长走廊是这把枪真正发光的地方——无处可逃、无处可藏。在Interchange杀十个，造成三千点轻机枪伤害。扣住扳机别松。",
+					Note = "在Interchange消灭10个Scav并造成3,000轻机枪伤害。",
+					SuccessMessage = "专业级压制火力。RPK-16说话了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardRpk16 } },
@@ -342,16 +342,16 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 8,
-						Description = "Eliminate 8 targets from over 100m",
+						Description = "在100米外击杀8个目标",
 						KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 100
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-6] The Budget Sniper",
-					Description = "The Vepr Hunter. Don't let the civilian name fool you \u2014 this semi-auto in 7.62x51 hits like a sledgehammer on a budget. It's the great equalizer. A naked player with a Hunter and M80 rounds can drop a fully geared Chad in two shots from a hundred meters. Eight kills from over a hundred meters \u2014 that's where the Hunter earns its name.",
-					Note = "Eliminate 8 targets from over 100m.",
-					SuccessMessage = "Budget sniper, premium results. The Hunter delivers."
+					Name = "[WEAP-6] 经济狙击手",
+					Description = "Vepr Hunter。别让民用名字骗了你——这把半自动7.62x51打起来像预算版的大锤。它是伟大的平衡器。裸装拿Hunter配M80弹，一百米外两枪就能放倒全装大佬。百米外八个击杀——这才是Hunter扬名的地方。",
+					Note = "消灭8个100米外的目标。",
+					SuccessMessage = "经济狙击手，顶级成果。Hunter做到了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardVeprHunter } },
@@ -365,20 +365,20 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_weapons_veprhunter",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 15, Description = "Get 15 kills while silent" },
+					new() { ConditionType = "KillsWhileSilent", Value = 15, Description = "在静默状态下击杀15个目标" },
 					new()
 					{
 						ConditionType = "Kills", Value = 5,
-						Description = "Eliminate 5 PMCs",
+						Description = "击杀5名PMC",
 						KillTarget = "AnyPmc"
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-7] Shadow Protocol",
-					Description = "The AS VAL. Integrated suppressor, subsonic 9x39, and a fire rate that melts armor before the enemy hears the first shot. This is the weapon of choice for operators who believe in one simple philosophy: if they heard you, you already failed. Fifteen silent kills and five PMCs down. Move like smoke, strike like lightning, and vanish like you were never there.",
-					Note = "Get 15 silent kills and eliminate 5 PMCs.",
-					SuccessMessage = "Silent. Deadly. Invisible. The VAL would be proud."
+					Name = "[WEAP-7] 暗影协议",
+					Description = "AS VAL。一体式消音器、亚音速9x39、射速快到敌人还没听到第一声护甲就化了。这把武器是信奉一条简单哲学的特战队员的首选：如果他们听到了你，你就已经失败了。十五次消音击杀，干掉五个PMC。像烟一样移动，像闪电一样打击，像从未来过一样消失。",
+					Note = "完成15次消音击杀并消灭5个PMC。",
+					SuccessMessage = "沉默。致命。无形。VAL会骄傲的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardAsVal } },
@@ -395,17 +395,17 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 15,
-						Description = "Eliminate 15 targets with headshots",
+						Description = "爆头击杀15个目标",
 						KillTarget = "Any", KillBodyParts = new() { "Head" }
 					},
-					new() { ConditionType = "DamageWithSMG", Value = 5000, Description = "Deal 5,000 damage with SMGs" }
+					new() { ConditionType = "DamageWithSMG", Value = 5000, Description = "使用冲锋枪造成5,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-8] Precision Buzzsaw",
-					Description = "The MP7A1. Forty rounds of 4.6mm at 950 rounds per minute with virtually zero recoil. It's not a gun \u2014 it's a laser beam that happens to fire bullets. HK engineered the kick out of this thing so completely that you can mag-dump at fifty meters and every round hits the same hole. Fifteen headshots and five thousand SMG damage. Show me that precision.",
-					Note = "Get 15 headshot kills and deal 5,000 SMG damage.",
-					SuccessMessage = "Precision and volume. The MP7 way."
+					Name = "[WEAP-8] 精准电锯",
+					Description = "MP7A1。四十发4.6毫米弹，每分钟九百五十发，后座力几乎为零。这不是枪——这是恰好会射子弹的激光束。HK把后座从这东西里消除得太彻底，你可以在五十米外满弹匣倾泻，每发都打同一个洞。十五次爆头和五千点冲锋枪伤害。展示那种精准。",
+					Note = "完成15次爆头并造成5,000冲锋枪伤害。",
+					SuccessMessage = "精准与弹量。MP7之道。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardMp7 } },
@@ -419,14 +419,14 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_weapons_mp7",
 				Objectives = new()
 				{
-					new() { ConditionType = "DestroyLegsWithSMG", Value = 30, Description = "Destroy 30 legs with SMGs" }
+					new() { ConditionType = "DestroyLegsWithSMG", Value = 30, Description = "使用冲锋枪摧毁30条腿" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-9] Leg Day",
-					Description = "The PP-19-01 Vityaz. Sixty-four rounds in that gorgeous helical magazine and every single one of them aimed at the knees. When you can't penetrate class 5 armor, you don't need to \u2014 just destroy what's not protected. The Bizon taught a generation of Tarkov players the art of leg meta. Thirty legs destroyed with any SMG. Make them crawl.",
-					Note = "Destroy 30 legs with SMGs.",
-					SuccessMessage = "They're not walking that off. Leg meta mastered."
+					Name = "[WEAP-9] 腿部训练日",
+					Description = "PP-19-01 Vityaz。那个华丽的螺旋弹匣里装着六十四发，每一发都瞄准膝盖。当你打不穿5级甲的时候，不需要打穿——摧毁没被保护的部分就行。野牛教会了一代塔科夫玩家腿部Meta的艺术。用任意冲锋枪击毁三十条腿。让他们爬。",
+					Note = "用冲锋枪击毁30条腿。",
+					SuccessMessage = "他们走不动了。修腿技术已精通。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBizon } },
@@ -443,17 +443,17 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 15,
-						Description = "Eliminate 15 PMCs on Interchange or Labs",
+						Description = "在立交桥或实验室击杀15名PMC",
 						KillTarget = "AnyPmc", KillLocations = new() { "Interchange", "laboratory" }
 					},
-					new() { ConditionType = "DamageToArmour", Value = 10000, Description = "Deal 10,000 damage to armor" }
+					new() { ConditionType = "DamageToArmour", Value = 10000, Description = "对护甲造成10,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-10] The Meta Chase",
-					Description = "The M4A1 Meta Build. Every attachment hand-picked for maximum ergo, minimum recoil, and absolute lethality. This is the gun that Labs runners dream about \u2014 the one where every stat is maxed, every mod is best-in-slot, and the only thing standing between you and a wipe is your own aim. Fifteen PMCs on Interchange or Labs and ten thousand armor damage. Prove you're worthy of the meta.",
-					Note = "Eliminate 15 PMCs on Interchange or Labs, deal 10,000 armor damage.",
-					SuccessMessage = "Meta achieved. The M4 has spoken."
+					Name = "[WEAP-10] 追逐Meta",
+					Description = "M4A1 Meta配置。每个配件都精挑细选，追求最高人机、最低后座、绝对致命。这是跑实验室的玩家梦寐以求的枪——每一项属性都拉满，每个配件都是版本最优，唯一阻隔你和灭队的就是你的枪法。在Interchange或Labs干掉十五个PMC，造成一万点护甲伤害。证明你配得上Meta。",
+					Note = "在Interchange或Labs消灭15个PMC，造成10,000护甲伤害。",
+					SuccessMessage = "Meta已达成。M4说话了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardM4a1 } },
@@ -471,20 +471,20 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_weapons_m4a1",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithRevolvers", Value = 5000, Description = "Deal 5,000 damage with revolvers" },
+					new() { ConditionType = "DamageWithRevolvers", Value = 5000, Description = "使用左轮手枪造成5,000伤害" },
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 targets from under 25m",
+						Description = "在25米内击杀10个目标",
 						KillTarget = "Any", KillDistanceCompare = "<=", KillDistanceValue = 25
 					}
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-11] Hand Cannon",
-					Description = "The RSh-12. A revolver that fires 12.7x55mm \u2014 the same caliber as the ASh-12 assault rifle, crammed into a handgun. Every shot sounds like a cannon going off. The recoil is insane, the accuracy is questionable past spitting distance, and the damage is absolutely obscene. Five thousand revolver damage and ten close-range kills. May your wrists survive.",
-					Note = "Deal 5,000 revolver damage and get 10 kills under 25m.",
-					SuccessMessage = "Thunder delivered. The RSh-12 is satisfied."
+					Name = "[WEAP-11] 手炮",
+					Description = "RSh-12。一把发射12.7x55毫米弹的左轮——跟ASh-12突击步枪一个口径，塞进了手枪里。每开一枪都像大炮在响。后座疯狂，精度嘛，超出口水距离就别问了，但伤害绝对离谱。五千点左轮伤害，十次近距击杀。愿你的手腕撑得住。",
+					Note = "造成5,000左轮伤害并完成10次25米内击杀。",
+					SuccessMessage = "雷霆已送达。RSh-12满意了。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardRsh12 } },
@@ -501,17 +501,17 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 targets from over 150m",
+						Description = "在150米外击杀10个目标",
 						KillTarget = "Any", KillDistanceCompare = ">=", KillDistanceValue = 150
 					},
-					new() { ConditionType = "KillsWhileProne", Value = 10, Description = "Get 10 kills while prone" }
+					new() { ConditionType = "KillsWhileProne", Value = 10, Description = "在卧倒状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-12] The Patient Shot",
-					Description = "The SV-98. Bolt-action, smooth as butter, and accurate enough to thread a needle at three hundred meters. This is the thinking man's weapon \u2014 no spray, no pray, just one perfect shot. You lie prone, you wait, you breathe, and then you send it. Ten kills from over a hundred fifty meters, ten more from prone. Patience is a weapon.",
-					Note = "Get 10 kills from over 150m and 10 kills while prone.",
-					SuccessMessage = "Patient. Precise. Lethal. The Ghost Needle strikes."
+					Name = "[WEAP-12] 耐心一击",
+					Description = "SV-98。栓动、顺滑如黄油、精准到能在三百米外穿针。这是思想者的武器——没扫射、没祈祷，就一发完美的子弹。你趴下、你等待、你呼吸、然后你送出。十次一百五十米外击杀，十次卧姿击杀。耐心就是武器。",
+					Note = "完成10次150米外击杀和10次卧姿击杀。",
+					SuccessMessage = "耐心。精准。致命。幽灵之针命中。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardSv98 } },
@@ -529,15 +529,15 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_weapons_sv98",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 20, Description = "Get 20 kills while silent" },
-					new() { ConditionType = "MoveDistanceWhileSilent", Value = 3000, Description = "Move 3,000m silently" }
+					new() { ConditionType = "KillsWhileSilent", Value = 20, Description = "在静默状态下击杀20个目标" },
+					new() { ConditionType = "MoveDistanceWhileSilent", Value = 3000, Description = "静默移动3,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-13] Night Operations",
-					Description = "The VSS Vintorez. Thread-cutter. Built from the ground up for special operations \u2014 integrated suppressor, subsonic 9x39, and a profile that disappears in the dark. Where the AS VAL is a raider's tool, the Vintorez is an assassin's instrument. Twenty silent kills and three kilometers of silent movement. Become the night.",
-					Note = "Get 20 silent kills and move 3km silently.",
-					SuccessMessage = "The night belongs to you. The Vintorez is pleased."
+					Name = "[WEAP-13] 夜间行动",
+					Description = "VSS Vintorez。切线者。从零开始为特种作战打造——一体式消音器、亚音速9x39、黑暗中消失的轮廓。AS VAL是Raider的工具，Vintorez是刺客的乐器。二十次消音击杀，三公里无声移动。化身黑夜。",
+					Note = "完成20次消音击杀并无声移动3公里。",
+					SuccessMessage = "黑夜属于你。Vintorez很满意。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardVss } },
@@ -563,23 +563,23 @@ public static class IconicWeaponsThemeDefinitions
 					new()
 					{
 						ConditionType = "Kills", Value = 30,
-						Description = "Eliminate 30 targets with headshots",
+						Description = "爆头击杀30个目标",
 						KillTarget = "Any", KillBodyParts = new() { "Head" }
 					},
 					new()
 					{
 						ConditionType = "Kills", Value = 10,
-						Description = "Eliminate 10 PMCs from over 100m",
+						Description = "在100米外击杀10名PMC",
 						KillTarget = "AnyPmc", KillDistanceCompare = ">=", KillDistanceValue = 100
 					},
-					new() { ConditionType = "DamageWithDMR", Value = 20000, Description = "Deal 20,000 damage with marksman rifles" }
+					new() { ConditionType = "DamageWithDMR", Value = 20000, Description = "使用精确步枪造成20,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-14] One Shot, One Kill",
-					Description = "The SVDS. Semi-automatic, 7.62x54R, and capable of ending any fight with a single well-placed round. This is the gun that makes geared players nervous \u2014 because no amount of armor feels safe when an SVDS is watching. The 'One-Tap Express' earned its name in the hallways of Resort, where a single 7N1 round through the thorax sent many a thicc boy back to the menu. Thirty headshots, ten PMC kills at range, twenty thousand DMR damage. Become the express.",
-					Note = "Get 30 headshot kills, 10 PMC kills from 100m+, deal 20,000 DMR damage.",
-					SuccessMessage = "Express delivery confirmed. The One-Tap lives on."
+					Name = "[WEAP-14] 一枪一命",
+						Description = "SVDS。半自动、7.62x54R、一发打对位置就能结束任何战斗。这把枪让全装玩家紧张——因为当SVDS在盯着的时候，多厚的甲都不安全。“一枪一命特快”在疗养院的走廊里赢得了名声，一发7N1穿过胸腔，把无数大块头送回主菜单。三十次爆头、十次远距离PMC击杀、两万点DMR伤害。成为特快。",
+					Note = "完成30次爆头、10次100米外PMC击杀，造成20,000 DMR伤害。",
+					SuccessMessage = "特快已确认送达。一枪一命永不完结。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardSvds } },
@@ -602,16 +602,16 @@ public static class IconicWeaponsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_weapons_svds",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithPistols", Value = 15000, Description = "Deal 15,000 damage with pistols" },
-					new() { ConditionType = "KillsWithoutADS", Value = 50, Description = "Get 50 kills without aiming down sights" },
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" }
+					new() { ConditionType = "DamageWithPistols", Value = 15000, Description = "使用手枪造成15,000伤害" },
+					new() { ConditionType = "KillsWithoutADS", Value = 50, Description = "不瞄准击杀50个目标" },
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-15] Full Auto Everything",
-					Description = "The Glock 18C. Select-fire. Full auto. From a pistol. With a fifty-round drum magazine. This is the weapon that makes no sense and somehow works anyway. Twenty rounds per second of nine-millimeter chaos, no recoil compensation possible, accuracy measured in 'general direction.' And yet, in the right hands, it's a room-clearing monster that rivals any SMG. Fifteen thousand pistol damage, fifty hipfire kills, and a hundred containers looted. Become the Spraymaster.",
-					Note = "Deal 15,000 pistol damage, get 50 hipfire kills, search 100 containers.",
-					SuccessMessage = "Spray. Loot. Repeat. The Spraymaster reigns supreme."
+					Name = "[WEAP-15] 全自动万岁",
+						Description = "Glock 18C。可选连发。全自动。出自手枪。配五十发弹鼓。这把毫无道理但怎么都能用的武器。每秒二十发九毫米混乱，后座无法控制，精度以“大致方向”计量。然而在正确的人手里，它是媲美任何冲锋枪的扫房怪物。一万五千点手枪伤害、五十次腰射击杀、一百个容器。成为乱射大师。",
+					Note = "造成15,000手枪伤害，完成50次腰射击杀，搜索100个容器。",
+					SuccessMessage = "扫。摸。重复。乱射大师至上。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardGlock18c } },
@@ -644,7 +644,7 @@ public static class IconicWeaponsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 weapon cards (one of each)",
+					Description = "上交全部15张标志武器卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardAk74n] = "AK-74N",
@@ -666,10 +666,10 @@ public static class IconicWeaponsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[WEAP-C] Kolya's Arsenal Codex",
-					Description = "Every weapon in this binder has a story. The AK that never jammed, the Obrez that shouldn't exist, the Glock that broke the laws of physics. You've handled them all, friend. You've dealt damage with everything from a shotgun to a revolver, from the hip and from the prone. This is the complete Iconic Weapons collection \u2014 a testament to every firearm that made Tarkov the beautiful, violent chaos it is. Hand them over and the Arsenal Codex is complete.",
-					Note = "Hand over one of each weapon card to complete the collection.",
-					SuccessMessage = "The Arsenal Codex is complete. A masterwork of destruction."
+					Name = "[WEAP-C] Kolya的武器宝典",
+					Description = "这个夹子里的每把武器都有故事。从不卡壳的AK、不该存在的Obrez、违反物理定律的Glock。你全玩过了，朋友。你用过从霰弹枪到左轮的一切造成伤害，从腰射到卧姿。这就是完整的标志性武器合集——向每把让塔科夫成为美丽暴力混乱的枪械致敬。全部交出，军械宝典就完整了。",
+					Note = "交出所有武器卡牌各一张以完成收集。",
+					SuccessMessage = "军械宝典已完成。毁灭的杰作。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

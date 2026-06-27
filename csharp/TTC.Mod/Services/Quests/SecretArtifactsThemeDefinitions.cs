@@ -77,15 +77,15 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 20, Description = "Search 20 containers" },
-					new() { ConditionType = "MoveDistance", Value = 3000, Description = "Cover 3,000m on foot" }
+					new() { ConditionType = "SearchContainer", Value = 20, Description = "搜索20个容器" },
+					new() { ConditionType = "MoveDistance", Value = 3000, Description = "步行3,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-0] The Artifact Hunter",
-					Description = "Tarkov hides secrets in every corner. Ancient coins, encrypted drives, classified blueprints \u2014 artifacts that tell the real story of what happened here. Search twenty containers and walk three kilometers. The artifact hunter's journey begins.",
-					Note = "Search 20 containers and cover 3km.",
-					SuccessMessage = "The hunt begins."
+					Name = "[ARTF-0] 神器猎人",
+					Description = "塔科夫在每一个角落都藏着秘密。古币、加密硬盘、机密蓝图——讲述这里真正故事的神器。搜二十个容器并徒步三公里。神器猎人的旅程开始了。",
+					Note = "搜索20个容器并徒步3公里。",
+					SuccessMessage = "狩猎开始了。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderArtifacts } }
@@ -98,15 +98,15 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_secret_artifacts",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 jewelry items", HandoverTargets = new() { ClassJewelry } },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 200000, Description = "Earn 200,000\u20bd from transactions" }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个珠宝", HandoverTargets = new() { ClassJewelry } },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 200000, Description = "通过交易赚取200,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-1] Old Currency",
-					Description = "Old World Coin. A Tsar's Rouble from another era \u2014 worth more as a collectible than as currency. Hand over five pieces of jewelry and earn two hundred thousand roubles. The old world pays.",
-					Note = "Hand over 5 jewelry and earn 200K\u20bd.",
-					SuccessMessage = "The old world pays in gold."
+					Name = "[ARTF-1] 旧货货币",
+					Description = "旧世界硬币。一枚来自另一个时代的沙皇卢布——作为收藏品比作为货币更值钱。交出五件珠宝并赚二十万卢布。旧世界用黄金支付。",
+					Note = "交出5件珠宝并赚取200K₽。",
+					SuccessMessage = "旧世界用黄金支付。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardTsarsRouble } },
@@ -121,15 +121,15 @@ public static class SecretArtifactsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 rogues on Lighthouse", KillTarget = "Savage", KillSavageRole = new() { "exUsec" }, KillLocations = new() { "Lighthouse" } },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Lighthouse 3 times", SurviveLocations = new() { "Lighthouse" } }
+					new() { ConditionType = "Kills", Value = 10, Description = "在灯塔击杀10名游荡者", KillTarget = "Savage", KillSavageRole = new() { "exUsec" }, KillLocations = new() { "Lighthouse" } },
+					new() { ConditionType = "Survive", Value = 3, Description = "从灯塔存活并撤离3次", SurviveLocations = new() { "Lighthouse" } }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-2] Rogue Intel",
-					Description = "Rogue Commander Dog Tag. The tag reads 'Zero-Three' \u2014 a rogue commander who went dark. Ten rogues eliminated on Lighthouse and three extractions. Find out who Zero-Three was.",
-					Note = "10 rogue kills on Lighthouse and survive 3 times.",
-					SuccessMessage = "Zero-Three identified. The rogues know."
+					Name = "[ARTF-2] 流氓情报",
+						Description = "Rogue指挥官狗牌。牌上写着“零三”——一个失联的Rogue指挥官。在Lighthouse消灭十个Rogue并撤离三次。找出零三号是谁。",
+					Note = "在Lighthouse击杀10个Rogue并存活3次。",
+					SuccessMessage = "零三号已确认。Rogues知道了。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardZeroThreeTag } },
@@ -144,17 +144,17 @@ public static class SecretArtifactsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the control room in Labs", VisitZoneId = "Control_room" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the server room in Labs", VisitZoneId = "Server_room" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Scout the hazard dome in Labs", VisitZoneId = "Dome" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract from Labs 3 times", SurviveLocations = new() { "laboratory" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察实验室控制室", VisitZoneId = "Control_room" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察实验室服务器室", VisitZoneId = "Server_room" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "侦察实验室危险穹顶", VisitZoneId = "Dome" },
+					new() { ConditionType = "Survive", Value = 3, Description = "从实验室存活并撤离3次", SurviveLocations = new() { "laboratory" } }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-3] Classified Access",
-					Description = "Blueprint: TerraGroup Labs Level 3. Classified. Eyes only. Scout the control room, server room, and hazard dome \u2014 then get out alive three times. The blueprint reveals what TerraGroup built below.",
-					Note = "Visit 3 Labs zones and survive Labs 3 times.",
-					SuccessMessage = "Level 3 accessed. Classified no more."
+					Name = "[ARTF-3] 机密访问",
+					Description = "蓝图：TerraGroup实验室3级。机密。仅限阅。侦察控制室、服务器房和危险穹顶——然后活着出来三次。蓝图揭示了TerraGroup在下面建了什么。",
+					Note = "访问3个实验室区域并在Labs存活3次。",
+					SuccessMessage = "3级权限已访问。不再机密。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardLabsBlueprint } },
@@ -168,16 +168,16 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_labsblueprint",
 				Objectives = new()
 				{
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via ZB-1011 on Customs", ExitNameId = "ZB-1011", ExitLocations = new() { "bigmap" } },
-					new() { ConditionType = "ExitName", Value = 1, Description = "Extract via D-2 on Reserve", ExitNameId = "EXFIL_Bunker_D2", ExitLocations = new() { "RezervBase" } },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times" }
+					new() { ConditionType = "ExitName", Value = 1, Description = "在海关通过ZB-1011撤离", ExitNameId = "ZB-1011", ExitLocations = new() { "bigmap" } },
+					new() { ConditionType = "ExitName", Value = 1, Description = "在储备站通过D-2撤离", ExitNameId = "EXFIL_Bunker_D2", ExitLocations = new() { "RezervBase" } },
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-4] Bunker Network",
-					Description = "Encrypted Bunker Map. The underground network connects Customs to Reserve \u2014 ZB-1011 to D-2. Extract through both bunkers and survive five raids. The map reveals the tunnels beneath Tarkov.",
-					Note = "Extract ZB-1011 + D-2 and survive 5 times.",
-					SuccessMessage = "Bunker network mapped."
+					Name = "[ARTF-4] 地堡网络",
+					Description = "加密地堡地图。地下网络连接Customs和Reserve——ZB-1011到D-2。通过两个地堡撤离并存活五次。地图揭示了塔科夫下方的隧道。",
+					Note = "通过ZB-1011和D-2撤离并存活5次。",
+					SuccessMessage = "地堡网络已绘制。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBunkerMap } },
@@ -191,16 +191,16 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_bunkermap",
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate dorm room 214 on Customs", VisitZoneId = "room214" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate Sanitar's office in the Resort", VisitZoneId = "place_meh_sanitar_room" },
-					new() { ConditionType = "SearchContainer", Value = 60, Description = "Search 60 containers" }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在海关找到214宿舍房间", VisitZoneId = "room214" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在疗养院找到Sanitar的办公室", VisitZoneId = "place_meh_sanitar_room" },
+					new() { ConditionType = "SearchContainer", Value = 60, Description = "搜索60个容器" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-5] Written in Blood",
-					Description = "Blood-Stained Letter. Found in dorm room 214, addressed to someone in Sanitar's office. Visit both locations and search sixty containers. The letter tells a story no one was meant to read.",
-					Note = "Visit dorms 214 + Sanitar's office + search 60 containers.",
-					SuccessMessage = "The letter speaks. Blood never lies."
+					Name = "[ARTF-5] 以血书写",
+					Description = "染血的信。在宿舍楼214房间发现，收件人在Sanitar的办公室。访问两个地点并搜六十个容器。这封信讲述了一个不该被读到的故事。",
+					Note = "访问宿舍楼214+Sanitar的办公室+搜索60个容器。",
+					SuccessMessage = "信已言说。血液从不撒谎。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardBloodLetter } },
@@ -214,15 +214,15 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_bloodletter",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 10, Description = "Hand over 10 electronic components", HandoverTargets = new() { ClassElectronics } },
-					new() { ConditionType = "CraftAnyItem", Value = 10, Description = "Craft 10 items" }
+					new() { ConditionType = "HandoverItem", Value = 10, Description = "上交10个电子元件", HandoverTargets = new() { ClassElectronics } },
+					new() { ConditionType = "CraftAnyItem", Value = 10, Description = "制作10个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-6] Lost Signal",
-					Description = "Strange Signal Amplifier. It picks up a frequency no one can identify. Hand over ten electronic components and craft ten items. Maybe Kolya can decode the signal.",
-					Note = "Hand over 10 electronics and craft 10 items.",
-					SuccessMessage = "Signal decoded. The frequency is real."
+					Name = "[ARTF-6] 失落的信号",
+					Description = "奇怪信号放大器。它接收到一个没人能识别的频率。交出十个电子元件并做十件物品。也许Kolya能解码这个信号。",
+					Note = "交出10个电子元件并制作10件物品。",
+					SuccessMessage = "信号已解码。频率是真实的。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardSignalAmplifier } },
@@ -236,15 +236,15 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_signalamplifier",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets at night", KillTarget = "Any", KillDaytimeFrom = 22, KillDaytimeTo = 6 },
-					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "Get 10 kills while silent" }
+					new() { ConditionType = "Kills", Value = 10, Description = "夜间击杀10个目标", KillTarget = "Any", KillDaytimeFrom = 22, KillDaytimeTo = 6 },
+					new() { ConditionType = "KillsWhileSilent", Value = 10, Description = "在静默状态下击杀10个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-7] Night Ritual",
-					Description = "Cultist Relic Mask. Worn during the night rituals \u2014 stained with something that isn't paint. Ten night kills and ten silent kills. Walk the path of the cultists.",
-					Note = "10 night kills and 10 silent kills.",
-					SuccessMessage = "The mask accepts you."
+					Name = "[ARTF-7] 夜间仪式",
+					Description = "邪教遗物面具。在夜间仪式中佩戴——上面的污渍不是油漆。十次夜间击杀和十次消音击杀。走上邪教徒之路。",
+					Note = "完成10次夜间击杀和10次消音击杀。",
+					SuccessMessage = "面具接纳了你。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardRelicMask } },
@@ -258,15 +258,15 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_relicmask",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" },
-					new() { ConditionType = "LootItem", Value = 80, Description = "Loot 80 items" }
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" },
+					new() { ConditionType = "LootItem", Value = 80, Description = "搜刮80个物品" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-8] Signal Sweep",
-					Description = "Classified UHF Scanner. Sweeps every frequency, finds every signal. A hundred containers searched and eighty items looted. The scanner reveals what's hidden.",
-					Note = "Search 100 containers and loot 80 items.",
-					SuccessMessage = "All frequencies swept. Signals found."
+					Name = "[ARTF-8] 信号扫描",
+					Description = "机密UHF扫描器。扫描每一个频率、找到每一个信号。一百个容器和八十件物品。扫描器揭示隐藏之物。",
+					Note = "搜索100个容器并搜刮80件物品。",
+					SuccessMessage = "所有频率已扫描。信号已找到。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardUhfScanner } },
@@ -280,15 +280,15 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_uhfscanner",
 				Objectives = new()
 				{
-					new() { ConditionType = "CollectCultistOffering", Value = 5, Description = "Collect 5 Cultist Offerings" },
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 PMCs at night", KillTarget = "AnyPmc", KillDaytimeFrom = 22, KillDaytimeTo = 6 }
+					new() { ConditionType = "CollectCultistOffering", Value = 5, Description = "收集5个邪教徒祭品" },
+					new() { ConditionType = "Kills", Value = 15, Description = "夜间击杀15名PMC", KillTarget = "AnyPmc", KillDaytimeFrom = 22, KillDaytimeTo = 6 }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-9] Dark Offering",
-					Description = "Obelisk Shard. A fragment of the cultist obelisk \u2014 pulsing with something that isn't electricity. Five cultist offerings collected and fifteen PMCs eliminated at night. The obelisk demands blood.",
-					Note = "5 cultist offerings and 15 PMC night kills.",
-					SuccessMessage = "The obelisk pulses. The shard is yours."
+					Name = "[ARTF-9] 黑暗祭品",
+					Description = "方尖碑碎片。邪教方尖碑的一块——脉动着不是电力的东西。收集五份邪教供品并在夜间消灭十五个PMC。方尖碑需要血。",
+					Note = "收集5份邪教供品并完成15次PMC夜间击杀。",
+					SuccessMessage = "方尖碑在脉动。碎片是你的。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardObeliskShard } },
@@ -303,15 +303,15 @@ public static class SecretArtifactsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 targets on Labs", KillTarget = "Any", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 intelligence folders", HandoverTargets = new() { IntelFolder } }
+					new() { ConditionType = "Kills", Value = 20, Description = "在实验室击杀20个目标", KillTarget = "Any", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3份情报文件夹", HandoverTargets = new() { IntelFolder } }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-10] Lab Rat's Notes",
-					Description = "Labs Blueprint Fragment. A torn piece of a larger document \u2014 coordinates, chemical formulas, and a name that's been redacted. Twenty kills on Labs and three intel folders. Piece together the truth.",
-					Note = "20 kills on Labs and hand over 3 intel folders.",
-					SuccessMessage = "Fragment recovered. The truth assembles."
+					Name = "[ARTF-10] 实验室老鼠笔记",
+					Description = "实验室蓝图碎片。一份更大文件上的撕下页——坐标、化学公式、一个被涂黑的名字。在Labs杀二十个并交出三个情报文件夹。拼出真相。",
+					Note = "在Labs击杀20人并交出3个情报文件夹。",
+					SuccessMessage = "碎片已找回。真相正在拼合。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardLabsFragment } },
@@ -326,16 +326,16 @@ public static class SecretArtifactsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract from Labs 10 times", SurviveLocations = new() { "laboratory" } },
-					new() { ConditionType = "SearchContainer", Value = 150, Description = "Search 150 containers" },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 keys", HandoverTargets = new() { ClassKeyMechanical } }
+					new() { ConditionType = "Survive", Value = 10, Description = "从实验室存活并撤离10次", SurviveLocations = new() { "laboratory" } },
+					new() { ConditionType = "SearchContainer", Value = 150, Description = "搜索150个容器" },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5把钥匙", HandoverTargets = new() { ClassKeyMechanical } }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-11] The Black Key",
-					Description = "TerraGroup Black Key. Opens a door that doesn't officially exist. Survive Labs ten times, search a hundred fifty containers, and hand over five keys. The Black Key unlocks the truth.",
-					Note = "Survive Labs 10, search 150 containers, hand over 5 keys.",
-					SuccessMessage = "The Black Key turns. The door opens."
+					Name = "[ARTF-11] 黑色钥匙",
+					Description = "TerraGroup黑钥匙。打开一扇官方上不存在的门。在Labs存活十次、搜一百五十个容器、交出五把钥匙。黑钥匙解锁真相。",
+					Note = "在Labs存活10次，搜索150个容器，交出5把钥匙。",
+					SuccessMessage = "黑钥匙转动了。门打开了。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardBlackKey } },
@@ -349,16 +349,16 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_blackkey",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 secure flash drives", HandoverTargets = new() { FlashDriveItem } },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "Earn 10,000,000\u20bd from transactions" },
-					new() { ConditionType = "CompleteWorkout", Value = 10, Description = "Complete 10 gym workouts" }
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个加密U盘", HandoverTargets = new() { FlashDriveItem } },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 10000000, Description = "通过交易赚取10,000,000₽" },
+					new() { ConditionType = "CompleteWorkout", Value = 10, Description = "完成10次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-13] Encrypted Data",
-					Description = "Encrypted Red Drive. Military-grade encryption, TerraGroup markings, and data that could end careers. Five flash drives, ten million roubles, and ten gym sessions. The drive holds the key to everything.",
-					Note = "5 flash drives, earn 10M\u20bd, 10 workouts.",
-					SuccessMessage = "Drive decrypted. The data is yours."
+					Name = "[ARTF-13] 加密数据",
+					Description = "加密红色硬盘。军用级加密、TerraGroup标记、可以终结职业生涯的数据。五个U盘、一千万卢布、十次健身。这个硬盘藏着一切的钥匙。",
+					Note = "5个U盘，赚取10M₽，10次健身。",
+					SuccessMessage = "硬盘已解密。数据归你。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardRedDrive } },
@@ -373,19 +373,19 @@ public static class SecretArtifactsThemeDefinitions
 				Location = MapLighthouse,
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Visit the Lighthouse building", VisitZoneId = "meh_50_visit_area_check_1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the commandant's office", VisitZoneId = "qlight_extension_bariga1_exploration1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the recording studio", VisitZoneId = "qlight_extension_mechanik1_exploration1" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the drug lab", VisitZoneId = "qlight_extension_medic1_exploration1" },
-					new() { ConditionType = "HandoverItem", Value = 2000000, Description = "Hand over 2,000,000\u20bd", HandoverTargets = new() { Roubles } },
-					new() { ConditionType = "Survive", Value = 8, Description = "Survive and extract from Lighthouse 8 times", SurviveLocations = new() { "Lighthouse" } }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "访问灯塔建筑", VisitZoneId = "meh_50_visit_area_check_1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到指挥官办公室", VisitZoneId = "qlight_extension_bariga1_exploration1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到录音室", VisitZoneId = "qlight_extension_mechanik1_exploration1" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "找到制毒实验室", VisitZoneId = "qlight_extension_medic1_exploration1" },
+					new() { ConditionType = "HandoverItem", Value = 2000000, Description = "上交2,000,000₽", HandoverTargets = new() { Roubles } },
+					new() { ConditionType = "Survive", Value = 8, Description = "从灯塔存活并撤离8次", SurviveLocations = new() { "Lighthouse" } }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-13] The Ledger",
-					Description = "Lightkeeper's Sealed Ledger. The Lightkeeper's personal accounts \u2014 every transaction, every deal, every secret. Visit four Lighthouse locations, hand over two million roubles, and survive eight raids. The ledger reveals everything.",
-					Note = "4 Lighthouse zones, 2M\u20bd, survive 8 times.",
-					SuccessMessage = "The ledger is open. Every secret revealed."
+					Name = "[ARTF-13] 账本",
+					Description = "灯塔守卫的密封账本。灯塔守卫的个人账户——每一笔交易、每一笔买卖、每一个秘密。访问四个Lighthouse地点、交出两百万卢布、存活八次。账本揭示一切。",
+					Note = "访问4个Lighthouse区域，交出2M₽，存活8次。",
+					SuccessMessage = "账本已打开。所有秘密已揭示。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardLightkeeperLedger } },
@@ -399,17 +399,17 @@ public static class SecretArtifactsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_artf_lightkeeperledger",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 graphics cards", HandoverTargets = new() { GpuItem } },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 LEDX", HandoverTargets = new() { LedxItem } },
-					new() { ConditionType = "HandoverItem", Value = 3, Description = "Hand over 3 intelligence folders", HandoverTargets = new() { IntelFolder } },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 15000000, Description = "Earn 15,000,000\u20bd from transactions" }
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3张显卡", HandoverTargets = new() { GpuItem } },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3个LEDX", HandoverTargets = new() { LedxItem } },
+					new() { ConditionType = "HandoverItem", Value = 3, Description = "上交3份情报文件夹", HandoverTargets = new() { IntelFolder } },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 15000000, Description = "通过交易赚取15,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-14] The Prototype",
-					Description = "Kappa Container Mock-up. A prototype of the legendary Kappa \u2014 unfinished, imperfect, but real. Three GPUs, three LEDXs, three intel folders, and fifteen million roubles. The prototype demands sacrifice.",
-					Note = "3 GPU + 3 LEDX + 3 intel + earn 15M\u20bd.",
-					SuccessMessage = "The prototype is complete."
+					Name = "[ARTF-14] 原型机",
+					Description = "Kappa容器模型。传说中Kappa的原型——未完成、不完美、但真实。三个GPU、三个LEDX、三个情报文件夹、一千五百万卢布。原型需要牺牲。",
+					Note = "3个GPU+3个LEDX+3个情报文件夹+赚取15M₽。",
+					SuccessMessage = "原型机已完成。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardKappaMockup } },
@@ -433,16 +433,16 @@ public static class SecretArtifactsThemeDefinitions
 				Location = MapLabs,
 				Objectives = new()
 				{
-					new() { ConditionType = "Survive", Value = 15, Description = "Survive and extract from Labs 15 times", SurviveLocations = new() { "laboratory" } },
-					new() { ConditionType = "Kills", Value = 50, Description = "Eliminate 50 targets on Labs", KillTarget = "Any", KillLocations = new() { "laboratory" } },
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 bosses", KillTarget = "Savage", KillSavageRole = AllBossRoles }
+					new() { ConditionType = "Survive", Value = 15, Description = "从实验室存活并撤离15次", SurviveLocations = new() { "laboratory" } },
+					new() { ConditionType = "Kills", Value = 50, Description = "在实验室击杀50个目标", KillTarget = "Any", KillLocations = new() { "laboratory" } },
+					new() { ConditionType = "Kills", Value = 10, Description = "击杀10名Boss", KillTarget = "Savage", KillSavageRole = AllBossRoles }
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-15] The Red Protocol",
-					Description = "Red Keycard Prototype. The original. Before the copies, before the duplicates \u2014 this is the one that opened the first door. Survive Labs fifteen times, fifty kills on Labs, and ten boss kills. The Red Protocol is complete.",
-					Note = "Survive Labs 15, 50 Labs kills, 10 boss kills.",
-					SuccessMessage = "The Red Protocol is complete. The first door opens."
+					Name = "[ARTF-15] 红色协议",
+					Description = "红色钥匙卡原型。原件。在复制品之前、在副本之前——这是打开第一扇门的那张。在Labs存活十五次、五十次击杀、十次Boss击杀。红色协议已完成。",
+					Note = "在Labs存活15次，击杀50人，击杀10个Boss。",
+					SuccessMessage = "红色协议已完成。第一扇门打开了。"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardRedPrototype } },
@@ -466,7 +466,7 @@ public static class SecretArtifactsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 artifact cards (one of each)",
+					Description = "上交全部15张秘密神器卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardTsarsRouble] = "Tsar's Rouble",
@@ -488,10 +488,10 @@ public static class SecretArtifactsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[ARTF-C] Kolya's Vault of Secrets",
-					Description = "Every artifact recovered, every secret uncovered. From the Tsar's Rouble to the Red Keycard Prototype, you've assembled the most dangerous collection in Tarkov. Hand over the cards and seal the vault.",
-					Note = "Hand over one of each artifact card to complete the collection.",
-					SuccessMessage = "The vault is sealed. Every secret inside."
+					Name = "[ARTF-C] Kolya的秘密金库",
+					Description = "每一个神器都已找回、每一个秘密都已揭开。从沙皇卢布到红色钥匙卡原型，你组建了塔科夫最危险的收藏。交出卡牌，金库就密封了。",
+					Note = "交出所有神器卡牌各一张以完成收集。",
+					SuccessMessage = "金库已密封。每个秘密都在其中。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,

@@ -61,15 +61,15 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_introduction",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 3, Description = "Craft 3 items" },
-					new() { ConditionType = "Survive", Value = 2, Description = "Survive and extract 2 times" }
+					new() { ConditionType = "CraftAnyItem", Value = 3, Description = "制作3个物品" },
+					new() { ConditionType = "Survive", Value = 2, Description = "存活并撤离2次" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-0] Mod Manager",
-					Description = "Kolya picked fifteen mods he's particularly fond of \u2014 iconic ones, creative ones, ones that changed how he plays Tarkov. This list isn't exhaustive or complete. Some of these mods may have disappeared by now, and new legends have surely taken their place. This is just a glimpse of the incredible diversity the SPT modding community has to offer. If you're a creator and you're not on this list, don't feel left out \u2014 there are only fifteen cards, and thousands of amazing mods. Craft three items and survive two raids. The mod showcase begins.",
-					Note = "Craft 3 items and survive 2 times.",
-					SuccessMessage = "Mod manager loaded. The showcase begins."
+					Name = "[MODS-0] 模组管理器",
+					Description = "Kolya挑了十五个他特别喜欢的模组——标志性的、有创意的、改变了他玩塔科夫方式的。这名单不全面也不完整。有些模组现在可能已经消失了，新的传说肯定已经取代了它们。这只是SPT模组社区惊人多样性的一瞥。如果你是创作者而不在这名单上，别觉得被冷落——只有十五张卡，但有成千上万个精彩模组。做三件物品并存活两局。模组展示开始。",
+					Note = "制作3件物品并存活2次。",
+					SuccessMessage = "模组管理器已加载。展示开始。"
 				},
 				XpReward = 250,
 				ItemRewards = new() { new() { TemplateId = BinderMods } }
@@ -82,15 +82,15 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_binder_mods_spt_legends",
 				Objectives = new()
 				{
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 100000, Description = "Earn 100,000\u20bd from transactions" },
-					new() { ConditionType = "Survive", Value = 3, Description = "Survive and extract 3 times" }
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 100000, Description = "通过交易赚取100,000₽" },
+					new() { ConditionType = "Survive", Value = 3, Description = "存活并撤离3次" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-1] Tweak Everything",
-					Description = "Server Value Modifier. The mod that lets you tweak every value in the game \u2014 loot rates, bot difficulty, raid timers, everything. Earn a hundred thousand roubles and survive three raids. The values are yours to set.",
-					Note = "Earn 100K\u20bd and survive 3 times.",
-					SuccessMessage = "Values tweaked. Server modified."
+					Name = "[MODS-1] 万物可调",
+					Description = "服务器数值修改器。让你能调整游戏里的每一项数值——战利品倍率、Bot难度、战局计时器，一切。赚十万卢布并存活三局。数值由你定。",
+					Note = "赚取100K₽并存活3次。",
+					SuccessMessage = "数值已调整。服务器已修改。"
 				},
 				XpReward = 1000,
 				ItemRewards = new() { new() { TemplateId = CardSvm } },
@@ -109,15 +109,15 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_svm",
 				Objectives = new()
 				{
-					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "Get 5 kills while silent" },
-					new() { ConditionType = "KillsWhileADS", Value = 5, Description = "Get 5 kills while ADS" }
+					new() { ConditionType = "KillsWhileSilent", Value = 5, Description = "在静默状态下击杀5个目标" },
+					new() { ConditionType = "KillsWhileADS", Value = 5, Description = "在瞄准状态下击杀5个目标" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-2] Sound Design",
-					Description = "Audio Accessibility Indicators. The mod that shows you where sounds come from \u2014 footsteps, gunshots, grenades \u2014 all visualized on screen. Five silent kills and five ADS kills. Hear what you can't hear.",
-					Note = "5 silent kills and 5 ADS kills.",
-					SuccessMessage = "Sound visualized. Threats located."
+					Name = "[MODS-2] 声音设计",
+					Description = "声音无障碍指示器。显示声音来源的模组——脚步、枪声、手雷——全在屏幕上可视化。五次消音击杀和五次ADS击杀。听到你听不到的东西。",
+					Note = "完成5次消音击杀和5次ADS击杀。",
+					SuccessMessage = "声音已可视化。威胁已定位。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardAudioIndicators } },
@@ -135,15 +135,15 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_audioindicators",
 				Objectives = new()
 				{
-					new() { ConditionType = "CraftAnyItem", Value = 10, Description = "Craft 10 items" },
-					new() { ConditionType = "CompleteWorkout", Value = 1, Description = "Complete 1 gym workout" }
+					new() { ConditionType = "CraftAnyItem", Value = 10, Description = "制作10个物品" },
+					new() { ConditionType = "CompleteWorkout", Value = 1, Description = "完成1次健身锻炼" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-3] Pet the Cat",
-					Description = "Hideout Cat. The mod that added a cat to your hideout \u2014 and somehow made the whole game better. Craft ten items and hit the gym once. The cat watches you work out.",
-					Note = "Craft 10 items and 1 gym workout.",
-					SuccessMessage = "The cat approves. Meow."
+					Name = "[MODS-3] 撸猫",
+					Description = "藏身处猫。在你的藏身处加了一只猫的模组——不知怎么让整个游戏更好了。做十件物品并健身一次。猫看着你锻炼。",
+					Note = "制作10件物品并完成1次健身。",
+					SuccessMessage = "猫满意了。喵。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardHideoutCat } },
@@ -161,16 +161,16 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_hideoutcat",
 				Objectives = new()
 				{
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate Jaeger's camp on Woods", VisitZoneId = "huntsman_001" },
-					new() { ConditionType = "VisitPlace", Value = 1, Description = "Locate the USEC camp on Woods", VisitZoneId = "pr_scout_base" },
-					new() { ConditionType = "Survive", Value = 5, Description = "Survive and extract 5 times" }
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在森林找到Jaeger的营地", VisitZoneId = "huntsman_001" },
+					new() { ConditionType = "VisitPlace", Value = 1, Description = "在森林找到USEC营地", VisitZoneId = "pr_scout_base" },
+					new() { ConditionType = "Survive", Value = 5, Description = "存活并撤离5次" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-4] Map Awareness",
-					Description = "Dynamic Maps. The mod that gives you a real-time map with your position, extracts, and quest markers. Visit two landmarks on Woods and survive five raids. The map knows where you are.",
-					Note = "Visit 2 Woods landmarks and survive 5 times.",
-					SuccessMessage = "Map loaded. Position tracked."
+					Name = "[MODS-4] 地图感知",
+					Description = "动态地图。给你实时地图的模组，显示你的位置、撤离点和任务标记。访问两个Woods地标并存活五次。地图知道你在哪。",
+					Note = "访问2个Woods地标并存活5次。",
+					SuccessMessage = "地图已加载。位置已追踪。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardDynamicMaps } },
@@ -188,14 +188,14 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_dynamicmaps",
 				Objectives = new()
 				{
-					new() { ConditionType = "MoveDistance", Value = 10000, Description = "Cover 10,000m on foot" }
+					new() { ConditionType = "MoveDistance", Value = 10000, Description = "步行10,000米" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-5] Eye Candy",
-					Description = "Amands Graphics Preset. The mod that makes Tarkov look like it was meant to look \u2014 vibrant, sharp, and beautiful. Walk ten kilometers and enjoy the scenery. It's never looked this good.",
-					Note = "Cover 10km on foot.",
-					SuccessMessage = "Beautiful. Every pixel."
+					Name = "[MODS-5] 视觉享受",
+					Description = "Amands画面预设。让塔科夫看起来像它本该有的样子——鲜艳、清晰、美丽。徒步十公里，欣赏风景。从没这么好看过。",
+					Note = "徒步10公里。",
+					SuccessMessage = "美丽。每个像素。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardAmandsPreset } },
@@ -214,14 +214,14 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_amandspreset",
 				Objectives = new()
 				{
-					new() { ConditionType = "HandoverItem", Value = 20, Description = "Hand over 20 magazines", HandoverTargets = new() { ClassMagazine } }
+					new() { ConditionType = "HandoverItem", Value = 20, Description = "上交20个弹匣", HandoverTargets = new() { ClassMagazine } }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-6] Gear Up",
-					Description = "WTT Pack 'n' Strap. The mod that adds tactical belts to carry extra mags and gear on your waist. Hand over twenty magazines. Kolya needs to fill his new belt.",
-					Note = "Hand over 20 magazines.",
-					SuccessMessage = "Belt loaded. Twenty mags strapped."
+					Name = "[MODS-6] 装备升级",
+					Description = "WTT战术腰带。增加战术腰带来多带弹匣和装备的模组。交出二十个弹匣。Kolya需要填满他的新腰带。",
+					Note = "交出20个弹匣。",
+					SuccessMessage = "弹药带已装。二十个弹匣。"
 				},
 				XpReward = 3000,
 				ItemRewards = new() { new() { TemplateId = CardPackNStrap } },
@@ -240,16 +240,16 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_packnstrap",
 				Objectives = new()
 				{
-					new() { ConditionType = "DamageWithAR", Value = 5000, Description = "Deal 5,000 damage with assault rifles" },
-					new() { ConditionType = "DamageWithSMG", Value = 3000, Description = "Deal 3,000 damage with SMGs" },
-					new() { ConditionType = "HandoverItem", Value = 5, Description = "Hand over 5 electronic components", HandoverTargets = new() { ClassElectronics } }
+					new() { ConditionType = "DamageWithAR", Value = 5000, Description = "使用突击步枪造成5,000伤害" },
+					new() { ConditionType = "DamageWithSMG", Value = 3000, Description = "使用冲锋枪造成3,000伤害" },
+					new() { ConditionType = "HandoverItem", Value = 5, Description = "上交5个电子元件", HandoverTargets = new() { ClassElectronics } }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-7] Custom Build",
-					Description = "Weapon Customizer. The mod that unlocks every attachment combination the game never allowed \u2014 combine it with 'All In Weapon' for maximum creative freedom. Five thousand AR damage, three thousand SMG damage, and five electronics. Build the impossible.",
-					Note = "5K AR damage, 3K SMG damage, hand over 5 electronics.",
-					SuccessMessage = "Impossible build. Built."
+					Name = "[MODS-7] 自定义构建",
+						Description = "武器自定义器。解锁游戏从不允许的每一个配件组合的模组——配合“全武器可用”获得最大创意自由。五千AR伤害、三千冲锋枪伤害、五个电子元件。构建不可能的武器。",
+					Note = "造成5K AR伤害、3K冲锋枪伤害，交出5个电子元件。",
+					SuccessMessage = "不可能的构建。已构建。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardWeaponCustomizer } },
@@ -268,16 +268,16 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_weaponcustomizer",
 				Objectives = new()
 				{
-					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "Have Jaeger LL2", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 2 },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "Earn 1,000,000\u20bd from transactions" },
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract 10 times" }
+					new() { ConditionType = "TraderLoyalty", Value = 1, Description = "拥有Jaeger 2级", TraderLoyaltyId = TraderJaeger, TraderLoyaltyLevel = 2 },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 1000000, Description = "通过交易赚取1,000,000₽" },
+					new() { ConditionType = "Survive", Value = 10, Description = "存活并撤离10次" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-8] Level Up",
-					Description = "Valens Progression. The mod that reworks Tarkov's progression system \u2014 AI levels with you, gear scales with difficulty, and everyone has something worth stealing. Jaeger LL2, a million roubles, and ten extractions. Progress, the right way.",
-					Note = "Jaeger LL2, earn 1M\u20bd, survive 10 times.",
-					SuccessMessage = "Progression reworked. Leveled up."
+					Name = "[MODS-8] 等级提升",
+					Description = "Valens进度重做。重制塔科夫进度系统的模组——AI随你升级、装备随难度调整、每个人都有值得偷的东西。Jaeger LL2、一百万卢布、十次撤离。正确的进度方式。",
+					Note = "Jaeger达到LL2，赚取1M₽，存活10次。",
+					SuccessMessage = "进度已重做。等级已提升。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardValensProgression } },
@@ -296,14 +296,14 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_valensprogression",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 10, Description = "Eliminate 10 targets in a single raid", KillTarget = "Any", KillResetOnSessionEnd = true }
+					new() { ConditionType = "Kills", Value = 10, Description = "单局击杀10个目标", KillTarget = "Any", KillResetOnSessionEnd = true }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-9] Kill Counter",
-					Description = "StatTrack. The mod that tracks every kill, every headshot, every stat on your weapon. Ten kills in a single raid. Make the counter spin.",
-					Note = "10 kills in a single raid.",
-					SuccessMessage = "Counter: 10. And counting."
+					Name = "[MODS-9] 击杀计数器",
+					Description = "StatTrack。追踪每一个击杀、每一个爆头、你武器上每一项数据的模组。一局内击杀十个。让计数器转起来。",
+					Note = "一局内击杀10人。",
+					SuccessMessage = "计数：10。还在增加。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardStatTrack } },
@@ -322,15 +322,15 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_stattrack",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 5, Description = "Eliminate 5 bosses", KillTarget = "Savage", KillSavageRole = AllBossRoles },
-					new() { ConditionType = "Survive", Value = 10, Description = "Survive and extract 10 times" }
+					new() { ConditionType = "Kills", Value = 5, Description = "击杀5名Boss", KillTarget = "Savage", KillSavageRole = AllBossRoles },
+					new() { ConditionType = "Survive", Value = 10, Description = "存活并撤离10次" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-10] Better Spawns",
-					Description = "ABPS. The mod that places bots where they should be \u2014 not stacked in corners or spawning on top of you. Five boss kills and ten extractions. Better spawns, better fights.",
-					Note = "5 boss kills and survive 10 times.",
-					SuccessMessage = "Spawns improved. Fights fair."
+					Name = "[MODS-10] 更好的刷新",
+					Description = "ABPS。把Bot放在它们应该在的地方的模组——不是堆在角落里或生成在你头顶上。五个Boss击杀和十次撤离。更好的刷新，更好的战斗。",
+					Note = "击杀5个Boss并存活10次。",
+					SuccessMessage = "出生点已改善。战斗更公平。"
 				},
 				XpReward = 10000,
 				ItemRewards = new() { new() { TemplateId = CardAbps } },
@@ -349,16 +349,16 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_abps",
 				Objectives = new()
 				{
-					new() { ConditionType = "SearchContainer", Value = 100, Description = "Search 100 containers" },
-					new() { ConditionType = "LootItem", Value = 100, Description = "Loot 100 items" },
-					new() { ConditionType = "EarnMoneyOnTransaction", Value = 3000000, Description = "Earn 3,000,000\u20bd from transactions" }
+					new() { ConditionType = "SearchContainer", Value = 100, Description = "搜索100个容器" },
+					new() { ConditionType = "LootItem", Value = 100, Description = "搜刮100个物品" },
+					new() { ConditionType = "EarnMoneyOnTransaction", Value = 3000000, Description = "通过交易赚取3,000,000₽" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-11] Scavenger AI",
-					Description = "Looting Bots. The mod that makes bots actually loot bodies and containers \u2014 like real players would. A hundred containers, a hundred items, three million roubles. If the bots can do it, so can you.",
-					Note = "100 containers, 100 items, earn 3M\u20bd.",
-					SuccessMessage = "Looted like a bot. Better than a bot."
+					Name = "[MODS-11] Scav人工智能",
+					Description = "会搜刮的Bot。让Bot真的会摸尸和搜容器的模组——像真人玩家一样。一百个容器、一百件物品、三百万卢布。Bot做得到，你也行。",
+					Note = "100个容器，100件物品，赚取3M₽。",
+					SuccessMessage = "像Bot一样搜刮。比Bot更好。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardLootingBots } },
@@ -377,16 +377,16 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_lootingbots",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 30, Description = "Eliminate 30 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 20, Description = "Eliminate 20 scavs with headshots", KillTarget = "Savage", KillBodyParts = new() { "Head" } },
-					new() { ConditionType = "DamageWithDMR", Value = 5000, Description = "Deal 5,000 damage with marksman rifles" }
+					new() { ConditionType = "Kills", Value = 30, Description = "击杀30名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 20, Description = "爆头击杀20名Scav", KillTarget = "Savage", KillBodyParts = new() { "Head" } },
+					new() { ConditionType = "DamageWithDMR", Value = 5000, Description = "使用精确步枪造成5,000伤害" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-12] Mission AI",
-					Description = "Questing Bots. The mod that gives bots actual objectives \u2014 they extract, they quest, they fight with purpose. Thirty PMC kills, twenty scav headshots, and five thousand DMR damage. The bots have missions. Do you?",
-					Note = "30 PMC kills, 20 scav headshots, 5K DMR damage.",
-					SuccessMessage = "Mission complete. The bots had theirs too."
+					Name = "[MODS-12] 任务人工智能",
+					Description = "有任务的Bot。给Bot真正目标的模组——他们会撤离、做任务、有目的地战斗。三十次PMC击杀、二十次Scav爆头、五千DMR伤害。Bot也有任务。你呢？",
+					Note = "完成30次PMC击杀、20次Scav爆头、5K DMR伤害。",
+					SuccessMessage = "任务完成。Bots也有自己的任务。"
 				},
 				XpReward = 20000,
 				ItemRewards = new() { new() { TemplateId = CardQuestingBots } },
@@ -405,15 +405,15 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_questingbots",
 				Objectives = new()
 				{
-					new() { ConditionType = "Kills", Value = 60, Description = "Eliminate 60 PMCs", KillTarget = "AnyPmc" },
-					new() { ConditionType = "Kills", Value = 15, Description = "Eliminate 15 bosses", KillTarget = "Savage", KillSavageRole = AllBossRoles }
+					new() { ConditionType = "Kills", Value = 60, Description = "击杀60名PMC", KillTarget = "AnyPmc" },
+					new() { ConditionType = "Kills", Value = 15, Description = "击杀15名Boss", KillTarget = "Savage", KillSavageRole = AllBossRoles }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-13] Tactical AI",
-					Description = "SAIN. The mod that made Tarkov's AI actually terrifying \u2014 flanking, pushing, suppressing, coordinating. Sixty PMC kills and fifteen boss kills. The AI fights back. Hard.",
-					Note = "60 PMC kills and 15 boss kills.",
-					SuccessMessage = "SAIN defeated. Barely."
+					Name = "[MODS-13] 战术人工智能",
+					Description = "SAIN。让塔科夫AI真正恐怖的模组——包抄、推进、压制、协调。六十次PMC击杀和十五次Boss击杀。AI会狠狠还击。",
+					Note = "完成60次PMC击杀和15个Boss击杀。",
+					SuccessMessage = "SAIN被击败了。勉强。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardSain } },
@@ -432,17 +432,17 @@ public static class ModsSptLegendsThemeDefinitions
 				PrerequisiteSeed = "ttc_quest_card_mods_sain",
 				Objectives = new()
 				{
-					new() { ConditionType = "HealthLoss", Value = 10000, Description = "Lose 10,000 HP total" },
-					new() { ConditionType = "FixFracture", Value = 10, Description = "Fix 10 fractures" },
-					new() { ConditionType = "FixHeavyBleed", Value = 10, Description = "Fix 10 heavy bleeds" },
-					new() { ConditionType = "Survive", Value = 20, Description = "Survive and extract 20 times" }
+					new() { ConditionType = "HealthLoss", Value = 10000, Description = "累计损失10,000 HP" },
+					new() { ConditionType = "FixFracture", Value = 10, Description = "处理10次骨折" },
+					new() { ConditionType = "FixHeavyBleed", Value = 10, Description = "处理10次大出血" },
+					new() { ConditionType = "Survive", Value = 20, Description = "存活并撤离20次" }
 				},
 				Locale = new()
 				{
-					Name = "[MODS-14] Hardcore Mode",
-					Description = "Realism Mod. The mod that makes Tarkov brutally realistic \u2014 one bullet kills, realistic ballistics, and medical systems that punish every mistake. Ten thousand HP lost, ten fractures, ten heavy bleeds, twenty extractions. This is Tarkov on hard mode.",
-					Note = "Lose 10K HP, fix 10 fractures + 10 heavy bleeds, survive 20.",
-					SuccessMessage = "Hardcore survived. Realism respected."
+					Name = "[MODS-14] 硬核模式",
+					Description = "真实模式。让塔科夫变得残酷真实的模组——一枪毙命、真实弹道、每一次错误都有后果的医疗系统。损失一万HP、十处骨折、十次大出血、二十次撤离。这是硬核模式的塔科夫。",
+					Note = "损失10K生命值，接好10处骨折+处理10次大出血，存活20次。",
+					SuccessMessage = "硬核已存活。现实主义尊重你。"
 				},
 				XpReward = 35000,
 				ItemRewards = new() { new() { TemplateId = CardRealismMod } },
@@ -462,10 +462,10 @@ public static class ModsSptLegendsThemeDefinitions
 				Objectives = new(), // No objectives — auto-completable
 				Locale = new()
 				{
-					Name = "[MODS-15] From Chazut",
-					Description = "Tarkov Trading Cards. Thank you for downloading this mod \u2014 it means the world to me. I love creating things for this community, and sharing them with you is the best part. I'm curious to hear your feedback on TTC and on Kolya \u2014 don't hesitate to share your thoughts! If you enjoyed the mod and want to see what else I've been working on, check out my profile 'Chazut' on The Forge. This card is free. Thank you for playing.",
-					Note = "No objective. Just accept the quest and complete it.",
-					SuccessMessage = "Thank you for playing TTC. \u2014 Chazut"
+					Name = "[MODS-15] 来自Chazut",
+						Description = "塔科夫集换式卡牌。感谢下载这个模组——这对我意义重大。我喜欢为这个社区创造东西，与你分享是最好的部分。我很好奇听到你对TTC和Kolya的反馈——别犹豫分享你的想法！如果你喜欢这个模组想看我还在做什么，在The Forge上查看我的主页“Chazut”。这张卡是免费的。感谢游玩。",
+					Note = "无目标。接受任务即可完成。",
+					SuccessMessage = "感谢你玩TTC。——Chazut"
 				},
 				XpReward = 60000,
 				ItemRewards = new() { new() { TemplateId = CardTtc } },
@@ -495,7 +495,7 @@ public static class ModsSptLegendsThemeDefinitions
 					},
 					Count = 15,
 					FoundInRaid = false,
-					Description = "Hand over all 15 mod legend cards (one of each)",
+					Description = "上交全部15张Mod传奇卡牌（每种一张）",
 					CardNames = new()
 					{
 						[CardSvm] = "SVM",
@@ -517,10 +517,10 @@ public static class ModsSptLegendsThemeDefinitions
 				},
 				Locale = new()
 				{
-					Name = "[MODS-C] Kolya's Mod Hall of Fame",
-					Description = "Every legendary mod documented, every creator honored. From SVM to TTC, the SPT modding community built something extraordinary. Hand over the cards and complete the Mod Hall of Fame.",
-					Note = "Hand over one of each mod card to complete the collection.",
-					SuccessMessage = "The Mod Hall of Fame is complete. Legends honored."
+					Name = "[MODS-C] Kolya的模组名人堂",
+					Description = "每个传奇模组都已记录、每位创作者都被致敬。从SVM到TTC，SPT模组社区打造了非凡的东西。交出卡牌，模组名人堂就完整了。",
+					Note = "交出所有模组卡牌各一张以完成收集。",
+					SuccessMessage = "模组名人堂已完成。传奇被铭记。"
 				},
 				XpReward = 50000,
 				StandingReward = 0.15,
